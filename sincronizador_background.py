@@ -58,10 +58,37 @@ def clean_num(v):
     if not m:
         return None
     val = float(m.group())
-    # Descartar valores centinela de Agromet / INIA (ej: 999.0, 9917.2, 5456.9)
     if val >= 900.0 or val <= -900.0:
         return None
     return val
+
+def clean_agromet_num(v, val_type="temp"):
+    if not v or "null" in str(v).lower() or "---" in str(v) or "sin datos" in str(v).lower():
+        return None
+    m = re.search(r"[-+]?\d*\.\d+|\d+", str(v).replace(",", "."))
+    if not m:
+        return None
+    val = float(m.group())
+    if val in (9999.0, -9999.0, 999.0, 99.0, -99.0):
+        return None
+    # INIA codifica mediciones usando prefijos o desplazamientos centinela (9900, 990, 99)
+    if val >= 9900.0 and val < 10000.0:
+        val = val - 9900.0
+    elif val >= 990.0 and val < 1000.0:
+        val = val - 990.0
+    elif val >= 99.0 and val < 100.0 and val_type != "hr":
+        val = val - 99.0
+
+    if val_type == "temp" and (val > 60.0 or val < -40.0):
+        return None
+    if val_type == "hr" and (val > 100.0 or val < 0.0):
+        return None
+    if val_type == "rain" and (val > 500.0 or val < 0.0):
+        return None
+    if val_type == "wind" and (val > 200.0 or val < 0.0):
+        return None
+    return round(val, 1)
+
 
 def cargar_cache_desde_disco() -> bool:
     """Carga la caché local o compartida sin reemplazar su referencia global."""
@@ -179,19 +206,14 @@ async def sincronizar_agromet_inia(client: httpx.AsyncClient) -> tuple[dict, lis
                     stack_day = item.get("STACK-DAY", {})
                     hoy_data = stack_day.get("hoy", {})
                     
-                    t_min = clean_num(hoy_data.get("TA-MIN"))
-                    t_max = clean_num(hoy_data.get("TA-MAX"))
-                    hr = clean_num(hoy_data.get("HR-AVG"))
-                    vv = clean_num(hoy_data.get("VV-AVG"))
-                    rain = clean_num(hoy_data.get("PP-SUM"))
+                    t_min = clean_agromet_num(hoy_data.get("TA-MIN"), "temp")
+                    t_max = clean_agromet_num(hoy_data.get("TA-MAX"), "temp")
+                    hr = clean_agromet_num(hoy_data.get("HR-AVG"), "hr")
+                    vv = clean_agromet_num(hoy_data.get("VV-AVG"), "wind")
+                    rain = clean_agromet_num(hoy_data.get("PP-SUM"), "rain")
 
-                    if t_min is not None and (t_min > 60.0 or t_min < -40.0): t_min = None
-                    if t_max is not None and (t_max > 60.0 or t_max < -40.0): t_max = None
-                    if hr is not None and (hr > 100 or hr < 0): hr = 65
-                    if vv is not None and (vv > 150.0 or vv < 0): vv = 2.0
-                    if rain is not None and (rain > 300.0 or rain < 0): rain = 0.0
+                    temp_est = round((t_min + t_max) / 2.0, 1) if (t_min is not None and t_max is not None) else (t_max if t_max is not None else t_min)
 
-                    temp_est = round((t_min + t_max) / 2.0, 1) if (t_min is not None and t_max is not None) else None
 
                     telemetria_map[est_id] = {
                         "id": est_id,
