@@ -4,18 +4,18 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 746 nodes · 1266 edges · 67 communities (53 shown, 14 thin omitted)
+- 748 nodes · 1255 edges · 67 communities (53 shown, 14 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `96615e1a`
+- Built from commit: `9d953a0c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
+- react
 - sincronizador_background.py
-- App.jsx
 - main.py
 - prepare_chat_overlay_bundle.py
 - generate_pet_images.py
@@ -75,7 +75,7 @@
 - deploy.sh script
 
 ## God Nodes (most connected - your core abstractions)
-1. `react` - 25 edges
+1. `react` - 26 edges
 2. `ejecutar_sincronizacion_completa()` - 18 edges
 3. `main()` - 15 edges
 4. `obtener_clima_hiperlocal()` - 12 edges
@@ -103,13 +103,13 @@
 
 ## Communities (67 total, 14 thin omitted)
 
-### Community 0 - "sincronizador_background.py"
+### Community 0 - "react"
+Cohesion: 0.06
+Nodes (19): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, App(), GeeMapModal(), getWeatherIcon() (+11 more)
+
+### Community 1 - "sincronizador_background.py"
 Cohesion: 0.07
 Nodes (48): Any, _as_bool(), _as_origins(), get_settings(), Configuración centralizada de MeteoPrecisa. Los valores sensibles nunca tienen…, Settings, AsyncClient, load_cache() (+40 more)
-
-### Community 1 - "App.jsx"
-Cohesion: 0.07
-Nodes (30): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, App(), AgroPanel(), AqiDrawer() (+22 more)
 
 ### Community 2 - "main.py"
 Cohesion: 0.08
@@ -291,17 +291,17 @@ Nodes (3): alpha_nonzero_count(), main(), Image
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `App.jsx` to `BubbleScene.tsx`?**
-  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+- **Why does `react` connect `react` to `BubbleScene.tsx`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `frontend/package.json`, `devDependencies`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `dependencies` to `frontend/package.json`, `dependencies`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **What connects `$schema`, `oxc`, `react/rules-of-hooks` to the rest of the system?**
   _96 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `react` be split into smaller, more focused modules?**
+  _Cohesion score 0.057912457912457915 - nodes in this community are weakly interconnected._
 - **Should `sincronizador_background.py` be split into smaller, more focused modules?**
   _Cohesion score 0.06708595387840671 - nodes in this community are weakly interconnected._
-- **Should `App.jsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.07039187227866474 - nodes in this community are weakly interconnected._
 - **Should `main.py` be split into smaller, more focused modules?**
   _Cohesion score 0.0824829931972789 - nodes in this community are weakly interconnected._

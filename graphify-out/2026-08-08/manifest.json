@@ -45,9 +45,9 @@
     "semantic_hash": "f7b7cdb8689be56d1f4a5391df0102e3"
   },
   "frontend/src/App.jsx": {
-    "mtime": 1786057648.9479103,
-    "ast_hash": "67cc01159e6921e27c4c302f8e3254d4",
-    "semantic_hash": "67cc01159e6921e27c4c302f8e3254d4"
+    "mtime": 1786233300.4681935,
+    "ast_hash": "efc8be2b59f2a9c00097ab16646181b9",
+    "semantic_hash": "efc8be2b59f2a9c00097ab16646181b9"
   },
   "frontend/src/components/AgroPanel.jsx": {
     "mtime": 1786233004.4683187,
@@ -110,9 +110,9 @@
     "semantic_hash": "e8580fbfef02e6c70a3fb6cae632cd0d"
   },
   "frontend/src/components/MapSection.jsx": {
-    "mtime": 1785889072.0262969,
-    "ast_hash": "dcfe917a673e79422a94de61c8dadf14",
-    "semantic_hash": "dcfe917a673e79422a94de61c8dadf14"
+    "mtime": 1786233229.2156403,
+    "ast_hash": "55298ef7ce18766c1a2099d6d2072538",
+    "semantic_hash": "55298ef7ce18766c1a2099d6d2072538"
   },
   "frontend/src/components/Navbar.jsx": {
     "mtime": 1786223372.5666027,
@@ -573,5 +573,10 @@
     "mtime": 1786230945.610193,
     "ast_hash": "f386ed5e7e847e20ed13e1dda8c0bfa7",
     "semantic_hash": "f386ed5e7e847e20ed13e1dda8c0bfa7"
+  },
+  "frontend/src/components/GeeMapModal.jsx": {
+    "mtime": 1786233219.3996449,
+    "ast_hash": "69530484dc7f67c0b7bc1a1653977829",
+    "semantic_hash": "69530484dc7f67c0b7bc1a1653977829"
   }
 }

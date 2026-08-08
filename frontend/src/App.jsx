@@ -16,6 +16,7 @@ import AqiDrawer from './components/AqiDrawer';
 import HourlyForecastDrawer from './components/HourlyForecastDrawer';
 import EstacionesCercanasModal from './components/EstacionesCercanasModal';
 import LocationFallbackModal from './components/LocationFallbackModal';
+import GeeMapModal from './components/GeeMapModal';
 
 export default function App() {
   const {
@@ -29,8 +30,10 @@ export default function App() {
   } = useContext(WeatherContext);
 
   const [sateliteModalOpen, setSateliteModalOpen] = useState(false);
+  const [geeMapModalOpen, setGeeMapModalOpen] = useState(false);
   const [cercanasModalOpen, setCercanasModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('inicio');
+
 
   // Estado para el DetailDrawer de métricas y auditoría
   const [selectedMetric, setSelectedMetric] = useState(null);
@@ -128,12 +131,13 @@ export default function App() {
               />
             )}
 
-            {/* SECCIÓN MAPA INTERACTIVO CON EMBED WINDY OFICIAL */}
+            {/* SECCIÓN MAPA INTERACTIVO CON EMBED WINDY Y MAPA SATELITAL GEE */}
             <div ref={mapRef}>
               <MapSection
                 estacionSeleccionada={climaData?.estacion}
                 apiBase={API_BASE}
                 onOpenSateliteModal={() => setSateliteModalOpen(true)}
+                onOpenGeeMapModal={() => setGeeMapModalOpen(true)}
                 onSelectStation={handleSelectStation}
               />
             </div>
@@ -167,6 +171,15 @@ export default function App() {
       <footer className="border-t border-slate-800/80 py-6 text-center text-xs text-slate-500 bg-slate-950 pb-20 md:pb-6">
         <p>MeteoPrecisa Chile v10.2 • Plataforma de Telemetría Hiperlocal & Google Earth Engine</p>
       </footer>
+
+      {/* MODAL VISOR SATELITAL GEE INTERACTIVO POR CAPAS */}
+      <GeeMapModal
+        isOpen={geeMapModalOpen}
+        onClose={() => setGeeMapModalOpen(false)}
+        lat={climaData?.estacion?.coordenadas?.latitud || coords.lat}
+        lon={climaData?.estacion?.coordenadas?.longitud || coords.lon}
+        apiBase={API_BASE}
+      />
 
       {/* REPRODUCTOR SATELITAL BUCLE WEBP GOES-19 */}
       <SatelliteModal

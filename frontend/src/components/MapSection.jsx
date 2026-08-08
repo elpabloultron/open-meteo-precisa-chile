@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Layers, Wind, Satellite } from 'lucide-react';
 
-export default function MapSection({ estacionSeleccionada, onOpenSateliteModal }) {
+export default function MapSection({ estacionSeleccionada, onOpenSateliteModal, onOpenGeeMapModal }) {
   const [mapType, setMapType] = useState('windy');
 
   const centerLat = estacionSeleccionada?.coordenadas?.latitud || -33.4450;
@@ -20,16 +20,25 @@ export default function MapSection({ estacionSeleccionada, onOpenSateliteModal }
           </div>
           <div>
             <h3 className="text-lg font-bold text-white">
-              Visor Interactivo Mapa Windy Oficial
+              Visor Interactivo de Mapas Climáticos & Satelitales
             </h3>
             <p className="text-xs text-slate-400">
-              Viento animado en tiempo real y radar de precipitaciones ECMWF
+              Viento animado Windy ECMWF y Mapa Satelital de Capas Espectrales GEE (10m)
             </p>
           </div>
         </div>
 
         {/* BOTONERA DE MAPAS */}
         <div className="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            onClick={onOpenGeeMapModal}
+            className="apple-pill bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg shadow-emerald-500/30 flex items-center gap-2 hover:opacity-95 transition cursor-pointer font-bold text-xs"
+          >
+            <Satellite className="w-4 h-4 text-emerald-200" />
+            <span>🛰️ Mapa Satelital GEE (10m)</span>
+          </button>
+
           <button
             type="button"
             onClick={() => setMapType('windy')}
