@@ -4,24 +4,24 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 744 nodes · 1267 edges · 68 communities (54 shown, 14 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.8)
+- 746 nodes · 1266 edges · 67 communities (53 shown, 14 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6f443767`
+- Built from commit: `96615e1a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- main.py
+- sincronizador_background.py
 - App.jsx
+- main.py
 - prepare_chat_overlay_bundle.py
 - generate_pet_images.py
 - prepare_pet_run.py
 - BubbleScene.tsx
-- GEECore
-- app_config.py
+- test_main.py
 - devDependencies
 - finalize_pet_run.py
 - compare-recon.mjs
@@ -49,7 +49,6 @@
 - remotion-template/package.json
 - main
 - obsidian/.obsidian/app.json
-- .oxlintrc.json
 - .obsidian/app.json
 - main
 - render_state
@@ -77,7 +76,7 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `react` - 25 edges
-2. `ejecutar_sincronizacion_completa()` - 19 edges
+2. `ejecutar_sincronizacion_completa()` - 18 edges
 3. `main()` - 15 edges
 4. `obtener_clima_hiperlocal()` - 12 edges
 5. `main()` - 11 edges
@@ -85,56 +84,56 @@
 7. `main()` - 10 edges
 8. `main()` - 9 edges
 9. `report()` - 9 edges
-10. `cargar_cache_desde_disco()` - 9 edges
+10. `build_spec()` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `obtener_gee_punto_seguro()` --calls--> `fallback_rural()`  [INFERRED]
-  main.py → gee/rural.py
-- `obtener_historico_clima()` --indirect_call--> `extraer_historico_ndvi()`  [INFERRED]
-  main.py → gee/rural.py
-- `obtener_capas_mapa()` --calls--> `obtener_capas_gee_y_windy()`  [INFERRED]
-  main.py → gee/tiles.py
-- `obtener_gee_punto_seguro()` --calls--> `fallback_urbano()`  [INFERRED]
-  main.py → gee/urban.py
+- `procesar_video_goes19()` --indirect_call--> `client()`  [INFERRED]
+  goes_processor.py → test_main.py
+- `obtener_satellite_latest_loop_api()` --calls--> `obtener_satellite_latest_loop()`  [INFERRED]
+  main.py → goes_processor.py
+- `ejecutar_sincronizacion_completa()` --indirect_call--> `client()`  [INFERRED]
+  sincronizador_background.py → test_main.py
+- `test_clean_num_discards_sentinel_values()` --calls--> `clean_num()`  [EXTRACTED]
+  test_main.py → sincronizador_background.py
 - `obtener_openmeteo_directo()` --calls--> `obtener_pronostico_openmeteo()`  [INFERRED]
   main.py → openmeteo_client.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (68 total, 14 thin omitted)
+## Communities (67 total, 14 thin omitted)
 
-### Community 0 - "main.py"
-Cohesion: 0.05
-Nodes (69): AsyncClient, FastAPI, fixture, get, _descargar_y_procesar_frame(), obtener_satellite_latest_loop(), procesar_video_goes19(), Devuelve la metadata y URL del bucle animado más reciente de GOES-19. (+61 more)
+### Community 0 - "sincronizador_background.py"
+Cohesion: 0.07
+Nodes (48): Any, _as_bool(), _as_origins(), get_settings(), Configuración centralizada de MeteoPrecisa. Los valores sensibles nunca tienen…, Settings, AsyncClient, load_cache() (+40 more)
 
 ### Community 1 - "App.jsx"
-Cohesion: 0.09
-Nodes (23): App(), AgroPanel(), AqiDrawer(), BottomNav(), ComparisonTable(), DailyForecastCards(), DetailDrawer(), EstacionesCercanasModal() (+15 more)
+Cohesion: 0.07
+Nodes (30): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, App(), AgroPanel(), AqiDrawer() (+22 more)
 
-### Community 2 - "prepare_chat_overlay_bundle.py"
+### Community 2 - "main.py"
+Cohesion: 0.08
+Nodes (41): GEECore, extraer_historico_ndvi(), extraer_metricas_agricolas(), fallback_rural(), Extrae serie de tiempo NDVI de los últimos 12 meses usando MODIS MOD13Q1., Extrae métricas satelitales (Sentinel-2, ERA5, MODIS) orientadas a la…, _create_tile_url(), obtener_capas_gee_y_windy() (+33 more)
+
+### Community 3 - "prepare_chat_overlay_bundle.py"
 Cohesion: 0.16
 Nodes (30): auto_avatar_for_participant(), build_spec(), configured_participant(), is_flag(), is_side(), load_config(), main(), parse_args() (+22 more)
 
-### Community 3 - "generate_pet_images.py"
+### Community 4 - "generate_pet_images.py"
 Cohesion: 0.15
 Nodes (23): complete_job(), decode_response(), file_sha256(), load_manifest(), main(), manifest_jobs(), _multipart_body(), parse_states() (+15 more)
 
-### Community 4 - "prepare_pet_run.py"
+### Community 5 - "prepare_pet_run.py"
 Cohesion: 0.18
 Nodes (27): base_pet_prompt(), choose_chroma_key(), color_distance(), concept_words(), create_layout_guide(), create_layout_guides(), default_output_dir(), display_from_slug() (+19 more)
 
-### Community 5 - "BubbleScene.tsx"
+### Community 6 - "BubbleScene.tsx"
 Cohesion: 0.15
 Nodes (17): chatSpec, AvatarImage(), avatarSrcFor(), PRESET_FILES, Bubble(), BubbleScene(), bubbleWidthFor(), CONTAINER_THEME (+9 more)
 
-### Community 6 - "GEECore"
-Cohesion: 0.18
-Nodes (14): GEECore, extraer_historico_ndvi(), extraer_metricas_agricolas(), fallback_rural(), Extrae serie de tiempo NDVI de los últimos 12 meses usando MODIS MOD13Q1., Extrae métricas satelitales (Sentinel-2, ERA5, MODIS) orientadas a la…, _create_tile_url(), obtener_capas_gee_y_windy() (+6 more)
-
-### Community 7 - "app_config.py"
-Cohesion: 0.15
-Nodes (17): Any, _as_bool(), _as_origins(), get_settings(), Configuración centralizada de MeteoPrecisa. Los valores sensibles nunca tienen…, Settings, load_cache(), _load_local() (+9 more)
+### Community 7 - "test_main.py"
+Cohesion: 0.19
+Nodes (13): fixture, client(), FakeOpenMeteoClient, FakeOpenMeteoResponse, test_alertas_senapred_endpoint_uses_cached_data(), test_buscar_estaciones_endpoint_uses_cached_catalog(), test_capas_mapa_endpoint_accepts_default_coordinates(), test_capas_mapa_rejects_invalid_coordinates() (+5 more)
 
 ### Community 8 - "devDependencies"
 Cohesion: 0.11
@@ -240,51 +239,47 @@ Nodes (7): completed_ids(), job_view(), jobs(), load_manifest(), main(), missing
 Cohesion: 0.25
 Nodes (7): alwaysUpdateLinks, foldHeading, foldIndent, showFrontmatter, showLineNumber, tabSize, useMarkdownLinks
 
-### Community 36 - ".oxlintrc.json"
-Cohesion: 0.25
-Nodes (7): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, oxc, warn
-
-### Community 37 - ".obsidian/app.json"
+### Community 36 - ".obsidian/app.json"
 Cohesion: 0.25
 Nodes (7): alwaysUpdateLinks, foldHeading, foldIndent, showFrontmatter, showLineNumber, tabSize, useMarkdownLinks
 
-### Community 38 - "main"
+### Community 37 - "main"
 Cohesion: 0.62
 Nodes (6): default_codex_home(), main(), Path, slugify(), validate_spritesheet(), write_webp_spritesheet()
 
-### Community 39 - "render_state"
+### Community 38 - "render_state"
 Cohesion: 0.57
 Nodes (6): checker(), main(), Image, Path, render_state(), shell_quote_for_concat()
 
-### Community 40 - "install.sh"
+### Community 39 - "install.sh"
 Cohesion: 0.62
 Nodes (6): cyan(), die(), gray(), green(), install_skill_to(), install.sh script
 
-### Community 44 - "dependencies"
+### Community 43 - "dependencies"
 Cohesion: 0.29
 Nodes (7): chart.js, dependencies, chart.js, lucide-react, react-chartjs-2, lucide-react, react-chartjs-2
 
-### Community 45 - "MeteoPrecisaUser"
+### Community 44 - "MeteoPrecisaUser"
 Cohesion: 0.33
 Nodes (4): HttpUser, MeteoPrecisaUser, Locust Load Test Script para MeteoPrecisa API. Para ejecutar: pip install…, task
 
-### Community 46 - "validate-skill-submission.sh"
+### Community 45 - "validate-skill-submission.sh"
 Cohesion: 0.60
 Nodes (5): escapes_root(), fail(), pass(), validate-skill-submission.sh script, warn()
 
-### Community 47 - "verify"
+### Community 46 - "verify"
 Cohesion: 0.53
 Nodes (5): emu_to_in(), is_footer_by_name(), main(), Path, verify()
 
-### Community 48 - "discover-doc-gaps.sh"
+### Community 47 - "discover-doc-gaps.sh"
 Cohesion: 0.70
 Nodes (4): emit_todo(), extract_links(), GREP(), discover-doc-gaps.sh script
 
-### Community 51 - "checker"
+### Community 50 - "checker"
 Cohesion: 0.67
 Nodes (3): checker(), main(), Image
 
-### Community 52 - "alpha_nonzero_count"
+### Community 51 - "alpha_nonzero_count"
 Cohesion: 0.67
 Nodes (3): alpha_nonzero_count(), main(), Image
 
@@ -296,17 +291,17 @@ Nodes (3): alpha_nonzero_count(), main(), Image
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `App.jsx` to `.oxlintrc.json`, `BubbleScene.tsx`?**
+- **Why does `react` connect `App.jsx` to `BubbleScene.tsx`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `frontend/package.json`, `devDependencies`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `ejecutar_sincronizacion_completa()` connect `main.py` to `GEECore`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `dependencies` to `frontend/package.json`, `dependencies`?**
+  _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **What connects `$schema`, `oxc`, `react/rules-of-hooks` to the rest of the system?**
   _96 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `main.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.05387861084063616 - nodes in this community are weakly interconnected._
+- **Should `sincronizador_background.py` be split into smaller, more focused modules?**
+  _Cohesion score 0.06708595387840671 - nodes in this community are weakly interconnected._
 - **Should `App.jsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.0898989898989899 - nodes in this community are weakly interconnected._
-- **Should `app_config.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.14736842105263157 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07039187227866474 - nodes in this community are weakly interconnected._
+- **Should `main.py` be split into smaller, more focused modules?**
+  _Cohesion score 0.0824829931972789 - nodes in this community are weakly interconnected._

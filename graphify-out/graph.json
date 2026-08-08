@@ -9,7 +9,7 @@
       "source_file": "actualizar_app.ps1",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 63,
+      "community": 62,
       "norm_label": "actualizar_app.ps1",
       "community_name": "actualizar_app.ps1",
       "id": "actualizar_app"
@@ -20,9 +20,9 @@
       "source_file": "app_config.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "app_config.py",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "app_config"
     },
     {
@@ -32,9 +32,9 @@
       "source_location": "L23",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "_as_bool()",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "app_config_as_bool"
     },
     {
@@ -44,9 +44,9 @@
       "source_location": "L29",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "_as_origins()",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "app_config_as_origins"
     },
     {
@@ -57,9 +57,9 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "settings",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "app_config_settings"
     },
     {
@@ -69,9 +69,9 @@
       "source_location": "L55",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "get_settings()",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "app_config_get_settings"
     },
     {
@@ -80,9 +80,9 @@
       "source_file": "app_config.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "configuracion centralizada de meteoprecisa. los valores sensibles nunca tienen...",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "app_config_rationale_1"
     },
     {
@@ -91,9 +91,9 @@
       "source_file": "cache_store.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "cache_store.py",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "cache_store"
     },
     {
@@ -103,9 +103,9 @@
       "source_location": "L16",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "_load_local()",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "cache_store_load_local"
     },
     {
@@ -114,9 +114,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "path",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "path"
     },
     {
@@ -125,9 +125,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "any",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "any"
     },
     {
@@ -137,9 +137,9 @@
       "source_location": "L24",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "_save_local()",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "cache_store_save_local"
     },
     {
@@ -149,9 +149,9 @@
       "source_location": "L31",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "load_cache()",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "cache_store_load_cache"
     },
     {
@@ -161,9 +161,9 @@
       "source_location": "L53",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "save_cache()",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "cache_store_save_cache"
     },
     {
@@ -172,9 +172,9 @@
       "source_file": "cache_store.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "persistencia de la cache compartida entre el job y las instancias api.",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "cache_store_rationale_1"
     },
     {
@@ -183,9 +183,9 @@
       "source_file": "cache_store.py",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "carga la instantanea central; en desarrollo usa el archivo local.",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "cache_store_rationale_32"
     },
     {
@@ -194,9 +194,9 @@
       "source_file": "cache_store.py",
       "source_location": "L54",
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "guarda una instantanea completa. reemplazar un objeto gcs es atomico.",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "cache_store_rationale_54"
     },
     {
@@ -205,9 +205,9 @@
       "source_file": "frontend/.oxlintrc.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 36,
+      "community": 1,
       "norm_label": ".oxlintrc.json",
-      "community_name": ".oxlintrc.json",
+      "community_name": "App.jsx",
       "id": "frontend_oxlintrc"
     },
     {
@@ -216,9 +216,9 @@
       "source_file": "frontend/.oxlintrc.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 36,
+      "community": 1,
       "norm_label": "$schema",
-      "community_name": ".oxlintrc.json",
+      "community_name": "App.jsx",
       "id": "frontend_oxlintrc_schema"
     },
     {
@@ -227,9 +227,9 @@
       "source_file": "frontend/.oxlintrc.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 36,
+      "community": 1,
       "norm_label": "plugins",
-      "community_name": ".oxlintrc.json",
+      "community_name": "App.jsx",
       "id": "frontend_oxlintrc_plugins"
     },
     {
@@ -249,9 +249,9 @@
       "source_file": "frontend/.oxlintrc.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 36,
+      "community": 1,
       "norm_label": "oxc",
-      "community_name": ".oxlintrc.json",
+      "community_name": "App.jsx",
       "id": "ref_oxc"
     },
     {
@@ -260,9 +260,9 @@
       "source_file": "frontend/.oxlintrc.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 36,
+      "community": 1,
       "norm_label": "rules",
-      "community_name": ".oxlintrc.json",
+      "community_name": "App.jsx",
       "id": "frontend_oxlintrc_rules"
     },
     {
@@ -271,9 +271,9 @@
       "source_file": "frontend/.oxlintrc.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 36,
+      "community": 1,
       "norm_label": "react/rules-of-hooks",
-      "community_name": ".oxlintrc.json",
+      "community_name": "App.jsx",
       "id": "frontend_oxlintrc_rules_react_rules_of_hooks"
     },
     {
@@ -282,9 +282,9 @@
       "source_file": "frontend/.oxlintrc.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 36,
+      "community": 1,
       "norm_label": "react/only-export-components",
-      "community_name": ".oxlintrc.json",
+      "community_name": "App.jsx",
       "id": "frontend_oxlintrc_rules_react_only_export_components"
     },
     {
@@ -293,9 +293,9 @@
       "source_file": "frontend/.oxlintrc.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 36,
+      "community": 1,
       "norm_label": "warn",
-      "community_name": ".oxlintrc.json",
+      "community_name": "App.jsx",
       "id": "ref_warn"
     },
     {
@@ -414,7 +414,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 44,
+      "community": 43,
       "norm_label": "dependencies",
       "community_name": "dependencies",
       "id": "frontend_package_dependencies"
@@ -425,7 +425,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 44,
+      "community": 43,
       "norm_label": "chart.js",
       "community_name": "dependencies",
       "id": "frontend_package_dependencies_chart_js"
@@ -436,7 +436,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 44,
+      "community": 43,
       "norm_label": "chart.js",
       "community_name": "dependencies",
       "id": "chart_js"
@@ -447,7 +447,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 44,
+      "community": 43,
       "norm_label": "lucide-react",
       "community_name": "dependencies",
       "id": "frontend_package_dependencies_lucide_react"
@@ -458,7 +458,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 44,
+      "community": 43,
       "norm_label": "lucide-react",
       "community_name": "dependencies",
       "id": "lucide_react"
@@ -491,7 +491,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 44,
+      "community": 43,
       "norm_label": "react-chartjs-2",
       "community_name": "dependencies",
       "id": "frontend_package_dependencies_react_chartjs_2"
@@ -502,7 +502,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 44,
+      "community": 43,
       "norm_label": "react-chartjs-2",
       "community_name": "dependencies",
       "id": "react_chartjs_2"
@@ -920,7 +920,7 @@
       "source_file": "frontend/public/service-worker.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 60,
+      "community": 59,
       "norm_label": "service-worker.js",
       "community_name": "service-worker.js",
       "id": "frontend_public_service_worker"
@@ -931,7 +931,7 @@
       "source_file": "frontend/public/service-worker.js",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 60,
+      "community": 59,
       "norm_label": "assets_to_cache",
       "community_name": "service-worker.js",
       "id": "frontend_public_service_worker_assets_to_cache"
@@ -1286,7 +1286,7 @@
       "source_file": "frontend/vite.config.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 65,
+      "community": 64,
       "norm_label": "vite.config.js",
       "community_name": "vite.config.js",
       "id": "frontend_vite_config"
@@ -1297,9 +1297,9 @@
       "source_file": "gee/__init__.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": "__init__.py",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_init"
     },
     {
@@ -1308,9 +1308,9 @@
       "source_file": "gee/core.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": "core.py",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_core"
     },
     {
@@ -1321,9 +1321,9 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": "geecore",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_core_geecore"
     },
     {
@@ -1333,9 +1333,9 @@
       "source_location": "L19",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": ".initialize()",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_core_geecore_initialize"
     },
     {
@@ -1345,79 +1345,10 @@
       "source_location": "L61",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": ".is_active()",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_core_geecore_is_active"
-    },
-    {
-      "label": "rural.py",
-      "file_type": "code",
-      "source_file": "gee/rural.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "rural.py",
-      "community_name": "GEECore",
-      "id": "gee_rural"
-    },
-    {
-      "label": "extraer_metricas_agricolas()",
-      "file_type": "code",
-      "source_file": "gee/rural.py",
-      "source_location": "L8",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "extraer_metricas_agricolas()",
-      "community_name": "GEECore",
-      "id": "gee_rural_extraer_metricas_agricolas"
-    },
-    {
-      "label": "fallback_rural()",
-      "file_type": "code",
-      "source_file": "gee/rural.py",
-      "source_location": "L117",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "fallback_rural()",
-      "community_name": "GEECore",
-      "id": "gee_rural_fallback_rural"
-    },
-    {
-      "label": "extraer_historico_ndvi()",
-      "file_type": "code",
-      "source_file": "gee/rural.py",
-      "source_location": "L135",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "extraer_historico_ndvi()",
-      "community_name": "GEECore",
-      "id": "gee_rural_extraer_historico_ndvi"
-    },
-    {
-      "label": "Extrae m\u00e9tricas satelitales (Sentinel-2, ERA5, MODIS) orientadas a la\u2026",
-      "file_type": "rationale",
-      "source_file": "gee/rural.py",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "extrae metricas satelitales (sentinel-2, era5, modis) orientadas a la...",
-      "community_name": "GEECore",
-      "id": "gee_rural_rationale_9"
-    },
-    {
-      "label": "Extrae serie de tiempo NDVI de los \u00faltimos 12 meses usando MODIS MOD13Q1.",
-      "file_type": "rationale",
-      "source_file": "gee/rural.py",
-      "source_location": "L136",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "extrae serie de tiempo ndvi de los ultimos 12 meses usando modis mod13q1.",
-      "community_name": "GEECore",
-      "id": "gee_rural_rationale_136"
     },
     {
       "label": "tiles.py",
@@ -1425,9 +1356,9 @@
       "source_file": "gee/tiles.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": "tiles.py",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_tiles"
     },
     {
@@ -1437,9 +1368,9 @@
       "source_location": "L8",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": "_create_tile_url()",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_tiles_create_tile_url"
     },
     {
@@ -1449,9 +1380,9 @@
       "source_location": "L17",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": "obtener_capas_gee_y_windy()",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_tiles_obtener_capas_gee_y_windy"
     },
     {
@@ -1460,9 +1391,9 @@
       "source_file": "gee/tiles.py",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": "helper generico para obtener la url del map id en earth engine.",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_tiles_rationale_9"
     },
     {
@@ -1471,9 +1402,9 @@
       "source_file": "gee/tiles.py",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": "genera las urls de los tiles (capas visuales) para el frontend.",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_tiles_rationale_18"
     },
     {
@@ -1482,9 +1413,9 @@
       "source_file": "gee/urban.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": "urban.py",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_urban"
     },
     {
@@ -1494,9 +1425,9 @@
       "source_location": "L7",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": "extraer_metricas_urbanas()",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_urban_extraer_metricas_urbanas"
     },
     {
@@ -1506,9 +1437,9 @@
       "source_location": "L61",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": "fallback_urbano()",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_urban_fallback_urbano"
     },
     {
@@ -1517,9 +1448,9 @@
       "source_file": "gee/urban.py",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 6,
+      "community": 2,
       "norm_label": "extrae metricas satelitales (sentinel-5p, landsat) orientadas a entornos...",
-      "community_name": "GEECore",
+      "community_name": "main.py",
       "id": "gee_urban_rationale_8"
     },
     {
@@ -1530,7 +1461,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "goes_processor.py",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "goes_processor"
     },
     {
@@ -1542,7 +1473,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "_descargar_y_procesar_frame()",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "goes_processor_descargar_y_procesar_frame"
     },
     {
@@ -1554,7 +1485,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "procesar_video_goes19()",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "goes_processor_procesar_video_goes19"
     },
     {
@@ -1566,7 +1497,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "obtener_satellite_latest_loop()",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "goes_processor_obtener_satellite_latest_loop"
     },
     {
@@ -1577,7 +1508,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "descarga los ultimos fotogramas de la noaa para chile (goes-19 ssa), los...",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "goes_processor_rationale_49"
     },
     {
@@ -1588,7 +1519,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "devuelve la metadata y url del bucle animado mas reciente de goes-19.",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "goes_processor_rationale_134"
     },
     {
@@ -1599,7 +1530,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "fastapi",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "fastapi"
     },
     {
@@ -1608,7 +1539,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "middleware",
       "community_name": "main.py",
       "id": "middleware"
@@ -1619,7 +1550,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "request",
       "community_name": "main.py",
       "id": "request"
@@ -1630,7 +1561,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "get",
       "community_name": "main.py",
       "id": "get"
@@ -1643,7 +1574,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "post",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "post"
     },
     {
@@ -1759,7 +1690,7 @@
       "source_file": "scripts/configurar_sync_horario.ps1",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 66,
+      "community": 65,
       "norm_label": "configurar_sync_horario.ps1",
       "community_name": "configurar_sync_horario.ps1",
       "id": "scripts_configurar_sync_horario_ps1_scripts_configurar_sync_horario"
@@ -1774,7 +1705,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 61,
+      "community": 60,
       "norm_label": "configurar_sync_horario.sh",
       "community_name": "configurar_sync_horario.sh script",
       "id": "scripts_configurar_sync_horario_sh_scripts_configurar_sync_horario"
@@ -1789,7 +1720,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 61,
+      "community": 60,
       "norm_label": "configurar_sync_horario.sh script",
       "community_name": "configurar_sync_horario.sh script",
       "id": "scripts_configurar_sync_horario_sh__entry"
@@ -1800,7 +1731,7 @@
       "source_file": "scripts/deploy.ps1",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 67,
+      "community": 66,
       "norm_label": "deploy.ps1",
       "community_name": "deploy.ps1",
       "id": "scripts_deploy_ps1_scripts_deploy"
@@ -1815,7 +1746,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 62,
+      "community": 61,
       "norm_label": "deploy.sh",
       "community_name": "deploy.sh script",
       "id": "scripts_deploy_sh_scripts_deploy"
@@ -1830,7 +1761,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 62,
+      "community": 61,
       "norm_label": "deploy.sh script",
       "community_name": "deploy.sh script",
       "id": "scripts_deploy_sh__entry"
@@ -1843,7 +1774,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "asyncclient",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "asyncclient"
     },
     {
@@ -1854,7 +1785,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "sync_job.py",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "sync_job"
     },
     {
@@ -1866,7 +1797,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "run()",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "sync_job_run"
     },
     {
@@ -1877,7 +1808,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "punto de entrada para el cloud run job que actualiza la cache cada hora.",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "sync_job_rationale_1"
     },
     {
@@ -1886,9 +1817,9 @@
       "source_file": "test_main.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "test_main.py",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main"
     },
     {
@@ -1899,9 +1830,9 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "fakeopenmeteoresponse",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoresponse"
     },
     {
@@ -1911,9 +1842,9 @@
       "source_location": "L49",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": ".json()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoresponse_json"
     },
     {
@@ -1924,9 +1855,9 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "fakeopenmeteoclient",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoclient"
     },
     {
@@ -1936,9 +1867,9 @@
       "source_location": "L76",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": ".__aenter__()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoclient_aenter"
     },
     {
@@ -1948,9 +1879,9 @@
       "source_location": "L79",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": ".__aexit__()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoclient_aexit"
     },
     {
@@ -1960,9 +1891,9 @@
       "source_location": "L82",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": ".get()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoclient_get"
     },
     {
@@ -1971,9 +1902,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "fixture",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "fixture"
     },
     {
@@ -1983,9 +1914,9 @@
       "source_location": "L87",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "client()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_client"
     },
     {
@@ -1995,9 +1926,9 @@
       "source_location": "L105",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "test_home_endpoint_reports_real_status()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_home_endpoint_reports_real_status"
     },
     {
@@ -2007,9 +1938,9 @@
       "source_location": "L114",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "test_capas_mapa_endpoint_accepts_default_coordinates()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_capas_mapa_endpoint_accepts_default_coordinates"
     },
     {
@@ -2019,9 +1950,9 @@
       "source_location": "L122",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "test_capas_mapa_rejects_invalid_coordinates()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_capas_mapa_rejects_invalid_coordinates"
     },
     {
@@ -2031,9 +1962,9 @@
       "source_location": "L127",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "test_buscar_estaciones_endpoint_uses_cached_catalog()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_buscar_estaciones_endpoint_uses_cached_catalog"
     },
     {
@@ -2043,9 +1974,9 @@
       "source_location": "L133",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "test_alertas_senapred_endpoint_uses_cached_data()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_alertas_senapred_endpoint_uses_cached_data"
     },
     {
@@ -2055,9 +1986,9 @@
       "source_location": "L139",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "test_weather_current_endpoint_uses_cached_and_mocked_data()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_weather_current_endpoint_uses_cached_and_mocked_data"
     },
     {
@@ -2067,9 +1998,9 @@
       "source_location": "L148",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "test_weather_current_requires_longitude()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_weather_current_requires_longitude"
     },
     {
@@ -2079,9 +2010,9 @@
       "source_location": "L153",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "test_historico_accepts_lng_alias_and_validates_missing_longitude()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_historico_accepts_lng_alias_and_validates_missing_longitude"
     },
     {
@@ -2091,9 +2022,9 @@
       "source_location": "L158",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "test_manual_sync_requires_configuration_or_token()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_manual_sync_requires_configuration_or_token"
     },
     {
@@ -2103,9 +2034,9 @@
       "source_location": "L164",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "test_clean_num_discards_sentinel_values()",
-      "community_name": "main.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_clean_num_discards_sentinel_values"
     },
     {
@@ -2114,7 +2045,7 @@
       "source_file": "locustfile.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 45,
+      "community": 44,
       "norm_label": "locustfile.py",
       "community_name": "MeteoPrecisaUser",
       "id": "locustfile"
@@ -2127,7 +2058,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 45,
+      "community": 44,
       "norm_label": "meteoprecisauser",
       "community_name": "MeteoPrecisaUser",
       "id": "locustfile_meteoprecisauser"
@@ -2138,7 +2069,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 45,
+      "community": 44,
       "norm_label": "httpuser",
       "community_name": "MeteoPrecisaUser",
       "id": "httpuser"
@@ -2149,7 +2080,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 45,
+      "community": 44,
       "norm_label": "task",
       "community_name": "MeteoPrecisaUser",
       "id": "task"
@@ -2161,7 +2092,7 @@
       "source_location": "L26",
       "_callable": true,
       "_origin": "ast",
-      "community": 45,
+      "community": 44,
       "norm_label": ".test_clima_cercano()",
       "community_name": "MeteoPrecisaUser",
       "id": "locustfile_meteoprecisauser_test_clima_cercano"
@@ -2173,7 +2104,7 @@
       "source_location": "L31",
       "_callable": true,
       "_origin": "ast",
-      "community": 45,
+      "community": 44,
       "norm_label": ".test_healthcheck()",
       "community_name": "MeteoPrecisaUser",
       "id": "locustfile_meteoprecisauser_test_healthcheck"
@@ -2184,7 +2115,7 @@
       "source_file": "locustfile.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 45,
+      "community": 44,
       "norm_label": "locust load test script para meteoprecisa api. para ejecutar: pip install...",
       "community_name": "MeteoPrecisaUser",
       "id": "locustfile_rationale_1"
@@ -2195,9 +2126,9 @@
       "source_file": "openmeteo_client.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "openmeteo_client.py",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "openmeteo_client"
     },
     {
@@ -2207,9 +2138,9 @@
       "source_location": "L19",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "obtener_pronostico_openmeteo()",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "openmeteo_client_obtener_pronostico_openmeteo"
     },
     {
@@ -2218,9 +2149,9 @@
       "source_file": "openmeteo_client.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "cliente asincrono open-source para open-meteo api. sirve como respaldo...",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "openmeteo_client_rationale_1"
     },
     {
@@ -2229,9 +2160,9 @@
       "source_file": "openmeteo_client.py",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 7,
+      "community": 0,
       "norm_label": "consulta el pronostico agroclimatico hiperlocal en open-meteo.",
-      "community_name": "app_config.py",
+      "community_name": "sincronizador_background.py",
       "id": "openmeteo_client_rationale_24"
     },
     {
@@ -2240,7 +2171,7 @@
       "source_file": ".obsidian/app.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 37,
+      "community": 36,
       "norm_label": ".obsidian/app.json",
       "community_name": ".obsidian/app.json",
       "id": "obsidian_app"
@@ -2251,7 +2182,7 @@
       "source_file": ".obsidian/app.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 37,
+      "community": 36,
       "norm_label": "alwaysupdatelinks",
       "community_name": ".obsidian/app.json",
       "id": "obsidian_app_alwaysupdatelinks"
@@ -2262,7 +2193,7 @@
       "source_file": ".obsidian/app.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 37,
+      "community": 36,
       "norm_label": "usemarkdownlinks",
       "community_name": ".obsidian/app.json",
       "id": "obsidian_app_usemarkdownlinks"
@@ -2273,7 +2204,7 @@
       "source_file": ".obsidian/app.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 37,
+      "community": 36,
       "norm_label": "showfrontmatter",
       "community_name": ".obsidian/app.json",
       "id": "obsidian_app_showfrontmatter"
@@ -2284,7 +2215,7 @@
       "source_file": ".obsidian/app.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 37,
+      "community": 36,
       "norm_label": "foldheading",
       "community_name": ".obsidian/app.json",
       "id": "obsidian_app_foldheading"
@@ -2295,7 +2226,7 @@
       "source_file": ".obsidian/app.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 37,
+      "community": 36,
       "norm_label": "foldindent",
       "community_name": ".obsidian/app.json",
       "id": "obsidian_app_foldindent"
@@ -2306,7 +2237,7 @@
       "source_file": ".obsidian/app.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 37,
+      "community": 36,
       "norm_label": "showlinenumber",
       "community_name": ".obsidian/app.json",
       "id": "obsidian_app_showlinenumber"
@@ -2317,7 +2248,7 @@
       "source_file": ".obsidian/app.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 37,
+      "community": 36,
       "norm_label": "tabsize",
       "community_name": ".obsidian/app.json",
       "id": "obsidian_app_tabsize"
@@ -2706,7 +2637,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/remotion.config.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 64,
+      "community": 63,
       "norm_label": "remotion.config.ts",
       "community_name": "remotion.config.ts",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_remotion_config"
@@ -2717,7 +2648,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/src/Root.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "root.tsx",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_root"
@@ -2729,7 +2660,7 @@
       "source_location": "L5",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "remotionroot()",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_root_remotionroot"
@@ -2740,7 +2671,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/src/chatSpec.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "chatspec.ts",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_chatspec"
@@ -2751,7 +2682,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/src/chatSpec.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "chatspec",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_chatspec_chatspec"
@@ -2762,7 +2693,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/src/components/BubbleScene.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "bubblescene.tsx",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene"
@@ -2773,7 +2704,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/src/components/BubbleScene.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "container_theme",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_container_theme"
@@ -2785,7 +2716,7 @@
       "source_location": "L24",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "estimatecharwidth()",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_estimatecharwidth"
@@ -2797,7 +2728,7 @@
       "source_location": "L30",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "measuretextwidth()",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_measuretextwidth"
@@ -2809,7 +2740,7 @@
       "source_location": "L50",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "maxtextwidthfor()",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_maxtextwidthfor"
@@ -2821,7 +2752,7 @@
       "source_location": "L56",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "wrapmessagetext()",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_wrapmessagetext"
@@ -2833,7 +2764,7 @@
       "source_location": "L81",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "bubblewidthfor()",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_bubblewidthfor"
@@ -2845,7 +2776,7 @@
       "source_location": "L87",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "bubble()",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_bubble"
@@ -2857,7 +2788,7 @@
       "source_location": "L164",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "bubblescene()",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_bubblescene"
@@ -2868,7 +2799,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/src/components/ChatMotionOverlay.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "chatmotionoverlay.tsx",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_chatmotionoverlay"
@@ -2880,7 +2811,7 @@
       "source_location": "L7",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "chatmotionoverlay()",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_chatmotionoverlay_chatmotionoverlay"
@@ -2891,7 +2822,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/src/components/DeviceFrame.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "deviceframe.tsx",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_deviceframe"
@@ -2903,7 +2834,7 @@
       "source_location": "L3",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "deviceframe()",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_deviceframe_deviceframe"
@@ -2914,7 +2845,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/src/components/avatarLibrary.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "avatarlibrary.tsx",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_avatarlibrary"
@@ -2925,7 +2856,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/src/components/avatarLibrary.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "preset_files",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_avatarlibrary_preset_files"
@@ -2937,7 +2868,7 @@
       "source_location": "L14",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "avatarsrcfor()",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_avatarlibrary_avatarsrcfor"
@@ -2949,7 +2880,7 @@
       "source_location": "L20",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "avatarimage()",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_avatarlibrary_avatarimage"
@@ -2960,7 +2891,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/src/components/types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "types.ts",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_types"
@@ -2973,7 +2904,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "avatarkey",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_types_avatarkey"
@@ -2986,7 +2917,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "chatspec",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_types_chatspec"
@@ -2997,7 +2928,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/src/index.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "index.ts",
       "community_name": "BubbleScene.tsx",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_src_index"
@@ -3151,7 +3082,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/scripts/build_chat_overlay_spec.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "build_chat_overlay_spec.py",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec"
@@ -3163,7 +3094,7 @@
       "source_location": "L45",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "parse_args()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_parse_args"
@@ -3174,7 +3105,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "namespace",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_py_namespace"
@@ -3186,7 +3117,7 @@
       "source_location": "L53",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "parse_transcript()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_parse_transcript"
@@ -3197,7 +3128,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "path",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_py_path"
@@ -3209,7 +3140,7 @@
       "source_location": "L70",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "parse_message_line()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_parse_message_line"
@@ -3221,7 +3152,7 @@
       "source_location": "L102",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "is_side()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_is_side"
@@ -3233,7 +3164,7 @@
       "source_location": "L106",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "is_flag()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_is_flag"
@@ -3245,7 +3176,7 @@
       "source_location": "L110",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "load_config()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_load_config"
@@ -3257,7 +3188,7 @@
       "source_location": "L121",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "validate_config()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_validate_config"
@@ -3269,7 +3200,7 @@
       "source_location": "L151",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "auto_avatar_for_participant()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_auto_avatar_for_participant"
@@ -3281,7 +3212,7 @@
       "source_location": "L159",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "configured_participant()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_configured_participant"
@@ -3293,7 +3224,7 @@
       "source_location": "L163",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "build_spec()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_build_spec"
@@ -3305,7 +3236,7 @@
       "source_location": "L229",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "slugify()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_slugify"
@@ -3317,7 +3248,7 @@
       "source_location": "L234",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "unique_slug()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_unique_slug"
@@ -3329,7 +3260,7 @@
       "source_location": "L243",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "main()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_main"
@@ -3340,7 +3271,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/scripts/prepare_chat_overlay_bundle.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "prepare_chat_overlay_bundle.py",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle"
@@ -3352,7 +3283,7 @@
       "source_location": "L15",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "parse_args()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_parse_args"
@@ -3363,7 +3294,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "namespace",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_py_namespace"
@@ -3375,7 +3306,7 @@
       "source_location": "L24",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "script_dir()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_script_dir"
@@ -3386,7 +3317,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "path",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_py_path"
@@ -3398,7 +3329,7 @@
       "source_location": "L28",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "skill_root()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_skill_root"
@@ -3410,7 +3341,7 @@
       "source_location": "L32",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "template_dir()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_template_dir"
@@ -3422,7 +3353,7 @@
       "source_location": "L36",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "avatar_library_dir()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_avatar_library_dir"
@@ -3434,7 +3365,7 @@
       "source_location": "L40",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "repo_root()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_repo_root"
@@ -3446,7 +3377,7 @@
       "source_location": "L44",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "bundle_marker_path()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_bundle_marker_path"
@@ -3458,7 +3389,7 @@
       "source_location": "L48",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "validate_output_dir()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_validate_output_dir"
@@ -3470,7 +3401,7 @@
       "source_location": "L68",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "copy_template()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_copy_template"
@@ -3482,7 +3413,7 @@
       "source_location": "L78",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "write_chat_spec_ts()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_write_chat_spec_ts"
@@ -3494,7 +3425,7 @@
       "source_location": "L84",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "remove_local_upload_paths()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_remove_local_upload_paths"
@@ -3506,7 +3437,7 @@
       "source_location": "L89",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "copy_avatar_assets()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_copy_avatar_assets"
@@ -3518,7 +3449,7 @@
       "source_location": "L113",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 3,
       "norm_label": "main()",
       "community_name": "prepare_chat_overlay_bundle.py",
       "id": "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_main"
@@ -4246,7 +4177,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/generate_pet_images.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "generate_pet_images.py",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images"
@@ -4258,7 +4189,7 @@
       "source_location": "L31",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "parse_states()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_parse_states"
@@ -4270,7 +4201,7 @@
       "source_location": "L41",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "load_manifest()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_load_manifest"
@@ -4281,7 +4212,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "path",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_py_path"
@@ -4293,7 +4224,7 @@
       "source_location": "L48",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "manifest_jobs()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_manifest_jobs"
@@ -4305,7 +4236,7 @@
       "source_location": "L55",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "select_jobs()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_select_jobs"
@@ -4317,7 +4248,7 @@
       "source_location": "L74",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "_multipart_body()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_multipart_body"
@@ -4329,7 +4260,7 @@
       "source_location": "L90",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "run_image_edit()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_run_image_edit"
@@ -4341,7 +4272,7 @@
       "source_location": "L123",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "run_image_generation()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_run_image_generation"
@@ -4353,7 +4284,7 @@
       "source_location": "L152",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "decode_response()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_decode_response"
@@ -4365,7 +4296,7 @@
       "source_location": "L163",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "file_sha256()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_file_sha256"
@@ -4377,7 +4308,7 @@
       "source_location": "L171",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "complete_job()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_complete_job"
@@ -4389,7 +4320,7 @@
       "source_location": "L190",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "write_canonical_base()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_write_canonical_base"
@@ -4401,7 +4332,7 @@
       "source_location": "L209",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "path_list()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_path_list"
@@ -4413,7 +4344,7 @@
       "source_location": "L226",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "main()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_main"
@@ -4576,7 +4507,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/make_contact_sheet.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 51,
+      "community": 50,
       "norm_label": "make_contact_sheet.py",
       "community_name": "checker",
       "id": "agents_skills_hatch_pet_scripts_make_contact_sheet"
@@ -4588,7 +4519,7 @@
       "source_location": "L30",
       "_callable": true,
       "_origin": "ast",
-      "community": 51,
+      "community": 50,
       "norm_label": "checker()",
       "community_name": "checker",
       "id": "agents_skills_hatch_pet_scripts_make_contact_sheet_checker"
@@ -4599,7 +4530,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 51,
+      "community": 50,
       "norm_label": "image",
       "community_name": "checker",
       "id": "agents_skills_hatch_pet_scripts_make_contact_sheet_py_image"
@@ -4611,7 +4542,7 @@
       "source_location": "L40",
       "_callable": true,
       "_origin": "ast",
-      "community": 51,
+      "community": 50,
       "norm_label": "main()",
       "community_name": "checker",
       "id": "agents_skills_hatch_pet_scripts_make_contact_sheet_main"
@@ -4622,7 +4553,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/package_custom_pet.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 38,
+      "community": 37,
       "norm_label": "package_custom_pet.py",
       "community_name": "main",
       "id": "agents_skills_hatch_pet_scripts_package_custom_pet"
@@ -4634,7 +4565,7 @@
       "source_location": "L18",
       "_callable": true,
       "_origin": "ast",
-      "community": 38,
+      "community": 37,
       "norm_label": "default_codex_home()",
       "community_name": "main",
       "id": "agents_skills_hatch_pet_scripts_package_custom_pet_default_codex_home"
@@ -4645,7 +4576,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 38,
+      "community": 37,
       "norm_label": "path",
       "community_name": "main",
       "id": "agents_skills_hatch_pet_scripts_package_custom_pet_py_path"
@@ -4657,7 +4588,7 @@
       "source_location": "L22",
       "_callable": true,
       "_origin": "ast",
-      "community": 38,
+      "community": 37,
       "norm_label": "slugify()",
       "community_name": "main",
       "id": "agents_skills_hatch_pet_scripts_package_custom_pet_slugify"
@@ -4669,7 +4600,7 @@
       "source_location": "L29",
       "_callable": true,
       "_origin": "ast",
-      "community": 38,
+      "community": 37,
       "norm_label": "validate_spritesheet()",
       "community_name": "main",
       "id": "agents_skills_hatch_pet_scripts_package_custom_pet_validate_spritesheet"
@@ -4681,7 +4612,7 @@
       "source_location": "L40",
       "_callable": true,
       "_origin": "ast",
-      "community": 38,
+      "community": 37,
       "norm_label": "write_webp_spritesheet()",
       "community_name": "main",
       "id": "agents_skills_hatch_pet_scripts_package_custom_pet_write_webp_spritesheet"
@@ -4693,7 +4624,7 @@
       "source_location": "L55",
       "_callable": true,
       "_origin": "ast",
-      "community": 38,
+      "community": 37,
       "norm_label": "main()",
       "community_name": "main",
       "id": "agents_skills_hatch_pet_scripts_package_custom_pet_main"
@@ -4798,7 +4729,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/prepare_pet_run.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "prepare_pet_run.py",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run"
@@ -4810,7 +4741,7 @@
       "source_location": "L104",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "slugify()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_slugify"
@@ -4822,7 +4753,7 @@
       "source_location": "L111",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "display_from_slug()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_display_from_slug"
@@ -4834,7 +4765,7 @@
       "source_location": "L116",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "concept_words()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_concept_words"
@@ -4846,7 +4777,7 @@
       "source_location": "L146",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "infer_name()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_infer_name"
@@ -4857,7 +4788,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "namespace",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_py_namespace"
@@ -4868,7 +4799,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "path",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_py_path"
@@ -4880,7 +4811,7 @@
       "source_location": "L170",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "sentence()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_sentence"
@@ -4892,7 +4823,7 @@
       "source_location": "L179",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "infer_description()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_infer_description"
@@ -4904,7 +4835,7 @@
       "source_location": "L189",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "infer_pet_notes()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_infer_pet_notes"
@@ -4916,7 +4847,7 @@
       "source_location": "L199",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "default_output_dir()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_default_output_dir"
@@ -4928,7 +4859,7 @@
       "source_location": "L204",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "rel()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_rel"
@@ -4940,7 +4871,7 @@
       "source_location": "L208",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "image_metadata()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_image_metadata"
@@ -4952,7 +4883,7 @@
       "source_location": "L219",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "draw_dashed_line()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_draw_dashed_line"
@@ -4963,7 +4894,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "imagedraw",
       "community_name": "prepare_pet_run.py",
       "id": "imagedraw"
@@ -4975,7 +4906,7 @@
       "source_location": "L243",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "create_layout_guide()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_create_layout_guide"
@@ -4987,7 +4918,7 @@
       "source_location": "L296",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "create_layout_guides()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_create_layout_guides"
@@ -4999,7 +4930,7 @@
       "source_location": "L304",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "parse_hex_color()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_parse_hex_color"
@@ -5011,7 +4942,7 @@
       "source_location": "L310",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "rgb_to_hex()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_rgb_to_hex"
@@ -5023,7 +4954,7 @@
       "source_location": "L314",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "color_distance()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_color_distance"
@@ -5035,7 +4966,7 @@
       "source_location": "L318",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "sampled_reference_pixels()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_sampled_reference_pixels"
@@ -5047,7 +4978,7 @@
       "source_location": "L339",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "choose_chroma_key()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_choose_chroma_key"
@@ -5059,7 +4990,7 @@
       "source_location": "L376",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "write_text()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_write_text"
@@ -5071,7 +5002,7 @@
       "source_location": "L381",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "resolved_style_notes()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_resolved_style_notes"
@@ -5083,7 +5014,7 @@
       "source_location": "L388",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "base_pet_prompt()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_base_pet_prompt"
@@ -5095,7 +5026,7 @@
       "source_location": "L403",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "row_prompt()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_row_prompt"
@@ -5107,7 +5038,7 @@
       "source_location": "L460",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "make_jobs()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_make_jobs"
@@ -5119,7 +5050,7 @@
       "source_location": "L534",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "main()",
       "community_name": "prepare_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_main"
@@ -5426,7 +5357,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/render_animation_videos.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 39,
+      "community": 38,
       "norm_label": "render_animation_videos.py",
       "community_name": "render_state",
       "id": "agents_skills_hatch_pet_scripts_render_animation_videos_py_agents_skills_hatch_pet_scripts_render_animation_videos"
@@ -5438,7 +5369,7 @@
       "source_location": "L29",
       "_callable": true,
       "_origin": "ast",
-      "community": 39,
+      "community": 38,
       "norm_label": "checker()",
       "community_name": "render_state",
       "id": "agents_skills_hatch_pet_scripts_render_animation_videos_checker"
@@ -5449,7 +5380,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 39,
+      "community": 38,
       "norm_label": "image",
       "community_name": "render_state",
       "id": "agents_skills_hatch_pet_scripts_render_animation_videos_py_image"
@@ -5461,7 +5392,7 @@
       "source_location": "L39",
       "_callable": true,
       "_origin": "ast",
-      "community": 39,
+      "community": 38,
       "norm_label": "shell_quote_for_concat()",
       "community_name": "render_state",
       "id": "agents_skills_hatch_pet_scripts_render_animation_videos_shell_quote_for_concat"
@@ -5472,7 +5403,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 39,
+      "community": 38,
       "norm_label": "path",
       "community_name": "render_state",
       "id": "agents_skills_hatch_pet_scripts_render_animation_videos_py_path"
@@ -5484,7 +5415,7 @@
       "source_location": "L43",
       "_callable": true,
       "_origin": "ast",
-      "community": 39,
+      "community": 38,
       "norm_label": "render_state()",
       "community_name": "render_state",
       "id": "agents_skills_hatch_pet_scripts_render_animation_videos_render_state"
@@ -5496,7 +5427,7 @@
       "source_location": "L104",
       "_callable": true,
       "_origin": "ast",
-      "community": 39,
+      "community": 38,
       "norm_label": "main()",
       "community_name": "render_state",
       "id": "agents_skills_hatch_pet_scripts_render_animation_videos_main"
@@ -5511,7 +5442,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 56,
+      "community": 55,
       "norm_label": "render_animation_videos.sh",
       "community_name": "render_animation_videos.sh script",
       "id": "agents_skills_hatch_pet_scripts_render_animation_videos_sh_agents_skills_hatch_pet_scripts_render_animation_videos"
@@ -5526,7 +5457,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 56,
+      "community": 55,
       "norm_label": "render_animation_videos.sh script",
       "community_name": "render_animation_videos.sh script",
       "id": "agents_skills_hatch_pet_scripts_render_animation_videos_sh__entry"
@@ -5537,7 +5468,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/test_generate_pet_images.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "test_generate_pet_images.py",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images"
@@ -5549,7 +5480,7 @@
       "source_location": "L26",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "_job()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_job"
@@ -5561,7 +5492,7 @@
       "source_location": "L30",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "_make_manifest()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_make_manifest"
@@ -5572,7 +5503,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "path",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_py_path"
@@ -5584,7 +5515,7 @@
       "source_location": "L37",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "_run_main()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_run_main"
@@ -5597,7 +5528,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "testpathlisttraversalrejection",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_testpathlisttraversalrejection"
@@ -5609,7 +5540,7 @@
       "source_location": "L52",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": ".test_rejects_traversal_in_input_images()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_testpathlisttraversalrejection_test_rejects_traversal_in_input_images"
@@ -5621,7 +5552,7 @@
       "source_location": "L61",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": ".test_accepts_safe_path_when_file_exists()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_testpathlisttraversalrejection_test_accepts_safe_path_when_file_exists"
@@ -5633,7 +5564,7 @@
       "source_location": "L71",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": ".test_rejects_missing_safe_path()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_testpathlisttraversalrejection_test_rejects_missing_safe_path"
@@ -5646,7 +5577,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "testmainjobtraversalrejection",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_testmainjobtraversalrejection"
@@ -5658,7 +5589,7 @@
       "source_location": "L82",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": ".test_rejects_traversal_in_prompt_file()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_testmainjobtraversalrejection_test_rejects_traversal_in_prompt_file"
@@ -5670,7 +5601,7 @@
       "source_location": "L98",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": ".test_rejects_traversal_in_output_path()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_testmainjobtraversalrejection_test_rejects_traversal_in_output_path"
@@ -5682,7 +5613,7 @@
       "source_location": "L116",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": ".test_rejects_traversal_in_input_images_via_main()",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_testmainjobtraversalrejection_test_rejects_traversal_in_input_images_via_main"
@@ -5693,7 +5624,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/test_generate_pet_images.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "regression tests for path-traversal checks in generate_pet_images.py.",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_rationale_1"
@@ -5704,7 +5635,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/test_generate_pet_images.py",
       "source_location": "L50",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "path_list must raise systemexit for any input_images path that escapes run_dir.",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_rationale_50"
@@ -5715,7 +5646,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/test_generate_pet_images.py",
       "source_location": "L80",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "norm_label": "main() must raise systemexit before any i/o or api call for traversal paths.",
       "community_name": "generate_pet_images.py",
       "id": "agents_skills_hatch_pet_scripts_test_generate_pet_images_rationale_80"
@@ -5726,7 +5657,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/validate_atlas.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 52,
+      "community": 51,
       "norm_label": "validate_atlas.py",
       "community_name": "alpha_nonzero_count",
       "id": "agents_skills_hatch_pet_scripts_validate_atlas"
@@ -5738,7 +5669,7 @@
       "source_location": "L32",
       "_callable": true,
       "_origin": "ast",
-      "community": 52,
+      "community": 51,
       "norm_label": "alpha_nonzero_count()",
       "community_name": "alpha_nonzero_count",
       "id": "agents_skills_hatch_pet_scripts_validate_atlas_alpha_nonzero_count"
@@ -5749,7 +5680,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 52,
+      "community": 51,
       "norm_label": "image",
       "community_name": "alpha_nonzero_count",
       "id": "agents_skills_hatch_pet_scripts_validate_atlas_py_image"
@@ -5761,7 +5692,7 @@
       "source_location": "L37",
       "_callable": true,
       "_origin": "ast",
-      "community": 52,
+      "community": 51,
       "norm_label": "main()",
       "community_name": "alpha_nonzero_count",
       "id": "agents_skills_hatch_pet_scripts_validate_atlas_main"
@@ -5776,7 +5707,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 40,
+      "community": 39,
       "norm_label": "install.sh",
       "community_name": "install.sh",
       "id": "agents_skills_od_contribute_install"
@@ -5791,7 +5722,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 40,
+      "community": 39,
       "norm_label": "install.sh script",
       "community_name": "install.sh",
       "id": "agents_skills_od_contribute_install_sh__entry"
@@ -5806,7 +5737,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 40,
+      "community": 39,
       "norm_label": "cyan()",
       "community_name": "install.sh",
       "id": "agents_skills_od_contribute_install_cyan"
@@ -5821,7 +5752,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 40,
+      "community": 39,
       "norm_label": "green()",
       "community_name": "install.sh",
       "id": "agents_skills_od_contribute_install_green"
@@ -5836,7 +5767,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 40,
+      "community": 39,
       "norm_label": "gray()",
       "community_name": "install.sh",
       "id": "agents_skills_od_contribute_install_gray"
@@ -5851,7 +5782,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 40,
+      "community": 39,
       "norm_label": "die()",
       "community_name": "install.sh",
       "id": "agents_skills_od_contribute_install_die"
@@ -5866,7 +5797,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 40,
+      "community": 39,
       "norm_label": "install_skill_to()",
       "community_name": "install.sh",
       "id": "agents_skills_od_contribute_install_install_skill_to"
@@ -5881,7 +5812,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 53,
+      "community": 52,
       "norm_label": "check-prereqs.sh",
       "community_name": "check-prereqs.sh",
       "id": "agents_skills_od_contribute_scripts_check_prereqs"
@@ -5896,7 +5827,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 53,
+      "community": 52,
       "norm_label": "check-prereqs.sh script",
       "community_name": "check-prereqs.sh",
       "id": "agents_skills_od_contribute_scripts_check_prereqs_sh__entry"
@@ -5911,7 +5842,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 53,
+      "community": 52,
       "norm_label": "check_bin()",
       "community_name": "check-prereqs.sh",
       "id": "agents_skills_od_contribute_scripts_check_prereqs_check_bin"
@@ -6091,7 +6022,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 57,
+      "community": 56,
       "norm_label": "create-issue.sh",
       "community_name": "create-issue.sh",
       "id": "agents_skills_od_contribute_scripts_create_issue"
@@ -6106,7 +6037,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 57,
+      "community": 56,
       "norm_label": "create-issue.sh script",
       "community_name": "create-issue.sh",
       "id": "agents_skills_od_contribute_scripts_create_issue_sh__entry"
@@ -6121,7 +6052,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 58,
+      "community": 57,
       "norm_label": "create-pr.sh",
       "community_name": "create-pr.sh",
       "id": "agents_skills_od_contribute_scripts_create_pr"
@@ -6136,7 +6067,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 58,
+      "community": 57,
       "norm_label": "create-pr.sh script",
       "community_name": "create-pr.sh",
       "id": "agents_skills_od_contribute_scripts_create_pr_sh__entry"
@@ -6151,7 +6082,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 48,
+      "community": 47,
       "norm_label": "discover-doc-gaps.sh",
       "community_name": "discover-doc-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_doc_gaps"
@@ -6166,7 +6097,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 48,
+      "community": 47,
       "norm_label": "discover-doc-gaps.sh script",
       "community_name": "discover-doc-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_doc_gaps_sh__entry"
@@ -6181,7 +6112,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 48,
+      "community": 47,
       "norm_label": "grep()",
       "community_name": "discover-doc-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_doc_gaps_grep"
@@ -6196,7 +6127,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 48,
+      "community": 47,
       "norm_label": "emit_todo()",
       "community_name": "discover-doc-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_doc_gaps_emit_todo"
@@ -6211,7 +6142,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 48,
+      "community": 47,
       "norm_label": "extract_links()",
       "community_name": "discover-doc-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_doc_gaps_extract_links"
@@ -6226,7 +6157,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 49,
+      "community": 48,
       "norm_label": "discover-i18n-gaps.sh",
       "community_name": "discover-i18n-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_i18n_gaps"
@@ -6241,7 +6172,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 49,
+      "community": 48,
       "norm_label": "discover-i18n-gaps.sh script",
       "community_name": "discover-i18n-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_i18n_gaps_sh__entry"
@@ -6256,7 +6187,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 49,
+      "community": 48,
       "norm_label": "last_commit_epoch()",
       "community_name": "discover-i18n-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_i18n_gaps_last_commit_epoch"
@@ -6271,7 +6202,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 49,
+      "community": 48,
       "norm_label": "commits_between()",
       "community_name": "discover-i18n-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_i18n_gaps_commits_between"
@@ -6286,7 +6217,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 49,
+      "community": 48,
       "norm_label": "emit()",
       "community_name": "discover-i18n-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_i18n_gaps_emit"
@@ -6301,7 +6232,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 59,
+      "community": 58,
       "norm_label": "setup-workspace.sh",
       "community_name": "setup-workspace.sh",
       "id": "agents_skills_od_contribute_scripts_setup_workspace"
@@ -6316,7 +6247,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 59,
+      "community": 58,
       "norm_label": "setup-workspace.sh script",
       "community_name": "setup-workspace.sh",
       "id": "agents_skills_od_contribute_scripts_setup_workspace_sh__entry"
@@ -6331,7 +6262,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 54,
+      "community": 53,
       "norm_label": "validate-design-system.sh",
       "community_name": "validate-design-system.sh",
       "id": "agents_skills_od_contribute_scripts_validate_design_system"
@@ -6346,7 +6277,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 54,
+      "community": 53,
       "norm_label": "validate-design-system.sh script",
       "community_name": "validate-design-system.sh",
       "id": "agents_skills_od_contribute_scripts_validate_design_system_sh__entry"
@@ -6361,7 +6292,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 54,
+      "community": 53,
       "norm_label": "extract_headings()",
       "community_name": "validate-design-system.sh",
       "id": "agents_skills_od_contribute_scripts_validate_design_system_extract_headings"
@@ -6376,7 +6307,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 55,
+      "community": 54,
       "norm_label": "validate-markdown.sh",
       "community_name": "validate-markdown.sh",
       "id": "agents_skills_od_contribute_scripts_validate_markdown"
@@ -6391,7 +6322,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 55,
+      "community": 54,
       "norm_label": "validate-markdown.sh script",
       "community_name": "validate-markdown.sh",
       "id": "agents_skills_od_contribute_scripts_validate_markdown_sh__entry"
@@ -6406,7 +6337,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 55,
+      "community": 54,
       "norm_label": "check_file()",
       "community_name": "validate-markdown.sh",
       "id": "agents_skills_od_contribute_scripts_validate_markdown_check_file"
@@ -6421,7 +6352,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 46,
+      "community": 45,
       "norm_label": "validate-skill-submission.sh",
       "community_name": "validate-skill-submission.sh",
       "id": "agents_skills_od_contribute_scripts_validate_skill_submission"
@@ -6436,7 +6367,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 46,
+      "community": 45,
       "norm_label": "validate-skill-submission.sh script",
       "community_name": "validate-skill-submission.sh",
       "id": "agents_skills_od_contribute_scripts_validate_skill_submission_sh__entry"
@@ -6451,7 +6382,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 46,
+      "community": 45,
       "norm_label": "pass()",
       "community_name": "validate-skill-submission.sh",
       "id": "agents_skills_od_contribute_scripts_validate_skill_submission_pass"
@@ -6466,7 +6397,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 46,
+      "community": 45,
       "norm_label": "warn()",
       "community_name": "validate-skill-submission.sh",
       "id": "agents_skills_od_contribute_scripts_validate_skill_submission_warn"
@@ -6481,7 +6412,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 46,
+      "community": 45,
       "norm_label": "fail()",
       "community_name": "validate-skill-submission.sh",
       "id": "agents_skills_od_contribute_scripts_validate_skill_submission_fail"
@@ -6496,7 +6427,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 46,
+      "community": 45,
       "norm_label": "escapes_root()",
       "community_name": "validate-skill-submission.sh",
       "id": "agents_skills_od_contribute_scripts_validate_skill_submission_escapes_root"
@@ -6612,7 +6543,7 @@
       "source_file": ".agents/skills/pptx-html-fidelity-audit/scripts/verify_layout.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 47,
+      "community": 46,
       "norm_label": "verify_layout.py",
       "community_name": "verify",
       "id": "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout"
@@ -6624,7 +6555,7 @@
       "source_location": "L50",
       "_callable": true,
       "_origin": "ast",
-      "community": 47,
+      "community": 46,
       "norm_label": "is_footer_by_name()",
       "community_name": "verify",
       "id": "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_is_footer_by_name"
@@ -6636,7 +6567,7 @@
       "source_location": "L55",
       "_callable": true,
       "_origin": "ast",
-      "community": 47,
+      "community": 46,
       "norm_label": "emu_to_in()",
       "community_name": "verify",
       "id": "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_emu_to_in"
@@ -6648,7 +6579,7 @@
       "source_location": "L59",
       "_callable": true,
       "_origin": "ast",
-      "community": 47,
+      "community": 46,
       "norm_label": "verify()",
       "community_name": "verify",
       "id": "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_verify"
@@ -6659,7 +6590,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 47,
+      "community": 46,
       "norm_label": "path",
       "community_name": "verify",
       "id": "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_py_path"
@@ -6671,7 +6602,7 @@
       "source_location": "L116",
       "_callable": true,
       "_origin": "ast",
-      "community": 47,
+      "community": 46,
       "norm_label": "main()",
       "community_name": "verify",
       "id": "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_main"
@@ -7155,7 +7086,7 @@
       "source_file": ".agents/skills/web-clone/scripts/dna-scaffold.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 41,
+      "community": 40,
       "norm_label": "dna-scaffold.mjs",
       "community_name": "dna-scaffold.mjs",
       "id": "agents_skills_web_clone_scripts_dna_scaffold"
@@ -7167,7 +7098,7 @@
       "source_location": "L12",
       "_callable": true,
       "_origin": "ast",
-      "community": 41,
+      "community": 40,
       "norm_label": "parseargs()",
       "community_name": "dna-scaffold.mjs",
       "id": "agents_skills_web_clone_scripts_dna_scaffold_parseargs"
@@ -7179,7 +7110,7 @@
       "source_location": "L24",
       "_callable": true,
       "_origin": "ast",
-      "community": 41,
+      "community": 40,
       "norm_label": "usage()",
       "community_name": "dna-scaffold.mjs",
       "id": "agents_skills_web_clone_scripts_dna_scaffold_usage"
@@ -7191,7 +7122,7 @@
       "source_location": "L34",
       "_callable": true,
       "_origin": "ast",
-      "community": 41,
+      "community": 40,
       "norm_label": "skeleton()",
       "community_name": "dna-scaffold.mjs",
       "id": "agents_skills_web_clone_scripts_dna_scaffold_skeleton"
@@ -7203,7 +7134,7 @@
       "source_location": "L95",
       "_callable": true,
       "_origin": "ast",
-      "community": 41,
+      "community": 40,
       "norm_label": "flattenrecon()",
       "community_name": "dna-scaffold.mjs",
       "id": "agents_skills_web_clone_scripts_dna_scaffold_flattenrecon"
@@ -7215,7 +7146,7 @@
       "source_location": "L108",
       "_callable": true,
       "_origin": "ast",
-      "community": 41,
+      "community": 40,
       "norm_label": "uniq()",
       "community_name": "dna-scaffold.mjs",
       "id": "agents_skills_web_clone_scripts_dna_scaffold_uniq"
@@ -7227,7 +7158,7 @@
       "source_location": "L113",
       "_callable": true,
       "_origin": "ast",
-      "community": 41,
+      "community": 40,
       "norm_label": "enrich()",
       "community_name": "dna-scaffold.mjs",
       "id": "agents_skills_web_clone_scripts_dna_scaffold_enrich"
@@ -7238,7 +7169,7 @@
       "source_file": ".agents/skills/web-clone/scripts/init-clone.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 50,
+      "community": 49,
       "norm_label": "init-clone.mjs",
       "community_name": "init-clone.mjs",
       "id": "agents_skills_web_clone_scripts_init_clone"
@@ -7250,7 +7181,7 @@
       "source_location": "L5",
       "_callable": true,
       "_origin": "ast",
-      "community": 50,
+      "community": 49,
       "norm_label": "usage()",
       "community_name": "init-clone.mjs",
       "id": "agents_skills_web_clone_scripts_init_clone_usage"
@@ -7262,7 +7193,7 @@
       "source_location": "L18",
       "_callable": true,
       "_origin": "ast",
-      "community": 50,
+      "community": 49,
       "norm_label": "parseargs()",
       "community_name": "init-clone.mjs",
       "id": "agents_skills_web_clone_scripts_init_clone_parseargs"
@@ -7274,7 +7205,7 @@
       "source_location": "L34",
       "_callable": true,
       "_origin": "ast",
-      "community": 50,
+      "community": 49,
       "norm_label": "cleanslug()",
       "community_name": "init-clone.mjs",
       "id": "agents_skills_web_clone_scripts_init_clone_cleanslug"
@@ -7286,7 +7217,7 @@
       "source_location": "L43",
       "_callable": true,
       "_origin": "ast",
-      "community": 50,
+      "community": 49,
       "norm_label": "notestemplate()",
       "community_name": "init-clone.mjs",
       "id": "agents_skills_web_clone_scripts_init_clone_notestemplate"
@@ -7878,7 +7809,7 @@
       "source_file": ".agents/skills/web-clone/scripts/recon-site.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 42,
+      "community": 41,
       "norm_label": "recon-site.mjs",
       "community_name": "recon-site.mjs",
       "id": "agents_skills_web_clone_scripts_recon_site"
@@ -7890,7 +7821,7 @@
       "source_location": "L6",
       "_callable": true,
       "_origin": "ast",
-      "community": 42,
+      "community": 41,
       "norm_label": "usage()",
       "community_name": "recon-site.mjs",
       "id": "agents_skills_web_clone_scripts_recon_site_usage"
@@ -7902,7 +7833,7 @@
       "source_location": "L17",
       "_callable": true,
       "_origin": "ast",
-      "community": 42,
+      "community": 41,
       "norm_label": "parseargs()",
       "community_name": "recon-site.mjs",
       "id": "agents_skills_web_clone_scripts_recon_site_parseargs"
@@ -7914,7 +7845,7 @@
       "source_location": "L38",
       "_callable": true,
       "_origin": "ast",
-      "community": 42,
+      "community": 41,
       "norm_label": "summarizeflags()",
       "community_name": "recon-site.mjs",
       "id": "agents_skills_web_clone_scripts_recon_site_summarizeflags"
@@ -7926,7 +7857,7 @@
       "source_location": "L44",
       "_callable": true,
       "_origin": "ast",
-      "community": 42,
+      "community": 41,
       "norm_label": "writesummary()",
       "community_name": "recon-site.mjs",
       "id": "agents_skills_web_clone_scripts_recon_site_writesummary"
@@ -7938,7 +7869,7 @@
       "source_location": "L80",
       "_callable": true,
       "_origin": "ast",
-      "community": 42,
+      "community": 41,
       "norm_label": "collectsignals()",
       "community_name": "recon-site.mjs",
       "id": "agents_skills_web_clone_scripts_recon_site_collectsignals"
@@ -7950,7 +7881,7 @@
       "source_location": "L292",
       "_callable": true,
       "_origin": "ast",
-      "community": 42,
+      "community": 41,
       "norm_label": "scrollthroughpage()",
       "community_name": "recon-site.mjs",
       "id": "agents_skills_web_clone_scripts_recon_site_scrollthroughpage"
@@ -8056,7 +7987,7 @@
       "source_file": ".agents/skills/web-clone/scripts/sourcemap-hunt.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 43,
+      "community": 42,
       "norm_label": "sourcemap-hunt.mjs",
       "community_name": "sourcemap-hunt.mjs",
       "id": "agents_skills_web_clone_scripts_sourcemap_hunt"
@@ -8068,7 +7999,7 @@
       "source_location": "L6",
       "_callable": true,
       "_origin": "ast",
-      "community": 43,
+      "community": 42,
       "norm_label": "usage()",
       "community_name": "sourcemap-hunt.mjs",
       "id": "agents_skills_web_clone_scripts_sourcemap_hunt_usage"
@@ -8080,7 +8011,7 @@
       "source_location": "L14",
       "_callable": true,
       "_origin": "ast",
-      "community": 43,
+      "community": 42,
       "norm_label": "parseargs()",
       "community_name": "sourcemap-hunt.mjs",
       "id": "agents_skills_web_clone_scripts_sourcemap_hunt_parseargs"
@@ -8092,7 +8023,7 @@
       "source_location": "L27",
       "_callable": true,
       "_origin": "ast",
-      "community": 43,
+      "community": 42,
       "norm_label": "collectscripts()",
       "community_name": "sourcemap-hunt.mjs",
       "id": "agents_skills_web_clone_scripts_sourcemap_hunt_collectscripts"
@@ -8104,7 +8035,7 @@
       "source_location": "L37",
       "_callable": true,
       "_origin": "ast",
-      "community": 43,
+      "community": 42,
       "norm_label": "filenamefor()",
       "community_name": "sourcemap-hunt.mjs",
       "id": "agents_skills_web_clone_scripts_sourcemap_hunt_filenamefor"
@@ -8116,7 +8047,7 @@
       "source_location": "L44",
       "_callable": true,
       "_origin": "ast",
-      "community": 43,
+      "community": 42,
       "norm_label": "resolvemapurl()",
       "community_name": "sourcemap-hunt.mjs",
       "id": "agents_skills_web_clone_scripts_sourcemap_hunt_resolvemapurl"
@@ -8128,7 +8059,7 @@
       "source_location": "L50",
       "_callable": true,
       "_origin": "ast",
-      "community": 43,
+      "community": 42,
       "norm_label": "fetchtext()",
       "community_name": "sourcemap-hunt.mjs",
       "id": "agents_skills_web_clone_scripts_sourcemap_hunt_fetchtext"
@@ -8205,29 +8136,6 @@
       "id": "agents_skills_web_clone_scripts_visual_diff_compareinbrowser"
     },
     {
-      "label": "AgroPanel.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/components/AgroPanel.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "agropanel.jsx",
-      "community_name": "App.jsx",
-      "id": "frontend_src_components_agropanel"
-    },
-    {
-      "label": "AgroPanel()",
-      "file_type": "code",
-      "source_file": "frontend/src/components/AgroPanel.jsx",
-      "source_location": "L5",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "agropanel()",
-      "community_name": "App.jsx",
-      "id": "frontend_src_components_agropanel_agropanel"
-    },
-    {
       "label": "UrbanPanel.jsx",
       "file_type": "code",
       "source_file": "frontend/src/components/UrbanPanel.jsx",
@@ -8258,8 +8166,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "weatherheader.jsx",
-      "id": "frontend_src_components_weatherheader",
-      "community_name": "App.jsx"
+      "community_name": "App.jsx",
+      "id": "frontend_src_components_weatherheader"
     },
     {
       "label": "WeatherHeader()",
@@ -8270,8 +8178,336 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "weatherheader()",
-      "id": "frontend_src_components_weatherheader_weatherheader",
+      "community_name": "App.jsx",
+      "id": "frontend_src_components_weatherheader_weatherheader"
+    },
+    {
+      "label": "sincronizador_background.py",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "sincronizador_background.py",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background"
+    },
+    {
+      "label": "clean_num()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L54",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "clean_num()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_clean_num"
+    },
+    {
+      "label": "clean_agromet_num()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L65",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "clean_agromet_num()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_clean_agromet_num"
+    },
+    {
+      "label": "cargar_cache_desde_disco()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L93",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "cargar_cache_desde_disco()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_cargar_cache_desde_disco"
+    },
+    {
+      "label": "refrescar_cache_si_corresponde()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L108",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "refrescar_cache_si_corresponde()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_refrescar_cache_si_corresponde"
+    },
+    {
+      "label": "guardar_cache_en_disco()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L115",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "guardar_cache_en_disco()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_guardar_cache_en_disco"
+    },
+    {
+      "label": "cargar_catalogo_maestro()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L120",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "cargar_catalogo_maestro()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_cargar_catalogo_maestro"
+    },
+    {
+      "label": "sincronizar_dmc_telemetria()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L129",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "sincronizar_dmc_telemetria()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_sincronizar_dmc_telemetria"
+    },
+    {
+      "label": "sincronizar_agromet_inia()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L187",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "sincronizar_agromet_inia()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_sincronizar_agromet_inia"
+    },
+    {
+      "label": "sincronizar_redmeteo()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L247",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "sincronizar_redmeteo()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_sincronizar_redmeteo"
+    },
+    {
+      "label": "sincronizar_calidad_aire_sinca()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L296",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "sincronizar_calidad_aire_sinca()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_sincronizar_calidad_aire_sinca"
+    },
+    {
+      "label": "sincronizar_purpleair()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L378",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "sincronizar_purpleair()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_sincronizar_purpleair"
+    },
+    {
+      "label": "sincronizar_pronostico_oficial_dmc()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L425",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "sincronizar_pronostico_oficial_dmc()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_sincronizar_pronostico_oficial_dmc"
+    },
+    {
+      "label": "sincronizar_alertas_senapred()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L445",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "sincronizar_alertas_senapred()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_sincronizar_alertas_senapred"
+    },
+    {
+      "label": "sincronizar_puntos_gee()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L477",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "sincronizar_puntos_gee()",
+      "community_name": "main.py",
+      "id": "sincronizador_background_sincronizar_puntos_gee"
+    },
+    {
+      "label": "ejecutar_sincronizacion_completa()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L503",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "ejecutar_sincronizacion_completa()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_ejecutar_sincronizacion_completa"
+    },
+    {
+      "label": "iniciar_loop_background()",
+      "file_type": "code",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L583",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "iniciar_loop_background()",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_iniciar_loop_background"
+    },
+    {
+      "label": "Carga la cach\u00e9 local o compartida sin reemplazar su referencia global.",
+      "file_type": "rationale",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L94",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "carga la cache local o compartida sin reemplazar su referencia global.",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_rationale_94"
+    },
+    {
+      "label": "Actualiza la instant\u00e1nea en memoria como m\u00e1ximo una vez por intervalo.",
+      "file_type": "rationale",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L109",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "actualiza la instantanea en memoria como maximo una vez por intervalo.",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_rationale_109"
+    },
+    {
+      "label": "Persiste la instant\u00e1nea completa localmente o en Cloud Storage.",
+      "file_type": "rationale",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L116",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "persiste la instantanea completa localmente o en cloud storage.",
+      "community_name": "sincronizador_background.py",
+      "id": "sincronizador_background_rationale_116"
+    },
+    {
+      "label": "AgroPanel.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/AgroPanel.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "agropanel.jsx",
+      "id": "frontend_src_components_agropanel",
       "community_name": "App.jsx"
+    },
+    {
+      "label": "AgroPanel()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/AgroPanel.jsx",
+      "source_location": "L5",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "agropanel()",
+      "id": "frontend_src_components_agropanel_agropanel",
+      "community_name": "App.jsx"
+    },
+    {
+      "label": "rural.py",
+      "file_type": "code",
+      "source_file": "gee/rural.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "rural.py",
+      "id": "gee_rural",
+      "community_name": "main.py"
+    },
+    {
+      "label": "extraer_metricas_agricolas()",
+      "file_type": "code",
+      "source_file": "gee/rural.py",
+      "source_location": "L8",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "extraer_metricas_agricolas()",
+      "id": "gee_rural_extraer_metricas_agricolas",
+      "community_name": "main.py"
+    },
+    {
+      "label": "fallback_rural()",
+      "file_type": "code",
+      "source_file": "gee/rural.py",
+      "source_location": "L149",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "fallback_rural()",
+      "id": "gee_rural_fallback_rural",
+      "community_name": "main.py"
+    },
+    {
+      "label": "extraer_historico_ndvi()",
+      "file_type": "code",
+      "source_file": "gee/rural.py",
+      "source_location": "L177",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "extraer_historico_ndvi()",
+      "id": "gee_rural_extraer_historico_ndvi",
+      "community_name": "main.py"
+    },
+    {
+      "label": "Extrae m\u00e9tricas satelitales (Sentinel-2, ERA5, MODIS) orientadas a la\u2026",
+      "file_type": "rationale",
+      "source_file": "gee/rural.py",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "extrae metricas satelitales (sentinel-2, era5, modis) orientadas a la...",
+      "id": "gee_rural_rationale_9",
+      "community_name": "main.py"
+    },
+    {
+      "label": "Extrae serie de tiempo NDVI de los \u00faltimos 12 meses usando MODIS MOD13Q1.",
+      "file_type": "rationale",
+      "source_file": "gee/rural.py",
+      "source_location": "L178",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "extrae serie de tiempo ndvi de los ultimos 12 meses usando modis mod13q1.",
+      "id": "gee_rural_rationale_178",
+      "community_name": "main.py"
     },
     {
       "label": "main.py",
@@ -8279,7 +8515,7 @@
       "source_file": "main.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "main.py",
       "id": "main",
       "community_name": "main.py"
@@ -8291,7 +8527,7 @@
       "source_location": "L27",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "construir_transparency_metadata()",
       "id": "main_construir_transparency_metadata",
       "community_name": "main.py"
@@ -8306,7 +8542,7 @@
       "community": 0,
       "norm_label": "lifespan()",
       "id": "main_lifespan",
-      "community_name": "main.py"
+      "community_name": "sincronizador_background.py"
     },
     {
       "label": "refresh_cache_before_api()",
@@ -8315,7 +8551,7 @@
       "source_location": "L101",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "refresh_cache_before_api()",
       "id": "main_refresh_cache_before_api",
       "community_name": "main.py"
@@ -8327,7 +8563,7 @@
       "source_location": "L111",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "quitar_tildes()",
       "id": "main_quitar_tildes",
       "community_name": "main.py"
@@ -8339,7 +8575,7 @@
       "source_location": "L116",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "calcular_distancia()",
       "id": "main_calcular_distancia",
       "community_name": "main.py"
@@ -8351,7 +8587,7 @@
       "source_location": "L124",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "calcular_rumbo_cardinal()",
       "id": "main_calcular_rumbo_cardinal",
       "community_name": "main.py"
@@ -8363,7 +8599,7 @@
       "source_location": "L132",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "calcular_horas_frio()",
       "id": "main_calcular_horas_frio",
       "community_name": "main.py"
@@ -8375,7 +8611,7 @@
       "source_location": "L138",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "evaluar_inversion_termica()",
       "id": "main_evaluar_inversion_termica",
       "community_name": "main.py"
@@ -8387,7 +8623,7 @@
       "source_location": "L146",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "obtener_gee_punto_seguro()",
       "id": "main_obtener_gee_punto_seguro",
       "community_name": "main.py"
@@ -8399,7 +8635,7 @@
       "source_location": "L169",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "calcular_calidad_aire_dual()",
       "id": "main_calcular_calidad_aire_dual",
       "community_name": "main.py"
@@ -8411,7 +8647,7 @@
       "source_location": "L269",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "home()",
       "id": "main_home",
       "community_name": "main.py"
@@ -8423,7 +8659,7 @@
       "source_location": "L286",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "obtener_capas_mapa()",
       "id": "main_obtener_capas_mapa",
       "community_name": "main.py"
@@ -8435,7 +8671,7 @@
       "source_location": "L298",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "inspeccionar_ndvi_punto()",
       "id": "main_inspeccionar_ndvi_punto",
       "community_name": "main.py"
@@ -8447,7 +8683,7 @@
       "source_location": "L309",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "obtener_historico_clima()",
       "id": "main_obtener_historico_clima",
       "community_name": "main.py"
@@ -8459,7 +8695,7 @@
       "source_location": "L330",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "obtener_satellite_latest_loop_api()",
       "id": "main_obtener_satellite_latest_loop_api",
       "community_name": "main.py"
@@ -8471,7 +8707,7 @@
       "source_location": "L335",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "obtener_satelite_goes19()",
       "id": "main_obtener_satelite_goes19",
       "community_name": "main.py"
@@ -8483,7 +8719,7 @@
       "source_location": "L378",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "buscar_estaciones()",
       "id": "main_buscar_estaciones",
       "community_name": "main.py"
@@ -8495,7 +8731,7 @@
       "source_location": "L411",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "obtener_alertas_senapred()",
       "id": "main_obtener_alertas_senapred",
       "community_name": "main.py"
@@ -8507,7 +8743,7 @@
       "source_location": "L418",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "calcular_triangulacion_idw()",
       "id": "main_calcular_triangulacion_idw",
       "community_name": "main.py"
@@ -8519,7 +8755,7 @@
       "source_location": "L469",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "obtener_clima_hiperlocal()",
       "id": "main_obtener_clima_hiperlocal",
       "community_name": "main.py"
@@ -8531,7 +8767,7 @@
       "source_location": "L719",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "obtener_clima_actual_api()",
       "id": "main_obtener_clima_actual_api",
       "community_name": "main.py"
@@ -8546,7 +8782,7 @@
       "community": 0,
       "norm_label": "forzar_sincronizacion_manual()",
       "id": "main_forzar_sincronizacion_manual",
-      "community_name": "main.py"
+      "community_name": "sincronizador_background.py"
     },
     {
       "label": "obtener_openmeteo_directo()",
@@ -8555,9 +8791,21 @@
       "source_location": "L746",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "obtener_openmeteo_directo()",
       "id": "main_obtener_openmeteo_directo",
+      "community_name": "main.py"
+    },
+    {
+      "label": "obtener_tile_mapa_gee()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L760",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "obtener_tile_mapa_gee()",
+      "id": "main_obtener_tile_mapa_gee",
       "community_name": "main.py"
     },
     {
@@ -8569,7 +8817,7 @@
       "community": 0,
       "norm_label": "inicializa dependencias; la sincronizacion productiva la realiza cloud run job.",
       "id": "main_rationale_64",
-      "community_name": "main.py"
+      "community_name": "sincronizador_background.py"
     },
     {
       "label": "Endpoint directo para consultar pron\u00f3stico de Open-Meteo como fallback.",
@@ -8577,245 +8825,20 @@
       "source_file": "main.py",
       "source_location": "L751",
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "norm_label": "endpoint directo para consultar pronostico de open-meteo como fallback.",
       "id": "main_rationale_751",
       "community_name": "main.py"
     },
     {
-      "label": "sincronizador_background.py",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "sincronizador_background.py",
-      "id": "sincronizador_background",
-      "community_name": "main.py"
-    },
-    {
-      "label": "clean_num()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L54",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "clean_num()",
-      "id": "sincronizador_background_clean_num",
-      "community_name": "main.py"
-    },
-    {
-      "label": "clean_agromet_num()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L65",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "clean_agromet_num()",
-      "id": "sincronizador_background_clean_agromet_num",
-      "community_name": "main.py"
-    },
-    {
-      "label": "cargar_cache_desde_disco()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L93",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "cargar_cache_desde_disco()",
-      "id": "sincronizador_background_cargar_cache_desde_disco",
-      "community_name": "main.py"
-    },
-    {
-      "label": "refrescar_cache_si_corresponde()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L108",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "refrescar_cache_si_corresponde()",
-      "id": "sincronizador_background_refrescar_cache_si_corresponde",
-      "community_name": "main.py"
-    },
-    {
-      "label": "guardar_cache_en_disco()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L115",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "guardar_cache_en_disco()",
-      "id": "sincronizador_background_guardar_cache_en_disco",
-      "community_name": "main.py"
-    },
-    {
-      "label": "cargar_catalogo_maestro()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L120",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "cargar_catalogo_maestro()",
-      "id": "sincronizador_background_cargar_catalogo_maestro",
-      "community_name": "main.py"
-    },
-    {
-      "label": "sincronizar_dmc_telemetria()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L129",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "sincronizar_dmc_telemetria()",
-      "id": "sincronizador_background_sincronizar_dmc_telemetria",
-      "community_name": "main.py"
-    },
-    {
-      "label": "sincronizar_agromet_inia()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L187",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "sincronizar_agromet_inia()",
-      "id": "sincronizador_background_sincronizar_agromet_inia",
-      "community_name": "main.py"
-    },
-    {
-      "label": "sincronizar_redmeteo()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L247",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "sincronizar_redmeteo()",
-      "id": "sincronizador_background_sincronizar_redmeteo",
-      "community_name": "main.py"
-    },
-    {
-      "label": "sincronizar_calidad_aire_sinca()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L296",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "sincronizar_calidad_aire_sinca()",
-      "id": "sincronizador_background_sincronizar_calidad_aire_sinca",
-      "community_name": "main.py"
-    },
-    {
-      "label": "sincronizar_purpleair()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L378",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "sincronizar_purpleair()",
-      "id": "sincronizador_background_sincronizar_purpleair",
-      "community_name": "main.py"
-    },
-    {
-      "label": "sincronizar_pronostico_oficial_dmc()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L425",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "sincronizar_pronostico_oficial_dmc()",
-      "id": "sincronizador_background_sincronizar_pronostico_oficial_dmc",
-      "community_name": "main.py"
-    },
-    {
-      "label": "sincronizar_alertas_senapred()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L445",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "sincronizar_alertas_senapred()",
-      "id": "sincronizador_background_sincronizar_alertas_senapred",
-      "community_name": "main.py"
-    },
-    {
-      "label": "sincronizar_puntos_gee()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L477",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "sincronizar_puntos_gee()",
-      "id": "sincronizador_background_sincronizar_puntos_gee",
-      "community_name": "GEECore"
-    },
-    {
-      "label": "ejecutar_sincronizacion_completa()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L503",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "ejecutar_sincronizacion_completa()",
-      "id": "sincronizador_background_ejecutar_sincronizacion_completa",
-      "community_name": "main.py"
-    },
-    {
-      "label": "iniciar_loop_background()",
-      "file_type": "code",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L583",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "iniciar_loop_background()",
-      "id": "sincronizador_background_iniciar_loop_background",
-      "community_name": "main.py"
-    },
-    {
-      "label": "Carga la cach\u00e9 local o compartida sin reemplazar su referencia global.",
+      "label": "Genera par\u00e1metros de mapa satelital interactivo GEE para renderizado en\u2026",
       "file_type": "rationale",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L94",
+      "source_file": "main.py",
+      "source_location": "L765",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "carga la cache local o compartida sin reemplazar su referencia global.",
-      "id": "sincronizador_background_rationale_94",
-      "community_name": "main.py"
-    },
-    {
-      "label": "Actualiza la instant\u00e1nea en memoria como m\u00e1ximo una vez por intervalo.",
-      "file_type": "rationale",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L109",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "actualiza la instantanea en memoria como maximo una vez por intervalo.",
-      "id": "sincronizador_background_rationale_109",
-      "community_name": "main.py"
-    },
-    {
-      "label": "Persiste la instant\u00e1nea completa localmente o en Cloud Storage.",
-      "file_type": "rationale",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L116",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "persiste la instantanea completa localmente o en cloud storage.",
-      "id": "sincronizador_background_rationale_116",
+      "community": 2,
+      "norm_label": "genera parametros de mapa satelital interactivo gee para renderizado en...",
+      "id": "main_rationale_765",
       "community_name": "main.py"
     }
   ],
@@ -11115,18 +11138,6 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "gee/rural.py",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "gee_rural",
-      "target": "gee_core_geecore"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "gee/tiles.py",
       "source_location": "L5",
       "weight": 1.0,
@@ -11165,7 +11176,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "gee/rural.py",
-      "source_location": "L137",
+      "source_location": "L179",
       "weight": 1.0,
       "_origin": "ast",
       "source": "gee_rural_extraer_historico_ndvi",
@@ -11218,121 +11229,6 @@
       "_origin": "ast",
       "source": "main_home",
       "target": "gee_core_geecore_is_active"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "gee/rural.py",
-      "source_location": "L135",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "gee_rural",
-      "target": "gee_rural_extraer_historico_ndvi"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "gee/rural.py",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "gee_rural",
-      "target": "gee_rural_extraer_metricas_agricolas"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "gee/rural.py",
-      "source_location": "L117",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "gee_rural",
-      "target": "gee_rural_fallback_rural"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "sincronizador_background.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "sincronizador_background",
-      "target": "gee_rural"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "gee/rural.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "gee_rural_extraer_metricas_agricolas",
-      "target": "gee_rural_fallback_rural"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "gee/rural.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "gee_rural_rationale_9",
-      "target": "gee_rural_extraer_metricas_agricolas"
-    },
-    {
-      "relation": "indirect_call",
-      "context": "argument",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "sincronizador_background.py",
-      "source_location": "L489",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "sincronizador_background_sincronizar_puntos_gee",
-      "target": "gee_rural_extraer_metricas_agricolas"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "main.py",
-      "source_location": "L155",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "main_obtener_gee_punto_seguro",
-      "target": "gee_rural_fallback_rural"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "gee/rural.py",
-      "source_location": "L136",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "gee_rural_rationale_136",
-      "target": "gee_rural_extraer_historico_ndvi"
-    },
-    {
-      "relation": "indirect_call",
-      "context": "argument",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "main.py",
-      "source_location": "L320",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "main_obtener_historico_clima",
-      "target": "gee_rural_extraer_historico_ndvi"
     },
     {
       "relation": "contains",
@@ -11824,6 +11720,18 @@
       "_origin": "ast",
       "confidence_score": 1.0,
       "source": "main_obtener_satellite_latest_loop_api",
+      "target": "get"
+    },
+    {
+      "relation": "references",
+      "context": "decorator",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L759",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_obtener_tile_mapa_gee",
       "target": "get"
     },
     {
@@ -22433,17 +22341,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/AgroPanel.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_agropanel",
-      "target": "frontend_src_components_agropanel_agropanel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/UrbanPanel.jsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -22464,259 +22361,6 @@
       "target": "frontend_src_components_weatherheader_weatherheader"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L378",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_buscar_estaciones"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L169",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_calcular_calidad_aire_dual"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L116",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_calcular_distancia"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L132",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_calcular_horas_frio"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L124",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_calcular_rumbo_cardinal"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L418",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_calcular_triangulacion_idw"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L27",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_construir_transparency_metadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L138",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_evaluar_inversion_termica"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L731",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_forzar_sincronizacion_manual"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L269",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_home"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L298",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_inspeccionar_ndvi_punto"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_lifespan"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L411",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_alertas_senapred"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L286",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_capas_mapa"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L719",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_clima_actual_api"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L469",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_clima_hiperlocal"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L146",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_gee_punto_seguro"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L309",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_historico_clima"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L746",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_openmeteo_directo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L335",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_satelite_goes19"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L330",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_satellite_latest_loop_api"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L111",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_quitar_tildes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L101",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_refresh_cache_before_api"
-    },
-    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -22729,290 +22373,16 @@
       "target": "sincronizador_background"
     },
     {
-      "relation": "imports",
+      "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L18",
+      "source_file": "sincronizador_background.py",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 1.0,
-      "source": "main",
-      "target": "sincronizador_background_cargar_cache_desde_disco"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L476",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "sincronizador_background_cargar_catalogo_maestro"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "sincronizador_background_ejecutar_sincronizacion_completa"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "sincronizador_background_iniciar_loop_background"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "sincronizador_background_refrescar_cache_si_corresponde"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L702",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_construir_transparency_metadata"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "main.py",
-      "source_location": "L65",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "main_lifespan",
-      "target": "sincronizador_background_cargar_cache_desde_disco"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "main.py",
-      "source_location": "L70",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "main_lifespan",
-      "target": "sincronizador_background_iniciar_loop_background"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L64",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_rationale_64",
-      "target": "main_lifespan"
-    },
-    {
-      "relation": "indirect_call",
-      "context": "argument",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "main.py",
-      "source_location": "L103",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "main_refresh_cache_before_api",
-      "target": "sincronizador_background_refrescar_cache_si_corresponde"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L396",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_buscar_estaciones",
-      "target": "main_quitar_tildes"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L425",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_calcular_triangulacion_idw",
-      "target": "main_calcular_distancia"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L483",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_calcular_distancia"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L491",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_calcular_rumbo_cardinal"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L566",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_calcular_horas_frio"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L595",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_evaluar_inversion_termica"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L302",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_inspeccionar_ndvi_punto",
-      "target": "main_obtener_gee_punto_seguro"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L597",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_obtener_gee_punto_seguro"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L520",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_calcular_calidad_aire_dual"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L577",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_calcular_triangulacion_idw"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L727",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_actual_api",
-      "target": "main_obtener_clima_hiperlocal"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "main.py",
-      "source_location": "L477",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "sincronizador_background_cargar_catalogo_maestro"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "main.py",
-      "source_location": "L738",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "main_forzar_sincronizacion_manual",
-      "target": "sincronizador_background_ejecutar_sincronizacion_completa"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L751",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_rationale_751",
-      "target": "main_obtener_openmeteo_directo"
+      "source": "sincronizador_background",
+      "target": "gee_rural"
     },
     {
       "relation": "contains",
@@ -23266,6 +22636,18 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "main.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_lifespan",
+      "target": "sincronizador_background_cargar_cache_desde_disco"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
       "source_file": "sincronizador_background.py",
       "source_location": "L584",
       "weight": 1.0,
@@ -23296,6 +22678,18 @@
       "confidence_score": 1.0,
       "source": "sincronizador_background_refrescar_cache_si_corresponde",
       "target": "sincronizador_background_cargar_cache_desde_disco"
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "main.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_refresh_cache_before_api",
+      "target": "sincronizador_background_refrescar_cache_si_corresponde"
     },
     {
       "relation": "rationale_for",
@@ -23330,6 +22724,18 @@
       "confidence_score": 1.0,
       "source": "sincronizador_background_rationale_116",
       "target": "sincronizador_background_guardar_cache_en_disco"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "main.py",
+      "source_location": "L477",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "sincronizador_background_cargar_catalogo_maestro"
     },
     {
       "relation": "calls",
@@ -23440,6 +22846,30 @@
       "target": "sincronizador_background_sincronizar_puntos_gee"
     },
     {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "sincronizador_background.py",
+      "source_location": "L489",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "sincronizador_background_sincronizar_puntos_gee",
+      "target": "gee_rural_extraer_metricas_agricolas"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "main.py",
+      "source_location": "L738",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_forzar_sincronizacion_manual",
+      "target": "sincronizador_background_ejecutar_sincronizacion_completa"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -23450,8 +22880,587 @@
       "confidence_score": 1.0,
       "source": "sincronizador_background_iniciar_loop_background",
       "target": "sincronizador_background_ejecutar_sincronizacion_completa"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "main.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_lifespan",
+      "target": "sincronizador_background_iniciar_loop_background"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/AgroPanel.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_agropanel",
+      "target": "frontend_src_components_agropanel_agropanel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "gee/rural.py",
+      "source_location": "L177",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "gee_rural",
+      "target": "gee_rural_extraer_historico_ndvi"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "gee/rural.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "gee_rural",
+      "target": "gee_rural_extraer_metricas_agricolas"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "gee/rural.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "gee_rural",
+      "target": "gee_rural_fallback_rural"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "gee/rural.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "gee_rural_extraer_metricas_agricolas",
+      "target": "gee_rural_fallback_rural"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "gee/rural.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "gee_rural_rationale_9",
+      "target": "gee_rural_extraer_metricas_agricolas"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L153",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "gee_rural_fallback_rural"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L155",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_obtener_gee_punto_seguro",
+      "target": "gee_rural_fallback_rural"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "gee/rural.py",
+      "source_location": "L178",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "gee_rural_rationale_178",
+      "target": "gee_rural_extraer_historico_ndvi"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L318",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "gee_rural_extraer_historico_ndvi"
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "main.py",
+      "source_location": "L320",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_obtener_historico_clima",
+      "target": "gee_rural_extraer_historico_ndvi"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L378",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_buscar_estaciones"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L169",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_calcular_calidad_aire_dual"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_calcular_distancia"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_calcular_horas_frio"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_calcular_rumbo_cardinal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L418",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_calcular_triangulacion_idw"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_construir_transparency_metadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L138",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_evaluar_inversion_termica"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L731",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_forzar_sincronizacion_manual"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L269",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_home"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L298",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_inspeccionar_ndvi_punto"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_lifespan"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L411",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_obtener_alertas_senapred"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L286",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_obtener_capas_mapa"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L719",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_obtener_clima_actual_api"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L469",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_obtener_clima_hiperlocal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L146",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_obtener_gee_punto_seguro"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L309",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_obtener_historico_clima"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L746",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_obtener_openmeteo_directo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L335",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_obtener_satelite_goes19"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L330",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_obtener_satellite_latest_loop_api"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L760",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_obtener_tile_mapa_gee"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_quitar_tildes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main",
+      "target": "main_refresh_cache_before_api"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L702",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_construir_transparency_metadata"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_rationale_64",
+      "target": "main_lifespan"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L396",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_buscar_estaciones",
+      "target": "main_quitar_tildes"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L425",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_calcular_triangulacion_idw",
+      "target": "main_calcular_distancia"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L483",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_calcular_distancia"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L491",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_calcular_rumbo_cardinal"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L566",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_calcular_horas_frio"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L595",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_evaluar_inversion_termica"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L302",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_inspeccionar_ndvi_punto",
+      "target": "main_obtener_gee_punto_seguro"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L597",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_obtener_gee_punto_seguro"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L520",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_calcular_calidad_aire_dual"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L577",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_calcular_triangulacion_idw"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L727",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_obtener_clima_actual_api",
+      "target": "main_obtener_clima_hiperlocal"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L751",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_rationale_751",
+      "target": "main_obtener_openmeteo_directo"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L765",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "main_rationale_765",
+      "target": "main_obtener_tile_mapa_gee"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6f443767851106110937521bda41fbeaf9d60164"
+  "built_at_commit": "96615e1a22a0497449b815e7ae10405a19d80006"
 }

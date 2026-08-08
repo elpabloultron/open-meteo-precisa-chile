@@ -1,45 +1,38 @@
 {
   "communities": {
     "0": [
+      "any",
+      "app_config",
+      "app_config_as_bool",
+      "app_config_as_origins",
+      "app_config_get_settings",
+      "app_config_rationale_1",
+      "app_config_settings",
       "asyncclient",
+      "cache_store",
+      "cache_store_load_cache",
+      "cache_store_load_local",
+      "cache_store_rationale_1",
+      "cache_store_rationale_32",
+      "cache_store_rationale_54",
+      "cache_store_save_cache",
+      "cache_store_save_local",
       "fastapi",
-      "fixture",
-      "get",
       "goes_processor",
       "goes_processor_descargar_y_procesar_frame",
       "goes_processor_obtener_satellite_latest_loop",
       "goes_processor_procesar_video_goes19",
       "goes_processor_rationale_134",
       "goes_processor_rationale_49",
-      "main",
-      "main_buscar_estaciones",
-      "main_calcular_calidad_aire_dual",
-      "main_calcular_distancia",
-      "main_calcular_horas_frio",
-      "main_calcular_rumbo_cardinal",
-      "main_calcular_triangulacion_idw",
-      "main_construir_transparency_metadata",
-      "main_evaluar_inversion_termica",
       "main_forzar_sincronizacion_manual",
-      "main_home",
-      "main_inspeccionar_ndvi_punto",
       "main_lifespan",
-      "main_obtener_alertas_senapred",
-      "main_obtener_capas_mapa",
-      "main_obtener_clima_actual_api",
-      "main_obtener_clima_hiperlocal",
-      "main_obtener_gee_punto_seguro",
-      "main_obtener_historico_clima",
-      "main_obtener_openmeteo_directo",
-      "main_obtener_satelite_goes19",
-      "main_obtener_satellite_latest_loop_api",
-      "main_quitar_tildes",
       "main_rationale_64",
-      "main_rationale_751",
-      "main_refresh_cache_before_api",
-      "middleware",
+      "openmeteo_client",
+      "openmeteo_client_obtener_pronostico_openmeteo",
+      "openmeteo_client_rationale_1",
+      "openmeteo_client_rationale_24",
+      "path",
       "post",
-      "request",
       "sincronizador_background",
       "sincronizador_background_cargar_cache_desde_disco",
       "sincronizador_background_cargar_catalogo_maestro",
@@ -61,27 +54,15 @@
       "sincronizador_background_sincronizar_redmeteo",
       "sync_job",
       "sync_job_rationale_1",
-      "sync_job_run",
-      "test_main",
-      "test_main_client",
-      "test_main_fakeopenmeteoclient",
-      "test_main_fakeopenmeteoclient_aenter",
-      "test_main_fakeopenmeteoclient_aexit",
-      "test_main_fakeopenmeteoclient_get",
-      "test_main_fakeopenmeteoresponse",
-      "test_main_fakeopenmeteoresponse_json",
-      "test_main_test_alertas_senapred_endpoint_uses_cached_data",
-      "test_main_test_buscar_estaciones_endpoint_uses_cached_catalog",
-      "test_main_test_capas_mapa_endpoint_accepts_default_coordinates",
-      "test_main_test_capas_mapa_rejects_invalid_coordinates",
-      "test_main_test_clean_num_discards_sentinel_values",
-      "test_main_test_historico_accepts_lng_alias_and_validates_missing_longitude",
-      "test_main_test_home_endpoint_reports_real_status",
-      "test_main_test_manual_sync_requires_configuration_or_token",
-      "test_main_test_weather_current_endpoint_uses_cached_and_mocked_data",
-      "test_main_test_weather_current_requires_longitude"
+      "sync_job_run"
     ],
     "1": [
+      "frontend_oxlintrc",
+      "frontend_oxlintrc_plugins",
+      "frontend_oxlintrc_rules",
+      "frontend_oxlintrc_rules_react_only_export_components",
+      "frontend_oxlintrc_rules_react_rules_of_hooks",
+      "frontend_oxlintrc_schema",
       "frontend_src_app",
       "frontend_src_app_app",
       "frontend_src_components_agropanel",
@@ -126,9 +107,62 @@
       "frontend_src_main",
       "frontend_src_utils_timeutils",
       "frontend_src_utils_timeutils_formatlocaltime",
-      "ref_react"
+      "ref_oxc",
+      "ref_react",
+      "ref_warn"
     ],
     "2": [
+      "gee_core",
+      "gee_core_geecore",
+      "gee_core_geecore_initialize",
+      "gee_core_geecore_is_active",
+      "gee_init",
+      "gee_rural",
+      "gee_rural_extraer_historico_ndvi",
+      "gee_rural_extraer_metricas_agricolas",
+      "gee_rural_fallback_rural",
+      "gee_rural_rationale_178",
+      "gee_rural_rationale_9",
+      "gee_tiles",
+      "gee_tiles_create_tile_url",
+      "gee_tiles_obtener_capas_gee_y_windy",
+      "gee_tiles_rationale_18",
+      "gee_tiles_rationale_9",
+      "gee_urban",
+      "gee_urban_extraer_metricas_urbanas",
+      "gee_urban_fallback_urbano",
+      "gee_urban_rationale_8",
+      "get",
+      "main",
+      "main_buscar_estaciones",
+      "main_calcular_calidad_aire_dual",
+      "main_calcular_distancia",
+      "main_calcular_horas_frio",
+      "main_calcular_rumbo_cardinal",
+      "main_calcular_triangulacion_idw",
+      "main_construir_transparency_metadata",
+      "main_evaluar_inversion_termica",
+      "main_home",
+      "main_inspeccionar_ndvi_punto",
+      "main_obtener_alertas_senapred",
+      "main_obtener_capas_mapa",
+      "main_obtener_clima_actual_api",
+      "main_obtener_clima_hiperlocal",
+      "main_obtener_gee_punto_seguro",
+      "main_obtener_historico_clima",
+      "main_obtener_openmeteo_directo",
+      "main_obtener_satelite_goes19",
+      "main_obtener_satellite_latest_loop_api",
+      "main_obtener_tile_mapa_gee",
+      "main_quitar_tildes",
+      "main_rationale_751",
+      "main_rationale_765",
+      "main_refresh_cache_before_api",
+      "middleware",
+      "request",
+      "sincronizador_background_sincronizar_puntos_gee"
+    ],
+    "3": [
       "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec",
       "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_auto_avatar_for_participant",
       "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_build_spec",
@@ -162,7 +196,7 @@
       "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_validate_output_dir",
       "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_write_chat_spec_ts"
     ],
-    "3": [
+    "4": [
       "agents_skills_hatch_pet_scripts_generate_pet_images",
       "agents_skills_hatch_pet_scripts_generate_pet_images_complete_job",
       "agents_skills_hatch_pet_scripts_generate_pet_images_decode_response",
@@ -195,7 +229,7 @@
       "agents_skills_hatch_pet_scripts_test_generate_pet_images_testpathlisttraversalrejection_test_rejects_missing_safe_path",
       "agents_skills_hatch_pet_scripts_test_generate_pet_images_testpathlisttraversalrejection_test_rejects_traversal_in_input_images"
     ],
-    "4": [
+    "5": [
       "agents_skills_hatch_pet_scripts_prepare_pet_run",
       "agents_skills_hatch_pet_scripts_prepare_pet_run_base_pet_prompt",
       "agents_skills_hatch_pet_scripts_prepare_pet_run_choose_chroma_key",
@@ -225,7 +259,7 @@
       "agents_skills_hatch_pet_scripts_prepare_pet_run_write_text",
       "imagedraw"
     ],
-    "5": [
+    "6": [
       "agents_skills_chat_motion_overlay_assets_remotion_template_src_chatspec",
       "agents_skills_chat_motion_overlay_assets_remotion_template_src_chatspec_chatspec",
       "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_avatarlibrary",
@@ -252,50 +286,26 @@
       "agents_skills_chat_motion_overlay_assets_remotion_template_src_root",
       "agents_skills_chat_motion_overlay_assets_remotion_template_src_root_remotionroot"
     ],
-    "6": [
-      "gee_core",
-      "gee_core_geecore",
-      "gee_core_geecore_initialize",
-      "gee_core_geecore_is_active",
-      "gee_init",
-      "gee_rural",
-      "gee_rural_extraer_historico_ndvi",
-      "gee_rural_extraer_metricas_agricolas",
-      "gee_rural_fallback_rural",
-      "gee_rural_rationale_136",
-      "gee_rural_rationale_9",
-      "gee_tiles",
-      "gee_tiles_create_tile_url",
-      "gee_tiles_obtener_capas_gee_y_windy",
-      "gee_tiles_rationale_18",
-      "gee_tiles_rationale_9",
-      "gee_urban",
-      "gee_urban_extraer_metricas_urbanas",
-      "gee_urban_fallback_urbano",
-      "gee_urban_rationale_8",
-      "sincronizador_background_sincronizar_puntos_gee"
-    ],
     "7": [
-      "any",
-      "app_config",
-      "app_config_as_bool",
-      "app_config_as_origins",
-      "app_config_get_settings",
-      "app_config_rationale_1",
-      "app_config_settings",
-      "cache_store",
-      "cache_store_load_cache",
-      "cache_store_load_local",
-      "cache_store_rationale_1",
-      "cache_store_rationale_32",
-      "cache_store_rationale_54",
-      "cache_store_save_cache",
-      "cache_store_save_local",
-      "openmeteo_client",
-      "openmeteo_client_obtener_pronostico_openmeteo",
-      "openmeteo_client_rationale_1",
-      "openmeteo_client_rationale_24",
-      "path"
+      "fixture",
+      "test_main",
+      "test_main_client",
+      "test_main_fakeopenmeteoclient",
+      "test_main_fakeopenmeteoclient_aenter",
+      "test_main_fakeopenmeteoclient_aexit",
+      "test_main_fakeopenmeteoclient_get",
+      "test_main_fakeopenmeteoresponse",
+      "test_main_fakeopenmeteoresponse_json",
+      "test_main_test_alertas_senapred_endpoint_uses_cached_data",
+      "test_main_test_buscar_estaciones_endpoint_uses_cached_catalog",
+      "test_main_test_capas_mapa_endpoint_accepts_default_coordinates",
+      "test_main_test_capas_mapa_rejects_invalid_coordinates",
+      "test_main_test_clean_num_discards_sentinel_values",
+      "test_main_test_historico_accepts_lng_alias_and_validates_missing_longitude",
+      "test_main_test_home_endpoint_reports_real_status",
+      "test_main_test_manual_sync_requires_configuration_or_token",
+      "test_main_test_weather_current_endpoint_uses_cached_and_mocked_data",
+      "test_main_test_weather_current_requires_longitude"
     ],
     "8": [
       "frontend_package_devdependencies",
@@ -682,16 +692,6 @@
       "docs_obsidian_obsidian_app_usemarkdownlinks"
     ],
     "36": [
-      "frontend_oxlintrc",
-      "frontend_oxlintrc_plugins",
-      "frontend_oxlintrc_rules",
-      "frontend_oxlintrc_rules_react_only_export_components",
-      "frontend_oxlintrc_rules_react_rules_of_hooks",
-      "frontend_oxlintrc_schema",
-      "ref_oxc",
-      "ref_warn"
-    ],
-    "37": [
       "obsidian_app",
       "obsidian_app_alwaysupdatelinks",
       "obsidian_app_foldheading",
@@ -701,7 +701,7 @@
       "obsidian_app_tabsize",
       "obsidian_app_usemarkdownlinks"
     ],
-    "38": [
+    "37": [
       "agents_skills_hatch_pet_scripts_package_custom_pet",
       "agents_skills_hatch_pet_scripts_package_custom_pet_default_codex_home",
       "agents_skills_hatch_pet_scripts_package_custom_pet_main",
@@ -710,7 +710,7 @@
       "agents_skills_hatch_pet_scripts_package_custom_pet_validate_spritesheet",
       "agents_skills_hatch_pet_scripts_package_custom_pet_write_webp_spritesheet"
     ],
-    "39": [
+    "38": [
       "agents_skills_hatch_pet_scripts_render_animation_videos_checker",
       "agents_skills_hatch_pet_scripts_render_animation_videos_main",
       "agents_skills_hatch_pet_scripts_render_animation_videos_py_agents_skills_hatch_pet_scripts_render_animation_videos",
@@ -719,7 +719,7 @@
       "agents_skills_hatch_pet_scripts_render_animation_videos_render_state",
       "agents_skills_hatch_pet_scripts_render_animation_videos_shell_quote_for_concat"
     ],
-    "40": [
+    "39": [
       "agents_skills_od_contribute_install",
       "agents_skills_od_contribute_install_cyan",
       "agents_skills_od_contribute_install_die",
@@ -728,7 +728,7 @@
       "agents_skills_od_contribute_install_install_skill_to",
       "agents_skills_od_contribute_install_sh__entry"
     ],
-    "41": [
+    "40": [
       "agents_skills_web_clone_scripts_dna_scaffold",
       "agents_skills_web_clone_scripts_dna_scaffold_enrich",
       "agents_skills_web_clone_scripts_dna_scaffold_flattenrecon",
@@ -737,7 +737,7 @@
       "agents_skills_web_clone_scripts_dna_scaffold_uniq",
       "agents_skills_web_clone_scripts_dna_scaffold_usage"
     ],
-    "42": [
+    "41": [
       "agents_skills_web_clone_scripts_recon_site",
       "agents_skills_web_clone_scripts_recon_site_collectsignals",
       "agents_skills_web_clone_scripts_recon_site_parseargs",
@@ -746,7 +746,7 @@
       "agents_skills_web_clone_scripts_recon_site_usage",
       "agents_skills_web_clone_scripts_recon_site_writesummary"
     ],
-    "43": [
+    "42": [
       "agents_skills_web_clone_scripts_sourcemap_hunt",
       "agents_skills_web_clone_scripts_sourcemap_hunt_collectscripts",
       "agents_skills_web_clone_scripts_sourcemap_hunt_fetchtext",
@@ -755,7 +755,7 @@
       "agents_skills_web_clone_scripts_sourcemap_hunt_resolvemapurl",
       "agents_skills_web_clone_scripts_sourcemap_hunt_usage"
     ],
-    "44": [
+    "43": [
       "chart_js",
       "frontend_package_dependencies",
       "frontend_package_dependencies_chart_js",
@@ -764,7 +764,7 @@
       "lucide_react",
       "react_chartjs_2"
     ],
-    "45": [
+    "44": [
       "httpuser",
       "locustfile",
       "locustfile_meteoprecisauser",
@@ -773,7 +773,7 @@
       "locustfile_rationale_1",
       "task"
     ],
-    "46": [
+    "45": [
       "agents_skills_od_contribute_scripts_validate_skill_submission",
       "agents_skills_od_contribute_scripts_validate_skill_submission_escapes_root",
       "agents_skills_od_contribute_scripts_validate_skill_submission_fail",
@@ -781,7 +781,7 @@
       "agents_skills_od_contribute_scripts_validate_skill_submission_sh__entry",
       "agents_skills_od_contribute_scripts_validate_skill_submission_warn"
     ],
-    "47": [
+    "46": [
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout",
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_emu_to_in",
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_is_footer_by_name",
@@ -789,107 +789,107 @@
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_py_path",
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_verify"
     ],
-    "48": [
+    "47": [
       "agents_skills_od_contribute_scripts_discover_doc_gaps",
       "agents_skills_od_contribute_scripts_discover_doc_gaps_emit_todo",
       "agents_skills_od_contribute_scripts_discover_doc_gaps_extract_links",
       "agents_skills_od_contribute_scripts_discover_doc_gaps_grep",
       "agents_skills_od_contribute_scripts_discover_doc_gaps_sh__entry"
     ],
-    "49": [
+    "48": [
       "agents_skills_od_contribute_scripts_discover_i18n_gaps",
       "agents_skills_od_contribute_scripts_discover_i18n_gaps_commits_between",
       "agents_skills_od_contribute_scripts_discover_i18n_gaps_emit",
       "agents_skills_od_contribute_scripts_discover_i18n_gaps_last_commit_epoch",
       "agents_skills_od_contribute_scripts_discover_i18n_gaps_sh__entry"
     ],
-    "50": [
+    "49": [
       "agents_skills_web_clone_scripts_init_clone",
       "agents_skills_web_clone_scripts_init_clone_cleanslug",
       "agents_skills_web_clone_scripts_init_clone_notestemplate",
       "agents_skills_web_clone_scripts_init_clone_parseargs",
       "agents_skills_web_clone_scripts_init_clone_usage"
     ],
-    "51": [
+    "50": [
       "agents_skills_hatch_pet_scripts_make_contact_sheet",
       "agents_skills_hatch_pet_scripts_make_contact_sheet_checker",
       "agents_skills_hatch_pet_scripts_make_contact_sheet_main",
       "agents_skills_hatch_pet_scripts_make_contact_sheet_py_image"
     ],
-    "52": [
+    "51": [
       "agents_skills_hatch_pet_scripts_validate_atlas",
       "agents_skills_hatch_pet_scripts_validate_atlas_alpha_nonzero_count",
       "agents_skills_hatch_pet_scripts_validate_atlas_main",
       "agents_skills_hatch_pet_scripts_validate_atlas_py_image"
     ],
-    "53": [
+    "52": [
       "agents_skills_od_contribute_scripts_check_prereqs",
       "agents_skills_od_contribute_scripts_check_prereqs_check_bin",
       "agents_skills_od_contribute_scripts_check_prereqs_sh__entry"
     ],
-    "54": [
+    "53": [
       "agents_skills_od_contribute_scripts_validate_design_system",
       "agents_skills_od_contribute_scripts_validate_design_system_extract_headings",
       "agents_skills_od_contribute_scripts_validate_design_system_sh__entry"
     ],
-    "55": [
+    "54": [
       "agents_skills_od_contribute_scripts_validate_markdown",
       "agents_skills_od_contribute_scripts_validate_markdown_check_file",
       "agents_skills_od_contribute_scripts_validate_markdown_sh__entry"
     ],
-    "56": [
+    "55": [
       "agents_skills_hatch_pet_scripts_render_animation_videos_sh__entry",
       "agents_skills_hatch_pet_scripts_render_animation_videos_sh_agents_skills_hatch_pet_scripts_render_animation_videos"
     ],
-    "57": [
+    "56": [
       "agents_skills_od_contribute_scripts_create_issue",
       "agents_skills_od_contribute_scripts_create_issue_sh__entry"
     ],
-    "58": [
+    "57": [
       "agents_skills_od_contribute_scripts_create_pr",
       "agents_skills_od_contribute_scripts_create_pr_sh__entry"
     ],
-    "59": [
+    "58": [
       "agents_skills_od_contribute_scripts_setup_workspace",
       "agents_skills_od_contribute_scripts_setup_workspace_sh__entry"
     ],
-    "60": [
+    "59": [
       "frontend_public_service_worker",
       "frontend_public_service_worker_assets_to_cache"
     ],
-    "61": [
+    "60": [
       "scripts_configurar_sync_horario_sh__entry",
       "scripts_configurar_sync_horario_sh_scripts_configurar_sync_horario"
     ],
-    "62": [
+    "61": [
       "scripts_deploy_sh__entry",
       "scripts_deploy_sh_scripts_deploy"
     ],
-    "63": [
+    "62": [
       "actualizar_app"
     ],
-    "64": [
+    "63": [
       "agents_skills_chat_motion_overlay_assets_remotion_template_remotion_config"
     ],
-    "65": [
+    "64": [
       "frontend_vite_config"
     ],
-    "66": [
+    "65": [
       "scripts_configurar_sync_horario_ps1_scripts_configurar_sync_horario"
     ],
-    "67": [
+    "66": [
       "scripts_deploy_ps1_scripts_deploy"
     ]
   },
   "cohesion": {
-    "0": 0.05387861084063616,
-    "1": 0.0898989898989899,
-    "2": 0.15725806451612903,
-    "3": 0.15268817204301074,
-    "4": 0.17989417989417988,
-    "5": 0.15,
-    "6": 0.18095238095238095,
-    "7": 0.14736842105263157,
+    "0": 0.06708595387840671,
+    "1": 0.07039187227866474,
+    "2": 0.0824829931972789,
+    "3": 0.15725806451612903,
+    "4": 0.15268817204301074,
+    "5": 0.17989417989417988,
+    "6": 0.15,
+    "7": 0.19298245614035087,
     "8": 0.10526315789473684,
     "9": 0.3333333333333333,
     "10": 0.24166666666666667,
@@ -919,24 +919,24 @@
     "34": 0.25,
     "35": 0.25,
     "36": 0.25,
-    "37": 0.25,
-    "38": 0.6190476190476191,
-    "39": 0.5714285714285714,
-    "40": 0.6190476190476191,
+    "37": 0.6190476190476191,
+    "38": 0.5714285714285714,
+    "39": 0.6190476190476191,
+    "40": 0.3333333333333333,
     "41": 0.3333333333333333,
-    "42": 0.3333333333333333,
+    "42": 0.2857142857142857,
     "43": 0.2857142857142857,
-    "44": 0.2857142857142857,
-    "45": 0.3333333333333333,
-    "46": 0.6,
-    "47": 0.5333333333333333,
-    "48": 0.7,
-    "49": 0.5,
-    "50": 0.4,
+    "44": 0.3333333333333333,
+    "45": 0.6,
+    "46": 0.5333333333333333,
+    "47": 0.7,
+    "48": 0.5,
+    "49": 0.4,
+    "50": 0.6666666666666666,
     "51": 0.6666666666666666,
-    "52": 0.6666666666666666,
-    "53": 1.0,
-    "54": 0.6666666666666666,
+    "52": 1.0,
+    "53": 0.6666666666666666,
+    "54": 1.0,
     "55": 1.0,
     "56": 1.0,
     "57": 1.0,
@@ -948,8 +948,7 @@
     "63": 1.0,
     "64": 1.0,
     "65": 1.0,
-    "66": 1.0,
-    "67": 1.0
+    "66": 1.0
   },
   "gods": [
     {
@@ -960,7 +959,7 @@
     {
       "id": "sincronizador_background_ejecutar_sincronizacion_completa",
       "label": "ejecutar_sincronizacion_completa()",
-      "degree": 19
+      "degree": 18
     },
     {
       "id": "agents_skills_hatch_pet_scripts_prepare_pet_run_main",
@@ -998,55 +997,55 @@
       "degree": 9
     },
     {
-      "id": "sincronizador_background_cargar_cache_desde_disco",
-      "label": "cargar_cache_desde_disco()",
-      "degree": 9
+      "id": "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_build_spec",
+      "label": "build_spec()",
+      "degree": 8
     }
   ],
   "surprises": [
     {
-      "source": "obtener_gee_punto_seguro()",
-      "target": "fallback_rural()",
+      "source": "procesar_video_goes19()",
+      "target": "client()",
       "source_files": [
-        "main.py",
-        "gee/rural.py"
-      ],
-      "confidence": "INFERRED",
-      "relation": "calls",
-      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
-    },
-    {
-      "source": "obtener_historico_clima()",
-      "target": "extraer_historico_ndvi()",
-      "source_files": [
-        "main.py",
-        "gee/rural.py"
+        "goes_processor.py",
+        "test_main.py"
       ],
       "confidence": "INFERRED",
       "relation": "indirect_call",
       "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
     },
     {
-      "source": "obtener_capas_mapa()",
-      "target": "obtener_capas_gee_y_windy()",
+      "source": "obtener_satellite_latest_loop_api()",
+      "target": "obtener_satellite_latest_loop()",
       "source_files": [
         "main.py",
-        "gee/tiles.py"
+        "goes_processor.py"
       ],
       "confidence": "INFERRED",
       "relation": "calls",
       "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
     },
     {
-      "source": "obtener_gee_punto_seguro()",
-      "target": "fallback_urbano()",
+      "source": "ejecutar_sincronizacion_completa()",
+      "target": "client()",
       "source_files": [
-        "main.py",
-        "gee/urban.py"
+        "sincronizador_background.py",
+        "test_main.py"
       ],
       "confidence": "INFERRED",
-      "relation": "calls",
+      "relation": "indirect_call",
       "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "test_clean_num_discards_sentinel_values()",
+      "target": "clean_num()",
+      "source_files": [
+        "test_main.py",
+        "sincronizador_background.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `test_clean_num_discards_sentinel_values()` unexpectedly reaches hub `clean_num()`"
     },
     {
       "source": "obtener_openmeteo_directo()",
@@ -1063,7 +1062,7 @@
   "questions": [
     {
       "type": "bridge_node",
-      "question": "Why does `react` connect `App.jsx` to `.oxlintrc.json`, `BubbleScene.tsx`?",
+      "question": "Why does `react` connect `App.jsx` to `BubbleScene.tsx`?",
       "why": "High betweenness centrality (0.007) - this node is a cross-community bridge."
     },
     {
@@ -1073,8 +1072,8 @@
     },
     {
       "type": "bridge_node",
-      "question": "Why does `ejecutar_sincronizacion_completa()` connect `main.py` to `GEECore`?",
-      "why": "High betweenness centrality (0.003) - this node is a cross-community bridge."
+      "question": "Why does `dependencies` connect `dependencies` to `frontend/package.json`, `dependencies`?",
+      "why": "High betweenness centrality (0.002) - this node is a cross-community bridge."
     },
     {
       "type": "isolated_nodes",
@@ -1083,18 +1082,18 @@
     },
     {
       "type": "low_cohesion",
-      "question": "Should `main.py` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.05387861084063616 - nodes in this community are weakly interconnected."
+      "question": "Should `sincronizador_background.py` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.06708595387840671 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
       "question": "Should `App.jsx` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.0898989898989899 - nodes in this community are weakly interconnected."
+      "why": "Cohesion score 0.07039187227866474 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
-      "question": "Should `app_config.py` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.14736842105263157 - nodes in this community are weakly interconnected."
+      "question": "Should `main.py` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.0824829931972789 - nodes in this community are weakly interconnected."
     }
   ]
 }

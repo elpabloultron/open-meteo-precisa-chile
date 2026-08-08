@@ -756,3 +756,33 @@ async def obtener_openmeteo_directo(
     return res
 
 
+@app.get("/api/v1/gee/map-tile")
+async def obtener_tile_mapa_gee(
+    capa: str = Query("NDVI", description="Tipo de capa: NDVI, NDRE, NDWI, LST, FIRMS"),
+    lat: float = Query(-33.45, description="Latitud central"),
+    lon: float = Query(-70.66, description="Longitud central")
+):
+    """Genera parámetros de mapa satelital interactivo GEE para renderizado en MapLibre/Leaflet."""
+    paletas = {
+        "NDVI": {"min": 0.0, "max": 0.8, "palette": ["#d73027", "#f46d43", "#fdae61", "#fee08b", "#d9ef8b", "#a6d96a", "#66bd63", "#1a9850"]},
+        "NDRE": {"min": 0.0, "max": 0.6, "palette": ["#ffffe5", "#f7fcb9", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#005a32"]},
+        "NDWI": {"min": -0.5, "max": 0.5, "palette": ["#f7fbff", "#deebf7", "#c6dbef", "#9ecae1", "#6baed6", "#4292c6", "#2171b5", "#084594"]},
+        "LST": {"min": 0.0, "max": 40.0, "palette": ["#313695", "#4575b4", "#74add1", "#abd9e9", "#e0f3f8", "#fee090", "#fdae61", "#f46d43", "#d73027"]},
+        "FIRMS": {"min": 300.0, "max": 400.0, "palette": ["#ffffb2", "#fecc5c", "#fd8d3c", "#f03b20", "#bd0026"]}
+    }
+    pal = paletas.get(capa.upper(), paletas["NDVI"])
+    
+    return {
+        "status": "ok",
+        "capa": capa.upper(),
+        "tile_url_template": f"https://earthengine.googleapis.com/v1/projects/earthengine-legacy/maps/gee-{capa.lower()}-tiles/{{z}}/{{x}}/{{y}}",
+        "paleta": pal,
+        "leyenda": {
+            "min_val": pal["min"],
+            "max_val": pal["max"],
+            "colores": pal["palette"]
+        }
+    }
+
+
+

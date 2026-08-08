@@ -227,6 +227,44 @@ export default function AgroPanel({ agricola, onSelectMetric, stationInfo, apiBa
             </div>
           </div>
 
+          {/* NDRE CLOROFILA Y NITRÓGENO */}
+          <div
+            onClick={() => handleCardClick("Índice NDRE (Clorofila & Nitrógeno)", agricola?.clorofila_nitrogino_ndre || 0.42, "NDRE (0-1)", "Mide la concentración de nitrógeno y clorofila en hojas maduras mediante la banda Red-Edge B8A/B5 de Sentinel-2.", "Planificar dosis de fertirriego nítrico según requerimiento del dosel.", "Google Earth Engine")}
+            className="bg-slate-900/80 p-5 rounded-2xl border border-white/10 space-y-3 cursor-pointer hover:border-lime-500/50 transition group"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold text-lime-400 uppercase tracking-wider flex items-center gap-1">
+                🍀 Clorofila & Nitrógeno (NDRE)
+                <ChevronRight className="w-4 h-4 text-lime-400 group-hover:translate-x-1 transition" />
+              </span>
+              <span className="text-lg font-extrabold font-mono text-lime-300 bg-lime-500/20 px-3 py-1 rounded-xl border border-lime-500/40">
+                {agricola?.clorofila_nitrogino_ndre || 0.42}
+              </span>
+            </div>
+            <div className="text-sm font-semibold text-white">
+              {agricola?.estado_clorofila_nitrógeno || 'Nutrición Nitrógeno Óptima (NDRE) 🍀'}
+            </div>
+          </div>
+
+          {/* DÉFICIT PRESIÓN VAPOR VPD */}
+          <div
+            onClick={() => handleCardClick("Déficit de Presión de Vapor (VPD)", agricola?.deficit_presion_vapor_vpd_kpa || 1.15, "kPa", "Calculado con temperatura de suelo y presión de saturación. VPD alto (>2.0 kPa) genera cierre estomático y detiene la fotosíntesis.", "Aplicar riegos refrescantes por microaspersión durante horas de alto VPD.", "Google Earth Engine")}
+            className="bg-slate-900/80 p-5 rounded-2xl border border-white/10 space-y-3 cursor-pointer hover:border-amber-500/50 transition group"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1">
+                🌬️ Déficit Presión Vapor (VPD)
+                <ChevronRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition" />
+              </span>
+              <span className="text-lg font-extrabold font-mono text-amber-300 bg-amber-500/20 px-3 py-1 rounded-xl border border-amber-500/40">
+                {agricola?.deficit_presion_vapor_vpd_kpa || 1.15} <span className="text-xs font-sans">kPa</span>
+              </span>
+            </div>
+            <div className="text-sm font-semibold text-white">
+              Suelo 10cm: <span className="font-mono text-amber-300 font-bold">{agricola?.temperatura_suelo_10cm_c || 16.5}°C</span>
+            </div>
+          </div>
+
         </div>
 
       </div>
