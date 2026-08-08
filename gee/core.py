@@ -32,15 +32,12 @@ class GEECore:
             logger.info(f"🎉 [GEE] Autenticación ADC exitosa (Proyecto: {project_id})")
             return True
         except Exception as adc_err:
-            logger.info(f"ℹ️ [GEE] Intentando clave local por Service Account: {adc_err}")
+            logger.info("[GEE] ADC no disponible; se intentará una ruta de credencial configurada explícitamente.")
 
         # 2. Intentar claves locales
         key_paths = [
             os.getenv("GOOGLE_APPLICATION_CREDENTIALS", ""),
             os.getenv("GEE_KEY_PATH", ""),
-            os.path.join(os.path.dirname(os.path.dirname(__file__)), "llave-google.json.json"),
-            os.path.join(os.path.dirname(os.path.dirname(__file__)), "llave-google.json"),
-            os.path.join(os.path.dirname(os.path.dirname(__file__)), "credentials.json")
         ]
         key_path = next((p for p in key_paths if p and os.path.exists(p)), None)
         
@@ -57,7 +54,7 @@ class GEECore:
             except Exception as e:
                 logger.error(f"⚠️ [GEE] Error inicializando con llave local: {e}")
 
-        logger.warning("⚠️ [GEE] No se encontraron credenciales válidas. Operando en modo fallback simulado.")
+        logger.warning("[GEE] No se encontraron credenciales válidas. Operando en modo fallback.")
         return False
 
     @classmethod

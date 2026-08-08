@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>/ — graphify tree viewer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      margin: 20px 0 0 24px;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #1e3a56;
+    }
+    .controls {
+      margin: 20px 0 15px 24px;
+    }
+    button {
+      margin-right: 10px;
+      padding: 8px 18px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    button:active {
+      background: #004085;
+    }
+    #tree-container {
+      width: calc(100vw - 48px); /* Adjust for body margin/padding */
+      height: 85vh;
+      overflow: auto;
+      border-radius: 8px;
+      background: #fff;
+      margin-left: 24px;
+      margin-right: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border: 1px solid #ddd;
+    }
+    svg {
+      background: #fff;
+      border-radius: 8px;
+      display: block; /* Important for D3 */
+    }
+    .node circle {
+      stroke-width: 2.5px;
+    }
+    .node text { /* Base style for the <text> container */
+      font: 13px 'Segoe UI', sans-serif;
+      paint-order: stroke fill; /* Ensures text is readable over lines */
+      stroke: #fff; /* White halo */
+      stroke-width: 3px; /* Halo thickness */
+      stroke-linejoin: round;
+      stroke-opacity: 0.85; /* Halo opacity */
+    }
+    .link {
+      fill: none;
+      stroke-opacity: 0.7;
+      stroke-width: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>/ — Knowledge Graph</h1>
+  <div class="controls">
+    <button onclick="expandAll()">Expand All</button>
+    <button onclick="collapseAll()">Collapse All</button>
+    <button onclick="resetView()">Reset View</button>
+  </div>
+  <div id="tree-container">
+    <svg id="tree-svg" width="6000" height="8000"></svg>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script>
+    const initialJsonData = {"name":"/","total_count":193,"children":[{"name":"app_config.py","total_count":5,"children":[{"name":"_as_bool()","total_count":1,"children":[]},{"name":"_as_origins()","total_count":1,"children":[]},{"name":"Configuraci\u00f3n centralizada de MeteoPrecisa. Los valores sensibles nunca tienen\u2026","total_count":1,"children":[]},{"name":"get_settings()","total_count":1,"children":[]},{"name":"Settings","total_count":1,"children":[]}]},{"name":"cache_store.py","total_count":7,"children":[{"name":"_load_local()","total_count":1,"children":[]},{"name":"_save_local()","total_count":1,"children":[]},{"name":"Carga la instant\u00e1nea central; en desarrollo usa el archivo local.","total_count":1,"children":[]},{"name":"Guarda una instant\u00e1nea completa. Reemplazar un objeto GCS es at\u00f3mico.","total_count":1,"children":[]},{"name":"load_cache()","total_count":1,"children":[]},{"name":"Persistencia de la cach\u00e9 compartida entre el job y las instancias API.","total_count":1,"children":[]},{"name":"save_cache()","total_count":1,"children":[]}]},{"name":"frontend","total_count":88,"children":[{"name":".oxlintrc.json","total_count":8,"children":[{"name":"$schema","total_count":1,"children":[]},{"name":"oxc","total_count":1,"children":[]},{"name":"plugins","total_count":1,"children":[]},{"name":"react","total_count":1,"children":[]},{"name":"react/only-export-components","total_count":1,"children":[]},{"name":"react/rules-of-hooks","total_count":1,"children":[]},{"name":"rules","total_count":1,"children":[]},{"name":"warn","total_count":1,"children":[]}]},{"name":"package.json","total_count":43,"children":[{"name":"@tailwindcss/vite","total_count":1,"children":[]},{"name":"@tailwindcss/vite","total_count":1,"children":[]},{"name":"@types/node","total_count":1,"children":[]},{"name":"@types/node","total_count":1,"children":[]},{"name":"@types/react","total_count":1,"children":[]},{"name":"@types/react","total_count":1,"children":[]},{"name":"@types/react-dom","total_count":1,"children":[]},{"name":"@types/react-dom","total_count":1,"children":[]},{"name":"@vitejs/plugin-react","total_count":1,"children":[]},{"name":"@vitejs/plugin-react","total_count":1,"children":[]},{"name":"build","total_count":1,"children":[]},{"name":"chart.js","total_count":1,"children":[]},{"name":"chart.js","total_count":1,"children":[]},{"name":"dependencies","total_count":1,"children":[]},{"name":"dev","total_count":1,"children":[]},{"name":"devDependencies","total_count":1,"children":[]},{"name":"knip","total_count":1,"children":[]},{"name":"knip","total_count":1,"children":[]},{"name":"lint","total_count":1,"children":[]},{"name":"lucide-react","total_count":1,"children":[]},{"name":"lucide-react","total_count":1,"children":[]},{"name":"name","total_count":1,"children":[]},{"name":"oxlint","total_count":1,"children":[]},{"name":"oxlint","total_count":1,"children":[]},{"name":"preview","total_count":1,"children":[]},{"name":"private","total_count":1,"children":[]},{"name":"react","total_count":1,"children":[]},{"name":"react","total_count":1,"children":[]},{"name":"react-chartjs-2","total_count":1,"children":[]},{"name":"react-chartjs-2","total_count":1,"children":[]},{"name":"react-dom","total_count":1,"children":[]},{"name":"react-dom","total_count":1,"children":[]},{"name":"scripts","total_count":1,"children":[]},{"name":"tailwindcss","total_count":1,"children":[]},{"name":"tailwindcss","total_count":1,"children":[]},{"name":"type","total_count":1,"children":[]},{"name":"typescript","total_count":1,"children":[]},{"name":"typescript","total_count":1,"children":[]},{"name":"version","total_count":1,"children":[]},{"name":"vite","total_count":1,"children":[]},{"name":"vite","total_count":1,"children":[]},{"name":"vite-plugin-pwa","total_count":1,"children":[]},{"name":"vite-plugin-pwa","total_count":1,"children":[]}]},{"name":"public","total_count":12,"children":[{"name":"manifest.json","total_count":11,"children":[{"name":"background_color","total_count":1,"children":[]},{"name":"categories","total_count":1,"children":[]},{"name":"display","total_count":1,"children":[]},{"name":"icons","total_count":1,"children":[]},{"name":"name","total_count":1,"children":[]},{"name":"orientation","total_count":1,"children":[]},{"name":"short_name","total_count":1,"children":[]},{"name":"start_url","total_count":1,"children":[]},{"name":"theme_color","total_count":1,"children":[]},{"name":"utilities","total_count":1,"children":[]},{"name":"weather","total_count":1,"children":[]}]},{"name":"service-worker.js","total_count":1,"children":[{"name":"ASSETS_TO_CACHE","total_count":1,"children":[]}]}]},{"name":"src","total_count":24,"children":[{"name":"App.jsx","total_count":1,"children":[{"name":"App()","total_count":1,"children":[]}]},{"name":"components","total_count":19,"children":[{"name":"AgroPanel.jsx","total_count":1,"children":[{"name":"AgroPanel()","total_count":1,"children":[]}]},{"name":"AqiDrawer.jsx","total_count":1,"children":[{"name":"AqiDrawer()","total_count":1,"children":[]}]},{"name":"BottomNav.jsx","total_count":1,"children":[{"name":"BottomNav()","total_count":1,"children":[]}]},{"name":"ComparisonTable.jsx","total_count":1,"children":[{"name":"ComparisonTable()","total_count":1,"children":[]}]},{"name":"DailyForecastCards.jsx","total_count":1,"children":[{"name":"DailyForecastCards()","total_count":1,"children":[]}]},{"name":"DetailDrawer.jsx","total_count":1,"children":[{"name":"DetailDrawer()","total_count":1,"children":[]}]},{"name":"EstacionesCercanasModal.jsx","total_count":1,"children":[{"name":"EstacionesCercanasModal()","total_count":1,"children":[]}]},{"name":"ForecastChart.jsx","total_count":1,"children":[{"name":"ForecastChart()","total_count":1,"children":[]}]},{"name":"HistoricalChart.jsx","total_count":1,"children":[{"name":"HistoricalChart()","total_count":1,"children":[]}]},{"name":"HourlyCarousel.jsx","total_count":2,"children":[{"name":"getWeatherIcon()","total_count":1,"children":[]},{"name":"HourlyCarousel()","total_count":1,"children":[]}]},{"name":"HourlyForecastDrawer.jsx","total_count":1,"children":[{"name":"HourlyForecastDrawer()","total_count":1,"children":[]}]},{"name":"LocationFallbackModal.jsx","total_count":2,"children":[{"name":"LocationFallbackModal()","total_count":1,"children":[]},{"name":"REGIONES","total_count":1,"children":[]}]},{"name":"MapSection.jsx","total_count":1,"children":[{"name":"MapSection()","total_count":1,"children":[]}]},{"name":"Navbar.jsx","total_count":1,"children":[{"name":"Navbar()","total_count":1,"children":[]}]},{"name":"SatelliteModal.jsx","total_count":1,"children":[{"name":"SatelliteModal()","total_count":1,"children":[]}]},{"name":"UrbanPanel.jsx","total_count":1,"children":[{"name":"UrbanPanel()","total_count":1,"children":[]}]},{"name":"WeatherHeader.jsx","total_count":1,"children":[{"name":"WeatherHeader()","total_count":1,"children":[]}]}]},{"name":"context","total_count":2,"children":[{"name":"WeatherContext.jsx","total_count":2,"children":[{"name":"WeatherContext","total_count":1,"children":[]},{"name":"WeatherProvider()","total_count":1,"children":[]}]}]},{"name":"utils","total_count":1,"children":[{"name":"timeUtils.js","total_count":1,"children":[{"name":"formatLocalTime()","total_count":1,"children":[]}]}]},{"name":"main.jsx","total_count":1,"children":[]}]},{"name":"vite.config.js","total_count":1,"children":[]}]},{"name":"gee","total_count":16,"children":[{"name":"core.py","total_count":3,"children":[{"name":".initialize()","total_count":1,"children":[]},{"name":".is_active()","total_count":1,"children":[]},{"name":"GEECore","total_count":1,"children":[]}]},{"name":"rural.py","total_count":5,"children":[{"name":"Extrae m\u00e9tricas satelitales (Sentinel-2, ERA5, MODIS) orientadas a la\u2026","total_count":1,"children":[]},{"name":"Extrae serie de tiempo NDVI de los \u00faltimos 12 meses usando MODIS MOD13Q1.","total_count":1,"children":[]},{"name":"extraer_historico_ndvi()","total_count":1,"children":[]},{"name":"extraer_metricas_agricolas()","total_count":1,"children":[]},{"name":"fallback_rural()","total_count":1,"children":[]}]},{"name":"tiles.py","total_count":4,"children":[{"name":"_create_tile_url()","total_count":1,"children":[]},{"name":"Genera las URLs de los tiles (capas visuales) para el Frontend.","total_count":1,"children":[]},{"name":"Helper gen\u00e9rico para obtener la URL del map ID en Earth Engine.","total_count":1,"children":[]},{"name":"obtener_capas_gee_y_windy()","total_count":1,"children":[]}]},{"name":"urban.py","total_count":3,"children":[{"name":"Extrae m\u00e9tricas satelitales (Sentinel-5P, Landsat) orientadas a entornos\u2026","total_count":1,"children":[]},{"name":"extraer_metricas_urbanas()","total_count":1,"children":[]},{"name":"fallback_urbano()","total_count":1,"children":[]}]},{"name":"__init__.py","total_count":1,"children":[]}]},{"name":"goes_processor.py","total_count":5,"children":[{"name":"_descargar_y_procesar_frame()","total_count":1,"children":[]},{"name":"Descarga los \u00faltimos fotogramas de la NOAA para Chile (GOES-19 SSA), los\u2026","total_count":1,"children":[]},{"name":"Devuelve la metadata y URL del bucle animado m\u00e1s reciente de GOES-19.","total_count":1,"children":[]},{"name":"obtener_satellite_latest_loop()","total_count":1,"children":[]},{"name":"procesar_video_goes19()","total_count":1,"children":[]}]},{"name":"main.py","total_count":22,"children":[{"name":"buscar_estaciones()","total_count":1,"children":[]},{"name":"calcular_calidad_aire_dual()","total_count":1,"children":[]},{"name":"calcular_distancia()","total_count":1,"children":[]},{"name":"calcular_horas_frio()","total_count":1,"children":[]},{"name":"calcular_rumbo_cardinal()","total_count":1,"children":[]},{"name":"construir_transparency_metadata()","total_count":1,"children":[]},{"name":"evaluar_inversion_termica()","total_count":1,"children":[]},{"name":"forzar_sincronizacion_manual()","total_count":1,"children":[]},{"name":"home()","total_count":1,"children":[]},{"name":"Inicializa dependencias; la sincronizaci\u00f3n productiva la realiza Cloud Run Job.","total_count":1,"children":[]},{"name":"inspeccionar_ndvi_punto()","total_count":1,"children":[]},{"name":"lifespan()","total_count":1,"children":[]},{"name":"obtener_alertas_senapred()","total_count":1,"children":[]},{"name":"obtener_capas_mapa()","total_count":1,"children":[]},{"name":"obtener_clima_actual_api()","total_count":1,"children":[]},{"name":"obtener_clima_hiperlocal()","total_count":1,"children":[]},{"name":"obtener_gee_punto_seguro()","total_count":1,"children":[]},{"name":"obtener_historico_clima()","total_count":1,"children":[]},{"name":"obtener_satelite_goes19()","total_count":1,"children":[]},{"name":"obtener_satellite_latest_loop_api()","total_count":1,"children":[]},{"name":"quitar_tildes()","total_count":1,"children":[]},{"name":"refresh_cache_before_api()","total_count":1,"children":[]}]},{"name":"mapa.js","total_count":8,"children":[{"name":"Angulos()","total_count":1,"children":[]},{"name":"creaCapasMarcadores()","total_count":1,"children":[]},{"name":"creaMarcador()","total_count":1,"children":[]},{"name":"creaMarcadorLluvia()","total_count":1,"children":[]},{"name":"creaMarcadorTemperatura()","total_count":1,"children":[]},{"name":"creaMarcadorViento()","total_count":1,"children":[]},{"name":"procesarmapa()","total_count":1,"children":[]},{"name":"rosadelosvientos()","total_count":1,"children":[]}]},{"name":"scripts","total_count":4,"children":[{"name":"configurar_sync_horario.sh","total_count":1,"children":[{"name":"configurar_sync_horario.sh script","total_count":1,"children":[]}]},{"name":"deploy.sh","total_count":1,"children":[{"name":"deploy.sh script","total_count":1,"children":[]}]},{"name":"configurar_sync_horario.ps1","total_count":1,"children":[]},{"name":"deploy.ps1","total_count":1,"children":[]}]},{"name":"sincronizador_background.py","total_count":18,"children":[{"name":"Actualiza la instant\u00e1nea en memoria como m\u00e1ximo una vez por intervalo.","total_count":1,"children":[]},{"name":"Carga la cach\u00e9 local o compartida sin reemplazar su referencia global.","total_count":1,"children":[]},{"name":"cargar_cache_desde_disco()","total_count":1,"children":[]},{"name":"cargar_catalogo_maestro()","total_count":1,"children":[]},{"name":"clean_num()","total_count":1,"children":[]},{"name":"ejecutar_sincronizacion_completa()","total_count":1,"children":[]},{"name":"guardar_cache_en_disco()","total_count":1,"children":[]},{"name":"iniciar_loop_background()","total_count":1,"children":[]},{"name":"Persiste la instant\u00e1nea completa localmente o en Cloud Storage.","total_count":1,"children":[]},{"name":"refrescar_cache_si_corresponde()","total_count":1,"children":[]},{"name":"sincronizar_agromet_inia()","total_count":1,"children":[]},{"name":"sincronizar_alertas_senapred()","total_count":1,"children":[]},{"name":"sincronizar_calidad_aire_sinca()","total_count":1,"children":[]},{"name":"sincronizar_dmc_telemetria()","total_count":1,"children":[]},{"name":"sincronizar_pronostico_oficial_dmc()","total_count":1,"children":[]},{"name":"sincronizar_puntos_gee()","total_count":1,"children":[]},{"name":"sincronizar_purpleair()","total_count":1,"children":[]},{"name":"sincronizar_redmeteo()","total_count":1,"children":[]}]},{"name":"sync_job.py","total_count":2,"children":[{"name":"Punto de entrada para el Cloud Run Job que actualiza la cach\u00e9 cada hora.","total_count":1,"children":[]},{"name":"run()","total_count":1,"children":[]}]},{"name":"test_main.py","total_count":17,"children":[{"name":".__aenter__()","total_count":1,"children":[]},{"name":".__aexit__()","total_count":1,"children":[]},{"name":".get()","total_count":1,"children":[]},{"name":".json()","total_count":1,"children":[]},{"name":"client()","total_count":1,"children":[]},{"name":"FakeOpenMeteoClient","total_count":1,"children":[]},{"name":"FakeOpenMeteoResponse","total_count":1,"children":[]},{"name":"test_alertas_senapred_endpoint_uses_cached_data()","total_count":1,"children":[]},{"name":"test_buscar_estaciones_endpoint_uses_cached_catalog()","total_count":1,"children":[]},{"name":"test_capas_mapa_endpoint_accepts_default_coordinates()","total_count":1,"children":[]},{"name":"test_capas_mapa_rejects_invalid_coordinates()","total_count":1,"children":[]},{"name":"test_clean_num_discards_sentinel_values()","total_count":1,"children":[]},{"name":"test_historico_accepts_lng_alias_and_validates_missing_longitude()","total_count":1,"children":[]},{"name":"test_home_endpoint_reports_real_status()","total_count":1,"children":[]},{"name":"test_manual_sync_requires_configuration_or_token()","total_count":1,"children":[]},{"name":"test_weather_current_endpoint_uses_cached_and_mocked_data()","total_count":1,"children":[]},{"name":"test_weather_current_requires_longitude()","total_count":1,"children":[]}]},{"name":"actualizar_app.ps1","total_count":1,"children":[]}]};
+
+    function transformData(jsonData) {
+        // Helper function to recursively build the children structure
+        function processNode(node, parentL1StageName) {
+            let displayName = node.name;
+            // Append total_count if it exists and is not already in the name
+            if (node.total_count !== undefined) {
+                if (!/\(Total Count: \d+\)$/.test(displayName)) {
+                    displayName += ` (Total Count: ${node.total_count})`;
+                }
+            }
+
+            const newNode = { name: displayName };
+
+            if (parentL1StageName === "Root") {
+                 newNode.originalStageName = node.name;
+            } else {
+                newNode.originalStageName = parentL1StageName;
+            }
+
+            if (node.children && node.children.length > 0) {
+                const stageNameToPass = (parentL1StageName === "Root") ? node.name : parentL1StageName;
+                newNode.children = node.children.map(child => processNode(child, stageNameToPass));
+            }
+
+            return newNode;
+        }
+
+        let rootDisplayName = jsonData.name;
+        if (jsonData.total_count !== undefined && !/\(Total Count: \d+\)$/.test(rootDisplayName)) {
+            rootDisplayName += ` (Total Count: ${jsonData.total_count})`;
+        }
+
+        return {
+            name: rootDisplayName,
+            originalStageName: "Root",
+            children: (jsonData.children || []).map(child => processNode(child, "Root"))
+        };
+    }
+
+    const treeData = transformData(initialJsonData);
+
+    // Auto-populated phaseColors: every depth-1 child of the root gets
+    // a stable colour from a bigger palette so all top-level dirs are
+    // distinguishable.
+    const PALETTE = [
+      ["#3498DB","#2980B9","#AED6F1"], ["#2ECC71","#27AE60","#A9DFBF"],
+      ["#E74C3C","#C0392B","#F5B7B1"], ["#9B59B6","#8E44AD","#D7BDE2"],
+      ["#F39C12","#D68910","#FAD7A0"], ["#1ABC9C","#117864","#A2D9CE"],
+      ["#34495E","#1B2631","#ABB2B9"], ["#E67E22","#BA4A00","#F5CBA7"],
+      ["#16A085","#0E6655","#A2D9CE"], ["#D35400","#A04000","#EDBB99"],
+      ["#7F8C8D","#566573","#D5DBDB"], ["#C0392B","#7B241C","#F5B7B1"],
+      ["#2E86C1","#1B4F72","#A9CCE3"], ["#28B463","#196F3D","#A9DFBF"],
+      ["#AF7AC5","#6C3483","#D2B4DE"],
+    ];
+    const phaseColors = { "Root": { fill: "#4A4A4A", stroke: "#333333", collapsedFill: "#6C757D" },
+                          "Default": { fill: "#BDC3C7", stroke: "#95A5A6", collapsedFill: "#ECF0F1" } };
+    (initialJsonData.children || []).forEach((c, i) => {
+      const pal = PALETTE[i % PALETTE.length];
+      phaseColors[c.name] = { fill: pal[0], stroke: pal[1], collapsedFill: pal[2] };
+    });
+
+    const levelSpecificPalettes = {
+      0: { fill: "#4A4A4A", stroke: "#333333", collapsedFill: "#6C757D" },
+      2: { fill: "#6ab04c", stroke: "#508a38", collapsedFill: "#a3d391" },
+      3: { fill: "#f0932b", stroke: "#d0730f", collapsedFill: "#f6c07e" },
+      4: { fill: "#be2edd", stroke: "#a01cb3", collapsedFill: "#e08bf2" },
+      5: { fill: "#00a8ff", stroke: "#007ac1", collapsedFill: "#74d2ff" },
+      6: { fill: "#e55039", stroke: "#c23620", collapsedFill: "#f09a8d" },
+      default: { fill: "#747d8c", stroke: "#57606f", collapsedFill: "#a4b0be" }
+    };
+
+    const svgElement = d3.select("#tree-svg");
+    const initialSvgWidth = +svgElement.attr("width");
+    const initialSvgHeight = +svgElement.attr("height");
+    const margin = { top: 40, right: 120, bottom: 80, left: 450 };
+    let width = initialSvgWidth - margin.left - margin.right;
+    let height = initialSvgHeight - margin.top - margin.bottom;
+    const duration = 500;
+    let nodeCounter = 0;
+    const g = svgElement.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    const treemap = d3.tree().nodeSize([40, 0]);
+    let rootNode = d3.hierarchy(treeData, d => d.children);
+    rootNode.x0 = 0;
+    rootNode.y0 = 0;
+
+    if (rootNode.children) {
+      rootNode.children.forEach(d_child => {
+        if (d_child.children) { collapseBranch(d_child); }
+      });
+    }
+    updateTree(rootNode);
+
+    function collapseBranch(d) { if (d.children) { d._children = d.children; d._children.forEach(collapseBranch); d.children = null; } }
+    function expandBranch(d) { if (d._children) { d.children = d._children; d._children = null; } if (d.children) { d.children.forEach(expandBranch); } }
+    window.expandAll = () => { expandBranch(rootNode); updateTree(rootNode); };
+    window.collapseAll = () => { if (rootNode.children) { rootNode.children.forEach(collapseBranch); } updateTree(rootNode); };
+    window.resetView = () => { if (rootNode.children) { rootNode.children.forEach(d_child => { if (d_child.children || d_child._children) { collapseBranch(d_child); } }); } if (rootNode._children && !rootNode.children) { rootNode.children = rootNode._children; rootNode._children = null; } updateTree(rootNode); };
+
+    function updateTree(source) {
+      const treeLayoutData = treemap(rootNode);
+      let nodes = treeLayoutData.descendants();
+      let links = treeLayoutData.descendants().slice(1);
+
+      let minX = 0;
+      let maxX = 0;
+      if (nodes.length > 0) {
+        minX = d3.min(nodes, d => d.x);
+        maxX = d3.max(nodes, d => d.x);
+      }
+
+      let neededHeight = Math.max(initialSvgHeight, maxX - minX + margin.top + margin.bottom + 100);
+      svgElement.transition().duration(duration / 2).attr("height", neededHeight);
+      g.transition().duration(duration / 2).attr("transform", `translate(${margin.left},${margin.top - minX + 40})`);
+
+      nodes.forEach(d => { d.y = d.depth * 400; }); // Adjust horizontal separation if needed
+
+      const node = g.selectAll('g.node').data(nodes, d => d.id || (d.id = ++nodeCounter));
+      const nodeEnter = node.enter().append('g')
+        .attr('class', d => "node" + (d.children || d._children ? " node--internal" : " node--leaf") + (d._children ? " _children" : ""))
+        .attr('transform', d => `translate(${source.y0},${source.x0})`)
+        .on('click', (event, d) => { if (d.children) { d._children = d.children; d.children = null; } else if (d._children) { d.children = d._children; d._children = null; } updateTree(d); })
+        .style('cursor', d => (d.children || d._children) ? 'pointer' : 'default');
+
+      nodeEnter.append('circle').attr('r', 1e-6);
+
+      nodeEnter.append('text')
+        .attr('dy', '.35em')
+        .attr('x', d => d.children || d._children ? -14 : 14)
+        .attr('text-anchor', d => d.children || d._children ? 'end' : 'start')
+        .style("fill-opacity", 1e-6)
+        .call(wrapText, 380);
+
+      const nodeUpdate = nodeEnter.merge(node);
+      nodeUpdate.transition().duration(duration)
+        .attr('transform', d => `translate(${d.y},${d.x})`)
+        .attr('class', d => "node" + (d.children ? " node--internal" : " node--leaf") + (d._children ? " node--internal _children" : ""));
+
+      nodeUpdate.select('circle').attr('r', 8.5)
+        .style('fill', d => {
+            let palette;
+            if (d.depth === 0) {
+                palette = levelSpecificPalettes[0];
+            } else if (d.depth === 1) {
+                palette = phaseColors[d.data.originalStageName] || phaseColors.Default;
+            } else {
+                palette = levelSpecificPalettes[d.depth] || levelSpecificPalettes.default;
+            }
+            if (d._children) return palette.collapsedFill;
+            if (d.children) return palette.fill;
+            return "#fff";
+        })
+        .style('stroke', d => {
+            let palette;
+            if (d.depth === 0) {
+                palette = levelSpecificPalettes[0];
+            } else if (d.depth === 1) {
+                palette = phaseColors[d.data.originalStageName] || phaseColors.Default;
+            } else {
+                palette = levelSpecificPalettes[d.depth] || levelSpecificPalettes.default;
+            }
+            return palette.stroke;
+        });
+      nodeUpdate.select('text').style("fill-opacity", 1).call(wrapText, 380);
+
+      const nodeExit = node.exit().transition().duration(duration).attr('transform', d => `translate(${source.y},${source.x})`).remove();
+      nodeExit.select('circle').attr('r', 1e-6);
+      nodeExit.select('text').style('fill-opacity', 1e-6);
+
+      const link = g.selectAll('path.link').data(links, d => d.id);
+      const linkEnter = link.enter().insert('path', "g").attr('class', 'link').attr('d', d => { const o = { x: source.x0, y: source.y0 }; return diagonal(o, o); });
+
+      linkEnter.merge(link).transition().duration(duration).attr('d', d => diagonal(d, d.parent))
+        .style('stroke', d => {
+            const sourceNode = d.parent;
+            if (!sourceNode) return phaseColors.Default.stroke;
+            const l1AncestorName = sourceNode.data.originalStageName;
+            const colorPalette = phaseColors[l1AncestorName] || phaseColors.Default;
+            return colorPalette.stroke;
+        });
+      link.exit().transition().duration(duration).attr('d', d => { const o = { x: source.x, y: source.y }; return diagonal(o, o); }).remove();
+      nodes.forEach(d => { d.x0 = d.x; d.y0 = d.y; });
+    }
+
+    function diagonal(s, d) { return `M ${s.y} ${s.x} C ${(s.y + d.y) / 2} ${s.x}, ${(s.y + d.y) / 2} ${d.x}, ${d.y} ${d.x}`; }
+
+    function wrapText(textElements, maxWidth) {
+        const textPartColors = {
+            name: '#343a40',
+            count: '#0056b3'
+        };
+        const countRegex = /(\s\(Total Count: \d+\))$/;
+
+        textElements.each(function () {
+            const textD3 = d3.select(this);
+            const originalNodeText = textD3.datum().data.name;
+            const x = parseFloat(textD3.attr("x") || 0);
+            const initialDy = textD3.attr("dy");
+            const textAnchor = textD3.attr("text-anchor");
+            const lineHeight = 1.1;
+
+            textD3.text(null);
+
+            let namePart = originalNodeText;
+            let countPartText = "";
+
+            const countMatch = originalNodeText.match(countRegex);
+            if (countMatch && originalNodeText.endsWith(countMatch[0])) {
+                namePart = originalNodeText.substring(0, originalNodeText.length - countMatch[0].length).trim();
+                countPartText = countMatch[0].trim();
+            }
+
+            const tokens = [];
+            namePart.split(/\s+/).filter(Boolean).forEach(word => {
+                tokens.push({ text: word, type: 'name' });
+            });
+            if (countPartText) {
+                tokens.push({ text: countPartText, type: 'count' });
+            }
+
+            if (tokens.length === 0 && originalNodeText) {
+                tokens.push({ text: originalNodeText, type: 'name' });
+            }
+
+            let currentTspan = textD3.append("tspan").attr("x", x).attr("dy", initialDy);
+            if (textAnchor === "end") currentTspan.attr("text-anchor", "end");
+
+            let lineTokens = [];
+
+            for (let i = 0; i < tokens.length; i++) {
+                const tokenObj = tokens[i];
+
+                lineTokens.push(tokenObj);
+                currentTspan.text(lineTokens.map(t => t.text).join(" "));
+
+                if (currentTspan.node().getComputedTextLength() > maxWidth && lineTokens.length > 1) {
+                    lineTokens.pop();
+
+                    currentTspan.text(null);
+                    lineTokens.forEach((prevToken, idx) => {
+                        currentTspan.append("tspan")
+                            .text((idx > 0 ? " " : "") + prevToken.text)
+                            .style("fill", textPartColors[prevToken.type] || textPartColors.name)
+                            .style("font-weight", prevToken.type === 'count' ? "bold" : "normal");
+                    });
+
+                    lineTokens = [tokenObj];
+                    currentTspan = textD3.append("tspan").attr("x", x).attr("dy", lineHeight + "em");
+                    if (textAnchor === "end") currentTspan.attr("text-anchor", "end");
+                }
+            }
+
+            currentTspan.text(null);
+            lineTokens.forEach((token, idx) => {
+                currentTspan.append("tspan")
+                    .text((idx > 0 ? " " : "") + token.text)
+                    .style("fill", textPartColors[token.type] || textPartColors.name)
+                    .style("font-weight", token.type === 'count' ? "bold" : "normal");
+            });
+
+            if (textD3.selectAll("tspan > tspan").empty() && textD3.select("tspan").text().length === 0 && originalNodeText) {
+                let t = textD3.select("tspan");
+                let displayText = originalNodeText;
+                t.text(displayText).style("fill", textPartColors.name);
+                if (t.node() && t.node().getComputedTextLength() > maxWidth && displayText.length > 20) {
+                    let estimatedChars = Math.floor(maxWidth / (t.node().getComputedTextLength()/displayText.length) );
+                    displayText = displayText.substring(0, Math.max(0, estimatedChars - 3)) + "...";
+                    t.text(displayText);
+                }
+            }
+        });
+    }
+  </script>
+</body>
+</html>

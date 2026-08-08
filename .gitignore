@@ -38,3 +38,5 @@ __pycache__/
 .idea/
 .DS_Store
 *.exe
+*.canvas
+*.base

@@ -8,28 +8,25 @@ import time
 from datetime import datetime, timedelta
 
 import httpx
-from dotenv import load_dotenv
+
+from app_config import settings
+from cache_store import load_cache, save_cache
 
 from gee.rural import extraer_metricas_agricolas
 from gee.urban import extraer_metricas_urbanas
 from goes_processor import procesar_video_goes19
-
-load_dotenv()
 
 
 
 if sys.stdout and hasattr(sys.stdout, 'buffer') and sys.stdout.encoding != 'utf-8':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
-CACHE_FILE = os.path.join(os.path.dirname(__file__), "cache_servidor.json")
+CACHE_FILE = str(settings.local_cache_path)
 CATALOGO_FILE = os.path.join(os.path.dirname(__file__), "estaciones.json")
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0.0.0 Safari/537.36"
 }
-
-USUARIO_DMC = os.getenv("USUARIO_DMC", "pablobenavidesjorquera@gmail.com")
-TOKEN_DMC = os.getenv("TOKEN_DMC", "dd2b8b289d198f37692ff788")
 
 # Estructura global en memoria
 CACHE_MEMORIA = {
@@ -52,6 +49,8 @@ CACHE_MEMORIA = {
     "gee_puntos": {}
 }
 
+_ULTIMA_CARGA_CACHE = 0.0
+
 def clean_num(v):
     if not v or "null" in str(v).lower() or "---" in str(v) or "sin datos" in str(v).lower():
         return None
@@ -64,28 +63,33 @@ def clean_num(v):
         return None
     return val
 
-def cargar_cache_desde_disco():
-    global CACHE_MEMORIA
-    if os.path.exists(CACHE_FILE):
-        try:
-            with open(CACHE_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                CACHE_MEMORIA.update(data)
-                print(f"📦 [Caché] Cargada correctamente desde disco (Última actualización: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(CACHE_MEMORIA.get('last_updated', 0)))})")
-        except Exception as e:
-            print(f"⚠️ Error cargando caché de disco: {e}")
-
-def guardar_cache_en_disco():
+def cargar_cache_desde_disco() -> bool:
+    """Carga la caché local o compartida sin reemplazar su referencia global."""
+    global _ULTIMA_CARGA_CACHE
     try:
-        tmp_file = f"{CACHE_FILE}.tmp"
-        with open(tmp_file, "w", encoding="utf-8") as f:
-            json.dump(CACHE_MEMORIA, f, ensure_ascii=False, indent=2)
-        os.replace(tmp_file, CACHE_FILE)
-        print("💾 [Caché] Guardada exitosamente en 'cache_servidor.json'")
+        data = load_cache()
+        if data:
+            CACHE_MEMORIA.update(data)
+            _ULTIMA_CARGA_CACHE = time.monotonic()
+            print("[Cache] Instantánea cargada correctamente")
+            return True
     except Exception as e:
-        print(f"⚠️ Error guardando caché en disco: {e}")
+        print(f"[Cache] Error al cargar la instantánea: {e}")
+    return False
 
 
+def refrescar_cache_si_corresponde(intervalo_segundos: int) -> bool:
+    """Actualiza la instantánea en memoria como máximo una vez por intervalo."""
+    if time.monotonic() - _ULTIMA_CARGA_CACHE < intervalo_segundos:
+        return False
+    return cargar_cache_desde_disco()
+
+
+def guardar_cache_en_disco() -> None:
+    """Persiste la instantánea completa localmente o en Cloud Storage."""
+    save_cache(CACHE_MEMORIA)
+    destino = "Cloud Storage" if settings.cache_backend == "gcs" else "cache_servidor.json"
+    print(f"[Cache] Instantánea guardada en {destino}")
 def cargar_catalogo_maestro() -> list[dict]:
     if os.path.exists(CATALOGO_FILE):
         try:
@@ -96,7 +100,11 @@ def cargar_catalogo_maestro() -> list[dict]:
     return []
 
 async def sincronizar_dmc_telemetria(client: httpx.AsyncClient) -> tuple[dict, list[dict]]:
-    url = f"https://climatologia.meteochile.gob.cl/application/servicios/getDatosRecientesRedEma?usuario={USUARIO_DMC}&token={TOKEN_DMC}"
+    if not settings.dmc_username or not settings.dmc_token:
+        print("[DMC] Sincronización omitida: faltan USUARIO_DMC o TOKEN_DMC.")
+        return {}, []
+
+    url = f"https://climatologia.meteochile.gob.cl/application/servicios/getDatosRecientesRedEma?usuario={settings.dmc_username}&token={settings.dmc_token}"
     print("✈️ [Sync Background] Consultando telemetría oficial DMC...")
     telemetria_map = {}
     estaciones_catalogo = []
@@ -487,7 +495,7 @@ async def ejecutar_sincronizacion_completa():
 
     telemetria_global = CACHE_MEMORIA.get("estaciones_telemetria", {}).copy()
 
-    async with httpx.AsyncClient(headers=HEADERS, follow_redirects=True, verify=False) as client:
+    async with httpx.AsyncClient(headers=HEADERS, follow_redirects=True) as client:
         # Lanzar generación de bucle WebP GOES-19 asíncronamente
         asyncio.create_task(procesar_video_goes19())
         
@@ -549,8 +557,6 @@ async def ejecutar_sincronizacion_completa():
     guardar_cache_en_disco()
     print(f"🎉 [BACKGROUND TASK] Sincronización completada exitosamente ({len(catalogo_final)} estaciones físicas unificadas en Chile).\n")
 
-# Carga inmediata al importar el módulo
-cargar_cache_desde_disco()
 
 async def iniciar_loop_background(intervalo_segundos=3600):
     cargar_cache_desde_disco()

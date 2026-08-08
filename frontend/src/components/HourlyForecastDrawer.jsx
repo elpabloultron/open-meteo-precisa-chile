@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Calendar, Clock, Droplets, Wind, Thermometer } from 'lucide-react';
+import { X, Calendar, Droplets, Wind } from 'lucide-react';
 
 export default function HourlyForecastDrawer({ isOpen, onClose, dayData }) {
   if (!isOpen || !dayData) return null;

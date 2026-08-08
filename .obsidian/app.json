@@ -1,0 +1,9 @@
+{
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": true,
+  "showFrontmatter": true,
+  "foldHeading": true,
+  "foldIndent": true,
+  "showLineNumber": true,
+  "tabSize": 2
+}

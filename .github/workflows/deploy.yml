@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   deploy:
     name: Compilar y Desplegar a Santiago de Chile (southamerica-west1)
@@ -45,7 +48,7 @@ jobs:
             --allow-unauthenticated
 
       - name: Instalar Firebase CLI
-        run: npm install -g firebase-tools@latest
+        run: npm install -g firebase-tools@13.33.0 --no-fund
 
       - name: Desplegar a Firebase Hosting
         env:

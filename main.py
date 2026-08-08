@@ -1,26 +1,26 @@
 import asyncio
 import math
 import os
+import secrets
 import time
 import unicodedata
 from contextlib import asynccontextmanager
 
 import httpx
-from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, Header, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-load_dotenv()
-
 
 import goes_processor
-from gee import obtener_capas_gee_y_windy
+from app_config import settings
+from gee import GEECore, obtener_capas_gee_y_windy
 from sincronizador_background import (
     CACHE_MEMORIA,
     cargar_cache_desde_disco,
     ejecutar_sincronizacion_completa,
     iniciar_loop_background,
+    refrescar_cache_si_corresponde,
 )
 
 
@@ -59,40 +59,49 @@ def construir_transparency_metadata(last_up_ts: int, boletin_dmc: dict = None, e
 
 
 
-try:
-    import urllib3
-    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-except ImportError:
-    pass
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Inicio: Cargar datos pre-cargados de disco y lanzar tarea en segundo plano
+    """Inicializa dependencias; la sincronización productiva la realiza Cloud Run Job."""
     cargar_cache_desde_disco()
-    task = asyncio.create_task(iniciar_loop_background(3600))
-    yield
-    # Apagado
-    task.cancel()
+    await asyncio.to_thread(GEECore.initialize)
 
+    task = None
+    if settings.enable_in_process_sync:
+        task = asyncio.create_task(iniciar_loop_background(3600))
+
+    yield
+
+    if task:
+        task.cancel()
+        try:
+            await task
+        except asyncio.CancelledError:
+            pass
 app = FastAPI(
     title="MeteoPrecisa Chile - Engine Unificado Multired",
     description="Backend Oficial Open Source: Google Earth Engine (NDVI, Humedad de Suelo), Capas Viento Windy, Modo Urbano, Modo Agrícola, Calidad del Aire Dual (SINCA+AQI), GOES-19, DMC y Open-Meteo",
-    version="10.1.0",
+    version="10.2.0",
     lifespan=lifespan
 )
 
-from fastapi.staticfiles import StaticFiles
 
 os.makedirs("static", exist_ok=True)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=list(settings.allowed_origins),
+    allow_credentials=False,
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type", "X-Admin-Token"],
 )
+
+
+@app.middleware("http")
+async def refresh_cache_before_api(request: Request, call_next):
+    if request.url.path.startswith("/api/"):
+        await asyncio.to_thread(refrescar_cache_si_corresponde, settings.cache_refresh_seconds)
+    return await call_next(request)
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0.0.0 Safari/537.36"
@@ -261,8 +270,9 @@ def home():
     return {
         "status": "online",
         "servicio": "MeteoPrecisa Chile - Engine Multired Unificado",
-        "version": "9.0.0",
-        "google_earth_engine_activo": True,
+        "version": "10.2.0",
+        "google_earth_engine_activo": GEECore.is_active(),
+        "cache_backend": settings.cache_backend,
         "cache_status": CACHE_MEMORIA.get("status", "uninitialized"),
         "ultima_sincronizacion_timestamp": CACHE_MEMORIA.get("last_updated", 0),
         "total_estaciones_registradas": len(CACHE_MEMORIA.get("catalogo_estaciones", []))
@@ -273,8 +283,11 @@ def home():
 
 
 @app.get("/api/v1/capas-mapa")
-async def obtener_capas_mapa():
-    capas = obtener_capas_gee_y_windy()
+async def obtener_capas_mapa(
+    lat: float = Query(-33.4450, ge=-90, le=90, description="Latitud del centro del mapa"),
+    lon: float = Query(-70.6830, ge=-180, le=180, description="Longitud del centro del mapa"),
+):
+    capas = obtener_capas_gee_y_windy(lat, lon)
     return {
         "status": "ok",
         "total_capas": len(capas),
@@ -294,21 +307,25 @@ async def inspeccionar_ndvi_punto(
 
 @app.get("/api/v1/weather/historico")
 async def obtener_historico_clima(
-    lat: float = Query(..., description="Latitud"),
-    lon: float = Query(..., description="Longitud")
+    lat: float = Query(..., ge=-90, le=90, description="Latitud GPS"),
+    lng: float | None = Query(None, ge=-180, le=180, description="Longitud GPS (lng)"),
+    lon: float | None = Query(None, ge=-180, le=180, description="Longitud GPS (lon)"),
 ):
-    from gee.rural import extraer_historico_ndvi
-    import asyncio
-    
-    try:
-        data = await asyncio.to_thread(extraer_historico_ndvi, lat, lon)
-        return {
-            "status": "ok",
-            "historico_ndvi_12_meses": data
-        }
-    except Exception as e:
-        return {"status": "error", "historico_ndvi_12_meses": []}
+    longitud_final = lng if lng is not None else lon
+    if longitud_final is None:
+        raise HTTPException(status_code=400, detail="Debe proporcionar el parámetro 'lng' o 'lon'.")
 
+    from gee.rural import extraer_historico_ndvi
+    try:
+        data = await asyncio.to_thread(extraer_historico_ndvi, lat, longitud_final)
+        return {
+            "status": "success",
+            "lat": lat,
+            "lon": longitud_final,
+            "historico_ndvi_12_meses": data,
+        }
+    except Exception:
+        return {"status": "error", "historico_ndvi_12_meses": []}
 @app.get("/api/v1/satellite/latest-loop")
 async def obtener_satellite_latest_loop_api():
     from goes_processor import obtener_satellite_latest_loop
@@ -622,9 +639,6 @@ async def obtener_clima_hiperlocal(
         }
     }
 
-@app.get("/api/v1/satellite/latest-loop")
-async def obtener_satelite_latest_loop_api():
-    return goes_processor.obtener_satellite_latest_loop()
 
 @app.get("/api/v1/weather/current")
 async def obtener_clima_actual_api(
@@ -639,33 +653,31 @@ async def obtener_clima_actual_api(
 
 
 @app.post("/api/v1/admin/sincronizar-ahora")
-async def forzar_sincronizacion_manual():
+async def forzar_sincronizacion_manual(
+    x_admin_token: str | None = Header(None, alias="X-Admin-Token"),
+):
+    if not settings.admin_sync_token:
+        raise HTTPException(status_code=503, detail="La sincronización manual no está configurada.")
+    if not x_admin_token or not secrets.compare_digest(x_admin_token, settings.admin_sync_token):
+        raise HTTPException(status_code=401, detail="No autorizado.")
     asyncio.create_task(ejecutar_sincronizacion_completa())
     return {
         "status": "ok",
         "mensaje": "Sincronización en segundo plano iniciada inmediatamente."
     }
 
-@app.get("/api/v1/weather/historico")
-async def obtener_historico_ndvi(
+
+@app.get("/api/v1/weather/openmeteo")
+async def obtener_openmeteo_directo(
     lat: float = Query(..., description="Latitud GPS"),
-    lng: float | None = Query(None, description="Longitud GPS (lng)"),
-    lon: float | None = Query(None, description="Longitud GPS (lon)")
+    lon: float = Query(..., description="Longitud GPS"),
+    dias: int = Query(7, ge=1, le=16, description="Días de pronóstico")
 ):
-    longitud_final = lng if lng is not None else lon
-    if longitud_final is None:
-        raise HTTPException(status_code=400, detail="Debe proporcionar el parámetro 'lng' o 'lon'.")
-    
-    # El llamado a GEE MODIS para 12 meses puede tardar 2 a 4 segundos
-    from gee.rural import extraer_historico_ndvi
-    try:
-        # Ejecutamos en thread para no bloquear el Event Loop de FastAPI
-        timeseries = await asyncio.to_thread(extraer_historico_ndvi, lat, longitud_final)
-        return {
-            "status": "success",
-            "lat": lat,
-            "lon": longitud_final,
-            "historico_ndvi_12_meses": timeseries
-        }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    """Endpoint directo para consultar pronóstico de Open-Meteo como fallback."""
+    from openmeteo_client import obtener_pronostico_openmeteo
+    res = await obtener_pronostico_openmeteo(lat, lon, dias)
+    if not res:
+        raise HTTPException(status_code=502, detail="No se pudo obtener datos de Open-Meteo.")
+    return res
+
+

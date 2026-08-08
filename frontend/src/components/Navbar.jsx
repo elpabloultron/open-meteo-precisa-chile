@@ -43,13 +43,14 @@ export default function Navbar({ modo, setModo, onSelectStation, apiBase }) {
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="text-xl font-extrabold text-white tracking-tight">
-                  MeteoPrecisa
+                  Meteo<span className="gradient-text-cyan">Precisa</span>
                 </h1>
-                <span className="px-2 py-0.5 text-[10px] font-bold bg-sky-500/20 text-sky-300 rounded-full border border-sky-500/30">
-                  v10.2 Live
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 text-[10px] font-bold bg-emerald-500/15 text-emerald-400 rounded-full border border-emerald-500/30 shadow-sm">
+                  <span className="live-pulse-dot"></span>
+                  <span>v10.2 Live</span>
                 </span>
               </div>
-              <p className="text-[11px] text-slate-400">Chile • GEE & Telemetría Multired</p>
+              <p className="text-[11px] text-slate-400 font-medium">Chile • GEE & Telemetría Multired</p>
             </div>
           </div>
 

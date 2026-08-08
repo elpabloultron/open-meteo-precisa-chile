@@ -1,0 +1,451 @@
+{
+  "communities": {
+    "0": [
+      "frontend_src_app",
+      "frontend_src_app_app",
+      "frontend_src_components_agropanel",
+      "frontend_src_components_agropanel_agropanel",
+      "frontend_src_components_aqidrawer",
+      "frontend_src_components_aqidrawer_aqidrawer",
+      "frontend_src_components_bottomnav",
+      "frontend_src_components_bottomnav_bottomnav",
+      "frontend_src_components_comparisontable",
+      "frontend_src_components_comparisontable_comparisontable",
+      "frontend_src_components_dailyforecastcards",
+      "frontend_src_components_dailyforecastcards_dailyforecastcards",
+      "frontend_src_components_detaildrawer",
+      "frontend_src_components_detaildrawer_detaildrawer",
+      "frontend_src_components_estacionescercanasmodal",
+      "frontend_src_components_estacionescercanasmodal_estacionescercanasmodal",
+      "frontend_src_components_forecastchart",
+      "frontend_src_components_forecastchart_forecastchart",
+      "frontend_src_components_historicalchart",
+      "frontend_src_components_historicalchart_historicalchart",
+      "frontend_src_components_hourlycarousel",
+      "frontend_src_components_hourlycarousel_getweathericon",
+      "frontend_src_components_hourlycarousel_hourlycarousel",
+      "frontend_src_components_hourlyforecastdrawer",
+      "frontend_src_components_hourlyforecastdrawer_hourlyforecastdrawer",
+      "frontend_src_components_locationfallbackmodal",
+      "frontend_src_components_locationfallbackmodal_locationfallbackmodal",
+      "frontend_src_components_locationfallbackmodal_regiones",
+      "frontend_src_components_mapsection",
+      "frontend_src_components_mapsection_mapsection",
+      "frontend_src_components_navbar",
+      "frontend_src_components_navbar_navbar",
+      "frontend_src_components_satellitemodal",
+      "frontend_src_components_satellitemodal_satellitemodal",
+      "frontend_src_components_urbanpanel",
+      "frontend_src_components_urbanpanel_urbanpanel",
+      "frontend_src_components_weatherheader",
+      "frontend_src_components_weatherheader_weatherheader",
+      "frontend_src_context_weathercontext",
+      "frontend_src_context_weathercontext_weathercontext",
+      "frontend_src_context_weathercontext_weatherprovider",
+      "frontend_src_main",
+      "frontend_src_utils_timeutils",
+      "frontend_src_utils_timeutils_formatlocaltime",
+      "ref_react"
+    ],
+    "1": [
+      "fastapi",
+      "get",
+      "goes_processor_obtener_satellite_latest_loop",
+      "goes_processor_rationale_134",
+      "main",
+      "main_buscar_estaciones",
+      "main_calcular_calidad_aire_dual",
+      "main_calcular_distancia",
+      "main_calcular_horas_frio",
+      "main_calcular_rumbo_cardinal",
+      "main_construir_transparency_metadata",
+      "main_evaluar_inversion_termica",
+      "main_forzar_sincronizacion_manual",
+      "main_home",
+      "main_inspeccionar_ndvi_punto",
+      "main_lifespan",
+      "main_obtener_alertas_senapred",
+      "main_obtener_capas_mapa",
+      "main_obtener_clima_actual_api",
+      "main_obtener_clima_hiperlocal",
+      "main_obtener_gee_punto_seguro",
+      "main_obtener_historico_clima",
+      "main_obtener_openmeteo_directo",
+      "main_obtener_satelite_goes19",
+      "main_obtener_satellite_latest_loop_api",
+      "main_quitar_tildes",
+      "main_rationale_64",
+      "main_rationale_676",
+      "main_refresh_cache_before_api",
+      "middleware",
+      "openmeteo_client",
+      "openmeteo_client_obtener_pronostico_openmeteo",
+      "openmeteo_client_rationale_1",
+      "openmeteo_client_rationale_24",
+      "post",
+      "request"
+    ],
+    "2": [
+      "asyncclient",
+      "goes_processor",
+      "goes_processor_descargar_y_procesar_frame",
+      "goes_processor_procesar_video_goes19",
+      "goes_processor_rationale_49",
+      "sincronizador_background",
+      "sincronizador_background_cargar_cache_desde_disco",
+      "sincronizador_background_cargar_catalogo_maestro",
+      "sincronizador_background_clean_num",
+      "sincronizador_background_ejecutar_sincronizacion_completa",
+      "sincronizador_background_guardar_cache_en_disco",
+      "sincronizador_background_iniciar_loop_background",
+      "sincronizador_background_rationale_67",
+      "sincronizador_background_rationale_82",
+      "sincronizador_background_rationale_89",
+      "sincronizador_background_refrescar_cache_si_corresponde",
+      "sincronizador_background_sincronizar_agromet_inia",
+      "sincronizador_background_sincronizar_alertas_senapred",
+      "sincronizador_background_sincronizar_calidad_aire_sinca",
+      "sincronizador_background_sincronizar_dmc_telemetria",
+      "sincronizador_background_sincronizar_pronostico_oficial_dmc",
+      "sincronizador_background_sincronizar_purpleair",
+      "sincronizador_background_sincronizar_redmeteo",
+      "sync_job",
+      "sync_job_rationale_1",
+      "sync_job_run"
+    ],
+    "3": [
+      "frontend_package_devdependencies",
+      "frontend_package_devdependencies_knip",
+      "frontend_package_devdependencies_oxlint",
+      "frontend_package_devdependencies_tailwindcss",
+      "frontend_package_devdependencies_tailwindcss_vite",
+      "frontend_package_devdependencies_types_node",
+      "frontend_package_devdependencies_types_react",
+      "frontend_package_devdependencies_types_react_dom",
+      "frontend_package_devdependencies_typescript",
+      "frontend_package_devdependencies_vite",
+      "frontend_package_devdependencies_vite_plugin_pwa",
+      "frontend_package_devdependencies_vitejs_plugin_react",
+      "knip",
+      "oxlint",
+      "tailwindcss",
+      "tailwindcss_vite",
+      "types_node",
+      "types_react",
+      "types_react_dom",
+      "typescript",
+      "vite",
+      "vite_plugin_pwa",
+      "vitejs_plugin_react"
+    ],
+    "4": [
+      "chart_js",
+      "frontend_package",
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_chart_js",
+      "frontend_package_dependencies_lucide_react",
+      "frontend_package_dependencies_react",
+      "frontend_package_dependencies_react_chartjs_2",
+      "frontend_package_dependencies_react_dom",
+      "frontend_package_name",
+      "frontend_package_private",
+      "frontend_package_scripts",
+      "frontend_package_scripts_build",
+      "frontend_package_scripts_dev",
+      "frontend_package_scripts_lint",
+      "frontend_package_scripts_preview",
+      "frontend_package_type",
+      "frontend_package_version",
+      "lucide_react",
+      "react",
+      "react_chartjs_2",
+      "react_dom"
+    ],
+    "5": [
+      "gee_core",
+      "gee_core_geecore",
+      "gee_core_geecore_initialize",
+      "gee_core_geecore_is_active",
+      "gee_init",
+      "gee_rural",
+      "gee_rural_extraer_historico_ndvi",
+      "gee_rural_extraer_metricas_agricolas",
+      "gee_rural_fallback_rural",
+      "gee_rural_rationale_136",
+      "gee_rural_rationale_9",
+      "gee_tiles",
+      "gee_tiles_create_tile_url",
+      "gee_tiles_obtener_capas_gee_y_windy",
+      "gee_tiles_rationale_18",
+      "gee_tiles_rationale_9",
+      "gee_urban",
+      "gee_urban_extraer_metricas_urbanas",
+      "gee_urban_fallback_urbano",
+      "gee_urban_rationale_8",
+      "sincronizador_background_sincronizar_puntos_gee"
+    ],
+    "6": [
+      "fixture",
+      "test_main",
+      "test_main_client",
+      "test_main_fakeopenmeteoclient",
+      "test_main_fakeopenmeteoclient_aenter",
+      "test_main_fakeopenmeteoclient_aexit",
+      "test_main_fakeopenmeteoclient_get",
+      "test_main_fakeopenmeteoresponse",
+      "test_main_fakeopenmeteoresponse_json",
+      "test_main_test_alertas_senapred_endpoint_uses_cached_data",
+      "test_main_test_buscar_estaciones_endpoint_uses_cached_catalog",
+      "test_main_test_capas_mapa_endpoint_accepts_default_coordinates",
+      "test_main_test_capas_mapa_rejects_invalid_coordinates",
+      "test_main_test_clean_num_discards_sentinel_values",
+      "test_main_test_historico_accepts_lng_alias_and_validates_missing_longitude",
+      "test_main_test_home_endpoint_reports_real_status",
+      "test_main_test_manual_sync_requires_configuration_or_token",
+      "test_main_test_weather_current_endpoint_uses_cached_and_mocked_data",
+      "test_main_test_weather_current_requires_longitude"
+    ],
+    "7": [
+      "any",
+      "app_config",
+      "app_config_as_bool",
+      "app_config_as_origins",
+      "app_config_get_settings",
+      "app_config_rationale_1",
+      "app_config_settings",
+      "cache_store",
+      "cache_store_load_cache",
+      "cache_store_load_local",
+      "cache_store_rationale_1",
+      "cache_store_rationale_32",
+      "cache_store_rationale_54",
+      "cache_store_save_cache",
+      "cache_store_save_local",
+      "path"
+    ],
+    "8": [
+      "frontend_public_manifest",
+      "frontend_public_manifest_background_color",
+      "frontend_public_manifest_categories",
+      "frontend_public_manifest_display",
+      "frontend_public_manifest_icons",
+      "frontend_public_manifest_name",
+      "frontend_public_manifest_orientation",
+      "frontend_public_manifest_short_name",
+      "frontend_public_manifest_start_url",
+      "frontend_public_manifest_theme_color",
+      "ref_utilities",
+      "ref_weather"
+    ],
+    "9": [
+      "mapa",
+      "mapa_angulos",
+      "mapa_creacapasmarcadores",
+      "mapa_creamarcador",
+      "mapa_creamarcadorlluvia",
+      "mapa_creamarcadortemperatura",
+      "mapa_creamarcadorviento",
+      "mapa_procesarmapa",
+      "mapa_rosadelosvientos"
+    ],
+    "10": [
+      "docs_obsidian_obsidian_app",
+      "docs_obsidian_obsidian_app_alwaysupdatelinks",
+      "docs_obsidian_obsidian_app_foldheading",
+      "docs_obsidian_obsidian_app_foldindent",
+      "docs_obsidian_obsidian_app_showfrontmatter",
+      "docs_obsidian_obsidian_app_showlinenumber",
+      "docs_obsidian_obsidian_app_tabsize",
+      "docs_obsidian_obsidian_app_usemarkdownlinks"
+    ],
+    "11": [
+      "frontend_oxlintrc",
+      "frontend_oxlintrc_plugins",
+      "frontend_oxlintrc_rules",
+      "frontend_oxlintrc_rules_react_only_export_components",
+      "frontend_oxlintrc_rules_react_rules_of_hooks",
+      "frontend_oxlintrc_schema",
+      "ref_oxc",
+      "ref_warn"
+    ],
+    "12": [
+      "obsidian_app",
+      "obsidian_app_alwaysupdatelinks",
+      "obsidian_app_foldheading",
+      "obsidian_app_foldindent",
+      "obsidian_app_showfrontmatter",
+      "obsidian_app_showlinenumber",
+      "obsidian_app_tabsize",
+      "obsidian_app_usemarkdownlinks"
+    ],
+    "13": [
+      "httpuser",
+      "locustfile",
+      "locustfile_meteoprecisauser",
+      "locustfile_meteoprecisauser_test_clima_cercano",
+      "locustfile_meteoprecisauser_test_healthcheck",
+      "locustfile_rationale_1",
+      "task"
+    ],
+    "14": [
+      "frontend_public_service_worker",
+      "frontend_public_service_worker_assets_to_cache"
+    ],
+    "15": [
+      "scripts_configurar_sync_horario_sh__entry",
+      "scripts_configurar_sync_horario_sh_scripts_configurar_sync_horario"
+    ],
+    "16": [
+      "scripts_deploy_sh__entry",
+      "scripts_deploy_sh_scripts_deploy"
+    ],
+    "17": [
+      "actualizar_app"
+    ],
+    "18": [
+      "frontend_vite_config"
+    ],
+    "19": [
+      "scripts_configurar_sync_horario_ps1_scripts_configurar_sync_horario"
+    ],
+    "20": [
+      "scripts_deploy_ps1_scripts_deploy"
+    ]
+  },
+  "cohesion": {
+    "0": 0.09090909090909091,
+    "1": 0.09365079365079365,
+    "2": 0.16923076923076924,
+    "3": 0.08695652173913043,
+    "4": 0.09523809523809523,
+    "5": 0.18095238095238095,
+    "6": 0.19298245614035087,
+    "7": 0.2,
+    "8": 0.16666666666666666,
+    "9": 0.5833333333333334,
+    "10": 0.25,
+    "11": 0.25,
+    "12": 0.25,
+    "13": 0.3333333333333333,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0
+  },
+  "gods": [
+    {
+      "id": "ref_react",
+      "label": "react",
+      "degree": 21
+    },
+    {
+      "id": "sincronizador_background_ejecutar_sincronizacion_completa",
+      "label": "ejecutar_sincronizacion_completa()",
+      "degree": 18
+    },
+    {
+      "id": "main_obtener_clima_hiperlocal",
+      "label": "obtener_clima_hiperlocal()",
+      "degree": 11
+    },
+    {
+      "id": "gee_core_geecore",
+      "label": "GEECore",
+      "degree": 8
+    },
+    {
+      "id": "sincronizador_background_clean_num",
+      "label": "clean_num()",
+      "degree": 8
+    },
+    {
+      "id": "sincronizador_background_cargar_cache_desde_disco",
+      "label": "cargar_cache_desde_disco()",
+      "degree": 8
+    },
+    {
+      "id": "gee_rural_extraer_metricas_agricolas",
+      "label": "extraer_metricas_agricolas()",
+      "degree": 7
+    },
+    {
+      "id": "gee_urban_extraer_metricas_urbanas",
+      "label": "extraer_metricas_urbanas()",
+      "degree": 7
+    },
+    {
+      "id": "cache_store_load_cache",
+      "label": "load_cache()",
+      "degree": 6
+    },
+    {
+      "id": "cache_store_save_cache",
+      "label": "save_cache()",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "obtener_gee_punto_seguro()",
+      "target": "fallback_rural()",
+      "source_files": [
+        "main.py",
+        "gee/rural.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "obtener_historico_clima()",
+      "target": "extraer_historico_ndvi()",
+      "source_files": [
+        "main.py",
+        "gee/rural.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "indirect_call",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "obtener_capas_mapa()",
+      "target": "obtener_capas_gee_y_windy()",
+      "source_files": [
+        "main.py",
+        "gee/tiles.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "obtener_gee_punto_seguro()",
+      "target": "fallback_urbano()",
+      "source_files": [
+        "main.py",
+        "gee/urban.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "procesar_video_goes19()",
+      "target": "client()",
+      "source_files": [
+        "goes_processor.py",
+        "test_main.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "indirect_call",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

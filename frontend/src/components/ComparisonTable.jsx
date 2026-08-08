@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Radio, Navigation, Thermometer, Droplets, Wind, ShieldCheck } from 'lucide-react';
+import { Radio } from 'lucide-react';
 
 export default function ComparisonTable({ estacionActual, apiBase }) {
   const [estacionesVecinas, setEstacionesVecinas] = useState([]);

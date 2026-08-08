@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Wind, AlertTriangle, Info, ShieldCheck } from 'lucide-react';
+import { X, Wind, Info, ShieldCheck } from 'lucide-react';
 
 export default function AqiDrawer({ isOpen, onClose, data }) {
   if (!isOpen || !data) return null;

@@ -1,0 +1,282 @@
+{
+  "actualizar_app.ps1": {
+    "mtime": 1785975671.440473,
+    "ast_hash": "0b2aec39ab59d54ba2420e584fb02886",
+    "semantic_hash": "0b2aec39ab59d54ba2420e584fb02886"
+  },
+  "app_config.py": {
+    "mtime": 1786218404.5278926,
+    "ast_hash": "400fdf5acf2aeaa84fe51308f6512e77",
+    "semantic_hash": "400fdf5acf2aeaa84fe51308f6512e77"
+  },
+  "cache_store.py": {
+    "mtime": 1786218404.5278926,
+    "ast_hash": "304eb7f63378bb024f3e66a4f1071159",
+    "semantic_hash": "304eb7f63378bb024f3e66a4f1071159"
+  },
+  "estaciones.json": {
+    "mtime": 1785717768.796362,
+    "ast_hash": "c263626432467629af09fa144d0097df",
+    "semantic_hash": "c263626432467629af09fa144d0097df"
+  },
+  "firebase.json": {
+    "mtime": 1786219661.091623,
+    "ast_hash": "071b2cc78ff1369906b57fb86932ea88",
+    "semantic_hash": "071b2cc78ff1369906b57fb86932ea88"
+  },
+  "frontend/.oxlintrc.json": {
+    "mtime": 1785704780.199975,
+    "ast_hash": "5e6e3cea3e89137071c142dd7835b0ef",
+    "semantic_hash": "5e6e3cea3e89137071c142dd7835b0ef"
+  },
+  "frontend/package.json": {
+    "mtime": 1785981480.5530715,
+    "ast_hash": "04605ed73af527f0fe7763eacbef76bb",
+    "semantic_hash": "04605ed73af527f0fe7763eacbef76bb"
+  },
+  "frontend/public/manifest.json": {
+    "mtime": 1785880295.99932,
+    "ast_hash": "dde8db8f21689078bff6287ed462f184",
+    "semantic_hash": "dde8db8f21689078bff6287ed462f184"
+  },
+  "frontend/public/service-worker.js": {
+    "mtime": 1785889117.1382108,
+    "ast_hash": "f7b7cdb8689be56d1f4a5391df0102e3",
+    "semantic_hash": "f7b7cdb8689be56d1f4a5391df0102e3"
+  },
+  "frontend/src/App.jsx": {
+    "mtime": 1786057648.9479103,
+    "ast_hash": "67cc01159e6921e27c4c302f8e3254d4",
+    "semantic_hash": "67cc01159e6921e27c4c302f8e3254d4"
+  },
+  "frontend/src/components/AgroPanel.jsx": {
+    "mtime": 1785981649.3203354,
+    "ast_hash": "c81a767be525d2da369ce51fa4232136",
+    "semantic_hash": "c81a767be525d2da369ce51fa4232136"
+  },
+  "frontend/src/components/AqiDrawer.jsx": {
+    "mtime": 1786222837.0142846,
+    "ast_hash": "12bc05cd4fe3e0b1e8c4792cd78af365",
+    "semantic_hash": "12bc05cd4fe3e0b1e8c4792cd78af365"
+  },
+  "frontend/src/components/BottomNav.jsx": {
+    "mtime": 1785977201.8392801,
+    "ast_hash": "3105358f8d741ed357bb14da11279bcb",
+    "semantic_hash": "3105358f8d741ed357bb14da11279bcb"
+  },
+  "frontend/src/components/ComparisonTable.jsx": {
+    "mtime": 1786222842.5656137,
+    "ast_hash": "85446c427de14077b7ba404c6bdd1216",
+    "semantic_hash": "85446c427de14077b7ba404c6bdd1216"
+  },
+  "frontend/src/components/DailyForecastCards.jsx": {
+    "mtime": 1785890435.11721,
+    "ast_hash": "ee3f931a3902ba7a6eb2d8b1b9af53b3",
+    "semantic_hash": "ee3f931a3902ba7a6eb2d8b1b9af53b3"
+  },
+  "frontend/src/components/DetailDrawer.jsx": {
+    "mtime": 1785881041.405947,
+    "ast_hash": "43feb5bd449cfdabedbcae98abb65dbb",
+    "semantic_hash": "43feb5bd449cfdabedbcae98abb65dbb"
+  },
+  "frontend/src/components/EstacionesCercanasModal.jsx": {
+    "mtime": 1786057661.9321232,
+    "ast_hash": "0f5f4fd18a67d87766f4dd54b10f0349",
+    "semantic_hash": "0f5f4fd18a67d87766f4dd54b10f0349"
+  },
+  "frontend/src/components/ForecastChart.jsx": {
+    "mtime": 1785883800.0718,
+    "ast_hash": "b6d8589cf3bba8f7025ee0206f5823b7",
+    "semantic_hash": "b6d8589cf3bba8f7025ee0206f5823b7"
+  },
+  "frontend/src/components/HistoricalChart.jsx": {
+    "mtime": 1785981626.5343716,
+    "ast_hash": "556ddda95244d3124e0681a467db4c57",
+    "semantic_hash": "556ddda95244d3124e0681a467db4c57"
+  },
+  "frontend/src/components/HourlyCarousel.jsx": {
+    "mtime": 1785883706.2059932,
+    "ast_hash": "af8842e08c9ba0b294f09ddd10f4dbb9",
+    "semantic_hash": "af8842e08c9ba0b294f09ddd10f4dbb9"
+  },
+  "frontend/src/components/HourlyForecastDrawer.jsx": {
+    "mtime": 1786222831.379243,
+    "ast_hash": "5b7233d4c690333ede1e7046b6039867",
+    "semantic_hash": "5b7233d4c690333ede1e7046b6039867"
+  },
+  "frontend/src/components/LocationFallbackModal.jsx": {
+    "mtime": 1785889032.86921,
+    "ast_hash": "e8580fbfef02e6c70a3fb6cae632cd0d",
+    "semantic_hash": "e8580fbfef02e6c70a3fb6cae632cd0d"
+  },
+  "frontend/src/components/MapSection.jsx": {
+    "mtime": 1785889072.0262969,
+    "ast_hash": "dcfe917a673e79422a94de61c8dadf14",
+    "semantic_hash": "dcfe917a673e79422a94de61c8dadf14"
+  },
+  "frontend/src/components/Navbar.jsx": {
+    "mtime": 1786223372.5666027,
+    "ast_hash": "d4613fb19726a0d3dba463907546f36c",
+    "semantic_hash": "d4613fb19726a0d3dba463907546f36c"
+  },
+  "frontend/src/components/SatelliteModal.jsx": {
+    "mtime": 1785890306.2135518,
+    "ast_hash": "581bc6552c0b26e4be5f940671de5d13",
+    "semantic_hash": "581bc6552c0b26e4be5f940671de5d13"
+  },
+  "frontend/src/components/UrbanPanel.jsx": {
+    "mtime": 1785977181.1903944,
+    "ast_hash": "2cab10ccfafe187e2aca6fa03c0c14e7",
+    "semantic_hash": "2cab10ccfafe187e2aca6fa03c0c14e7"
+  },
+  "frontend/src/components/WeatherHeader.jsx": {
+    "mtime": 1786223379.2223754,
+    "ast_hash": "bf443cdf1a96fb00d098af200405584c",
+    "semantic_hash": "bf443cdf1a96fb00d098af200405584c"
+  },
+  "frontend/src/context/WeatherContext.jsx": {
+    "mtime": 1785978234.889266,
+    "ast_hash": "a2f59344fcf5b476a8f5d9aa8f7a5332",
+    "semantic_hash": "a2f59344fcf5b476a8f5d9aa8f7a5332"
+  },
+  "frontend/src/main.jsx": {
+    "mtime": 1785975294.2168386,
+    "ast_hash": "34b4b74441ae0192ecd882662ef6bd00",
+    "semantic_hash": "34b4b74441ae0192ecd882662ef6bd00"
+  },
+  "frontend/src/utils/timeUtils.js": {
+    "mtime": 1785890251.0841062,
+    "ast_hash": "d53eed4224e7592e3b9770d9c7845566",
+    "semantic_hash": "d53eed4224e7592e3b9770d9c7845566"
+  },
+  "frontend/vite.config.js": {
+    "mtime": 1785981476.4825194,
+    "ast_hash": "e92ab492350e0f6850c5ee6595958540",
+    "semantic_hash": "e92ab492350e0f6850c5ee6595958540"
+  },
+  "gee/__init__.py": {
+    "mtime": 1785981928.3733802,
+    "ast_hash": "e4ce947e27f26e9663258cfc8db05be2",
+    "semantic_hash": "e4ce947e27f26e9663258cfc8db05be2"
+  },
+  "gee/core.py": {
+    "mtime": 1786219572.1009326,
+    "ast_hash": "56c65c3e3592d13ccccb43cb42f6d6c5",
+    "semantic_hash": "56c65c3e3592d13ccccb43cb42f6d6c5"
+  },
+  "gee/rural.py": {
+    "mtime": 1785981928.3733802,
+    "ast_hash": "e3e102fd6ec078015fda477d163d0c56",
+    "semantic_hash": "e3e102fd6ec078015fda477d163d0c56"
+  },
+  "gee/tiles.py": {
+    "mtime": 1786219572.1427062,
+    "ast_hash": "d68eae5f6f9b40a089cd068ee88328cd",
+    "semantic_hash": "d68eae5f6f9b40a089cd068ee88328cd"
+  },
+  "gee/urban.py": {
+    "mtime": 1785981928.3755274,
+    "ast_hash": "4de9ed49bf10a854b514591b4070a55a",
+    "semantic_hash": "4de9ed49bf10a854b514591b4070a55a"
+  },
+  "goes_processor.py": {
+    "mtime": 1785981928.3755274,
+    "ast_hash": "c73c01ecbcbb4527a559ba6073064872",
+    "semantic_hash": "c73c01ecbcbb4527a559ba6073064872"
+  },
+  "main.py": {
+    "mtime": 1786222050.7912388,
+    "ast_hash": "ff286c5f0f40323cf3677400405da0b8",
+    "semantic_hash": "ff286c5f0f40323cf3677400405da0b8"
+  },
+  "mapa.js": {
+    "mtime": 1785979338.8087513,
+    "ast_hash": "f52189eaad9d873118280c3eacdc8544",
+    "semantic_hash": "f52189eaad9d873118280c3eacdc8544"
+  },
+  "scripts/configurar_sync_horario.ps1": {
+    "mtime": 1786219739.6252916,
+    "ast_hash": "dd7a60ef42af6a96ef0554e0265a5813",
+    "semantic_hash": "dd7a60ef42af6a96ef0554e0265a5813"
+  },
+  "scripts/configurar_sync_horario.sh": {
+    "mtime": 1786219739.6326737,
+    "ast_hash": "df5042ae116b4dace73c11fc0ce901d1",
+    "semantic_hash": "df5042ae116b4dace73c11fc0ce901d1"
+  },
+  "scripts/deploy.ps1": {
+    "mtime": 1785870339.8162494,
+    "ast_hash": "ff4721c6e6322d218fc3e6782b621051",
+    "semantic_hash": "ff4721c6e6322d218fc3e6782b621051"
+  },
+  "scripts/deploy.sh": {
+    "mtime": 1785870333.686792,
+    "ast_hash": "29591aceff10a99aad67ca153a3c8076",
+    "semantic_hash": "29591aceff10a99aad67ca153a3c8076"
+  },
+  "sincronizador_background.py": {
+    "mtime": 1786218940.6100478,
+    "ast_hash": "6c0e33ec8457cadea565dba6f2ffdf7e",
+    "semantic_hash": "6c0e33ec8457cadea565dba6f2ffdf7e"
+  },
+  "sync_job.py": {
+    "mtime": 1786218404.5307784,
+    "ast_hash": "5655c38b5fa2895229bd9514314343b7",
+    "semantic_hash": "5655c38b5fa2895229bd9514314343b7"
+  },
+  "test_main.py": {
+    "mtime": 1786219821.0957358,
+    "ast_hash": "47cebd851ded7b330d0b55b951b5362c",
+    "semantic_hash": "47cebd851ded7b330d0b55b951b5362c"
+  },
+  ".obsidian/app.json": {
+    "mtime": 1786222251.5004172,
+    "ast_hash": "e35a11c3af5f37b8ed46aa061be78080",
+    "semantic_hash": "e35a11c3af5f37b8ed46aa061be78080"
+  },
+  ".obsidian/appearance.json": {
+    "mtime": 1786222156.4497674,
+    "ast_hash": "99914b932bd37a50b983c5e7c90ae93b",
+    "semantic_hash": "99914b932bd37a50b983c5e7c90ae93b"
+  },
+  ".obsidian/core-plugins.json": {
+    "mtime": 1786222248.8354003,
+    "ast_hash": "7a87e9825f3bf1656fe6a3c1883909b6",
+    "semantic_hash": "7a87e9825f3bf1656fe6a3c1883909b6"
+  },
+  ".obsidian/graph.json": {
+    "mtime": 1786222255.0616353,
+    "ast_hash": "5addabd139f4ffcffce8e77793a9b886",
+    "semantic_hash": "5addabd139f4ffcffce8e77793a9b886"
+  },
+  ".obsidian/workspace.json": {
+    "mtime": 1786222190.9401858,
+    "ast_hash": "143435838eebf69c3e69e8e80fe5ba93",
+    "semantic_hash": "143435838eebf69c3e69e8e80fe5ba93"
+  },
+  "locustfile.py": {
+    "mtime": 1786222037.090701,
+    "ast_hash": "ea9a46482c0d8eff73b6ff6c223824b9",
+    "semantic_hash": "ea9a46482c0d8eff73b6ff6c223824b9"
+  },
+  "openmeteo_client.py": {
+    "mtime": 1786222031.924857,
+    "ast_hash": "4aa14de4029793ed48edf22d796a1e1e",
+    "semantic_hash": "4aa14de4029793ed48edf22d796a1e1e"
+  },
+  "docs/obsidian/.obsidian/app.json": {
+    "mtime": 1786222260.4268649,
+    "ast_hash": "b9002d45bb1194d36874e320c5ae9fff",
+    "semantic_hash": "b9002d45bb1194d36874e320c5ae9fff"
+  },
+  "docs/obsidian/.obsidian/core-plugins.json": {
+    "mtime": 1786222257.7067568,
+    "ast_hash": "2fe2d7a10a01d3c2c4c5480eb8384c7c",
+    "semantic_hash": "2fe2d7a10a01d3c2c4c5480eb8384c7c"
+  },
+  "docs/obsidian/.obsidian/graph.json": {
+    "mtime": 1786222263.262112,
+    "ast_hash": "6620833ec589a7013c47da7725940b57",
+    "semantic_hash": "6620833ec589a7013c47da7725940b57"
+  }
+}

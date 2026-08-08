@@ -49,7 +49,7 @@ export default function WeatherHeader({ climaData, onOpenEstacionesCercanas }) {
       )}
 
       {/* HERO CARD ESTILO APPLE WEATHER CON BOTÓN COMPARTIR Y VER ESTACIONES CERCANAS */}
-      <div className="glass-panel relative p-8 md:p-12 overflow-hidden text-center space-y-6">
+      <div className="glass-panel-glow relative p-8 md:p-12 overflow-hidden text-center space-y-6">
         {/* Radial ambient glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
 
