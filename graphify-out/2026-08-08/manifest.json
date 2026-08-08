@@ -130,9 +130,9 @@
     "semantic_hash": "594f24a296dd35d2b29d76ceb3cbdaa3"
   },
   "frontend/src/components/WeatherHeader.jsx": {
-    "mtime": 1786231246.2897947,
-    "ast_hash": "b24c778a149a0a0811c97c4ddad457f8",
-    "semantic_hash": "b24c778a149a0a0811c97c4ddad457f8"
+    "mtime": 1786232419.7559862,
+    "ast_hash": "b4ebe4f90888c856f1f5350e20b89049",
+    "semantic_hash": "b4ebe4f90888c856f1f5350e20b89049"
   },
   "frontend/src/context/WeatherContext.jsx": {
     "mtime": 1785978234.889266,
@@ -185,9 +185,9 @@
     "semantic_hash": "c73c01ecbcbb4527a559ba6073064872"
   },
   "main.py": {
-    "mtime": 1786222050.7912388,
-    "ast_hash": "ff286c5f0f40323cf3677400405da0b8",
-    "semantic_hash": "ff286c5f0f40323cf3677400405da0b8"
+    "mtime": 1786232408.235226,
+    "ast_hash": "841cdd044961c72c0320a830eb8d9282",
+    "semantic_hash": "841cdd044961c72c0320a830eb8d9282"
   },
   "mapa.js": {
     "mtime": 1785979338.8087513,
@@ -215,9 +215,9 @@
     "semantic_hash": "29591aceff10a99aad67ca153a3c8076"
   },
   "sincronizador_background.py": {
-    "mtime": 1786218940.6100478,
-    "ast_hash": "6c0e33ec8457cadea565dba6f2ffdf7e",
-    "semantic_hash": "6c0e33ec8457cadea565dba6f2ffdf7e"
+    "mtime": 1786231831.923982,
+    "ast_hash": "4a98940fe3c5daca90855321a39cd3f0",
+    "semantic_hash": "4a98940fe3c5daca90855321a39cd3f0"
   },
   "sync_job.py": {
     "mtime": 1786218404.5307784,

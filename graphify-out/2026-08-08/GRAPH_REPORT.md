@@ -4,7 +4,7 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 742 nodes · 1263 edges · 72 communities (58 shown, 14 thin omitted)
+- 742 nodes · 1262 edges · 73 communities (59 shown, 14 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -52,6 +52,7 @@
 - remotion-template/package.json
 - main
 - obsidian/.obsidian/app.json
+- .oxlintrc.json
 - .obsidian/app.json
 - main
 - render_state
@@ -106,11 +107,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (72 total, 14 thin omitted)
+## Communities (73 total, 14 thin omitted)
 
 ### Community 0 - "App.jsx"
-Cohesion: 0.07
-Nodes (31): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, App(), AgroPanel(), AqiDrawer() (+23 more)
+Cohesion: 0.09
+Nodes (23): App(), AgroPanel(), AqiDrawer(), BottomNav(), ComparisonTable(), DailyForecastCards(), DetailDrawer(), EstacionesCercanasModal() (+15 more)
 
 ### Community 1 - "prepare_chat_overlay_bundle.py"
 Cohesion: 0.16
@@ -256,55 +257,59 @@ Nodes (7): completed_ids(), job_view(), jobs(), load_manifest(), main(), missing
 Cohesion: 0.25
 Nodes (7): alwaysUpdateLinks, foldHeading, foldIndent, showFrontmatter, showLineNumber, tabSize, useMarkdownLinks
 
-### Community 39 - ".obsidian/app.json"
+### Community 39 - ".oxlintrc.json"
+Cohesion: 0.25
+Nodes (7): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, oxc, warn
+
+### Community 40 - ".obsidian/app.json"
 Cohesion: 0.25
 Nodes (7): alwaysUpdateLinks, foldHeading, foldIndent, showFrontmatter, showLineNumber, tabSize, useMarkdownLinks
 
-### Community 40 - "main"
+### Community 41 - "main"
 Cohesion: 0.62
 Nodes (6): default_codex_home(), main(), Path, slugify(), validate_spritesheet(), write_webp_spritesheet()
 
-### Community 41 - "render_state"
+### Community 42 - "render_state"
 Cohesion: 0.57
 Nodes (6): checker(), main(), Image, Path, render_state(), shell_quote_for_concat()
 
-### Community 42 - "install.sh"
+### Community 43 - "install.sh"
 Cohesion: 0.62
 Nodes (6): cyan(), die(), gray(), green(), install_skill_to(), install.sh script
 
-### Community 46 - "dependencies"
+### Community 47 - "dependencies"
 Cohesion: 0.29
 Nodes (7): chart.js, dependencies, chart.js, lucide-react, react-chartjs-2, lucide-react, react-chartjs-2
 
-### Community 47 - "MeteoPrecisaUser"
+### Community 48 - "MeteoPrecisaUser"
 Cohesion: 0.33
 Nodes (4): HttpUser, MeteoPrecisaUser, Locust Load Test Script para MeteoPrecisa API. Para ejecutar: pip install…, task
 
-### Community 48 - "validate-skill-submission.sh"
+### Community 49 - "validate-skill-submission.sh"
 Cohesion: 0.60
 Nodes (5): escapes_root(), fail(), pass(), validate-skill-submission.sh script, warn()
 
-### Community 49 - "verify"
+### Community 50 - "verify"
 Cohesion: 0.53
 Nodes (5): emu_to_in(), is_footer_by_name(), main(), Path, verify()
 
-### Community 50 - "app_config.py"
+### Community 51 - "app_config.py"
 Cohesion: 0.53
 Nodes (5): _as_bool(), _as_origins(), get_settings(), Configuración centralizada de MeteoPrecisa. Los valores sensibles nunca tienen…, Settings
 
-### Community 51 - "procesar_video_goes19"
+### Community 52 - "procesar_video_goes19"
 Cohesion: 0.40
 Nodes (5): _descargar_y_procesar_frame(), obtener_satellite_latest_loop(), procesar_video_goes19(), Devuelve la metadata y URL del bucle animado más reciente de GOES-19., Descarga los últimos fotogramas de la NOAA para Chile (GOES-19 SSA), los…
 
-### Community 52 - "discover-doc-gaps.sh"
+### Community 53 - "discover-doc-gaps.sh"
 Cohesion: 0.70
 Nodes (4): emit_todo(), extract_links(), GREP(), discover-doc-gaps.sh script
 
-### Community 55 - "checker"
+### Community 56 - "checker"
 Cohesion: 0.67
 Nodes (3): checker(), main(), Image
 
-### Community 56 - "alpha_nonzero_count"
+### Community 57 - "alpha_nonzero_count"
 Cohesion: 0.67
 Nodes (3): alpha_nonzero_count(), main(), Image
 
@@ -316,7 +321,7 @@ Nodes (3): alpha_nonzero_count(), main(), Image
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `App.jsx` to `BubbleScene.tsx`?**
+- **Why does `react` connect `App.jsx` to `BubbleScene.tsx`, `.oxlintrc.json`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `frontend/package.json`, `devDependencies`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
@@ -325,7 +330,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **What connects `$schema`, `oxc`, `react/rules-of-hooks` to the rest of the system?**
   _96 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `App.jsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.07111756168359942 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0898989898989899 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `mirror-site.mjs` be split into smaller, more focused modules?**

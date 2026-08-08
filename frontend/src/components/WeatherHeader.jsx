@@ -91,8 +91,14 @@ export default function WeatherHeader({ climaData, onOpenEstacionesCercanas }) {
           </div>
         </div>
 
-        {/* PILLS DE RED Y TRANSPARENCIA CON HORA CERRADA */}
+        {/* PILLS DE RED Y TRANSPARENCIA CON HORA CERRADA Y LINAGE OMM */}
         <div className="flex flex-wrap items-center justify-center gap-2 pt-2 text-xs">
+          {metadatos?.lineage_etiqueta && (
+            <span className="apple-pill inline-flex items-center gap-1.5 text-white font-semibold border-white/20">
+              {metadatos.lineage_etiqueta}
+            </span>
+          )}
+
           <span className="apple-pill inline-flex items-center gap-1.5 text-sky-300">
             <Radio className="w-3.5 h-3.5 animate-pulse text-sky-400" />
             {estacion?.red_oficial || 'DMC Chile'}

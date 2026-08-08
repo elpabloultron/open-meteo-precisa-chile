@@ -415,6 +415,56 @@ async def obtener_alertas_senapred():
         "alertas": CACHE_MEMORIA.get("alertas_senapred", [])
     }
 
+def calcular_triangulacion_idw(target_lat: float, target_lon: float, catalogo: list, telemetria_map: dict, elevacion_objetivo: float = 150.0):
+    candidatas = []
+    for est in catalogo:
+        st_id = est.get("id")
+        tele = telemetria_map.get(st_id, {})
+        t_c = tele.get("temperatura_c")
+        if t_c is not None and -50.0 <= t_c <= 60.0:
+            d = calcular_distancia(target_lat, target_lon, est["lat"], est["lon"])
+            if d <= 85.0:
+                candidatas.append({
+                    "estacion": est,
+                    "telemetria": tele,
+                    "dist_km": d,
+                    "temp_c": t_c,
+                    "hr": tele.get("humedad_relativa"),
+                    "viento_kmh": tele.get("viento_kmh"),
+                    "elevacion": est.get("elevacion", 100.0)
+                })
+
+    candidatas.sort(key=lambda x: x["dist_km"])
+    if len(candidatas) < 3:
+        return None
+
+    top3 = candidatas[:3]
+    total_w = 0.0
+    w_temp = 0.0
+    w_hr = 0.0
+    w_viento = 0.0
+
+    for item in top3:
+        d = max(item["dist_km"], 0.1)
+        w = 1.0 / (d ** 2)
+        total_w += w
+
+        diff_alt_m = elevacion_objetivo - item["elevacion"]
+        temp_adj = item["temp_c"] - (0.0065 * diff_alt_m)
+
+        w_temp += temp_adj * w
+        w_hr += (item["hr"] if item["hr"] is not None else 65.0) * w
+        w_viento += (item["viento_kmh"] if item["viento_kmh"] is not None else 5.0) * w
+
+    return {
+        "temperatura_c": round(w_temp / total_w, 1),
+        "humedad_relativa": int(round(w_hr / total_w)),
+        "viento_kmh": round(w_viento / total_w, 1),
+        "estaciones_utilizadas": [
+            f"{c['estacion']['nombre']} ({round(c['dist_km'], 1)} km)" for c in top3
+        ]
+    }
+
 @app.get("/api/v1/clima-hiperlocal")
 async def obtener_clima_hiperlocal(
     lat: float = Query(..., description="Latitud GPS"),
@@ -444,6 +494,7 @@ async def obtener_clima_hiperlocal(
     telemetria_map = CACHE_MEMORIA.get("estaciones_telemetria", {})
     est_id = estacion_cercana.get("id")
     telemetria_directa = telemetria_map.get(est_id, {})
+
 
     # Calidad de aire (Unificando SINCA y PurpleAir)
     sinca_map = CACHE_MEMORIA.get("calidad_aire_sinca", {})
@@ -514,13 +565,32 @@ async def obtener_clima_hiperlocal(
 
     horas_frio_totales = calcular_horas_frio(hourly_om.get("temperature_2m", []))
 
-    temp_final = telemetria_directa.get("temperatura_c") if telemetria_directa.get("temperatura_c") is not None else curr_om.get("temperature_2m", 15.0)
-    # Filtro de cordura para evitar anomalías de sensores raw
+    # JERARQUÍA DE 3 NIVELES OMM (WMO-No. 8 Data Lineage)
+    triangulacion_idw = None
+    if dist_min <= 25.0 and telemetria_directa.get("temperatura_c") is not None:
+        origen_dato = "estacion_fisica_directa"
+        lineage_etiqueta = f"🟢 Estación Física Directa ({estacion_cercana['nombre']})"
+        temp_final = telemetria_directa.get("temperatura_c")
+        viento_final = telemetria_directa.get("viento_kmh") if telemetria_directa.get("viento_kmh") is not None else curr_om.get("wind_speed_10m", 0.0)
+        humedad_final = telemetria_directa.get("humedad_relativa") if telemetria_directa.get("humedad_relativa") is not None else curr_om.get("relative_humidity_2m", 60)
+    else:
+        triangulacion_idw = calcular_triangulacion_idw(lat, lon, catalogo, telemetria_map)
+        if triangulacion_idw:
+            origen_dato = "triangulacion_idw_dem"
+            lineage_etiqueta = "🔵 Triangulación Espacial IDW (3 Estaciones + Ajuste Altitud DEM)"
+            temp_final = triangulacion_idw["temperatura_c"]
+            humedad_final = triangulacion_idw["humedad_relativa"]
+            viento_final = triangulacion_idw["viento_kmh"]
+        else:
+            origen_dato = "satelital_era5_gee"
+            lineage_etiqueta = "🟣 Reanálisis Satelital GEE ERA5-Land / ECMWF (Grilla 9km)"
+            temp_final = curr_om.get("temperature_2m", 15.0)
+            viento_final = curr_om.get("wind_speed_10m", 0.0)
+            humedad_final = curr_om.get("relative_humidity_2m", 60)
+
+    # Filtro de cordura
     if temp_final is None or temp_final > 60.0 or temp_final < -50.0:
         temp_final = curr_om.get("temperature_2m", 15.0)
-
-    viento_final = telemetria_directa.get("viento_kmh") if telemetria_directa.get("viento_kmh") is not None else curr_om.get("wind_speed_10m", 0.0)
-    humedad_final = telemetria_directa.get("humedad_relativa") if telemetria_directa.get("humedad_relativa") is not None else curr_om.get("relative_humidity_2m", 60)
 
     inversion_eval = evaluar_inversion_termica(temp_final, viento_final, humedad_final)
 
@@ -586,6 +656,7 @@ async def obtener_clima_hiperlocal(
         "fuente_agronomica": gee_punto["rural"]["fuente_rural"]
     }
 
+
     # Boletín Oficial DMC
     boletin_dmc = CACHE_MEMORIA.get("pronostico_oficial_dmc", {})
     
@@ -632,12 +703,16 @@ async def obtener_clima_hiperlocal(
         "metadatos": {
             "distancia_km": round(dist_min, 2),
             "orientacion": rumbo,
+            "origen_dato": origen_dato,
+            "lineage_etiqueta": lineage_etiqueta,
+            "triangulacion_estaciones": triangulacion_idw.get("estaciones_utilizadas") if triangulacion_idw else [],
             "total_estaciones_disponibles": len(catalogo),
             "servidor_timestamp": now_ts,
             "sincronizacion_cache_timestamp": last_up_ts,
             "sincronizacion_texto": texto_sync
         }
     }
+
 
 
 @app.get("/api/v1/weather/current")
