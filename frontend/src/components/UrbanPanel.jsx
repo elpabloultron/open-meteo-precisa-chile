@@ -58,7 +58,7 @@ export default function UrbanPanel({ urbano, onSelectMetric, stationInfo, onOpen
       {/* CAJA DE ESTADO Y AUDITORÍA SINCA MMA */}
       <div
         onClick={() => onOpenAqi && onOpenAqi({ mp25: mp25Val, mp10: calidad_aire_sinca?.mediciones_base?.mp10_ug_m3 || null, aqi: aqiVal, norma: sincaNom })}
-        className={`glass-panel p-5 flex items-center justify-between gap-4 font-medium text-sm cursor-pointer transition hover:scale-[1.01] ${statusBg}`}
+        className={`apple-card p-5 flex items-center justify-between gap-4 font-medium text-sm cursor-pointer transition ${statusBg}`}
       >
         <div className="flex items-center gap-3">
           {statusIcon}
@@ -78,22 +78,22 @@ export default function UrbanPanel({ urbano, onSelectMetric, stationInfo, onOpen
         {/* TEMPERATURA */}
         <div
           onClick={() => handleCardClick("Temperatura Ambiente", temperatura_c, "°C", `Lectura de temperatura en aire a 2 metros del suelo. Sensación térmica: ${sensacion_termica_c}°C.`, "Mantener ventilación adecuada.", "Temperatura")}
-          className="glass-panel p-5 space-y-3 cursor-pointer group hover:bg-sky-500/5 flex flex-col justify-between"
+          className="apple-card p-5 space-y-3 cursor-pointer group flex flex-col justify-between"
         >
-          <div className="flex items-center justify-between text-xs text-slate-400">
+          <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
             <span>Temperatura</span>
             <Thermometer className="w-4 h-4 text-amber-400 group-hover:scale-110 transition" />
           </div>
           <div className="text-2xl font-black text-white font-mono">{temperatura_c}°C</div>
-          <p className="text-[11px] text-slate-400">Sensación: <span className="text-amber-300 font-bold">{sensacion_termica_c}°C</span></p>
+          <p className="text-[11px] text-slate-400">Sensación: <span className="text-amber-300 font-bold font-mono">{sensacion_termica_c}°C</span></p>
         </div>
 
         {/* HUMEDAD RELATIVA */}
         <div
           onClick={() => handleCardClick("Humedad Relativa", humedad_relativa_porcentaje, "%", "Porcentaje de saturación de vapor de agua en el aire.", "Altas humedades aumentan la sensación de frío invernal.", "Humedad")}
-          className="glass-panel p-5 space-y-3 cursor-pointer group hover:bg-sky-500/5 flex flex-col justify-between"
+          className="apple-card p-5 space-y-3 cursor-pointer group flex flex-col justify-between"
         >
-          <div className="flex items-center justify-between text-xs text-slate-400">
+          <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
             <span>Humedad</span>
             <Droplets className="w-4 h-4 text-blue-400 group-hover:scale-110 transition" />
           </div>
@@ -104,9 +104,9 @@ export default function UrbanPanel({ urbano, onSelectMetric, stationInfo, onOpen
         {/* VIENTO */}
         <div
           onClick={() => handleCardClick("Velocidad y Dirección del Viento", viento_velocidad_kmh, "km/h", `Viento sostenido con dirección proveniente del ${viento_direccion}.`, "Vientos sostenidos superiores a 40 km/h requieren precaución en estructuras livianas.", "Viento")}
-          className="glass-panel p-5 space-y-3 cursor-pointer group hover:bg-sky-500/5 flex flex-col justify-between"
+          className="apple-card p-5 space-y-3 cursor-pointer group flex flex-col justify-between"
         >
-          <div className="flex items-center justify-between text-xs text-slate-400">
+          <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
             <span>Viento</span>
             <Wind className="w-4 h-4 text-sky-400 group-hover:scale-110 transition" />
           </div>
@@ -117,9 +117,9 @@ export default function UrbanPanel({ urbano, onSelectMetric, stationInfo, onOpen
         {/* ÍNDICE UV */}
         <div
           onClick={() => handleCardClick("Índice de Radiación UV", indice_uv, "UV", "Medición de radiación ultravioleta máxima estimada para el día.", "Usar bloqueador solar FPS 50+ durante horas centrales.", "Radiación")}
-          className="glass-panel p-5 space-y-3 cursor-pointer group hover:bg-sky-500/5 flex flex-col justify-between"
+          className="apple-card p-5 space-y-3 cursor-pointer group flex flex-col justify-between"
         >
-          <div className="flex items-center justify-between text-xs text-slate-400">
+          <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
             <span>Índice UV</span>
             <Sun className="w-4 h-4 text-amber-400 group-hover:scale-110 transition" />
           </div>
@@ -130,9 +130,9 @@ export default function UrbanPanel({ urbano, onSelectMetric, stationInfo, onOpen
         {/* CALIDAD DEL AIRE SINCA */}
         <div
           onClick={() => onOpenAqi && onOpenAqi({ mp25: mp25Val, mp10: calidad_aire_sinca?.mediciones_base?.mp10_ug_m3 || null, aqi: aqiVal, norma: sincaNom })}
-          className="glass-panel p-5 space-y-3 cursor-pointer group hover:bg-sky-500/5 flex flex-col justify-between"
+          className="apple-card p-5 space-y-3 cursor-pointer group flex flex-col justify-between"
         >
-          <div className="flex items-center justify-between text-xs text-slate-400">
+          <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
             <span>Norma MMA</span>
             <Activity className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition" />
           </div>

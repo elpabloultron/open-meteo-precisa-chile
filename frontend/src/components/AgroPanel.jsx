@@ -49,60 +49,60 @@ export default function AgroPanel({ agricola, onSelectMetric, stationInfo, apiBa
         {/* TARJETA 1: EVAPOTRANSPIRACIÓN ETo */}
         <div
           onClick={() => handleCardClick("Evapotranspiración ETo (FAO-56)", evapotranspiracion_eto_mm_dia, "mm/día", "Consumo hídrico teórico diario de una pradera de referencia sin restricciones hídricas, calculado bajo la ecuación Penman-Monteith (FAO-56).", "Programar reposición de lámina de riego según coeficiente de cultivo (Kc).", "Riego & Evaporación")}
-          className="glass-panel p-4 flex items-center gap-3 cursor-pointer hover:border-emerald-500/50 hover:bg-slate-850 transition group"
+          className="apple-card p-4 flex items-center gap-3 cursor-pointer transition group"
         >
-          <div className="p-3 bg-emerald-500/15 text-emerald-400 rounded-xl border border-emerald-500/20 group-hover:scale-110 transition">
+          <div className="p-3 bg-emerald-500/15 text-emerald-400 rounded-2xl border border-emerald-500/20 group-hover:scale-110 transition">
             <Sprout className="w-6 h-6" />
           </div>
           <div>
             <div className="text-xs text-slate-400 font-medium">Evapotranspiración ETo</div>
             <div className="text-xl font-bold font-mono text-white">{evapotranspiracion_eto_mm_dia} <span className="text-xs font-sans text-slate-400">mm/día</span></div>
-            <div className="text-[11px] text-slate-500">FAO-56</div>
+            <div className="text-[11px] text-slate-500 font-semibold">FAO-56</div>
           </div>
         </div>
 
         {/* TARJETA 2: HORAS FRÍO */}
         <div
           onClick={() => handleCardClick("Horas Frío Acumuladas", horas_frio_acumuladas_24h, "hrs ≤7°C", "Acumulación de horas con temperatura menor o igual a 7°C en las últimas 24 horas para romper el receso invernal en frutales caducos.", "Monitorear requerimiento térmico según especie (cerezos, nogales, manzanos).", "Receso Invernal")}
-          className="glass-panel p-4 flex items-center gap-3 cursor-pointer hover:border-cyan-500/50 hover:bg-slate-850 transition group"
+          className="apple-card p-4 flex items-center gap-3 cursor-pointer transition group"
         >
-          <div className="p-3 bg-cyan-500/15 text-cyan-400 rounded-xl border border-cyan-500/20 group-hover:scale-110 transition">
+          <div className="p-3 bg-cyan-500/15 text-cyan-400 rounded-2xl border border-cyan-500/20 group-hover:scale-110 transition">
             <Snowflake className="w-6 h-6" />
           </div>
           <div>
             <div className="text-xs text-slate-400 font-medium">Horas Frío (≤7°C)</div>
             <div className="text-xl font-bold font-mono text-white">{horas_frio_acumuladas_24h} <span className="text-xs font-sans text-slate-400">hrs</span></div>
-            <div className="text-[11px] text-slate-500">Últimas 24h</div>
+            <div className="text-[11px] text-slate-500 font-semibold">Últimas 24h</div>
           </div>
         </div>
 
         {/* TARJETA 3: RADIACIÓN SOLAR */}
         <div
           onClick={() => handleCardClick("Radiación Solar Global", radiacion_solar_w_m2, "W/m²", "Insolación solar acumulada y disponible para fotosíntesis en el dosel vegetal.", "Proteger frutales sensibles en caso de golpes de calor en verano.", "Fotosíntesis")}
-          className="glass-panel p-4 flex items-center gap-3 cursor-pointer hover:border-amber-500/50 hover:bg-slate-850 transition group"
+          className="apple-card p-4 flex items-center gap-3 cursor-pointer transition group"
         >
-          <div className="p-3 bg-amber-500/15 text-amber-400 rounded-xl border border-amber-500/20 group-hover:scale-110 transition">
+          <div className="p-3 bg-amber-500/15 text-amber-400 rounded-2xl border border-amber-500/20 group-hover:scale-110 transition">
             <Sun className="w-6 h-6" />
           </div>
           <div>
             <div className="text-xs text-slate-400 font-medium">Radiación Solar</div>
             <div className="text-xl font-bold font-mono text-white">{radiacion_solar_w_m2} <span className="text-xs font-sans text-slate-400">W/m²</span></div>
-            <div className="text-[11px] text-slate-500">Insolación global</div>
+            <div className="text-[11px] text-slate-500 font-semibold">Insolación global</div>
           </div>
         </div>
 
         {/* TARJETA 4: RÁFAGAS & DERIVA */}
         <div
           onClick={() => handleCardClick("Ráfagas & Deriva Fitosanitaria", rafagas_viento_kmh, "km/h", "Ráfaga máxima registrada en la estación. Vientos superiores a 15 km/h generan riesgo de deriva en aplicaciones fitosanitarias.", "Suspender aplicaciones de pulverización con vientos mayores a 15 km/h.", "Fitosanitario")}
-          className="glass-panel p-4 flex items-center gap-3 cursor-pointer hover:border-teal-500/50 hover:bg-slate-850 transition group"
+          className="apple-card p-4 flex items-center gap-3 cursor-pointer transition group"
         >
-          <div className="p-3 bg-teal-500/15 text-teal-400 rounded-xl border border-teal-500/20 group-hover:scale-110 transition">
+          <div className="p-3 bg-teal-500/15 text-teal-400 rounded-2xl border border-teal-500/20 group-hover:scale-110 transition">
             <Wind className="w-6 h-6" />
           </div>
           <div>
             <div className="text-xs text-slate-400 font-medium">Ráfagas de Viento</div>
             <div className="text-xl font-bold font-mono text-white">{rafagas_viento_kmh} <span className="text-xs font-sans text-slate-400">km/h</span></div>
-            <div className="text-[11px] text-slate-500">Riesgo deriva</div>
+            <div className="text-[11px] text-slate-500 font-semibold">Riesgo deriva</div>
           </div>
         </div>
 
@@ -114,7 +114,7 @@ export default function AgroPanel({ agricola, onSelectMetric, stationInfo, apiBa
         {/* TARJETA ALERTA DE HELADAS */}
         <div
           onClick={() => handleCardClick("Riesgo de Helada Radiativa", alerta_helada_agrometeorologica?.riesgo_helada, `Punto Rocío: ${alerta_helada_agrometeorologica?.temperatura_rocio_c}°C`, "Evaluación del punto de rocío (Dew Point) y caída de temperatura durante la noche.", "Activar control antiheladas (helices, riego por aspersión) si la temperatura bordea 0°C.", "Heladas")}
-          className="glass-panel p-5 space-y-3 border-cyan-500/30 cursor-pointer hover:border-cyan-400 transition"
+          className="apple-card p-5 space-y-3 cursor-pointer transition"
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
