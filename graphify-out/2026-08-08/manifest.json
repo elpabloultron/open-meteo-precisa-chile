@@ -50,9 +50,9 @@
     "semantic_hash": "bac44fddd92367a777bf33db2887f4e4"
   },
   "frontend/src/components/AgroPanel.jsx": {
-    "mtime": 1786233004.4683187,
-    "ast_hash": "f415fa00a7bde29973e219604cf11ecb",
-    "semantic_hash": "f415fa00a7bde29973e219604cf11ecb"
+    "mtime": 1786234634.1706684,
+    "ast_hash": "941bd9288f73077d18247fb7b121f298",
+    "semantic_hash": "941bd9288f73077d18247fb7b121f298"
   },
   "frontend/src/components/AqiDrawer.jsx": {
     "mtime": 1786234273.307032,
@@ -125,14 +125,14 @@
     "semantic_hash": "581bc6552c0b26e4be5f940671de5d13"
   },
   "frontend/src/components/UrbanPanel.jsx": {
-    "mtime": 1786231275.449788,
-    "ast_hash": "594f24a296dd35d2b29d76ceb3cbdaa3",
-    "semantic_hash": "594f24a296dd35d2b29d76ceb3cbdaa3"
+    "mtime": 1786234969.2802925,
+    "ast_hash": "e4e813913086be47712f85e95ebacac0",
+    "semantic_hash": "e4e813913086be47712f85e95ebacac0"
   },
   "frontend/src/components/WeatherHeader.jsx": {
-    "mtime": 1786232419.7559862,
-    "ast_hash": "b4ebe4f90888c856f1f5350e20b89049",
-    "semantic_hash": "b4ebe4f90888c856f1f5350e20b89049"
+    "mtime": 1786234625.1342173,
+    "ast_hash": "4a17c33a66a13273b89d1e2730ddedf8",
+    "semantic_hash": "4a17c33a66a13273b89d1e2730ddedf8"
   },
   "frontend/src/context/WeatherContext.jsx": {
     "mtime": 1785978234.889266,

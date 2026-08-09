@@ -49,44 +49,44 @@ export default function WeatherHeader({ climaData, onOpenEstacionesCercanas }) {
       )}
 
       {/* HERO CARD ESTILO APPLE WEATHER CON BOTÓN COMPARTIR Y VER ESTACIONES CERCANAS */}
-      <div className="apple-card relative p-8 md:p-12 overflow-hidden text-center space-y-6">
+      <div className="apple-card relative p-4 sm:p-8 md:p-12 overflow-hidden text-center space-y-4 sm:space-y-6">
         {/* Radial ambient glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* BOTÓN COMPARTIR Y UBICACIÓN CERCANA */}
-        <div className="flex items-center justify-between text-xs font-bold">
+        <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-bold">
           <button 
             onClick={onOpenEstacionesCercanas}
-            className="apple-pill flex items-center gap-2 text-sky-300 hover:text-white"
+            className="apple-pill flex items-center gap-1.5 text-sky-300 hover:text-white text-[11px] sm:text-xs"
           >
-            <MapPin className="w-3.5 h-3.5 text-sky-400" />
-            <span>{estacion?.sector || 'Chile'} • A {metadatos?.distancia_km} km</span>
-            <span className="text-[10px] text-sky-400 underline">(5 Cercanas)</span>
+            <MapPin className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+            <span className="truncate max-w-[200px] sm:max-w-none">{estacion?.sector || 'Chile'} • A {metadatos?.distancia_km} km</span>
+            <span className="text-[10px] text-sky-400 underline shrink-0">(5 Cercanas)</span>
           </button>
 
           <button 
             onClick={compartir}
-            className="apple-pill flex items-center gap-1.5 text-slate-200 hover:text-white"
+            className="apple-pill flex items-center gap-1.5 text-slate-200 hover:text-white text-[11px] sm:text-xs"
           >
-            <Share2 className="w-3.5 h-3.5 text-slate-300" />
+            <Share2 className="w-3.5 h-3.5 text-slate-300 shrink-0" />
             <span>Compartir</span>
           </button>
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight">
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-black text-white tracking-tight leading-tight">
           {estacion?.nombre}
         </h1>
 
         {/* TEMPERATURA GIGANTE ESTILO APPLE WEATHER */}
-        <div className="py-2 relative z-10 flex flex-col items-center justify-center transition-transform hover:scale-[1.02] duration-500">
-          <div className="apple-temp-hero text-8xl md:text-9xl tracking-tighter">
+        <div className="py-1 sm:py-2 relative z-10 flex flex-col items-center justify-center transition-transform hover:scale-[1.02] duration-500">
+          <div className="apple-temp-hero text-7xl sm:text-8xl md:text-9xl tracking-tighter">
             {temp}°
           </div>
-          <div className="text-xs font-semibold text-slate-300 flex items-center justify-center gap-3 md:gap-5 mt-4 apple-pill px-6 py-2.5">
+          <div className="text-[11px] sm:text-xs font-semibold text-slate-300 flex flex-wrap items-center justify-center gap-2 sm:gap-4 mt-3 apple-pill px-4 sm:px-6 py-2">
             <span>Sensación <strong className="text-sky-300 ml-1 font-mono">{sensacion}°</strong></span>
-            <span className="text-white/20">|</span>
+            <span className="text-white/20 hidden sm:inline">|</span>
             <span>Mín <strong className="text-cyan-300 ml-1 font-mono">{tMin}°</strong></span>
-            <span className="text-white/20">|</span>
+            <span className="text-white/20 hidden sm:inline">|</span>
             <span>Máx <strong className="text-amber-300 ml-1 font-mono">{tMax}°</strong></span>
           </div>
         </div>
