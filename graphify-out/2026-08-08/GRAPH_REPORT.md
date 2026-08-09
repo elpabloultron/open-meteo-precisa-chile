@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 748 nodes · 1255 edges · 67 communities (53 shown, 14 thin omitted)
+- 751 nodes · 1260 edges · 67 communities (53 shown, 14 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9d953a0c`
+- Built from commit: `2d0d38c4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -21,7 +21,7 @@
 - generate_pet_images.py
 - prepare_pet_run.py
 - BubbleScene.tsx
-- test_main.py
+- app_config.py
 - devDependencies
 - finalize_pet_run.py
 - compare-recon.mjs
@@ -87,16 +87,16 @@
 10. `build_spec()` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `procesar_video_goes19()` --indirect_call--> `client()`  [INFERRED]
-  goes_processor.py → test_main.py
 - `obtener_satellite_latest_loop_api()` --calls--> `obtener_satellite_latest_loop()`  [INFERRED]
   main.py → goes_processor.py
-- `ejecutar_sincronizacion_completa()` --indirect_call--> `client()`  [INFERRED]
-  sincronizador_background.py → test_main.py
-- `test_clean_num_discards_sentinel_values()` --calls--> `clean_num()`  [EXTRACTED]
-  test_main.py → sincronizador_background.py
 - `obtener_openmeteo_directo()` --calls--> `obtener_pronostico_openmeteo()`  [INFERRED]
   main.py → openmeteo_client.py
+- `cargar_cache_desde_disco()` --calls--> `load_cache()`  [EXTRACTED]
+  sincronizador_background.py → cache_store.py
+- `guardar_cache_en_disco()` --calls--> `save_cache()`  [EXTRACTED]
+  sincronizador_background.py → cache_store.py
+- `obtener_capas_mapa()` --calls--> `obtener_capas_gee_y_windy()`  [INFERRED]
+  main.py → gee/tiles.py
 
 ## Import Cycles
 - None detected.
@@ -105,15 +105,15 @@
 
 ### Community 0 - "react"
 Cohesion: 0.06
-Nodes (19): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, App(), GeeMapModal(), getWeatherIcon() (+11 more)
+Nodes (22): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, App(), DetailDrawer(), GeeMapModal() (+14 more)
 
 ### Community 1 - "sincronizador_background.py"
 Cohesion: 0.07
-Nodes (48): Any, _as_bool(), _as_origins(), get_settings(), Configuración centralizada de MeteoPrecisa. Los valores sensibles nunca tienen…, Settings, AsyncClient, load_cache() (+40 more)
+Nodes (47): AsyncClient, FastAPI, fixture, _descargar_y_procesar_frame(), obtener_satellite_latest_loop(), procesar_video_goes19(), Devuelve la metadata y URL del bucle animado más reciente de GOES-19., Descarga los últimos fotogramas de la NOAA para Chile (GOES-19 SSA), los… (+39 more)
 
 ### Community 2 - "main.py"
-Cohesion: 0.08
-Nodes (41): GEECore, extraer_historico_ndvi(), extraer_metricas_agricolas(), fallback_rural(), Extrae serie de tiempo NDVI de los últimos 12 meses usando MODIS MOD13Q1., Extrae métricas satelitales (Sentinel-2, ERA5, MODIS) orientadas a la…, _create_tile_url(), obtener_capas_gee_y_windy() (+33 more)
+Cohesion: 0.09
+Nodes (38): GEECore, extraer_historico_ndvi(), extraer_metricas_agricolas(), fallback_rural(), Extrae serie de tiempo NDVI de los últimos 12 meses usando MODIS MOD13Q1., Extrae métricas satelitales (Sentinel-2, ERA5, MODIS) orientadas a la…, _create_tile_url(), obtener_capas_gee_y_windy() (+30 more)
 
 ### Community 3 - "prepare_chat_overlay_bundle.py"
 Cohesion: 0.16
@@ -131,9 +131,9 @@ Nodes (27): base_pet_prompt(), choose_chroma_key(), color_distance(), concept_wo
 Cohesion: 0.15
 Nodes (17): chatSpec, AvatarImage(), avatarSrcFor(), PRESET_FILES, Bubble(), BubbleScene(), bubbleWidthFor(), CONTAINER_THEME (+9 more)
 
-### Community 7 - "test_main.py"
-Cohesion: 0.19
-Nodes (13): fixture, client(), FakeOpenMeteoClient, FakeOpenMeteoResponse, test_alertas_senapred_endpoint_uses_cached_data(), test_buscar_estaciones_endpoint_uses_cached_catalog(), test_capas_mapa_endpoint_accepts_default_coordinates(), test_capas_mapa_rejects_invalid_coordinates() (+5 more)
+### Community 7 - "app_config.py"
+Cohesion: 0.15
+Nodes (17): Any, _as_bool(), _as_origins(), get_settings(), Configuración centralizada de MeteoPrecisa. Los valores sensibles nunca tienen…, Settings, load_cache(), _load_local() (+9 more)
 
 ### Community 8 - "devDependencies"
 Cohesion: 0.11
@@ -284,7 +284,7 @@ Cohesion: 0.67
 Nodes (3): alpha_nonzero_count(), main(), Image
 
 ## Knowledge Gaps
-- **96 isolated node(s):** `$schema`, `oxc`, `react/rules-of-hooks`, `warn`, `name` (+91 more)
+- **97 isolated node(s):** `$schema`, `oxc`, `react/rules-of-hooks`, `warn`, `name` (+92 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -298,10 +298,10 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `dependencies` connect `dependencies` to `frontend/package.json`, `dependencies`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **What connects `$schema`, `oxc`, `react/rules-of-hooks` to the rest of the system?**
-  _96 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _97 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `react` be split into smaller, more focused modules?**
-  _Cohesion score 0.057912457912457915 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.055051421657592255 - nodes in this community are weakly interconnected._
 - **Should `sincronizador_background.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.06708595387840671 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06818181818181818 - nodes in this community are weakly interconnected._
 - **Should `main.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.0824829931972789 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09082125603864734 - nodes in this community are weakly interconnected._

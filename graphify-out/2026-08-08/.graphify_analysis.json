@@ -1,16 +1,70 @@
 {
   "communities": {
     "0": [
-      "frontend_oxlintrc",
-      "frontend_oxlintrc_plugins",
-      "frontend_oxlintrc_rules",
-      "frontend_oxlintrc_rules_react_only_export_components",
-      "frontend_oxlintrc_rules_react_rules_of_hooks",
-      "frontend_oxlintrc_schema",
+      "alertas_engine",
+      "alertas_engine_evaluar_alertas_meteorologicas",
+      "alertas_engine_rationale_1",
+      "fastapi",
+      "gee_core",
+      "gee_core_geecore",
+      "gee_core_geecore_initialize",
+      "gee_core_geecore_is_active",
+      "gee_init",
+      "gee_rural",
+      "gee_rural_extraer_historico_ndvi",
+      "gee_rural_extraer_metricas_agricolas",
+      "gee_rural_fallback_rural",
+      "gee_rural_rationale_178",
+      "gee_rural_rationale_9",
+      "gee_tiles",
+      "gee_tiles_create_tile_url",
+      "gee_tiles_obtener_capas_gee_y_windy",
+      "gee_tiles_rationale_18",
+      "gee_tiles_rationale_9",
+      "gee_urban",
+      "gee_urban_extraer_metricas_urbanas",
+      "gee_urban_fallback_urbano",
+      "gee_urban_rationale_8",
+      "get",
+      "goes_processor_obtener_satellite_latest_loop",
+      "goes_processor_rationale_134",
+      "main",
+      "main_buscar_estaciones",
+      "main_calcular_calidad_aire_dual",
+      "main_calcular_distancia",
+      "main_calcular_horas_frio",
+      "main_calcular_rumbo_cardinal",
+      "main_calcular_triangulacion_idw",
+      "main_construir_transparency_metadata",
+      "main_evaluar_inversion_termica",
+      "main_home",
+      "main_inspeccionar_ndvi_punto",
+      "main_lifespan",
+      "main_obtener_alertas_senapred",
+      "main_obtener_capas_mapa",
+      "main_obtener_clima_actual_api",
+      "main_obtener_clima_hiperlocal",
+      "main_obtener_gee_punto_seguro",
+      "main_obtener_historico_clima",
+      "main_obtener_openmeteo_directo",
+      "main_obtener_satelite_goes19",
+      "main_obtener_satellite_latest_loop_api",
+      "main_obtener_tile_mapa_gee",
+      "main_quitar_tildes",
+      "main_rationale_64",
+      "main_rationale_765",
+      "main_rationale_779",
+      "main_refresh_cache_before_api",
+      "middleware",
+      "request"
+    ],
+    "1": [
       "frontend_src_app",
       "frontend_src_app_app",
       "frontend_src_components_agropanel",
       "frontend_src_components_agropanel_agropanel",
+      "frontend_src_components_alertsbanner",
+      "frontend_src_components_alertsbanner_alertsbanner",
       "frontend_src_components_aqidrawer",
       "frontend_src_components_aqidrawer_aqidrawer",
       "frontend_src_components_bottomnav",
@@ -56,27 +110,17 @@
       "frontend_src_utils_educationalcatalog_geteducationalinfo",
       "frontend_src_utils_timeutils",
       "frontend_src_utils_timeutils_formatlocaltime",
-      "ref_oxc",
-      "ref_react",
-      "ref_warn"
+      "ref_react"
     ],
-    "1": [
+    "2": [
       "asyncclient",
-      "fastapi",
       "fixture",
       "goes_processor",
       "goes_processor_descargar_y_procesar_frame",
-      "goes_processor_obtener_satellite_latest_loop",
       "goes_processor_procesar_video_goes19",
-      "goes_processor_rationale_134",
       "goes_processor_rationale_49",
       "main_forzar_sincronizacion_manual",
-      "main_lifespan",
-      "main_rationale_64",
-      "main_refresh_cache_before_api",
-      "middleware",
       "post",
-      "request",
       "sincronizador_background",
       "sincronizador_background_cargar_cache_desde_disco",
       "sincronizador_background_cargar_catalogo_maestro",
@@ -94,6 +138,7 @@
       "sincronizador_background_sincronizar_calidad_aire_sinca",
       "sincronizador_background_sincronizar_dmc_telemetria",
       "sincronizador_background_sincronizar_pronostico_oficial_dmc",
+      "sincronizador_background_sincronizar_puntos_gee",
       "sincronizador_background_sincronizar_purpleair",
       "sincronizador_background_sincronizar_redmeteo",
       "sync_job",
@@ -117,54 +162,6 @@
       "test_main_test_manual_sync_requires_configuration_or_token",
       "test_main_test_weather_current_endpoint_uses_cached_and_mocked_data",
       "test_main_test_weather_current_requires_longitude"
-    ],
-    "2": [
-      "gee_core",
-      "gee_core_geecore",
-      "gee_core_geecore_initialize",
-      "gee_core_geecore_is_active",
-      "gee_init",
-      "gee_rural",
-      "gee_rural_extraer_historico_ndvi",
-      "gee_rural_extraer_metricas_agricolas",
-      "gee_rural_fallback_rural",
-      "gee_rural_rationale_178",
-      "gee_rural_rationale_9",
-      "gee_tiles",
-      "gee_tiles_create_tile_url",
-      "gee_tiles_obtener_capas_gee_y_windy",
-      "gee_tiles_rationale_18",
-      "gee_tiles_rationale_9",
-      "gee_urban",
-      "gee_urban_extraer_metricas_urbanas",
-      "gee_urban_fallback_urbano",
-      "gee_urban_rationale_8",
-      "get",
-      "main",
-      "main_buscar_estaciones",
-      "main_calcular_calidad_aire_dual",
-      "main_calcular_distancia",
-      "main_calcular_horas_frio",
-      "main_calcular_rumbo_cardinal",
-      "main_calcular_triangulacion_idw",
-      "main_construir_transparency_metadata",
-      "main_evaluar_inversion_termica",
-      "main_home",
-      "main_inspeccionar_ndvi_punto",
-      "main_obtener_alertas_senapred",
-      "main_obtener_capas_mapa",
-      "main_obtener_clima_actual_api",
-      "main_obtener_clima_hiperlocal",
-      "main_obtener_gee_punto_seguro",
-      "main_obtener_historico_clima",
-      "main_obtener_openmeteo_directo",
-      "main_obtener_satelite_goes19",
-      "main_obtener_satellite_latest_loop_api",
-      "main_obtener_tile_mapa_gee",
-      "main_quitar_tildes",
-      "main_rationale_751",
-      "main_rationale_765",
-      "sincronizador_background_sincronizar_puntos_gee"
     ],
     "3": [
       "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec",
@@ -334,6 +331,24 @@
       "vitejs_plugin_react"
     ],
     "9": [
+      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react_dom",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_remotion",
+      "chart_js",
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_chart_js",
+      "frontend_package_dependencies_lucide_react",
+      "frontend_package_dependencies_react",
+      "frontend_package_dependencies_react_chartjs_2",
+      "frontend_package_dependencies_react_dom",
+      "lucide_react",
+      "react",
+      "react_chartjs_2",
+      "react_dom",
+      "remotion"
+    ],
+    "10": [
       "agents_skills_hatch_pet_scripts_finalize_pet_run",
       "agents_skills_hatch_pet_scripts_finalize_pet_run_default_codex_home",
       "agents_skills_hatch_pet_scripts_finalize_pet_run_default_generated_images_root",
@@ -351,7 +366,7 @@
       "agents_skills_hatch_pet_scripts_finalize_pet_run_validate_hash",
       "agents_skills_hatch_pet_scripts_finalize_pet_run_validate_mirror_hash"
     ],
-    "10": [
+    "11": [
       "agents_skills_web_clone_scripts_compare_recon",
       "agents_skills_web_clone_scripts_compare_recon_boollist",
       "agents_skills_web_clone_scripts_compare_recon_changedactioncount",
@@ -369,7 +384,7 @@
       "agents_skills_web_clone_scripts_compare_recon_sequencesimilarity",
       "agents_skills_web_clone_scripts_compare_recon_usage"
     ],
-    "11": [
+    "12": [
       "agents_skills_web_clone_scripts_od_preview_rewrite",
       "agents_skills_web_clone_scripts_od_preview_rewrite_hostrootprefixes",
       "agents_skills_web_clone_scripts_od_preview_rewrite_includeext",
@@ -387,7 +402,7 @@
       "agents_skills_web_clone_scripts_od_preview_rewrite_usage",
       "agents_skills_web_clone_scripts_od_preview_rewrite_walk"
     ],
-    "12": [
+    "13": [
       "agents_skills_hatch_pet_scripts_extract_strip_frames",
       "agents_skills_hatch_pet_scripts_extract_strip_frames_color_distance",
       "agents_skills_hatch_pet_scripts_extract_strip_frames_component_group_image",
@@ -404,7 +419,7 @@
       "agents_skills_hatch_pet_scripts_extract_strip_frames_py_path",
       "agents_skills_hatch_pet_scripts_extract_strip_frames_remove_chroma_background"
     ],
-    "13": [
+    "14": [
       "agents_skills_hatch_pet_scripts_record_imagegen_result",
       "agents_skills_hatch_pet_scripts_record_imagegen_result_completed_job_ids",
       "agents_skills_hatch_pet_scripts_record_imagegen_result_default_generated_images_root",
@@ -421,7 +436,7 @@
       "agents_skills_hatch_pet_scripts_record_imagegen_result_validate_required_grounding",
       "agents_skills_hatch_pet_scripts_record_imagegen_result_validate_source_path"
     ],
-    "14": [
+    "15": [
       "agents_skills_web_clone_scripts_audit_clone",
       "agents_skills_web_clone_scripts_audit_clone_collectclonecolors",
       "agents_skills_web_clone_scripts_audit_clone_collectmatches",
@@ -438,7 +453,7 @@
       "agents_skills_web_clone_scripts_audit_clone_usage",
       "agents_skills_web_clone_scripts_audit_clone_walk"
     ],
-    "15": [
+    "16": [
       "agents_skills_web_clone_scripts_lib_playwright_loader",
       "agents_skills_web_clone_scripts_lib_playwright_loader_launchchromium",
       "agents_skills_web_clone_scripts_lib_playwright_loader_loadplaywright",
@@ -454,7 +469,7 @@
       "agents_skills_web_clone_scripts_visual_diff_scorefromdiff",
       "agents_skills_web_clone_scripts_visual_diff_usage"
     ],
-    "16": [
+    "17": [
       "agents_skills_web_clone_scripts_mirror_site",
       "agents_skills_web_clone_scripts_mirror_site_all",
       "agents_skills_web_clone_scripts_mirror_site_args",
@@ -470,7 +485,7 @@
       "agents_skills_web_clone_scripts_mirror_site_usage",
       "agents_skills_web_clone_scripts_mirror_site_webfontcss"
     ],
-    "17": [
+    "18": [
       "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig",
       "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions",
       "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions_allowsyntheticdefaultimports",
@@ -485,7 +500,7 @@
       "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_include",
       "ref_src"
     ],
-    "18": [
+    "19": [
       "agents_skills_hatch_pet_scripts_inspect_frames",
       "agents_skills_hatch_pet_scripts_inspect_frames_alpha_nonzero_count",
       "agents_skills_hatch_pet_scripts_inspect_frames_chroma_adjacent_count",
@@ -500,7 +515,7 @@
       "agents_skills_hatch_pet_scripts_inspect_frames_py_namespace",
       "agents_skills_hatch_pet_scripts_inspect_frames_py_path"
     ],
-    "19": [
+    "20": [
       "agents_skills_web_clone_scripts_interaction_probe",
       "agents_skills_web_clone_scripts_interaction_probe_candidates",
       "agents_skills_web_clone_scripts_interaction_probe_captureaction",
@@ -514,7 +529,7 @@
       "agents_skills_web_clone_scripts_interaction_probe_snapshot",
       "agents_skills_web_clone_scripts_interaction_probe_usage"
     ],
-    "20": [
+    "21": [
       "frontend_public_manifest",
       "frontend_public_manifest_background_color",
       "frontend_public_manifest_categories",
@@ -528,7 +543,7 @@
       "ref_utilities",
       "ref_weather"
     ],
-    "21": [
+    "22": [
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix",
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix_base_config",
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix_main",
@@ -541,7 +556,7 @@
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix_run",
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix_write_json"
     ],
-    "22": [
+    "23": [
       "agents_skills_od_contribute_scripts_config",
       "agents_skills_od_contribute_scripts_config_od_assert_in_workroot",
       "agents_skills_od_contribute_scripts_config_od_die",
@@ -554,7 +569,7 @@
       "agents_skills_od_contribute_scripts_config_od_workdir_for",
       "agents_skills_od_contribute_scripts_config_sh__entry"
     ],
-    "23": [
+    "24": [
       "agents_skills_hatch_pet_scripts_compose_atlas",
       "agents_skills_hatch_pet_scripts_compose_atlas_compose_from_frames",
       "agents_skills_hatch_pet_scripts_compose_atlas_compose_from_source_atlas",
@@ -566,7 +581,7 @@
       "agents_skills_hatch_pet_scripts_compose_atlas_py_path",
       "agents_skills_hatch_pet_scripts_compose_atlas_save_outputs"
     ],
-    "24": [
+    "25": [
       "agents_skills_hatch_pet_scripts_queue_pet_repairs",
       "agents_skills_hatch_pet_scripts_queue_pet_repairs_append_repair_note",
       "agents_skills_hatch_pet_scripts_queue_pet_repairs_archive_decoded_output",
@@ -578,7 +593,7 @@
       "agents_skills_hatch_pet_scripts_queue_pet_repairs_queue_repair",
       "agents_skills_hatch_pet_scripts_queue_pet_repairs_rows_to_repair"
     ],
-    "25": [
+    "26": [
       "frontend_package",
       "frontend_package_name",
       "frontend_package_private",
@@ -589,17 +604,6 @@
       "frontend_package_scripts_preview",
       "frontend_package_type",
       "frontend_package_version"
-    ],
-    "26": [
-      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react_dom",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_remotion",
-      "frontend_package_dependencies_react",
-      "frontend_package_dependencies_react_dom",
-      "react",
-      "react_dom",
-      "remotion"
     ],
     "27": [
       "agents_skills_chat_motion_overlay_assets_remotion_template_package_devdependencies",
@@ -697,6 +701,16 @@
       "docs_obsidian_obsidian_app_usemarkdownlinks"
     ],
     "36": [
+      "frontend_oxlintrc",
+      "frontend_oxlintrc_plugins",
+      "frontend_oxlintrc_rules",
+      "frontend_oxlintrc_rules_react_only_export_components",
+      "frontend_oxlintrc_rules_react_rules_of_hooks",
+      "frontend_oxlintrc_schema",
+      "ref_oxc",
+      "ref_warn"
+    ],
+    "37": [
       "obsidian_app",
       "obsidian_app_alwaysupdatelinks",
       "obsidian_app_foldheading",
@@ -706,7 +720,7 @@
       "obsidian_app_tabsize",
       "obsidian_app_usemarkdownlinks"
     ],
-    "37": [
+    "38": [
       "agents_skills_hatch_pet_scripts_package_custom_pet",
       "agents_skills_hatch_pet_scripts_package_custom_pet_default_codex_home",
       "agents_skills_hatch_pet_scripts_package_custom_pet_main",
@@ -715,7 +729,7 @@
       "agents_skills_hatch_pet_scripts_package_custom_pet_validate_spritesheet",
       "agents_skills_hatch_pet_scripts_package_custom_pet_write_webp_spritesheet"
     ],
-    "38": [
+    "39": [
       "agents_skills_hatch_pet_scripts_render_animation_videos_checker",
       "agents_skills_hatch_pet_scripts_render_animation_videos_main",
       "agents_skills_hatch_pet_scripts_render_animation_videos_py_agents_skills_hatch_pet_scripts_render_animation_videos",
@@ -724,7 +738,7 @@
       "agents_skills_hatch_pet_scripts_render_animation_videos_render_state",
       "agents_skills_hatch_pet_scripts_render_animation_videos_shell_quote_for_concat"
     ],
-    "39": [
+    "40": [
       "agents_skills_od_contribute_install",
       "agents_skills_od_contribute_install_cyan",
       "agents_skills_od_contribute_install_die",
@@ -733,7 +747,7 @@
       "agents_skills_od_contribute_install_install_skill_to",
       "agents_skills_od_contribute_install_sh__entry"
     ],
-    "40": [
+    "41": [
       "agents_skills_web_clone_scripts_dna_scaffold",
       "agents_skills_web_clone_scripts_dna_scaffold_enrich",
       "agents_skills_web_clone_scripts_dna_scaffold_flattenrecon",
@@ -742,7 +756,7 @@
       "agents_skills_web_clone_scripts_dna_scaffold_uniq",
       "agents_skills_web_clone_scripts_dna_scaffold_usage"
     ],
-    "41": [
+    "42": [
       "agents_skills_web_clone_scripts_recon_site",
       "agents_skills_web_clone_scripts_recon_site_collectsignals",
       "agents_skills_web_clone_scripts_recon_site_parseargs",
@@ -751,7 +765,7 @@
       "agents_skills_web_clone_scripts_recon_site_usage",
       "agents_skills_web_clone_scripts_recon_site_writesummary"
     ],
-    "42": [
+    "43": [
       "agents_skills_web_clone_scripts_sourcemap_hunt",
       "agents_skills_web_clone_scripts_sourcemap_hunt_collectscripts",
       "agents_skills_web_clone_scripts_sourcemap_hunt_fetchtext",
@@ -759,15 +773,6 @@
       "agents_skills_web_clone_scripts_sourcemap_hunt_parseargs",
       "agents_skills_web_clone_scripts_sourcemap_hunt_resolvemapurl",
       "agents_skills_web_clone_scripts_sourcemap_hunt_usage"
-    ],
-    "43": [
-      "chart_js",
-      "frontend_package_dependencies",
-      "frontend_package_dependencies_chart_js",
-      "frontend_package_dependencies_lucide_react",
-      "frontend_package_dependencies_react_chartjs_2",
-      "lucide_react",
-      "react_chartjs_2"
     ],
     "44": [
       "httpuser",
@@ -887,33 +892,33 @@
     ]
   },
   "cohesion": {
-    "0": 0.055051421657592255,
-    "1": 0.06818181818181818,
-    "2": 0.09082125603864734,
+    "0": 0.06688311688311688,
+    "1": 0.0641025641025641,
+    "2": 0.08333333333333333,
     "3": 0.15725806451612903,
     "4": 0.15268817204301074,
     "5": 0.17989417989417988,
     "6": 0.15,
     "7": 0.14736842105263157,
     "8": 0.10526315789473684,
-    "9": 0.3333333333333333,
-    "10": 0.24166666666666667,
-    "11": 0.2,
-    "12": 0.3142857142857143,
-    "13": 0.3523809523809524,
-    "14": 0.19047619047619047,
-    "15": 0.18681318681318682,
-    "16": 0.14285714285714285,
-    "17": 0.15384615384615385,
-    "18": 0.34615384615384615,
-    "19": 0.24242424242424243,
-    "20": 0.16666666666666666,
-    "21": 0.36363636363636365,
-    "22": 0.23636363636363636,
-    "23": 0.5111111111111111,
-    "24": 0.4666666666666667,
-    "25": 0.2,
-    "26": 0.2222222222222222,
+    "9": 0.13333333333333333,
+    "10": 0.3333333333333333,
+    "11": 0.24166666666666667,
+    "12": 0.2,
+    "13": 0.3142857142857143,
+    "14": 0.3523809523809524,
+    "15": 0.19047619047619047,
+    "16": 0.18681318681318682,
+    "17": 0.14285714285714285,
+    "18": 0.15384615384615385,
+    "19": 0.34615384615384615,
+    "20": 0.24242424242424243,
+    "21": 0.16666666666666666,
+    "22": 0.36363636363636365,
+    "23": 0.23636363636363636,
+    "24": 0.5111111111111111,
+    "25": 0.4666666666666667,
+    "26": 0.2,
     "27": 0.2222222222222222,
     "28": 0.5,
     "29": 0.3888888888888889,
@@ -924,12 +929,12 @@
     "34": 0.25,
     "35": 0.25,
     "36": 0.25,
-    "37": 0.6190476190476191,
-    "38": 0.5714285714285714,
-    "39": 0.6190476190476191,
-    "40": 0.3333333333333333,
+    "37": 0.25,
+    "38": 0.6190476190476191,
+    "39": 0.5714285714285714,
+    "40": 0.6190476190476191,
     "41": 0.3333333333333333,
-    "42": 0.2857142857142857,
+    "42": 0.3333333333333333,
     "43": 0.2857142857142857,
     "44": 0.3333333333333333,
     "45": 0.6,
@@ -959,7 +964,7 @@
     {
       "id": "ref_react",
       "label": "react",
-      "degree": 26
+      "degree": 27
     },
     {
       "id": "sincronizador_background_ejecutar_sincronizacion_completa",
@@ -974,7 +979,7 @@
     {
       "id": "main_obtener_clima_hiperlocal",
       "label": "obtener_clima_hiperlocal()",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "agents_skills_hatch_pet_scripts_generate_pet_images_main",
@@ -1009,14 +1014,14 @@
   ],
   "surprises": [
     {
-      "source": "obtener_satellite_latest_loop_api()",
-      "target": "obtener_satellite_latest_loop()",
+      "source": "sincronizar_puntos_gee()",
+      "target": "extraer_metricas_urbanas()",
       "source_files": [
-        "main.py",
-        "goes_processor.py"
+        "sincronizador_background.py",
+        "gee/urban.py"
       ],
       "confidence": "INFERRED",
-      "relation": "calls",
+      "relation": "indirect_call",
       "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
     },
     {
@@ -1031,6 +1036,28 @@
       "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
     },
     {
+      "source": "refresh_cache_before_api()",
+      "target": "refrescar_cache_si_corresponde()",
+      "source_files": [
+        "main.py",
+        "sincronizador_background.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "indirect_call",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "sincronizar_puntos_gee()",
+      "target": "extraer_metricas_agricolas()",
+      "source_files": [
+        "sincronizador_background.py",
+        "gee/rural.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "indirect_call",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
       "source": "cargar_cache_desde_disco()",
       "target": "load_cache()",
       "source_files": [
@@ -1040,28 +1067,6 @@
       "confidence": "EXTRACTED",
       "relation": "calls",
       "why": "connects across different repos/directories; bridges separate communities"
-    },
-    {
-      "source": "guardar_cache_en_disco()",
-      "target": "save_cache()",
-      "source_files": [
-        "sincronizador_background.py",
-        "cache_store.py"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "connects across different repos/directories; bridges separate communities"
-    },
-    {
-      "source": "obtener_capas_mapa()",
-      "target": "obtener_capas_gee_y_windy()",
-      "source_files": [
-        "main.py",
-        "gee/tiles.py"
-      ],
-      "confidence": "INFERRED",
-      "relation": "calls",
-      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
     }
   ],
   "tokens": {

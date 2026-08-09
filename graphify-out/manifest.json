@@ -45,9 +45,9 @@
     "semantic_hash": "f7b7cdb8689be56d1f4a5391df0102e3"
   },
   "frontend/src/App.jsx": {
-    "mtime": 1786233300.4681935,
-    "ast_hash": "efc8be2b59f2a9c00097ab16646181b9",
-    "semantic_hash": "efc8be2b59f2a9c00097ab16646181b9"
+    "mtime": 1786234040.443078,
+    "ast_hash": "bac44fddd92367a777bf33db2887f4e4",
+    "semantic_hash": "bac44fddd92367a777bf33db2887f4e4"
   },
   "frontend/src/components/AgroPanel.jsx": {
     "mtime": 1786233004.4683187,
@@ -185,9 +185,9 @@
     "semantic_hash": "c73c01ecbcbb4527a559ba6073064872"
   },
   "main.py": {
-    "mtime": 1786232991.514915,
-    "ast_hash": "48734c6c101dc914a8ae37ee38d7bb06",
-    "semantic_hash": "48734c6c101dc914a8ae37ee38d7bb06"
+    "mtime": 1786234023.6766164,
+    "ast_hash": "2417dfb2d5e5d895eab67ff89e4e8330",
+    "semantic_hash": "2417dfb2d5e5d895eab67ff89e4e8330"
   },
   "mapa.js": {
     "mtime": 1785979338.8087513,
@@ -583,5 +583,15 @@
     "mtime": 1786233465.7151458,
     "ast_hash": "a065eb2fff1e241b435fe761f01c8d3f",
     "semantic_hash": "a065eb2fff1e241b435fe761f01c8d3f"
+  },
+  "alertas_engine.py": {
+    "mtime": 1786234011.262374,
+    "ast_hash": "f275f0f93b6addeb2268bbc67ff9257a",
+    "semantic_hash": "f275f0f93b6addeb2268bbc67ff9257a"
+  },
+  "frontend/src/components/AlertsBanner.jsx": {
+    "mtime": 1786234027.7494757,
+    "ast_hash": "345a6bed5b6ad57b0bbda4a0b2abde6a",
+    "semantic_hash": "345a6bed5b6ad57b0bbda4a0b2abde6a"
   }
 }

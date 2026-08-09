@@ -660,6 +660,19 @@ async def obtener_clima_hiperlocal(
     # Boletín Oficial DMC
     boletin_dmc = CACHE_MEMORIA.get("pronostico_oficial_dmc", {})
     
+    # Alertas Agro-Climáticas Inteligentes
+    from alertas_engine import evaluar_alertas_meteorologicas
+    clima_eval_dict = {
+        "estacion": estacion_cercana,
+        "modo_agricola": modo_agricola,
+        "modo_urbano": modo_urbano,
+        "metadatos": {
+            "temperatura_c": temp_final,
+            "viento_kmh": viento_final
+        }
+    }
+    alertas_inteligentes = evaluar_alertas_meteorologicas(clima_eval_dict)
+
     # Alerta SENAPRED activa
     alertas_activas = CACHE_MEMORIA.get("alertas_senapred", [])
     alerta_destacada = alertas_activas[0] if alertas_activas else None
@@ -693,6 +706,7 @@ async def obtener_clima_hiperlocal(
         },
         "modo_urbano": modo_urbano,
         "modo_agricola": modo_agricola,
+        "alertas_inteligentes": alertas_inteligentes,
         "pronostico_oficial_dmc": boletin_dmc,
         "pronostico_numerico_openmeteo": {
             "diario_7dias": daily_om,

@@ -4,25 +4,26 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 751 nodes · 1260 edges · 67 communities (53 shown, 14 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.8)
+- 756 nodes · 1264 edges · 67 communities (53 shown, 14 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2d0d38c4`
+- Built from commit: `42793514`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
+- main.py
 - react
 - sincronizador_background.py
-- main.py
 - prepare_chat_overlay_bundle.py
 - generate_pet_images.py
 - prepare_pet_run.py
 - BubbleScene.tsx
 - app_config.py
 - devDependencies
+- dependencies
 - finalize_pet_run.py
 - compare-recon.mjs
 - od-preview-rewrite.mjs
@@ -40,7 +41,6 @@
 - compose_atlas.py
 - queue_pet_repairs.py
 - frontend/package.json
-- dependencies
 - devDependencies
 - derive_running_left_from_running_right.py
 - extract_pptx.py
@@ -49,13 +49,13 @@
 - remotion-template/package.json
 - main
 - obsidian/.obsidian/app.json
+- .oxlintrc.json
 - .obsidian/app.json
 - main
 - render_state
 - install.sh
 - dna-scaffold.mjs
 - recon-site.mjs
-- dependencies
 - MeteoPrecisaUser
 - validate-skill-submission.sh
 - verify
@@ -75,10 +75,10 @@
 - deploy.sh script
 
 ## God Nodes (most connected - your core abstractions)
-1. `react` - 26 edges
+1. `react` - 27 edges
 2. `ejecutar_sincronizacion_completa()` - 18 edges
 3. `main()` - 15 edges
-4. `obtener_clima_hiperlocal()` - 12 edges
+4. `obtener_clima_hiperlocal()` - 13 edges
 5. `main()` - 11 edges
 6. `compilerOptions` - 10 edges
 7. `main()` - 10 edges
@@ -87,33 +87,33 @@
 10. `build_spec()` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `obtener_satellite_latest_loop_api()` --calls--> `obtener_satellite_latest_loop()`  [INFERRED]
-  main.py → goes_processor.py
+- `sincronizar_puntos_gee()` --indirect_call--> `extraer_metricas_urbanas()`  [INFERRED]
+  sincronizador_background.py → gee/urban.py
 - `obtener_openmeteo_directo()` --calls--> `obtener_pronostico_openmeteo()`  [INFERRED]
   main.py → openmeteo_client.py
+- `refresh_cache_before_api()` --indirect_call--> `refrescar_cache_si_corresponde()`  [INFERRED]
+  main.py → sincronizador_background.py
+- `sincronizar_puntos_gee()` --indirect_call--> `extraer_metricas_agricolas()`  [INFERRED]
+  sincronizador_background.py → gee/rural.py
 - `cargar_cache_desde_disco()` --calls--> `load_cache()`  [EXTRACTED]
   sincronizador_background.py → cache_store.py
-- `guardar_cache_en_disco()` --calls--> `save_cache()`  [EXTRACTED]
-  sincronizador_background.py → cache_store.py
-- `obtener_capas_mapa()` --calls--> `obtener_capas_gee_y_windy()`  [INFERRED]
-  main.py → gee/tiles.py
 
 ## Import Cycles
 - None detected.
 
 ## Communities (67 total, 14 thin omitted)
 
-### Community 0 - "react"
-Cohesion: 0.06
-Nodes (22): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, App(), DetailDrawer(), GeeMapModal() (+14 more)
-
-### Community 1 - "sincronizador_background.py"
+### Community 0 - "main.py"
 Cohesion: 0.07
-Nodes (47): AsyncClient, FastAPI, fixture, _descargar_y_procesar_frame(), obtener_satellite_latest_loop(), procesar_video_goes19(), Devuelve la metadata y URL del bucle animado más reciente de GOES-19., Descarga los últimos fotogramas de la NOAA para Chile (GOES-19 SSA), los… (+39 more)
+Nodes (47): evaluar_alertas_meteorologicas(), Motor de Alertas Agro-Climáticas e Higiénico-Ambientales para MeteoPrecisa…, FastAPI, GEECore, extraer_historico_ndvi(), extraer_metricas_agricolas(), fallback_rural(), Extrae serie de tiempo NDVI de los últimos 12 meses usando MODIS MOD13Q1. (+39 more)
 
-### Community 2 - "main.py"
-Cohesion: 0.09
-Nodes (38): GEECore, extraer_historico_ndvi(), extraer_metricas_agricolas(), fallback_rural(), Extrae serie de tiempo NDVI de los últimos 12 meses usando MODIS MOD13Q1., Extrae métricas satelitales (Sentinel-2, ERA5, MODIS) orientadas a la…, _create_tile_url(), obtener_capas_gee_y_windy() (+30 more)
+### Community 1 - "react"
+Cohesion: 0.06
+Nodes (14): App(), AlertsBanner(), DetailDrawer(), getWeatherIcon(), HourlyCarousel(), REGIONES, SatelliteModal(), WeatherHeader() (+6 more)
+
+### Community 2 - "sincronizador_background.py"
+Cohesion: 0.08
+Nodes (40): AsyncClient, fixture, _descargar_y_procesar_frame(), procesar_video_goes19(), Descarga los últimos fotogramas de la NOAA para Chile (GOES-19 SSA), los…, forzar_sincronizacion_manual(), post, cargar_cache_desde_disco() (+32 more)
 
 ### Community 3 - "prepare_chat_overlay_bundle.py"
 Cohesion: 0.16
@@ -139,73 +139,73 @@ Nodes (17): Any, _as_bool(), _as_origins(), get_settings(), Configuración centr
 Cohesion: 0.11
 Nodes (19): devDependencies, knip, oxlint, tailwindcss, @tailwindcss/vite, @types/node, @types/react-dom, vite (+11 more)
 
-### Community 9 - "finalize_pet_run.py"
+### Community 9 - "dependencies"
+Cohesion: 0.13
+Nodes (16): dependencies, react, react-dom, remotion, chart.js, dependencies, chart.js, lucide-react (+8 more)
+
+### Community 10 - "finalize_pet_run.py"
 Cohesion: 0.33
 Nodes (15): default_codex_home(), default_generated_images_root(), file_sha256(), is_relative_to(), load_json(), main(), manifest_path(), CompletedProcess (+7 more)
 
-### Community 10 - "compare-recon.mjs"
+### Community 11 - "compare-recon.mjs"
 Cohesion: 0.24
 Nodes (12): boolList(), changedActionCount(), firstSignals(), inferComplexity(), interactionSection(), line(), ratioScore(), report() (+4 more)
 
-### Community 11 - "od-preview-rewrite.mjs"
+### Community 12 - "od-preview-rewrite.mjs"
 Cohesion: 0.20
 Nodes (12): hostRootPrefixes, includeExt, projectAssetPrefixes, relativeRef(), rewriteCssUrls(), rewriteFile(), rewriteHtmlAttrs(), rewriteRootRef() (+4 more)
 
-### Community 12 - "extract_strip_frames.py"
+### Community 13 - "extract_strip_frames.py"
 Cohesion: 0.31
 Nodes (14): color_distance(), component_group_image(), connected_components(), extract_component_frames(), extract_slot_frames(), extract_state(), fit_to_cell(), load_chroma_key() (+6 more)
 
-### Community 13 - "record_imagegen_result.py"
+### Community 14 - "record_imagegen_result.py"
 Cohesion: 0.35
 Nodes (14): completed_job_ids(), default_generated_images_root(), file_sha256(), find_job(), image_metadata(), is_relative_to(), job_list(), load_jobs() (+6 more)
 
-### Community 14 - "audit-clone.mjs"
+### Community 15 - "audit-clone.mjs"
 Cohesion: 0.19
 Nodes (10): collectCloneColors(), collectMatches(), customFontFamilies(), fidelityFindings(), GENERIC_FONT_FAMILIES, includeExt, lineNumber(), normalizeColor() (+2 more)
 
-### Community 16 - "mirror-site.mjs"
+### Community 17 - "mirror-site.mjs"
 Cohesion: 0.14
 Nodes (10): all, args, failed, outRoot, ownUrls, pw, responses, siteDir (+2 more)
 
-### Community 17 - "compilerOptions"
+### Community 18 - "compilerOptions"
 Cohesion: 0.15
 Nodes (12): compilerOptions, allowSyntheticDefaultImports, esModuleInterop, jsx, module, moduleResolution, resolveJsonModule, skipLibCheck (+4 more)
 
-### Community 18 - "inspect_frames.py"
+### Community 19 - "inspect_frames.py"
 Cohesion: 0.35
 Nodes (12): alpha_nonzero_count(), chroma_adjacent_count(), color_distance(), edge_alpha_count(), frame_files(), inspect_state(), load_chroma_key(), load_manifest() (+4 more)
 
-### Community 19 - "interaction-probe.mjs"
+### Community 20 - "interaction-probe.mjs"
 Cohesion: 0.24
 Nodes (6): captureAction(), hasChanged(), hashSnapshot(), safeFileName(), shortHash(), snapshot()
 
-### Community 20 - "manifest.json"
+### Community 21 - "manifest.json"
 Cohesion: 0.17
 Nodes (11): background_color, categories, display, icons, name, orientation, short_name, start_url (+3 more)
 
-### Community 21 - "main"
+### Community 22 - "main"
 Cohesion: 0.36
 Nodes (10): base_config(), main(), parse_args(), participant(), CompletedProcess, Namespace, Path, read_generated_chat_spec() (+2 more)
 
-### Community 22 - "config.sh"
+### Community 23 - "config.sh"
 Cohesion: 0.24
 Nodes (6): od::assert_in_workroot(), od::die(), od::err(), od::require(), OD_TARGET_REPO, config.sh script
 
-### Community 23 - "compose_atlas.py"
+### Community 24 - "compose_atlas.py"
 Cohesion: 0.51
 Nodes (9): compose_from_frames(), compose_from_source_atlas(), find_row_frames(), image_files(), main(), paste_centered(), Image, Path (+1 more)
 
-### Community 24 - "queue_pet_repairs.py"
+### Community 25 - "queue_pet_repairs.py"
 Cohesion: 0.47
 Nodes (9): append_repair_note(), archive_decoded_output(), job_list(), load_json(), main(), next_archive_path(), Path, queue_repair() (+1 more)
 
-### Community 25 - "frontend/package.json"
+### Community 26 - "frontend/package.json"
 Cohesion: 0.20
 Nodes (9): name, private, scripts, build, dev, lint, preview, type (+1 more)
-
-### Community 26 - "dependencies"
-Cohesion: 0.22
-Nodes (9): dependencies, react, react-dom, remotion, react, react-dom, react, react-dom (+1 more)
 
 ### Community 27 - "devDependencies"
 Cohesion: 0.22
@@ -239,25 +239,25 @@ Nodes (7): completed_ids(), job_view(), jobs(), load_manifest(), main(), missing
 Cohesion: 0.25
 Nodes (7): alwaysUpdateLinks, foldHeading, foldIndent, showFrontmatter, showLineNumber, tabSize, useMarkdownLinks
 
-### Community 36 - ".obsidian/app.json"
+### Community 36 - ".oxlintrc.json"
+Cohesion: 0.25
+Nodes (7): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, oxc, warn
+
+### Community 37 - ".obsidian/app.json"
 Cohesion: 0.25
 Nodes (7): alwaysUpdateLinks, foldHeading, foldIndent, showFrontmatter, showLineNumber, tabSize, useMarkdownLinks
 
-### Community 37 - "main"
+### Community 38 - "main"
 Cohesion: 0.62
 Nodes (6): default_codex_home(), main(), Path, slugify(), validate_spritesheet(), write_webp_spritesheet()
 
-### Community 38 - "render_state"
+### Community 39 - "render_state"
 Cohesion: 0.57
 Nodes (6): checker(), main(), Image, Path, render_state(), shell_quote_for_concat()
 
-### Community 39 - "install.sh"
+### Community 40 - "install.sh"
 Cohesion: 0.62
 Nodes (6): cyan(), die(), gray(), green(), install_skill_to(), install.sh script
-
-### Community 43 - "dependencies"
-Cohesion: 0.29
-Nodes (7): chart.js, dependencies, chart.js, lucide-react, react-chartjs-2, lucide-react, react-chartjs-2
 
 ### Community 44 - "MeteoPrecisaUser"
 Cohesion: 0.33
@@ -291,17 +291,17 @@ Nodes (3): alpha_nonzero_count(), main(), Image
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `BubbleScene.tsx`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **Why does `react` connect `react` to `.oxlintrc.json`, `BubbleScene.tsx`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `frontend/package.json`, `devDependencies`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `dependencies` to `frontend/package.json`, `dependencies`?**
+- **Why does `dependencies` connect `dependencies` to `frontend/package.json`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **What connects `$schema`, `oxc`, `react/rules-of-hooks` to the rest of the system?**
   _97 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `react` be split into smaller, more focused modules?**
-  _Cohesion score 0.055051421657592255 - nodes in this community are weakly interconnected._
-- **Should `sincronizador_background.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.06818181818181818 - nodes in this community are weakly interconnected._
 - **Should `main.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.09082125603864734 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06688311688311688 - nodes in this community are weakly interconnected._
+- **Should `react` be split into smaller, more focused modules?**
+  _Cohesion score 0.0641025641025641 - nodes in this community are weakly interconnected._
+- **Should `sincronizador_background.py` be split into smaller, more focused modules?**
+  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._

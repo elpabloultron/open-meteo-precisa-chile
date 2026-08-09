@@ -17,6 +17,7 @@ import HourlyForecastDrawer from './components/HourlyForecastDrawer';
 import EstacionesCercanasModal from './components/EstacionesCercanasModal';
 import LocationFallbackModal from './components/LocationFallbackModal';
 import GeeMapModal from './components/GeeMapModal';
+import AlertsBanner from './components/AlertsBanner';
 
 export default function App() {
   const {
@@ -105,6 +106,9 @@ export default function App() {
           </div>
         ) : (
           <>
+            {/* BANNER DE ALERTAS INTELIGENTES AGRO-CLIMÁTICAS */}
+            <AlertsBanner alertas={climaData?.alertas_inteligentes} />
+
             {/* CABECERA HERO ESTILO APPLE WEATHER */}
             <WeatherHeader
               climaData={climaData}
