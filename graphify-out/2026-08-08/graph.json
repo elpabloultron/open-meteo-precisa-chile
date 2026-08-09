@@ -944,7 +944,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "bottomnav.jsx",
-      "community_name": "BottomNav.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_bottomnav"
     },
     {
@@ -956,7 +956,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "bottomnav()",
-      "community_name": "BottomNav.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_bottomnav_bottomnav"
     },
     {
@@ -990,7 +990,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "historicalchart.jsx",
-      "community_name": "AgroPanel.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_historicalchart"
     },
     {
@@ -1002,42 +1002,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "historicalchart()",
-      "community_name": "AgroPanel.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_historicalchart_historicalchart"
-    },
-    {
-      "label": "LocationFallbackModal.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/components/LocationFallbackModal.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "locationfallbackmodal.jsx",
-      "community_name": "react",
-      "id": "frontend_src_components_locationfallbackmodal"
-    },
-    {
-      "label": "REGIONES",
-      "file_type": "code",
-      "source_file": "frontend/src/components/LocationFallbackModal.jsx",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "regiones",
-      "community_name": "react",
-      "id": "frontend_src_components_locationfallbackmodal_regiones"
-    },
-    {
-      "label": "LocationFallbackModal()",
-      "file_type": "code",
-      "source_file": "frontend/src/components/LocationFallbackModal.jsx",
-      "source_location": "L23",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "locationfallbackmodal()",
-      "community_name": "react",
-      "id": "frontend_src_components_locationfallbackmodal_locationfallbackmodal"
     },
     {
       "label": "SatelliteModal.jsx",
@@ -1047,7 +1013,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "satellitemodal.jsx",
-      "community_name": "SatelliteModal.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_satellitemodal"
     },
     {
@@ -1059,7 +1025,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "satellitemodal()",
-      "community_name": "SatelliteModal.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_satellitemodal_satellitemodal"
     },
     {
@@ -1070,7 +1036,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "timeutils.js",
-      "community_name": "SatelliteModal.jsx",
+      "community_name": "react",
       "id": "frontend_src_utils_timeutils"
     },
     {
@@ -1082,7 +1048,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "formatlocaltime()",
-      "community_name": "SatelliteModal.jsx",
+      "community_name": "react",
       "id": "frontend_src_utils_timeutils_formatlocaltime"
     },
     {
@@ -8196,7 +8162,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "detaildrawer.jsx",
-      "community_name": "DetailDrawer.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_detaildrawer"
     },
     {
@@ -8208,7 +8174,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "detaildrawer()",
-      "community_name": "DetailDrawer.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_detaildrawer_detaildrawer"
     },
     {
@@ -8219,7 +8185,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "educationalcatalog.js",
-      "community_name": "DetailDrawer.jsx",
+      "community_name": "react",
       "id": "frontend_src_utils_educationalcatalog"
     },
     {
@@ -8230,7 +8196,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "educational_metrics",
-      "community_name": "DetailDrawer.jsx",
+      "community_name": "react",
       "id": "frontend_src_utils_educationalcatalog_educational_metrics"
     },
     {
@@ -8242,7 +8208,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "geteducationalinfo()",
-      "community_name": "DetailDrawer.jsx",
+      "community_name": "react",
       "id": "frontend_src_utils_educationalcatalog_geteducationalinfo"
     },
     {
@@ -8287,7 +8253,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "alertsbanner.jsx",
-      "community_name": "AlertsBanner.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_alertsbanner"
     },
     {
@@ -8299,7 +8265,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "alertsbanner()",
-      "community_name": "AlertsBanner.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_alertsbanner_alertsbanner"
     },
     {
@@ -8310,7 +8276,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "aqidrawer.jsx",
-      "community_name": "AqiDrawer.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_aqidrawer"
     },
     {
@@ -8322,7 +8288,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "aqidrawer()",
-      "community_name": "AqiDrawer.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_aqidrawer_aqidrawer"
     },
     {
@@ -8333,7 +8299,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "agropanel.jsx",
-      "community_name": "AgroPanel.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_agropanel"
     },
     {
@@ -8345,7 +8311,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "agropanel()",
-      "community_name": "AgroPanel.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_agropanel_agropanel"
     },
     {
@@ -8379,7 +8345,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "forecastchart.jsx",
-      "community_name": "ForecastChart.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_forecastchart"
     },
     {
@@ -8391,7 +8357,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "forecastchart()",
-      "community_name": "ForecastChart.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_forecastchart_forecastchart"
     },
     {
@@ -8425,7 +8391,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "navbar.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_navbar"
     },
     {
@@ -8437,7 +8403,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "navbar()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_navbar_navbar"
     },
     {
@@ -8448,7 +8414,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "weatherskycanvas.jsx",
-      "community_name": "WeatherSkyCanvas.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_weatherskycanvas"
     },
     {
@@ -8460,7 +8426,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "weatherskycanvas()",
-      "community_name": "WeatherSkyCanvas.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_weatherskycanvas_weatherskycanvas"
     },
     {
@@ -8471,7 +8437,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "weatherheader.jsx",
-      "community_name": "SatelliteModal.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_weatherheader"
     },
     {
@@ -8483,7 +8449,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "weatherheader()",
-      "community_name": "SatelliteModal.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_weatherheader_weatherheader"
     },
     {
@@ -8826,7 +8792,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "breezysunmoonwidget.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_breezysunmoonwidget"
     },
     {
@@ -8838,7 +8804,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "breezysunmoonwidget()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_breezysunmoonwidget_breezysunmoonwidget"
     },
     {
@@ -8849,7 +8815,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "hourlycarousel.jsx",
-      "community_name": "HourlyCarousel.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_hourlycarousel"
     },
     {
@@ -8861,7 +8827,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "getweathericon()",
-      "community_name": "HourlyCarousel.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_hourlycarousel_getweathericon"
     },
     {
@@ -8873,53 +8839,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "hourlycarousel()",
-      "community_name": "HourlyCarousel.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_hourlycarousel_hourlycarousel"
-    },
-    {
-      "label": "WeatherContext.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/context/WeatherContext.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "weathercontext.jsx",
-      "community_name": "App.jsx",
-      "id": "frontend_src_context_weathercontext"
-    },
-    {
-      "label": "WeatherContext",
-      "file_type": "code",
-      "source_file": "frontend/src/context/WeatherContext.jsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "weathercontext",
-      "community_name": "App.jsx",
-      "id": "frontend_src_context_weathercontext_weathercontext"
-    },
-    {
-      "label": "FALLBACK_CLIMA_DATA",
-      "file_type": "code",
-      "source_file": "frontend/src/context/WeatherContext.jsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "fallback_clima_data",
-      "community_name": "App.jsx",
-      "id": "frontend_src_context_weathercontext_fallback_clima_data"
-    },
-    {
-      "label": "WeatherProvider()",
-      "file_type": "code",
-      "source_file": "frontend/src/context/WeatherContext.jsx",
-      "source_location": "L73",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "weatherprovider()",
-      "community_name": "App.jsx",
-      "id": "frontend_src_context_weathercontext_weatherprovider"
     },
     {
       "label": "UrbanPanel.jsx",
@@ -8963,7 +8884,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "dailyforecastcards.jsx",
-      "community_name": "DailyForecastCards.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_dailyforecastcards"
     },
     {
@@ -8975,7 +8896,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "dailyforecastcards()",
-      "community_name": "DailyForecastCards.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_dailyforecastcards_dailyforecastcards"
     },
     {
@@ -8984,9 +8905,10 @@
       "source_file": "frontend/src/App.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_app",
       "community": 0,
-      "norm_label": "app.jsx"
+      "norm_label": "app.jsx",
+      "community_name": "react",
+      "id": "frontend_src_app"
     },
     {
       "label": "App()",
@@ -8995,9 +8917,10 @@
       "source_location": "L24",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_app_app",
       "community": 0,
-      "norm_label": "app()"
+      "norm_label": "app()",
+      "community_name": "react",
+      "id": "frontend_src_app_app"
     },
     {
       "label": "main.jsx",
@@ -9005,9 +8928,10 @@
       "source_file": "frontend/src/main.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_main",
       "community": 0,
-      "norm_label": "main.jsx"
+      "norm_label": "main.jsx",
+      "community_name": "react",
+      "id": "frontend_src_main"
     },
     {
       "label": "ErrorBoundary",
@@ -9017,9 +8941,10 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "id": "frontend_src_main_errorboundary",
       "community": 0,
-      "norm_label": "errorboundary"
+      "norm_label": "errorboundary",
+      "community_name": "react",
+      "id": "frontend_src_main_errorboundary"
     },
     {
       "label": ".constructor()",
@@ -9028,9 +8953,10 @@
       "source_location": "L18",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_main_errorboundary_constructor",
       "community": 0,
-      "norm_label": ".constructor()"
+      "norm_label": ".constructor()",
+      "community_name": "react",
+      "id": "frontend_src_main_errorboundary_constructor"
     },
     {
       "label": ".getDerivedStateFromError()",
@@ -9039,9 +8965,10 @@
       "source_location": "L23",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_main_errorboundary_getderivedstatefromerror",
       "community": 0,
-      "norm_label": ".getderivedstatefromerror()"
+      "norm_label": ".getderivedstatefromerror()",
+      "community_name": "react",
+      "id": "frontend_src_main_errorboundary_getderivedstatefromerror"
     },
     {
       "label": ".componentDidCatch()",
@@ -9050,9 +8977,10 @@
       "source_location": "L27",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_main_errorboundary_componentdidcatch",
       "community": 0,
-      "norm_label": ".componentdidcatch()"
+      "norm_label": ".componentdidcatch()",
+      "community_name": "react",
+      "id": "frontend_src_main_errorboundary_componentdidcatch"
     },
     {
       "label": ".render()",
@@ -9061,9 +8989,10 @@
       "source_location": "L32",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_main_errorboundary_render",
       "community": 0,
-      "norm_label": ".render()"
+      "norm_label": ".render()",
+      "community_name": "react",
+      "id": "frontend_src_main_errorboundary_render"
     },
     {
       "label": "rootElement",
@@ -9071,9 +9000,82 @@
       "source_file": "frontend/src/main.jsx",
       "source_location": "L102",
       "_origin": "ast",
-      "id": "frontend_src_main_rootelement",
       "community": 0,
-      "norm_label": "rootelement"
+      "norm_label": "rootelement",
+      "community_name": "react",
+      "id": "frontend_src_main_rootelement"
+    },
+    {
+      "label": "LocationFallbackModal.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/LocationFallbackModal.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "frontend_src_components_locationfallbackmodal",
+      "community": 0,
+      "norm_label": "locationfallbackmodal.jsx"
+    },
+    {
+      "label": "REGIONES",
+      "file_type": "code",
+      "source_file": "frontend/src/components/LocationFallbackModal.jsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "frontend_src_components_locationfallbackmodal_regiones",
+      "community": 0,
+      "norm_label": "regiones"
+    },
+    {
+      "label": "LocationFallbackModal()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/LocationFallbackModal.jsx",
+      "source_location": "L24",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "frontend_src_components_locationfallbackmodal_locationfallbackmodal",
+      "community": 0,
+      "norm_label": "locationfallbackmodal()"
+    },
+    {
+      "label": "WeatherContext.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/context/WeatherContext.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "frontend_src_context_weathercontext",
+      "community": 0,
+      "norm_label": "weathercontext.jsx"
+    },
+    {
+      "label": "WeatherContext",
+      "file_type": "code",
+      "source_file": "frontend/src/context/WeatherContext.jsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "frontend_src_context_weathercontext_weathercontext",
+      "community": 0,
+      "norm_label": "weathercontext"
+    },
+    {
+      "label": "FALLBACK_CLIMA_DATA",
+      "file_type": "code",
+      "source_file": "frontend/src/context/WeatherContext.jsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "frontend_src_context_weathercontext_fallback_clima_data",
+      "community": 0,
+      "norm_label": "fallback_clima_data"
+    },
+    {
+      "label": "WeatherProvider()",
+      "file_type": "code",
+      "source_file": "frontend/src/context/WeatherContext.jsx",
+      "source_location": "L73",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "frontend_src_context_weathercontext_weatherprovider",
+      "community": 0,
+      "norm_label": "weatherprovider()"
     }
   ],
   "links": [
@@ -9538,9 +9540,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -9718,9 +9720,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_components_locationfallbackmodal",
-      "target": "ref_react"
+      "target": "ref_react",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -9802,9 +9804,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_context_weathercontext",
-      "target": "ref_react"
+      "target": "ref_react",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -9814,9 +9816,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_main",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "contains",
@@ -10531,9 +10533,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_bottomnav",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_bottomnav"
     },
     {
       "relation": "contains",
@@ -10554,9 +10556,9 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_estacionescercanasmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_estacionescercanasmodal"
     },
     {
       "relation": "contains",
@@ -10597,46 +10599,12 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_locationfallbackmodal",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/LocationFallbackModal.jsx",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_locationfallbackmodal",
-      "target": "frontend_src_components_locationfallbackmodal_locationfallbackmodal"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/LocationFallbackModal.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_locationfallbackmodal",
-      "target": "frontend_src_components_locationfallbackmodal_regiones"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_satellitemodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_satellitemodal"
     },
     {
       "relation": "contains",
@@ -12666,9 +12634,9 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlyforecastdrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_hourlyforecastdrawer"
     },
     {
       "relation": "contains",
@@ -22712,9 +22680,9 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_geemapmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_geemapmodal"
     },
     {
       "relation": "contains",
@@ -22735,9 +22703,9 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_detaildrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_detaildrawer"
     },
     {
       "relation": "contains",
@@ -22850,9 +22818,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_alertsbanner",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_alertsbanner"
     },
     {
       "relation": "contains",
@@ -22873,9 +22841,9 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_aqidrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_aqidrawer"
     },
     {
       "relation": "contains",
@@ -22896,9 +22864,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_agropanel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_agropanel"
     },
     {
       "relation": "contains",
@@ -22919,9 +22887,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_comparisontable",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_comparisontable"
     },
     {
       "relation": "contains",
@@ -22942,9 +22910,9 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_forecastchart",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_forecastchart"
     },
     {
       "relation": "contains",
@@ -22965,9 +22933,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_mapsection",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_mapsection"
     },
     {
       "relation": "contains",
@@ -22988,9 +22956,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_navbar",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_navbar"
     },
     {
       "relation": "contains",
@@ -23035,9 +23003,9 @@
       "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherskycanvas",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherskycanvas"
     },
     {
       "relation": "contains",
@@ -23058,9 +23026,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherheader",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherheader"
     },
     {
       "relation": "contains",
@@ -23522,9 +23490,9 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_breezysunmoonwidget",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_breezysunmoonwidget"
     },
     {
       "relation": "contains",
@@ -23545,9 +23513,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlycarousel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_hourlycarousel"
     },
     {
       "relation": "contains",
@@ -23588,93 +23556,12 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/context/WeatherContext.jsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_context_weathercontext",
-      "target": "frontend_src_context_weathercontext_fallback_clima_data"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/context/WeatherContext.jsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_context_weathercontext",
-      "target": "frontend_src_context_weathercontext_weathercontext"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/context/WeatherContext.jsx",
-      "source_location": "L73",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_context_weathercontext",
-      "target": "frontend_src_context_weathercontext_weatherprovider"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/main.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "frontend_src_main",
-      "target": "frontend_src_context_weathercontext",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext_weathercontext",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/main.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "frontend_src_main",
-      "target": "frontend_src_context_weathercontext_weatherprovider",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_urbanpanel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_urbanpanel"
     },
     {
       "relation": "contains",
@@ -23695,9 +23582,9 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_dailyforecastcards",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_dailyforecastcards"
     },
     {
       "relation": "contains",
@@ -23717,9 +23604,45 @@
       "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_app_app",
-      "confidence_score": 1.0
+      "target": "frontend_src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_locationfallbackmodal"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_context_weathercontext"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_context_weathercontext_weathercontext"
     },
     {
       "relation": "imports_from",
@@ -23729,9 +23652,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_main",
-      "target": "frontend_src_app",
-      "confidence_score": 1.0
+      "target": "frontend_src_app"
     },
     {
       "relation": "imports",
@@ -23741,9 +23664,33 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_main",
-      "target": "frontend_src_app_app",
-      "confidence_score": 1.0
+      "target": "frontend_src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/main.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_main",
+      "target": "frontend_src_context_weathercontext"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/main.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_main",
+      "target": "frontend_src_context_weathercontext_weatherprovider"
     },
     {
       "relation": "contains",
@@ -23752,9 +23699,9 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_main",
-      "target": "frontend_src_main_errorboundary",
-      "confidence_score": 1.0
+      "target": "frontend_src_main_errorboundary"
     },
     {
       "relation": "contains",
@@ -23763,9 +23710,9 @@
       "source_location": "L102",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_main",
-      "target": "frontend_src_main_rootelement",
-      "confidence_score": 1.0
+      "target": "frontend_src_main_rootelement"
     },
     {
       "relation": "method",
@@ -23774,9 +23721,9 @@
       "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_main_errorboundary",
-      "target": "frontend_src_main_errorboundary_componentdidcatch",
-      "confidence_score": 1.0
+      "target": "frontend_src_main_errorboundary_componentdidcatch"
     },
     {
       "relation": "method",
@@ -23785,9 +23732,9 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_main_errorboundary",
-      "target": "frontend_src_main_errorboundary_constructor",
-      "confidence_score": 1.0
+      "target": "frontend_src_main_errorboundary_constructor"
     },
     {
       "relation": "method",
@@ -23796,9 +23743,9 @@
       "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_main_errorboundary",
-      "target": "frontend_src_main_errorboundary_getderivedstatefromerror",
-      "confidence_score": 1.0
+      "target": "frontend_src_main_errorboundary_getderivedstatefromerror"
     },
     {
       "relation": "method",
@@ -23807,11 +23754,66 @@
       "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_main_errorboundary",
-      "target": "frontend_src_main_errorboundary_render",
+      "target": "frontend_src_main_errorboundary_render"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/LocationFallbackModal.jsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_locationfallbackmodal",
+      "target": "frontend_src_components_locationfallbackmodal_locationfallbackmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/LocationFallbackModal.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_locationfallbackmodal",
+      "target": "frontend_src_components_locationfallbackmodal_regiones",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/context/WeatherContext.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_context_weathercontext",
+      "target": "frontend_src_context_weathercontext_fallback_clima_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/context/WeatherContext.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_context_weathercontext",
+      "target": "frontend_src_context_weathercontext_weathercontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/context/WeatherContext.jsx",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_context_weathercontext",
+      "target": "frontend_src_context_weathercontext_weatherprovider",
       "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3686e1e5d97f13114e9a09bb2508a69f5f1ebc4e"
+  "built_at_commit": "baca3ddf0cfb2a83f9fa82a352cda76970cd0736"
 }

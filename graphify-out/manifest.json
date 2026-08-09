@@ -105,9 +105,9 @@
     "semantic_hash": "5b7233d4c690333ede1e7046b6039867"
   },
   "frontend/src/components/LocationFallbackModal.jsx": {
-    "mtime": 1785889032.86921,
-    "ast_hash": "e8580fbfef02e6c70a3fb6cae632cd0d",
-    "semantic_hash": "e8580fbfef02e6c70a3fb6cae632cd0d"
+    "mtime": 1786246199.1876478,
+    "ast_hash": "97f503269ab0ab6d9102c47a556ac018",
+    "semantic_hash": "97f503269ab0ab6d9102c47a556ac018"
   },
   "frontend/src/components/MapSection.jsx": {
     "mtime": 1786235224.7722032,
@@ -135,9 +135,9 @@
     "semantic_hash": "df942469fdfb15c5f0b57ba88b5be9ef"
   },
   "frontend/src/context/WeatherContext.jsx": {
-    "mtime": 1786238447.8960676,
-    "ast_hash": "09f52261cceb1097eb4771fa989f6e65",
-    "semantic_hash": "09f52261cceb1097eb4771fa989f6e65"
+    "mtime": 1786246193.6094398,
+    "ast_hash": "97fbca0d45bbe2b8d3d96cdfba5534bb",
+    "semantic_hash": "97fbca0d45bbe2b8d3d96cdfba5534bb"
   },
   "frontend/src/main.jsx": {
     "mtime": 1786243621.6561987,

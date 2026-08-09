@@ -71,14 +71,27 @@ const FALLBACK_CLIMA_DATA = {
 };
 
 export function WeatherProvider({ children }) {
-  const [modo, setModo] = useState('urbano');
-  const [coords, setCoords] = useState({ lat: -33.4450, lon: -70.6830 });
+  const [modo, setModo] = useState('agricola');
+  const [coords, setCoords] = useState(() => {
+    try {
+      const saved = localStorage.getItem('mp_coords');
+      return saved ? JSON.parse(saved) : { lat: -40.4000, lon: -73.2800 }; // Quilacahuín (San Pablo, Osorno)
+    } catch {
+      return { lat: -40.4000, lon: -73.2800 };
+    }
+  });
   const [climaData, setClimaData] = useState(FALLBACK_CLIMA_DATA);
   const [loading, setLoading] = useState(false);
   const [gpsFallbackOpen, setGpsFallbackOpen] = useState(false);
 
   const [theme, setTheme] = useState(() => localStorage.getItem('mp_theme') || 'system');
   const [systemDark, setSystemDark] = useState(() => window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('mp_coords', JSON.stringify(coords));
+    } catch {}
+  }, [coords]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -95,19 +108,19 @@ export function WeatherProvider({ children }) {
   }, [theme, resolvedTheme]);
 
   useEffect(() => {
-    if (navigator.geolocation) {
+    if (navigator.geolocation && !localStorage.getItem('mp_coords')) {
       navigator.geolocation.getCurrentPosition(
         (pos) => {
-          setCoords({ lat: pos.coords.latitude, lon: pos.coords.longitude });
+          const newC = { lat: pos.coords.latitude, lon: pos.coords.longitude };
+          setCoords(newC);
+          try { localStorage.setItem('mp_coords', JSON.stringify(newC)); } catch {}
         },
         (err) => {
-          console.log("Geolocalización predeterminada (Santiago):", err);
+          console.log("Geolocalización predeterminada (Quilacahuín):", err);
           setGpsFallbackOpen(true);
         },
         { timeout: 8000, enableHighAccuracy: true }
       );
-    } else {
-      setGpsFallbackOpen(true);
     }
   }, []);
 

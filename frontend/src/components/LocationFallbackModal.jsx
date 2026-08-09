@@ -2,20 +2,21 @@ import React from 'react';
 import { MapPin, X } from 'lucide-react';
 
 const REGIONES = [
+  { nombre: "🌾 Quilacahuín (San Pablo, Osorno)", lat: -40.4000, lon: -73.2800 },
+  { nombre: "Los Lagos (Osorno / Puerto Montt)", lat: -40.5739, lon: -73.1353 },
   { nombre: "Arica y Parinacota", lat: -18.4783, lon: -70.3126 },
   { nombre: "Tarapacá", lat: -20.2133, lon: -70.1503 },
   { nombre: "Antofagasta", lat: -23.6500, lon: -70.4000 },
   { nombre: "Atacama", lat: -27.3667, lon: -70.3333 },
   { nombre: "Coquimbo", lat: -29.9533, lon: -71.3395 },
   { nombre: "Valparaíso", lat: -33.0472, lon: -71.6127 },
-  { nombre: "Metropolitana", lat: -33.4489, lon: -70.6693 },
-  { nombre: "O'Higgins", lat: -34.1701, lon: -70.7444 },
-  { nombre: "Maule", lat: -35.4264, lon: -71.6554 },
-  { nombre: "Ñuble", lat: -36.6066, lon: -72.1034 },
-  { nombre: "Biobío", lat: -36.8270, lon: -73.0503 },
-  { nombre: "La Araucanía", lat: -38.7397, lon: -72.5901 },
-  { nombre: "Los Ríos", lat: -39.8142, lon: -73.2459 },
-  { nombre: "Los Lagos", lat: -41.4717, lon: -72.9369 },
+  { nombre: "Metropolitana (Santiago)", lat: -33.4489, lon: -70.6693 },
+  { nombre: "O'Higgins (Rancagua)", lat: -34.1701, lon: -70.7444 },
+  { nombre: "Maule (Curicó / Talca)", lat: -35.4264, lon: -71.6554 },
+  { nombre: "Ñuble (Chillán)", lat: -36.6066, lon: -72.1034 },
+  { nombre: "Biobío (Concepción)", lat: -36.8270, lon: -73.0503 },
+  { nombre: "La Araucanía (Temuco)", lat: -38.7397, lon: -72.5901 },
+  { nombre: "Los Ríos (Valdivia)", lat: -39.8142, lon: -73.2459 },
   { nombre: "Aysén", lat: -45.5752, lon: -72.0662 },
   { nombre: "Magallanes", lat: -53.1638, lon: -70.9171 }
 ];
