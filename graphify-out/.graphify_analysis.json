@@ -26,12 +26,6 @@
       "gee_urban_fallback_urbano",
       "gee_urban_rationale_8",
       "get",
-      "goes_processor",
-      "goes_processor_descargar_y_procesar_frame",
-      "goes_processor_obtener_satellite_latest_loop",
-      "goes_processor_procesar_video_goes19",
-      "goes_processor_rationale_134",
-      "goes_processor_rationale_49",
       "main",
       "main_buscar_estaciones",
       "main_calcular_calidad_aire_dual",
@@ -65,27 +59,14 @@
       "request"
     ],
     "1": [
-      "any",
-      "app_config",
-      "app_config_as_bool",
-      "app_config_as_origins",
-      "app_config_get_settings",
-      "app_config_rationale_1",
-      "app_config_settings",
       "asyncclient",
-      "cache_store",
-      "cache_store_load_cache",
-      "cache_store_load_local",
-      "cache_store_rationale_1",
-      "cache_store_rationale_32",
-      "cache_store_rationale_54",
-      "cache_store_save_cache",
-      "cache_store_save_local",
-      "openmeteo_client",
-      "openmeteo_client_obtener_pronostico_openmeteo",
-      "openmeteo_client_rationale_1",
-      "openmeteo_client_rationale_24",
-      "path",
+      "fixture",
+      "goes_processor",
+      "goes_processor_descargar_y_procesar_frame",
+      "goes_processor_obtener_satellite_latest_loop",
+      "goes_processor_procesar_video_goes19",
+      "goes_processor_rationale_134",
+      "goes_processor_rationale_49",
       "sincronizador_background",
       "sincronizador_background_cargar_cache_desde_disco",
       "sincronizador_background_cargar_catalogo_maestro",
@@ -108,44 +89,27 @@
       "sincronizador_background_sincronizar_redmeteo",
       "sync_job",
       "sync_job_rationale_1",
-      "sync_job_run"
+      "sync_job_run",
+      "test_main",
+      "test_main_client",
+      "test_main_fakeopenmeteoclient",
+      "test_main_fakeopenmeteoclient_aenter",
+      "test_main_fakeopenmeteoclient_aexit",
+      "test_main_fakeopenmeteoclient_get",
+      "test_main_fakeopenmeteoresponse",
+      "test_main_fakeopenmeteoresponse_json",
+      "test_main_test_alertas_senapred_endpoint_uses_cached_data",
+      "test_main_test_buscar_estaciones_endpoint_uses_cached_catalog",
+      "test_main_test_capas_mapa_endpoint_accepts_default_coordinates",
+      "test_main_test_capas_mapa_rejects_invalid_coordinates",
+      "test_main_test_clean_num_discards_sentinel_values",
+      "test_main_test_historico_accepts_lng_alias_and_validates_missing_longitude",
+      "test_main_test_home_endpoint_reports_real_status",
+      "test_main_test_manual_sync_requires_configuration_or_token",
+      "test_main_test_weather_current_endpoint_uses_cached_and_mocked_data",
+      "test_main_test_weather_current_requires_longitude"
     ],
     "2": [
-      "frontend_src_app",
-      "frontend_src_app_app",
-      "frontend_src_components_agropanel",
-      "frontend_src_components_agropanel_agropanel",
-      "frontend_src_components_alertsbanner",
-      "frontend_src_components_alertsbanner_alertsbanner",
-      "frontend_src_components_aqidrawer",
-      "frontend_src_components_aqidrawer_aqidrawer",
-      "frontend_src_components_bottomnav",
-      "frontend_src_components_bottomnav_bottomnav",
-      "frontend_src_components_breezysunmoonwidget",
-      "frontend_src_components_breezysunmoonwidget_breezysunmoonwidget",
-      "frontend_src_components_comparisontable",
-      "frontend_src_components_comparisontable_comparisontable",
-      "frontend_src_components_dailyforecastcards",
-      "frontend_src_components_dailyforecastcards_dailyforecastcards",
-      "frontend_src_components_estacionescercanasmodal",
-      "frontend_src_components_estacionescercanasmodal_estacionescercanasmodal",
-      "frontend_src_components_forecastchart",
-      "frontend_src_components_forecastchart_forecastchart",
-      "frontend_src_components_geemapmodal",
-      "frontend_src_components_geemapmodal_geemapmodal",
-      "frontend_src_components_historicalchart",
-      "frontend_src_components_historicalchart_historicalchart",
-      "frontend_src_components_hourlyforecastdrawer",
-      "frontend_src_components_hourlyforecastdrawer_hourlyforecastdrawer",
-      "frontend_src_components_mapsection",
-      "frontend_src_components_mapsection_mapsection",
-      "frontend_src_components_urbanpanel",
-      "frontend_src_components_urbanpanel_urbanpanel",
-      "frontend_src_components_weatherskycanvas",
-      "frontend_src_components_weatherskycanvas_weatherskycanvas",
-      "ref_react"
-    ],
-    "3": [
       "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec",
       "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_auto_avatar_for_participant",
       "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec_build_spec",
@@ -179,7 +143,7 @@
       "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_validate_output_dir",
       "agents_skills_chat_motion_overlay_scripts_prepare_chat_overlay_bundle_write_chat_spec_ts"
     ],
-    "4": [
+    "3": [
       "agents_skills_hatch_pet_scripts_generate_pet_images",
       "agents_skills_hatch_pet_scripts_generate_pet_images_complete_job",
       "agents_skills_hatch_pet_scripts_generate_pet_images_decode_response",
@@ -212,7 +176,7 @@
       "agents_skills_hatch_pet_scripts_test_generate_pet_images_testpathlisttraversalrejection_test_rejects_missing_safe_path",
       "agents_skills_hatch_pet_scripts_test_generate_pet_images_testpathlisttraversalrejection_test_rejects_traversal_in_input_images"
     ],
-    "5": [
+    "4": [
       "agents_skills_hatch_pet_scripts_prepare_pet_run",
       "agents_skills_hatch_pet_scripts_prepare_pet_run_base_pet_prompt",
       "agents_skills_hatch_pet_scripts_prepare_pet_run_choose_chroma_key",
@@ -242,26 +206,54 @@
       "agents_skills_hatch_pet_scripts_prepare_pet_run_write_text",
       "imagedraw"
     ],
+    "5": [
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_chatspec",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_chatspec_chatspec",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_avatarlibrary",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_avatarlibrary_avatarimage",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_avatarlibrary_avatarsrcfor",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_avatarlibrary_preset_files",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_bubble",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_bubblescene",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_bubblewidthfor",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_container_theme",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_estimatecharwidth",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_maxtextwidthfor",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_measuretextwidth",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_wrapmessagetext",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_chatmotionoverlay",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_chatmotionoverlay_chatmotionoverlay",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_deviceframe",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_deviceframe_deviceframe",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_types",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_types_avatarkey",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_types_chatspec",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_index",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_root",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_src_root_remotionroot"
+    ],
     "6": [
-      "fixture",
-      "test_main",
-      "test_main_client",
-      "test_main_fakeopenmeteoclient",
-      "test_main_fakeopenmeteoclient_aenter",
-      "test_main_fakeopenmeteoclient_aexit",
-      "test_main_fakeopenmeteoclient_get",
-      "test_main_fakeopenmeteoresponse",
-      "test_main_fakeopenmeteoresponse_json",
-      "test_main_test_alertas_senapred_endpoint_uses_cached_data",
-      "test_main_test_buscar_estaciones_endpoint_uses_cached_catalog",
-      "test_main_test_capas_mapa_endpoint_accepts_default_coordinates",
-      "test_main_test_capas_mapa_rejects_invalid_coordinates",
-      "test_main_test_clean_num_discards_sentinel_values",
-      "test_main_test_historico_accepts_lng_alias_and_validates_missing_longitude",
-      "test_main_test_home_endpoint_reports_real_status",
-      "test_main_test_manual_sync_requires_configuration_or_token",
-      "test_main_test_weather_current_endpoint_uses_cached_and_mocked_data",
-      "test_main_test_weather_current_requires_longitude"
+      "any",
+      "app_config",
+      "app_config_as_bool",
+      "app_config_as_origins",
+      "app_config_get_settings",
+      "app_config_rationale_1",
+      "app_config_settings",
+      "cache_store",
+      "cache_store_load_cache",
+      "cache_store_load_local",
+      "cache_store_rationale_1",
+      "cache_store_rationale_32",
+      "cache_store_rationale_54",
+      "cache_store_save_cache",
+      "cache_store_save_local",
+      "openmeteo_client",
+      "openmeteo_client_obtener_pronostico_openmeteo",
+      "openmeteo_client_rationale_1",
+      "openmeteo_client_rationale_24",
+      "path"
     ],
     "7": [
       "frontend_package_devdependencies",
@@ -285,6 +277,17 @@
       "vitejs_plugin_react"
     ],
     "8": [
+      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react_dom",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_remotion",
+      "frontend_package_dependencies_react",
+      "frontend_package_dependencies_react_dom",
+      "react",
+      "react_dom",
+      "remotion"
+    ],
+    "9": [
       "agents_skills_hatch_pet_scripts_finalize_pet_run",
       "agents_skills_hatch_pet_scripts_finalize_pet_run_default_codex_home",
       "agents_skills_hatch_pet_scripts_finalize_pet_run_default_generated_images_root",
@@ -302,7 +305,7 @@
       "agents_skills_hatch_pet_scripts_finalize_pet_run_validate_hash",
       "agents_skills_hatch_pet_scripts_finalize_pet_run_validate_mirror_hash"
     ],
-    "9": [
+    "10": [
       "agents_skills_web_clone_scripts_compare_recon",
       "agents_skills_web_clone_scripts_compare_recon_boollist",
       "agents_skills_web_clone_scripts_compare_recon_changedactioncount",
@@ -320,7 +323,7 @@
       "agents_skills_web_clone_scripts_compare_recon_sequencesimilarity",
       "agents_skills_web_clone_scripts_compare_recon_usage"
     ],
-    "10": [
+    "11": [
       "agents_skills_web_clone_scripts_od_preview_rewrite",
       "agents_skills_web_clone_scripts_od_preview_rewrite_hostrootprefixes",
       "agents_skills_web_clone_scripts_od_preview_rewrite_includeext",
@@ -338,24 +341,25 @@
       "agents_skills_web_clone_scripts_od_preview_rewrite_usage",
       "agents_skills_web_clone_scripts_od_preview_rewrite_walk"
     ],
-    "11": [
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_avatarlibrary",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_avatarlibrary_avatarimage",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_avatarlibrary_avatarsrcfor",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_avatarlibrary_preset_files",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_bubble",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_bubblewidthfor",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_container_theme",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_estimatecharwidth",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_maxtextwidthfor",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_measuretextwidth",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_wrapmessagetext",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_types",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_types_avatarkey",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_types_chatspec"
-    ],
     "12": [
+      "frontend_src_components_comparisontable",
+      "frontend_src_components_comparisontable_comparisontable",
+      "frontend_src_components_estacionescercanasmodal",
+      "frontend_src_components_estacionescercanasmodal_estacionescercanasmodal",
+      "frontend_src_components_geemapmodal",
+      "frontend_src_components_geemapmodal_geemapmodal",
+      "frontend_src_components_hourlyforecastdrawer",
+      "frontend_src_components_hourlyforecastdrawer_hourlyforecastdrawer",
+      "frontend_src_components_locationfallbackmodal",
+      "frontend_src_components_locationfallbackmodal_locationfallbackmodal",
+      "frontend_src_components_locationfallbackmodal_regiones",
+      "frontend_src_components_mapsection",
+      "frontend_src_components_mapsection_mapsection",
+      "frontend_src_components_urbanpanel",
+      "frontend_src_components_urbanpanel_urbanpanel",
+      "ref_react"
+    ],
+    "13": [
       "agents_skills_hatch_pet_scripts_extract_strip_frames",
       "agents_skills_hatch_pet_scripts_extract_strip_frames_color_distance",
       "agents_skills_hatch_pet_scripts_extract_strip_frames_component_group_image",
@@ -372,7 +376,7 @@
       "agents_skills_hatch_pet_scripts_extract_strip_frames_py_path",
       "agents_skills_hatch_pet_scripts_extract_strip_frames_remove_chroma_background"
     ],
-    "13": [
+    "14": [
       "agents_skills_hatch_pet_scripts_record_imagegen_result",
       "agents_skills_hatch_pet_scripts_record_imagegen_result_completed_job_ids",
       "agents_skills_hatch_pet_scripts_record_imagegen_result_default_generated_images_root",
@@ -389,7 +393,7 @@
       "agents_skills_hatch_pet_scripts_record_imagegen_result_validate_required_grounding",
       "agents_skills_hatch_pet_scripts_record_imagegen_result_validate_source_path"
     ],
-    "14": [
+    "15": [
       "agents_skills_web_clone_scripts_audit_clone",
       "agents_skills_web_clone_scripts_audit_clone_collectclonecolors",
       "agents_skills_web_clone_scripts_audit_clone_collectmatches",
@@ -406,7 +410,7 @@
       "agents_skills_web_clone_scripts_audit_clone_usage",
       "agents_skills_web_clone_scripts_audit_clone_walk"
     ],
-    "15": [
+    "16": [
       "agents_skills_web_clone_scripts_lib_playwright_loader",
       "agents_skills_web_clone_scripts_lib_playwright_loader_launchchromium",
       "agents_skills_web_clone_scripts_lib_playwright_loader_loadplaywright",
@@ -422,7 +426,7 @@
       "agents_skills_web_clone_scripts_visual_diff_scorefromdiff",
       "agents_skills_web_clone_scripts_visual_diff_usage"
     ],
-    "16": [
+    "17": [
       "agents_skills_web_clone_scripts_mirror_site",
       "agents_skills_web_clone_scripts_mirror_site_all",
       "agents_skills_web_clone_scripts_mirror_site_args",
@@ -438,7 +442,7 @@
       "agents_skills_web_clone_scripts_mirror_site_usage",
       "agents_skills_web_clone_scripts_mirror_site_webfontcss"
     ],
-    "17": [
+    "18": [
       "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig",
       "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions",
       "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions_allowsyntheticdefaultimports",
@@ -453,7 +457,7 @@
       "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_include",
       "ref_src"
     ],
-    "18": [
+    "19": [
       "agents_skills_hatch_pet_scripts_inspect_frames",
       "agents_skills_hatch_pet_scripts_inspect_frames_alpha_nonzero_count",
       "agents_skills_hatch_pet_scripts_inspect_frames_chroma_adjacent_count",
@@ -467,21 +471,6 @@
       "agents_skills_hatch_pet_scripts_inspect_frames_py_image",
       "agents_skills_hatch_pet_scripts_inspect_frames_py_namespace",
       "agents_skills_hatch_pet_scripts_inspect_frames_py_path"
-    ],
-    "19": [
-      "frontend_src_components_navbar",
-      "frontend_src_components_navbar_navbar",
-      "frontend_src_context_weathercontext",
-      "frontend_src_context_weathercontext_fallback_clima_data",
-      "frontend_src_context_weathercontext_weathercontext",
-      "frontend_src_context_weathercontext_weatherprovider",
-      "frontend_src_main",
-      "frontend_src_main_errorboundary",
-      "frontend_src_main_errorboundary_componentdidcatch",
-      "frontend_src_main_errorboundary_constructor",
-      "frontend_src_main_errorboundary_getderivedstatefromerror",
-      "frontend_src_main_errorboundary_render",
-      "frontend_src_main_rootelement"
     ],
     "20": [
       "agents_skills_web_clone_scripts_interaction_probe",
@@ -512,6 +501,20 @@
       "ref_weather"
     ],
     "22": [
+      "frontend_src_app",
+      "frontend_src_app_app",
+      "frontend_src_components_breezysunmoonwidget",
+      "frontend_src_components_breezysunmoonwidget_breezysunmoonwidget",
+      "frontend_src_components_navbar",
+      "frontend_src_components_navbar_navbar",
+      "frontend_src_context_weathercontext",
+      "frontend_src_context_weathercontext_fallback_clima_data",
+      "frontend_src_context_weathercontext_weathercontext",
+      "frontend_src_context_weathercontext_weatherprovider",
+      "frontend_src_main",
+      "frontend_src_main_rootelement"
+    ],
+    "23": [
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix",
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix_base_config",
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix_main",
@@ -524,7 +527,7 @@
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix_run",
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix_write_json"
     ],
-    "23": [
+    "24": [
       "agents_skills_od_contribute_scripts_config",
       "agents_skills_od_contribute_scripts_config_od_assert_in_workroot",
       "agents_skills_od_contribute_scripts_config_od_die",
@@ -536,18 +539,6 @@
       "agents_skills_od_contribute_scripts_config_od_warn",
       "agents_skills_od_contribute_scripts_config_od_workdir_for",
       "agents_skills_od_contribute_scripts_config_sh__entry"
-    ],
-    "24": [
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_chatspec",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_chatspec_chatspec",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_bubblescene_bubblescene",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_chatmotionoverlay",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_chatmotionoverlay_chatmotionoverlay",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_deviceframe",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_components_deviceframe_deviceframe",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_index",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_root",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_src_root_remotionroot"
     ],
     "25": [
       "agents_skills_hatch_pet_scripts_compose_atlas",
@@ -586,17 +577,6 @@
       "frontend_package_version"
     ],
     "28": [
-      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react_dom",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_remotion",
-      "frontend_package_dependencies_react",
-      "frontend_package_dependencies_react_dom",
-      "react",
-      "react_dom",
-      "remotion"
-    ],
-    "29": [
       "agents_skills_chat_motion_overlay_assets_remotion_template_package_devdependencies",
       "agents_skills_chat_motion_overlay_assets_remotion_template_package_devdependencies_remotion_cli",
       "agents_skills_chat_motion_overlay_assets_remotion_template_package_devdependencies_types_react",
@@ -607,7 +587,7 @@
       "types_react",
       "typescript"
     ],
-    "30": [
+    "29": [
       "agents_skills_hatch_pet_scripts_derive_running_left_from_running_right",
       "agents_skills_hatch_pet_scripts_derive_running_left_from_running_right_file_sha256",
       "agents_skills_hatch_pet_scripts_derive_running_left_from_running_right_find_job",
@@ -618,7 +598,7 @@
       "agents_skills_hatch_pet_scripts_derive_running_left_from_running_right_manifest_relative",
       "agents_skills_hatch_pet_scripts_derive_running_left_from_running_right_py_path"
     ],
-    "31": [
+    "30": [
       "agents_skills_pptx_html_fidelity_audit_scripts_extract_pptx",
       "agents_skills_pptx_html_fidelity_audit_scripts_extract_pptx_color_repr",
       "agents_skills_pptx_html_fidelity_audit_scripts_extract_pptx_emu_to_in",
@@ -629,7 +609,7 @@
       "agents_skills_pptx_html_fidelity_audit_scripts_extract_pptx_py_path",
       "agents_skills_pptx_html_fidelity_audit_scripts_extract_pptx_rationale_41"
     ],
-    "32": [
+    "31": [
       "agents_skills_web_clone_scripts_asset_harvest",
       "agents_skills_web_clone_scripts_asset_harvest_classify",
       "agents_skills_web_clone_scripts_asset_harvest_downloadall",
@@ -640,7 +620,7 @@
       "agents_skills_web_clone_scripts_asset_harvest_urlsfromrecon",
       "agents_skills_web_clone_scripts_asset_harvest_usage"
     ],
-    "33": [
+    "32": [
       "mapa",
       "mapa_angulos",
       "mapa_creacapasmarcadores",
@@ -651,7 +631,7 @@
       "mapa_procesarmapa",
       "mapa_rosadelosvientos"
     ],
-    "34": [
+    "33": [
       "agents_skills_chat_motion_overlay_assets_remotion_template_package",
       "agents_skills_chat_motion_overlay_assets_remotion_template_package_name",
       "agents_skills_chat_motion_overlay_assets_remotion_template_package_private",
@@ -661,7 +641,7 @@
       "agents_skills_chat_motion_overlay_assets_remotion_template_package_scripts_start",
       "agents_skills_chat_motion_overlay_assets_remotion_template_package_version"
     ],
-    "35": [
+    "34": [
       "agents_skills_hatch_pet_scripts_pet_job_status",
       "agents_skills_hatch_pet_scripts_pet_job_status_completed_ids",
       "agents_skills_hatch_pet_scripts_pet_job_status_job_view",
@@ -671,7 +651,7 @@
       "agents_skills_hatch_pet_scripts_pet_job_status_missing_deps",
       "agents_skills_hatch_pet_scripts_pet_job_status_py_path"
     ],
-    "36": [
+    "35": [
       "agents_skills_web_clone_scripts_route_crawl",
       "agents_skills_web_clone_scripts_route_crawl_collectpage",
       "agents_skills_web_clone_scripts_route_crawl_normalizeurl",
@@ -681,7 +661,7 @@
       "agents_skills_web_clone_scripts_route_crawl_summarizemarkdown",
       "agents_skills_web_clone_scripts_route_crawl_usage"
     ],
-    "37": [
+    "36": [
       "docs_obsidian_obsidian_app",
       "docs_obsidian_obsidian_app_alwaysupdatelinks",
       "docs_obsidian_obsidian_app_foldheading",
@@ -691,7 +671,7 @@
       "docs_obsidian_obsidian_app_tabsize",
       "docs_obsidian_obsidian_app_usemarkdownlinks"
     ],
-    "38": [
+    "37": [
       "frontend_oxlintrc",
       "frontend_oxlintrc_plugins",
       "frontend_oxlintrc_rules",
@@ -701,7 +681,7 @@
       "ref_oxc",
       "ref_warn"
     ],
-    "39": [
+    "38": [
       "obsidian_app",
       "obsidian_app_alwaysupdatelinks",
       "obsidian_app_foldheading",
@@ -711,7 +691,7 @@
       "obsidian_app_tabsize",
       "obsidian_app_usemarkdownlinks"
     ],
-    "40": [
+    "39": [
       "agents_skills_hatch_pet_scripts_package_custom_pet",
       "agents_skills_hatch_pet_scripts_package_custom_pet_default_codex_home",
       "agents_skills_hatch_pet_scripts_package_custom_pet_main",
@@ -720,7 +700,7 @@
       "agents_skills_hatch_pet_scripts_package_custom_pet_validate_spritesheet",
       "agents_skills_hatch_pet_scripts_package_custom_pet_write_webp_spritesheet"
     ],
-    "41": [
+    "40": [
       "agents_skills_hatch_pet_scripts_render_animation_videos_checker",
       "agents_skills_hatch_pet_scripts_render_animation_videos_main",
       "agents_skills_hatch_pet_scripts_render_animation_videos_py_agents_skills_hatch_pet_scripts_render_animation_videos",
@@ -729,7 +709,7 @@
       "agents_skills_hatch_pet_scripts_render_animation_videos_render_state",
       "agents_skills_hatch_pet_scripts_render_animation_videos_shell_quote_for_concat"
     ],
-    "42": [
+    "41": [
       "agents_skills_od_contribute_install",
       "agents_skills_od_contribute_install_cyan",
       "agents_skills_od_contribute_install_die",
@@ -738,7 +718,7 @@
       "agents_skills_od_contribute_install_install_skill_to",
       "agents_skills_od_contribute_install_sh__entry"
     ],
-    "43": [
+    "42": [
       "agents_skills_web_clone_scripts_dna_scaffold",
       "agents_skills_web_clone_scripts_dna_scaffold_enrich",
       "agents_skills_web_clone_scripts_dna_scaffold_flattenrecon",
@@ -747,7 +727,7 @@
       "agents_skills_web_clone_scripts_dna_scaffold_uniq",
       "agents_skills_web_clone_scripts_dna_scaffold_usage"
     ],
-    "44": [
+    "43": [
       "agents_skills_web_clone_scripts_recon_site",
       "agents_skills_web_clone_scripts_recon_site_collectsignals",
       "agents_skills_web_clone_scripts_recon_site_parseargs",
@@ -756,7 +736,7 @@
       "agents_skills_web_clone_scripts_recon_site_usage",
       "agents_skills_web_clone_scripts_recon_site_writesummary"
     ],
-    "45": [
+    "44": [
       "agents_skills_web_clone_scripts_sourcemap_hunt",
       "agents_skills_web_clone_scripts_sourcemap_hunt_collectscripts",
       "agents_skills_web_clone_scripts_sourcemap_hunt_fetchtext",
@@ -765,16 +745,7 @@
       "agents_skills_web_clone_scripts_sourcemap_hunt_resolvemapurl",
       "agents_skills_web_clone_scripts_sourcemap_hunt_usage"
     ],
-    "46": [
-      "chart_js",
-      "frontend_package_dependencies",
-      "frontend_package_dependencies_chart_js",
-      "frontend_package_dependencies_lucide_react",
-      "frontend_package_dependencies_react_chartjs_2",
-      "lucide_react",
-      "react_chartjs_2"
-    ],
-    "47": [
+    "45": [
       "httpuser",
       "locustfile",
       "locustfile_meteoprecisauser",
@@ -783,7 +754,7 @@
       "locustfile_rationale_1",
       "task"
     ],
-    "48": [
+    "46": [
       "agents_skills_od_contribute_scripts_validate_skill_submission",
       "agents_skills_od_contribute_scripts_validate_skill_submission_escapes_root",
       "agents_skills_od_contribute_scripts_validate_skill_submission_fail",
@@ -791,7 +762,7 @@
       "agents_skills_od_contribute_scripts_validate_skill_submission_sh__entry",
       "agents_skills_od_contribute_scripts_validate_skill_submission_warn"
     ],
-    "49": [
+    "47": [
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout",
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_emu_to_in",
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_is_footer_by_name",
@@ -799,7 +770,7 @@
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_py_path",
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_verify"
     ],
-    "50": [
+    "48": [
       "frontend_src_components_satellitemodal",
       "frontend_src_components_satellitemodal_satellitemodal",
       "frontend_src_components_weatherheader",
@@ -807,45 +778,58 @@
       "frontend_src_utils_timeutils",
       "frontend_src_utils_timeutils_formatlocaltime"
     ],
-    "51": [
+    "49": [
       "agents_skills_od_contribute_scripts_discover_doc_gaps",
       "agents_skills_od_contribute_scripts_discover_doc_gaps_emit_todo",
       "agents_skills_od_contribute_scripts_discover_doc_gaps_extract_links",
       "agents_skills_od_contribute_scripts_discover_doc_gaps_grep",
       "agents_skills_od_contribute_scripts_discover_doc_gaps_sh__entry"
     ],
-    "52": [
+    "50": [
       "agents_skills_od_contribute_scripts_discover_i18n_gaps",
       "agents_skills_od_contribute_scripts_discover_i18n_gaps_commits_between",
       "agents_skills_od_contribute_scripts_discover_i18n_gaps_emit",
       "agents_skills_od_contribute_scripts_discover_i18n_gaps_last_commit_epoch",
       "agents_skills_od_contribute_scripts_discover_i18n_gaps_sh__entry"
     ],
-    "53": [
+    "51": [
       "agents_skills_web_clone_scripts_init_clone",
       "agents_skills_web_clone_scripts_init_clone_cleanslug",
       "agents_skills_web_clone_scripts_init_clone_notestemplate",
       "agents_skills_web_clone_scripts_init_clone_parseargs",
       "agents_skills_web_clone_scripts_init_clone_usage"
     ],
-    "54": [
+    "52": [
       "frontend_src_components_detaildrawer",
       "frontend_src_components_detaildrawer_detaildrawer",
       "frontend_src_utils_educationalcatalog",
       "frontend_src_utils_educationalcatalog_educational_metrics",
       "frontend_src_utils_educationalcatalog_geteducationalinfo"
     ],
-    "55": [
+    "53": [
+      "frontend_src_main_errorboundary",
+      "frontend_src_main_errorboundary_componentdidcatch",
+      "frontend_src_main_errorboundary_constructor",
+      "frontend_src_main_errorboundary_getderivedstatefromerror",
+      "frontend_src_main_errorboundary_render"
+    ],
+    "54": [
       "agents_skills_hatch_pet_scripts_make_contact_sheet",
       "agents_skills_hatch_pet_scripts_make_contact_sheet_checker",
       "agents_skills_hatch_pet_scripts_make_contact_sheet_main",
       "agents_skills_hatch_pet_scripts_make_contact_sheet_py_image"
     ],
-    "56": [
+    "55": [
       "agents_skills_hatch_pet_scripts_validate_atlas",
       "agents_skills_hatch_pet_scripts_validate_atlas_alpha_nonzero_count",
       "agents_skills_hatch_pet_scripts_validate_atlas_main",
       "agents_skills_hatch_pet_scripts_validate_atlas_py_image"
+    ],
+    "56": [
+      "frontend_src_components_agropanel",
+      "frontend_src_components_agropanel_agropanel",
+      "frontend_src_components_historicalchart",
+      "frontend_src_components_historicalchart_historicalchart"
     ],
     "57": [
       "agents_skills_od_contribute_scripts_check_prereqs",
@@ -868,117 +852,145 @@
       "frontend_src_components_hourlycarousel_hourlycarousel"
     ],
     "61": [
-      "frontend_src_components_locationfallbackmodal",
-      "frontend_src_components_locationfallbackmodal_locationfallbackmodal",
-      "frontend_src_components_locationfallbackmodal_regiones"
-    ],
-    "62": [
       "agents_skills_hatch_pet_scripts_render_animation_videos_sh__entry",
       "agents_skills_hatch_pet_scripts_render_animation_videos_sh_agents_skills_hatch_pet_scripts_render_animation_videos"
     ],
-    "63": [
+    "62": [
       "agents_skills_od_contribute_scripts_create_issue",
       "agents_skills_od_contribute_scripts_create_issue_sh__entry"
     ],
-    "64": [
+    "63": [
       "agents_skills_od_contribute_scripts_create_pr",
       "agents_skills_od_contribute_scripts_create_pr_sh__entry"
     ],
-    "65": [
+    "64": [
       "agents_skills_od_contribute_scripts_setup_workspace",
       "agents_skills_od_contribute_scripts_setup_workspace_sh__entry"
     ],
-    "66": [
+    "65": [
       "frontend_public_service_worker",
       "frontend_public_service_worker_assets_to_cache"
     ],
+    "66": [
+      "frontend_src_components_alertsbanner",
+      "frontend_src_components_alertsbanner_alertsbanner"
+    ],
     "67": [
+      "frontend_src_components_aqidrawer",
+      "frontend_src_components_aqidrawer_aqidrawer"
+    ],
+    "68": [
+      "frontend_src_components_bottomnav",
+      "frontend_src_components_bottomnav_bottomnav"
+    ],
+    "69": [
+      "frontend_src_components_dailyforecastcards",
+      "frontend_src_components_dailyforecastcards_dailyforecastcards"
+    ],
+    "70": [
+      "frontend_src_components_forecastchart",
+      "frontend_src_components_forecastchart_forecastchart"
+    ],
+    "71": [
+      "frontend_src_components_weatherskycanvas",
+      "frontend_src_components_weatherskycanvas_weatherskycanvas"
+    ],
+    "72": [
       "scripts_configurar_sync_horario_sh__entry",
       "scripts_configurar_sync_horario_sh_scripts_configurar_sync_horario"
     ],
-    "68": [
+    "73": [
       "scripts_deploy_sh__entry",
       "scripts_deploy_sh_scripts_deploy"
     ],
-    "69": [
+    "74": [
       "actualizar_app"
     ],
-    "70": [
+    "75": [
       "agents_skills_chat_motion_overlay_assets_remotion_template_remotion_config"
     ],
-    "71": [
+    "76": [
       "frontend_vite_config"
     ],
-    "72": [
+    "77": [
       "scripts_configurar_sync_horario_ps1_scripts_configurar_sync_horario"
     ],
-    "73": [
+    "78": [
       "scripts_deploy_ps1_scripts_deploy"
+    ],
+    "79": [
+      "chart_js",
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_chart_js",
+      "frontend_package_dependencies_lucide_react",
+      "frontend_package_dependencies_react_chartjs_2",
+      "lucide_react",
+      "react_chartjs_2"
     ]
   },
   "cohesion": {
-    "0": 0.05817028027498678,
-    "1": 0.08879492600422834,
-    "2": 0.08901515151515152,
-    "3": 0.15725806451612903,
-    "4": 0.15268817204301074,
-    "5": 0.17989417989417988,
-    "6": 0.19298245614035087,
+    "0": 0.06623376623376623,
+    "1": 0.08333333333333333,
+    "2": 0.15725806451612903,
+    "3": 0.15268817204301074,
+    "4": 0.17989417989417988,
+    "5": 0.15,
+    "6": 0.14736842105263157,
     "7": 0.10526315789473684,
-    "8": 0.3333333333333333,
-    "9": 0.24166666666666667,
-    "10": 0.2,
-    "11": 0.26666666666666666,
-    "12": 0.3142857142857143,
-    "13": 0.3523809523809524,
-    "14": 0.19047619047619047,
-    "15": 0.18681318681318682,
-    "16": 0.14285714285714285,
-    "17": 0.15384615384615385,
-    "18": 0.34615384615384615,
-    "19": 0.1794871794871795,
+    "8": 0.2222222222222222,
+    "9": 0.3333333333333333,
+    "10": 0.24166666666666667,
+    "11": 0.2,
+    "12": 0.125,
+    "13": 0.3142857142857143,
+    "14": 0.3523809523809524,
+    "15": 0.19047619047619047,
+    "16": 0.18681318681318682,
+    "17": 0.14285714285714285,
+    "18": 0.15384615384615385,
+    "19": 0.34615384615384615,
     "20": 0.24242424242424243,
     "21": 0.16666666666666666,
-    "22": 0.36363636363636365,
-    "23": 0.23636363636363636,
-    "24": 0.28888888888888886,
+    "22": 0.24242424242424243,
+    "23": 0.36363636363636365,
+    "24": 0.23636363636363636,
     "25": 0.5111111111111111,
     "26": 0.4666666666666667,
     "27": 0.2,
     "28": 0.2222222222222222,
-    "29": 0.2222222222222222,
-    "30": 0.5,
-    "31": 0.3888888888888889,
-    "32": 0.2777777777777778,
-    "33": 0.5833333333333334,
-    "34": 0.25,
-    "35": 0.5714285714285714,
+    "29": 0.5,
+    "30": 0.3888888888888889,
+    "31": 0.2777777777777778,
+    "32": 0.5833333333333334,
+    "33": 0.25,
+    "34": 0.5714285714285714,
+    "35": 0.25,
     "36": 0.25,
     "37": 0.25,
     "38": 0.25,
-    "39": 0.25,
-    "40": 0.6190476190476191,
-    "41": 0.5714285714285714,
-    "42": 0.6190476190476191,
+    "39": 0.6190476190476191,
+    "40": 0.5714285714285714,
+    "41": 0.6190476190476191,
+    "42": 0.3333333333333333,
     "43": 0.3333333333333333,
-    "44": 0.3333333333333333,
-    "45": 0.2857142857142857,
-    "46": 0.2857142857142857,
-    "47": 0.3333333333333333,
+    "44": 0.2857142857142857,
+    "45": 0.3333333333333333,
+    "46": 0.6,
+    "47": 0.5333333333333333,
     "48": 0.6,
-    "49": 0.5333333333333333,
-    "50": 0.6,
-    "51": 0.7,
-    "52": 0.5,
+    "49": 0.7,
+    "50": 0.5,
+    "51": 0.4,
+    "52": 0.6,
     "53": 0.4,
-    "54": 0.6,
+    "54": 0.6666666666666666,
     "55": 0.6666666666666666,
-    "56": 0.6666666666666666,
+    "56": 0.5,
     "57": 1.0,
     "58": 0.6666666666666666,
     "59": 1.0,
     "60": 1.0,
-    "61": 0.6666666666666666,
+    "61": 1.0,
     "62": 1.0,
     "63": 1.0,
     "64": 1.0,
@@ -990,7 +1002,13 @@
     "70": 1.0,
     "71": 1.0,
     "72": 1.0,
-    "73": 1.0
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0,
+    "77": 1.0,
+    "78": 1.0,
+    "79": 0.2857142857142857
   },
   "gods": [
     {
@@ -1057,37 +1075,15 @@
       "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
     },
     {
-      "source": "procesar_video_goes19()",
-      "target": "client()",
+      "source": "obtener_satellite_latest_loop_api()",
+      "target": "obtener_satellite_latest_loop()",
       "source_files": [
-        "goes_processor.py",
-        "test_main.py"
+        "main.py",
+        "goes_processor.py"
       ],
       "confidence": "INFERRED",
-      "relation": "indirect_call",
-      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
-    },
-    {
-      "source": "ejecutar_sincronizacion_completa()",
-      "target": "client()",
-      "source_files": [
-        "sincronizador_background.py",
-        "test_main.py"
-      ],
-      "confidence": "INFERRED",
-      "relation": "indirect_call",
-      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
-    },
-    {
-      "source": "test_clean_num_discards_sentinel_values()",
-      "target": "clean_num()",
-      "source_files": [
-        "test_main.py",
-        "sincronizador_background.py"
-      ],
-      "confidence": "EXTRACTED",
       "relation": "calls",
-      "why": "connects across different repos/directories; bridges separate communities; peripheral node `test_clean_num_discards_sentinel_values()` unexpectedly reaches hub `clean_num()`"
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
     },
     {
       "source": "obtener_openmeteo_directo()",
@@ -1099,12 +1095,34 @@
       "confidence": "INFERRED",
       "relation": "calls",
       "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "refresh_cache_before_api()",
+      "target": "refrescar_cache_si_corresponde()",
+      "source_files": [
+        "main.py",
+        "sincronizador_background.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "indirect_call",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "sincronizar_puntos_gee()",
+      "target": "extraer_metricas_agricolas()",
+      "source_files": [
+        "sincronizador_background.py",
+        "gee/rural.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "indirect_call",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
     }
   ],
   "questions": [
     {
       "type": "bridge_node",
-      "question": "Why does `react` connect `react` to `.oxlintrc.json`, `BubbleScene.tsx`, `SatelliteModal.jsx`, `WeatherContext.jsx`, `DetailDrawer.jsx`, `ChatMotionOverlay.tsx`, `HourlyCarousel.jsx`, `LocationFallbackModal.jsx`?",
+      "question": "Why does `react` connect `react` to `AlertsBanner.jsx`, `AqiDrawer.jsx`, `BottomNav.jsx`, `.oxlintrc.json`, `BubbleScene.tsx`, `DailyForecastCards.jsx`, `ForecastChart.jsx`, `WeatherSkyCanvas.jsx`, `SatelliteModal.jsx`, `DetailDrawer.jsx`, `App.jsx`, `AgroPanel.jsx`, `HourlyCarousel.jsx`?",
       "why": "High betweenness centrality (0.011) - this node is a cross-community bridge."
     },
     {
@@ -1114,7 +1132,7 @@
     },
     {
       "type": "bridge_node",
-      "question": "Why does `dependencies` connect `dependencies` to `frontend/package.json`, `dependencies`?",
+      "question": "Why does `dependencies` connect `dependencies` to `dependencies`, `frontend/package.json`?",
       "why": "High betweenness centrality (0.002) - this node is a cross-community bridge."
     },
     {
@@ -1125,17 +1143,17 @@
     {
       "type": "low_cohesion",
       "question": "Should `main.py` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.05817028027498678 - nodes in this community are weakly interconnected."
+      "why": "Cohesion score 0.06623376623376623 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
       "question": "Should `sincronizador_background.py` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.08879492600422834 - nodes in this community are weakly interconnected."
+      "why": "Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
-      "question": "Should `react` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.08901515151515152 - nodes in this community are weakly interconnected."
+      "question": "Should `app_config.py` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.14736842105263157 - nodes in this community are weakly interconnected."
     }
   ]
 }

@@ -45,9 +45,9 @@
     "semantic_hash": "f7b7cdb8689be56d1f4a5391df0102e3"
   },
   "frontend/src/App.jsx": {
-    "mtime": 1786242787.6656382,
-    "ast_hash": "3cd1d37420a006fda793cc297383c3fc",
-    "semantic_hash": "3cd1d37420a006fda793cc297383c3fc"
+    "mtime": 1786243282.106791,
+    "ast_hash": "0d1865f64789f1bb87bd1da317fef90c",
+    "semantic_hash": "0d1865f64789f1bb87bd1da317fef90c"
   },
   "frontend/src/components/AgroPanel.jsx": {
     "mtime": 1786234634.1706684,
