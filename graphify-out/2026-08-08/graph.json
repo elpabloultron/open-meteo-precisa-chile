@@ -967,7 +967,7 @@
       "_origin": "ast",
       "community": 22,
       "norm_label": "estacionescercanasmodal.jsx",
-      "community_name": "react",
+      "community_name": "App.jsx",
       "id": "frontend_src_components_estacionescercanasmodal"
     },
     {
@@ -979,7 +979,7 @@
       "_origin": "ast",
       "community": 22,
       "norm_label": "estacionescercanasmodal()",
-      "community_name": "react",
+      "community_name": "App.jsx",
       "id": "frontend_src_components_estacionescercanasmodal_estacionescercanasmodal"
     },
     {
@@ -990,7 +990,7 @@
       "_origin": "ast",
       "community": 61,
       "norm_label": "historicalchart.jsx",
-      "community_name": "react",
+      "community_name": "AgroPanel.jsx",
       "id": "frontend_src_components_historicalchart"
     },
     {
@@ -1002,7 +1002,7 @@
       "_origin": "ast",
       "community": 61,
       "norm_label": "historicalchart()",
-      "community_name": "react",
+      "community_name": "AgroPanel.jsx",
       "id": "frontend_src_components_historicalchart_historicalchart"
     },
     {
@@ -1013,7 +1013,7 @@
       "_origin": "ast",
       "community": 67,
       "norm_label": "locationfallbackmodal.jsx",
-      "community_name": "react",
+      "community_name": "LocationFallbackModal.jsx",
       "id": "frontend_src_components_locationfallbackmodal"
     },
     {
@@ -1024,7 +1024,7 @@
       "_origin": "ast",
       "community": 67,
       "norm_label": "regiones",
-      "community_name": "react",
+      "community_name": "LocationFallbackModal.jsx",
       "id": "frontend_src_components_locationfallbackmodal_regiones"
     },
     {
@@ -1036,7 +1036,7 @@
       "_origin": "ast",
       "community": 67,
       "norm_label": "locationfallbackmodal()",
-      "community_name": "react",
+      "community_name": "LocationFallbackModal.jsx",
       "id": "frontend_src_components_locationfallbackmodal_locationfallbackmodal"
     },
     {
@@ -1047,7 +1047,7 @@
       "_origin": "ast",
       "community": 53,
       "norm_label": "satellitemodal.jsx",
-      "community_name": "react",
+      "community_name": "SatelliteModal.jsx",
       "id": "frontend_src_components_satellitemodal"
     },
     {
@@ -1059,7 +1059,7 @@
       "_origin": "ast",
       "community": 53,
       "norm_label": "satellitemodal()",
-      "community_name": "react",
+      "community_name": "SatelliteModal.jsx",
       "id": "frontend_src_components_satellitemodal_satellitemodal"
     },
     {
@@ -1070,7 +1070,7 @@
       "_origin": "ast",
       "community": 41,
       "norm_label": "main.jsx",
-      "community_name": "react",
+      "community_name": "WeatherContext.jsx",
       "id": "frontend_src_main"
     },
     {
@@ -1081,7 +1081,7 @@
       "_origin": "ast",
       "community": 53,
       "norm_label": "timeutils.js",
-      "community_name": "react",
+      "community_name": "SatelliteModal.jsx",
       "id": "frontend_src_utils_timeutils"
     },
     {
@@ -1093,7 +1093,7 @@
       "_origin": "ast",
       "community": 53,
       "norm_label": "formatlocaltime()",
-      "community_name": "react",
+      "community_name": "SatelliteModal.jsx",
       "id": "frontend_src_utils_timeutils_formatlocaltime"
     },
     {
@@ -8218,7 +8218,7 @@
       "_origin": "ast",
       "community": 58,
       "norm_label": "detaildrawer.jsx",
-      "community_name": "react",
+      "community_name": "DetailDrawer.jsx",
       "id": "frontend_src_components_detaildrawer"
     },
     {
@@ -8230,7 +8230,7 @@
       "_origin": "ast",
       "community": 58,
       "norm_label": "detaildrawer()",
-      "community_name": "react",
+      "community_name": "DetailDrawer.jsx",
       "id": "frontend_src_components_detaildrawer_detaildrawer"
     },
     {
@@ -8241,7 +8241,7 @@
       "_origin": "ast",
       "community": 58,
       "norm_label": "educationalcatalog.js",
-      "community_name": "react",
+      "community_name": "DetailDrawer.jsx",
       "id": "frontend_src_utils_educationalcatalog"
     },
     {
@@ -8252,7 +8252,7 @@
       "_origin": "ast",
       "community": 58,
       "norm_label": "educational_metrics",
-      "community_name": "react",
+      "community_name": "DetailDrawer.jsx",
       "id": "frontend_src_utils_educationalcatalog_educational_metrics"
     },
     {
@@ -8264,7 +8264,7 @@
       "_origin": "ast",
       "community": 58,
       "norm_label": "geteducationalinfo()",
-      "community_name": "react",
+      "community_name": "DetailDrawer.jsx",
       "id": "frontend_src_utils_educationalcatalog_geteducationalinfo"
     },
     {
@@ -8355,7 +8355,7 @@
       "_origin": "ast",
       "community": 61,
       "norm_label": "agropanel.jsx",
-      "community_name": "react",
+      "community_name": "AgroPanel.jsx",
       "id": "frontend_src_components_agropanel"
     },
     {
@@ -8367,31 +8367,8 @@
       "_origin": "ast",
       "community": 61,
       "norm_label": "agropanel()",
-      "community_name": "react",
+      "community_name": "AgroPanel.jsx",
       "id": "frontend_src_components_agropanel_agropanel"
-    },
-    {
-      "label": "UrbanPanel.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/components/UrbanPanel.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 22,
-      "norm_label": "urbanpanel.jsx",
-      "community_name": "react",
-      "id": "frontend_src_components_urbanpanel"
-    },
-    {
-      "label": "UrbanPanel()",
-      "file_type": "code",
-      "source_file": "frontend/src/components/UrbanPanel.jsx",
-      "source_location": "L4",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 22,
-      "norm_label": "urbanpanel()",
-      "community_name": "react",
-      "id": "frontend_src_components_urbanpanel_urbanpanel"
     },
     {
       "label": "ComparisonTable.jsx",
@@ -8424,7 +8401,7 @@
       "_origin": "ast",
       "community": 22,
       "norm_label": "forecastchart.jsx",
-      "community_name": "react",
+      "community_name": "App.jsx",
       "id": "frontend_src_components_forecastchart"
     },
     {
@@ -8436,7 +8413,7 @@
       "_origin": "ast",
       "community": 22,
       "norm_label": "forecastchart()",
-      "community_name": "react",
+      "community_name": "App.jsx",
       "id": "frontend_src_components_forecastchart_forecastchart"
     },
     {
@@ -8447,7 +8424,7 @@
       "_origin": "ast",
       "community": 22,
       "norm_label": "mapsection.jsx",
-      "community_name": "react",
+      "community_name": "App.jsx",
       "id": "frontend_src_components_mapsection"
     },
     {
@@ -8459,7 +8436,7 @@
       "_origin": "ast",
       "community": 22,
       "norm_label": "mapsection()",
-      "community_name": "react",
+      "community_name": "App.jsx",
       "id": "frontend_src_components_mapsection_mapsection"
     },
     {
@@ -8470,7 +8447,7 @@
       "_origin": "ast",
       "community": 41,
       "norm_label": "navbar.jsx",
-      "community_name": "react",
+      "community_name": "WeatherContext.jsx",
       "id": "frontend_src_components_navbar"
     },
     {
@@ -8482,7 +8459,7 @@
       "_origin": "ast",
       "community": 41,
       "norm_label": "navbar()",
-      "community_name": "react",
+      "community_name": "WeatherContext.jsx",
       "id": "frontend_src_components_navbar_navbar"
     },
     {
@@ -8493,7 +8470,7 @@
       "_origin": "ast",
       "community": 22,
       "norm_label": "weatherskycanvas.jsx",
-      "community_name": "react",
+      "community_name": "App.jsx",
       "id": "frontend_src_components_weatherskycanvas"
     },
     {
@@ -8505,7 +8482,7 @@
       "_origin": "ast",
       "community": 22,
       "norm_label": "weatherskycanvas()",
-      "community_name": "react",
+      "community_name": "App.jsx",
       "id": "frontend_src_components_weatherskycanvas_weatherskycanvas"
     },
     {
@@ -8516,7 +8493,7 @@
       "_origin": "ast",
       "community": 53,
       "norm_label": "weatherheader.jsx",
-      "community_name": "react",
+      "community_name": "SatelliteModal.jsx",
       "id": "frontend_src_components_weatherheader"
     },
     {
@@ -8528,7 +8505,7 @@
       "_origin": "ast",
       "community": 53,
       "norm_label": "weatherheader()",
-      "community_name": "react",
+      "community_name": "SatelliteModal.jsx",
       "id": "frontend_src_components_weatherheader_weatherheader"
     },
     {
@@ -8871,7 +8848,7 @@
       "_origin": "ast",
       "community": 22,
       "norm_label": "app.jsx",
-      "community_name": "react",
+      "community_name": "App.jsx",
       "id": "frontend_src_app"
     },
     {
@@ -8883,7 +8860,7 @@
       "_origin": "ast",
       "community": 41,
       "norm_label": "app()",
-      "community_name": "react",
+      "community_name": "WeatherContext.jsx",
       "id": "frontend_src_app_app"
     },
     {
@@ -8894,7 +8871,7 @@
       "_origin": "ast",
       "community": 22,
       "norm_label": "breezysunmoonwidget.jsx",
-      "community_name": "react",
+      "community_name": "App.jsx",
       "id": "frontend_src_components_breezysunmoonwidget"
     },
     {
@@ -8906,7 +8883,7 @@
       "_origin": "ast",
       "community": 22,
       "norm_label": "breezysunmoonwidget()",
-      "community_name": "react",
+      "community_name": "App.jsx",
       "id": "frontend_src_components_breezysunmoonwidget_breezysunmoonwidget"
     },
     {
@@ -8917,7 +8894,7 @@
       "_origin": "ast",
       "community": 66,
       "norm_label": "hourlycarousel.jsx",
-      "community_name": "react",
+      "community_name": "HourlyCarousel.jsx",
       "id": "frontend_src_components_hourlycarousel"
     },
     {
@@ -8929,7 +8906,7 @@
       "_origin": "ast",
       "community": 66,
       "norm_label": "getweathericon()",
-      "community_name": "react",
+      "community_name": "HourlyCarousel.jsx",
       "id": "frontend_src_components_hourlycarousel_getweathericon"
     },
     {
@@ -8941,7 +8918,7 @@
       "_origin": "ast",
       "community": 66,
       "norm_label": "hourlycarousel()",
-      "community_name": "react",
+      "community_name": "HourlyCarousel.jsx",
       "id": "frontend_src_components_hourlycarousel_hourlycarousel"
     },
     {
@@ -8973,9 +8950,10 @@
       "source_file": "frontend/src/context/WeatherContext.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_context_weathercontext",
       "community": 41,
-      "norm_label": "weathercontext.jsx"
+      "norm_label": "weathercontext.jsx",
+      "community_name": "WeatherContext.jsx",
+      "id": "frontend_src_context_weathercontext"
     },
     {
       "label": "WeatherContext",
@@ -8983,9 +8961,10 @@
       "source_file": "frontend/src/context/WeatherContext.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "frontend_src_context_weathercontext_weathercontext",
       "community": 41,
-      "norm_label": "weathercontext"
+      "norm_label": "weathercontext",
+      "community_name": "WeatherContext.jsx",
+      "id": "frontend_src_context_weathercontext_weathercontext"
     },
     {
       "label": "FALLBACK_CLIMA_DATA",
@@ -8993,9 +8972,10 @@
       "source_file": "frontend/src/context/WeatherContext.jsx",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "frontend_src_context_weathercontext_fallback_clima_data",
       "community": 41,
-      "norm_label": "fallback_clima_data"
+      "norm_label": "fallback_clima_data",
+      "community_name": "WeatherContext.jsx",
+      "id": "frontend_src_context_weathercontext_fallback_clima_data"
     },
     {
       "label": "WeatherProvider()",
@@ -9004,9 +8984,31 @@
       "source_location": "L73",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_context_weathercontext_weatherprovider",
       "community": 41,
-      "norm_label": "weatherprovider()"
+      "norm_label": "weatherprovider()",
+      "community_name": "WeatherContext.jsx",
+      "id": "frontend_src_context_weathercontext_weatherprovider"
+    },
+    {
+      "label": "UrbanPanel.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/UrbanPanel.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "frontend_src_components_urbanpanel",
+      "community": 22,
+      "norm_label": "urbanpanel.jsx"
+    },
+    {
+      "label": "UrbanPanel()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/UrbanPanel.jsx",
+      "source_location": "L4",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "frontend_src_components_urbanpanel_urbanpanel",
+      "community": 22,
+      "norm_label": "urbanpanel()"
     }
   ],
   "links": [
@@ -9699,9 +9701,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_components_urbanpanel",
-      "target": "ref_react"
+      "target": "ref_react",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -9735,9 +9737,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_context_weathercontext",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -22885,29 +22887,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_urbanpanel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/UrbanPanel.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_urbanpanel",
-      "target": "frontend_src_components_urbanpanel_urbanpanel"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
@@ -23582,6 +23561,18 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_urbanpanel"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
@@ -23664,9 +23655,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_context_weathercontext",
-      "target": "frontend_src_context_weathercontext_fallback_clima_data",
-      "confidence_score": 1.0
+      "target": "frontend_src_context_weathercontext_fallback_clima_data"
     },
     {
       "relation": "contains",
@@ -23675,9 +23666,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_context_weathercontext",
-      "target": "frontend_src_context_weathercontext_weathercontext",
-      "confidence_score": 1.0
+      "target": "frontend_src_context_weathercontext_weathercontext"
     },
     {
       "relation": "contains",
@@ -23686,11 +23677,22 @@
       "source_location": "L73",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_context_weathercontext",
-      "target": "frontend_src_context_weathercontext_weatherprovider",
+      "target": "frontend_src_context_weathercontext_weatherprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/UrbanPanel.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_urbanpanel",
+      "target": "frontend_src_components_urbanpanel_urbanpanel",
       "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1359faf203a51dcc9a2698ad52ebfc3e1607a42a"
+  "built_at_commit": "85daadcb15c967cc56f3857e2c1fd63f6615247d"
 }

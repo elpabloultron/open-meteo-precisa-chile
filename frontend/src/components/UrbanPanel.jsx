@@ -15,7 +15,7 @@ export default function UrbanPanel({ urbano, onSelectMetric, stationInfo, onOpen
     calidad_aire_sinca
   } = urbano;
 
-  const sincaNom = calidad_aire_sinca?.norma_chilena || calidad_aire_sinca?.norma_chilena_mma?.categoria || 'Bueno';
+  const sincaNom = String(calidad_aire_sinca?.norma_chilena || calidad_aire_sinca?.norma_chilena_mma?.categoria || 'Bueno');
   const aqiVal = calidad_aire_sinca?.aqi_us || calidad_aire_sinca?.tabla_internacional_aqi?.aqi_indice || 25;
   const mp25Val = calidad_aire_sinca?.mp25_ugm3 || calidad_aire_sinca?.mediciones_base?.mp25_ug_m3 || 12.0;
 

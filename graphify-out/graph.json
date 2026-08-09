@@ -8371,29 +8371,6 @@
       "id": "frontend_src_components_agropanel_agropanel"
     },
     {
-      "label": "UrbanPanel.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/components/UrbanPanel.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 22,
-      "norm_label": "urbanpanel.jsx",
-      "community_name": "App.jsx",
-      "id": "frontend_src_components_urbanpanel"
-    },
-    {
-      "label": "UrbanPanel()",
-      "file_type": "code",
-      "source_file": "frontend/src/components/UrbanPanel.jsx",
-      "source_location": "L4",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 22,
-      "norm_label": "urbanpanel()",
-      "community_name": "App.jsx",
-      "id": "frontend_src_components_urbanpanel_urbanpanel"
-    },
-    {
       "label": "ComparisonTable.jsx",
       "file_type": "code",
       "source_file": "frontend/src/components/ComparisonTable.jsx",
@@ -8975,8 +8952,8 @@
       "_origin": "ast",
       "community": 41,
       "norm_label": "weathercontext.jsx",
-      "id": "frontend_src_context_weathercontext",
-      "community_name": "WeatherContext.jsx"
+      "community_name": "WeatherContext.jsx",
+      "id": "frontend_src_context_weathercontext"
     },
     {
       "label": "WeatherContext",
@@ -8986,8 +8963,8 @@
       "_origin": "ast",
       "community": 41,
       "norm_label": "weathercontext",
-      "id": "frontend_src_context_weathercontext_weathercontext",
-      "community_name": "WeatherContext.jsx"
+      "community_name": "WeatherContext.jsx",
+      "id": "frontend_src_context_weathercontext_weathercontext"
     },
     {
       "label": "FALLBACK_CLIMA_DATA",
@@ -8997,8 +8974,8 @@
       "_origin": "ast",
       "community": 41,
       "norm_label": "fallback_clima_data",
-      "id": "frontend_src_context_weathercontext_fallback_clima_data",
-      "community_name": "WeatherContext.jsx"
+      "community_name": "WeatherContext.jsx",
+      "id": "frontend_src_context_weathercontext_fallback_clima_data"
     },
     {
       "label": "WeatherProvider()",
@@ -9009,8 +8986,31 @@
       "_origin": "ast",
       "community": 41,
       "norm_label": "weatherprovider()",
-      "id": "frontend_src_context_weathercontext_weatherprovider",
-      "community_name": "WeatherContext.jsx"
+      "community_name": "WeatherContext.jsx",
+      "id": "frontend_src_context_weathercontext_weatherprovider"
+    },
+    {
+      "label": "UrbanPanel.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/UrbanPanel.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 22,
+      "norm_label": "urbanpanel.jsx",
+      "id": "frontend_src_components_urbanpanel",
+      "community_name": "App.jsx"
+    },
+    {
+      "label": "UrbanPanel()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/UrbanPanel.jsx",
+      "source_location": "L4",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 22,
+      "norm_label": "urbanpanel()",
+      "id": "frontend_src_components_urbanpanel_urbanpanel",
+      "community_name": "App.jsx"
     }
   ],
   "links": [
@@ -22889,29 +22889,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_urbanpanel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/UrbanPanel.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_urbanpanel",
-      "target": "frontend_src_components_urbanpanel_urbanpanel"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
@@ -23586,6 +23563,18 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_urbanpanel"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
@@ -23693,8 +23682,19 @@
       "confidence_score": 1.0,
       "source": "frontend_src_context_weathercontext",
       "target": "frontend_src_context_weathercontext_weatherprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/UrbanPanel.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_urbanpanel",
+      "target": "frontend_src_components_urbanpanel_urbanpanel"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1359faf203a51dcc9a2698ad52ebfc3e1607a42a"
+  "built_at_commit": "85daadcb15c967cc56f3857e2c1fd63f6615247d"
 }

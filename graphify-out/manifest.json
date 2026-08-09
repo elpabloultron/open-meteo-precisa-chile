@@ -125,9 +125,9 @@
     "semantic_hash": "581bc6552c0b26e4be5f940671de5d13"
   },
   "frontend/src/components/UrbanPanel.jsx": {
-    "mtime": 1786234969.2802925,
-    "ast_hash": "e4e813913086be47712f85e95ebacac0",
-    "semantic_hash": "e4e813913086be47712f85e95ebacac0"
+    "mtime": 1786239205.302547,
+    "ast_hash": "9feb2d935c7a63737766cd4e5ebac9db",
+    "semantic_hash": "9feb2d935c7a63737766cd4e5ebac9db"
   },
   "frontend/src/components/WeatherHeader.jsx": {
     "mtime": 1786236522.2810147,
