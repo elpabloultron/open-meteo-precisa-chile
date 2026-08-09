@@ -19,6 +19,7 @@ import LocationFallbackModal from './components/LocationFallbackModal';
 import AlertsBanner from './components/AlertsBanner';
 import WeatherSkyCanvas from './components/WeatherSkyCanvas';
 import BreezySunMoonWidget from './components/BreezySunMoonWidget';
+import GeeMapModal from './components/GeeMapModal';
 
 export default function App() {
   const {

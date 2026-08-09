@@ -45,9 +45,9 @@
     "semantic_hash": "f7b7cdb8689be56d1f4a5391df0102e3"
   },
   "frontend/src/App.jsx": {
-    "mtime": 1786243282.106791,
-    "ast_hash": "0d1865f64789f1bb87bd1da317fef90c",
-    "semantic_hash": "0d1865f64789f1bb87bd1da317fef90c"
+    "mtime": 1786245734.6156125,
+    "ast_hash": "dfe5b480875fe57c367a78220a9c42b8",
+    "semantic_hash": "dfe5b480875fe57c367a78220a9c42b8"
   },
   "frontend/src/components/AgroPanel.jsx": {
     "mtime": 1786234634.1706684,
@@ -140,9 +140,9 @@
     "semantic_hash": "09f52261cceb1097eb4771fa989f6e65"
   },
   "frontend/src/main.jsx": {
-    "mtime": 1786239730.8659813,
-    "ast_hash": "4b9e73d2b86e19461074bb9a1a7cecfc",
-    "semantic_hash": "4b9e73d2b86e19461074bb9a1a7cecfc"
+    "mtime": 1786243621.6561987,
+    "ast_hash": "bc504d40b0dd04ca6cf88376ddd936fe",
+    "semantic_hash": "bc504d40b0dd04ca6cf88376ddd936fe"
   },
   "frontend/src/utils/timeUtils.js": {
     "mtime": 1785890251.0841062,
