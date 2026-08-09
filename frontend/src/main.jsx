@@ -13,11 +13,11 @@ if ('serviceWorker' in navigator) {
   }).catch(() => {});
 }
 
-// Error Boundary global para evitar pantallas en blanco invisibles
+// Error Boundary global para diagnosticar exactamente cualquier excepción
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
-    this.state = { hasError: false, error: null };
+    this.state = { hasError: false, error: null, errorInfo: null };
   }
 
   static getDerivedStateFromError(error) {
@@ -25,6 +25,7 @@ class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
+    this.setState({ errorInfo });
     console.error("React Error Boundary atrapó un error:", error, errorInfo);
   }
 
@@ -48,14 +49,29 @@ class ErrorBoundary extends Component {
             border: '1px solid rgba(239, 68, 68, 0.3)',
             borderRadius: '1rem',
             padding: '2rem',
-            maxWidth: '600px'
+            maxWidth: '700px',
+            width: '100%'
           }}>
             <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#f87171' }}>
-              MeteoPrecisa — Reiniciando Aplicación
+              MeteoPrecisa — Diagnóstico de Renderizado
             </h1>
-            <p style={{ fontSize: '0.875rem', color: '#cbd5e1', marginBottom: '1.5rem' }}>
-              Detectamos un problema de actualización en tu navegador. Hemos limpiado la memoria caché automáticamente.
+            <p style={{ fontSize: '0.875rem', color: '#cbd5e1', marginBottom: '1rem' }}>
+              Se ha capturado el siguiente error en el cliente:
             </p>
+            <pre style={{ 
+              textAlign: 'left', 
+              backgroundColor: 'rgba(0,0,0,0.6)', 
+              padding: '1rem', 
+              borderRadius: '0.5rem', 
+              fontSize: '0.75rem', 
+              overflowX: 'auto', 
+              marginBottom: '1.5rem', 
+              color: '#fca5a5',
+              fontFamily: 'monospace'
+            }}>
+              {this.state.error ? this.state.error.toString() : 'Error desconocido'}
+              {this.state.errorInfo?.componentStack}
+            </pre>
             <button
               onClick={() => {
                 localStorage.clear();
@@ -72,7 +88,7 @@ class ErrorBoundary extends Component {
                 cursor: 'pointer'
               }}
             >
-              Recargar Aplicación Ahora
+              Recargar y Limpiar Caché
             </button>
           </div>
         </div>
