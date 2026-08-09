@@ -11,8 +11,15 @@
       "frontend_src_components_aqidrawer_aqidrawer",
       "frontend_src_components_bottomnav",
       "frontend_src_components_bottomnav_bottomnav",
+      "frontend_src_components_breezyheroblock",
+      "frontend_src_components_breezyheroblock_breezyheroblock",
+      "frontend_src_components_breezyheroblock_getweathervectoricon",
+      "frontend_src_components_breezymetricsgrid",
+      "frontend_src_components_breezymetricsgrid_breezymetricsgrid",
       "frontend_src_components_breezysunmoonwidget",
       "frontend_src_components_breezysunmoonwidget_breezysunmoonwidget",
+      "frontend_src_components_breezyview",
+      "frontend_src_components_breezyview_breezyview",
       "frontend_src_components_comparisontable",
       "frontend_src_components_comparisontable_comparisontable",
       "frontend_src_components_dailyforecastcards",
@@ -91,6 +98,12 @@
       "gee_urban_fallback_urbano",
       "gee_urban_rationale_8",
       "get",
+      "goes_processor",
+      "goes_processor_descargar_y_procesar_frame",
+      "goes_processor_obtener_satellite_latest_loop",
+      "goes_processor_procesar_video_goes19",
+      "goes_processor_rationale_134",
+      "goes_processor_rationale_49",
       "main",
       "main_buscar_estaciones",
       "main_calcular_calidad_aire_dual",
@@ -124,14 +137,27 @@
       "request"
     ],
     "2": [
+      "any",
+      "app_config",
+      "app_config_as_bool",
+      "app_config_as_origins",
+      "app_config_get_settings",
+      "app_config_rationale_1",
+      "app_config_settings",
       "asyncclient",
-      "fixture",
-      "goes_processor",
-      "goes_processor_descargar_y_procesar_frame",
-      "goes_processor_obtener_satellite_latest_loop",
-      "goes_processor_procesar_video_goes19",
-      "goes_processor_rationale_134",
-      "goes_processor_rationale_49",
+      "cache_store",
+      "cache_store_load_cache",
+      "cache_store_load_local",
+      "cache_store_rationale_1",
+      "cache_store_rationale_32",
+      "cache_store_rationale_54",
+      "cache_store_save_cache",
+      "cache_store_save_local",
+      "openmeteo_client",
+      "openmeteo_client_obtener_pronostico_openmeteo",
+      "openmeteo_client_rationale_1",
+      "openmeteo_client_rationale_24",
+      "path",
       "sincronizador_background",
       "sincronizador_background_cargar_cache_desde_disco",
       "sincronizador_background_cargar_catalogo_maestro",
@@ -154,25 +180,7 @@
       "sincronizador_background_sincronizar_redmeteo",
       "sync_job",
       "sync_job_rationale_1",
-      "sync_job_run",
-      "test_main",
-      "test_main_client",
-      "test_main_fakeopenmeteoclient",
-      "test_main_fakeopenmeteoclient_aenter",
-      "test_main_fakeopenmeteoclient_aexit",
-      "test_main_fakeopenmeteoclient_get",
-      "test_main_fakeopenmeteoresponse",
-      "test_main_fakeopenmeteoresponse_json",
-      "test_main_test_alertas_senapred_endpoint_uses_cached_data",
-      "test_main_test_buscar_estaciones_endpoint_uses_cached_catalog",
-      "test_main_test_capas_mapa_endpoint_accepts_default_coordinates",
-      "test_main_test_capas_mapa_rejects_invalid_coordinates",
-      "test_main_test_clean_num_discards_sentinel_values",
-      "test_main_test_historico_accepts_lng_alias_and_validates_missing_longitude",
-      "test_main_test_home_endpoint_reports_real_status",
-      "test_main_test_manual_sync_requires_configuration_or_token",
-      "test_main_test_weather_current_endpoint_uses_cached_and_mocked_data",
-      "test_main_test_weather_current_requires_longitude"
+      "sync_job_run"
     ],
     "3": [
       "agents_skills_chat_motion_overlay_scripts_build_chat_overlay_spec",
@@ -299,26 +307,25 @@
       "agents_skills_chat_motion_overlay_assets_remotion_template_src_root_remotionroot"
     ],
     "7": [
-      "any",
-      "app_config",
-      "app_config_as_bool",
-      "app_config_as_origins",
-      "app_config_get_settings",
-      "app_config_rationale_1",
-      "app_config_settings",
-      "cache_store",
-      "cache_store_load_cache",
-      "cache_store_load_local",
-      "cache_store_rationale_1",
-      "cache_store_rationale_32",
-      "cache_store_rationale_54",
-      "cache_store_save_cache",
-      "cache_store_save_local",
-      "openmeteo_client",
-      "openmeteo_client_obtener_pronostico_openmeteo",
-      "openmeteo_client_rationale_1",
-      "openmeteo_client_rationale_24",
-      "path"
+      "fixture",
+      "test_main",
+      "test_main_client",
+      "test_main_fakeopenmeteoclient",
+      "test_main_fakeopenmeteoclient_aenter",
+      "test_main_fakeopenmeteoclient_aexit",
+      "test_main_fakeopenmeteoclient_get",
+      "test_main_fakeopenmeteoresponse",
+      "test_main_fakeopenmeteoresponse_json",
+      "test_main_test_alertas_senapred_endpoint_uses_cached_data",
+      "test_main_test_buscar_estaciones_endpoint_uses_cached_catalog",
+      "test_main_test_capas_mapa_endpoint_accepts_default_coordinates",
+      "test_main_test_capas_mapa_rejects_invalid_coordinates",
+      "test_main_test_clean_num_discards_sentinel_values",
+      "test_main_test_historico_accepts_lng_alias_and_validates_missing_longitude",
+      "test_main_test_home_endpoint_reports_real_status",
+      "test_main_test_manual_sync_requires_configuration_or_token",
+      "test_main_test_weather_current_endpoint_uses_cached_and_mocked_data",
+      "test_main_test_weather_current_requires_longitude"
     ],
     "8": [
       "frontend_package_devdependencies",
@@ -603,9 +610,16 @@
       "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react",
       "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react_dom",
       "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_remotion",
+      "chart_js",
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_chart_js",
+      "frontend_package_dependencies_lucide_react",
       "frontend_package_dependencies_react",
+      "frontend_package_dependencies_react_chartjs_2",
       "frontend_package_dependencies_react_dom",
+      "lucide_react",
       "react",
+      "react_chartjs_2",
       "react_dom",
       "remotion"
     ],
@@ -778,15 +792,6 @@
       "agents_skills_web_clone_scripts_sourcemap_hunt_resolvemapurl",
       "agents_skills_web_clone_scripts_sourcemap_hunt_usage"
     ],
-    "44": [
-      "chart_js",
-      "frontend_package_dependencies",
-      "frontend_package_dependencies_chart_js",
-      "frontend_package_dependencies_lucide_react",
-      "frontend_package_dependencies_react_chartjs_2",
-      "lucide_react",
-      "react_chartjs_2"
-    ],
     "45": [
       "httpuser",
       "locustfile",
@@ -905,14 +910,14 @@
     ]
   },
   "cohesion": {
-    "0": 0.05069124423963134,
-    "1": 0.06623376623376623,
-    "2": 0.08333333333333333,
+    "0": 0.05093167701863354,
+    "1": 0.05817028027498678,
+    "2": 0.08879492600422834,
     "3": 0.15725806451612903,
     "4": 0.15268817204301074,
     "5": 0.17989417989417988,
     "6": 0.15,
-    "7": 0.14736842105263157,
+    "7": 0.19298245614035087,
     "8": 0.10526315789473684,
     "9": 0.3333333333333333,
     "10": 0.24166666666666667,
@@ -931,7 +936,7 @@
     "23": 0.5111111111111111,
     "24": 0.4666666666666667,
     "25": 0.2,
-    "26": 0.2222222222222222,
+    "26": 0.13333333333333333,
     "27": 0.2222222222222222,
     "28": 0.5,
     "29": 0.3888888888888889,
@@ -949,7 +954,6 @@
     "41": 0.3333333333333333,
     "42": 0.3333333333333333,
     "43": 0.2857142857142857,
-    "44": 0.2857142857142857,
     "45": 0.3333333333333333,
     "46": 0.6,
     "47": 0.5333333333333333,
@@ -978,7 +982,7 @@
     {
       "id": "ref_react",
       "label": "react",
-      "degree": 29
+      "degree": 32
     },
     {
       "id": "sincronizador_background_ejecutar_sincronizacion_completa",
@@ -1039,15 +1043,37 @@
       "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
     },
     {
-      "source": "obtener_satellite_latest_loop_api()",
-      "target": "obtener_satellite_latest_loop()",
+      "source": "procesar_video_goes19()",
+      "target": "client()",
       "source_files": [
-        "main.py",
-        "goes_processor.py"
+        "goes_processor.py",
+        "test_main.py"
       ],
       "confidence": "INFERRED",
-      "relation": "calls",
+      "relation": "indirect_call",
       "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "ejecutar_sincronizacion_completa()",
+      "target": "client()",
+      "source_files": [
+        "sincronizador_background.py",
+        "test_main.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "indirect_call",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "test_clean_num_discards_sentinel_values()",
+      "target": "clean_num()",
+      "source_files": [
+        "test_main.py",
+        "sincronizador_background.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `test_clean_num_discards_sentinel_values()` unexpectedly reaches hub `clean_num()`"
     },
     {
       "source": "obtener_openmeteo_directo()",
@@ -1059,35 +1085,13 @@
       "confidence": "INFERRED",
       "relation": "calls",
       "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
-    },
-    {
-      "source": "refresh_cache_before_api()",
-      "target": "refrescar_cache_si_corresponde()",
-      "source_files": [
-        "main.py",
-        "sincronizador_background.py"
-      ],
-      "confidence": "INFERRED",
-      "relation": "indirect_call",
-      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
-    },
-    {
-      "source": "sincronizar_puntos_gee()",
-      "target": "extraer_metricas_agricolas()",
-      "source_files": [
-        "sincronizador_background.py",
-        "gee/rural.py"
-      ],
-      "confidence": "INFERRED",
-      "relation": "indirect_call",
-      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
     }
   ],
   "questions": [
     {
       "type": "bridge_node",
       "question": "Why does `react` connect `react` to `.oxlintrc.json`, `BubbleScene.tsx`?",
-      "why": "High betweenness centrality (0.011) - this node is a cross-community bridge."
+      "why": "High betweenness centrality (0.012) - this node is a cross-community bridge."
     },
     {
       "type": "bridge_node",
@@ -1096,7 +1100,7 @@
     },
     {
       "type": "bridge_node",
-      "question": "Why does `dependencies` connect `dependencies` to `frontend/package.json`, `dependencies`?",
+      "question": "Why does `plugins` connect `.oxlintrc.json` to `react`?",
       "why": "High betweenness centrality (0.002) - this node is a cross-community bridge."
     },
     {
@@ -1107,17 +1111,17 @@
     {
       "type": "low_cohesion",
       "question": "Should `react` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.05069124423963134 - nodes in this community are weakly interconnected."
+      "why": "Cohesion score 0.05093167701863354 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
       "question": "Should `main.py` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.06623376623376623 - nodes in this community are weakly interconnected."
+      "why": "Cohesion score 0.05817028027498678 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
       "question": "Should `sincronizador_background.py` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected."
+      "why": "Cohesion score 0.08879492600422834 - nodes in this community are weakly interconnected."
     }
   ]
 }

@@ -20,6 +20,7 @@ import AlertsBanner from './components/AlertsBanner';
 import WeatherSkyCanvas from './components/WeatherSkyCanvas';
 import BreezySunMoonWidget from './components/BreezySunMoonWidget';
 import GeeMapModal from './components/GeeMapModal';
+import BreezyView from './components/BreezyView';
 
 export default function App() {
   const {
@@ -111,75 +112,20 @@ export default function App() {
             <p className="text-xs text-slate-400">Consultando 609 estaciones físicas DMC, Agromet INIA, RedMeteo y Google Earth Engine</p>
           </div>
         ) : (
-          <>
-            {/* BANNER DE ALERTAS INTELIGENTES AGRO-CLIMÁTICAS */}
-            <AlertsBanner alertas={climaData?.alertas_inteligentes} />
-
-            {/* CABECERA HERO ESTILO APPLE WEATHER */}
-            <WeatherHeader
-              climaData={climaData}
-              onOpenEstacionesCercanas={() => setCercanasModalOpen(true)}
-              onSelectMetric={handleSelectMetric}
-            />
-
-            {/* SLIDER HORA A HORA (PRÓXIMAS 24 HORAS CON % REAL) */}
-            <HourlyCarousel hourlyForecast={climaData?.pronostico_numerico_openmeteo?.horario} />
-
-            {/* WIDGET ASTRONÓMICO TRAYECTORIA SOLAR TIPO BREEZY WEATHER */}
-            <BreezySunMoonWidget
-              salidaSol={climaData?.modo_urbano?.salida_sol}
-              puestaSol={climaData?.modo_urbano?.puesta_sol}
-            />
-
-            {/* PANEL MODO URBANO & MODO AGRÍCOLA CON CARDS INTERACTIVAS */}
-            {modo === 'urbano' ? (
-              <UrbanPanel
-                urbano={climaData?.modo_urbano}
-                onSelectMetric={handleSelectMetric}
-                stationInfo={climaData?.estacion}
-                onOpenAqi={handleOpenAqi}
-              />
-            ) : (
-              <AgroPanel
-                agricola={climaData?.modo_agricola}
-                onSelectMetric={handleSelectMetric}
-                stationInfo={climaData?.estacion}
-                apiBase={API_BASE}
-              />
-            )}
-
-            {/* SECCIÓN MAPA INTERACTIVO CON EMBED WINDY Y MAPA SATELITAL GEE */}
-            <div ref={mapRef}>
-              <MapSection
-                estacionSeleccionada={climaData?.estacion}
-                apiBase={API_BASE}
-                onOpenSateliteModal={() => setSateliteModalOpen(true)}
-                onOpenGeeMapModal={() => setGeeMapModalOpen(true)}
-                onSelectStation={handleSelectStation}
-              />
-            </div>
-
-            {/* SECCIÓN PRONÓSTICO Y GRÁFICO 48H */}
-            <div ref={forecastRef} className="space-y-6">
-              <DailyForecastCards
-                dailyForecast={climaData?.pronostico_numerico_openmeteo?.diario || climaData?.pronostico_numerico_openmeteo?.diario_7dias}
-                hourlyForecast={climaData?.pronostico_numerico_openmeteo?.horario}
-                onSelectMetric={handleSelectMetric}
-                onOpenHourly={handleOpenHourly}
-              />
-
-              <ComparisonTable
-                estacionActual={climaData?.estacion}
-                apiBase={API_BASE}
-              />
-
-              <ForecastChart
-                dmcForecast={climaData?.pronostico_oficial_dmc}
-                openMeteoForecast={climaData?.pronostico_numerico_openmeteo}
-                onSelectMetric={handleSelectMetric}
-              />
-            </div>
-          </>
+          <BreezyView
+            climaData={climaData}
+            modo={modo}
+            onOpenEstacionesCercanas={() => setCercanasModalOpen(true)}
+            onSelectMetric={handleSelectMetric}
+            onOpenAqi={handleOpenAqi}
+            onOpenHourly={handleOpenHourly}
+            onOpenSateliteModal={() => setSateliteModalOpen(true)}
+            onOpenGeeMapModal={() => setGeeMapModalOpen(true)}
+            handleSelectStation={handleSelectStation}
+            mapRef={mapRef}
+            forecastRef={forecastRef}
+            apiBase={API_BASE}
+          />
         )}
 
       </main>

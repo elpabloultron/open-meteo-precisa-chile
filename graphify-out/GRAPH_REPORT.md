@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 767 nodes · 1277 edges · 68 communities (54 shown, 14 thin omitted)
+- 774 nodes · 1301 edges · 67 communities (53 shown, 14 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 13 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `baca3ddf`
+- Built from commit: `81fdb6c8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -21,7 +21,7 @@
 - generate_pet_images.py
 - prepare_pet_run.py
 - BubbleScene.tsx
-- app_config.py
+- test_main.py
 - devDependencies
 - finalize_pet_run.py
 - compare-recon.mjs
@@ -56,7 +56,6 @@
 - install.sh
 - dna-scaffold.mjs
 - recon-site.mjs
-- dependencies
 - MeteoPrecisaUser
 - validate-skill-submission.sh
 - verify
@@ -76,7 +75,7 @@
 - deploy.sh script
 
 ## God Nodes (most connected - your core abstractions)
-1. `react` - 29 edges
+1. `react` - 32 edges
 2. `ejecutar_sincronizacion_completa()` - 18 edges
 3. `main()` - 15 edges
 4. `obtener_clima_hiperlocal()` - 13 edges
@@ -90,31 +89,31 @@
 ## Surprising Connections (you probably didn't know these)
 - `sincronizar_puntos_gee()` --indirect_call--> `extraer_metricas_urbanas()`  [INFERRED]
   sincronizador_background.py → gee/urban.py
-- `obtener_satellite_latest_loop_api()` --calls--> `obtener_satellite_latest_loop()`  [INFERRED]
-  main.py → goes_processor.py
+- `procesar_video_goes19()` --indirect_call--> `client()`  [INFERRED]
+  goes_processor.py → test_main.py
+- `ejecutar_sincronizacion_completa()` --indirect_call--> `client()`  [INFERRED]
+  sincronizador_background.py → test_main.py
+- `test_clean_num_discards_sentinel_values()` --calls--> `clean_num()`  [EXTRACTED]
+  test_main.py → sincronizador_background.py
 - `obtener_openmeteo_directo()` --calls--> `obtener_pronostico_openmeteo()`  [INFERRED]
   main.py → openmeteo_client.py
-- `refresh_cache_before_api()` --indirect_call--> `refrescar_cache_si_corresponde()`  [INFERRED]
-  main.py → sincronizador_background.py
-- `sincronizar_puntos_gee()` --indirect_call--> `extraer_metricas_agricolas()`  [INFERRED]
-  sincronizador_background.py → gee/rural.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (68 total, 14 thin omitted)
+## Communities (67 total, 14 thin omitted)
 
 ### Community 0 - "react"
 Cohesion: 0.05
-Nodes (16): App(), DetailDrawer(), getWeatherIcon(), HourlyCarousel(), REGIONES, SatelliteModal(), WeatherHeader(), FALLBACK_CLIMA_DATA (+8 more)
+Nodes (20): App(), BreezyHeroBlock(), getWeatherVectorIcon(), BreezyMetricsGrid(), BreezyView(), DetailDrawer(), getWeatherIcon(), HourlyCarousel() (+12 more)
 
 ### Community 1 - "main.py"
-Cohesion: 0.07
-Nodes (47): evaluar_alertas_meteorologicas(), Motor de Alertas Agro-Climáticas e Higiénico-Ambientales para MeteoPrecisa…, FastAPI, GEECore, extraer_historico_ndvi(), extraer_metricas_agricolas(), fallback_rural(), Extrae serie de tiempo NDVI de los últimos 12 meses usando MODIS MOD13Q1. (+39 more)
+Cohesion: 0.06
+Nodes (52): evaluar_alertas_meteorologicas(), Motor de Alertas Agro-Climáticas e Higiénico-Ambientales para MeteoPrecisa…, FastAPI, GEECore, extraer_historico_ndvi(), extraer_metricas_agricolas(), fallback_rural(), Extrae serie de tiempo NDVI de los últimos 12 meses usando MODIS MOD13Q1. (+44 more)
 
 ### Community 2 - "sincronizador_background.py"
-Cohesion: 0.08
-Nodes (40): AsyncClient, fixture, _descargar_y_procesar_frame(), obtener_satellite_latest_loop(), procesar_video_goes19(), Devuelve la metadata y URL del bucle animado más reciente de GOES-19., Descarga los últimos fotogramas de la NOAA para Chile (GOES-19 SSA), los…, cargar_cache_desde_disco() (+32 more)
+Cohesion: 0.09
+Nodes (39): Any, _as_bool(), _as_origins(), get_settings(), Configuración centralizada de MeteoPrecisa. Los valores sensibles nunca tienen…, Settings, AsyncClient, load_cache() (+31 more)
 
 ### Community 3 - "prepare_chat_overlay_bundle.py"
 Cohesion: 0.16
@@ -132,9 +131,9 @@ Nodes (27): base_pet_prompt(), choose_chroma_key(), color_distance(), concept_wo
 Cohesion: 0.15
 Nodes (17): chatSpec, AvatarImage(), avatarSrcFor(), PRESET_FILES, Bubble(), BubbleScene(), bubbleWidthFor(), CONTAINER_THEME (+9 more)
 
-### Community 7 - "app_config.py"
-Cohesion: 0.15
-Nodes (17): Any, _as_bool(), _as_origins(), get_settings(), Configuración centralizada de MeteoPrecisa. Los valores sensibles nunca tienen…, Settings, load_cache(), _load_local() (+9 more)
+### Community 7 - "test_main.py"
+Cohesion: 0.19
+Nodes (13): fixture, client(), FakeOpenMeteoClient, FakeOpenMeteoResponse, test_alertas_senapred_endpoint_uses_cached_data(), test_buscar_estaciones_endpoint_uses_cached_catalog(), test_capas_mapa_endpoint_accepts_default_coordinates(), test_capas_mapa_rejects_invalid_coordinates() (+5 more)
 
 ### Community 8 - "devDependencies"
 Cohesion: 0.11
@@ -205,8 +204,8 @@ Cohesion: 0.20
 Nodes (9): name, private, scripts, build, dev, lint, preview, type (+1 more)
 
 ### Community 26 - "dependencies"
-Cohesion: 0.22
-Nodes (9): dependencies, react, react-dom, remotion, react, react-dom, react, react-dom (+1 more)
+Cohesion: 0.13
+Nodes (16): dependencies, react, react-dom, remotion, chart.js, dependencies, chart.js, lucide-react (+8 more)
 
 ### Community 27 - "devDependencies"
 Cohesion: 0.22
@@ -260,10 +259,6 @@ Nodes (6): checker(), main(), Image, Path, render_state(), shell_quote_for_conca
 Cohesion: 0.62
 Nodes (6): cyan(), die(), gray(), green(), install_skill_to(), install.sh script
 
-### Community 44 - "dependencies"
-Cohesion: 0.29
-Nodes (7): chart.js, dependencies, chart.js, lucide-react, react-chartjs-2, lucide-react, react-chartjs-2
-
 ### Community 45 - "MeteoPrecisaUser"
 Cohesion: 0.33
 Nodes (4): HttpUser, MeteoPrecisaUser, Locust Load Test Script para MeteoPrecisa API. Para ejecutar: pip install…, task
@@ -297,16 +292,16 @@ Nodes (3): alpha_nonzero_count(), main(), Image
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `react` connect `react` to `.oxlintrc.json`, `BubbleScene.tsx`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `frontend/package.json`, `devDependencies`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `dependencies` to `frontend/package.json`, `dependencies`?**
+- **Why does `plugins` connect `.oxlintrc.json` to `react`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **What connects `$schema`, `oxc`, `react/rules-of-hooks` to the rest of the system?**
   _99 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `react` be split into smaller, more focused modules?**
-  _Cohesion score 0.05069124423963134 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05093167701863354 - nodes in this community are weakly interconnected._
 - **Should `main.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.06623376623376623 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05817028027498678 - nodes in this community are weakly interconnected._
 - **Should `sincronizador_background.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08879492600422834 - nodes in this community are weakly interconnected._

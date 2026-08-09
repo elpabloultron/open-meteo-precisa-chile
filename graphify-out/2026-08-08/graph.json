@@ -20,7 +20,7 @@
       "source_file": "app_config.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "app_config.py",
       "community_name": "app_config.py",
       "id": "app_config"
@@ -32,7 +32,7 @@
       "source_location": "L23",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "_as_bool()",
       "community_name": "app_config.py",
       "id": "app_config_as_bool"
@@ -44,7 +44,7 @@
       "source_location": "L29",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "_as_origins()",
       "community_name": "app_config.py",
       "id": "app_config_as_origins"
@@ -57,7 +57,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "settings",
       "community_name": "app_config.py",
       "id": "app_config_settings"
@@ -69,7 +69,7 @@
       "source_location": "L55",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "get_settings()",
       "community_name": "app_config.py",
       "id": "app_config_get_settings"
@@ -80,7 +80,7 @@
       "source_file": "app_config.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "configuracion centralizada de meteoprecisa. los valores sensibles nunca tienen...",
       "community_name": "app_config.py",
       "id": "app_config_rationale_1"
@@ -91,7 +91,7 @@
       "source_file": "cache_store.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "cache_store.py",
       "community_name": "app_config.py",
       "id": "cache_store"
@@ -103,7 +103,7 @@
       "source_location": "L16",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "_load_local()",
       "community_name": "app_config.py",
       "id": "cache_store_load_local"
@@ -114,7 +114,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "path",
       "community_name": "app_config.py",
       "id": "path"
@@ -125,7 +125,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "any",
       "community_name": "app_config.py",
       "id": "any"
@@ -137,7 +137,7 @@
       "source_location": "L24",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "_save_local()",
       "community_name": "app_config.py",
       "id": "cache_store_save_local"
@@ -149,7 +149,7 @@
       "source_location": "L31",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "load_cache()",
       "community_name": "app_config.py",
       "id": "cache_store_load_cache"
@@ -161,7 +161,7 @@
       "source_location": "L53",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "save_cache()",
       "community_name": "app_config.py",
       "id": "cache_store_save_cache"
@@ -172,7 +172,7 @@
       "source_file": "cache_store.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "persistencia de la cache compartida entre el job y las instancias api.",
       "community_name": "app_config.py",
       "id": "cache_store_rationale_1"
@@ -183,7 +183,7 @@
       "source_file": "cache_store.py",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "carga la instantanea central; en desarrollo usa el archivo local.",
       "community_name": "app_config.py",
       "id": "cache_store_rationale_32"
@@ -194,7 +194,7 @@
       "source_file": "cache_store.py",
       "source_location": "L54",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "guarda una instantanea completa. reemplazar un objeto gcs es atomico.",
       "community_name": "app_config.py",
       "id": "cache_store_rationale_54"
@@ -1219,7 +1219,7 @@
       "source_file": "goes_processor.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "goes_processor.py",
       "community_name": "sincronizador_background.py",
       "id": "goes_processor"
@@ -1231,7 +1231,7 @@
       "source_location": "L32",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "_descargar_y_procesar_frame()",
       "community_name": "sincronizador_background.py",
       "id": "goes_processor_descargar_y_procesar_frame"
@@ -1243,7 +1243,7 @@
       "source_location": "L48",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "procesar_video_goes19()",
       "community_name": "sincronizador_background.py",
       "id": "goes_processor_procesar_video_goes19"
@@ -1255,7 +1255,7 @@
       "source_location": "L133",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "obtener_satellite_latest_loop()",
       "community_name": "sincronizador_background.py",
       "id": "goes_processor_obtener_satellite_latest_loop"
@@ -1266,7 +1266,7 @@
       "source_file": "goes_processor.py",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "descarga los ultimos fotogramas de la noaa para chile (goes-19 ssa), los...",
       "community_name": "sincronizador_background.py",
       "id": "goes_processor_rationale_49"
@@ -1277,7 +1277,7 @@
       "source_file": "goes_processor.py",
       "source_location": "L134",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "devuelve la metadata y url del bucle animado mas reciente de goes-19.",
       "community_name": "sincronizador_background.py",
       "id": "goes_processor_rationale_134"
@@ -1577,7 +1577,7 @@
       "source_file": "test_main.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "test_main.py",
       "community_name": "sincronizador_background.py",
       "id": "test_main"
@@ -1590,7 +1590,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "fakeopenmeteoresponse",
       "community_name": "sincronizador_background.py",
       "id": "test_main_fakeopenmeteoresponse"
@@ -1602,7 +1602,7 @@
       "source_location": "L49",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": ".json()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_fakeopenmeteoresponse_json"
@@ -1615,7 +1615,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "fakeopenmeteoclient",
       "community_name": "sincronizador_background.py",
       "id": "test_main_fakeopenmeteoclient"
@@ -1627,7 +1627,7 @@
       "source_location": "L76",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": ".__aenter__()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_fakeopenmeteoclient_aenter"
@@ -1639,7 +1639,7 @@
       "source_location": "L79",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": ".__aexit__()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_fakeopenmeteoclient_aexit"
@@ -1651,7 +1651,7 @@
       "source_location": "L82",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": ".get()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_fakeopenmeteoclient_get"
@@ -1662,7 +1662,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "fixture",
       "community_name": "sincronizador_background.py",
       "id": "fixture"
@@ -1674,7 +1674,7 @@
       "source_location": "L87",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "client()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_client"
@@ -1686,7 +1686,7 @@
       "source_location": "L105",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "test_home_endpoint_reports_real_status()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_test_home_endpoint_reports_real_status"
@@ -1698,7 +1698,7 @@
       "source_location": "L114",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "test_capas_mapa_endpoint_accepts_default_coordinates()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_test_capas_mapa_endpoint_accepts_default_coordinates"
@@ -1710,7 +1710,7 @@
       "source_location": "L122",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "test_capas_mapa_rejects_invalid_coordinates()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_test_capas_mapa_rejects_invalid_coordinates"
@@ -1722,7 +1722,7 @@
       "source_location": "L127",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "test_buscar_estaciones_endpoint_uses_cached_catalog()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_test_buscar_estaciones_endpoint_uses_cached_catalog"
@@ -1734,7 +1734,7 @@
       "source_location": "L133",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "test_alertas_senapred_endpoint_uses_cached_data()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_test_alertas_senapred_endpoint_uses_cached_data"
@@ -1746,7 +1746,7 @@
       "source_location": "L139",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "test_weather_current_endpoint_uses_cached_and_mocked_data()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_test_weather_current_endpoint_uses_cached_and_mocked_data"
@@ -1758,7 +1758,7 @@
       "source_location": "L148",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "test_weather_current_requires_longitude()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_test_weather_current_requires_longitude"
@@ -1770,7 +1770,7 @@
       "source_location": "L153",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "test_historico_accepts_lng_alias_and_validates_missing_longitude()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_test_historico_accepts_lng_alias_and_validates_missing_longitude"
@@ -1782,7 +1782,7 @@
       "source_location": "L158",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "test_manual_sync_requires_configuration_or_token()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_test_manual_sync_requires_configuration_or_token"
@@ -1794,7 +1794,7 @@
       "source_location": "L164",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "test_clean_num_discards_sentinel_values()",
       "community_name": "sincronizador_background.py",
       "id": "test_main_test_clean_num_discards_sentinel_values"
@@ -1886,7 +1886,7 @@
       "source_file": "openmeteo_client.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "openmeteo_client.py",
       "community_name": "app_config.py",
       "id": "openmeteo_client"
@@ -1898,7 +1898,7 @@
       "source_location": "L19",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "obtener_pronostico_openmeteo()",
       "community_name": "app_config.py",
       "id": "openmeteo_client_obtener_pronostico_openmeteo"
@@ -1909,7 +1909,7 @@
       "source_file": "openmeteo_client.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "cliente asincrono open-source para open-meteo api. sirve como respaldo...",
       "community_name": "app_config.py",
       "id": "openmeteo_client_rationale_1"
@@ -1920,7 +1920,7 @@
       "source_file": "openmeteo_client.py",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 7,
+      "community": 2,
       "norm_label": "consulta el pronostico agroclimatico hiperlocal en open-meteo.",
       "community_name": "app_config.py",
       "id": "openmeteo_client_rationale_24"
@@ -8900,29 +8900,6 @@
       "id": "frontend_src_components_dailyforecastcards_dailyforecastcards"
     },
     {
-      "label": "App.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "app.jsx",
-      "community_name": "react",
-      "id": "frontend_src_app"
-    },
-    {
-      "label": "App()",
-      "file_type": "code",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L24",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "app()",
-      "community_name": "react",
-      "id": "frontend_src_app_app"
-    },
-    {
       "label": "main.jsx",
       "file_type": "code",
       "source_file": "frontend/src/main.jsx",
@@ -9011,9 +8988,10 @@
       "source_file": "frontend/src/components/LocationFallbackModal.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_components_locationfallbackmodal",
       "community": 0,
-      "norm_label": "locationfallbackmodal.jsx"
+      "norm_label": "locationfallbackmodal.jsx",
+      "community_name": "react",
+      "id": "frontend_src_components_locationfallbackmodal"
     },
     {
       "label": "REGIONES",
@@ -9021,9 +8999,10 @@
       "source_file": "frontend/src/components/LocationFallbackModal.jsx",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "frontend_src_components_locationfallbackmodal_regiones",
       "community": 0,
-      "norm_label": "regiones"
+      "norm_label": "regiones",
+      "community_name": "react",
+      "id": "frontend_src_components_locationfallbackmodal_regiones"
     },
     {
       "label": "LocationFallbackModal()",
@@ -9032,9 +9011,10 @@
       "source_location": "L24",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_components_locationfallbackmodal_locationfallbackmodal",
       "community": 0,
-      "norm_label": "locationfallbackmodal()"
+      "norm_label": "locationfallbackmodal()",
+      "community_name": "react",
+      "id": "frontend_src_components_locationfallbackmodal_locationfallbackmodal"
     },
     {
       "label": "WeatherContext.jsx",
@@ -9042,9 +9022,10 @@
       "source_file": "frontend/src/context/WeatherContext.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_context_weathercontext",
       "community": 0,
-      "norm_label": "weathercontext.jsx"
+      "norm_label": "weathercontext.jsx",
+      "community_name": "react",
+      "id": "frontend_src_context_weathercontext"
     },
     {
       "label": "WeatherContext",
@@ -9052,9 +9033,10 @@
       "source_file": "frontend/src/context/WeatherContext.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "frontend_src_context_weathercontext_weathercontext",
       "community": 0,
-      "norm_label": "weathercontext"
+      "norm_label": "weathercontext",
+      "community_name": "react",
+      "id": "frontend_src_context_weathercontext_weathercontext"
     },
     {
       "label": "FALLBACK_CLIMA_DATA",
@@ -9062,9 +9044,10 @@
       "source_file": "frontend/src/context/WeatherContext.jsx",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "frontend_src_context_weathercontext_fallback_clima_data",
       "community": 0,
-      "norm_label": "fallback_clima_data"
+      "norm_label": "fallback_clima_data",
+      "community_name": "react",
+      "id": "frontend_src_context_weathercontext_fallback_clima_data"
     },
     {
       "label": "WeatherProvider()",
@@ -9073,9 +9056,105 @@
       "source_location": "L73",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_context_weathercontext_weatherprovider",
       "community": 0,
-      "norm_label": "weatherprovider()"
+      "norm_label": "weatherprovider()",
+      "community_name": "react",
+      "id": "frontend_src_context_weathercontext_weatherprovider"
+    },
+    {
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "frontend_src_app",
+      "community": 0,
+      "norm_label": "app.jsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L25",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "frontend_src_app_app",
+      "community": 0,
+      "norm_label": "app()"
+    },
+    {
+      "label": "BreezyHeroBlock.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/BreezyHeroBlock.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "frontend_src_components_breezyheroblock",
+      "community": 0,
+      "norm_label": "breezyheroblock.jsx"
+    },
+    {
+      "label": "getWeatherVectorIcon()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/BreezyHeroBlock.jsx",
+      "source_location": "L5",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "frontend_src_components_breezyheroblock_getweathervectoricon",
+      "community": 0,
+      "norm_label": "getweathervectoricon()"
+    },
+    {
+      "label": "BreezyHeroBlock()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/BreezyHeroBlock.jsx",
+      "source_location": "L14",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "frontend_src_components_breezyheroblock_breezyheroblock",
+      "community": 0,
+      "norm_label": "breezyheroblock()"
+    },
+    {
+      "label": "BreezyMetricsGrid.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/BreezyMetricsGrid.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "frontend_src_components_breezymetricsgrid",
+      "community": 0,
+      "norm_label": "breezymetricsgrid.jsx"
+    },
+    {
+      "label": "BreezyMetricsGrid()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/BreezyMetricsGrid.jsx",
+      "source_location": "L4",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "frontend_src_components_breezymetricsgrid_breezymetricsgrid",
+      "community": 0,
+      "norm_label": "breezymetricsgrid()"
+    },
+    {
+      "label": "BreezyView.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "frontend_src_components_breezyview",
+      "community": 0,
+      "norm_label": "breezyview.jsx"
+    },
+    {
+      "label": "BreezyView()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L12",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "frontend_src_components_breezyview_breezyview",
+      "community": 0,
+      "norm_label": "breezyview()"
     }
   ],
   "links": [
@@ -9540,9 +9619,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "ref_react"
+      "target": "ref_react",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -9596,6 +9675,30 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyHeroBlock.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyheroblock",
+      "target": "ref_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyMetricsGrid.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezymetricsgrid",
+      "target": "ref_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/BreezySunMoonWidget.jsx",
       "source_location": "L1",
       "weight": 1.0,
@@ -9603,6 +9706,18 @@
       "confidence_score": 1.0,
       "source": "frontend_src_components_breezysunmoonwidget",
       "target": "ref_react"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyview",
+      "target": "ref_react",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -9720,9 +9835,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_locationfallbackmodal",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -9804,9 +9919,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_context_weathercontext",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -10533,9 +10648,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_bottomnav"
+      "target": "frontend_src_components_bottomnav",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10556,9 +10671,9 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_estacionescercanasmodal"
+      "target": "frontend_src_components_estacionescercanasmodal",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10602,9 +10717,9 @@
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_satellitemodal"
+      "target": "frontend_src_components_satellitemodal",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10657,6 +10772,18 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyHeroBlock.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyheroblock",
+      "target": "frontend_src_utils_timeutils",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/WeatherHeader.jsx",
       "source_location": "L3",
       "weight": 1.0,
@@ -10674,6 +10801,30 @@
       "_origin": "ast",
       "confidence_score": 1.0,
       "source": "frontend_src_utils_timeutils",
+      "target": "frontend_src_utils_timeutils_formatlocaltime"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyHeroBlock.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyheroblock",
+      "target": "frontend_src_utils_timeutils_formatlocaltime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/BreezyHeroBlock.jsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyheroblock_breezyheroblock",
       "target": "frontend_src_utils_timeutils_formatlocaltime"
     },
     {
@@ -12634,9 +12785,9 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlyforecastdrawer"
+      "target": "frontend_src_components_hourlyforecastdrawer",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -22680,9 +22831,9 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_geemapmodal"
+      "target": "frontend_src_components_geemapmodal",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -22703,9 +22854,9 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_detaildrawer"
+      "target": "frontend_src_components_detaildrawer",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -22818,9 +22969,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_alertsbanner"
+      "target": "frontend_src_components_alertsbanner",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -22837,13 +22988,25 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyview",
+      "target": "frontend_src_components_alertsbanner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_aqidrawer"
+      "target": "frontend_src_components_aqidrawer",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -22864,9 +23027,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_agropanel"
+      "target": "frontend_src_components_agropanel",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -22887,9 +23050,21 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_comparisontable"
+      "target": "frontend_src_components_comparisontable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyview",
+      "target": "frontend_src_components_comparisontable",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -22910,9 +23085,21 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_forecastchart"
+      "target": "frontend_src_components_forecastchart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyview",
+      "target": "frontend_src_components_forecastchart",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -22933,9 +23120,21 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_mapsection"
+      "target": "frontend_src_components_mapsection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyview",
+      "target": "frontend_src_components_mapsection",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -22956,9 +23155,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_navbar"
+      "target": "frontend_src_components_navbar",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23003,9 +23202,9 @@
       "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherskycanvas"
+      "target": "frontend_src_components_weatherskycanvas",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23026,9 +23225,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherheader"
+      "target": "frontend_src_components_weatherheader",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23490,9 +23689,9 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_breezysunmoonwidget"
+      "target": "frontend_src_components_breezysunmoonwidget",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23509,13 +23708,37 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyview",
+      "target": "frontend_src_components_breezysunmoonwidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlycarousel"
+      "target": "frontend_src_components_hourlycarousel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyview",
+      "target": "frontend_src_components_hourlycarousel",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23559,9 +23782,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_urbanpanel"
+      "target": "frontend_src_components_urbanpanel",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23582,9 +23805,21 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_dailyforecastcards"
+      "target": "frontend_src_components_dailyforecastcards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyview",
+      "target": "frontend_src_components_dailyforecastcards",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23596,53 +23831,6 @@
       "confidence_score": 1.0,
       "source": "frontend_src_components_dailyforecastcards",
       "target": "frontend_src_components_dailyforecastcards_dailyforecastcards"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_app_app"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_locationfallbackmodal"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext_weathercontext"
     },
     {
       "relation": "imports_from",
@@ -23759,15 +23947,27 @@
       "target": "frontend_src_main_errorboundary_render"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_locationfallbackmodal",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/LocationFallbackModal.jsx",
       "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_locationfallbackmodal",
-      "target": "frontend_src_components_locationfallbackmodal_locationfallbackmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_locationfallbackmodal_locationfallbackmodal"
     },
     {
       "relation": "contains",
@@ -23776,8 +23976,20 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_locationfallbackmodal",
-      "target": "frontend_src_components_locationfallbackmodal_regiones",
+      "target": "frontend_src_components_locationfallbackmodal_regiones"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_app",
+      "target": "frontend_src_context_weathercontext",
       "confidence_score": 1.0
     },
     {
@@ -23787,9 +23999,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_context_weathercontext",
-      "target": "frontend_src_context_weathercontext_fallback_clima_data",
-      "confidence_score": 1.0
+      "target": "frontend_src_context_weathercontext_fallback_clima_data"
     },
     {
       "relation": "contains",
@@ -23798,9 +24010,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_context_weathercontext",
-      "target": "frontend_src_context_weathercontext_weathercontext",
-      "confidence_score": 1.0
+      "target": "frontend_src_context_weathercontext_weathercontext"
     },
     {
       "relation": "contains",
@@ -23809,11 +24021,162 @@
       "source_location": "L73",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_context_weathercontext",
-      "target": "frontend_src_context_weathercontext_weatherprovider",
+      "target": "frontend_src_context_weathercontext_weatherprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_app",
+      "target": "frontend_src_context_weathercontext_weathercontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_app",
+      "target": "frontend_src_app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_breezyview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_breezyview_breezyview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyHeroBlock.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyheroblock",
+      "target": "frontend_src_components_breezyheroblock_breezyheroblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyHeroBlock.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyheroblock",
+      "target": "frontend_src_components_breezyheroblock_getweathervectoricon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyview",
+      "target": "frontend_src_components_breezyheroblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyHeroBlock.jsx",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyheroblock_breezyheroblock",
+      "target": "frontend_src_components_breezyheroblock_getweathervectoricon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyview",
+      "target": "frontend_src_components_breezyheroblock_breezyheroblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyMetricsGrid.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezymetricsgrid",
+      "target": "frontend_src_components_breezymetricsgrid_breezymetricsgrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyview",
+      "target": "frontend_src_components_breezymetricsgrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyview",
+      "target": "frontend_src_components_breezymetricsgrid_breezymetricsgrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BreezyView.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_breezyview",
+      "target": "frontend_src_components_breezyview_breezyview",
       "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "baca3ddf0cfb2a83f9fa82a352cda76970cd0736"
+  "built_at_commit": "81fdb6c892024f34c3ea65665cb03e24aa315e64"
 }

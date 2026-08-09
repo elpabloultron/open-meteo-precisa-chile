@@ -45,9 +45,9 @@
     "semantic_hash": "f7b7cdb8689be56d1f4a5391df0102e3"
   },
   "frontend/src/App.jsx": {
-    "mtime": 1786245734.6156125,
-    "ast_hash": "dfe5b480875fe57c367a78220a9c42b8",
-    "semantic_hash": "dfe5b480875fe57c367a78220a9c42b8"
+    "mtime": 1786246335.2549777,
+    "ast_hash": "dca4d5ea093f0b8fe2a3f32a83cdd2b1",
+    "semantic_hash": "dca4d5ea093f0b8fe2a3f32a83cdd2b1"
   },
   "frontend/src/components/AgroPanel.jsx": {
     "mtime": 1786234634.1706684,
@@ -603,5 +603,20 @@
     "mtime": 1786237651.4569097,
     "ast_hash": "3ec5cc5ec4bf6d11010949adfdd4695e",
     "semantic_hash": "3ec5cc5ec4bf6d11010949adfdd4695e"
+  },
+  "frontend/src/components/BreezyHeroBlock.jsx": {
+    "mtime": 1786246307.835951,
+    "ast_hash": "2afccc969ee4ab4e7edcc996ec7399ca",
+    "semantic_hash": "2afccc969ee4ab4e7edcc996ec7399ca"
+  },
+  "frontend/src/components/BreezyMetricsGrid.jsx": {
+    "mtime": 1786246316.3114567,
+    "ast_hash": "adde21791b496439b5ddddadabe020b6",
+    "semantic_hash": "adde21791b496439b5ddddadabe020b6"
+  },
+  "frontend/src/components/BreezyView.jsx": {
+    "mtime": 1786246321.4635427,
+    "ast_hash": "a4981ca51a91e123f3eacbd0ad4ed930",
+    "semantic_hash": "a4981ca51a91e123f3eacbd0ad4ed930"
   }
 }
