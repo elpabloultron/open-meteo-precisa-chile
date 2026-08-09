@@ -45,9 +45,9 @@
     "semantic_hash": "f7b7cdb8689be56d1f4a5391df0102e3"
   },
   "frontend/src/App.jsx": {
-    "mtime": 1786235699.2673686,
-    "ast_hash": "1218e0c1cd3a37f4136c238502ec53eb",
-    "semantic_hash": "1218e0c1cd3a37f4136c238502ec53eb"
+    "mtime": 1786236535.2659953,
+    "ast_hash": "483fff554969fb8ed54f53de44a7ef8c",
+    "semantic_hash": "483fff554969fb8ed54f53de44a7ef8c"
   },
   "frontend/src/components/AgroPanel.jsx": {
     "mtime": 1786234634.1706684,
@@ -130,9 +130,9 @@
     "semantic_hash": "e4e813913086be47712f85e95ebacac0"
   },
   "frontend/src/components/WeatherHeader.jsx": {
-    "mtime": 1786235679.9354413,
-    "ast_hash": "2c5ff99245ead6784bb6ef17e9c028e3",
-    "semantic_hash": "2c5ff99245ead6784bb6ef17e9c028e3"
+    "mtime": 1786236522.2810147,
+    "ast_hash": "df942469fdfb15c5f0b57ba88b5be9ef",
+    "semantic_hash": "df942469fdfb15c5f0b57ba88b5be9ef"
   },
   "frontend/src/context/WeatherContext.jsx": {
     "mtime": 1786235205.3012378,

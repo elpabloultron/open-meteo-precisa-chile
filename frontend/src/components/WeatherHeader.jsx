@@ -2,7 +2,7 @@ import React from 'react';
 import { MapPin, Share2, Radio, ShieldCheck, CloudSun, ArrowUp, ArrowDown } from 'lucide-react';
 import { formatLocalTime } from '../utils/timeUtils';
 
-export default function WeatherHeader({ climaData, onOpenEstacionesCercanas }) {
+export default function WeatherHeader({ climaData, onOpenEstacionesCercanas, onSelectMetric }) {
   if (!climaData || !climaData.estacion) return null;
 
   const { estacion, modo_urbano, modo_agricola, metadatos, transparency_metadata } = climaData;
@@ -30,6 +30,22 @@ export default function WeatherHeader({ climaData, onOpenEstacionesCercanas }) {
     }
   };
 
+  const handleLineageClick = () => {
+    if (onSelectMetric) {
+      onSelectMetric({
+        title: "Linaje de Datos OMM (3 Niveles)",
+        value: metadatos?.origen_dato === 'estacion_fisica_directa' ? 'Nivel 1 (Directo)' : (metadatos?.origen_dato === 'triangulacion_espacial_idw' ? 'Nivel 2 (Triangulación IDW)' : 'Nivel 3 (Satelital ERA5)'),
+        unit: "",
+        description: `Origen del dato: ${metadatos?.lineage_etiqueta}. Nivel 1: Estación física directa (<25 km). Nivel 2: Triangulación IDW de 3 estaciones (<85 km) con ajuste de altitud por modelo digital de elevación DEM (-0.65°C por cada 100m de elevación). Nivel 3: Reanálisis satelital GEE ERA5-Land.`,
+        advice: "Garantiza continuidad de telemetría bajo estándares internacionales de la OMM WMO-No. 8.",
+        category: "Linaje & Algoritmo",
+        stationId: estacion?.id,
+        rawSourceUrl: estacion?.raw_source_url,
+        isLiveData: true
+      });
+    }
+  };
+
   return (
     <div className="space-y-4">
       
@@ -40,7 +56,7 @@ export default function WeatherHeader({ climaData, onOpenEstacionesCercanas }) {
         <div className="flex flex-wrap items-center justify-between gap-2.5 text-xs font-bold relative z-10">
           <button 
             onClick={onOpenEstacionesCercanas}
-            className="apple-pill flex items-center gap-1.5 hover:scale-105 transition"
+            className="apple-pill flex items-center gap-1.5 hover:scale-105 transition cursor-pointer"
           >
             <MapPin className="w-3.5 h-3.5 text-sky-400 shrink-0" />
             <span className="truncate max-w-[220px] sm:max-w-none font-medium">{estacion?.sector || 'Chile'} • {metadatos?.distancia_km} km</span>
@@ -49,7 +65,7 @@ export default function WeatherHeader({ climaData, onOpenEstacionesCercanas }) {
 
           <button 
             onClick={compartir}
-            className="apple-pill flex items-center gap-1.5 hover:scale-105 transition"
+            className="apple-pill flex items-center gap-1.5 hover:scale-105 transition cursor-pointer"
           >
             <Share2 className="w-3.5 h-3.5 text-slate-300 shrink-0" />
             <span>Compartir</span>
@@ -91,9 +107,12 @@ export default function WeatherHeader({ climaData, onOpenEstacionesCercanas }) {
         {/* PÍLDORAS DE TRANSMISIÓN EN VIVO Y LINAJE OMM */}
         <div className="flex flex-wrap items-center justify-center gap-2 pt-2 text-xs relative z-10">
           {metadatos?.lineage_etiqueta && (
-            <span className="apple-pill inline-flex items-center gap-1.5 text-xs">
+            <button
+              onClick={handleLineageClick}
+              className="apple-pill inline-flex items-center gap-1.5 text-xs text-sky-300 hover:text-white cursor-pointer transition"
+            >
               {metadatos.lineage_etiqueta}
-            </span>
+            </button>
           )}
 
           <span className="apple-pill inline-flex items-center gap-1.5 text-sky-400">

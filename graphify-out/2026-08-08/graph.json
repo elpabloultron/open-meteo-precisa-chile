@@ -8910,52 +8910,6 @@
       "id": "frontend_src_context_weathercontext_weatherprovider"
     },
     {
-      "label": "App.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "app.jsx",
-      "community_name": "react",
-      "id": "frontend_src_app"
-    },
-    {
-      "label": "App()",
-      "file_type": "code",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L23",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "app()",
-      "community_name": "react",
-      "id": "frontend_src_app_app"
-    },
-    {
-      "label": "WeatherHeader.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/components/WeatherHeader.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "weatherheader.jsx",
-      "community_name": "react",
-      "id": "frontend_src_components_weatherheader"
-    },
-    {
-      "label": "WeatherHeader()",
-      "file_type": "code",
-      "source_file": "frontend/src/components/WeatherHeader.jsx",
-      "source_location": "L5",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "weatherheader()",
-      "community_name": "react",
-      "id": "frontend_src_components_weatherheader_weatherheader"
-    },
-    {
       "label": "WeatherSkyCanvas.jsx",
       "file_type": "code",
       "source_file": "frontend/src/components/WeatherSkyCanvas.jsx",
@@ -8977,6 +8931,48 @@
       "norm_label": "weatherskycanvas()",
       "community_name": "react",
       "id": "frontend_src_components_weatherskycanvas_weatherskycanvas"
+    },
+    {
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "frontend_src_app",
+      "community": 1,
+      "norm_label": "app.jsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L23",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "frontend_src_app_app",
+      "community": 1,
+      "norm_label": "app()"
+    },
+    {
+      "label": "WeatherHeader.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/WeatherHeader.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "frontend_src_components_weatherheader",
+      "community": 1,
+      "norm_label": "weatherheader.jsx"
+    },
+    {
+      "label": "WeatherHeader()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/WeatherHeader.jsx",
+      "source_location": "L5",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "frontend_src_components_weatherheader_weatherheader",
+      "community": 1,
+      "norm_label": "weatherheader()"
     }
   ],
   "links": [
@@ -9441,9 +9437,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "ref_react"
+      "target": "ref_react",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -9669,9 +9665,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_components_weatherheader",
-      "target": "ref_react"
+      "target": "ref_react",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -10422,9 +10418,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_bottomnav"
+      "target": "frontend_src_components_bottomnav",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10445,9 +10441,9 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_estacionescercanasmodal"
+      "target": "frontend_src_components_estacionescercanasmodal",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10491,9 +10487,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlycarousel"
+      "target": "frontend_src_components_hourlycarousel",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10537,9 +10533,9 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_locationfallbackmodal"
+      "target": "frontend_src_components_locationfallbackmodal",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10571,9 +10567,9 @@
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_satellitemodal"
+      "target": "frontend_src_components_satellitemodal",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10678,9 +10674,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_components_weatherheader",
-      "target": "frontend_src_utils_timeutils"
+      "target": "frontend_src_utils_timeutils",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10701,9 +10697,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_components_weatherheader",
-      "target": "frontend_src_utils_timeutils_formatlocaltime"
+      "target": "frontend_src_utils_timeutils_formatlocaltime",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -12651,9 +12647,9 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlyforecastdrawer"
+      "target": "frontend_src_components_hourlyforecastdrawer",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -22697,9 +22693,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_geemapmodal"
+      "target": "frontend_src_components_geemapmodal",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -22720,9 +22716,9 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_detaildrawer"
+      "target": "frontend_src_components_detaildrawer",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -22847,9 +22843,9 @@
       "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_alertsbanner"
+      "target": "frontend_src_components_alertsbanner",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23311,9 +23307,9 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_aqidrawer"
+      "target": "frontend_src_components_aqidrawer",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23334,9 +23330,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_agropanel"
+      "target": "frontend_src_components_agropanel",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23357,9 +23353,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_urbanpanel"
+      "target": "frontend_src_components_urbanpanel",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23380,9 +23376,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_comparisontable"
+      "target": "frontend_src_components_comparisontable",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23403,9 +23399,9 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_dailyforecastcards"
+      "target": "frontend_src_components_dailyforecastcards",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23426,9 +23422,9 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_forecastchart"
+      "target": "frontend_src_components_forecastchart",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23449,9 +23445,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_mapsection"
+      "target": "frontend_src_components_mapsection",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23472,9 +23468,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_navbar"
+      "target": "frontend_src_components_navbar",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23519,9 +23515,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext"
+      "target": "frontend_src_context_weathercontext",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23553,44 +23549,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext_weathercontext"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_app_app"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherheader_weatherheader"
+      "target": "frontend_src_context_weathercontext_weathercontext",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -23600,32 +23561,9 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherskycanvas"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L21",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherskycanvas_weatherskycanvas"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/WeatherHeader.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_weatherheader",
-      "target": "frontend_src_components_weatherheader_weatherheader"
+      "target": "frontend_src_components_weatherskycanvas",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23637,8 +23575,54 @@
       "confidence_score": 1.0,
       "source": "frontend_src_components_weatherskycanvas",
       "target": "frontend_src_components_weatherskycanvas_weatherskycanvas"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_app",
+      "target": "frontend_src_app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_weatherheader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_weatherheader_weatherheader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/WeatherHeader.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_weatherheader",
+      "target": "frontend_src_components_weatherheader_weatherheader",
+      "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2243333f1cda3e0dbaf31d0186366fdabb45b22b"
+  "built_at_commit": "6d7b79223313f1efdaa9bc6c55e4c07751509c0d"
 }

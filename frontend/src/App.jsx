@@ -118,6 +118,7 @@ export default function App() {
             <WeatherHeader
               climaData={climaData}
               onOpenEstacionesCercanas={() => setCercanasModalOpen(true)}
+              onSelectMetric={handleSelectMetric}
             />
 
             {/* SLIDER HORA A HORA (PRÓXIMAS 24 HORAS CON % REAL) */}
