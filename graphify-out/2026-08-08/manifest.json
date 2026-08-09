@@ -135,9 +135,9 @@
     "semantic_hash": "df942469fdfb15c5f0b57ba88b5be9ef"
   },
   "frontend/src/context/WeatherContext.jsx": {
-    "mtime": 1786235205.3012378,
-    "ast_hash": "557c3456620cac4214e898b0635b61ae",
-    "semantic_hash": "557c3456620cac4214e898b0635b61ae"
+    "mtime": 1786238447.8960676,
+    "ast_hash": "09f52261cceb1097eb4771fa989f6e65",
+    "semantic_hash": "09f52261cceb1097eb4771fa989f6e65"
   },
   "frontend/src/main.jsx": {
     "mtime": 1785975294.2168386,
