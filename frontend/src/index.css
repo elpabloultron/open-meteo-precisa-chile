@@ -1,29 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
 @import "tailwindcss";
 
-
-
 :root {
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'Space Grotesk', monospace;
-  
-  --bg-dark: #080c14;
-  --bg-card: rgba(15, 23, 42, 0.75);
-  --bg-card-hover: rgba(30, 41, 59, 0.85);
-  --border-glass: rgba(255, 255, 255, 0.1);
-  --border-glass-active: rgba(56, 189, 248, 0.3);
+}
 
-  --text-main: #f8fafc;
+/* TEMA OSCURO (DEFAULTS & PREFERS-COLOR-SCHEME DARK) */
+[data-theme="dark"],
+:root:not([data-theme="light"]) {
+  --bg-gradient: linear-gradient(180deg, #070a12 0%, #0c1322 50%, #0f172a 100%);
+  --bg-card: rgba(15, 23, 42, 0.5);
+  --bg-card-hover: rgba(30, 41, 59, 0.7);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-glass-active: rgba(56, 189, 248, 0.4);
+  --inset-highlight: rgba(255, 255, 255, 0.2);
+
+  --text-main: #ffffff;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
+  --temp-gradient: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.4) 100%);
+
+  --pill-bg: rgba(255, 255, 255, 0.08);
+  --pill-border: rgba(255, 255, 255, 0.12);
+  --pill-text: #e2e8f0;
 
   --accent-blue: #38bdf8;
   --accent-cyan: #06b6d4;
   --accent-emerald: #10b981;
   --accent-amber: #f59e0b;
-  --accent-orange: #f97316;
-  --accent-red: #ef4444;
-  --accent-purple: #a855f7;
+}
+
+/* TEMA CLARO (APPLE WEATHER DAY SKY AESTHETIC) */
+[data-theme="light"] {
+  --bg-gradient: linear-gradient(180deg, #38bdf8 0%, #0284c7 40%, #0369a1 100%);
+  --bg-card: rgba(255, 255, 255, 0.65);
+  --bg-card-hover: rgba(255, 255, 255, 0.85);
+  --border-glass: rgba(255, 255, 255, 0.45);
+  --border-glass-active: rgba(2, 132, 199, 0.6);
+  --inset-highlight: rgba(255, 255, 255, 0.8);
+
+  --text-main: #0f172a;
+  --text-muted: #334155;
+  --text-dim: #475569;
+  --temp-gradient: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
+
+  --pill-bg: rgba(255, 255, 255, 0.4);
+  --pill-border: rgba(255, 255, 255, 0.6);
+  --pill-text: #0f172a;
+
+  --accent-blue: #0284c7;
+  --accent-cyan: #0891b2;
+  --accent-emerald: #059669;
+  --accent-amber: #d97706;
 }
 
 * {
@@ -34,10 +63,12 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-dark);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
   color: var(--text-main);
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease;
 }
 
 /* Fondos Dinámicos por Tema */
@@ -46,7 +77,9 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
-  transition: all 1.5s ease-in-out;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  transition: all 0.6s ease-in-out;
 }
 
 .theme-wrapper::before,

@@ -26,7 +26,7 @@ export default function DailyForecastCards({ dailyForecast, hourlyForecast, onSe
   const tempRange = (globalMax - globalMin) || 1;
 
   return (
-    <div className="glass-panel p-6 space-y-4 border-slate-800/80 bg-slate-900/60 backdrop-blur-2xl">
+    <div className="apple-card p-6 space-y-4">
       
       {/* CABECERA */}
       <div className="flex items-center justify-between border-b border-slate-800 pb-3">

@@ -11,6 +11,24 @@ export function WeatherProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [gpsFallbackOpen, setGpsFallbackOpen] = useState(false);
 
+  // Tema Claro / Oscuro con Detección del Sistema (system | light | dark)
+  const [theme, setTheme] = useState(() => localStorage.getItem('mp_theme') || 'system');
+  const [systemDark, setSystemDark] = useState(() => window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e) => setSystemDark(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  const resolvedTheme = theme === 'system' ? (systemDark ? 'dark' : 'light') : theme;
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', resolvedTheme);
+    localStorage.setItem('mp_theme', theme);
+  }, [theme, resolvedTheme]);
+
   // Obtener geolocalización GPS del usuario al iniciar
   useEffect(() => {
     if (navigator.geolocation) {
@@ -54,6 +72,7 @@ export function WeatherProvider({ children }) {
       climaData, setClimaData,
       loading, setLoading,
       gpsFallbackOpen, setGpsFallbackOpen,
+      theme, setTheme, resolvedTheme,
       handleSelectStation,
       API_BASE
     }}>

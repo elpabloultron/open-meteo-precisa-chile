@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 756 nodes · 1264 edges · 68 communities (54 shown, 14 thin omitted)
+- 756 nodes · 1266 edges · 68 communities (54 shown, 14 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5603d391`
+- Built from commit: `18afa5c3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -109,7 +109,7 @@ Cohesion: 0.07
 Nodes (47): evaluar_alertas_meteorologicas(), Motor de Alertas Agro-Climáticas e Higiénico-Ambientales para MeteoPrecisa…, FastAPI, GEECore, extraer_historico_ndvi(), extraer_metricas_agricolas(), fallback_rural(), Extrae serie de tiempo NDVI de los últimos 12 meses usando MODIS MOD13Q1. (+39 more)
 
 ### Community 1 - "react"
-Cohesion: 0.06
+Cohesion: 0.07
 Nodes (14): App(), AlertsBanner(), DetailDrawer(), getWeatherIcon(), HourlyCarousel(), REGIONES, SatelliteModal(), WeatherHeader() (+6 more)
 
 ### Community 2 - "sincronizador_background.py"
@@ -307,6 +307,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `main.py` be split into smaller, more focused modules?**
   _Cohesion score 0.06688311688311688 - nodes in this community are weakly interconnected._
 - **Should `react` be split into smaller, more focused modules?**
-  _Cohesion score 0.0641025641025641 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06561085972850679 - nodes in this community are weakly interconnected._
 - **Should `sincronizador_background.py` be split into smaller, more focused modules?**
   _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._

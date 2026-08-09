@@ -960,29 +960,6 @@
       "id": "frontend_src_components_bottomnav_bottomnav"
     },
     {
-      "label": "DailyForecastCards.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/components/DailyForecastCards.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "dailyforecastcards.jsx",
-      "community_name": "react",
-      "id": "frontend_src_components_dailyforecastcards"
-    },
-    {
-      "label": "DailyForecastCards()",
-      "file_type": "code",
-      "source_file": "frontend/src/components/DailyForecastCards.jsx",
-      "source_location": "L4",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "dailyforecastcards()",
-      "community_name": "react",
-      "id": "frontend_src_components_dailyforecastcards_dailyforecastcards"
-    },
-    {
       "label": "EstacionesCercanasModal.jsx",
       "file_type": "code",
       "source_file": "frontend/src/components/EstacionesCercanasModal.jsx",
@@ -1004,29 +981,6 @@
       "norm_label": "estacionescercanasmodal()",
       "community_name": "react",
       "id": "frontend_src_components_estacionescercanasmodal_estacionescercanasmodal"
-    },
-    {
-      "label": "ForecastChart.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/components/ForecastChart.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "forecastchart.jsx",
-      "community_name": "react",
-      "id": "frontend_src_components_forecastchart"
-    },
-    {
-      "label": "ForecastChart()",
-      "file_type": "code",
-      "source_file": "frontend/src/components/ForecastChart.jsx",
-      "source_location": "L29",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "forecastchart()",
-      "community_name": "react",
-      "id": "frontend_src_components_forecastchart_forecastchart"
     },
     {
       "label": "HistoricalChart.jsx",
@@ -1142,40 +1096,6 @@
       "norm_label": "satellitemodal()",
       "community_name": "react",
       "id": "frontend_src_components_satellitemodal_satellitemodal"
-    },
-    {
-      "label": "WeatherContext.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/context/WeatherContext.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "weathercontext.jsx",
-      "community_name": "react",
-      "id": "frontend_src_context_weathercontext"
-    },
-    {
-      "label": "WeatherContext",
-      "file_type": "code",
-      "source_file": "frontend/src/context/WeatherContext.jsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "weathercontext",
-      "community_name": "react",
-      "id": "frontend_src_context_weathercontext_weathercontext"
-    },
-    {
-      "label": "WeatherProvider()",
-      "file_type": "code",
-      "source_file": "frontend/src/context/WeatherContext.jsx",
-      "source_location": "L7",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "weatherprovider()",
-      "community_name": "react",
-      "id": "frontend_src_context_weathercontext_weatherprovider"
     },
     {
       "label": "main.jsx",
@@ -2273,29 +2193,6 @@
       "id": "docs_obsidian_obsidian_app_tabsize"
     },
     {
-      "label": "ComparisonTable.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/components/ComparisonTable.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "comparisontable.jsx",
-      "community_name": "react",
-      "id": "frontend_src_components_comparisontable"
-    },
-    {
-      "label": "ComparisonTable()",
-      "file_type": "code",
-      "source_file": "frontend/src/components/ComparisonTable.jsx",
-      "source_location": "L4",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "comparisontable()",
-      "community_name": "react",
-      "id": "frontend_src_components_comparisontable_comparisontable"
-    },
-    {
       "label": "HourlyForecastDrawer.jsx",
       "file_type": "code",
       "source_file": "frontend/src/components/HourlyForecastDrawer.jsx",
@@ -2317,29 +2214,6 @@
       "norm_label": "hourlyforecastdrawer()",
       "community_name": "react",
       "id": "frontend_src_components_hourlyforecastdrawer_hourlyforecastdrawer"
-    },
-    {
-      "label": "Navbar.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Navbar.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "navbar.jsx",
-      "community_name": "react",
-      "id": "frontend_src_components_navbar"
-    },
-    {
-      "label": "Navbar()",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Navbar.jsx",
-      "source_location": "L4",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "navbar()",
-      "community_name": "react",
-      "id": "frontend_src_components_navbar_navbar"
     },
     {
       "label": "remotion-template/package.json",
@@ -8372,29 +8246,6 @@
       "id": "frontend_src_components_geemapmodal_geemapmodal"
     },
     {
-      "label": "MapSection.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/components/MapSection.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "mapsection.jsx",
-      "community_name": "react",
-      "id": "frontend_src_components_mapsection"
-    },
-    {
-      "label": "MapSection()",
-      "file_type": "code",
-      "source_file": "frontend/src/components/MapSection.jsx",
-      "source_location": "L4",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "mapsection()",
-      "community_name": "react",
-      "id": "frontend_src_components_mapsection_mapsection"
-    },
-    {
       "label": "DetailDrawer.jsx",
       "file_type": "code",
       "source_file": "frontend/src/components/DetailDrawer.jsx",
@@ -8894,8 +8745,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "agropanel.jsx",
-      "id": "frontend_src_components_agropanel",
-      "community_name": "react"
+      "community_name": "react",
+      "id": "frontend_src_components_agropanel"
     },
     {
       "label": "AgroPanel()",
@@ -8906,8 +8757,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "agropanel()",
-      "id": "frontend_src_components_agropanel_agropanel",
-      "community_name": "react"
+      "community_name": "react",
+      "id": "frontend_src_components_agropanel_agropanel"
     },
     {
       "label": "UrbanPanel.jsx",
@@ -8917,8 +8768,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "urbanpanel.jsx",
-      "id": "frontend_src_components_urbanpanel",
-      "community_name": "react"
+      "community_name": "react",
+      "id": "frontend_src_components_urbanpanel"
     },
     {
       "label": "UrbanPanel()",
@@ -8929,8 +8780,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "urbanpanel()",
-      "id": "frontend_src_components_urbanpanel_urbanpanel",
-      "community_name": "react"
+      "community_name": "react",
+      "id": "frontend_src_components_urbanpanel_urbanpanel"
     },
     {
       "label": "WeatherHeader.jsx",
@@ -8940,8 +8791,8 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "weatherheader.jsx",
-      "id": "frontend_src_components_weatherheader",
-      "community_name": "react"
+      "community_name": "react",
+      "id": "frontend_src_components_weatherheader"
     },
     {
       "label": "WeatherHeader()",
@@ -8952,7 +8803,156 @@
       "_origin": "ast",
       "community": 1,
       "norm_label": "weatherheader()",
-      "id": "frontend_src_components_weatherheader_weatherheader",
+      "community_name": "react",
+      "id": "frontend_src_components_weatherheader_weatherheader"
+    },
+    {
+      "label": "ComparisonTable.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/ComparisonTable.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "comparisontable.jsx",
+      "id": "frontend_src_components_comparisontable",
+      "community_name": "react"
+    },
+    {
+      "label": "ComparisonTable()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/ComparisonTable.jsx",
+      "source_location": "L4",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "comparisontable()",
+      "id": "frontend_src_components_comparisontable_comparisontable",
+      "community_name": "react"
+    },
+    {
+      "label": "DailyForecastCards.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/DailyForecastCards.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "dailyforecastcards.jsx",
+      "id": "frontend_src_components_dailyforecastcards",
+      "community_name": "react"
+    },
+    {
+      "label": "DailyForecastCards()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/DailyForecastCards.jsx",
+      "source_location": "L4",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "dailyforecastcards()",
+      "id": "frontend_src_components_dailyforecastcards_dailyforecastcards",
+      "community_name": "react"
+    },
+    {
+      "label": "ForecastChart.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/ForecastChart.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "forecastchart.jsx",
+      "id": "frontend_src_components_forecastchart",
+      "community_name": "react"
+    },
+    {
+      "label": "ForecastChart()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/ForecastChart.jsx",
+      "source_location": "L29",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "forecastchart()",
+      "id": "frontend_src_components_forecastchart_forecastchart",
+      "community_name": "react"
+    },
+    {
+      "label": "MapSection.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/MapSection.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "mapsection.jsx",
+      "id": "frontend_src_components_mapsection",
+      "community_name": "react"
+    },
+    {
+      "label": "MapSection()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/MapSection.jsx",
+      "source_location": "L4",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "mapsection()",
+      "id": "frontend_src_components_mapsection_mapsection",
+      "community_name": "react"
+    },
+    {
+      "label": "Navbar.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navbar.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "navbar.jsx",
+      "id": "frontend_src_components_navbar",
+      "community_name": "react"
+    },
+    {
+      "label": "Navbar()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navbar.jsx",
+      "source_location": "L5",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "navbar()",
+      "id": "frontend_src_components_navbar_navbar",
+      "community_name": "react"
+    },
+    {
+      "label": "WeatherContext.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/context/WeatherContext.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "weathercontext.jsx",
+      "id": "frontend_src_context_weathercontext",
+      "community_name": "react"
+    },
+    {
+      "label": "WeatherContext",
+      "file_type": "code",
+      "source_file": "frontend/src/context/WeatherContext.jsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "weathercontext",
+      "id": "frontend_src_context_weathercontext_weathercontext",
+      "community_name": "react"
+    },
+    {
+      "label": "WeatherProvider()",
+      "file_type": "code",
+      "source_file": "frontend/src/context/WeatherContext.jsx",
+      "source_location": "L7",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "weatherprovider()",
+      "id": "frontend_src_context_weathercontext_weatherprovider",
       "community_name": "react"
     }
   ],
@@ -10407,29 +10407,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_dailyforecastcards"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/DailyForecastCards.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_dailyforecastcards",
-      "target": "frontend_src_components_dailyforecastcards_dailyforecastcards"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
@@ -10447,29 +10424,6 @@
       "confidence_score": 1.0,
       "source": "frontend_src_components_estacionescercanasmodal",
       "target": "frontend_src_components_estacionescercanasmodal_estacionescercanasmodal"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_forecastchart"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/ForecastChart.jsx",
-      "source_location": "L29",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_forecastchart",
-      "target": "frontend_src_components_forecastchart_forecastchart"
     },
     {
       "relation": "imports_from",
@@ -10637,76 +10591,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/context/WeatherContext.jsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_context_weathercontext",
-      "target": "frontend_src_context_weathercontext_weathercontext"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/context/WeatherContext.jsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_context_weathercontext",
-      "target": "frontend_src_context_weathercontext_weatherprovider"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/main.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_main",
-      "target": "frontend_src_context_weathercontext"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext_weathercontext"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/main.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_main",
-      "target": "frontend_src_context_weathercontext_weatherprovider"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "frontend/src/main.jsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -10726,6 +10610,30 @@
       "confidence_score": 1.0,
       "source": "frontend_src_main",
       "target": "frontend_src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/main.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_main",
+      "target": "frontend_src_context_weathercontext"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/main.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_main",
+      "target": "frontend_src_context_weathercontext_weatherprovider"
     },
     {
       "relation": "imports_from",
@@ -12705,29 +12613,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_comparisontable"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/ComparisonTable.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_comparisontable",
-      "target": "frontend_src_components_comparisontable_comparisontable"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
@@ -12745,29 +12630,6 @@
       "confidence_score": 1.0,
       "source": "frontend_src_components_hourlyforecastdrawer",
       "target": "frontend_src_components_hourlyforecastdrawer_hourlyforecastdrawer"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_navbar"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/Navbar.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_navbar",
-      "target": "frontend_src_components_navbar_navbar"
     },
     {
       "relation": "contains",
@@ -22820,29 +22682,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_mapsection"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/MapSection.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_mapsection",
-      "target": "frontend_src_components_mapsection_mapsection"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
@@ -23029,6 +22868,66 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_comparisontable"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_dailyforecastcards"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_forecastchart"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_mapsection"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_navbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
@@ -23047,6 +22946,30 @@
       "confidence_score": 1.0,
       "source": "frontend_src_app",
       "target": "frontend_src_components_weatherheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_context_weathercontext"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_context_weathercontext_weathercontext"
     },
     {
       "relation": "contains",
@@ -23543,8 +23466,109 @@
       "confidence_score": 1.0,
       "source": "frontend_src_components_weatherheader",
       "target": "frontend_src_components_weatherheader_weatherheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ComparisonTable.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_comparisontable",
+      "target": "frontend_src_components_comparisontable_comparisontable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/DailyForecastCards.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_dailyforecastcards",
+      "target": "frontend_src_components_dailyforecastcards_dailyforecastcards"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ForecastChart.jsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_forecastchart",
+      "target": "frontend_src_components_forecastchart_forecastchart"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/MapSection.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_mapsection",
+      "target": "frontend_src_components_mapsection_mapsection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/Navbar.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_navbar",
+      "target": "frontend_src_components_navbar_navbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/Navbar.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_navbar",
+      "target": "frontend_src_context_weathercontext"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/Navbar.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_navbar",
+      "target": "frontend_src_context_weathercontext_weathercontext"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/context/WeatherContext.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_context_weathercontext",
+      "target": "frontend_src_context_weathercontext_weathercontext"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/context/WeatherContext.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_context_weathercontext",
+      "target": "frontend_src_context_weathercontext_weatherprovider"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5603d391fee6be1add8abfec779f75f78d8ab3ad"
+  "built_at_commit": "18afa5c3b54125a180cc813768a07140ffe241d5"
 }

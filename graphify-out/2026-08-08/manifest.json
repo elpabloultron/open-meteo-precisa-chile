@@ -65,14 +65,14 @@
     "semantic_hash": "3105358f8d741ed357bb14da11279bcb"
   },
   "frontend/src/components/ComparisonTable.jsx": {
-    "mtime": 1786222842.5656137,
-    "ast_hash": "85446c427de14077b7ba404c6bdd1216",
-    "semantic_hash": "85446c427de14077b7ba404c6bdd1216"
+    "mtime": 1786235241.5520136,
+    "ast_hash": "a3422b79df3460ec6c1c2899c40b1b55",
+    "semantic_hash": "a3422b79df3460ec6c1c2899c40b1b55"
   },
   "frontend/src/components/DailyForecastCards.jsx": {
-    "mtime": 1785890435.11721,
-    "ast_hash": "ee3f931a3902ba7a6eb2d8b1b9af53b3",
-    "semantic_hash": "ee3f931a3902ba7a6eb2d8b1b9af53b3"
+    "mtime": 1786235231.4912448,
+    "ast_hash": "d76bbf6d1759763ff4a47a53e097169a",
+    "semantic_hash": "d76bbf6d1759763ff4a47a53e097169a"
   },
   "frontend/src/components/DetailDrawer.jsx": {
     "mtime": 1786233472.1760063,
@@ -85,9 +85,9 @@
     "semantic_hash": "0f5f4fd18a67d87766f4dd54b10f0349"
   },
   "frontend/src/components/ForecastChart.jsx": {
-    "mtime": 1785883800.0718,
-    "ast_hash": "b6d8589cf3bba8f7025ee0206f5823b7",
-    "semantic_hash": "b6d8589cf3bba8f7025ee0206f5823b7"
+    "mtime": 1786235255.1736026,
+    "ast_hash": "2f0dc448f934d06f0b548174a2948f14",
+    "semantic_hash": "2f0dc448f934d06f0b548174a2948f14"
   },
   "frontend/src/components/HistoricalChart.jsx": {
     "mtime": 1785981626.5343716,
@@ -110,14 +110,14 @@
     "semantic_hash": "e8580fbfef02e6c70a3fb6cae632cd0d"
   },
   "frontend/src/components/MapSection.jsx": {
-    "mtime": 1786233229.2156403,
-    "ast_hash": "55298ef7ce18766c1a2099d6d2072538",
-    "semantic_hash": "55298ef7ce18766c1a2099d6d2072538"
+    "mtime": 1786235224.7722032,
+    "ast_hash": "c21f40453708fb3e4b66d29ecacbd78c",
+    "semantic_hash": "c21f40453708fb3e4b66d29ecacbd78c"
   },
   "frontend/src/components/Navbar.jsx": {
-    "mtime": 1786223372.5666027,
-    "ast_hash": "d4613fb19726a0d3dba463907546f36c",
-    "semantic_hash": "d4613fb19726a0d3dba463907546f36c"
+    "mtime": 1786235218.4195635,
+    "ast_hash": "b858844747d1d7e8020f75a1432a0b0d",
+    "semantic_hash": "b858844747d1d7e8020f75a1432a0b0d"
   },
   "frontend/src/components/SatelliteModal.jsx": {
     "mtime": 1785890306.2135518,
@@ -135,9 +135,9 @@
     "semantic_hash": "4a17c33a66a13273b89d1e2730ddedf8"
   },
   "frontend/src/context/WeatherContext.jsx": {
-    "mtime": 1785978234.889266,
-    "ast_hash": "a2f59344fcf5b476a8f5d9aa8f7a5332",
-    "semantic_hash": "a2f59344fcf5b476a8f5d9aa8f7a5332"
+    "mtime": 1786235205.3012378,
+    "ast_hash": "557c3456620cac4214e898b0635b61ae",
+    "semantic_hash": "557c3456620cac4214e898b0635b61ae"
   },
   "frontend/src/main.jsx": {
     "mtime": 1785975294.2168386,

@@ -130,7 +130,7 @@ export default function ForecastChart({ dmcForecast, openMeteoForecast, onSelect
       
       {/* BOLETÍN NARRATIVO OFICIAL DMC */}
       {dmcForecast && dmcForecast.resumen_nacional && (
-        <div className="glass-panel p-5 space-y-3 border-sky-500/30">
+        <div className="apple-card p-5 space-y-3">
           <div className="flex items-center gap-2 text-sky-400 font-bold text-sm">
             <FileText className="w-5 h-5" />
             <span>Boletín Oficial Dirección Meteorológica de Chile (DMC)</span>
@@ -142,7 +142,7 @@ export default function ForecastChart({ dmcForecast, openMeteoForecast, onSelect
       )}
 
       {/* GRÁFICO INTERACTIVO HORA A HORA (48 HORAS) */}
-      <div className="glass-panel p-6 space-y-4">
+      <div className="apple-card p-6 space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Calendar className="w-5 h-5 text-sky-400" />

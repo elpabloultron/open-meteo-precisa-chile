@@ -895,7 +895,7 @@
   },
   "cohesion": {
     "0": 0.06688311688311688,
-    "1": 0.0641025641025641,
+    "1": 0.06561085972850679,
     "2": 0.08333333333333333,
     "3": 0.15725806451612903,
     "4": 0.15268817204301074,
@@ -1101,7 +1101,7 @@
     {
       "type": "low_cohesion",
       "question": "Should `react` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.0641025641025641 - nodes in this community are weakly interconnected."
+      "why": "Cohesion score 0.06561085972850679 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",

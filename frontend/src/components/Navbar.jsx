@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { CloudSun, Search, Building2, Sprout } from 'lucide-react';
+import React, { useState, useEffect, useContext } from 'react';
+import { CloudSun, Search, Building2, Sprout, Sun, Moon, Laptop } from 'lucide-react';
+import { WeatherContext } from '../context/WeatherContext';
 
 export default function Navbar({ modo, setModo, onSelectStation, apiBase }) {
+  const { theme, setTheme, resolvedTheme } = useContext(WeatherContext);
   const [query, setQuery] = useState('');
   const [resultados, setResultados] = useState([]);
   const [buscando, setBuscando] = useState(false);
@@ -30,9 +32,15 @@ export default function Navbar({ modo, setModo, onSelectStation, apiBase }) {
     return () => clearTimeout(timer);
   }, [query, apiBase]);
 
+  const toggleTheme = () => {
+    if (theme === 'system') setTheme('light');
+    else if (theme === 'light') setTheme('dark');
+    else setTheme('system');
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-slate-900/40 border-b border-white/10 backdrop-blur-2xl px-4 py-3 shadow-2xl pt-safe transition-colors duration-700">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
         
         {/* TITULAR Y MARCA */}
         <div className="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start">
@@ -54,11 +62,17 @@ export default function Navbar({ modo, setModo, onSelectStation, apiBase }) {
             </div>
           </div>
 
-          {/* INDICADOR EN VIVO (MÓVIL) */}
-          <div className="md:hidden flex items-center gap-1.5 px-2.5 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-full text-[10px] font-bold">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span>En vivo</span>
-          </div>
+          {/* SELECTOR TEMA CLARO / OSCURO (MÓVIL Y DESKTOP) */}
+          <button
+            onClick={toggleTheme}
+            title={`Tema actual: ${theme}. Haz clic para cambiar`}
+            className="apple-pill flex items-center gap-1.5 text-xs font-bold transition cursor-pointer"
+          >
+            {theme === 'system' && <Laptop className="w-3.5 h-3.5 text-sky-400" />}
+            {theme === 'light' && <Sun className="w-3.5 h-3.5 text-amber-400 animate-spin" />}
+            {theme === 'dark' && <Moon className="w-3.5 h-3.5 text-purple-400" />}
+            <span className="capitalize">{theme === 'system' ? 'Auto' : theme}</span>
+          </button>
         </div>
 
         {/* BUSCADOR AUTOCOMPLETADO */}
