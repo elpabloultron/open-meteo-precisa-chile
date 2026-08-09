@@ -139,7 +139,7 @@ body {
   100% { transform: translate(-3%, -5%) scale(0.95); }
 }
 
-/* TARJETAS FLOTANTES DE VIDRIO ESTILO APPLE iOS 18 */
+/* TARJETAS FLOTANTES DE VIDRIO ESTILO APPLE iOS 18 CON INTERACCIÓN EMIL KOWALSKI */
 .apple-card,
 .apple-ios-card {
   background: var(--card-bg);
@@ -148,8 +148,9 @@ body {
   border: 1px solid var(--card-border);
   border-radius: 32px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), inset 0 1.5px 0 0 var(--card-inset);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease, background 0.3s ease;
   color: var(--text-main);
+  will-change: transform;
 }
 
 .apple-card:hover,
@@ -158,6 +159,15 @@ body {
   border-color: var(--card-border-active);
   box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.35), inset 0 1.5px 0 0 var(--card-inset);
   transform: translateY(-3px) scale(1.012);
+}
+
+/* EMIL KOWALSKI TACTILE HAPTIC ACTIVE PRESS FEEDBACK */
+.apple-card:active,
+.apple-ios-card:active,
+button:active {
+  transform: scale(0.972) translateY(1px) !important;
+  opacity: 0.94;
+  transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.1s ease !important;
 }
 
 .apple-temp-hero {
@@ -180,13 +190,18 @@ body {
   font-weight: 700;
   color: var(--pill-text);
   letter-spacing: 0.025em;
-  transition: all 0.25s ease;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease;
+  will-change: transform;
 }
 
 .apple-pill:hover {
   background: rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.5);
   transform: scale(1.03);
+}
+
+.apple-pill:active {
+  transform: scale(0.95) !important;
 }
 
 .live-pulse-dot {
@@ -213,6 +228,22 @@ body {
 @keyframes pulse-ring {
   0% { transform: scale(0.6); opacity: 1; }
   100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ANIMACIONES EMIL KOWALSKI PARA MODALES Y DRAWERS */
+@keyframes apple-modal-entry {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-apple-entry {
+  animation: apple-modal-entry 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .no-scrollbar::-webkit-scrollbar {

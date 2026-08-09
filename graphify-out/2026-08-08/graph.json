@@ -1348,7 +1348,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "obtener_satellite_latest_loop()",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "goes_processor_obtener_satellite_latest_loop"
     },
     {
@@ -1370,7 +1370,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "devuelve la metadata y url del bucle animado mas reciente de goes-19.",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "goes_processor_rationale_134"
     },
     {
@@ -1381,7 +1381,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "fastapi",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "fastapi"
     },
     {
@@ -1392,7 +1392,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "middleware",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "middleware"
     },
     {
@@ -1403,7 +1403,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "request",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "request"
     },
     {
@@ -8093,7 +8093,7 @@
       "_origin": "ast",
       "community": 2,
       "norm_label": "sincronizar_puntos_gee()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "main.py",
       "id": "sincronizador_background_sincronizar_puntos_gee"
     },
     {
@@ -8391,7 +8391,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "lifespan()",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "main_lifespan"
     },
     {
@@ -8403,7 +8403,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "refresh_cache_before_api()",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "main_refresh_cache_before_api"
     },
     {
@@ -8666,7 +8666,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "inicializa dependencias; la sincronizacion productiva la realiza cloud run job.",
-      "community_name": "main.py",
+      "community_name": "sincronizador_background.py",
       "id": "main_rationale_64"
     },
     {
@@ -8915,9 +8915,10 @@
       "source_file": "frontend/src/App.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_app",
       "community": 1,
-      "norm_label": "app.jsx"
+      "norm_label": "app.jsx",
+      "community_name": "react",
+      "id": "frontend_src_app"
     },
     {
       "label": "App()",
@@ -8926,9 +8927,10 @@
       "source_location": "L23",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_app_app",
       "community": 1,
-      "norm_label": "app()"
+      "norm_label": "app()",
+      "community_name": "react",
+      "id": "frontend_src_app_app"
     },
     {
       "label": "WeatherHeader.jsx",
@@ -8936,9 +8938,10 @@
       "source_file": "frontend/src/components/WeatherHeader.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_components_weatherheader",
       "community": 1,
-      "norm_label": "weatherheader.jsx"
+      "norm_label": "weatherheader.jsx",
+      "community_name": "react",
+      "id": "frontend_src_components_weatherheader"
     },
     {
       "label": "WeatherHeader()",
@@ -8947,9 +8950,10 @@
       "source_location": "L5",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_components_weatherheader_weatherheader",
       "community": 1,
-      "norm_label": "weatherheader()"
+      "norm_label": "weatherheader()",
+      "community_name": "react",
+      "id": "frontend_src_components_weatherheader_weatherheader"
     },
     {
       "label": "WeatherSkyCanvas.jsx",
@@ -8957,9 +8961,10 @@
       "source_file": "frontend/src/components/WeatherSkyCanvas.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_components_weatherskycanvas",
       "community": 1,
-      "norm_label": "weatherskycanvas.jsx"
+      "norm_label": "weatherskycanvas.jsx",
+      "community_name": "react",
+      "id": "frontend_src_components_weatherskycanvas"
     },
     {
       "label": "WeatherSkyCanvas()",
@@ -8968,9 +8973,10 @@
       "source_location": "L3",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_components_weatherskycanvas_weatherskycanvas",
       "community": 1,
-      "norm_label": "weatherskycanvas()"
+      "norm_label": "weatherskycanvas()",
+      "community_name": "react",
+      "id": "frontend_src_components_weatherskycanvas_weatherskycanvas"
     }
   ],
   "links": [
@@ -9435,9 +9441,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -9663,9 +9669,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_weatherheader",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -9675,9 +9681,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_weatherskycanvas",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -10416,9 +10422,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_bottomnav",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_bottomnav"
     },
     {
       "relation": "contains",
@@ -10439,9 +10445,9 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_estacionescercanasmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_estacionescercanasmodal"
     },
     {
       "relation": "contains",
@@ -10485,9 +10491,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlycarousel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_hourlycarousel"
     },
     {
       "relation": "contains",
@@ -10531,9 +10537,9 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_locationfallbackmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_locationfallbackmodal"
     },
     {
       "relation": "contains",
@@ -10565,9 +10571,9 @@
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_satellitemodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_satellitemodal"
     },
     {
       "relation": "contains",
@@ -10672,9 +10678,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_weatherheader",
-      "target": "frontend_src_utils_timeutils",
-      "confidence_score": 1.0
+      "target": "frontend_src_utils_timeutils"
     },
     {
       "relation": "contains",
@@ -10695,9 +10701,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_weatherheader",
-      "target": "frontend_src_utils_timeutils_formatlocaltime",
-      "confidence_score": 1.0
+      "target": "frontend_src_utils_timeutils_formatlocaltime"
     },
     {
       "relation": "calls",
@@ -12645,9 +12651,9 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlyforecastdrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_hourlyforecastdrawer"
     },
     {
       "relation": "contains",
@@ -22691,9 +22697,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_geemapmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_geemapmodal"
     },
     {
       "relation": "contains",
@@ -22714,9 +22720,9 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_detaildrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_detaildrawer"
     },
     {
       "relation": "contains",
@@ -22841,9 +22847,9 @@
       "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_alertsbanner",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_alertsbanner"
     },
     {
       "relation": "contains",
@@ -23305,9 +23311,9 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_aqidrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_aqidrawer"
     },
     {
       "relation": "contains",
@@ -23328,9 +23334,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_agropanel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_agropanel"
     },
     {
       "relation": "contains",
@@ -23351,9 +23357,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_urbanpanel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_urbanpanel"
     },
     {
       "relation": "contains",
@@ -23374,9 +23380,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_comparisontable",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_comparisontable"
     },
     {
       "relation": "contains",
@@ -23397,9 +23403,9 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_dailyforecastcards",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_dailyforecastcards"
     },
     {
       "relation": "contains",
@@ -23420,9 +23426,9 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_forecastchart",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_forecastchart"
     },
     {
       "relation": "contains",
@@ -23443,9 +23449,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_mapsection",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_mapsection"
     },
     {
       "relation": "contains",
@@ -23466,9 +23472,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_navbar",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_navbar"
     },
     {
       "relation": "contains",
@@ -23513,9 +23519,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext",
-      "confidence_score": 1.0
+      "target": "frontend_src_context_weathercontext"
     },
     {
       "relation": "contains",
@@ -23547,9 +23553,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext_weathercontext",
-      "confidence_score": 1.0
+      "target": "frontend_src_context_weathercontext_weathercontext"
     },
     {
       "relation": "contains",
@@ -23558,9 +23564,9 @@
       "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_app_app",
-      "confidence_score": 1.0
+      "target": "frontend_src_app_app"
     },
     {
       "relation": "imports_from",
@@ -23570,9 +23576,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherheader",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherheader"
     },
     {
       "relation": "imports",
@@ -23582,9 +23588,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherheader_weatherheader",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherheader_weatherheader"
     },
     {
       "relation": "imports_from",
@@ -23594,9 +23600,9 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherskycanvas",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherskycanvas"
     },
     {
       "relation": "imports",
@@ -23606,9 +23612,9 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherskycanvas_weatherskycanvas",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherskycanvas_weatherskycanvas"
     },
     {
       "relation": "contains",
@@ -23617,9 +23623,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_weatherheader",
-      "target": "frontend_src_components_weatherheader_weatherheader",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherheader_weatherheader"
     },
     {
       "relation": "contains",
@@ -23628,11 +23634,11 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_weatherskycanvas",
-      "target": "frontend_src_components_weatherskycanvas_weatherskycanvas",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherskycanvas_weatherskycanvas"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "93c7c3512a2714ce858cf2d0a447aa4f1478c515"
+  "built_at_commit": "2243333f1cda3e0dbaf31d0186366fdabb45b22b"
 }

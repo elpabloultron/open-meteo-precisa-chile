@@ -4,19 +4,19 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 756 nodes · 1266 edges · 68 communities (54 shown, 14 thin omitted)
+- 758 nodes · 1270 edges · 68 communities (54 shown, 14 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `18afa5c3`
+- Built from commit: `93c7c351`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- main.py
-- react
 - sincronizador_background.py
+- react
+- main.py
 - prepare_chat_overlay_bundle.py
 - generate_pet_images.py
 - prepare_pet_run.py
@@ -76,7 +76,7 @@
 - deploy.sh script
 
 ## God Nodes (most connected - your core abstractions)
-1. `react` - 27 edges
+1. `react` - 28 edges
 2. `ejecutar_sincronizacion_completa()` - 18 edges
 3. `main()` - 15 edges
 4. `obtener_clima_hiperlocal()` - 13 edges
@@ -88,33 +88,33 @@
 10. `build_spec()` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `sincronizar_puntos_gee()` --indirect_call--> `extraer_metricas_urbanas()`  [INFERRED]
-  sincronizador_background.py → gee/urban.py
+- `obtener_satellite_latest_loop_api()` --calls--> `obtener_satellite_latest_loop()`  [INFERRED]
+  main.py → goes_processor.py
 - `obtener_openmeteo_directo()` --calls--> `obtener_pronostico_openmeteo()`  [INFERRED]
   main.py → openmeteo_client.py
-- `refresh_cache_before_api()` --indirect_call--> `refrescar_cache_si_corresponde()`  [INFERRED]
-  main.py → sincronizador_background.py
-- `sincronizar_puntos_gee()` --indirect_call--> `extraer_metricas_agricolas()`  [INFERRED]
-  sincronizador_background.py → gee/rural.py
 - `cargar_cache_desde_disco()` --calls--> `load_cache()`  [EXTRACTED]
   sincronizador_background.py → cache_store.py
+- `guardar_cache_en_disco()` --calls--> `save_cache()`  [EXTRACTED]
+  sincronizador_background.py → cache_store.py
+- `obtener_capas_mapa()` --calls--> `obtener_capas_gee_y_windy()`  [INFERRED]
+  main.py → gee/tiles.py
 
 ## Import Cycles
 - None detected.
 
 ## Communities (68 total, 14 thin omitted)
 
-### Community 0 - "main.py"
+### Community 0 - "sincronizador_background.py"
 Cohesion: 0.07
-Nodes (47): evaluar_alertas_meteorologicas(), Motor de Alertas Agro-Climáticas e Higiénico-Ambientales para MeteoPrecisa…, FastAPI, GEECore, extraer_historico_ndvi(), extraer_metricas_agricolas(), fallback_rural(), Extrae serie de tiempo NDVI de los últimos 12 meses usando MODIS MOD13Q1. (+39 more)
+Nodes (47): AsyncClient, FastAPI, fixture, _descargar_y_procesar_frame(), obtener_satellite_latest_loop(), procesar_video_goes19(), Devuelve la metadata y URL del bucle animado más reciente de GOES-19., Descarga los últimos fotogramas de la NOAA para Chile (GOES-19 SSA), los… (+39 more)
 
 ### Community 1 - "react"
-Cohesion: 0.07
-Nodes (14): App(), AlertsBanner(), DetailDrawer(), getWeatherIcon(), HourlyCarousel(), REGIONES, SatelliteModal(), WeatherHeader() (+6 more)
+Cohesion: 0.06
+Nodes (14): App(), DetailDrawer(), getWeatherIcon(), HourlyCarousel(), REGIONES, SatelliteModal(), WeatherHeader(), WeatherSkyCanvas() (+6 more)
 
-### Community 2 - "sincronizador_background.py"
+### Community 2 - "main.py"
 Cohesion: 0.08
-Nodes (40): AsyncClient, fixture, _descargar_y_procesar_frame(), procesar_video_goes19(), Descarga los últimos fotogramas de la NOAA para Chile (GOES-19 SSA), los…, forzar_sincronizacion_manual(), post, cargar_cache_desde_disco() (+32 more)
+Nodes (40): evaluar_alertas_meteorologicas(), Motor de Alertas Agro-Climáticas e Higiénico-Ambientales para MeteoPrecisa…, GEECore, extraer_historico_ndvi(), extraer_metricas_agricolas(), fallback_rural(), Extrae serie de tiempo NDVI de los últimos 12 meses usando MODIS MOD13Q1., Extrae métricas satelitales (Sentinel-2, ERA5, MODIS) orientadas a la… (+32 more)
 
 ### Community 3 - "prepare_chat_overlay_bundle.py"
 Cohesion: 0.16
@@ -304,9 +304,9 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **What connects `$schema`, `oxc`, `react/rules-of-hooks` to the rest of the system?**
   _97 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `main.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.06688311688311688 - nodes in this community are weakly interconnected._
-- **Should `react` be split into smaller, more focused modules?**
-  _Cohesion score 0.06561085972850679 - nodes in this community are weakly interconnected._
 - **Should `sincronizador_background.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06818181818181818 - nodes in this community are weakly interconnected._
+- **Should `react` be split into smaller, more focused modules?**
+  _Cohesion score 0.06359189378057302 - nodes in this community are weakly interconnected._
+- **Should `main.py` be split into smaller, more focused modules?**
+  _Cohesion score 0.08163265306122448 - nodes in this community are weakly interconnected._
