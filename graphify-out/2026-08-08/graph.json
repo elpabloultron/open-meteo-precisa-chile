@@ -9,7 +9,7 @@
       "source_file": "actualizar_app.ps1",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 67,
+      "community": 68,
       "norm_label": "actualizar_app.ps1",
       "community_name": "actualizar_app.ps1",
       "id": "actualizar_app"
@@ -304,7 +304,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 29,
+      "community": 28,
       "norm_label": "frontend/package.json",
       "community_name": "frontend/package.json",
       "id": "frontend_package"
@@ -315,7 +315,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 29,
+      "community": 28,
       "norm_label": "name",
       "community_name": "frontend/package.json",
       "id": "frontend_package_name"
@@ -326,7 +326,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 29,
+      "community": 28,
       "norm_label": "private",
       "community_name": "frontend/package.json",
       "id": "frontend_package_private"
@@ -337,7 +337,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 29,
+      "community": 28,
       "norm_label": "version",
       "community_name": "frontend/package.json",
       "id": "frontend_package_version"
@@ -348,7 +348,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 29,
+      "community": 28,
       "norm_label": "type",
       "community_name": "frontend/package.json",
       "id": "frontend_package_type"
@@ -359,7 +359,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 29,
+      "community": 28,
       "norm_label": "scripts",
       "community_name": "frontend/package.json",
       "id": "frontend_package_scripts"
@@ -370,7 +370,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 29,
+      "community": 28,
       "norm_label": "dev",
       "community_name": "frontend/package.json",
       "id": "frontend_package_scripts_dev"
@@ -381,7 +381,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 29,
+      "community": 28,
       "norm_label": "build",
       "community_name": "frontend/package.json",
       "id": "frontend_package_scripts_build"
@@ -392,7 +392,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 29,
+      "community": 28,
       "norm_label": "lint",
       "community_name": "frontend/package.json",
       "id": "frontend_package_scripts_lint"
@@ -403,7 +403,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 29,
+      "community": 28,
       "norm_label": "preview",
       "community_name": "frontend/package.json",
       "id": "frontend_package_scripts_preview"
@@ -414,7 +414,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 11,
+      "community": 47,
       "norm_label": "dependencies",
       "community_name": "dependencies",
       "id": "frontend_package_dependencies"
@@ -425,7 +425,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 11,
+      "community": 47,
       "norm_label": "chart.js",
       "community_name": "dependencies",
       "id": "frontend_package_dependencies_chart_js"
@@ -436,7 +436,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 11,
+      "community": 47,
       "norm_label": "chart.js",
       "community_name": "dependencies",
       "id": "chart_js"
@@ -447,7 +447,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 11,
+      "community": 47,
       "norm_label": "lucide-react",
       "community_name": "dependencies",
       "id": "frontend_package_dependencies_lucide_react"
@@ -458,7 +458,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 11,
+      "community": 47,
       "norm_label": "lucide-react",
       "community_name": "dependencies",
       "id": "lucide_react"
@@ -469,7 +469,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 11,
+      "community": 29,
       "norm_label": "react",
       "community_name": "dependencies",
       "id": "frontend_package_dependencies_react"
@@ -480,7 +480,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 11,
+      "community": 29,
       "norm_label": "react",
       "community_name": "dependencies",
       "id": "react"
@@ -491,7 +491,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 11,
+      "community": 47,
       "norm_label": "react-chartjs-2",
       "community_name": "dependencies",
       "id": "frontend_package_dependencies_react_chartjs_2"
@@ -502,7 +502,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 11,
+      "community": 47,
       "norm_label": "react-chartjs-2",
       "community_name": "dependencies",
       "id": "react_chartjs_2"
@@ -513,7 +513,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 11,
+      "community": 29,
       "norm_label": "react-dom",
       "community_name": "dependencies",
       "id": "frontend_package_dependencies_react_dom"
@@ -524,7 +524,7 @@
       "source_file": "frontend/package.json",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 11,
+      "community": 29,
       "norm_label": "react-dom",
       "community_name": "dependencies",
       "id": "react_dom"
@@ -788,7 +788,7 @@
       "source_file": "frontend/public/manifest.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "manifest.json",
       "community_name": "manifest.json",
       "id": "frontend_public_manifest"
@@ -799,7 +799,7 @@
       "source_file": "frontend/public/manifest.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "short_name",
       "community_name": "manifest.json",
       "id": "frontend_public_manifest_short_name"
@@ -810,7 +810,7 @@
       "source_file": "frontend/public/manifest.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "name",
       "community_name": "manifest.json",
       "id": "frontend_public_manifest_name"
@@ -821,7 +821,7 @@
       "source_file": "frontend/public/manifest.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "icons",
       "community_name": "manifest.json",
       "id": "frontend_public_manifest_icons"
@@ -832,7 +832,7 @@
       "source_file": "frontend/public/manifest.json",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "start_url",
       "community_name": "manifest.json",
       "id": "frontend_public_manifest_start_url"
@@ -843,7 +843,7 @@
       "source_file": "frontend/public/manifest.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "background_color",
       "community_name": "manifest.json",
       "id": "frontend_public_manifest_background_color"
@@ -854,7 +854,7 @@
       "source_file": "frontend/public/manifest.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "theme_color",
       "community_name": "manifest.json",
       "id": "frontend_public_manifest_theme_color"
@@ -865,7 +865,7 @@
       "source_file": "frontend/public/manifest.json",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "display",
       "community_name": "manifest.json",
       "id": "frontend_public_manifest_display"
@@ -876,7 +876,7 @@
       "source_file": "frontend/public/manifest.json",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "orientation",
       "community_name": "manifest.json",
       "id": "frontend_public_manifest_orientation"
@@ -887,7 +887,7 @@
       "source_file": "frontend/public/manifest.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "categories",
       "community_name": "manifest.json",
       "id": "frontend_public_manifest_categories"
@@ -898,7 +898,7 @@
       "source_file": "frontend/public/manifest.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "weather",
       "community_name": "manifest.json",
       "id": "ref_weather"
@@ -909,7 +909,7 @@
       "source_file": "frontend/public/manifest.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 24,
+      "community": 23,
       "norm_label": "utilities",
       "community_name": "manifest.json",
       "id": "ref_utilities"
@@ -920,7 +920,7 @@
       "source_file": "frontend/public/service-worker.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 64,
+      "community": 65,
       "norm_label": "service-worker.js",
       "community_name": "service-worker.js",
       "id": "frontend_public_service_worker"
@@ -931,7 +931,7 @@
       "source_file": "frontend/public/service-worker.js",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 64,
+      "community": 65,
       "norm_label": "assets_to_cache",
       "community_name": "service-worker.js",
       "id": "frontend_public_service_worker_assets_to_cache"
@@ -1102,7 +1102,7 @@
       "source_file": "frontend/vite.config.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 69,
+      "community": 70,
       "norm_label": "vite.config.js",
       "community_name": "vite.config.js",
       "id": "frontend_vite_config"
@@ -1115,7 +1115,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "__init__.py",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_init"
     },
     {
@@ -1126,7 +1126,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "core.py",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_core"
     },
     {
@@ -1139,7 +1139,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "geecore",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_core_geecore"
     },
     {
@@ -1151,7 +1151,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": ".initialize()",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_core_geecore_initialize"
     },
     {
@@ -1163,7 +1163,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": ".is_active()",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_core_geecore_is_active"
     },
     {
@@ -1174,7 +1174,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "tiles.py",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_tiles"
     },
     {
@@ -1186,7 +1186,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "_create_tile_url()",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_tiles_create_tile_url"
     },
     {
@@ -1198,7 +1198,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "obtener_capas_gee_y_windy()",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_tiles_obtener_capas_gee_y_windy"
     },
     {
@@ -1209,7 +1209,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "helper generico para obtener la url del map id en earth engine.",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_tiles_rationale_9"
     },
     {
@@ -1220,7 +1220,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "genera las urls de los tiles (capas visuales) para el frontend.",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_tiles_rationale_18"
     },
     {
@@ -1231,7 +1231,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "urban.py",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_urban"
     },
     {
@@ -1243,7 +1243,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "extraer_metricas_urbanas()",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_urban_extraer_metricas_urbanas"
     },
     {
@@ -1255,7 +1255,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "fallback_urbano()",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_urban_fallback_urbano"
     },
     {
@@ -1266,7 +1266,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "extrae metricas satelitales (sentinel-5p, landsat) orientadas a entornos...",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_urban_rationale_8"
     },
     {
@@ -1275,9 +1275,9 @@
       "source_file": "goes_processor.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 50,
+      "community": 51,
       "norm_label": "goes_processor.py",
-      "community_name": "sincronizador_background.py",
+      "community_name": "goes_processor.py",
       "id": "goes_processor"
     },
     {
@@ -1287,9 +1287,9 @@
       "source_location": "L32",
       "_callable": true,
       "_origin": "ast",
-      "community": 50,
+      "community": 51,
       "norm_label": "_descargar_y_procesar_frame()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "goes_processor.py",
       "id": "goes_processor_descargar_y_procesar_frame"
     },
     {
@@ -1299,9 +1299,9 @@
       "source_location": "L48",
       "_callable": true,
       "_origin": "ast",
-      "community": 50,
+      "community": 51,
       "norm_label": "procesar_video_goes19()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "goes_processor.py",
       "id": "goes_processor_procesar_video_goes19"
     },
     {
@@ -1311,9 +1311,9 @@
       "source_location": "L133",
       "_callable": true,
       "_origin": "ast",
-      "community": 50,
+      "community": 51,
       "norm_label": "obtener_satellite_latest_loop()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "goes_processor.py",
       "id": "goes_processor_obtener_satellite_latest_loop"
     },
     {
@@ -1322,9 +1322,9 @@
       "source_file": "goes_processor.py",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 50,
+      "community": 51,
       "norm_label": "descarga los ultimos fotogramas de la noaa para chile (goes-19 ssa), los...",
-      "community_name": "sincronizador_background.py",
+      "community_name": "goes_processor.py",
       "id": "goes_processor_rationale_49"
     },
     {
@@ -1333,9 +1333,9 @@
       "source_file": "goes_processor.py",
       "source_location": "L134",
       "_origin": "ast",
-      "community": 50,
+      "community": 51,
       "norm_label": "devuelve la metadata y url del bucle animado mas reciente de goes-19.",
-      "community_name": "sincronizador_background.py",
+      "community_name": "goes_processor.py",
       "id": "goes_processor_rationale_134"
     },
     {
@@ -1344,9 +1344,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "fastapi",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "fastapi"
     },
     {
@@ -1355,9 +1355,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "middleware",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "middleware"
     },
     {
@@ -1366,9 +1366,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "request",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "request"
     },
     {
@@ -1506,7 +1506,7 @@
       "source_file": "scripts/configurar_sync_horario.ps1",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 70,
+      "community": 71,
       "norm_label": "configurar_sync_horario.ps1",
       "community_name": "configurar_sync_horario.ps1",
       "id": "scripts_configurar_sync_horario_ps1_scripts_configurar_sync_horario"
@@ -1521,7 +1521,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 65,
+      "community": 66,
       "norm_label": "configurar_sync_horario.sh",
       "community_name": "configurar_sync_horario.sh script",
       "id": "scripts_configurar_sync_horario_sh_scripts_configurar_sync_horario"
@@ -1536,7 +1536,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 65,
+      "community": 66,
       "norm_label": "configurar_sync_horario.sh script",
       "community_name": "configurar_sync_horario.sh script",
       "id": "scripts_configurar_sync_horario_sh__entry"
@@ -1547,7 +1547,7 @@
       "source_file": "scripts/deploy.ps1",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 72,
       "norm_label": "deploy.ps1",
       "community_name": "deploy.ps1",
       "id": "scripts_deploy_ps1_scripts_deploy"
@@ -1562,7 +1562,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 66,
+      "community": 67,
       "norm_label": "deploy.sh",
       "community_name": "deploy.sh script",
       "id": "scripts_deploy_sh_scripts_deploy"
@@ -1577,7 +1577,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 66,
+      "community": 67,
       "norm_label": "deploy.sh script",
       "community_name": "deploy.sh script",
       "id": "scripts_deploy_sh__entry"
@@ -1599,9 +1599,9 @@
       "source_file": "sync_job.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "sync_job.py",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "sync_job"
     },
     {
@@ -1611,9 +1611,9 @@
       "source_location": "L12",
       "_callable": true,
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "run()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "sync_job_run"
     },
     {
@@ -1622,9 +1622,9 @@
       "source_file": "sync_job.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "punto de entrada para el cloud run job que actualiza la cache cada hora.",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "sync_job_rationale_1"
     },
     {
@@ -1635,7 +1635,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "test_main.py",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main"
     },
     {
@@ -1648,7 +1648,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "fakeopenmeteoresponse",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoresponse"
     },
     {
@@ -1660,7 +1660,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": ".json()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoresponse_json"
     },
     {
@@ -1673,7 +1673,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "fakeopenmeteoclient",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoclient"
     },
     {
@@ -1685,7 +1685,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": ".__aenter__()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoclient_aenter"
     },
     {
@@ -1697,7 +1697,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": ".__aexit__()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoclient_aexit"
     },
     {
@@ -1709,7 +1709,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": ".get()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoclient_get"
     },
     {
@@ -1720,7 +1720,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "fixture",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "fixture"
     },
     {
@@ -1732,7 +1732,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "client()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_client"
     },
     {
@@ -1744,7 +1744,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "test_home_endpoint_reports_real_status()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_home_endpoint_reports_real_status"
     },
     {
@@ -1756,7 +1756,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "test_capas_mapa_endpoint_accepts_default_coordinates()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_capas_mapa_endpoint_accepts_default_coordinates"
     },
     {
@@ -1768,7 +1768,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "test_capas_mapa_rejects_invalid_coordinates()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_capas_mapa_rejects_invalid_coordinates"
     },
     {
@@ -1780,7 +1780,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "test_buscar_estaciones_endpoint_uses_cached_catalog()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_buscar_estaciones_endpoint_uses_cached_catalog"
     },
     {
@@ -1792,7 +1792,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "test_alertas_senapred_endpoint_uses_cached_data()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_alertas_senapred_endpoint_uses_cached_data"
     },
     {
@@ -1804,7 +1804,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "test_weather_current_endpoint_uses_cached_and_mocked_data()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_weather_current_endpoint_uses_cached_and_mocked_data"
     },
     {
@@ -1816,7 +1816,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "test_weather_current_requires_longitude()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_weather_current_requires_longitude"
     },
     {
@@ -1828,7 +1828,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "test_historico_accepts_lng_alias_and_validates_missing_longitude()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_historico_accepts_lng_alias_and_validates_missing_longitude"
     },
     {
@@ -1840,7 +1840,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "test_manual_sync_requires_configuration_or_token()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_manual_sync_requires_configuration_or_token"
     },
     {
@@ -1852,7 +1852,7 @@
       "_origin": "ast",
       "community": 8,
       "norm_label": "test_clean_num_discards_sentinel_values()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "test_main.py",
       "id": "test_main_test_clean_num_discards_sentinel_values"
     },
     {
@@ -1861,7 +1861,7 @@
       "source_file": "locustfile.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 47,
+      "community": 48,
       "norm_label": "locustfile.py",
       "community_name": "MeteoPrecisaUser",
       "id": "locustfile"
@@ -1874,7 +1874,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 47,
+      "community": 48,
       "norm_label": "meteoprecisauser",
       "community_name": "MeteoPrecisaUser",
       "id": "locustfile_meteoprecisauser"
@@ -1885,7 +1885,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 47,
+      "community": 48,
       "norm_label": "httpuser",
       "community_name": "MeteoPrecisaUser",
       "id": "httpuser"
@@ -1896,7 +1896,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 47,
+      "community": 48,
       "norm_label": "task",
       "community_name": "MeteoPrecisaUser",
       "id": "task"
@@ -1908,7 +1908,7 @@
       "source_location": "L26",
       "_callable": true,
       "_origin": "ast",
-      "community": 47,
+      "community": 48,
       "norm_label": ".test_clima_cercano()",
       "community_name": "MeteoPrecisaUser",
       "id": "locustfile_meteoprecisauser_test_clima_cercano"
@@ -1920,7 +1920,7 @@
       "source_location": "L31",
       "_callable": true,
       "_origin": "ast",
-      "community": 47,
+      "community": 48,
       "norm_label": ".test_healthcheck()",
       "community_name": "MeteoPrecisaUser",
       "id": "locustfile_meteoprecisauser_test_healthcheck"
@@ -1931,7 +1931,7 @@
       "source_file": "locustfile.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 47,
+      "community": 48,
       "norm_label": "locust load test script para meteoprecisa api. para ejecutar: pip install...",
       "community_name": "MeteoPrecisaUser",
       "id": "locustfile_rationale_1"
@@ -2274,7 +2274,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/package.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 11,
+      "community": 29,
       "norm_label": "dependencies",
       "community_name": "dependencies",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies"
@@ -2285,7 +2285,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/package.json",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 11,
+      "community": 29,
       "norm_label": "react",
       "community_name": "dependencies",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react"
@@ -2296,7 +2296,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 11,
+      "community": 29,
       "norm_label": "react-dom",
       "community_name": "dependencies",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react_dom"
@@ -2307,7 +2307,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 11,
+      "community": 29,
       "norm_label": "remotion",
       "community_name": "dependencies",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_remotion"
@@ -2318,7 +2318,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 11,
+      "community": 29,
       "norm_label": "remotion",
       "community_name": "dependencies",
       "id": "remotion"
@@ -2384,7 +2384,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/remotion.config.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 68,
+      "community": 69,
       "norm_label": "remotion.config.ts",
       "community_name": "remotion.config.ts",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_remotion_config"
@@ -2686,7 +2686,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/tsconfig.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "tsconfig.json",
       "community_name": "compilerOptions",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig"
@@ -2697,7 +2697,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/tsconfig.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "compileroptions",
       "community_name": "compilerOptions",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions"
@@ -2708,7 +2708,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/tsconfig.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "target",
       "community_name": "compilerOptions",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions_target"
@@ -2719,7 +2719,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/tsconfig.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "module",
       "community_name": "compilerOptions",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions_module"
@@ -2730,7 +2730,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/tsconfig.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "jsx",
       "community_name": "compilerOptions",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions_jsx"
@@ -2741,7 +2741,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/tsconfig.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "moduleresolution",
       "community_name": "compilerOptions",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions_moduleresolution"
@@ -2752,7 +2752,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/tsconfig.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "allowsyntheticdefaultimports",
       "community_name": "compilerOptions",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions_allowsyntheticdefaultimports"
@@ -2763,7 +2763,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/tsconfig.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "strict",
       "community_name": "compilerOptions",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions_strict"
@@ -2774,7 +2774,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/tsconfig.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "resolvejsonmodule",
       "community_name": "compilerOptions",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions_resolvejsonmodule"
@@ -2785,7 +2785,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/tsconfig.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "esmoduleinterop",
       "community_name": "compilerOptions",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions_esmoduleinterop"
@@ -2796,7 +2796,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/tsconfig.json",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "skiplibcheck",
       "community_name": "compilerOptions",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions_skiplibcheck"
@@ -2807,7 +2807,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/tsconfig.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "include",
       "community_name": "compilerOptions",
       "id": "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_include"
@@ -2818,7 +2818,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/assets/remotion-template/tsconfig.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 21,
+      "community": 20,
       "norm_label": "src",
       "community_name": "compilerOptions",
       "id": "ref_src"
@@ -3207,7 +3207,7 @@
       "source_file": ".agents/skills/chat-motion-overlay/scripts/run_test_matrix.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "run_test_matrix.py",
       "community_name": "main",
       "id": "agents_skills_chat_motion_overlay_scripts_run_test_matrix"
@@ -3219,7 +3219,7 @@
       "source_location": "L12",
       "_callable": true,
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "parse_args()",
       "community_name": "main",
       "id": "agents_skills_chat_motion_overlay_scripts_run_test_matrix_parse_args"
@@ -3230,7 +3230,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "namespace",
       "community_name": "main",
       "id": "agents_skills_chat_motion_overlay_scripts_run_test_matrix_py_namespace"
@@ -3242,7 +3242,7 @@
       "source_location": "L21",
       "_callable": true,
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "write_json()",
       "community_name": "main",
       "id": "agents_skills_chat_motion_overlay_scripts_run_test_matrix_write_json"
@@ -3253,7 +3253,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "path",
       "community_name": "main",
       "id": "agents_skills_chat_motion_overlay_scripts_run_test_matrix_py_path"
@@ -3265,7 +3265,7 @@
       "source_location": "L25",
       "_callable": true,
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "run()",
       "community_name": "main",
       "id": "agents_skills_chat_motion_overlay_scripts_run_test_matrix_run"
@@ -3276,7 +3276,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "completedprocess",
       "community_name": "main",
       "id": "agents_skills_chat_motion_overlay_scripts_run_test_matrix_py_completedprocess"
@@ -3288,7 +3288,7 @@
       "source_location": "L29",
       "_callable": true,
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "read_generated_chat_spec()",
       "community_name": "main",
       "id": "agents_skills_chat_motion_overlay_scripts_run_test_matrix_read_generated_chat_spec"
@@ -3300,7 +3300,7 @@
       "source_location": "L38",
       "_callable": true,
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "participant()",
       "community_name": "main",
       "id": "agents_skills_chat_motion_overlay_scripts_run_test_matrix_participant"
@@ -3312,7 +3312,7 @@
       "source_location": "L45",
       "_callable": true,
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "base_config()",
       "community_name": "main",
       "id": "agents_skills_chat_motion_overlay_scripts_run_test_matrix_base_config"
@@ -3324,7 +3324,7 @@
       "source_location": "L69",
       "_callable": true,
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "norm_label": "main()",
       "community_name": "main",
       "id": "agents_skills_chat_motion_overlay_scripts_run_test_matrix_main"
@@ -3335,7 +3335,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/compose_atlas.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "compose_atlas.py",
       "community_name": "compose_atlas.py",
       "id": "agents_skills_hatch_pet_scripts_compose_atlas"
@@ -3347,7 +3347,7 @@
       "source_location": "L32",
       "_callable": true,
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "image_files()",
       "community_name": "compose_atlas.py",
       "id": "agents_skills_hatch_pet_scripts_compose_atlas_image_files"
@@ -3358,7 +3358,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "path",
       "community_name": "compose_atlas.py",
       "id": "agents_skills_hatch_pet_scripts_compose_atlas_py_path"
@@ -3370,7 +3370,7 @@
       "source_location": "L36",
       "_callable": true,
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "find_row_frames()",
       "community_name": "compose_atlas.py",
       "id": "agents_skills_hatch_pet_scripts_compose_atlas_find_row_frames"
@@ -3382,7 +3382,7 @@
       "source_location": "L60",
       "_callable": true,
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "paste_centered()",
       "community_name": "compose_atlas.py",
       "id": "agents_skills_hatch_pet_scripts_compose_atlas_paste_centered"
@@ -3393,7 +3393,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "image",
       "community_name": "compose_atlas.py",
       "id": "agents_skills_hatch_pet_scripts_compose_atlas_py_image"
@@ -3405,7 +3405,7 @@
       "source_location": "L69",
       "_callable": true,
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "compose_from_source_atlas()",
       "community_name": "compose_atlas.py",
       "id": "agents_skills_hatch_pet_scripts_compose_atlas_compose_from_source_atlas"
@@ -3417,7 +3417,7 @@
       "source_location": "L96",
       "_callable": true,
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "compose_from_frames()",
       "community_name": "compose_atlas.py",
       "id": "agents_skills_hatch_pet_scripts_compose_atlas_compose_from_frames"
@@ -3429,7 +3429,7 @@
       "source_location": "L110",
       "_callable": true,
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "save_outputs()",
       "community_name": "compose_atlas.py",
       "id": "agents_skills_hatch_pet_scripts_compose_atlas_save_outputs"
@@ -3441,7 +3441,7 @@
       "source_location": "L118",
       "_callable": true,
       "_origin": "ast",
-      "community": 27,
+      "community": 26,
       "norm_label": "main()",
       "community_name": "compose_atlas.py",
       "id": "agents_skills_hatch_pet_scripts_compose_atlas_main"
@@ -3558,7 +3558,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/extract_strip_frames.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "extract_strip_frames.py",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames"
@@ -3570,7 +3570,7 @@
       "source_location": "L29",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "parse_states()",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_parse_states"
@@ -3582,7 +3582,7 @@
       "source_location": "L39",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "parse_hex_color()",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_parse_hex_color"
@@ -3594,7 +3594,7 @@
       "source_location": "L45",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "load_chroma_key()",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_load_chroma_key"
@@ -3605,7 +3605,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "path",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_py_path"
@@ -3617,7 +3617,7 @@
       "source_location": "L57",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "color_distance()",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_color_distance"
@@ -3629,7 +3629,7 @@
       "source_location": "L66",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "remove_chroma_background()",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_remove_chroma_background"
@@ -3640,7 +3640,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "image",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_py_image"
@@ -3652,7 +3652,7 @@
       "source_location": "L81",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "fit_to_cell()",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_fit_to_cell"
@@ -3664,7 +3664,7 @@
       "source_location": "L102",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "connected_components()",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_connected_components"
@@ -3676,7 +3676,7 @@
       "source_location": "L164",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "component_group_image()",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_component_group_image"
@@ -3688,7 +3688,7 @@
       "source_location": "L186",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "extract_component_frames()",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_extract_component_frames"
@@ -3700,7 +3700,7 @@
       "source_location": "L221",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "extract_slot_frames()",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_extract_slot_frames"
@@ -3712,7 +3712,7 @@
       "source_location": "L232",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "extract_state()",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_extract_state"
@@ -3724,7 +3724,7 @@
       "source_location": "L268",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 14,
       "norm_label": "main()",
       "community_name": "extract_strip_frames.py",
       "id": "agents_skills_hatch_pet_scripts_extract_strip_frames_main"
@@ -3735,7 +3735,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/finalize_pet_run.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "finalize_pet_run.py",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run"
@@ -3747,7 +3747,7 @@
       "source_location": "L17",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "run()",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_run"
@@ -3758,7 +3758,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "completedprocess",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_py_completedprocess"
@@ -3770,7 +3770,7 @@
       "source_location": "L22",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "load_json()",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_load_json"
@@ -3781,7 +3781,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "path",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_py_path"
@@ -3793,7 +3793,7 @@
       "source_location": "L26",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "file_sha256()",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_file_sha256"
@@ -3805,7 +3805,7 @@
       "source_location": "L34",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "is_relative_to()",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_is_relative_to"
@@ -3817,7 +3817,7 @@
       "source_location": "L42",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "default_generated_images_root()",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_default_generated_images_root"
@@ -3829,7 +3829,7 @@
       "source_location": "L46",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "default_codex_home()",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_default_codex_home"
@@ -3841,7 +3841,7 @@
       "source_location": "L50",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "manifest_path()",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_manifest_path"
@@ -3853,7 +3853,7 @@
       "source_location": "L59",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "validate_hash()",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_validate_hash"
@@ -3865,7 +3865,7 @@
       "source_location": "L81",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "validate_mirror_hash()",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_validate_mirror_hash"
@@ -3877,7 +3877,7 @@
       "source_location": "L123",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "validate_completed_job_source()",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_validate_completed_job_source"
@@ -3889,7 +3889,7 @@
       "source_location": "L181",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "require_complete_jobs()",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_require_complete_jobs"
@@ -3901,7 +3901,7 @@
       "source_location": "L206",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "review_failures()",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_review_failures"
@@ -3913,7 +3913,7 @@
       "source_location": "L220",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "main()",
       "community_name": "finalize_pet_run.py",
       "id": "agents_skills_hatch_pet_scripts_finalize_pet_run_main"
@@ -4102,7 +4102,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/inspect_frames.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 22,
+      "community": 21,
       "norm_label": "inspect_frames.py",
       "community_name": "inspect_frames.py",
       "id": "agents_skills_hatch_pet_scripts_inspect_frames"
@@ -4114,7 +4114,7 @@
       "source_location": "L30",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
+      "community": 21,
       "norm_label": "alpha_nonzero_count()",
       "community_name": "inspect_frames.py",
       "id": "agents_skills_hatch_pet_scripts_inspect_frames_alpha_nonzero_count"
@@ -4125,7 +4125,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 22,
+      "community": 21,
       "norm_label": "image",
       "community_name": "inspect_frames.py",
       "id": "agents_skills_hatch_pet_scripts_inspect_frames_py_image"
@@ -4137,7 +4137,7 @@
       "source_location": "L35",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
+      "community": 21,
       "norm_label": "edge_alpha_count()",
       "community_name": "inspect_frames.py",
       "id": "agents_skills_hatch_pet_scripts_inspect_frames_edge_alpha_count"
@@ -4149,7 +4149,7 @@
       "source_location": "L49",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
+      "community": 21,
       "norm_label": "color_distance()",
       "community_name": "inspect_frames.py",
       "id": "agents_skills_hatch_pet_scripts_inspect_frames_color_distance"
@@ -4161,7 +4161,7 @@
       "source_location": "L53",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
+      "community": 21,
       "norm_label": "chroma_adjacent_count()",
       "community_name": "inspect_frames.py",
       "id": "agents_skills_hatch_pet_scripts_inspect_frames_chroma_adjacent_count"
@@ -4173,7 +4173,7 @@
       "source_location": "L70",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
+      "community": 21,
       "norm_label": "frame_files()",
       "community_name": "inspect_frames.py",
       "id": "agents_skills_hatch_pet_scripts_inspect_frames_frame_files"
@@ -4184,7 +4184,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 22,
+      "community": 21,
       "norm_label": "path",
       "community_name": "inspect_frames.py",
       "id": "agents_skills_hatch_pet_scripts_inspect_frames_py_path"
@@ -4196,7 +4196,7 @@
       "source_location": "L76",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
+      "community": 21,
       "norm_label": "load_manifest()",
       "community_name": "inspect_frames.py",
       "id": "agents_skills_hatch_pet_scripts_inspect_frames_load_manifest"
@@ -4208,7 +4208,7 @@
       "source_location": "L91",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
+      "community": 21,
       "norm_label": "load_chroma_key()",
       "community_name": "inspect_frames.py",
       "id": "agents_skills_hatch_pet_scripts_inspect_frames_load_chroma_key"
@@ -4220,7 +4220,7 @@
       "source_location": "L109",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
+      "community": 21,
       "norm_label": "inspect_state()",
       "community_name": "inspect_frames.py",
       "id": "agents_skills_hatch_pet_scripts_inspect_frames_inspect_state"
@@ -4231,7 +4231,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 22,
+      "community": 21,
       "norm_label": "namespace",
       "community_name": "inspect_frames.py",
       "id": "agents_skills_hatch_pet_scripts_inspect_frames_py_namespace"
@@ -4243,7 +4243,7 @@
       "source_location": "L203",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
+      "community": 21,
       "norm_label": "main()",
       "community_name": "inspect_frames.py",
       "id": "agents_skills_hatch_pet_scripts_inspect_frames_main"
@@ -4254,7 +4254,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/make_contact_sheet.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 54,
+      "community": 55,
       "norm_label": "make_contact_sheet.py",
       "community_name": "checker",
       "id": "agents_skills_hatch_pet_scripts_make_contact_sheet"
@@ -4266,7 +4266,7 @@
       "source_location": "L30",
       "_callable": true,
       "_origin": "ast",
-      "community": 54,
+      "community": 55,
       "norm_label": "checker()",
       "community_name": "checker",
       "id": "agents_skills_hatch_pet_scripts_make_contact_sheet_checker"
@@ -4277,7 +4277,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 54,
+      "community": 55,
       "norm_label": "image",
       "community_name": "checker",
       "id": "agents_skills_hatch_pet_scripts_make_contact_sheet_py_image"
@@ -4289,7 +4289,7 @@
       "source_location": "L40",
       "_callable": true,
       "_origin": "ast",
-      "community": 54,
+      "community": 55,
       "norm_label": "main()",
       "community_name": "checker",
       "id": "agents_skills_hatch_pet_scripts_make_contact_sheet_main"
@@ -4808,7 +4808,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/queue_pet_repairs.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 28,
+      "community": 27,
       "norm_label": "queue_pet_repairs.py",
       "community_name": "queue_pet_repairs.py",
       "id": "agents_skills_hatch_pet_scripts_queue_pet_repairs"
@@ -4820,7 +4820,7 @@
       "source_location": "L13",
       "_callable": true,
       "_origin": "ast",
-      "community": 28,
+      "community": 27,
       "norm_label": "load_json()",
       "community_name": "queue_pet_repairs.py",
       "id": "agents_skills_hatch_pet_scripts_queue_pet_repairs_load_json"
@@ -4831,7 +4831,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 28,
+      "community": 27,
       "norm_label": "path",
       "community_name": "queue_pet_repairs.py",
       "id": "agents_skills_hatch_pet_scripts_queue_pet_repairs_py_path"
@@ -4843,7 +4843,7 @@
       "source_location": "L19",
       "_callable": true,
       "_origin": "ast",
-      "community": 28,
+      "community": 27,
       "norm_label": "rows_to_repair()",
       "community_name": "queue_pet_repairs.py",
       "id": "agents_skills_hatch_pet_scripts_queue_pet_repairs_rows_to_repair"
@@ -4855,7 +4855,7 @@
       "source_location": "L43",
       "_callable": true,
       "_origin": "ast",
-      "community": 28,
+      "community": 27,
       "norm_label": "append_repair_note()",
       "community_name": "queue_pet_repairs.py",
       "id": "agents_skills_hatch_pet_scripts_queue_pet_repairs_append_repair_note"
@@ -4867,7 +4867,7 @@
       "source_location": "L63",
       "_callable": true,
       "_origin": "ast",
-      "community": 28,
+      "community": 27,
       "norm_label": "job_list()",
       "community_name": "queue_pet_repairs.py",
       "id": "agents_skills_hatch_pet_scripts_queue_pet_repairs_job_list"
@@ -4879,7 +4879,7 @@
       "source_location": "L70",
       "_callable": true,
       "_origin": "ast",
-      "community": 28,
+      "community": 27,
       "norm_label": "next_archive_path()",
       "community_name": "queue_pet_repairs.py",
       "id": "agents_skills_hatch_pet_scripts_queue_pet_repairs_next_archive_path"
@@ -4891,7 +4891,7 @@
       "source_location": "L82",
       "_callable": true,
       "_origin": "ast",
-      "community": 28,
+      "community": 27,
       "norm_label": "archive_decoded_output()",
       "community_name": "queue_pet_repairs.py",
       "id": "agents_skills_hatch_pet_scripts_queue_pet_repairs_archive_decoded_output"
@@ -4903,7 +4903,7 @@
       "source_location": "L98",
       "_callable": true,
       "_origin": "ast",
-      "community": 28,
+      "community": 27,
       "norm_label": "queue_repair()",
       "community_name": "queue_pet_repairs.py",
       "id": "agents_skills_hatch_pet_scripts_queue_pet_repairs_queue_repair"
@@ -4915,7 +4915,7 @@
       "source_location": "L140",
       "_callable": true,
       "_origin": "ast",
-      "community": 28,
+      "community": 27,
       "norm_label": "main()",
       "community_name": "queue_pet_repairs.py",
       "id": "agents_skills_hatch_pet_scripts_queue_pet_repairs_main"
@@ -4926,7 +4926,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/record_imagegen_result.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "record_imagegen_result.py",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result"
@@ -4938,7 +4938,7 @@
       "source_location": "L19",
       "_callable": true,
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "load_jobs()",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_load_jobs"
@@ -4949,7 +4949,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "path",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_py_path"
@@ -4961,7 +4961,7 @@
       "source_location": "L25",
       "_callable": true,
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "job_list()",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_job_list"
@@ -4973,7 +4973,7 @@
       "source_location": "L32",
       "_callable": true,
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "find_job()",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_find_job"
@@ -4985,7 +4985,7 @@
       "source_location": "L39",
       "_callable": true,
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "image_metadata()",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_image_metadata"
@@ -4997,7 +4997,7 @@
       "source_location": "L51",
       "_callable": true,
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "file_sha256()",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_file_sha256"
@@ -5009,7 +5009,7 @@
       "source_location": "L59",
       "_callable": true,
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "manifest_relative()",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_manifest_relative"
@@ -5021,7 +5021,7 @@
       "source_location": "L63",
       "_callable": true,
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "completed_job_ids()",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_completed_job_ids"
@@ -5033,7 +5033,7 @@
       "source_location": "L71",
       "_callable": true,
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "is_relative_to()",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_is_relative_to"
@@ -5045,7 +5045,7 @@
       "source_location": "L79",
       "_callable": true,
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "default_generated_images_root()",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_default_generated_images_root"
@@ -5057,7 +5057,7 @@
       "source_location": "L84",
       "_callable": true,
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "validate_source_path()",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_validate_source_path"
@@ -5069,7 +5069,7 @@
       "source_location": "L107",
       "_callable": true,
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "validate_required_grounding()",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_validate_required_grounding"
@@ -5081,7 +5081,7 @@
       "source_location": "L129",
       "_callable": true,
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "update_base_canonical_reference()",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_update_base_canonical_reference"
@@ -5093,7 +5093,7 @@
       "source_location": "L160",
       "_callable": true,
       "_origin": "ast",
-      "community": 16,
+      "community": 15,
       "norm_label": "main()",
       "community_name": "record_imagegen_result.py",
       "id": "agents_skills_hatch_pet_scripts_record_imagegen_result_main"
@@ -5189,7 +5189,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 60,
+      "community": 61,
       "norm_label": "render_animation_videos.sh",
       "community_name": "render_animation_videos.sh script",
       "id": "agents_skills_hatch_pet_scripts_render_animation_videos_sh_agents_skills_hatch_pet_scripts_render_animation_videos"
@@ -5204,7 +5204,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 60,
+      "community": 61,
       "norm_label": "render_animation_videos.sh script",
       "community_name": "render_animation_videos.sh script",
       "id": "agents_skills_hatch_pet_scripts_render_animation_videos_sh__entry"
@@ -5404,7 +5404,7 @@
       "source_file": ".agents/skills/hatch-pet/scripts/validate_atlas.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 55,
+      "community": 56,
       "norm_label": "validate_atlas.py",
       "community_name": "alpha_nonzero_count",
       "id": "agents_skills_hatch_pet_scripts_validate_atlas"
@@ -5416,7 +5416,7 @@
       "source_location": "L32",
       "_callable": true,
       "_origin": "ast",
-      "community": 55,
+      "community": 56,
       "norm_label": "alpha_nonzero_count()",
       "community_name": "alpha_nonzero_count",
       "id": "agents_skills_hatch_pet_scripts_validate_atlas_alpha_nonzero_count"
@@ -5427,7 +5427,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 55,
+      "community": 56,
       "norm_label": "image",
       "community_name": "alpha_nonzero_count",
       "id": "agents_skills_hatch_pet_scripts_validate_atlas_py_image"
@@ -5439,7 +5439,7 @@
       "source_location": "L37",
       "_callable": true,
       "_origin": "ast",
-      "community": 55,
+      "community": 56,
       "norm_label": "main()",
       "community_name": "alpha_nonzero_count",
       "id": "agents_skills_hatch_pet_scripts_validate_atlas_main"
@@ -5559,7 +5559,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 56,
+      "community": 57,
       "norm_label": "check-prereqs.sh",
       "community_name": "check-prereqs.sh",
       "id": "agents_skills_od_contribute_scripts_check_prereqs"
@@ -5574,7 +5574,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 56,
+      "community": 57,
       "norm_label": "check-prereqs.sh script",
       "community_name": "check-prereqs.sh",
       "id": "agents_skills_od_contribute_scripts_check_prereqs_sh__entry"
@@ -5589,7 +5589,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 56,
+      "community": 57,
       "norm_label": "check_bin()",
       "community_name": "check-prereqs.sh",
       "id": "agents_skills_od_contribute_scripts_check_prereqs_check_bin"
@@ -5604,7 +5604,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "norm_label": "config.sh",
       "community_name": "config.sh",
       "id": "agents_skills_od_contribute_scripts_config"
@@ -5619,7 +5619,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "norm_label": "config.sh script",
       "community_name": "config.sh",
       "id": "agents_skills_od_contribute_scripts_config_sh__entry"
@@ -5634,7 +5634,7 @@
         "kind": "code"
       },
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "norm_label": "od_target_repo",
       "community_name": "config.sh",
       "id": "agents_skills_od_contribute_scripts_config_od_target_repo"
@@ -5649,7 +5649,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "norm_label": "od::log()",
       "community_name": "config.sh",
       "id": "agents_skills_od_contribute_scripts_config_od_log"
@@ -5664,7 +5664,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "norm_label": "od::warn()",
       "community_name": "config.sh",
       "id": "agents_skills_od_contribute_scripts_config_od_warn"
@@ -5679,7 +5679,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "norm_label": "od::err()",
       "community_name": "config.sh",
       "id": "agents_skills_od_contribute_scripts_config_od_err"
@@ -5694,7 +5694,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "norm_label": "od::die()",
       "community_name": "config.sh",
       "id": "agents_skills_od_contribute_scripts_config_od_die"
@@ -5709,7 +5709,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "norm_label": "od::require()",
       "community_name": "config.sh",
       "id": "agents_skills_od_contribute_scripts_config_od_require"
@@ -5724,7 +5724,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "norm_label": "od::slugify()",
       "community_name": "config.sh",
       "id": "agents_skills_od_contribute_scripts_config_od_slugify"
@@ -5739,7 +5739,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "norm_label": "od::workdir_for()",
       "community_name": "config.sh",
       "id": "agents_skills_od_contribute_scripts_config_od_workdir_for"
@@ -5754,7 +5754,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "norm_label": "od::assert_in_workroot()",
       "community_name": "config.sh",
       "id": "agents_skills_od_contribute_scripts_config_od_assert_in_workroot"
@@ -5769,7 +5769,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 61,
+      "community": 62,
       "norm_label": "create-issue.sh",
       "community_name": "create-issue.sh",
       "id": "agents_skills_od_contribute_scripts_create_issue"
@@ -5784,7 +5784,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 61,
+      "community": 62,
       "norm_label": "create-issue.sh script",
       "community_name": "create-issue.sh",
       "id": "agents_skills_od_contribute_scripts_create_issue_sh__entry"
@@ -5799,7 +5799,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 62,
+      "community": 63,
       "norm_label": "create-pr.sh",
       "community_name": "create-pr.sh",
       "id": "agents_skills_od_contribute_scripts_create_pr"
@@ -5814,7 +5814,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 62,
+      "community": 63,
       "norm_label": "create-pr.sh script",
       "community_name": "create-pr.sh",
       "id": "agents_skills_od_contribute_scripts_create_pr_sh__entry"
@@ -5829,7 +5829,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 51,
+      "community": 52,
       "norm_label": "discover-doc-gaps.sh",
       "community_name": "discover-doc-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_doc_gaps"
@@ -5844,7 +5844,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 51,
+      "community": 52,
       "norm_label": "discover-doc-gaps.sh script",
       "community_name": "discover-doc-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_doc_gaps_sh__entry"
@@ -5859,7 +5859,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 51,
+      "community": 52,
       "norm_label": "grep()",
       "community_name": "discover-doc-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_doc_gaps_grep"
@@ -5874,7 +5874,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 51,
+      "community": 52,
       "norm_label": "emit_todo()",
       "community_name": "discover-doc-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_doc_gaps_emit_todo"
@@ -5889,7 +5889,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 51,
+      "community": 52,
       "norm_label": "extract_links()",
       "community_name": "discover-doc-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_doc_gaps_extract_links"
@@ -5904,7 +5904,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 52,
+      "community": 53,
       "norm_label": "discover-i18n-gaps.sh",
       "community_name": "discover-i18n-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_i18n_gaps"
@@ -5919,7 +5919,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 52,
+      "community": 53,
       "norm_label": "discover-i18n-gaps.sh script",
       "community_name": "discover-i18n-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_i18n_gaps_sh__entry"
@@ -5934,7 +5934,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 52,
+      "community": 53,
       "norm_label": "last_commit_epoch()",
       "community_name": "discover-i18n-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_i18n_gaps_last_commit_epoch"
@@ -5949,7 +5949,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 52,
+      "community": 53,
       "norm_label": "commits_between()",
       "community_name": "discover-i18n-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_i18n_gaps_commits_between"
@@ -5964,7 +5964,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 52,
+      "community": 53,
       "norm_label": "emit()",
       "community_name": "discover-i18n-gaps.sh",
       "id": "agents_skills_od_contribute_scripts_discover_i18n_gaps_emit"
@@ -5979,7 +5979,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 63,
+      "community": 64,
       "norm_label": "setup-workspace.sh",
       "community_name": "setup-workspace.sh",
       "id": "agents_skills_od_contribute_scripts_setup_workspace"
@@ -5994,7 +5994,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 63,
+      "community": 64,
       "norm_label": "setup-workspace.sh script",
       "community_name": "setup-workspace.sh",
       "id": "agents_skills_od_contribute_scripts_setup_workspace_sh__entry"
@@ -6009,7 +6009,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 57,
+      "community": 58,
       "norm_label": "validate-design-system.sh",
       "community_name": "validate-design-system.sh",
       "id": "agents_skills_od_contribute_scripts_validate_design_system"
@@ -6024,7 +6024,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 57,
+      "community": 58,
       "norm_label": "validate-design-system.sh script",
       "community_name": "validate-design-system.sh",
       "id": "agents_skills_od_contribute_scripts_validate_design_system_sh__entry"
@@ -6039,7 +6039,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 57,
+      "community": 58,
       "norm_label": "extract_headings()",
       "community_name": "validate-design-system.sh",
       "id": "agents_skills_od_contribute_scripts_validate_design_system_extract_headings"
@@ -6054,7 +6054,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 58,
+      "community": 59,
       "norm_label": "validate-markdown.sh",
       "community_name": "validate-markdown.sh",
       "id": "agents_skills_od_contribute_scripts_validate_markdown"
@@ -6069,7 +6069,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 58,
+      "community": 59,
       "norm_label": "validate-markdown.sh script",
       "community_name": "validate-markdown.sh",
       "id": "agents_skills_od_contribute_scripts_validate_markdown_sh__entry"
@@ -6084,7 +6084,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 58,
+      "community": 59,
       "norm_label": "check_file()",
       "community_name": "validate-markdown.sh",
       "id": "agents_skills_od_contribute_scripts_validate_markdown_check_file"
@@ -6099,7 +6099,7 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "community": 48,
+      "community": 49,
       "norm_label": "validate-skill-submission.sh",
       "community_name": "validate-skill-submission.sh",
       "id": "agents_skills_od_contribute_scripts_validate_skill_submission"
@@ -6114,7 +6114,7 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "community": 48,
+      "community": 49,
       "norm_label": "validate-skill-submission.sh script",
       "community_name": "validate-skill-submission.sh",
       "id": "agents_skills_od_contribute_scripts_validate_skill_submission_sh__entry"
@@ -6129,7 +6129,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 48,
+      "community": 49,
       "norm_label": "pass()",
       "community_name": "validate-skill-submission.sh",
       "id": "agents_skills_od_contribute_scripts_validate_skill_submission_pass"
@@ -6144,7 +6144,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 48,
+      "community": 49,
       "norm_label": "warn()",
       "community_name": "validate-skill-submission.sh",
       "id": "agents_skills_od_contribute_scripts_validate_skill_submission_warn"
@@ -6159,7 +6159,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 48,
+      "community": 49,
       "norm_label": "fail()",
       "community_name": "validate-skill-submission.sh",
       "id": "agents_skills_od_contribute_scripts_validate_skill_submission_fail"
@@ -6174,7 +6174,7 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "community": 48,
+      "community": 49,
       "norm_label": "escapes_root()",
       "community_name": "validate-skill-submission.sh",
       "id": "agents_skills_od_contribute_scripts_validate_skill_submission_escapes_root"
@@ -6290,7 +6290,7 @@
       "source_file": ".agents/skills/pptx-html-fidelity-audit/scripts/verify_layout.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 49,
+      "community": 50,
       "norm_label": "verify_layout.py",
       "community_name": "verify",
       "id": "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout"
@@ -6302,7 +6302,7 @@
       "source_location": "L50",
       "_callable": true,
       "_origin": "ast",
-      "community": 49,
+      "community": 50,
       "norm_label": "is_footer_by_name()",
       "community_name": "verify",
       "id": "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_is_footer_by_name"
@@ -6314,7 +6314,7 @@
       "source_location": "L55",
       "_callable": true,
       "_origin": "ast",
-      "community": 49,
+      "community": 50,
       "norm_label": "emu_to_in()",
       "community_name": "verify",
       "id": "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_emu_to_in"
@@ -6326,7 +6326,7 @@
       "source_location": "L59",
       "_callable": true,
       "_origin": "ast",
-      "community": 49,
+      "community": 50,
       "norm_label": "verify()",
       "community_name": "verify",
       "id": "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_verify"
@@ -6337,7 +6337,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 49,
+      "community": 50,
       "norm_label": "path",
       "community_name": "verify",
       "id": "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_py_path"
@@ -6349,7 +6349,7 @@
       "source_location": "L116",
       "_callable": true,
       "_origin": "ast",
-      "community": 49,
+      "community": 50,
       "norm_label": "main()",
       "community_name": "verify",
       "id": "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_main"
@@ -6467,7 +6467,7 @@
       "source_file": ".agents/skills/web-clone/scripts/audit-clone.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "audit-clone.mjs",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone"
@@ -6479,7 +6479,7 @@
       "source_location": "L5",
       "_callable": true,
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "usage()",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_usage"
@@ -6491,7 +6491,7 @@
       "source_location": "L17",
       "_callable": true,
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "parseargs()",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_parseargs"
@@ -6502,7 +6502,7 @@
       "source_file": ".agents/skills/web-clone/scripts/audit-clone.mjs",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "generic_font_families",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_generic_font_families"
@@ -6514,7 +6514,7 @@
       "source_location": "L41",
       "_callable": true,
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "customfontfamilies()",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_customfontfamilies"
@@ -6526,7 +6526,7 @@
       "source_location": "L56",
       "_callable": true,
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "normalizecolor()",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_normalizecolor"
@@ -6538,7 +6538,7 @@
       "source_location": "L70",
       "_callable": true,
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "collectclonecolors()",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_collectclonecolors"
@@ -6550,7 +6550,7 @@
       "source_location": "L83",
       "_callable": true,
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "fidelityfindings()",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_fidelityfindings"
@@ -6561,7 +6561,7 @@
       "source_file": ".agents/skills/web-clone/scripts/audit-clone.mjs",
       "source_location": "L128",
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "includeext",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_includeext"
@@ -6572,7 +6572,7 @@
       "source_file": ".agents/skills/web-clone/scripts/audit-clone.mjs",
       "source_location": "L129",
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "skipdirs",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_skipdirs"
@@ -6583,7 +6583,7 @@
       "source_file": ".agents/skills/web-clone/scripts/audit-clone.mjs",
       "source_location": "L130",
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "skipfiles",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_skipfiles"
@@ -6595,7 +6595,7 @@
       "source_location": "L132",
       "_callable": true,
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "walk()",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_walk"
@@ -6607,7 +6607,7 @@
       "source_location": "L146",
       "_callable": true,
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "linenumber()",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_linenumber"
@@ -6619,7 +6619,7 @@
       "source_location": "L150",
       "_callable": true,
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "collectmatches()",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_collectmatches"
@@ -6631,7 +6631,7 @@
       "source_location": "L169",
       "_callable": true,
       "_origin": "ast",
-      "community": 17,
+      "community": 16,
       "norm_label": "markdown()",
       "community_name": "audit-clone.mjs",
       "id": "agents_skills_web_clone_scripts_audit_clone_markdown"
@@ -6642,7 +6642,7 @@
       "source_file": ".agents/skills/web-clone/scripts/compare-recon.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "compare-recon.mjs",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon"
@@ -6654,7 +6654,7 @@
       "source_location": "L5",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "usage()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_usage"
@@ -6666,7 +6666,7 @@
       "source_location": "L11",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "parseargs()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_parseargs"
@@ -6678,7 +6678,7 @@
       "source_location": "L38",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "readjson()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_readjson"
@@ -6690,7 +6690,7 @@
       "source_location": "L42",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "firstsignals()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_firstsignals"
@@ -6702,7 +6702,7 @@
       "source_location": "L46",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "boollist()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_boollist"
@@ -6714,7 +6714,7 @@
       "source_location": "L50",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "ratioscore()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_ratioscore"
@@ -6726,7 +6726,7 @@
       "source_location": "L61",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "sequencesimilarity()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_sequencesimilarity"
@@ -6738,7 +6738,7 @@
       "source_location": "L71",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "infercomplexity()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_infercomplexity"
@@ -6750,7 +6750,7 @@
       "source_location": "L82",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "score()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_score"
@@ -6762,7 +6762,7 @@
       "source_location": "L104",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "line()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_line"
@@ -6774,7 +6774,7 @@
       "source_location": "L109",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "routepath()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_routepath"
@@ -6786,7 +6786,7 @@
       "source_location": "L118",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "routessection()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_routessection"
@@ -6798,7 +6798,7 @@
       "source_location": "L141",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "changedactioncount()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_changedactioncount"
@@ -6810,7 +6810,7 @@
       "source_location": "L145",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "interactionsection()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_interactionsection"
@@ -6822,7 +6822,7 @@
       "source_location": "L172",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 12,
       "norm_label": "report()",
       "community_name": "compare-recon.mjs",
       "id": "agents_skills_web_clone_scripts_compare_recon_report"
@@ -6916,7 +6916,7 @@
       "source_file": ".agents/skills/web-clone/scripts/init-clone.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 53,
+      "community": 54,
       "norm_label": "init-clone.mjs",
       "community_name": "init-clone.mjs",
       "id": "agents_skills_web_clone_scripts_init_clone"
@@ -6928,7 +6928,7 @@
       "source_location": "L5",
       "_callable": true,
       "_origin": "ast",
-      "community": 53,
+      "community": 54,
       "norm_label": "usage()",
       "community_name": "init-clone.mjs",
       "id": "agents_skills_web_clone_scripts_init_clone_usage"
@@ -6940,7 +6940,7 @@
       "source_location": "L18",
       "_callable": true,
       "_origin": "ast",
-      "community": 53,
+      "community": 54,
       "norm_label": "parseargs()",
       "community_name": "init-clone.mjs",
       "id": "agents_skills_web_clone_scripts_init_clone_parseargs"
@@ -6952,7 +6952,7 @@
       "source_location": "L34",
       "_callable": true,
       "_origin": "ast",
-      "community": 53,
+      "community": 54,
       "norm_label": "cleanslug()",
       "community_name": "init-clone.mjs",
       "id": "agents_skills_web_clone_scripts_init_clone_cleanslug"
@@ -6964,7 +6964,7 @@
       "source_location": "L43",
       "_callable": true,
       "_origin": "ast",
-      "community": 53,
+      "community": 54,
       "norm_label": "notestemplate()",
       "community_name": "init-clone.mjs",
       "id": "agents_skills_web_clone_scripts_init_clone_notestemplate"
@@ -6975,7 +6975,7 @@
       "source_file": ".agents/skills/web-clone/scripts/interaction-probe.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 23,
+      "community": 22,
       "norm_label": "interaction-probe.mjs",
       "community_name": "interaction-probe.mjs",
       "id": "agents_skills_web_clone_scripts_interaction_probe"
@@ -6987,7 +6987,7 @@
       "source_location": "L7",
       "_callable": true,
       "_origin": "ast",
-      "community": 23,
+      "community": 22,
       "norm_label": "usage()",
       "community_name": "interaction-probe.mjs",
       "id": "agents_skills_web_clone_scripts_interaction_probe_usage"
@@ -6999,7 +6999,7 @@
       "source_location": "L15",
       "_callable": true,
       "_origin": "ast",
-      "community": 23,
+      "community": 22,
       "norm_label": "parseargs()",
       "community_name": "interaction-probe.mjs",
       "id": "agents_skills_web_clone_scripts_interaction_probe_parseargs"
@@ -7011,7 +7011,7 @@
       "source_location": "L40",
       "_callable": true,
       "_origin": "ast",
-      "community": 23,
+      "community": 22,
       "norm_label": "shorthash()",
       "community_name": "interaction-probe.mjs",
       "id": "agents_skills_web_clone_scripts_interaction_probe_shorthash"
@@ -7023,7 +7023,7 @@
       "source_location": "L44",
       "_callable": true,
       "_origin": "ast",
-      "community": 23,
+      "community": 22,
       "norm_label": "safefilename()",
       "community_name": "interaction-probe.mjs",
       "id": "agents_skills_web_clone_scripts_interaction_probe_safefilename"
@@ -7035,7 +7035,7 @@
       "source_location": "L48",
       "_callable": true,
       "_origin": "ast",
-      "community": 23,
+      "community": 22,
       "norm_label": "markdown()",
       "community_name": "interaction-probe.mjs",
       "id": "agents_skills_web_clone_scripts_interaction_probe_markdown"
@@ -7047,7 +7047,7 @@
       "source_location": "L72",
       "_callable": true,
       "_origin": "ast",
-      "community": 23,
+      "community": 22,
       "norm_label": "snapshot()",
       "community_name": "interaction-probe.mjs",
       "id": "agents_skills_web_clone_scripts_interaction_probe_snapshot"
@@ -7059,7 +7059,7 @@
       "source_location": "L103",
       "_callable": true,
       "_origin": "ast",
-      "community": 23,
+      "community": 22,
       "norm_label": "hashsnapshot()",
       "community_name": "interaction-probe.mjs",
       "id": "agents_skills_web_clone_scripts_interaction_probe_hashsnapshot"
@@ -7071,7 +7071,7 @@
       "source_location": "L115",
       "_callable": true,
       "_origin": "ast",
-      "community": 23,
+      "community": 22,
       "norm_label": "candidates()",
       "community_name": "interaction-probe.mjs",
       "id": "agents_skills_web_clone_scripts_interaction_probe_candidates"
@@ -7083,7 +7083,7 @@
       "source_location": "L182",
       "_callable": true,
       "_origin": "ast",
-      "community": 23,
+      "community": 22,
       "norm_label": "haschanged()",
       "community_name": "interaction-probe.mjs",
       "id": "agents_skills_web_clone_scripts_interaction_probe_haschanged"
@@ -7095,7 +7095,7 @@
       "source_location": "L189",
       "_callable": true,
       "_origin": "ast",
-      "community": 23,
+      "community": 22,
       "norm_label": "freshpage()",
       "community_name": "interaction-probe.mjs",
       "id": "agents_skills_web_clone_scripts_interaction_probe_freshpage"
@@ -7107,7 +7107,7 @@
       "source_location": "L206",
       "_callable": true,
       "_origin": "ast",
-      "community": 23,
+      "community": 22,
       "norm_label": "captureaction()",
       "community_name": "interaction-probe.mjs",
       "id": "agents_skills_web_clone_scripts_interaction_probe_captureaction"
@@ -7118,7 +7118,7 @@
       "source_file": ".agents/skills/web-clone/scripts/lib/playwright-loader.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "playwright-loader.mjs",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_lib_playwright_loader"
@@ -7130,7 +7130,7 @@
       "source_location": "L11",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "loadplaywright()",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_lib_playwright_loader_loadplaywright"
@@ -7142,7 +7142,7 @@
       "source_location": "L41",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "launchchromium()",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_lib_playwright_loader_launchchromium"
@@ -7153,7 +7153,7 @@
       "source_file": ".agents/skills/web-clone/scripts/mirror-site.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "mirror-site.mjs",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site"
@@ -7165,7 +7165,7 @@
       "source_location": "L20",
       "_callable": true,
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "parseargs()",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site_parseargs"
@@ -7177,7 +7177,7 @@
       "source_location": "L34",
       "_callable": true,
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "usage()",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site_usage"
@@ -7189,7 +7189,7 @@
       "source_location": "L45",
       "_callable": true,
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "urltolocalpath()",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site_urltolocalpath"
@@ -7200,7 +7200,7 @@
       "source_file": ".agents/skills/web-clone/scripts/mirror-site.mjs",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "args",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site_args"
@@ -7211,7 +7211,7 @@
       "source_file": ".agents/skills/web-clone/scripts/mirror-site.mjs",
       "source_location": "L60",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "sitedir",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site_sitedir"
@@ -7222,7 +7222,7 @@
       "source_file": ".agents/skills/web-clone/scripts/mirror-site.mjs",
       "source_location": "L63",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "responses",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site_responses"
@@ -7233,7 +7233,7 @@
       "source_file": ".agents/skills/web-clone/scripts/mirror-site.mjs",
       "source_location": "L64",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "pw",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site_pw"
@@ -7244,7 +7244,7 @@
       "source_file": ".agents/skills/web-clone/scripts/mirror-site.mjs",
       "source_location": "L87",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "all",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site_all"
@@ -7255,7 +7255,7 @@
       "source_file": ".agents/skills/web-clone/scripts/mirror-site.mjs",
       "source_location": "L88",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "ownurls",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site_ownurls"
@@ -7266,7 +7266,7 @@
       "source_file": ".agents/skills/web-clone/scripts/mirror-site.mjs",
       "source_location": "L92",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "failed",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site_failed"
@@ -7277,7 +7277,7 @@
       "source_file": ".agents/skills/web-clone/scripts/mirror-site.mjs",
       "source_location": "L109",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "thirdhosts",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site_thirdhosts"
@@ -7288,7 +7288,7 @@
       "source_file": ".agents/skills/web-clone/scripts/mirror-site.mjs",
       "source_location": "L110",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "webfontcss",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site_webfontcss"
@@ -7299,7 +7299,7 @@
       "source_file": ".agents/skills/web-clone/scripts/mirror-site.mjs",
       "source_location": "L111",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "outroot",
       "community_name": "mirror-site.mjs",
       "id": "agents_skills_web_clone_scripts_mirror_site_outroot"
@@ -7310,7 +7310,7 @@
       "source_file": ".agents/skills/web-clone/scripts/network-capture.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "network-capture.mjs",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_network_capture"
@@ -7322,7 +7322,7 @@
       "source_location": "L7",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "usage()",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_network_capture_usage"
@@ -7334,7 +7334,7 @@
       "source_location": "L15",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "parseargs()",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_network_capture_parseargs"
@@ -7346,7 +7346,7 @@
       "source_location": "L30",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "safefixturename()",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_network_capture_safefixturename"
@@ -7358,7 +7358,7 @@
       "source_location": "L38",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "shouldsave()",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_network_capture_shouldsave"
@@ -7369,7 +7369,7 @@
       "source_file": ".agents/skills/web-clone/scripts/od-preview-rewrite.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "od-preview-rewrite.mjs",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite"
@@ -7381,7 +7381,7 @@
       "source_location": "L5",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "usage()",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_usage"
@@ -7393,7 +7393,7 @@
       "source_location": "L14",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "parseargs()",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_parseargs"
@@ -7404,7 +7404,7 @@
       "source_file": ".agents/skills/web-clone/scripts/od-preview-rewrite.mjs",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "includeext",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_includeext"
@@ -7415,7 +7415,7 @@
       "source_file": ".agents/skills/web-clone/scripts/od-preview-rewrite.mjs",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "skipdirs",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_skipdirs"
@@ -7426,7 +7426,7 @@
       "source_file": ".agents/skills/web-clone/scripts/od-preview-rewrite.mjs",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "projectassetprefixes",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_projectassetprefixes"
@@ -7437,7 +7437,7 @@
       "source_file": ".agents/skills/web-clone/scripts/od-preview-rewrite.mjs",
       "source_location": "L68",
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "hostrootprefixes",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_hostrootprefixes"
@@ -7449,7 +7449,7 @@
       "source_location": "L70",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "walk()",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_walk"
@@ -7461,7 +7461,7 @@
       "source_location": "L83",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "rootassetpath()",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_rootassetpath"
@@ -7473,7 +7473,7 @@
       "source_location": "L107",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "suffixfor()",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_suffixfor"
@@ -7485,7 +7485,7 @@
       "source_location": "L111",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "relativeref()",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_relativeref"
@@ -7497,7 +7497,7 @@
       "source_location": "L119",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "rewriterootref()",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_rewriterootref"
@@ -7509,7 +7509,7 @@
       "source_location": "L125",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "rewritesrcset()",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_rewritesrcset"
@@ -7521,7 +7521,7 @@
       "source_location": "L139",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "rewritecssurls()",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_rewritecssurls"
@@ -7533,7 +7533,7 @@
       "source_location": "L151",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "rewritehtmlattrs()",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_rewritehtmlattrs"
@@ -7545,7 +7545,7 @@
       "source_location": "L171",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 13,
       "norm_label": "rewritefile()",
       "community_name": "od-preview-rewrite.mjs",
       "id": "agents_skills_web_clone_scripts_od_preview_rewrite_rewritefile"
@@ -7817,7 +7817,7 @@
       "source_file": ".agents/skills/web-clone/scripts/visual-diff.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "visual-diff.mjs",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_visual_diff"
@@ -7829,7 +7829,7 @@
       "source_location": "L6",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "usage()",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_visual_diff_usage"
@@ -7841,7 +7841,7 @@
       "source_location": "L14",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "parseargs()",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_visual_diff_parseargs"
@@ -7853,7 +7853,7 @@
       "source_location": "L29",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "imagedataurl()",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_visual_diff_imagedataurl"
@@ -7865,7 +7865,7 @@
       "source_location": "L35",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "scorefromdiff()",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_visual_diff_scorefromdiff"
@@ -7877,7 +7877,7 @@
       "source_location": "L44",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 17,
       "norm_label": "compareinbrowser()",
       "community_name": "playwright-loader.mjs",
       "id": "agents_skills_web_clone_scripts_visual_diff_compareinbrowser"
@@ -7924,9 +7924,9 @@
       "source_location": "L93",
       "_callable": true,
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "cargar_cache_desde_disco()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "sincronizador_background_cargar_cache_desde_disco"
     },
     {
@@ -7936,9 +7936,9 @@
       "source_location": "L108",
       "_callable": true,
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "refrescar_cache_si_corresponde()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "sincronizador_background_refrescar_cache_si_corresponde"
     },
     {
@@ -8058,7 +8058,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "sincronizar_puntos_gee()",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "sincronizador_background_sincronizar_puntos_gee"
     },
     {
@@ -8080,9 +8080,9 @@
       "source_location": "L583",
       "_callable": true,
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "iniciar_loop_background()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "sincronizador_background_iniciar_loop_background"
     },
     {
@@ -8091,9 +8091,9 @@
       "source_file": "sincronizador_background.py",
       "source_location": "L94",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "carga la cache local o compartida sin reemplazar su referencia global.",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "sincronizador_background_rationale_94"
     },
     {
@@ -8102,9 +8102,9 @@
       "source_file": "sincronizador_background.py",
       "source_location": "L109",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "actualiza la instantanea en memoria como maximo una vez por intervalo.",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "sincronizador_background_rationale_109"
     },
     {
@@ -8126,7 +8126,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "rural.py",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_rural"
     },
     {
@@ -8138,7 +8138,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "extraer_metricas_agricolas()",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_rural_extraer_metricas_agricolas"
     },
     {
@@ -8150,7 +8150,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "fallback_rural()",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_rural_fallback_rural"
     },
     {
@@ -8162,7 +8162,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "extraer_historico_ndvi()",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_rural_extraer_historico_ndvi"
     },
     {
@@ -8173,7 +8173,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "extrae metricas satelitales (sentinel-2, era5, modis) orientadas a la...",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_rural_rationale_9"
     },
     {
@@ -8184,7 +8184,7 @@
       "_origin": "ast",
       "community": 6,
       "norm_label": "extrae serie de tiempo ndvi de los ultimos 12 meses usando modis mod13q1.",
-      "community_name": "main.py",
+      "community_name": "__init__.py",
       "id": "gee_rural_rationale_178"
     },
     {
@@ -8273,9 +8273,9 @@
       "source_file": "alertas_engine.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 59,
+      "community": 60,
       "norm_label": "alertas_engine.py",
-      "community_name": "main.py",
+      "community_name": "alertas_engine.py",
       "id": "alertas_engine"
     },
     {
@@ -8285,9 +8285,9 @@
       "source_location": "L6",
       "_callable": true,
       "_origin": "ast",
-      "community": 59,
+      "community": 60,
       "norm_label": "evaluar_alertas_meteorologicas()",
-      "community_name": "main.py",
+      "community_name": "alertas_engine.py",
       "id": "alertas_engine_evaluar_alertas_meteorologicas"
     },
     {
@@ -8296,9 +8296,9 @@
       "source_file": "alertas_engine.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 59,
+      "community": 60,
       "norm_label": "motor de alertas agro-climaticas e higienico-ambientales para meteoprecisa...",
-      "community_name": "main.py",
+      "community_name": "alertas_engine.py",
       "id": "alertas_engine_rationale_1"
     },
     {
@@ -8415,29 +8415,6 @@
       "norm_label": "comparisontable()",
       "community_name": "react",
       "id": "frontend_src_components_comparisontable_comparisontable"
-    },
-    {
-      "label": "DailyForecastCards.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/components/DailyForecastCards.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "dailyforecastcards.jsx",
-      "community_name": "react",
-      "id": "frontend_src_components_dailyforecastcards"
-    },
-    {
-      "label": "DailyForecastCards()",
-      "file_type": "code",
-      "source_file": "frontend/src/components/DailyForecastCards.jsx",
-      "source_location": "L4",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "dailyforecastcards()",
-      "community_name": "react",
-      "id": "frontend_src_components_dailyforecastcards_dailyforecastcards"
     },
     {
       "label": "ForecastChart.jsx",
@@ -8618,9 +8595,9 @@
       "source_location": "L63",
       "_callable": true,
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "lifespan()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "main_lifespan"
     },
     {
@@ -8630,9 +8607,9 @@
       "source_location": "L101",
       "_callable": true,
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "refresh_cache_before_api()",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "main_refresh_cache_before_api"
     },
     {
@@ -8893,9 +8870,9 @@
       "source_file": "main.py",
       "source_location": "L64",
       "_origin": "ast",
-      "community": 20,
+      "community": 19,
       "norm_label": "inicializa dependencias; la sincronizacion productiva la realiza cloud run job.",
-      "community_name": "sincronizador_background.py",
+      "community_name": "cargar_cache_desde_disco",
       "id": "main_rationale_64"
     },
     {
@@ -8926,9 +8903,10 @@
       "source_file": "frontend/src/App.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_app",
       "community": 0,
-      "norm_label": "app.jsx"
+      "norm_label": "app.jsx",
+      "community_name": "react",
+      "id": "frontend_src_app"
     },
     {
       "label": "App()",
@@ -8937,9 +8915,10 @@
       "source_location": "L23",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_app_app",
       "community": 0,
-      "norm_label": "app()"
+      "norm_label": "app()",
+      "community_name": "react",
+      "id": "frontend_src_app_app"
     },
     {
       "label": "BreezySunMoonWidget.jsx",
@@ -8947,9 +8926,10 @@
       "source_file": "frontend/src/components/BreezySunMoonWidget.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_components_breezysunmoonwidget",
       "community": 0,
-      "norm_label": "breezysunmoonwidget.jsx"
+      "norm_label": "breezysunmoonwidget.jsx",
+      "community_name": "react",
+      "id": "frontend_src_components_breezysunmoonwidget"
     },
     {
       "label": "BreezySunMoonWidget()",
@@ -8958,9 +8938,10 @@
       "source_location": "L4",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_components_breezysunmoonwidget_breezysunmoonwidget",
       "community": 0,
-      "norm_label": "breezysunmoonwidget()"
+      "norm_label": "breezysunmoonwidget()",
+      "community_name": "react",
+      "id": "frontend_src_components_breezysunmoonwidget_breezysunmoonwidget"
     },
     {
       "label": "HourlyCarousel.jsx",
@@ -8968,9 +8949,10 @@
       "source_file": "frontend/src/components/HourlyCarousel.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_components_hourlycarousel",
       "community": 0,
-      "norm_label": "hourlycarousel.jsx"
+      "norm_label": "hourlycarousel.jsx",
+      "community_name": "react",
+      "id": "frontend_src_components_hourlycarousel"
     },
     {
       "label": "getWeatherIcon()",
@@ -8979,9 +8961,10 @@
       "source_location": "L4",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_components_hourlycarousel_getweathericon",
       "community": 0,
-      "norm_label": "getweathericon()"
+      "norm_label": "getweathericon()",
+      "community_name": "react",
+      "id": "frontend_src_components_hourlycarousel_getweathericon"
     },
     {
       "label": "HourlyCarousel()",
@@ -8990,9 +8973,31 @@
       "source_location": "L14",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_components_hourlycarousel_hourlycarousel",
       "community": 0,
-      "norm_label": "hourlycarousel()"
+      "norm_label": "hourlycarousel()",
+      "community_name": "react",
+      "id": "frontend_src_components_hourlycarousel_hourlycarousel"
+    },
+    {
+      "label": "DailyForecastCards.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/DailyForecastCards.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "frontend_src_components_dailyforecastcards",
+      "community": 0,
+      "norm_label": "dailyforecastcards.jsx"
+    },
+    {
+      "label": "DailyForecastCards()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/DailyForecastCards.jsx",
+      "source_location": "L4",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "frontend_src_components_dailyforecastcards_dailyforecastcards",
+      "community": 0,
+      "norm_label": "dailyforecastcards()"
     }
   ],
   "links": [
@@ -9457,9 +9462,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -9517,9 +9522,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_breezysunmoonwidget",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -9541,9 +9546,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_components_dailyforecastcards",
-      "target": "ref_react"
+      "target": "ref_react",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -9613,9 +9618,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_hourlycarousel",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -10450,9 +10455,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_bottomnav",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_bottomnav"
     },
     {
       "relation": "contains",
@@ -10473,9 +10478,9 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_estacionescercanasmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_estacionescercanasmodal"
     },
     {
       "relation": "contains",
@@ -10519,9 +10524,9 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_locationfallbackmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_locationfallbackmodal"
     },
     {
       "relation": "contains",
@@ -10553,9 +10558,9 @@
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_satellitemodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_satellitemodal"
     },
     {
       "relation": "contains",
@@ -12633,9 +12638,9 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlyforecastdrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_hourlyforecastdrawer"
     },
     {
       "relation": "contains",
@@ -22690,9 +22695,9 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_detaildrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_detaildrawer"
     },
     {
       "relation": "contains",
@@ -22805,9 +22810,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_alertsbanner",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_alertsbanner"
     },
     {
       "relation": "contains",
@@ -22828,9 +22833,9 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_aqidrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_aqidrawer"
     },
     {
       "relation": "contains",
@@ -22851,9 +22856,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_agropanel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_agropanel"
     },
     {
       "relation": "contains",
@@ -22874,9 +22879,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_urbanpanel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_urbanpanel"
     },
     {
       "relation": "contains",
@@ -22897,9 +22902,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_comparisontable",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_comparisontable"
     },
     {
       "relation": "contains",
@@ -22917,35 +22922,12 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_dailyforecastcards",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/DailyForecastCards.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_dailyforecastcards",
-      "target": "frontend_src_components_dailyforecastcards_dailyforecastcards"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_forecastchart",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_forecastchart"
     },
     {
       "relation": "contains",
@@ -22966,9 +22948,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_mapsection",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_mapsection"
     },
     {
       "relation": "contains",
@@ -22989,9 +22971,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_navbar",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_navbar"
     },
     {
       "relation": "contains",
@@ -23036,9 +23018,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext",
-      "confidence_score": 1.0
+      "target": "frontend_src_context_weathercontext"
     },
     {
       "relation": "contains",
@@ -23070,9 +23052,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext_weathercontext",
-      "confidence_score": 1.0
+      "target": "frontend_src_context_weathercontext_weathercontext"
     },
     {
       "relation": "imports_from",
@@ -23082,9 +23064,9 @@
       "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherskycanvas",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherskycanvas"
     },
     {
       "relation": "contains",
@@ -23105,9 +23087,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherheader",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherheader"
     },
     {
       "relation": "contains",
@@ -23568,9 +23550,9 @@
       "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_app_app",
-      "confidence_score": 1.0
+      "target": "frontend_src_app_app"
     },
     {
       "relation": "imports_from",
@@ -23580,9 +23562,9 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_breezysunmoonwidget",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_breezysunmoonwidget"
     },
     {
       "relation": "imports",
@@ -23592,9 +23574,21 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_breezysunmoonwidget_breezysunmoonwidget",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_breezysunmoonwidget_breezysunmoonwidget"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_dailyforecastcards"
     },
     {
       "relation": "imports_from",
@@ -23604,9 +23598,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlycarousel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_hourlycarousel"
     },
     {
       "relation": "imports",
@@ -23616,9 +23610,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlycarousel_hourlycarousel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_hourlycarousel_hourlycarousel"
     },
     {
       "relation": "contains",
@@ -23627,9 +23621,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_breezysunmoonwidget",
-      "target": "frontend_src_components_breezysunmoonwidget_breezysunmoonwidget",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_breezysunmoonwidget_breezysunmoonwidget"
     },
     {
       "relation": "contains",
@@ -23638,9 +23632,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_hourlycarousel",
-      "target": "frontend_src_components_hourlycarousel_getweathericon",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_hourlycarousel_getweathericon"
     },
     {
       "relation": "contains",
@@ -23649,9 +23643,9 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_hourlycarousel",
-      "target": "frontend_src_components_hourlycarousel_hourlycarousel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_hourlycarousel_hourlycarousel"
     },
     {
       "relation": "calls",
@@ -23661,11 +23655,22 @@
       "source_location": "L57",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_hourlycarousel_hourlycarousel",
-      "target": "frontend_src_components_hourlycarousel_getweathericon",
+      "target": "frontend_src_components_hourlycarousel_getweathericon"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/DailyForecastCards.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_dailyforecastcards",
+      "target": "frontend_src_components_dailyforecastcards_dailyforecastcards",
       "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1e004fc91b29af3f3a5ed49764cb2bca974f646e"
+  "built_at_commit": "57b4437b8a5070eeed9c11281b9eddd030060115"
 }

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Sun, CloudSun, CloudRain, Snowflake, Calendar } from 'lucide-react';
+import { Sun, CloudSun, CloudRain, Snowflake, Calendar, Droplets } from 'lucide-react';
 
-export default function DailyForecastCards({ dailyForecast, hourlyForecast, onSelectMetric, onOpenHourly }) {
+export default function DailyForecastCards({ dailyForecast, hourlyForecast, onOpenHourly }) {
   if (!dailyForecast || !dailyForecast.time || dailyForecast.time.length === 0) {
     return (
-      <div className="glass-panel p-6 text-center text-slate-400 text-xs">
+      <div className="apple-card p-6 text-center text-slate-400 text-xs">
         Cargando pronóstico diario a 7 días...
       </div>
     );
@@ -26,28 +26,26 @@ export default function DailyForecastCards({ dailyForecast, hourlyForecast, onSe
   const tempRange = (globalMax - globalMin) || 1;
 
   return (
-    <div className="apple-card p-6 space-y-4">
+    <div className="apple-card p-5 sm:p-6 space-y-4 shadow-xl">
       
-      {/* CABECERA */}
-      <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+      {/* CABECERA ESTILO BREEZY WEATHER */}
+      <div className="flex items-center justify-between border-b border-white/10 pb-3">
         <div className="flex items-center gap-2.5">
-          <Calendar className="w-5 h-5 text-sky-400" />
+          <div className="p-2 bg-sky-500/20 text-sky-400 rounded-xl border border-sky-500/30">
+            <Calendar className="w-5 h-5" />
+          </div>
           <div>
-            <h3 className="text-base font-bold text-white">
-              Pronóstico a 7 Días
-            </h3>
-            <p className="text-[11px] text-slate-400">
-              Haz clic en cualquier día para abrir el desglose agrometeorológico
-            </p>
+            <h3 className="text-base font-bold text-white tracking-tight">Pronóstico 7 Días</h3>
+            <p className="text-xs text-slate-400">Rango térmico y precipitación esperada</p>
           </div>
         </div>
-        <span className="text-[11px] text-sky-400 font-bold bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">
-          Oficial DMC & Open-Meteo
+        <span className="apple-pill text-[10px] text-sky-300 font-bold">
+          7 Días DMC & GEE
         </span>
       </div>
 
-      {/* LISTA ESTILO APPLE WEATHER DE 7 DÍAS INTERACTIVA */}
-      <div className="space-y-2 pt-1">
+      {/* LISTA ESTILO BREEZY WEATHER DE 7 DÍAS INTERACTIVA */}
+      <div className="space-y-2.5 pt-1">
         {time.slice(0, 7).map((fechaStr, idx) => {
           const dateObj = new Date(fechaStr + 'T12:00:00');
           const esHoy = idx === 0;
@@ -55,8 +53,6 @@ export default function DailyForecastCards({ dailyForecast, hourlyForecast, onSe
           const tMax = temperature_2m_max[idx] !== undefined ? Math.round(temperature_2m_max[idx]) : 20;
           const tMin = temperature_2m_min[idx] !== undefined ? Math.round(temperature_2m_min[idx]) : 10;
           const rain = precipitation_sum[idx] || 0.0;
-          const eto = et0_fao_evapotranspiration[idx] || 0.0;
-          const uv = uv_index_max[idx] || 5.0;
 
           let IconComp = Sun;
           let iconColor = 'text-amber-400';
@@ -76,7 +72,7 @@ export default function DailyForecastCards({ dailyForecast, hourlyForecast, onSe
 
           const handleClick = () => {
             if (onOpenHourly && hourlyForecast && hourlyForecast.time) {
-              const targetPrefix = fechaStr; // e.g. "2026-08-04"
+              const targetPrefix = fechaStr;
               const dayHourlyData = {
                 dayName: nombreDia === 'Hoy' ? 'Hoy' : diasSemana[dateObj.getDay()],
                 hourly: []
@@ -87,7 +83,6 @@ export default function DailyForecastCards({ dailyForecast, hourlyForecast, onSe
                   const dt = new Date(hourlyForecast.time[i]);
                   const tHour = dt.getHours().toString().padStart(2, '0') + ':00';
                   
-                  // Simplified icon logic for drawer
                   let HIcon = '🌤️';
                   const hRain = hourlyForecast.precipitation?.[i] || 0;
                   const hTemp = hourlyForecast.temperature_2m?.[i] || 0;
@@ -98,22 +93,14 @@ export default function DailyForecastCards({ dailyForecast, hourlyForecast, onSe
 
                   dayHourlyData.hourly.push({
                     timeLabel: tHour,
-                    temp: Math.round(hTemp),
-                    precip: hRain,
-                    wind: Math.round(hourlyForecast.wind_speed_10m?.[i] || 0),
-                    icon: HIcon
+                    icon: HIcon,
+                    temp: Math.round(hourlyForecast.temperature_2m?.[i] || 0),
+                    rainProb: Math.round((hourlyForecast.precipitation_probability?.[i] || 0)),
+                    humidity: Math.round(hourlyForecast.relative_humidity_2m?.[i] || 0)
                   });
                 }
               }
               onOpenHourly(dayHourlyData);
-            } else if (onSelectMetric) {
-              onSelectMetric({
-                title: `Pronóstico ${nombreDia} (${dateObj.getDate()}/${dateObj.getMonth() + 1})`,
-                valor: `${tMax}°C / ${tMin}°C`,
-                unidad: 'Mín / Máx',
-                descripcion: `Mínima: ${tMin}°C, Máxima: ${tMax}°C. Lluvia acumulada estimada: ${rain} mm. Evapotranspiración ETo: ${eto} mm/día. UV Máximo: ${uv}.`,
-                recomendacion: rain > 2 ? 'Suspender aplicaciones de fitosanitarios por precipitaciones.' : 'Condiciones óptimas para ventilación de valles.'
-              });
             }
           };
 
@@ -121,58 +108,41 @@ export default function DailyForecastCards({ dailyForecast, hourlyForecast, onSe
             <div
               key={fechaStr}
               onClick={handleClick}
-              className={`p-3.5 rounded-2xl flex items-center justify-between gap-4 transition duration-200 cursor-pointer ${
-                esHoy
-                  ? 'bg-gradient-to-r from-sky-950/60 to-slate-900 border border-sky-500/40 hover:border-sky-400'
-                  : 'bg-slate-950/40 border border-slate-800/60 hover:bg-slate-900/80 hover:border-slate-700'
-              }`}
+              className="apple-card p-3.5 flex items-center justify-between gap-3 text-xs cursor-pointer hover:scale-[1.01] transition border border-white/10"
             >
-              {/* DÍA & FECHA */}
-              <div className="w-24 shrink-0">
-                <div className={`text-sm font-bold ${esHoy ? 'text-sky-300' : 'text-white'}`}>
-                  {nombreDia}
-                </div>
-                <div className="text-[10px] text-slate-400 font-mono">
-                  {dateObj.getDate()}/{dateObj.getMonth() + 1}
-                </div>
+              {/* NOMBRE DEL DÍA */}
+              <div className="w-16 font-bold text-white text-sm">
+                {nombreDia}
               </div>
 
-              {/* ÍCONO Y PROBABILIDAD LLUVIA */}
-              <div className="flex items-center gap-2 w-20 shrink-0">
-                <IconComp className={`w-6 h-6 ${iconColor}`} />
+              {/* ICONO Y LLUVIA */}
+              <div className="flex items-center gap-2 w-20">
+                <IconComp className={`w-5 h-5 ${iconColor}`} />
                 {rain > 0 ? (
-                  <span className="text-[11px] font-bold text-sky-400 font-mono">{rain}mm</span>
+                  <span className="text-[11px] font-bold text-sky-400 flex items-center gap-0.5">
+                    <Droplets className="w-3 h-3" />
+                    {rain.toFixed(1)}m
+                  </span>
                 ) : (
-                  <span className="text-[10px] text-slate-500">Seco</span>
+                  <span className="text-[10px] text-slate-400">0%</span>
                 )}
               </div>
 
-              {/* TEMPERATURA MÍNIMA */}
-              <div className="w-10 text-right font-mono font-bold text-sm text-cyan-300 shrink-0">
-                {tMin}°
+              {/* RANGO TÉRMICO Y BARRA ESTILO BREEZY WEATHER */}
+              <div className="flex-1 flex items-center gap-3">
+                <span className="w-7 text-right font-mono text-cyan-300 font-bold text-xs">{tMin}°</span>
+                <div className="flex-1 h-2 bg-slate-800/80 rounded-full relative overflow-hidden">
+                  <div
+                    className="absolute top-0 bottom-0 bg-gradient-to-r from-cyan-400 via-amber-400 to-rose-400 rounded-full"
+                    style={{ left: `${leftPct}%`, right: `${rightPct}%` }}
+                  />
+                </div>
+                <span className="w-7 text-left font-mono text-amber-300 font-bold text-xs">{tMax}°</span>
               </div>
-
-              {/* BARRA DE GRADIENTE DE TEMPERATURA RANGO SEMANAL */}
-              <div className="flex-1 hidden sm:block h-2 bg-slate-800/80 rounded-full relative overflow-hidden">
-                <div
-                  className="absolute top-0 bottom-0 rounded-full bg-gradient-to-r from-cyan-400 via-emerald-400 to-amber-400"
-                  style={{
-                    left: `${leftPct}%`,
-                    right: `${rightPct}%`
-                  }}
-                />
-              </div>
-
-              {/* TEMPERATURA MÁXIMA */}
-              <div className="w-10 text-left font-mono font-bold text-sm text-amber-300 shrink-0">
-                {tMax}°
-              </div>
-
             </div>
           );
         })}
       </div>
-
     </div>
   );
 }

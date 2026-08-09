@@ -316,17 +316,6 @@
       "sincronizador_background_sincronizar_redmeteo"
     ],
     "11": [
-      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react_dom",
-      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_remotion",
-      "frontend_package_dependencies_react",
-      "frontend_package_dependencies_react_dom",
-      "react",
-      "react_dom",
-      "remotion"
-    ],
-    "12": [
       "agents_skills_hatch_pet_scripts_finalize_pet_run",
       "agents_skills_hatch_pet_scripts_finalize_pet_run_default_codex_home",
       "agents_skills_hatch_pet_scripts_finalize_pet_run_default_generated_images_root",
@@ -344,7 +333,7 @@
       "agents_skills_hatch_pet_scripts_finalize_pet_run_validate_hash",
       "agents_skills_hatch_pet_scripts_finalize_pet_run_validate_mirror_hash"
     ],
-    "13": [
+    "12": [
       "agents_skills_web_clone_scripts_compare_recon",
       "agents_skills_web_clone_scripts_compare_recon_boollist",
       "agents_skills_web_clone_scripts_compare_recon_changedactioncount",
@@ -362,7 +351,7 @@
       "agents_skills_web_clone_scripts_compare_recon_sequencesimilarity",
       "agents_skills_web_clone_scripts_compare_recon_usage"
     ],
-    "14": [
+    "13": [
       "agents_skills_web_clone_scripts_od_preview_rewrite",
       "agents_skills_web_clone_scripts_od_preview_rewrite_hostrootprefixes",
       "agents_skills_web_clone_scripts_od_preview_rewrite_includeext",
@@ -380,7 +369,7 @@
       "agents_skills_web_clone_scripts_od_preview_rewrite_usage",
       "agents_skills_web_clone_scripts_od_preview_rewrite_walk"
     ],
-    "15": [
+    "14": [
       "agents_skills_hatch_pet_scripts_extract_strip_frames",
       "agents_skills_hatch_pet_scripts_extract_strip_frames_color_distance",
       "agents_skills_hatch_pet_scripts_extract_strip_frames_component_group_image",
@@ -397,7 +386,7 @@
       "agents_skills_hatch_pet_scripts_extract_strip_frames_py_path",
       "agents_skills_hatch_pet_scripts_extract_strip_frames_remove_chroma_background"
     ],
-    "16": [
+    "15": [
       "agents_skills_hatch_pet_scripts_record_imagegen_result",
       "agents_skills_hatch_pet_scripts_record_imagegen_result_completed_job_ids",
       "agents_skills_hatch_pet_scripts_record_imagegen_result_default_generated_images_root",
@@ -414,7 +403,7 @@
       "agents_skills_hatch_pet_scripts_record_imagegen_result_validate_required_grounding",
       "agents_skills_hatch_pet_scripts_record_imagegen_result_validate_source_path"
     ],
-    "17": [
+    "16": [
       "agents_skills_web_clone_scripts_audit_clone",
       "agents_skills_web_clone_scripts_audit_clone_collectclonecolors",
       "agents_skills_web_clone_scripts_audit_clone_collectmatches",
@@ -431,7 +420,7 @@
       "agents_skills_web_clone_scripts_audit_clone_usage",
       "agents_skills_web_clone_scripts_audit_clone_walk"
     ],
-    "18": [
+    "17": [
       "agents_skills_web_clone_scripts_lib_playwright_loader",
       "agents_skills_web_clone_scripts_lib_playwright_loader_launchchromium",
       "agents_skills_web_clone_scripts_lib_playwright_loader_loadplaywright",
@@ -447,7 +436,7 @@
       "agents_skills_web_clone_scripts_visual_diff_scorefromdiff",
       "agents_skills_web_clone_scripts_visual_diff_usage"
     ],
-    "19": [
+    "18": [
       "agents_skills_web_clone_scripts_mirror_site",
       "agents_skills_web_clone_scripts_mirror_site_all",
       "agents_skills_web_clone_scripts_mirror_site_args",
@@ -463,7 +452,7 @@
       "agents_skills_web_clone_scripts_mirror_site_usage",
       "agents_skills_web_clone_scripts_mirror_site_webfontcss"
     ],
-    "20": [
+    "19": [
       "fastapi",
       "main_lifespan",
       "main_rationale_64",
@@ -479,7 +468,7 @@
       "sync_job_rationale_1",
       "sync_job_run"
     ],
-    "21": [
+    "20": [
       "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig",
       "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions",
       "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_compileroptions_allowsyntheticdefaultimports",
@@ -494,7 +483,7 @@
       "agents_skills_chat_motion_overlay_assets_remotion_template_tsconfig_include",
       "ref_src"
     ],
-    "22": [
+    "21": [
       "agents_skills_hatch_pet_scripts_inspect_frames",
       "agents_skills_hatch_pet_scripts_inspect_frames_alpha_nonzero_count",
       "agents_skills_hatch_pet_scripts_inspect_frames_chroma_adjacent_count",
@@ -509,7 +498,7 @@
       "agents_skills_hatch_pet_scripts_inspect_frames_py_namespace",
       "agents_skills_hatch_pet_scripts_inspect_frames_py_path"
     ],
-    "23": [
+    "22": [
       "agents_skills_web_clone_scripts_interaction_probe",
       "agents_skills_web_clone_scripts_interaction_probe_candidates",
       "agents_skills_web_clone_scripts_interaction_probe_captureaction",
@@ -523,7 +512,7 @@
       "agents_skills_web_clone_scripts_interaction_probe_snapshot",
       "agents_skills_web_clone_scripts_interaction_probe_usage"
     ],
-    "24": [
+    "23": [
       "frontend_public_manifest",
       "frontend_public_manifest_background_color",
       "frontend_public_manifest_categories",
@@ -537,7 +526,7 @@
       "ref_utilities",
       "ref_weather"
     ],
-    "25": [
+    "24": [
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix",
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix_base_config",
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix_main",
@@ -550,7 +539,7 @@
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix_run",
       "agents_skills_chat_motion_overlay_scripts_run_test_matrix_write_json"
     ],
-    "26": [
+    "25": [
       "agents_skills_od_contribute_scripts_config",
       "agents_skills_od_contribute_scripts_config_od_assert_in_workroot",
       "agents_skills_od_contribute_scripts_config_od_die",
@@ -563,7 +552,7 @@
       "agents_skills_od_contribute_scripts_config_od_workdir_for",
       "agents_skills_od_contribute_scripts_config_sh__entry"
     ],
-    "27": [
+    "26": [
       "agents_skills_hatch_pet_scripts_compose_atlas",
       "agents_skills_hatch_pet_scripts_compose_atlas_compose_from_frames",
       "agents_skills_hatch_pet_scripts_compose_atlas_compose_from_source_atlas",
@@ -575,7 +564,7 @@
       "agents_skills_hatch_pet_scripts_compose_atlas_py_path",
       "agents_skills_hatch_pet_scripts_compose_atlas_save_outputs"
     ],
-    "28": [
+    "27": [
       "agents_skills_hatch_pet_scripts_queue_pet_repairs",
       "agents_skills_hatch_pet_scripts_queue_pet_repairs_append_repair_note",
       "agents_skills_hatch_pet_scripts_queue_pet_repairs_archive_decoded_output",
@@ -587,7 +576,7 @@
       "agents_skills_hatch_pet_scripts_queue_pet_repairs_queue_repair",
       "agents_skills_hatch_pet_scripts_queue_pet_repairs_rows_to_repair"
     ],
-    "29": [
+    "28": [
       "frontend_package",
       "frontend_package_name",
       "frontend_package_private",
@@ -598,6 +587,17 @@
       "frontend_package_scripts_preview",
       "frontend_package_type",
       "frontend_package_version"
+    ],
+    "29": [
+      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_react_dom",
+      "agents_skills_chat_motion_overlay_assets_remotion_template_package_dependencies_remotion",
+      "frontend_package_dependencies_react",
+      "frontend_package_dependencies_react_dom",
+      "react",
+      "react_dom",
+      "remotion"
     ],
     "30": [
       "agents_skills_chat_motion_overlay_assets_remotion_template_package_devdependencies",
@@ -769,6 +769,15 @@
       "agents_skills_web_clone_scripts_sourcemap_hunt_usage"
     ],
     "47": [
+      "chart_js",
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_chart_js",
+      "frontend_package_dependencies_lucide_react",
+      "frontend_package_dependencies_react_chartjs_2",
+      "lucide_react",
+      "react_chartjs_2"
+    ],
+    "48": [
       "httpuser",
       "locustfile",
       "locustfile_meteoprecisauser",
@@ -777,7 +786,7 @@
       "locustfile_rationale_1",
       "task"
     ],
-    "48": [
+    "49": [
       "agents_skills_od_contribute_scripts_validate_skill_submission",
       "agents_skills_od_contribute_scripts_validate_skill_submission_escapes_root",
       "agents_skills_od_contribute_scripts_validate_skill_submission_fail",
@@ -785,7 +794,7 @@
       "agents_skills_od_contribute_scripts_validate_skill_submission_sh__entry",
       "agents_skills_od_contribute_scripts_validate_skill_submission_warn"
     ],
-    "49": [
+    "50": [
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout",
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_emu_to_in",
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_is_footer_by_name",
@@ -793,7 +802,7 @@
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_py_path",
       "agents_skills_pptx_html_fidelity_audit_scripts_verify_layout_verify"
     ],
-    "50": [
+    "51": [
       "goes_processor",
       "goes_processor_descargar_y_procesar_frame",
       "goes_processor_obtener_satellite_latest_loop",
@@ -801,110 +810,101 @@
       "goes_processor_rationale_134",
       "goes_processor_rationale_49"
     ],
-    "51": [
+    "52": [
       "agents_skills_od_contribute_scripts_discover_doc_gaps",
       "agents_skills_od_contribute_scripts_discover_doc_gaps_emit_todo",
       "agents_skills_od_contribute_scripts_discover_doc_gaps_extract_links",
       "agents_skills_od_contribute_scripts_discover_doc_gaps_grep",
       "agents_skills_od_contribute_scripts_discover_doc_gaps_sh__entry"
     ],
-    "52": [
+    "53": [
       "agents_skills_od_contribute_scripts_discover_i18n_gaps",
       "agents_skills_od_contribute_scripts_discover_i18n_gaps_commits_between",
       "agents_skills_od_contribute_scripts_discover_i18n_gaps_emit",
       "agents_skills_od_contribute_scripts_discover_i18n_gaps_last_commit_epoch",
       "agents_skills_od_contribute_scripts_discover_i18n_gaps_sh__entry"
     ],
-    "53": [
+    "54": [
       "agents_skills_web_clone_scripts_init_clone",
       "agents_skills_web_clone_scripts_init_clone_cleanslug",
       "agents_skills_web_clone_scripts_init_clone_notestemplate",
       "agents_skills_web_clone_scripts_init_clone_parseargs",
       "agents_skills_web_clone_scripts_init_clone_usage"
     ],
-    "54": [
+    "55": [
       "agents_skills_hatch_pet_scripts_make_contact_sheet",
       "agents_skills_hatch_pet_scripts_make_contact_sheet_checker",
       "agents_skills_hatch_pet_scripts_make_contact_sheet_main",
       "agents_skills_hatch_pet_scripts_make_contact_sheet_py_image"
     ],
-    "55": [
+    "56": [
       "agents_skills_hatch_pet_scripts_validate_atlas",
       "agents_skills_hatch_pet_scripts_validate_atlas_alpha_nonzero_count",
       "agents_skills_hatch_pet_scripts_validate_atlas_main",
       "agents_skills_hatch_pet_scripts_validate_atlas_py_image"
     ],
-    "56": [
+    "57": [
       "agents_skills_od_contribute_scripts_check_prereqs",
       "agents_skills_od_contribute_scripts_check_prereqs_check_bin",
       "agents_skills_od_contribute_scripts_check_prereqs_sh__entry"
     ],
-    "57": [
+    "58": [
       "agents_skills_od_contribute_scripts_validate_design_system",
       "agents_skills_od_contribute_scripts_validate_design_system_extract_headings",
       "agents_skills_od_contribute_scripts_validate_design_system_sh__entry"
     ],
-    "58": [
+    "59": [
       "agents_skills_od_contribute_scripts_validate_markdown",
       "agents_skills_od_contribute_scripts_validate_markdown_check_file",
       "agents_skills_od_contribute_scripts_validate_markdown_sh__entry"
     ],
-    "59": [
+    "60": [
       "alertas_engine",
       "alertas_engine_evaluar_alertas_meteorologicas",
       "alertas_engine_rationale_1"
     ],
-    "60": [
+    "61": [
       "agents_skills_hatch_pet_scripts_render_animation_videos_sh__entry",
       "agents_skills_hatch_pet_scripts_render_animation_videos_sh_agents_skills_hatch_pet_scripts_render_animation_videos"
     ],
-    "61": [
+    "62": [
       "agents_skills_od_contribute_scripts_create_issue",
       "agents_skills_od_contribute_scripts_create_issue_sh__entry"
     ],
-    "62": [
+    "63": [
       "agents_skills_od_contribute_scripts_create_pr",
       "agents_skills_od_contribute_scripts_create_pr_sh__entry"
     ],
-    "63": [
+    "64": [
       "agents_skills_od_contribute_scripts_setup_workspace",
       "agents_skills_od_contribute_scripts_setup_workspace_sh__entry"
     ],
-    "64": [
+    "65": [
       "frontend_public_service_worker",
       "frontend_public_service_worker_assets_to_cache"
     ],
-    "65": [
+    "66": [
       "scripts_configurar_sync_horario_sh__entry",
       "scripts_configurar_sync_horario_sh_scripts_configurar_sync_horario"
     ],
-    "66": [
+    "67": [
       "scripts_deploy_sh__entry",
       "scripts_deploy_sh_scripts_deploy"
     ],
-    "67": [
+    "68": [
       "actualizar_app"
     ],
-    "68": [
+    "69": [
       "agents_skills_chat_motion_overlay_assets_remotion_template_remotion_config"
     ],
-    "69": [
+    "70": [
       "frontend_vite_config"
     ],
-    "70": [
+    "71": [
       "scripts_configurar_sync_horario_ps1_scripts_configurar_sync_horario"
     ],
-    "71": [
-      "scripts_deploy_ps1_scripts_deploy"
-    ],
     "72": [
-      "chart_js",
-      "frontend_package_dependencies",
-      "frontend_package_dependencies_chart_js",
-      "frontend_package_dependencies_lucide_react",
-      "frontend_package_dependencies_react_chartjs_2",
-      "lucide_react",
-      "react_chartjs_2"
+      "scripts_deploy_ps1_scripts_deploy"
     ]
   },
   "cohesion": {
@@ -919,25 +919,25 @@
     "8": 0.19298245614035087,
     "9": 0.10526315789473684,
     "10": 0.27205882352941174,
-    "11": 0.2222222222222222,
-    "12": 0.3333333333333333,
-    "13": 0.24166666666666667,
-    "14": 0.2,
-    "15": 0.3142857142857143,
-    "16": 0.3523809523809524,
-    "17": 0.19047619047619047,
-    "18": 0.18681318681318682,
-    "19": 0.14285714285714285,
-    "20": 0.16483516483516483,
-    "21": 0.15384615384615385,
-    "22": 0.34615384615384615,
-    "23": 0.24242424242424243,
-    "24": 0.16666666666666666,
-    "25": 0.36363636363636365,
-    "26": 0.23636363636363636,
-    "27": 0.5111111111111111,
-    "28": 0.4666666666666667,
-    "29": 0.2,
+    "11": 0.3333333333333333,
+    "12": 0.24166666666666667,
+    "13": 0.2,
+    "14": 0.3142857142857143,
+    "15": 0.3523809523809524,
+    "16": 0.19047619047619047,
+    "17": 0.18681318681318682,
+    "18": 0.14285714285714285,
+    "19": 0.16483516483516483,
+    "20": 0.15384615384615385,
+    "21": 0.34615384615384615,
+    "22": 0.24242424242424243,
+    "23": 0.16666666666666666,
+    "24": 0.36363636363636365,
+    "25": 0.23636363636363636,
+    "26": 0.5111111111111111,
+    "27": 0.4666666666666667,
+    "28": 0.2,
+    "29": 0.2222222222222222,
     "30": 0.2222222222222222,
     "31": 0.5,
     "32": 0.3888888888888889,
@@ -955,20 +955,20 @@
     "44": 0.3333333333333333,
     "45": 0.3333333333333333,
     "46": 0.2857142857142857,
-    "47": 0.3333333333333333,
-    "48": 0.6,
-    "49": 0.5333333333333333,
-    "50": 0.4,
-    "51": 0.7,
-    "52": 0.5,
-    "53": 0.4,
-    "54": 0.6666666666666666,
+    "47": 0.2857142857142857,
+    "48": 0.3333333333333333,
+    "49": 0.6,
+    "50": 0.5333333333333333,
+    "51": 0.4,
+    "52": 0.7,
+    "53": 0.5,
+    "54": 0.4,
     "55": 0.6666666666666666,
-    "56": 1.0,
-    "57": 0.6666666666666666,
-    "58": 1.0,
-    "59": 0.6666666666666666,
-    "60": 1.0,
+    "56": 0.6666666666666666,
+    "57": 1.0,
+    "58": 0.6666666666666666,
+    "59": 1.0,
+    "60": 0.6666666666666666,
     "61": 1.0,
     "62": 1.0,
     "63": 1.0,
@@ -980,7 +980,7 @@
     "69": 1.0,
     "70": 1.0,
     "71": 1.0,
-    "72": 0.2857142857142857
+    "72": 1.0
   },
   "gods": [
     {
@@ -1104,7 +1104,7 @@
     },
     {
       "type": "bridge_node",
-      "question": "Why does `dependencies` connect `dependencies` to `dependencies`, `frontend/package.json`?",
+      "question": "Why does `dependencies` connect `dependencies` to `frontend/package.json`, `dependencies`?",
       "why": "High betweenness centrality (0.002) - this node is a cross-community bridge."
     },
     {
