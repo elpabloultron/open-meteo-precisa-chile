@@ -898,7 +898,7 @@
   "cohesion": {
     "0": 0.06818181818181818,
     "1": 0.06289308176100629,
-    "2": 0.08163265306122448,
+    "2": 0.08078231292517007,
     "3": 0.15725806451612903,
     "4": 0.15268817204301074,
     "5": 0.17989417989417988,
@@ -1041,6 +1041,17 @@
       "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
     },
     {
+      "source": "obtener_clima_hiperlocal()",
+      "target": "evaluar_alertas_meteorologicas()",
+      "source_files": [
+        "main.py",
+        "alertas_engine.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `evaluar_alertas_meteorologicas()` unexpectedly reaches hub `obtener_clima_hiperlocal()`"
+    },
+    {
       "source": "cargar_cache_desde_disco()",
       "target": "load_cache()",
       "source_files": [
@@ -1061,17 +1072,6 @@
       "confidence": "EXTRACTED",
       "relation": "calls",
       "why": "connects across different repos/directories; bridges separate communities"
-    },
-    {
-      "source": "obtener_capas_mapa()",
-      "target": "obtener_capas_gee_y_windy()",
-      "source_files": [
-        "main.py",
-        "gee/tiles.py"
-      ],
-      "confidence": "INFERRED",
-      "relation": "calls",
-      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
     }
   ],
   "questions": [
@@ -1108,7 +1108,7 @@
     {
       "type": "low_cohesion",
       "question": "Should `main.py` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.08163265306122448 - nodes in this community are weakly interconnected."
+      "why": "Cohesion score 0.08078231292517007 - nodes in this community are weakly interconnected."
     }
   ]
 }

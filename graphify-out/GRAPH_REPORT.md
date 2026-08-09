@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 758 nodes · 1269 edges · 68 communities (54 shown, 14 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.8)
+- 758 nodes · 1268 edges · 68 communities (54 shown, 14 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 13 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6d7b7922`
+- Built from commit: `8da19b8b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -92,12 +92,12 @@
   main.py → goes_processor.py
 - `obtener_openmeteo_directo()` --calls--> `obtener_pronostico_openmeteo()`  [INFERRED]
   main.py → openmeteo_client.py
+- `obtener_clima_hiperlocal()` --calls--> `evaluar_alertas_meteorologicas()`  [INFERRED]
+  main.py → alertas_engine.py
 - `cargar_cache_desde_disco()` --calls--> `load_cache()`  [EXTRACTED]
   sincronizador_background.py → cache_store.py
 - `guardar_cache_en_disco()` --calls--> `save_cache()`  [EXTRACTED]
   sincronizador_background.py → cache_store.py
-- `obtener_capas_mapa()` --calls--> `obtener_capas_gee_y_windy()`  [INFERRED]
-  main.py → gee/tiles.py
 
 ## Import Cycles
 - None detected.
@@ -309,4 +309,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `react` be split into smaller, more focused modules?**
   _Cohesion score 0.06289308176100629 - nodes in this community are weakly interconnected._
 - **Should `main.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.08163265306122448 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08078231292517007 - nodes in this community are weakly interconnected._

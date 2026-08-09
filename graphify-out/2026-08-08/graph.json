@@ -8360,338 +8360,6 @@
       "id": "frontend_src_components_alertsbanner_alertsbanner"
     },
     {
-      "label": "main.py",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "main.py",
-      "community_name": "main.py",
-      "id": "main"
-    },
-    {
-      "label": "construir_transparency_metadata()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L27",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "construir_transparency_metadata()",
-      "community_name": "main.py",
-      "id": "main_construir_transparency_metadata"
-    },
-    {
-      "label": "lifespan()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L63",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "lifespan()",
-      "community_name": "sincronizador_background.py",
-      "id": "main_lifespan"
-    },
-    {
-      "label": "refresh_cache_before_api()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L101",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "refresh_cache_before_api()",
-      "community_name": "sincronizador_background.py",
-      "id": "main_refresh_cache_before_api"
-    },
-    {
-      "label": "quitar_tildes()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L111",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "quitar_tildes()",
-      "community_name": "main.py",
-      "id": "main_quitar_tildes"
-    },
-    {
-      "label": "calcular_distancia()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L116",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "calcular_distancia()",
-      "community_name": "main.py",
-      "id": "main_calcular_distancia"
-    },
-    {
-      "label": "calcular_rumbo_cardinal()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L124",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "calcular_rumbo_cardinal()",
-      "community_name": "main.py",
-      "id": "main_calcular_rumbo_cardinal"
-    },
-    {
-      "label": "calcular_horas_frio()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L132",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "calcular_horas_frio()",
-      "community_name": "main.py",
-      "id": "main_calcular_horas_frio"
-    },
-    {
-      "label": "evaluar_inversion_termica()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L138",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "evaluar_inversion_termica()",
-      "community_name": "main.py",
-      "id": "main_evaluar_inversion_termica"
-    },
-    {
-      "label": "obtener_gee_punto_seguro()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L146",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "obtener_gee_punto_seguro()",
-      "community_name": "main.py",
-      "id": "main_obtener_gee_punto_seguro"
-    },
-    {
-      "label": "calcular_calidad_aire_dual()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L169",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "calcular_calidad_aire_dual()",
-      "community_name": "main.py",
-      "id": "main_calcular_calidad_aire_dual"
-    },
-    {
-      "label": "home()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L269",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "home()",
-      "community_name": "main.py",
-      "id": "main_home"
-    },
-    {
-      "label": "obtener_capas_mapa()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L286",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "obtener_capas_mapa()",
-      "community_name": "main.py",
-      "id": "main_obtener_capas_mapa"
-    },
-    {
-      "label": "inspeccionar_ndvi_punto()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L298",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "inspeccionar_ndvi_punto()",
-      "community_name": "main.py",
-      "id": "main_inspeccionar_ndvi_punto"
-    },
-    {
-      "label": "obtener_historico_clima()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L309",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "obtener_historico_clima()",
-      "community_name": "main.py",
-      "id": "main_obtener_historico_clima"
-    },
-    {
-      "label": "obtener_satellite_latest_loop_api()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L330",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "obtener_satellite_latest_loop_api()",
-      "community_name": "main.py",
-      "id": "main_obtener_satellite_latest_loop_api"
-    },
-    {
-      "label": "obtener_satelite_goes19()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L335",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "obtener_satelite_goes19()",
-      "community_name": "main.py",
-      "id": "main_obtener_satelite_goes19"
-    },
-    {
-      "label": "buscar_estaciones()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L378",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "buscar_estaciones()",
-      "community_name": "main.py",
-      "id": "main_buscar_estaciones"
-    },
-    {
-      "label": "obtener_alertas_senapred()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L411",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "obtener_alertas_senapred()",
-      "community_name": "main.py",
-      "id": "main_obtener_alertas_senapred"
-    },
-    {
-      "label": "calcular_triangulacion_idw()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L418",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "calcular_triangulacion_idw()",
-      "community_name": "main.py",
-      "id": "main_calcular_triangulacion_idw"
-    },
-    {
-      "label": "obtener_clima_hiperlocal()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L469",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "obtener_clima_hiperlocal()",
-      "community_name": "main.py",
-      "id": "main_obtener_clima_hiperlocal"
-    },
-    {
-      "label": "obtener_clima_actual_api()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L733",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "obtener_clima_actual_api()",
-      "community_name": "main.py",
-      "id": "main_obtener_clima_actual_api"
-    },
-    {
-      "label": "forzar_sincronizacion_manual()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L745",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "forzar_sincronizacion_manual()",
-      "community_name": "sincronizador_background.py",
-      "id": "main_forzar_sincronizacion_manual"
-    },
-    {
-      "label": "obtener_openmeteo_directo()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L760",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "obtener_openmeteo_directo()",
-      "community_name": "main.py",
-      "id": "main_obtener_openmeteo_directo"
-    },
-    {
-      "label": "obtener_tile_mapa_gee()",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L774",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "obtener_tile_mapa_gee()",
-      "community_name": "main.py",
-      "id": "main_obtener_tile_mapa_gee"
-    },
-    {
-      "label": "Inicializa dependencias; la sincronizaci\u00f3n productiva la realiza Cloud Run Job.",
-      "file_type": "rationale",
-      "source_file": "main.py",
-      "source_location": "L64",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "inicializa dependencias; la sincronizacion productiva la realiza cloud run job.",
-      "community_name": "sincronizador_background.py",
-      "id": "main_rationale_64"
-    },
-    {
-      "label": "Endpoint directo para consultar pron\u00f3stico de Open-Meteo como fallback.",
-      "file_type": "rationale",
-      "source_file": "main.py",
-      "source_location": "L765",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "endpoint directo para consultar pronostico de open-meteo como fallback.",
-      "community_name": "main.py",
-      "id": "main_rationale_765"
-    },
-    {
-      "label": "Genera par\u00e1metros de mapa satelital interactivo GEE para renderizado en\u2026",
-      "file_type": "rationale",
-      "source_file": "main.py",
-      "source_location": "L779",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "genera parametros de mapa satelital interactivo gee para renderizado en...",
-      "community_name": "main.py",
-      "id": "main_rationale_779"
-    },
-    {
       "label": "AqiDrawer.jsx",
       "file_type": "code",
       "source_file": "frontend/src/components/AqiDrawer.jsx",
@@ -8938,9 +8606,10 @@
       "source_file": "frontend/src/App.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_app",
       "community": 1,
-      "norm_label": "app.jsx"
+      "norm_label": "app.jsx",
+      "community_name": "react",
+      "id": "frontend_src_app"
     },
     {
       "label": "App()",
@@ -8949,9 +8618,10 @@
       "source_location": "L23",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_app_app",
       "community": 1,
-      "norm_label": "app()"
+      "norm_label": "app()",
+      "community_name": "react",
+      "id": "frontend_src_app_app"
     },
     {
       "label": "WeatherHeader.jsx",
@@ -8959,9 +8629,10 @@
       "source_file": "frontend/src/components/WeatherHeader.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_components_weatherheader",
       "community": 1,
-      "norm_label": "weatherheader.jsx"
+      "norm_label": "weatherheader.jsx",
+      "community_name": "react",
+      "id": "frontend_src_components_weatherheader"
     },
     {
       "label": "WeatherHeader()",
@@ -8970,9 +8641,314 @@
       "source_location": "L5",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_components_weatherheader_weatherheader",
       "community": 1,
-      "norm_label": "weatherheader()"
+      "norm_label": "weatherheader()",
+      "community_name": "react",
+      "id": "frontend_src_components_weatherheader_weatherheader"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "main",
+      "community": 2,
+      "norm_label": "main.py"
+    },
+    {
+      "label": "construir_transparency_metadata()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L27",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_construir_transparency_metadata",
+      "community": 2,
+      "norm_label": "construir_transparency_metadata()"
+    },
+    {
+      "label": "lifespan()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L63",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_lifespan",
+      "community": 0,
+      "norm_label": "lifespan()"
+    },
+    {
+      "label": "refresh_cache_before_api()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L101",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_refresh_cache_before_api",
+      "community": 0,
+      "norm_label": "refresh_cache_before_api()"
+    },
+    {
+      "label": "quitar_tildes()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L111",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_quitar_tildes",
+      "community": 2,
+      "norm_label": "quitar_tildes()"
+    },
+    {
+      "label": "calcular_distancia()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L116",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_calcular_distancia",
+      "community": 2,
+      "norm_label": "calcular_distancia()"
+    },
+    {
+      "label": "calcular_rumbo_cardinal()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L124",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_calcular_rumbo_cardinal",
+      "community": 2,
+      "norm_label": "calcular_rumbo_cardinal()"
+    },
+    {
+      "label": "calcular_horas_frio()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L132",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_calcular_horas_frio",
+      "community": 2,
+      "norm_label": "calcular_horas_frio()"
+    },
+    {
+      "label": "evaluar_inversion_termica()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L138",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_evaluar_inversion_termica",
+      "community": 2,
+      "norm_label": "evaluar_inversion_termica()"
+    },
+    {
+      "label": "obtener_gee_punto_seguro()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L146",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_obtener_gee_punto_seguro",
+      "community": 2,
+      "norm_label": "obtener_gee_punto_seguro()"
+    },
+    {
+      "label": "calcular_calidad_aire_dual()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L169",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_calcular_calidad_aire_dual",
+      "community": 2,
+      "norm_label": "calcular_calidad_aire_dual()"
+    },
+    {
+      "label": "home()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L269",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_home",
+      "community": 2,
+      "norm_label": "home()"
+    },
+    {
+      "label": "obtener_capas_mapa()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L286",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_obtener_capas_mapa",
+      "community": 2,
+      "norm_label": "obtener_capas_mapa()"
+    },
+    {
+      "label": "inspeccionar_ndvi_punto()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L298",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_inspeccionar_ndvi_punto",
+      "community": 2,
+      "norm_label": "inspeccionar_ndvi_punto()"
+    },
+    {
+      "label": "obtener_historico_clima()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L309",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_obtener_historico_clima",
+      "community": 2,
+      "norm_label": "obtener_historico_clima()"
+    },
+    {
+      "label": "obtener_satellite_latest_loop_api()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L330",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_obtener_satellite_latest_loop_api",
+      "community": 2,
+      "norm_label": "obtener_satellite_latest_loop_api()"
+    },
+    {
+      "label": "obtener_satelite_goes19()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L335",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_obtener_satelite_goes19",
+      "community": 2,
+      "norm_label": "obtener_satelite_goes19()"
+    },
+    {
+      "label": "buscar_estaciones()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L378",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_buscar_estaciones",
+      "community": 2,
+      "norm_label": "buscar_estaciones()"
+    },
+    {
+      "label": "obtener_alertas_senapred()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L411",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_obtener_alertas_senapred",
+      "community": 2,
+      "norm_label": "obtener_alertas_senapred()"
+    },
+    {
+      "label": "calcular_triangulacion_idw()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L418",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_calcular_triangulacion_idw",
+      "community": 2,
+      "norm_label": "calcular_triangulacion_idw()"
+    },
+    {
+      "label": "obtener_clima_hiperlocal()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L469",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_obtener_clima_hiperlocal",
+      "community": 2,
+      "norm_label": "obtener_clima_hiperlocal()"
+    },
+    {
+      "label": "obtener_clima_actual_api()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L733",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_obtener_clima_actual_api",
+      "community": 2,
+      "norm_label": "obtener_clima_actual_api()"
+    },
+    {
+      "label": "forzar_sincronizacion_manual()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L745",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_forzar_sincronizacion_manual",
+      "community": 0,
+      "norm_label": "forzar_sincronizacion_manual()"
+    },
+    {
+      "label": "obtener_openmeteo_directo()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L760",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_obtener_openmeteo_directo",
+      "community": 2,
+      "norm_label": "obtener_openmeteo_directo()"
+    },
+    {
+      "label": "obtener_tile_mapa_gee()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L774",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "main_obtener_tile_mapa_gee",
+      "community": 2,
+      "norm_label": "obtener_tile_mapa_gee()"
+    },
+    {
+      "label": "Inicializa dependencias; la sincronizaci\u00f3n productiva la realiza Cloud Run Job.",
+      "file_type": "rationale",
+      "source_file": "main.py",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "main_rationale_64",
+      "community": 0,
+      "norm_label": "inicializa dependencias; la sincronizacion productiva la realiza cloud run job."
+    },
+    {
+      "label": "Endpoint directo para consultar pron\u00f3stico de Open-Meteo como fallback.",
+      "file_type": "rationale",
+      "source_file": "main.py",
+      "source_location": "L765",
+      "_origin": "ast",
+      "id": "main_rationale_765",
+      "community": 2,
+      "norm_label": "endpoint directo para consultar pronostico de open-meteo como fallback."
+    },
+    {
+      "label": "Genera par\u00e1metros de mapa satelital interactivo GEE para renderizado en\u2026",
+      "file_type": "rationale",
+      "source_file": "main.py",
+      "source_location": "L779",
+      "_origin": "ast",
+      "id": "main_rationale_779",
+      "community": 2,
+      "norm_label": "genera parametros de mapa satelital interactivo gee para renderizado en..."
     }
   ],
   "links": [
@@ -9051,9 +9027,9 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main",
-      "target": "app_config"
+      "target": "app_config",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -9437,9 +9413,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -9665,9 +9641,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_weatherheader",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -10418,9 +10394,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_bottomnav",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_bottomnav"
     },
     {
       "relation": "contains",
@@ -10441,9 +10417,9 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_estacionescercanasmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_estacionescercanasmodal"
     },
     {
       "relation": "contains",
@@ -10487,9 +10463,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlycarousel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_hourlycarousel"
     },
     {
       "relation": "contains",
@@ -10533,9 +10509,9 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_locationfallbackmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_locationfallbackmodal"
     },
     {
       "relation": "contains",
@@ -10567,9 +10543,9 @@
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_satellitemodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_satellitemodal"
     },
     {
       "relation": "contains",
@@ -10674,9 +10650,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_weatherheader",
-      "target": "frontend_src_utils_timeutils",
-      "confidence_score": 1.0
+      "target": "frontend_src_utils_timeutils"
     },
     {
       "relation": "contains",
@@ -10697,9 +10673,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_weatherheader",
-      "target": "frontend_src_utils_timeutils_formatlocaltime",
-      "confidence_score": 1.0
+      "target": "frontend_src_utils_timeutils_formatlocaltime"
     },
     {
       "relation": "calls",
@@ -11164,9 +11140,9 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main",
-      "target": "goes_processor"
+      "target": "goes_processor",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -11258,9 +11234,9 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main",
-      "target": "fastapi"
+      "target": "fastapi",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11270,9 +11246,9 @@
       "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_lifespan",
-      "target": "fastapi"
+      "target": "fastapi",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11282,9 +11258,9 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_refresh_cache_before_api",
-      "target": "middleware"
+      "target": "middleware",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11294,9 +11270,9 @@
       "source_location": "L101",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_refresh_cache_before_api",
-      "target": "request"
+      "target": "request",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11306,9 +11282,9 @@
       "source_location": "L377",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_buscar_estaciones",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -11318,9 +11294,9 @@
       "source_location": "L247",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_calcular_calidad_aire_dual",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -11330,9 +11306,9 @@
       "source_location": "L421",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_calcular_triangulacion_idw",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -11342,9 +11318,9 @@
       "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_construir_transparency_metadata",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11354,9 +11330,9 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_home",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11366,9 +11342,9 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_inspeccionar_ndvi_punto",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11378,9 +11354,9 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_obtener_alertas_senapred",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11390,9 +11366,9 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_obtener_capas_mapa",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11402,9 +11378,9 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_obtener_clima_actual_api",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11414,9 +11390,9 @@
       "source_location": "L468",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_obtener_clima_hiperlocal",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11426,9 +11402,9 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_obtener_historico_clima",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11438,9 +11414,9 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_obtener_openmeteo_directo",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11450,9 +11426,9 @@
       "source_location": "L334",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_obtener_satelite_goes19",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11462,9 +11438,9 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_obtener_satellite_latest_loop_api",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11474,9 +11450,9 @@
       "source_location": "L773",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_obtener_tile_mapa_gee",
-      "target": "get"
+      "target": "get",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -11486,9 +11462,9 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main_forzar_sincronizacion_manual",
-      "target": "post"
+      "target": "post",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -12647,9 +12623,9 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlyforecastdrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_hourlyforecastdrawer"
     },
     {
       "relation": "contains",
@@ -22069,9 +22045,9 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "main",
-      "target": "sincronizador_background"
+      "target": "sincronizador_background",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -22693,9 +22669,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_geemapmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_geemapmodal"
     },
     {
       "relation": "contains",
@@ -22716,9 +22692,9 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_detaildrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_detaildrawer"
     },
     {
       "relation": "contains",
@@ -22812,22 +22788,10 @@
       "target": "alertas_engine"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L664",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "alertas_engine_evaluar_alertas_meteorologicas"
-    },
-    {
       "relation": "calls",
       "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "main.py",
       "source_location": "L674",
       "weight": 1.0,
@@ -22843,9 +22807,9 @@
       "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_alertsbanner",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_alertsbanner"
     },
     {
       "relation": "contains",
@@ -22859,447 +22823,6 @@
       "target": "frontend_src_components_alertsbanner_alertsbanner"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L378",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_buscar_estaciones"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L169",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_calcular_calidad_aire_dual"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L116",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_calcular_distancia"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L132",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_calcular_horas_frio"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L124",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_calcular_rumbo_cardinal"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L418",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_calcular_triangulacion_idw"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L27",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_construir_transparency_metadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L138",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_evaluar_inversion_termica"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L745",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_forzar_sincronizacion_manual"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L269",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_home"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L298",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_inspeccionar_ndvi_punto"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_lifespan"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L411",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_alertas_senapred"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L286",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_capas_mapa"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L733",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_clima_actual_api"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L469",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_clima_hiperlocal"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L146",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_gee_punto_seguro"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L309",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_historico_clima"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L760",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_openmeteo_directo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L335",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_satelite_goes19"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L330",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_satellite_latest_loop_api"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L774",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_obtener_tile_mapa_gee"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L111",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_quitar_tildes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L101",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main",
-      "target": "main_refresh_cache_before_api"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L716",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_construir_transparency_metadata"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L64",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_rationale_64",
-      "target": "main_lifespan"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L396",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_buscar_estaciones",
-      "target": "main_quitar_tildes"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L425",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_calcular_triangulacion_idw",
-      "target": "main_calcular_distancia"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L483",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_calcular_distancia"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L491",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_calcular_rumbo_cardinal"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L566",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_calcular_horas_frio"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L595",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_evaluar_inversion_termica"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L302",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_inspeccionar_ndvi_punto",
-      "target": "main_obtener_gee_punto_seguro"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L597",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_obtener_gee_punto_seguro"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L520",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_calcular_calidad_aire_dual"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L577",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_hiperlocal",
-      "target": "main_calcular_triangulacion_idw"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L741",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_obtener_clima_actual_api",
-      "target": "main_obtener_clima_hiperlocal"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L765",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_rationale_765",
-      "target": "main_obtener_openmeteo_directo"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "main.py",
-      "source_location": "L779",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "main_rationale_779",
-      "target": "main_obtener_tile_mapa_gee"
-    },
-    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -23307,9 +22830,9 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_aqidrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_aqidrawer"
     },
     {
       "relation": "contains",
@@ -23330,9 +22853,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_agropanel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_agropanel"
     },
     {
       "relation": "contains",
@@ -23353,9 +22876,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_urbanpanel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_urbanpanel"
     },
     {
       "relation": "contains",
@@ -23376,9 +22899,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_comparisontable",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_comparisontable"
     },
     {
       "relation": "contains",
@@ -23399,9 +22922,9 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_dailyforecastcards",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_dailyforecastcards"
     },
     {
       "relation": "contains",
@@ -23422,9 +22945,9 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_forecastchart",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_forecastchart"
     },
     {
       "relation": "contains",
@@ -23445,9 +22968,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_mapsection",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_mapsection"
     },
     {
       "relation": "contains",
@@ -23468,9 +22991,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_navbar",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_navbar"
     },
     {
       "relation": "contains",
@@ -23515,9 +23038,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext",
-      "confidence_score": 1.0
+      "target": "frontend_src_context_weathercontext"
     },
     {
       "relation": "contains",
@@ -23549,9 +23072,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext_weathercontext",
-      "confidence_score": 1.0
+      "target": "frontend_src_context_weathercontext_weathercontext"
     },
     {
       "relation": "imports_from",
@@ -23561,9 +23084,9 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherskycanvas",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherskycanvas"
     },
     {
       "relation": "contains",
@@ -23583,9 +23106,9 @@
       "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_app_app",
-      "confidence_score": 1.0
+      "target": "frontend_src_app_app"
     },
     {
       "relation": "imports_from",
@@ -23595,9 +23118,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherheader",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherheader"
     },
     {
       "relation": "imports",
@@ -23607,9 +23130,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherheader_weatherheader",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherheader_weatherheader"
     },
     {
       "relation": "contains",
@@ -23618,11 +23141,452 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_weatherheader",
-      "target": "frontend_src_components_weatherheader_weatherheader",
+      "target": "frontend_src_components_weatherheader_weatherheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L378",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_buscar_estaciones",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L169",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_calcular_calidad_aire_dual",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_calcular_distancia",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_calcular_horas_frio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_calcular_rumbo_cardinal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L418",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_calcular_triangulacion_idw",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_construir_transparency_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L138",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_evaluar_inversion_termica",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L745",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_forzar_sincronizacion_manual",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L269",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_home",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L298",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_inspeccionar_ndvi_punto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_lifespan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L411",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_obtener_alertas_senapred",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L286",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_obtener_capas_mapa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L733",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_obtener_clima_actual_api",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L469",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_obtener_clima_hiperlocal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L146",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_obtener_gee_punto_seguro",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L309",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_obtener_historico_clima",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L760",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_obtener_openmeteo_directo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L335",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_obtener_satelite_goes19",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L330",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_obtener_satellite_latest_loop_api",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L774",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_obtener_tile_mapa_gee",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_quitar_tildes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main",
+      "target": "main_refresh_cache_before_api",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L716",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_construir_transparency_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_rationale_64",
+      "target": "main_lifespan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L396",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_buscar_estaciones",
+      "target": "main_quitar_tildes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L425",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_calcular_triangulacion_idw",
+      "target": "main_calcular_distancia",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L483",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_calcular_distancia",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L491",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_calcular_rumbo_cardinal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L566",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_calcular_horas_frio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L595",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_evaluar_inversion_termica",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L302",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_inspeccionar_ndvi_punto",
+      "target": "main_obtener_gee_punto_seguro",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L597",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_obtener_gee_punto_seguro",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L520",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_calcular_calidad_aire_dual",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L577",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_obtener_clima_hiperlocal",
+      "target": "main_calcular_triangulacion_idw",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L741",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_obtener_clima_actual_api",
+      "target": "main_obtener_clima_hiperlocal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L765",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_rationale_765",
+      "target": "main_obtener_openmeteo_directo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L779",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "main_rationale_779",
+      "target": "main_obtener_tile_mapa_gee",
       "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6d7b79223313f1efdaa9bc6c55e4c07751509c0d"
+  "built_at_commit": "8da19b8bd3f9b122803dc3e6b428abc0a2f6cc62"
 }

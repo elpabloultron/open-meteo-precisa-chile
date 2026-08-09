@@ -797,6 +797,3 @@ async def obtener_tile_mapa_gee(
             "colores": pal["palette"]
         }
     }
-
-
-

@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 758 nodes · 1270 edges · 68 communities (54 shown, 14 thin omitted)
+- 758 nodes · 1269 edges · 68 communities (54 shown, 14 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2243333f`
+- Built from commit: `6d7b7922`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -110,7 +110,7 @@ Nodes (47): AsyncClient, FastAPI, fixture, _descargar_y_procesar_frame(), obtene
 
 ### Community 1 - "react"
 Cohesion: 0.06
-Nodes (14): App(), DetailDrawer(), getWeatherIcon(), HourlyCarousel(), REGIONES, SatelliteModal(), WeatherHeader(), WeatherSkyCanvas() (+6 more)
+Nodes (13): App(), DetailDrawer(), getWeatherIcon(), HourlyCarousel(), REGIONES, SatelliteModal(), WeatherHeader(), WeatherContext (+5 more)
 
 ### Community 2 - "main.py"
 Cohesion: 0.08
@@ -307,6 +307,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `sincronizador_background.py` be split into smaller, more focused modules?**
   _Cohesion score 0.06818181818181818 - nodes in this community are weakly interconnected._
 - **Should `react` be split into smaller, more focused modules?**
-  _Cohesion score 0.06359189378057302 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06289308176100629 - nodes in this community are weakly interconnected._
 - **Should `main.py` be split into smaller, more focused modules?**
   _Cohesion score 0.08163265306122448 - nodes in this community are weakly interconnected._
