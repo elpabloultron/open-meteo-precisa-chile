@@ -75,9 +75,9 @@
     "semantic_hash": "ee3f931a3902ba7a6eb2d8b1b9af53b3"
   },
   "frontend/src/components/DetailDrawer.jsx": {
-    "mtime": 1785881041.405947,
-    "ast_hash": "43feb5bd449cfdabedbcae98abb65dbb",
-    "semantic_hash": "43feb5bd449cfdabedbcae98abb65dbb"
+    "mtime": 1786233472.1760063,
+    "ast_hash": "7f15044fa2bafa25f2a63debdb6ff9ed",
+    "semantic_hash": "7f15044fa2bafa25f2a63debdb6ff9ed"
   },
   "frontend/src/components/EstacionesCercanasModal.jsx": {
     "mtime": 1786057661.9321232,
@@ -578,5 +578,10 @@
     "mtime": 1786233219.3996449,
     "ast_hash": "69530484dc7f67c0b7bc1a1653977829",
     "semantic_hash": "69530484dc7f67c0b7bc1a1653977829"
+  },
+  "frontend/src/utils/educationalCatalog.js": {
+    "mtime": 1786233465.7151458,
+    "ast_hash": "a065eb2fff1e241b435fe761f01c8d3f",
+    "semantic_hash": "a065eb2fff1e241b435fe761f01c8d3f"
   }
 }

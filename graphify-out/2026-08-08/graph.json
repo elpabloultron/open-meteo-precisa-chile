@@ -20,7 +20,7 @@
       "source_file": "app_config.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "app_config.py",
       "community_name": "sincronizador_background.py",
       "id": "app_config"
@@ -32,7 +32,7 @@
       "source_location": "L23",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "_as_bool()",
       "community_name": "sincronizador_background.py",
       "id": "app_config_as_bool"
@@ -44,7 +44,7 @@
       "source_location": "L29",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "_as_origins()",
       "community_name": "sincronizador_background.py",
       "id": "app_config_as_origins"
@@ -57,7 +57,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "settings",
       "community_name": "sincronizador_background.py",
       "id": "app_config_settings"
@@ -69,7 +69,7 @@
       "source_location": "L55",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "get_settings()",
       "community_name": "sincronizador_background.py",
       "id": "app_config_get_settings"
@@ -80,7 +80,7 @@
       "source_file": "app_config.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "configuracion centralizada de meteoprecisa. los valores sensibles nunca tienen...",
       "community_name": "sincronizador_background.py",
       "id": "app_config_rationale_1"
@@ -91,7 +91,7 @@
       "source_file": "cache_store.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "cache_store.py",
       "community_name": "sincronizador_background.py",
       "id": "cache_store"
@@ -103,7 +103,7 @@
       "source_location": "L16",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "_load_local()",
       "community_name": "sincronizador_background.py",
       "id": "cache_store_load_local"
@@ -114,7 +114,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "path",
       "community_name": "sincronizador_background.py",
       "id": "path"
@@ -125,7 +125,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "any",
       "community_name": "sincronizador_background.py",
       "id": "any"
@@ -137,7 +137,7 @@
       "source_location": "L24",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "_save_local()",
       "community_name": "sincronizador_background.py",
       "id": "cache_store_save_local"
@@ -149,7 +149,7 @@
       "source_location": "L31",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "load_cache()",
       "community_name": "sincronizador_background.py",
       "id": "cache_store_load_cache"
@@ -161,7 +161,7 @@
       "source_location": "L53",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "save_cache()",
       "community_name": "sincronizador_background.py",
       "id": "cache_store_save_cache"
@@ -172,7 +172,7 @@
       "source_file": "cache_store.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "persistencia de la cache compartida entre el job y las instancias api.",
       "community_name": "sincronizador_background.py",
       "id": "cache_store_rationale_1"
@@ -183,7 +183,7 @@
       "source_file": "cache_store.py",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "carga la instantanea central; en desarrollo usa el archivo local.",
       "community_name": "sincronizador_background.py",
       "id": "cache_store_rationale_32"
@@ -194,7 +194,7 @@
       "source_file": "cache_store.py",
       "source_location": "L54",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "guarda una instantanea completa. reemplazar un objeto gcs es atomico.",
       "community_name": "sincronizador_background.py",
       "id": "cache_store_rationale_54"
@@ -207,7 +207,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": ".oxlintrc.json",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_oxlintrc"
     },
     {
@@ -218,7 +218,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "$schema",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_oxlintrc_schema"
     },
     {
@@ -229,7 +229,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "plugins",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_oxlintrc_plugins"
     },
     {
@@ -240,7 +240,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "react",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "ref_react"
     },
     {
@@ -251,7 +251,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "oxc",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "ref_oxc"
     },
     {
@@ -262,7 +262,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "rules",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_oxlintrc_rules"
     },
     {
@@ -273,7 +273,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "react/rules-of-hooks",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_oxlintrc_rules_react_rules_of_hooks"
     },
     {
@@ -284,7 +284,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "react/only-export-components",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_oxlintrc_rules_react_only_export_components"
     },
     {
@@ -295,7 +295,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "warn",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "ref_warn"
     },
     {
@@ -944,7 +944,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "bottomnav.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_bottomnav"
     },
     {
@@ -956,7 +956,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "bottomnav()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_bottomnav_bottomnav"
     },
     {
@@ -967,7 +967,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "dailyforecastcards.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_dailyforecastcards"
     },
     {
@@ -979,31 +979,8 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "dailyforecastcards()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_dailyforecastcards_dailyforecastcards"
-    },
-    {
-      "label": "DetailDrawer.jsx",
-      "file_type": "code",
-      "source_file": "frontend/src/components/DetailDrawer.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "detaildrawer.jsx",
-      "community_name": "App.jsx",
-      "id": "frontend_src_components_detaildrawer"
-    },
-    {
-      "label": "DetailDrawer()",
-      "file_type": "code",
-      "source_file": "frontend/src/components/DetailDrawer.jsx",
-      "source_location": "L4",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "detaildrawer()",
-      "community_name": "App.jsx",
-      "id": "frontend_src_components_detaildrawer_detaildrawer"
     },
     {
       "label": "EstacionesCercanasModal.jsx",
@@ -1013,7 +990,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "estacionescercanasmodal.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_estacionescercanasmodal"
     },
     {
@@ -1025,7 +1002,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "estacionescercanasmodal()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_estacionescercanasmodal_estacionescercanasmodal"
     },
     {
@@ -1036,7 +1013,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "forecastchart.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_forecastchart"
     },
     {
@@ -1048,7 +1025,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "forecastchart()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_forecastchart_forecastchart"
     },
     {
@@ -1059,7 +1036,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "historicalchart.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_historicalchart"
     },
     {
@@ -1071,7 +1048,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "historicalchart()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_historicalchart_historicalchart"
     },
     {
@@ -1082,7 +1059,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "hourlycarousel.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_hourlycarousel"
     },
     {
@@ -1094,7 +1071,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "getweathericon()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_hourlycarousel_getweathericon"
     },
     {
@@ -1106,7 +1083,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "hourlycarousel()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_hourlycarousel_hourlycarousel"
     },
     {
@@ -1117,7 +1094,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "locationfallbackmodal.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_locationfallbackmodal"
     },
     {
@@ -1128,7 +1105,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "regiones",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_locationfallbackmodal_regiones"
     },
     {
@@ -1140,7 +1117,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "locationfallbackmodal()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_locationfallbackmodal_locationfallbackmodal"
     },
     {
@@ -1151,7 +1128,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "satellitemodal.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_satellitemodal"
     },
     {
@@ -1163,7 +1140,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "satellitemodal()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_satellitemodal_satellitemodal"
     },
     {
@@ -1174,7 +1151,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "weathercontext.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_context_weathercontext"
     },
     {
@@ -1185,7 +1162,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "weathercontext",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_context_weathercontext_weathercontext"
     },
     {
@@ -1197,7 +1174,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "weatherprovider()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_context_weathercontext_weatherprovider"
     },
     {
@@ -1208,7 +1185,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "main.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_main"
     },
     {
@@ -1219,7 +1196,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "timeutils.js",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_utils_timeutils"
     },
     {
@@ -1231,7 +1208,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "formatlocaltime()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_utils_timeutils_formatlocaltime"
     },
     {
@@ -1493,7 +1470,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "middleware",
       "community_name": "main.py",
       "id": "middleware"
@@ -1504,7 +1481,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "request",
       "community_name": "main.py",
       "id": "request"
@@ -1771,7 +1748,7 @@
       "source_file": "test_main.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "test_main.py",
       "community_name": "test_main.py",
       "id": "test_main"
@@ -1784,7 +1761,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "fakeopenmeteoresponse",
       "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoresponse"
@@ -1796,7 +1773,7 @@
       "source_location": "L49",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": ".json()",
       "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoresponse_json"
@@ -1809,7 +1786,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "fakeopenmeteoclient",
       "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoclient"
@@ -1821,7 +1798,7 @@
       "source_location": "L76",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": ".__aenter__()",
       "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoclient_aenter"
@@ -1833,7 +1810,7 @@
       "source_location": "L79",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": ".__aexit__()",
       "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoclient_aexit"
@@ -1845,7 +1822,7 @@
       "source_location": "L82",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": ".get()",
       "community_name": "test_main.py",
       "id": "test_main_fakeopenmeteoclient_get"
@@ -1856,7 +1833,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "fixture",
       "community_name": "test_main.py",
       "id": "fixture"
@@ -1868,7 +1845,7 @@
       "source_location": "L87",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "client()",
       "community_name": "test_main.py",
       "id": "test_main_client"
@@ -1880,7 +1857,7 @@
       "source_location": "L105",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "test_home_endpoint_reports_real_status()",
       "community_name": "test_main.py",
       "id": "test_main_test_home_endpoint_reports_real_status"
@@ -1892,7 +1869,7 @@
       "source_location": "L114",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "test_capas_mapa_endpoint_accepts_default_coordinates()",
       "community_name": "test_main.py",
       "id": "test_main_test_capas_mapa_endpoint_accepts_default_coordinates"
@@ -1904,7 +1881,7 @@
       "source_location": "L122",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "test_capas_mapa_rejects_invalid_coordinates()",
       "community_name": "test_main.py",
       "id": "test_main_test_capas_mapa_rejects_invalid_coordinates"
@@ -1916,7 +1893,7 @@
       "source_location": "L127",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "test_buscar_estaciones_endpoint_uses_cached_catalog()",
       "community_name": "test_main.py",
       "id": "test_main_test_buscar_estaciones_endpoint_uses_cached_catalog"
@@ -1928,7 +1905,7 @@
       "source_location": "L133",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "test_alertas_senapred_endpoint_uses_cached_data()",
       "community_name": "test_main.py",
       "id": "test_main_test_alertas_senapred_endpoint_uses_cached_data"
@@ -1940,7 +1917,7 @@
       "source_location": "L139",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "test_weather_current_endpoint_uses_cached_and_mocked_data()",
       "community_name": "test_main.py",
       "id": "test_main_test_weather_current_endpoint_uses_cached_and_mocked_data"
@@ -1952,7 +1929,7 @@
       "source_location": "L148",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "test_weather_current_requires_longitude()",
       "community_name": "test_main.py",
       "id": "test_main_test_weather_current_requires_longitude"
@@ -1964,7 +1941,7 @@
       "source_location": "L153",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "test_historico_accepts_lng_alias_and_validates_missing_longitude()",
       "community_name": "test_main.py",
       "id": "test_main_test_historico_accepts_lng_alias_and_validates_missing_longitude"
@@ -1976,7 +1953,7 @@
       "source_location": "L158",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "test_manual_sync_requires_configuration_or_token()",
       "community_name": "test_main.py",
       "id": "test_main_test_manual_sync_requires_configuration_or_token"
@@ -1988,7 +1965,7 @@
       "source_location": "L164",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 1,
       "norm_label": "test_clean_num_discards_sentinel_values()",
       "community_name": "test_main.py",
       "id": "test_main_test_clean_num_discards_sentinel_values"
@@ -2080,7 +2057,7 @@
       "source_file": "openmeteo_client.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "openmeteo_client.py",
       "community_name": "sincronizador_background.py",
       "id": "openmeteo_client"
@@ -2092,7 +2069,7 @@
       "source_location": "L19",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "obtener_pronostico_openmeteo()",
       "community_name": "sincronizador_background.py",
       "id": "openmeteo_client_obtener_pronostico_openmeteo"
@@ -2103,7 +2080,7 @@
       "source_file": "openmeteo_client.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "cliente asincrono open-source para open-meteo api. sirve como respaldo...",
       "community_name": "sincronizador_background.py",
       "id": "openmeteo_client_rationale_1"
@@ -2114,7 +2091,7 @@
       "source_file": "openmeteo_client.py",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 1,
+      "community": 7,
       "norm_label": "consulta el pronostico agroclimatico hiperlocal en open-meteo.",
       "community_name": "sincronizador_background.py",
       "id": "openmeteo_client_rationale_24"
@@ -2303,7 +2280,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "aqidrawer.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_aqidrawer"
     },
     {
@@ -2315,7 +2292,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "aqidrawer()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_aqidrawer_aqidrawer"
     },
     {
@@ -2326,7 +2303,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "comparisontable.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_comparisontable"
     },
     {
@@ -2338,7 +2315,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "comparisontable()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_comparisontable_comparisontable"
     },
     {
@@ -2349,7 +2326,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "hourlyforecastdrawer.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_hourlyforecastdrawer"
     },
     {
@@ -2361,7 +2338,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "hourlyforecastdrawer()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_hourlyforecastdrawer_hourlyforecastdrawer"
     },
     {
@@ -2372,7 +2349,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "navbar.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_navbar"
     },
     {
@@ -2384,7 +2361,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "navbar()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_navbar_navbar"
     },
     {
@@ -8097,7 +8074,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "urbanpanel.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_urbanpanel"
     },
     {
@@ -8109,7 +8086,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "urbanpanel()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_urbanpanel_urbanpanel"
     },
     {
@@ -8120,7 +8097,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "weatherheader.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_weatherheader"
     },
     {
@@ -8132,7 +8109,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "weatherheader()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_weatherheader_weatherheader"
     },
     {
@@ -8379,7 +8356,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "agropanel.jsx",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_agropanel"
     },
     {
@@ -8391,7 +8368,7 @@
       "_origin": "ast",
       "community": 0,
       "norm_label": "agropanel()",
-      "community_name": "App.jsx",
+      "community_name": "react",
       "id": "frontend_src_components_agropanel_agropanel"
     },
     {
@@ -8505,7 +8482,7 @@
       "source_location": "L101",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "refresh_cache_before_api()",
       "community_name": "main.py",
       "id": "main_refresh_cache_before_api"
@@ -8801,9 +8778,10 @@
       "source_file": "frontend/src/App.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_app",
       "community": 0,
-      "norm_label": "app.jsx"
+      "norm_label": "app.jsx",
+      "community_name": "react",
+      "id": "frontend_src_app"
     },
     {
       "label": "App()",
@@ -8812,9 +8790,10 @@
       "source_location": "L21",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_app_app",
       "community": 0,
-      "norm_label": "app()"
+      "norm_label": "app()",
+      "community_name": "react",
+      "id": "frontend_src_app_app"
     },
     {
       "label": "GeeMapModal.jsx",
@@ -8822,9 +8801,10 @@
       "source_file": "frontend/src/components/GeeMapModal.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_components_geemapmodal",
       "community": 0,
-      "norm_label": "geemapmodal.jsx"
+      "norm_label": "geemapmodal.jsx",
+      "community_name": "react",
+      "id": "frontend_src_components_geemapmodal"
     },
     {
       "label": "GeeMapModal()",
@@ -8833,9 +8813,10 @@
       "source_location": "L4",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_components_geemapmodal_geemapmodal",
       "community": 0,
-      "norm_label": "geemapmodal()"
+      "norm_label": "geemapmodal()",
+      "community_name": "react",
+      "id": "frontend_src_components_geemapmodal_geemapmodal"
     },
     {
       "label": "MapSection.jsx",
@@ -8843,9 +8824,10 @@
       "source_file": "frontend/src/components/MapSection.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_components_mapsection",
       "community": 0,
-      "norm_label": "mapsection.jsx"
+      "norm_label": "mapsection.jsx",
+      "community_name": "react",
+      "id": "frontend_src_components_mapsection"
     },
     {
       "label": "MapSection()",
@@ -8854,9 +8836,62 @@
       "source_location": "L4",
       "_callable": true,
       "_origin": "ast",
-      "id": "frontend_src_components_mapsection_mapsection",
       "community": 0,
-      "norm_label": "mapsection()"
+      "norm_label": "mapsection()",
+      "community_name": "react",
+      "id": "frontend_src_components_mapsection_mapsection"
+    },
+    {
+      "label": "DetailDrawer.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/DetailDrawer.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "frontend_src_components_detaildrawer",
+      "community": 0,
+      "norm_label": "detaildrawer.jsx"
+    },
+    {
+      "label": "DetailDrawer()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/DetailDrawer.jsx",
+      "source_location": "L5",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "frontend_src_components_detaildrawer_detaildrawer",
+      "community": 0,
+      "norm_label": "detaildrawer()"
+    },
+    {
+      "label": "educationalCatalog.js",
+      "file_type": "code",
+      "source_file": "frontend/src/utils/educationalCatalog.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "frontend_src_utils_educationalcatalog",
+      "community": 0,
+      "norm_label": "educationalcatalog.js"
+    },
+    {
+      "label": "EDUCATIONAL_METRICS",
+      "file_type": "code",
+      "source_file": "frontend/src/utils/educationalCatalog.js",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "frontend_src_utils_educationalcatalog_educational_metrics",
+      "community": 0,
+      "norm_label": "educational_metrics"
+    },
+    {
+      "label": "getEducationalInfo()",
+      "file_type": "code",
+      "source_file": "frontend/src/utils/educationalCatalog.js",
+      "source_location": "L82",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "frontend_src_utils_educationalcatalog_geteducationalinfo",
+      "community": 0,
+      "norm_label": "geteducationalinfo()"
     }
   ],
   "links": [
@@ -9321,9 +9356,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -9393,9 +9428,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "frontend_src_components_detaildrawer",
-      "target": "ref_react"
+      "target": "ref_react",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -9429,9 +9464,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_geemapmodal",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -9489,9 +9524,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_mapsection",
-      "target": "ref_react",
-      "confidence_score": 1.0
+      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -10278,9 +10313,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_bottomnav",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_bottomnav"
     },
     {
       "relation": "contains",
@@ -10301,9 +10336,9 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_dailyforecastcards",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_dailyforecastcards"
     },
     {
       "relation": "contains",
@@ -10321,35 +10356,12 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "frontend_src_app",
-      "target": "frontend_src_components_detaildrawer",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/DetailDrawer.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_detaildrawer",
-      "target": "frontend_src_components_detaildrawer_detaildrawer"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/App.jsx",
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_estacionescercanasmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_estacionescercanasmodal"
     },
     {
       "relation": "contains",
@@ -10370,9 +10382,9 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_forecastchart",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_forecastchart"
     },
     {
       "relation": "contains",
@@ -10416,9 +10428,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlycarousel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_hourlycarousel"
     },
     {
       "relation": "contains",
@@ -10462,9 +10474,9 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_locationfallbackmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_locationfallbackmodal"
     },
     {
       "relation": "contains",
@@ -10496,9 +10508,9 @@
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_satellitemodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_satellitemodal"
     },
     {
       "relation": "contains",
@@ -10555,9 +10567,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext",
-      "confidence_score": 1.0
+      "target": "frontend_src_context_weathercontext"
     },
     {
       "relation": "contains",
@@ -10601,9 +10613,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_context_weathercontext_weathercontext",
-      "confidence_score": 1.0
+      "target": "frontend_src_context_weathercontext_weathercontext"
     },
     {
       "relation": "imports",
@@ -12622,9 +12634,9 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_aqidrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_aqidrawer"
     },
     {
       "relation": "contains",
@@ -12645,9 +12657,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_comparisontable",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_comparisontable"
     },
     {
       "relation": "contains",
@@ -12668,9 +12680,9 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_hourlyforecastdrawer",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_hourlyforecastdrawer"
     },
     {
       "relation": "contains",
@@ -12691,9 +12703,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_navbar",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_navbar"
     },
     {
       "relation": "contains",
@@ -22113,9 +22125,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_urbanpanel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_urbanpanel"
     },
     {
       "relation": "contains",
@@ -22136,9 +22148,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_weatherheader",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_weatherheader"
     },
     {
       "relation": "contains",
@@ -22692,9 +22704,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_agropanel",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_agropanel"
     },
     {
       "relation": "contains",
@@ -23270,9 +23282,21 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_app_app",
-      "confidence_score": 1.0
+      "target": "frontend_src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_detaildrawer"
     },
     {
       "relation": "imports_from",
@@ -23282,9 +23306,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_geemapmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_geemapmodal"
     },
     {
       "relation": "imports",
@@ -23294,9 +23318,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_geemapmodal_geemapmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_geemapmodal_geemapmodal"
     },
     {
       "relation": "imports_from",
@@ -23306,9 +23330,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_mapsection",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_mapsection"
     },
     {
       "relation": "imports",
@@ -23318,9 +23342,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_app",
-      "target": "frontend_src_components_mapsection_mapsection",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_mapsection_mapsection"
     },
     {
       "relation": "contains",
@@ -23329,9 +23353,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_geemapmodal",
-      "target": "frontend_src_components_geemapmodal_geemapmodal",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_geemapmodal_geemapmodal"
     },
     {
       "relation": "contains",
@@ -23340,11 +23364,80 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_components_mapsection",
-      "target": "frontend_src_components_mapsection_mapsection",
+      "target": "frontend_src_components_mapsection_mapsection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/DetailDrawer.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_detaildrawer",
+      "target": "frontend_src_components_detaildrawer_detaildrawer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/DetailDrawer.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_detaildrawer",
+      "target": "frontend_src_utils_educationalcatalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/DetailDrawer.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_detaildrawer",
+      "target": "frontend_src_utils_educationalcatalog_geteducationalinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/DetailDrawer.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_components_detaildrawer_detaildrawer",
+      "target": "frontend_src_utils_educationalcatalog_geteducationalinfo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/utils/educationalCatalog.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_utils_educationalcatalog",
+      "target": "frontend_src_utils_educationalcatalog_educational_metrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/utils/educationalCatalog.js",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "frontend_src_utils_educationalcatalog",
+      "target": "frontend_src_utils_educationalcatalog_geteducationalinfo",
       "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9d953a0cd26af167a4c3cf7b9fb66e97a1fe413d"
+  "built_at_commit": "2d0d38c44721334430f28bf9bf3787e8ca88d2c7"
 }
