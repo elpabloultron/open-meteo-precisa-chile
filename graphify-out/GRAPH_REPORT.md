@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 756 nodes · 1264 edges · 67 communities (53 shown, 14 thin omitted)
+- 756 nodes · 1264 edges · 68 communities (54 shown, 14 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `42793514`
+- Built from commit: `51342355`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -23,7 +23,6 @@
 - BubbleScene.tsx
 - app_config.py
 - devDependencies
-- dependencies
 - finalize_pet_run.py
 - compare-recon.mjs
 - od-preview-rewrite.mjs
@@ -41,6 +40,7 @@
 - compose_atlas.py
 - queue_pet_repairs.py
 - frontend/package.json
+- dependencies
 - devDependencies
 - derive_running_left_from_running_right.py
 - extract_pptx.py
@@ -56,6 +56,7 @@
 - install.sh
 - dna-scaffold.mjs
 - recon-site.mjs
+- dependencies
 - MeteoPrecisaUser
 - validate-skill-submission.sh
 - verify
@@ -101,7 +102,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (67 total, 14 thin omitted)
+## Communities (68 total, 14 thin omitted)
 
 ### Community 0 - "main.py"
 Cohesion: 0.07
@@ -139,73 +140,73 @@ Nodes (17): Any, _as_bool(), _as_origins(), get_settings(), Configuración centr
 Cohesion: 0.11
 Nodes (19): devDependencies, knip, oxlint, tailwindcss, @tailwindcss/vite, @types/node, @types/react-dom, vite (+11 more)
 
-### Community 9 - "dependencies"
-Cohesion: 0.13
-Nodes (16): dependencies, react, react-dom, remotion, chart.js, dependencies, chart.js, lucide-react (+8 more)
-
-### Community 10 - "finalize_pet_run.py"
+### Community 9 - "finalize_pet_run.py"
 Cohesion: 0.33
 Nodes (15): default_codex_home(), default_generated_images_root(), file_sha256(), is_relative_to(), load_json(), main(), manifest_path(), CompletedProcess (+7 more)
 
-### Community 11 - "compare-recon.mjs"
+### Community 10 - "compare-recon.mjs"
 Cohesion: 0.24
 Nodes (12): boolList(), changedActionCount(), firstSignals(), inferComplexity(), interactionSection(), line(), ratioScore(), report() (+4 more)
 
-### Community 12 - "od-preview-rewrite.mjs"
+### Community 11 - "od-preview-rewrite.mjs"
 Cohesion: 0.20
 Nodes (12): hostRootPrefixes, includeExt, projectAssetPrefixes, relativeRef(), rewriteCssUrls(), rewriteFile(), rewriteHtmlAttrs(), rewriteRootRef() (+4 more)
 
-### Community 13 - "extract_strip_frames.py"
+### Community 12 - "extract_strip_frames.py"
 Cohesion: 0.31
 Nodes (14): color_distance(), component_group_image(), connected_components(), extract_component_frames(), extract_slot_frames(), extract_state(), fit_to_cell(), load_chroma_key() (+6 more)
 
-### Community 14 - "record_imagegen_result.py"
+### Community 13 - "record_imagegen_result.py"
 Cohesion: 0.35
 Nodes (14): completed_job_ids(), default_generated_images_root(), file_sha256(), find_job(), image_metadata(), is_relative_to(), job_list(), load_jobs() (+6 more)
 
-### Community 15 - "audit-clone.mjs"
+### Community 14 - "audit-clone.mjs"
 Cohesion: 0.19
 Nodes (10): collectCloneColors(), collectMatches(), customFontFamilies(), fidelityFindings(), GENERIC_FONT_FAMILIES, includeExt, lineNumber(), normalizeColor() (+2 more)
 
-### Community 17 - "mirror-site.mjs"
+### Community 16 - "mirror-site.mjs"
 Cohesion: 0.14
 Nodes (10): all, args, failed, outRoot, ownUrls, pw, responses, siteDir (+2 more)
 
-### Community 18 - "compilerOptions"
+### Community 17 - "compilerOptions"
 Cohesion: 0.15
 Nodes (12): compilerOptions, allowSyntheticDefaultImports, esModuleInterop, jsx, module, moduleResolution, resolveJsonModule, skipLibCheck (+4 more)
 
-### Community 19 - "inspect_frames.py"
+### Community 18 - "inspect_frames.py"
 Cohesion: 0.35
 Nodes (12): alpha_nonzero_count(), chroma_adjacent_count(), color_distance(), edge_alpha_count(), frame_files(), inspect_state(), load_chroma_key(), load_manifest() (+4 more)
 
-### Community 20 - "interaction-probe.mjs"
+### Community 19 - "interaction-probe.mjs"
 Cohesion: 0.24
 Nodes (6): captureAction(), hasChanged(), hashSnapshot(), safeFileName(), shortHash(), snapshot()
 
-### Community 21 - "manifest.json"
+### Community 20 - "manifest.json"
 Cohesion: 0.17
 Nodes (11): background_color, categories, display, icons, name, orientation, short_name, start_url (+3 more)
 
-### Community 22 - "main"
+### Community 21 - "main"
 Cohesion: 0.36
 Nodes (10): base_config(), main(), parse_args(), participant(), CompletedProcess, Namespace, Path, read_generated_chat_spec() (+2 more)
 
-### Community 23 - "config.sh"
+### Community 22 - "config.sh"
 Cohesion: 0.24
 Nodes (6): od::assert_in_workroot(), od::die(), od::err(), od::require(), OD_TARGET_REPO, config.sh script
 
-### Community 24 - "compose_atlas.py"
+### Community 23 - "compose_atlas.py"
 Cohesion: 0.51
 Nodes (9): compose_from_frames(), compose_from_source_atlas(), find_row_frames(), image_files(), main(), paste_centered(), Image, Path (+1 more)
 
-### Community 25 - "queue_pet_repairs.py"
+### Community 24 - "queue_pet_repairs.py"
 Cohesion: 0.47
 Nodes (9): append_repair_note(), archive_decoded_output(), job_list(), load_json(), main(), next_archive_path(), Path, queue_repair() (+1 more)
 
-### Community 26 - "frontend/package.json"
+### Community 25 - "frontend/package.json"
 Cohesion: 0.20
 Nodes (9): name, private, scripts, build, dev, lint, preview, type (+1 more)
+
+### Community 26 - "dependencies"
+Cohesion: 0.22
+Nodes (9): dependencies, react, react-dom, remotion, react, react-dom, react, react-dom (+1 more)
 
 ### Community 27 - "devDependencies"
 Cohesion: 0.22
@@ -259,27 +260,31 @@ Nodes (6): checker(), main(), Image, Path, render_state(), shell_quote_for_conca
 Cohesion: 0.62
 Nodes (6): cyan(), die(), gray(), green(), install_skill_to(), install.sh script
 
-### Community 44 - "MeteoPrecisaUser"
+### Community 44 - "dependencies"
+Cohesion: 0.29
+Nodes (7): chart.js, dependencies, chart.js, lucide-react, react-chartjs-2, lucide-react, react-chartjs-2
+
+### Community 45 - "MeteoPrecisaUser"
 Cohesion: 0.33
 Nodes (4): HttpUser, MeteoPrecisaUser, Locust Load Test Script para MeteoPrecisa API. Para ejecutar: pip install…, task
 
-### Community 45 - "validate-skill-submission.sh"
+### Community 46 - "validate-skill-submission.sh"
 Cohesion: 0.60
 Nodes (5): escapes_root(), fail(), pass(), validate-skill-submission.sh script, warn()
 
-### Community 46 - "verify"
+### Community 47 - "verify"
 Cohesion: 0.53
 Nodes (5): emu_to_in(), is_footer_by_name(), main(), Path, verify()
 
-### Community 47 - "discover-doc-gaps.sh"
+### Community 48 - "discover-doc-gaps.sh"
 Cohesion: 0.70
 Nodes (4): emit_todo(), extract_links(), GREP(), discover-doc-gaps.sh script
 
-### Community 50 - "checker"
+### Community 51 - "checker"
 Cohesion: 0.67
 Nodes (3): checker(), main(), Image
 
-### Community 51 - "alpha_nonzero_count"
+### Community 52 - "alpha_nonzero_count"
 Cohesion: 0.67
 Nodes (3): alpha_nonzero_count(), main(), Image
 
@@ -295,7 +300,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `frontend/package.json`, `devDependencies`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `dependencies` to `frontend/package.json`?**
+- **Why does `dependencies` connect `dependencies` to `frontend/package.json`, `dependencies`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **What connects `$schema`, `oxc`, `react/rules-of-hooks` to the rest of the system?**
   _97 weakly-connected nodes found - possible documentation gaps or missing edges._
