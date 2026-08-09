@@ -45,9 +45,9 @@
     "semantic_hash": "f7b7cdb8689be56d1f4a5391df0102e3"
   },
   "frontend/src/App.jsx": {
-    "mtime": 1786234040.443078,
-    "ast_hash": "bac44fddd92367a777bf33db2887f4e4",
-    "semantic_hash": "bac44fddd92367a777bf33db2887f4e4"
+    "mtime": 1786235699.2673686,
+    "ast_hash": "1218e0c1cd3a37f4136c238502ec53eb",
+    "semantic_hash": "1218e0c1cd3a37f4136c238502ec53eb"
   },
   "frontend/src/components/AgroPanel.jsx": {
     "mtime": 1786234634.1706684,
@@ -130,9 +130,9 @@
     "semantic_hash": "e4e813913086be47712f85e95ebacac0"
   },
   "frontend/src/components/WeatherHeader.jsx": {
-    "mtime": 1786234625.1342173,
-    "ast_hash": "4a17c33a66a13273b89d1e2730ddedf8",
-    "semantic_hash": "4a17c33a66a13273b89d1e2730ddedf8"
+    "mtime": 1786235679.9354413,
+    "ast_hash": "2c5ff99245ead6784bb6ef17e9c028e3",
+    "semantic_hash": "2c5ff99245ead6784bb6ef17e9c028e3"
   },
   "frontend/src/context/WeatherContext.jsx": {
     "mtime": 1786235205.3012378,
@@ -593,5 +593,10 @@
     "mtime": 1786234027.7494757,
     "ast_hash": "345a6bed5b6ad57b0bbda4a0b2abde6a",
     "semantic_hash": "345a6bed5b6ad57b0bbda4a0b2abde6a"
+  },
+  "frontend/src/components/WeatherSkyCanvas.jsx": {
+    "mtime": 1786235666.2882106,
+    "ast_hash": "271d9d81e5a444d1a20ca520e4c103fb",
+    "semantic_hash": "271d9d81e5a444d1a20ca520e4c103fb"
   }
 }

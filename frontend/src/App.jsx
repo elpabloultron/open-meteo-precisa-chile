@@ -18,6 +18,7 @@ import EstacionesCercanasModal from './components/EstacionesCercanasModal';
 import LocationFallbackModal from './components/LocationFallbackModal';
 import GeeMapModal from './components/GeeMapModal';
 import AlertsBanner from './components/AlertsBanner';
+import WeatherSkyCanvas from './components/WeatherSkyCanvas';
 
 export default function App() {
   const {
@@ -27,6 +28,7 @@ export default function App() {
     loading,
     gpsFallbackOpen, setGpsFallbackOpen,
     handleSelectStation,
+    resolvedTheme,
     API_BASE
   } = useContext(WeatherContext);
 
@@ -85,6 +87,9 @@ export default function App() {
 
   return (
     <div className={`theme-wrapper ${modo === 'agricola' ? 'theme-agricola' : 'theme-urbano'}`}>
+      {/* LIENZO DE CIELO ATMOSFÉRICO DINÁMICO ESTILO APPLE WEATHER */}
+      <WeatherSkyCanvas climaData={climaData} resolvedTheme={resolvedTheme} />
+
       <div className="min-h-screen text-slate-100 flex flex-col font-sans selection:bg-sky-500 selection:text-slate-950">
       
       {/* NAVBAR NAVEGACIÓN PRINCIPAL */}

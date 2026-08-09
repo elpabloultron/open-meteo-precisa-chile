@@ -1,58 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'Space Grotesk', monospace;
 }
 
-/* TEMA OSCURO (DEFAULTS & PREFERS-COLOR-SCHEME DARK) */
+/* DEFAULTS OSCUROS (APPLE NIGHT SKY) */
 [data-theme="dark"],
 :root:not([data-theme="light"]) {
-  --bg-gradient: linear-gradient(180deg, #070a12 0%, #0c1322 50%, #0f172a 100%);
-  --bg-card: rgba(15, 23, 42, 0.5);
-  --bg-card-hover: rgba(30, 41, 59, 0.7);
-  --border-glass: rgba(255, 255, 255, 0.12);
-  --border-glass-active: rgba(56, 189, 248, 0.4);
-  --inset-highlight: rgba(255, 255, 255, 0.2);
+  --sky-base-1: #070a12;
+  --sky-base-2: #0f172a;
+  --sky-base-3: #1e1b4b;
+
+  --card-bg: rgba(15, 23, 42, 0.45);
+  --card-hover: rgba(30, 41, 59, 0.65);
+  --card-border: rgba(255, 255, 255, 0.16);
+  --card-border-active: rgba(56, 189, 248, 0.5);
+  --card-inset: rgba(255, 255, 255, 0.25);
 
   --text-main: #ffffff;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
-  --temp-gradient: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.4) 100%);
+  --temp-gradient: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.45) 100%);
 
-  --pill-bg: rgba(255, 255, 255, 0.08);
-  --pill-border: rgba(255, 255, 255, 0.12);
-  --pill-text: #e2e8f0;
-
-  --accent-blue: #38bdf8;
-  --accent-cyan: #06b6d4;
-  --accent-emerald: #10b981;
-  --accent-amber: #f59e0b;
+  --pill-bg: rgba(255, 255, 255, 0.1);
+  --pill-border: rgba(255, 255, 255, 0.18);
+  --pill-text: #f8fafc;
 }
 
-/* TEMA CLARO (APPLE WEATHER DAY SKY AESTHETIC) */
+/* DEFAULTS CLAROS (APPLE DAYLIGHT SKY) */
 [data-theme="light"] {
-  --bg-gradient: linear-gradient(180deg, #38bdf8 0%, #0284c7 40%, #0369a1 100%);
-  --bg-card: rgba(255, 255, 255, 0.65);
-  --bg-card-hover: rgba(255, 255, 255, 0.85);
-  --border-glass: rgba(255, 255, 255, 0.45);
-  --border-glass-active: rgba(2, 132, 199, 0.6);
-  --inset-highlight: rgba(255, 255, 255, 0.8);
+  --sky-base-1: #38bdf8;
+  --sky-base-2: #0284c7;
+  --sky-base-3: #0369a1;
+
+  --card-bg: rgba(255, 255, 255, 0.68);
+  --card-hover: rgba(255, 255, 255, 0.88);
+  --card-border: rgba(255, 255, 255, 0.6);
+  --card-border-active: rgba(2, 132, 199, 0.7);
+  --card-inset: rgba(255, 255, 255, 0.9);
 
   --text-main: #0f172a;
   --text-muted: #334155;
   --text-dim: #475569;
-  --temp-gradient: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
+  --temp-gradient: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.75) 100%);
 
-  --pill-bg: rgba(255, 255, 255, 0.4);
-  --pill-border: rgba(255, 255, 255, 0.6);
+  --pill-bg: rgba(255, 255, 255, 0.45);
+  --pill-border: rgba(255, 255, 255, 0.7);
   --pill-text: #0f172a;
-
-  --accent-blue: #0284c7;
-  --accent-cyan: #0891b2;
-  --accent-emerald: #059669;
-  --accent-amber: #d97706;
 }
 
 * {
@@ -63,211 +59,141 @@
 
 body {
   font-family: var(--font-sans);
-  background: var(--bg-gradient);
-  background-attachment: fixed;
   color: var(--text-main);
   min-height: 100vh;
   overflow-x: hidden;
-  transition: background 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease;
 }
 
-/* Fondos Dinámicos por Tema */
-.theme-wrapper {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
+/* LIENZO DE CIELO DINÁMICO APPLE WEATHER */
+.weather-sky-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  background: var(--bg-gradient);
-  background-attachment: fixed;
-  transition: all 0.6s ease-in-out;
+  pointer-events: none;
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.theme-wrapper::before,
-.theme-wrapper::after {
-  content: '';
+.sky-day-sunny {
+  background: radial-gradient(circle at 50% -20%, #7dd3fc 0%, #38bdf8 40%, #0284c7 100%);
+}
+.sky-warm-sunny {
+  background: radial-gradient(circle at 50% -20%, #fde047 0%, #f59e0b 45%, #ea580c 100%);
+}
+.sky-rainy {
+  background: radial-gradient(circle at 50% -20%, #475569 0%, #1e293b 50%, #0f172a 100%);
+}
+.sky-frost-cold {
+  background: radial-gradient(circle at 50% -20%, #a5f3fc 0%, #06b6d4 45%, #1e3a8a 100%);
+}
+.sky-night-clear {
+  background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, #0f172a 50%, #070a12 100%);
+}
+
+.sky-orb {
   position: absolute;
-  width: 150vw;
-  height: 150vh;
-  top: -25vh;
-  left: -25vw;
-  z-index: -1;
-  filter: blur(120px);
-  opacity: 0.4;
-  transition: all 2s ease-in-out;
-  animation: orb-float 15s infinite alternate ease-in-out;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.55;
+  animation: float-orb 18s infinite alternate ease-in-out;
 }
 
-.theme-wrapper::after {
-  animation-duration: 20s;
+.orb-primary {
+  width: 70vw;
+  height: 70vw;
+  max-width: 700px;
+  max-height: 700px;
+  top: -10vh;
+  left: 15vw;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.orb-secondary {
+  width: 50vw;
+  height: 50vw;
+  max-width: 500px;
+  max-height: 500px;
+  bottom: 10vh;
+  right: 5vw;
+  background: rgba(56, 189, 248, 0.3);
+  animation-duration: 24s;
   animation-direction: alternate-reverse;
 }
 
-/* Tema Urbano: Tonos Azules y Cyan */
-.theme-urbano::before {
-  background: radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.15) 0%, transparent 40%);
-}
-.theme-urbano::after {
-  background: radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.12) 0%, transparent 40%);
-}
-
-/* Tema Agrícola: Tonos Verdes y Esmeralda */
-.theme-agricola::before {
-  background: radial-gradient(circle at 30% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 40%);
-}
-.theme-agricola::after {
-  background: radial-gradient(circle at 70% 80%, rgba(52, 211, 153, 0.12) 0%, transparent 40%);
+.orb-tertiary {
+  width: 40vw;
+  height: 40vw;
+  max-width: 400px;
+  max-height: 400px;
+  top: 35vh;
+  left: -10vw;
+  background: rgba(16, 185, 129, 0.2);
+  animation-duration: 20s;
 }
 
-@keyframes orb-float {
+@keyframes float-orb {
   0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(3%, 4%) scale(1.05); }
-  66% { transform: translate(-2%, 2%) scale(0.95); }
-  100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5%, 8%) scale(1.08); }
+  100% { transform: translate(-3%, -5%) scale(0.95); }
 }
 
-/* Glassmorphism Classes */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.4);
+/* TARJETAS FLOTANTES DE VIDRIO ESTILO APPLE iOS 18 */
+.apple-card,
+.apple-ios-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(48px) saturate(210%);
+  -webkit-backdrop-filter: blur(48px) saturate(210%);
+  border: 1px solid var(--card-border);
+  border-radius: 32px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), inset 0 1.5px 0 0 var(--card-inset);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  color: var(--text-main);
+}
+
+.apple-card:hover,
+.apple-ios-card:hover {
+  background: var(--card-hover);
+  border-color: var(--card-border-active);
+  box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.35), inset 0 1.5px 0 0 var(--card-inset);
+  transform: translateY(-3px) scale(1.012);
+}
+
+.apple-temp-hero {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  background: var(--temp-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.25));
+}
+
+.apple-pill {
+  background: var(--pill-bg);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-panel:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
-}
-
-.glass-pill {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--pill-border);
   border-radius: 9999px;
-  padding: 6px 16px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  padding: 7px 16px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--pill-text);
+  letter-spacing: 0.025em;
+  transition: all 0.25s ease;
 }
 
-.glow-blue {
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
-}
-
-.glow-emerald {
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
-}
-
-.glow-amber {
-  box-shadow: 0 0 20px rgba(245, 158, 11, 0.25);
-}
-
-.glow-red {
-  box-shadow: 0 0 20px rgba(239, 68, 68, 0.25);
-}
-
-/* Custom Scrollbars */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.5);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
+.apple-pill:hover {
   background: rgba(255, 255, 255, 0.3);
-}
-
-/* Leaflet Dark Customizations */
-.leaflet-container {
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
-  background: #0f172a !important;
-}
-
-.leaflet-popup-content-wrapper {
-  background: rgba(15, 23, 42, 0.95) !important;
-  backdrop-filter: blur(12px) !important;
-  color: #f8fafc !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 12px !important;
-  padding: 4px !important;
-}
-
-.leaflet-popup-tip {
-  background: rgba(15, 23, 42, 0.95) !important;
-}
-
-/* Animations */
-@keyframes pulse-soft {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.85; transform: scale(1.02); }
-}
-
-.animate-pulse-soft {
-  animation: pulse-soft 3s infinite ease-in-out;
-}
-
-/* Safe Area Utilities for iOS & Android */
-.pt-safe {
-  padding-top: max(1rem, env(safe-area-inset-top));
-}
-
-.pb-safe {
-  padding-bottom: max(1rem, env(safe-area-inset-bottom));
-}
-
-.mb-safe {
-  margin-bottom: max(0px, env(safe-area-inset-bottom));
-}
-
-/* Ultra-Modern Glassmorphism 2.0 & Neon Accents */
-.glass-panel-glow {
-  background: rgba(15, 23, 42, 0.45);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 24px;
-  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glass-panel-glow:hover {
-  border-color: rgba(56, 189, 248, 0.35);
-  box-shadow: 0 25px 60px -15px rgba(14, 165, 233, 0.25), inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
-  transform: translateY(-3px);
-}
-
-.gradient-text-cyan {
-  background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gradient-text-emerald {
-  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.03);
 }
 
 .live-pulse-dot {
   position: relative;
-  display: inline-flex;
-  width: 10px;
-  height: 10px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: #10b981;
 }
@@ -289,48 +215,10 @@ body {
   100% { transform: scale(2.2); opacity: 0; }
 }
 
-/* Apple Weather & Apple Music Premium UI Design Tokens */
-.apple-card {
-  background: rgba(15, 23, 42, 0.42);
-  backdrop-filter: blur(36px) saturate(190%);
-  -webkit-backdrop-filter: blur(36px) saturate(190%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 28px;
-  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-
-.apple-card:hover {
-  border-color: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 35px 70px -20px rgba(0, 0, 0, 0.75), inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
-  transform: scale(1.015) translateY(-2px);
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-
-.apple-temp-hero {
-  font-family: var(--font-sans);
-  font-weight: 900;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.4) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
-}
-
-.apple-pill {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 9999px;
-  padding: 6px 14px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.025em;
-  transition: all 0.25s ease;
-}
-
-.apple-pill:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-
