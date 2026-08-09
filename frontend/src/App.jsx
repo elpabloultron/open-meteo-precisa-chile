@@ -16,9 +16,9 @@ import AqiDrawer from './components/AqiDrawer';
 import HourlyForecastDrawer from './components/HourlyForecastDrawer';
 import EstacionesCercanasModal from './components/EstacionesCercanasModal';
 import LocationFallbackModal from './components/LocationFallbackModal';
-import GeeMapModal from './components/GeeMapModal';
 import AlertsBanner from './components/AlertsBanner';
 import WeatherSkyCanvas from './components/WeatherSkyCanvas';
+import BreezySunMoonWidget from './components/BreezySunMoonWidget';
 
 export default function App() {
   const {
@@ -123,6 +123,12 @@ export default function App() {
 
             {/* SLIDER HORA A HORA (PRÓXIMAS 24 HORAS CON % REAL) */}
             <HourlyCarousel hourlyForecast={climaData?.pronostico_numerico_openmeteo?.horario} />
+
+            {/* WIDGET ASTRONÓMICO TRAYECTORIA SOLAR TIPO BREEZY WEATHER */}
+            <BreezySunMoonWidget
+              salidaSol={climaData?.modo_urbano?.salida_sol}
+              puestaSol={climaData?.modo_urbano?.puesta_sol}
+            />
 
             {/* PANEL MODO URBANO & MODO AGRÍCOLA CON CARDS INTERACTIVAS */}
             {modo === 'urbano' ? (

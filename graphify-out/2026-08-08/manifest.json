@@ -45,9 +45,9 @@
     "semantic_hash": "f7b7cdb8689be56d1f4a5391df0102e3"
   },
   "frontend/src/App.jsx": {
-    "mtime": 1786236535.2659953,
-    "ast_hash": "483fff554969fb8ed54f53de44a7ef8c",
-    "semantic_hash": "483fff554969fb8ed54f53de44a7ef8c"
+    "mtime": 1786237679.8867042,
+    "ast_hash": "2febf9259ef985edb74c468f0cf83e22",
+    "semantic_hash": "2febf9259ef985edb74c468f0cf83e22"
   },
   "frontend/src/components/AgroPanel.jsx": {
     "mtime": 1786234634.1706684,
@@ -95,9 +95,9 @@
     "semantic_hash": "556ddda95244d3124e0681a467db4c57"
   },
   "frontend/src/components/HourlyCarousel.jsx": {
-    "mtime": 1785883706.2059932,
-    "ast_hash": "af8842e08c9ba0b294f09ddd10f4dbb9",
-    "semantic_hash": "af8842e08c9ba0b294f09ddd10f4dbb9"
+    "mtime": 1786237661.6013706,
+    "ast_hash": "cf60425807581da60261c1764c9942e7",
+    "semantic_hash": "cf60425807581da60261c1764c9942e7"
   },
   "frontend/src/components/HourlyForecastDrawer.jsx": {
     "mtime": 1786222831.379243,
@@ -598,5 +598,10 @@
     "mtime": 1786235666.2882106,
     "ast_hash": "271d9d81e5a444d1a20ca520e4c103fb",
     "semantic_hash": "271d9d81e5a444d1a20ca520e4c103fb"
+  },
+  "frontend/src/components/BreezySunMoonWidget.jsx": {
+    "mtime": 1786237651.4569097,
+    "ast_hash": "3ec5cc5ec4bf6d11010949adfdd4695e",
+    "semantic_hash": "3ec5cc5ec4bf6d11010949adfdd4695e"
   }
 }

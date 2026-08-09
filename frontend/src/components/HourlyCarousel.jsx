@@ -1,7 +1,7 @@
 import React from 'react';
 import { Sun, Cloud, CloudSun, CloudRain, CloudLightning, Snowflake, Droplets, Clock } from 'lucide-react';
 
-function getWeatherIcon(code, temp) {
+function getWeatherIcon(code) {
   if (code === undefined || code === null) return <CloudSun className="w-6 h-6 text-amber-400" />;
   if (code === 0) return <Sun className="w-6 h-6 text-amber-400" />;
   if (code >= 1 && code <= 3) return <CloudSun className="w-6 h-6 text-sky-400" />;
@@ -22,13 +22,24 @@ export default function HourlyCarousel({ hourlyForecast }) {
   const codes = hourlyForecast.weather_code?.slice(0, 24) || [];
 
   return (
-    <div className="glass-panel p-5 space-y-3 border-slate-800/80 bg-slate-900/60 backdrop-blur-2xl">
-      <div className="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider">
-        <Clock className="w-4 h-4 text-sky-400" />
-        <span>Pronóstico Hora a Hora (Próximas 24 horas)</span>
+    <div className="apple-card p-5 space-y-4 shadow-xl">
+      <div className="flex items-center justify-between border-b border-white/10 pb-3">
+        <div className="flex items-center gap-2.5">
+          <div className="p-2 bg-sky-500/20 text-sky-400 rounded-xl border border-sky-500/30">
+            <Clock className="w-5 h-5" />
+          </div>
+          <div>
+            <h3 className="text-base font-bold text-white tracking-tight">Pronóstico Hora a Hora (24h)</h3>
+            <p className="text-xs text-slate-400">Evolución de temperatura y probabilidad de lluvia</p>
+          </div>
+        </div>
+        <span className="apple-pill text-[10px] text-sky-300 font-bold">
+          ECMWF / Open-Meteo
+        </span>
       </div>
 
-      <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent snap-x">
+      {/* CARRUSEL DE TARJETAS HORARIAS TIPO BREEZY WEATHER */}
+      <div className="flex items-center gap-3 overflow-x-auto pb-2 no-scrollbar snap-x">
         {times.map((t, idx) => {
           const hourLabel = idx === 0 ? 'Ahora' : t.split('T')[1]?.slice(0, 5) || t;
           const tempVal = Math.round(temps[idx] ?? 15);
@@ -39,16 +50,26 @@ export default function HourlyCarousel({ hourlyForecast }) {
           return (
             <div
               key={t + idx}
-              className="flex-shrink-0 snap-start w-20 bg-slate-950/50 border border-slate-800/80 hover:border-sky-500/40 p-3 rounded-2xl text-center space-y-2 transition duration-200 hover:scale-105"
+              className="flex-shrink-0 snap-start w-22 apple-card p-3 text-center space-y-2 cursor-pointer transition hover:scale-105 border border-white/10"
             >
-              <div className="text-xs font-semibold text-slate-300">{hourLabel}</div>
+              <div className="text-xs font-bold text-slate-300">{hourLabel}</div>
               <div className="flex justify-center my-1">
-                {getWeatherIcon(codeVal, tempVal)}
+                {getWeatherIcon(codeVal)}
               </div>
-              <div className="text-base font-extrabold text-white font-mono">{tempVal}°</div>
-              <div className="flex items-center justify-center gap-0.5 text-[10px] text-sky-400 font-bold">
-                <Droplets className="w-3 h-3" />
-                <span>{pProb}%</span>
+              <div className="text-lg font-black text-white font-mono">{tempVal}°</div>
+              
+              {/* BARRA DE PROBABILIDAD DE PRECIPITACIÓN */}
+              <div className="space-y-1">
+                <div className="flex items-center justify-center gap-0.5 text-[10px] text-sky-400 font-bold">
+                  <Droplets className="w-3 h-3" />
+                  <span>{pProb}%</span>
+                </div>
+                <div className="h-1 w-full bg-slate-800 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-sky-400 rounded-full transition-all"
+                    style={{ width: `${pProb}%` }}
+                  />
+                </div>
               </div>
             </div>
           );
