@@ -161,7 +161,7 @@ export default function App() {
             {/* SECCIÓN PRONÓSTICO Y GRÁFICO 48H */}
             <div ref={forecastRef} className="space-y-6">
               <DailyForecastCards
-                dailyForecast={climaData?.pronostico_numerico_openmeteo?.diario_7dias}
+                dailyForecast={climaData?.pronostico_numerico_openmeteo?.diario || climaData?.pronostico_numerico_openmeteo?.diario_7dias}
                 hourlyForecast={climaData?.pronostico_numerico_openmeteo?.horario}
                 onSelectMetric={handleSelectMetric}
                 onOpenHourly={handleOpenHourly}

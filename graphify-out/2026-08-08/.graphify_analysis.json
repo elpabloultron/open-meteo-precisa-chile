@@ -135,9 +135,6 @@
       "frontend_src_components_geemapmodal_geemapmodal",
       "frontend_src_components_historicalchart",
       "frontend_src_components_historicalchart_historicalchart",
-      "frontend_src_components_hourlycarousel",
-      "frontend_src_components_hourlycarousel_getweathericon",
-      "frontend_src_components_hourlycarousel_hourlycarousel",
       "frontend_src_components_hourlyforecastdrawer",
       "frontend_src_components_hourlyforecastdrawer_hourlyforecastdrawer",
       "frontend_src_components_mapsection",
@@ -866,58 +863,63 @@
       "agents_skills_od_contribute_scripts_validate_markdown_sh__entry"
     ],
     "60": [
+      "frontend_src_components_hourlycarousel",
+      "frontend_src_components_hourlycarousel_getweathericon",
+      "frontend_src_components_hourlycarousel_hourlycarousel"
+    ],
+    "61": [
       "frontend_src_components_locationfallbackmodal",
       "frontend_src_components_locationfallbackmodal_locationfallbackmodal",
       "frontend_src_components_locationfallbackmodal_regiones"
     ],
-    "61": [
+    "62": [
       "agents_skills_hatch_pet_scripts_render_animation_videos_sh__entry",
       "agents_skills_hatch_pet_scripts_render_animation_videos_sh_agents_skills_hatch_pet_scripts_render_animation_videos"
     ],
-    "62": [
+    "63": [
       "agents_skills_od_contribute_scripts_create_issue",
       "agents_skills_od_contribute_scripts_create_issue_sh__entry"
     ],
-    "63": [
+    "64": [
       "agents_skills_od_contribute_scripts_create_pr",
       "agents_skills_od_contribute_scripts_create_pr_sh__entry"
     ],
-    "64": [
+    "65": [
       "agents_skills_od_contribute_scripts_setup_workspace",
       "agents_skills_od_contribute_scripts_setup_workspace_sh__entry"
     ],
-    "65": [
+    "66": [
       "frontend_public_service_worker",
       "frontend_public_service_worker_assets_to_cache"
     ],
-    "66": [
+    "67": [
       "scripts_configurar_sync_horario_sh__entry",
       "scripts_configurar_sync_horario_sh_scripts_configurar_sync_horario"
     ],
-    "67": [
+    "68": [
       "scripts_deploy_sh__entry",
       "scripts_deploy_sh_scripts_deploy"
     ],
-    "68": [
+    "69": [
       "actualizar_app"
     ],
-    "69": [
+    "70": [
       "agents_skills_chat_motion_overlay_assets_remotion_template_remotion_config"
     ],
-    "70": [
+    "71": [
       "frontend_vite_config"
     ],
-    "71": [
+    "72": [
       "scripts_configurar_sync_horario_ps1_scripts_configurar_sync_horario"
     ],
-    "72": [
+    "73": [
       "scripts_deploy_ps1_scripts_deploy"
     ]
   },
   "cohesion": {
     "0": 0.05817028027498678,
     "1": 0.08879492600422834,
-    "2": 0.08412698412698413,
+    "2": 0.08901515151515152,
     "3": 0.15725806451612903,
     "4": 0.15268817204301074,
     "5": 0.17989417989417988,
@@ -975,8 +977,8 @@
     "57": 1.0,
     "58": 0.6666666666666666,
     "59": 1.0,
-    "60": 0.6666666666666666,
-    "61": 1.0,
+    "60": 1.0,
+    "61": 0.6666666666666666,
     "62": 1.0,
     "63": 1.0,
     "64": 1.0,
@@ -987,7 +989,8 @@
     "69": 1.0,
     "70": 1.0,
     "71": 1.0,
-    "72": 1.0
+    "72": 1.0,
+    "73": 1.0
   },
   "gods": [
     {

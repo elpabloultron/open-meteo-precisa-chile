@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 767 nodes · 1277 edges · 73 communities (58 shown, 15 thin omitted)
+- 767 nodes · 1276 edges · 74 communities (57 shown, 17 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 13 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4751397f`
+- Built from commit: `7208b45f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -71,6 +71,7 @@
 - check-prereqs.sh
 - validate-design-system.sh
 - validate-markdown.sh
+- HourlyCarousel.jsx
 - LocationFallbackModal.jsx
 - render_animation_videos.sh script
 - create-issue.sh
@@ -107,7 +108,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (73 total, 15 thin omitted)
+## Communities (74 total, 17 thin omitted)
 
 ### Community 0 - "main.py"
 Cohesion: 0.06
@@ -116,10 +117,6 @@ Nodes (52): evaluar_alertas_meteorologicas(), Motor de Alertas Agro-Climáticas 
 ### Community 1 - "sincronizador_background.py"
 Cohesion: 0.09
 Nodes (39): Any, _as_bool(), _as_origins(), get_settings(), Configuración centralizada de MeteoPrecisa. Los valores sensibles nunca tienen…, Settings, AsyncClient, load_cache() (+31 more)
-
-### Community 2 - "react"
-Cohesion: 0.08
-Nodes (4): BreezySunMoonWidget(), getWeatherIcon(), HourlyCarousel(), react
 
 ### Community 3 - "prepare_chat_overlay_bundle.py"
 Cohesion: 0.16
@@ -312,12 +309,12 @@ Nodes (3): alpha_nonzero_count(), main(), Image
 ## Knowledge Gaps
 - **99 isolated node(s):** `$schema`, `oxc`, `react/rules-of-hooks`, `warn`, `name` (+94 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `.oxlintrc.json`, `BubbleScene.tsx`, `SatelliteModal.jsx`, `WeatherContext.jsx`, `DetailDrawer.jsx`, `ChatMotionOverlay.tsx`, `LocationFallbackModal.jsx`?**
+- **Why does `react` connect `react` to `.oxlintrc.json`, `BubbleScene.tsx`, `SatelliteModal.jsx`, `WeatherContext.jsx`, `DetailDrawer.jsx`, `ChatMotionOverlay.tsx`, `HourlyCarousel.jsx`, `LocationFallbackModal.jsx`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `frontend/package.json`, `devDependencies`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
@@ -330,4 +327,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `sincronizador_background.py` be split into smaller, more focused modules?**
   _Cohesion score 0.08879492600422834 - nodes in this community are weakly interconnected._
 - **Should `react` be split into smaller, more focused modules?**
-  _Cohesion score 0.08412698412698413 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08901515151515152 - nodes in this community are weakly interconnected._

@@ -45,9 +45,9 @@
     "semantic_hash": "f7b7cdb8689be56d1f4a5391df0102e3"
   },
   "frontend/src/App.jsx": {
-    "mtime": 1786237679.8867042,
-    "ast_hash": "2febf9259ef985edb74c468f0cf83e22",
-    "semantic_hash": "2febf9259ef985edb74c468f0cf83e22"
+    "mtime": 1786242787.6656382,
+    "ast_hash": "3cd1d37420a006fda793cc297383c3fc",
+    "semantic_hash": "3cd1d37420a006fda793cc297383c3fc"
   },
   "frontend/src/components/AgroPanel.jsx": {
     "mtime": 1786234634.1706684,
@@ -70,9 +70,9 @@
     "semantic_hash": "a3422b79df3460ec6c1c2899c40b1b55"
   },
   "frontend/src/components/DailyForecastCards.jsx": {
-    "mtime": 1786237801.9667277,
-    "ast_hash": "4d0f2cd1091763488537a0ba67103f73",
-    "semantic_hash": "4d0f2cd1091763488537a0ba67103f73"
+    "mtime": 1786242779.50013,
+    "ast_hash": "d052e2c91095a1990bdfc9b4de988679",
+    "semantic_hash": "d052e2c91095a1990bdfc9b4de988679"
   },
   "frontend/src/components/DetailDrawer.jsx": {
     "mtime": 1786233472.1760063,
