@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { X, Satellite, Layers, ShieldCheck, Cpu, Flame, Thermometer, Droplets, Sprout, Wind } from 'lucide-react';
+import { X, Satellite, Layers, ShieldCheck, Cpu, Flame, Thermometer, Droplets, Sprout, Wind, Play, RefreshCw, Clock } from 'lucide-react';
+import { formatLocalTime } from '../utils/timeUtils';
 
 export default function GeeMapModal({ isOpen, onClose, lat, lon, apiBase }) {
   const [activeLayer, setActiveLayer] = useState('NDVI');
   const [tileInfo, setTileInfo] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [goesLoopData, setGoesLoopData] = useState(null);
 
   const centerLat = lat || -33.4450;
   const centerLon = lon || -70.6830;
@@ -13,6 +15,16 @@ export default function GeeMapModal({ isOpen, onClose, lat, lon, apiBase }) {
     if (!isOpen) return;
 
     if (activeLayer === 'WINDY') return;
+
+    if (activeLayer === 'GOES19') {
+      setLoading(true);
+      fetch(`${apiBase}/api/v1/satellite/latest-loop`)
+        .then((res) => res.json())
+        .then((data) => setGoesLoopData(data))
+        .catch((err) => console.error("Error cargando GOES-19:", err))
+        .finally(() => setLoading(false));
+      return;
+    }
 
     setLoading(true);
     fetch(`${apiBase}/api/v1/gee/map-tile?capa=${activeLayer}&lat=${centerLat}&lon=${centerLon}`)
@@ -28,20 +40,25 @@ export default function GeeMapModal({ isOpen, onClose, lat, lon, apiBase }) {
 
   const layerOptions = [
     { id: 'NDVI', label: '🌿 Vigor NDVI', desc: 'Sentinel-2 (10m)' },
-    { id: 'NDRE', label: '🍀 Nitrógeno NDRE', desc: 'Clorofila & Fertilizante' },
+    { id: 'NDRE', label: '🍀 Nitrógeno NDRE', desc: 'Clorofila & Fertilidad' },
     { id: 'NDWI', label: '💧 Estrés NDWI', desc: 'Humedad Foliar' },
-    { id: 'LST', label: '🌡️ Temp Suelo LST', desc: 'Superficie Suelo' },
+    { id: 'LST', label: '🌡️ Temp Suelo LST', desc: 'Isla de Calor & Suelo' },
     { id: 'FIRMS', label: '🔥 Incendios FIRMS', desc: 'Focos de Calor VIIRS' },
-    { id: 'WINDY', label: '🌬️ Windy Radar', desc: 'Viento & Presión ECMWF' },
+    { id: 'WINDY', label: '🌬️ Radar Windy', desc: 'Viento & Presión ECMWF' },
+    { id: 'GOES19', label: '🛰️ Satélite GOES-19', desc: 'Bucle GeoColor 24h' },
   ];
 
   const windyUrl = `https://embed.windy.com/embed2.html?lat=${centerLat}&lon=${centerLon}&detailLat=${centerLat}&detailLon=${centerLon}&width=100%25&height=480&zoom=10&level=surface&overlay=${
     activeLayer === 'LST' ? 'temp' : (activeLayer === 'NDWI' ? 'rain' : 'wind')
   }&product=ecmwf&menu=&message=true&marker=true&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1`;
 
+  const goesVideoUrl = goesLoopData?.video_url
+    ? (goesLoopData.video_url.startsWith('http') ? goesLoopData.video_url : `${apiBase}${goesLoopData.video_url}`)
+    : `${apiBase}/static/goes19_loop.webp`;
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6 bg-slate-950/90 backdrop-blur-2xl">
-      <div className="apple-card w-full max-w-5xl overflow-hidden border border-emerald-500/30 flex flex-col h-[90vh] shadow-2xl">
+      <div className="apple-card w-full max-w-5xl overflow-hidden border border-emerald-500/30 flex flex-col h-[90vh] shadow-2xl bg-slate-950 animate-apple-entry">
         
         {/* CABECERA CON CONTROLES Y PÍLDORAS ESTILO APPLE */}
         <div className="p-4 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-3 bg-slate-900/90">
@@ -52,10 +69,10 @@ export default function GeeMapModal({ isOpen, onClose, lat, lon, apiBase }) {
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="text-base font-extrabold text-white tracking-tight">
-                  Visor Satelital Interactivo Google Earth Engine
+                  Centro de Control Satelital & Radar GIS
                 </h3>
                 <span className="apple-pill text-[10px] text-emerald-300">
-                  Alta Resolución 10m
+                  Google Earth Engine & NOAA
                 </span>
               </div>
               <p className="text-xs text-slate-400">
@@ -72,8 +89,8 @@ export default function GeeMapModal({ isOpen, onClose, lat, lon, apiBase }) {
           </button>
         </div>
 
-        {/* BARRA SELECTORA DE CAPAS ESPECTRALES ESTILO APPLE PILLS */}
-        <div className="px-4 py-3 bg-slate-950/60 border-b border-white/10 flex items-center gap-2 overflow-x-auto no-scrollbar">
+        {/* BARRA SELECTORA DE CAPAS ESPECTRALES */}
+        <div className="px-4 py-3 bg-slate-950/80 border-b border-white/10 flex items-center gap-2 overflow-x-auto no-scrollbar">
           {layerOptions.map((opt) => (
             <button
               key={opt.id}
@@ -90,7 +107,7 @@ export default function GeeMapModal({ isOpen, onClose, lat, lon, apiBase }) {
           ))}
         </div>
 
-        {/* MAPA INTERACTIVO */}
+        {/* VISOR MULTIMODAL */}
         <div className="flex-1 bg-black relative flex items-center justify-center overflow-hidden">
           {activeLayer === 'WINDY' ? (
             <iframe
@@ -98,6 +115,27 @@ export default function GeeMapModal({ isOpen, onClose, lat, lon, apiBase }) {
               className="w-full h-full border-0"
               src={windyUrl}
             />
+          ) : activeLayer === 'GOES19' ? (
+            <div className="relative w-full h-full flex items-center justify-center bg-black p-4">
+              {loading ? (
+                <div className="text-center space-y-3">
+                  <RefreshCw className="w-10 h-10 text-purple-400 animate-spin mx-auto" />
+                  <div className="text-sm font-semibold text-slate-300">Cargando bucle GOES-19 NOAA...</div>
+                </div>
+              ) : (
+                <div className="relative max-h-full max-w-full flex items-center justify-center">
+                  <img
+                    src={`${goesVideoUrl}?t=${Date.now()}`}
+                    alt="Satelite GOES-19 NOAA"
+                    className="max-h-[65vh] w-auto object-contain rounded-xl shadow-2xl border border-white/10"
+                  />
+                  <div className="absolute top-4 right-4 bg-slate-950/85 px-3 py-1.5 rounded-xl border border-purple-500/30 text-xs font-mono text-purple-300 backdrop-blur-md flex items-center gap-2">
+                    <Clock className="w-3.5 h-3.5 text-purple-400" />
+                    <span>Bucle Activo 24 Horas (NOAA NESDIS)</span>
+                  </div>
+                </div>
+              )}
+            </div>
           ) : (
             <div className="relative w-full h-full">
               <iframe
@@ -108,9 +146,9 @@ export default function GeeMapModal({ isOpen, onClose, lat, lon, apiBase }) {
               
               {/* CAPA DE LEYENDA TÉCNICA GEE */}
               {tileInfo?.leyenda && (
-                <div className="absolute bottom-4 left-4 right-4 md:right-auto md:max-w-md apple-card p-3 text-xs space-y-2 backdrop-blur-xl border border-white/20">
+                <div className="absolute bottom-4 left-4 right-4 md:right-auto md:max-w-md apple-card p-3 text-xs space-y-2 backdrop-blur-xl border border-white/20 bg-slate-950/85">
                   <div className="flex items-center justify-between text-[11px] font-bold text-white">
-                    <span>Capa Activa: <strong className="text-emerald-400">{activeLayer}</strong></span>
+                    <span>Capa Espectral: <strong className="text-emerald-400">{activeLayer}</strong></span>
                     <span className="font-mono text-slate-300">Rango: {tileInfo.leyenda.min_val} a {tileInfo.leyenda.max_val}</span>
                   </div>
                   <div className="h-3 w-full rounded-full flex overflow-hidden border border-white/20 shadow-inner">
@@ -128,7 +166,7 @@ export default function GeeMapModal({ isOpen, onClose, lat, lon, apiBase }) {
           )}
         </div>
 
-        {/* PIE DE PÁGINA CON AUDITORÍA DE DATOS DE LA OMM */}
+        {/* PIE DE PÁGINA CON AUDITORÍA */}
         <div className="p-3 bg-slate-900/90 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
           <div className="flex items-center gap-2 text-emerald-400 font-medium">
             <ShieldCheck className="w-4 h-4" />

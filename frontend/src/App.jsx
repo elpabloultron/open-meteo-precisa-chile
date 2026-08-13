@@ -21,6 +21,7 @@ import WeatherSkyCanvas from './components/WeatherSkyCanvas';
 import BreezySunMoonWidget from './components/BreezySunMoonWidget';
 import GeeMapModal from './components/GeeMapModal';
 import BreezyView from './components/BreezyView';
+import AgroReportModal from './components/AgroReportModal';
 
 export default function App() {
   const {
@@ -36,6 +37,7 @@ export default function App() {
 
   const [sateliteModalOpen, setSateliteModalOpen] = useState(false);
   const [geeMapModalOpen, setGeeMapModalOpen] = useState(false);
+  const [agroReportModalOpen, setAgroReportModalOpen] = useState(false);
   const [cercanasModalOpen, setCercanasModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('inicio');
 
@@ -121,6 +123,7 @@ export default function App() {
             onOpenHourly={handleOpenHourly}
             onOpenSateliteModal={() => setSateliteModalOpen(true)}
             onOpenGeeMapModal={() => setGeeMapModalOpen(true)}
+            onOpenAgroReport={() => setAgroReportModalOpen(true)}
             handleSelectStation={handleSelectStation}
             mapRef={mapRef}
             forecastRef={forecastRef}
@@ -134,6 +137,13 @@ export default function App() {
       <footer className="border-t border-slate-800/80 py-6 text-center text-xs text-slate-500 bg-slate-950 pb-20 md:pb-6">
         <p>MeteoPrecisa Chile v10.2 • Plataforma de Telemetría Hiperlocal & Google Earth Engine</p>
       </footer>
+
+      {/* MODAL FICHA TÉCNICA AGROCLIMÁTICA IMPRIMIBLE/PDF */}
+      <AgroReportModal
+        isOpen={agroReportModalOpen}
+        onClose={() => setAgroReportModalOpen(false)}
+        climaData={climaData}
+      />
 
       {/* MODAL VISOR SATELITAL GEE INTERACTIVO POR CAPAS */}
       <GeeMapModal

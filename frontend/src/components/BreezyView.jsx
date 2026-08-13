@@ -18,6 +18,7 @@ export default function BreezyView({
   onOpenHourly,
   onOpenSateliteModal,
   onOpenGeeMapModal,
+  onOpenAgroReport,
   handleSelectStation,
   mapRef,
   forecastRef,
@@ -36,6 +37,7 @@ export default function BreezyView({
         climaData={climaData}
         onOpenEstacionesCercanas={onOpenEstacionesCercanas}
         onSelectMetric={onSelectMetric}
+        onOpenAgroReport={onOpenAgroReport}
       />
 
       {/* 3. CARRUSEL HORARIO 24H BREEZY WEATHER CON PROBABILIDAD DE LLUVIA */}

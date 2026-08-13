@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Radio, ShieldCheck, Share2, ArrowUp, ArrowDown, Sun, CloudSun, CloudRain, Snowflake, CloudLightning, Cloud } from 'lucide-react';
+import { MapPin, Radio, ShieldCheck, Share2, ArrowUp, ArrowDown, Sun, CloudSun, CloudRain, Snowflake, CloudLightning, Cloud, FileText } from 'lucide-react';
 import { formatLocalTime } from '../utils/timeUtils';
 
 function getWeatherVectorIcon(code, temp) {
@@ -11,7 +11,7 @@ function getWeatherVectorIcon(code, temp) {
   return <Cloud className="w-20 h-20 text-slate-400 drop-shadow-[0_10px_20px_rgba(148,163,184,0.3)]" />;
 }
 
-export default function BreezyHeroBlock({ climaData, onOpenEstacionesCercanas, onSelectMetric }) {
+export default function BreezyHeroBlock({ climaData, onOpenEstacionesCercanas, onSelectMetric, onOpenAgroReport }) {
   if (!climaData || !climaData.estacion) return null;
 
   const { estacion, modo_urbano, modo_agricola, metadatos } = climaData;
@@ -56,13 +56,25 @@ export default function BreezyHeroBlock({ climaData, onOpenEstacionesCercanas, o
           <span className="text-[10px] text-slate-400 font-normal">({metadatos?.distancia_km || 0} km)</span>
         </button>
 
-        <button
-          onClick={handleLineageClick}
-          className="apple-pill flex items-center gap-1.5 text-emerald-300 font-bold hover:scale-105 transition cursor-pointer"
-        >
-          <ShieldCheck className="w-4 h-4 text-emerald-400" />
-          <span>{metadatos?.lineage_etiqueta || 'Telemetría Directa OMM'}</span>
-        </button>
+        <div className="flex items-center gap-2">
+          {onOpenAgroReport && (
+            <button
+              onClick={onOpenAgroReport}
+              className="apple-pill flex items-center gap-1.5 text-emerald-300 bg-emerald-500/15 border-emerald-500/30 font-bold hover:scale-105 transition cursor-pointer shadow-sm"
+            >
+              <FileText className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Ficha Técnica Agrícola</span>
+            </button>
+          )}
+
+          <button
+            onClick={handleLineageClick}
+            className="apple-pill flex items-center gap-1.5 text-emerald-300 font-bold hover:scale-105 transition cursor-pointer"
+          >
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <span>{metadatos?.lineage_etiqueta || 'Telemetría Directa OMM'}</span>
+          </button>
+        </div>
       </div>
 
       {/* BLOQUE HÉROE PRINCIPAL DE CLIMA BREEZY WEATHER */}
