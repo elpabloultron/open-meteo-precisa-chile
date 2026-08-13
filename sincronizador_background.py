@@ -575,6 +575,16 @@ async def ejecutar_sincronizacion_completa():
     CACHE_MEMORIA["status"] = "ok"
     
     guardar_cache_en_disco()
+    try:
+        from db_store import guardar_instantanea_historica
+        guardar_instantanea_historica(
+            telemetria_global,
+            CACHE_MEMORIA.get("calidad_aire_sinca"),
+            CACHE_MEMORIA.get("calidad_aire_purpleair")
+        )
+    except Exception as db_err:
+        print(f"⚠️ Aviso guardando histórico en SQLite: {db_err}")
+
     print(f"🎉 [BACKGROUND TASK] Sincronización completada exitosamente ({len(catalogo_final)} estaciones físicas unificadas en Chile).\n")
 
 

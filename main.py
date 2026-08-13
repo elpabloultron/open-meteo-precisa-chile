@@ -335,6 +335,49 @@ async def obtener_historico_clima(
         }
     except Exception:
         return {"status": "error", "historico_ndvi_12_meses": []}
+
+
+@app.get("/api/v1/historico/estacion")
+async def obtener_historico_estacion_api(
+    station_id: str = Query(..., description="ID de la estación física (ej: dmc_330020, agromet_21, redmeteo_scl)"),
+    horas: int = Query(24, ge=1, le=720, description="Ventana de tiempo en horas (por defecto 24 horas, máximo 30 días)")
+):
+    """Devuelve la serie de tiempo real histórica almacenada en base de datos SQLite para una estación."""
+    from db_store import obtener_historico_estacion
+    try:
+        registros = await asyncio.to_thread(obtener_historico_estacion, station_id, horas)
+        return {
+            "status": "ok",
+            "station_id": station_id,
+            "ventana_horas": horas,
+            "total_registros": len(registros),
+            "serie_temporal": registros
+        }
+    except Exception as e:
+        return {
+            "status": "error",
+            "station_id": station_id,
+            "mensaje": f"Error consultando histórico: {e}",
+            "serie_temporal": []
+        }
+
+
+@app.get("/api/v1/historico/stats")
+async def obtener_estadisticas_db_api():
+    """Devuelve métricas de salud y almacenamiento de la base de datos histórica SQLite."""
+    from db_store import obtener_estadisticas_db
+    try:
+        return {
+            "status": "ok",
+            "estadisticas": await asyncio.to_thread(obtener_estadisticas_db)
+        }
+    except Exception as e:
+        return {
+            "status": "error",
+            "mensaje": str(e)
+        }
+
+
 @app.get("/api/v1/satellite/latest-loop")
 async def obtener_satellite_latest_loop_api():
     from goes_processor import obtener_satellite_latest_loop

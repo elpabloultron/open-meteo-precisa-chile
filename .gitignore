@@ -12,11 +12,13 @@ service_account*.json
 .env
 .env.local
 
-# Bases de datos y cachés locales generadas en tiempo de ejecución
 base_datos.sqlite
 base_datos.sqlite-journal
+historico_telemetria.db*
+*.db
+*.db-wal
+*.db-shm
 cache_servidor.json
-base_datos.sqlite-journal
 .pytest_cache/
 .firebase/
 *.tmp

@@ -164,3 +164,43 @@ def test_manual_sync_requires_configuration_or_token(client, monkeypatch):
 def test_clean_num_discards_sentinel_values():
     assert clean_num("12,5") == 12.5
     assert clean_num("999.0") is None
+
+
+def test_historico_estacion_endpoint(client, tmp_path, monkeypatch):
+    import db_store
+    test_db = tmp_path / "test_historico.db"
+    monkeypatch.setattr(db_store, "DB_PATH", test_db)
+
+    # Insertar muestra de prueba
+    sample_tele = {
+        "dmc_001": {
+            "nombre": "Estación Temuco",
+            "temperatura_c": 18.2,
+            "humedad_relativa": 55,
+            "viento_kmh": 12.0,
+            "timestamp": int(time.time())
+        }
+    }
+    db_store.guardar_instantanea_historica(sample_tele, db_path=test_db)
+
+    response = client.get("/api/v1/historico/estacion?station_id=dmc_001&horas=24")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "ok"
+    assert data["station_id"] == "dmc_001"
+    assert len(data["serie_temporal"]) >= 1
+    assert data["serie_temporal"][0]["temperatura_c"] == 18.2
+
+
+def test_historico_stats_endpoint(client, tmp_path, monkeypatch):
+    import db_store
+    test_db = tmp_path / "test_historico.db"
+    monkeypatch.setattr(db_store, "DB_PATH", test_db)
+    db_store.init_db(test_db)
+
+    response = client.get("/api/v1/historico/stats")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "ok"
+    assert "estadisticas" in data
+    assert data["estadisticas"]["motor"] == "SQLite (WAL Mode)"
