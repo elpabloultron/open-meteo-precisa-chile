@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://meteoprecisa-backend.onrender.com/api/$1"
+    },
+    {
+      "source": "/static/(.*)",
+      "destination": "https://meteoprecisa-backend.onrender.com/static/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
