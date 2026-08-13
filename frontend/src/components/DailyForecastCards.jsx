@@ -28,26 +28,26 @@ export default function DailyForecastCards({ dailyForecast, hourlyForecast, onOp
   const diasSemana = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
 
   return (
-    <div className="apple-card p-5 sm:p-6 space-y-4 shadow-xl">
+    <div className="apple-card p-5 sm:p-6 space-y-4 shadow-xl bg-slate-900/50">
       
-      {/* CABECERA ESTILO BREEZY WEATHER */}
+      {/* CABECERA */}
       <div className="flex items-center justify-between border-b border-white/10 pb-3">
         <div className="flex items-center gap-2.5">
-          <div className="p-2 bg-sky-500/20 text-sky-400 rounded-xl border border-sky-500/30">
-            <Calendar className="w-5 h-5" />
+          <div className="p-2 bg-sky-500/15 text-sky-400 rounded-xl border border-sky-500/25">
+            <Calendar className="w-4 h-4" />
           </div>
           <div>
-            <h3 className="text-base font-bold text-white tracking-tight">Pronóstico 7 Días</h3>
-            <p className="text-xs text-slate-400">Rango térmico y precipitación esperada</p>
+            <h3 className="text-sm font-bold text-white tracking-tight">Pronóstico de 7 Días</h3>
+            <p className="text-[11px] text-slate-400">Rango térmico y precipitación acumulada</p>
           </div>
         </div>
-        <span className="apple-pill text-[10px] text-sky-300 font-bold">
-          7 Días DMC & GEE
+        <span className="apple-pill text-[10px] text-sky-300 font-semibold">
+          7 Días Multimodelo
         </span>
       </div>
 
-      {/* LISTA ESTILO BREEZY WEATHER DE 7 DÍAS INTERACTIVA */}
-      <div className="space-y-2.5 pt-1">
+      {/* LISTA DE 7 DÍAS CON BARRAS TÉRMICAS ESTILO APPLE WEATHER */}
+      <div className="space-y-2 pt-1">
         {safeTimeList.map((fechaStr, idx) => {
           const dateObj = new Date(fechaStr + 'T12:00:00');
           const esHoy = idx === 0;
@@ -111,36 +111,36 @@ export default function DailyForecastCards({ dailyForecast, hourlyForecast, onOp
             <div
               key={fechaStr || idx}
               onClick={handleClick}
-              className="apple-card p-3.5 flex items-center justify-between gap-3 text-xs cursor-pointer hover:scale-[1.01] transition border border-white/10"
+              className="p-3 rounded-2xl flex items-center justify-between gap-3 text-xs cursor-pointer hover:bg-slate-800/50 transition border border-white/5 bg-slate-900/30"
             >
               {/* NOMBRE DEL DÍA */}
-              <div className="w-16 font-bold text-white text-sm">
+              <div className="w-14 font-bold text-white text-xs">
                 {nombreDia}
               </div>
 
               {/* ICONO Y LLUVIA */}
-              <div className="flex items-center gap-2 w-20">
-                <IconComp className={`w-5 h-5 ${iconColor}`} />
+              <div className="flex items-center gap-1.5 w-18">
+                <IconComp className={`w-4 h-4 ${iconColor}`} />
                 {rain > 0 ? (
                   <span className="text-[11px] font-bold text-sky-400 flex items-center gap-0.5">
-                    <Droplets className="w-3 h-3" />
+                    <Droplets className="w-2.5 h-2.5" />
                     {rain.toFixed(1)}m
                   </span>
                 ) : (
-                  <span className="text-[10px] text-slate-400">0%</span>
+                  <span className="text-[10px] text-slate-500 font-medium">0%</span>
                 )}
               </div>
 
-              {/* RANGO TÉRMICO Y BARRA ESTILO BREEZY WEATHER */}
-              <div className="flex-1 flex items-center gap-3">
-                <span className="w-7 text-right font-mono text-cyan-300 font-bold text-xs">{tMin}°</span>
-                <div className="flex-1 h-2 bg-slate-800/80 rounded-full relative overflow-hidden">
+              {/* RANGO TÉRMICO GRADIENTE ESTILO APPLE */}
+              <div className="flex-1 flex items-center gap-2.5">
+                <span className="w-6 text-right font-mono text-cyan-300 font-bold text-xs">{tMin}°</span>
+                <div className="flex-1 h-1.5 bg-slate-800 rounded-full relative overflow-hidden">
                   <div
                     className="absolute top-0 bottom-0 bg-gradient-to-r from-cyan-400 via-amber-400 to-rose-400 rounded-full"
                     style={{ left: `${leftPct}%`, right: `${rightPct}%` }}
                   />
                 </div>
-                <span className="w-7 text-left font-mono text-amber-300 font-bold text-xs">{tMax}°</span>
+                <span className="w-6 text-left font-mono text-amber-300 font-bold text-xs">{tMax}°</span>
               </div>
             </div>
           );

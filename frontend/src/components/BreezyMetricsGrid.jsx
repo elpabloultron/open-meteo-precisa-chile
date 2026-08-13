@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wind, Thermometer, Droplets, Sun, Activity, ShieldCheck, AlertTriangle, Sprout, Snowflake, CloudRain, Cpu, Gauge, Compass } from 'lucide-react';
+import { Wind, Thermometer, Droplets, Sun, Activity, ShieldCheck, Sprout, Snowflake, CloudRain, Cpu, Gauge, Compass } from 'lucide-react';
 
 export default function BreezyMetricsGrid({ modo, climaData, onSelectMetric, onOpenAqi }) {
   if (!climaData) return null;
@@ -38,28 +38,32 @@ export default function BreezyMetricsGrid({ modo, climaData, onSelectMetric, onO
 
     return (
       <div className="space-y-4">
-        {/* BANNER SINCA CALIDAD DEL AIRE BREEZY WEATHER */}
+        {/* BANNER SINCA CALIDAD DEL AIRE */}
         <div
           onClick={() => onOpenAqi && onOpenAqi({ mp25, mp10: sinca.mp10 || null, aqi, norma: sinca.categoria || 'Bueno' })}
-          className="apple-card p-5 flex items-center justify-between gap-4 cursor-pointer hover:scale-[1.01] transition border border-emerald-500/30 bg-emerald-950/20"
+          className="apple-card p-4 sm:p-5 flex items-center justify-between gap-4 cursor-pointer hover:scale-[1.01] transition border border-emerald-500/30 bg-emerald-950/20"
         >
           <div className="flex items-center gap-3">
-            <ShieldCheck className="w-6 h-6 text-emerald-400 shrink-0" />
+            <div className="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-2xl border border-emerald-500/30">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
             <div>
-              <div className="font-bold text-white text-sm">Calidad del Aire SINCA MMA: <span className="text-emerald-300 font-mono">{sinca.categoria || 'Bueno'}</span> (AQI {aqi})</div>
-              <p className="text-xs text-slate-400 mt-0.5">MP2.5: {mp25} µg/m³ • Haz clic para auditoría comparativa MMA vs OMS 2021 ↗</p>
+              <div className="font-bold text-white text-sm">
+                Calidad del Aire SINCA (MMA): <span className="text-emerald-300 font-mono font-bold">{sinca.categoria || 'Bueno'}</span> (AQI {aqi})
+              </div>
+              <p className="text-xs text-slate-400 mt-0.5">MP2.5: {mp25} µg/m³ • Haz clic para auditoría técnica MMA vs OMS ↗</p>
             </div>
           </div>
           <span className="apple-pill text-[10px] text-emerald-300 font-bold">Ver Auditoría</span>
         </div>
 
-        {/* GRILLA BENTO MATERIAL 3 URBAN METRICS */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+        {/* GRILLA BENTO DE MÉTRICAS */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           
           {/* TEMPERATURA */}
           <div
-            onClick={() => handleMetricClick("Temperatura Ambiente", temp, "°C", `Temperatura medida a 2m del suelo. Sensación térmica: ${sens}°C.`, "Recomendado abrigo liviano.", "Temperatura")}
-            className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+            onClick={() => handleMetricClick("Temperatura Ambiente", temp, "°C", `Temperatura medida a 2m del suelo en la estación ${estacion?.nombre}. Sensación: ${sens}°C.`, "Recomendado abrigo liviano.", "Temperatura")}
+            className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
           >
             <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
               <span>Temperatura</span>
@@ -71,32 +75,32 @@ export default function BreezyMetricsGrid({ modo, climaData, onSelectMetric, onO
 
           {/* HUMEDAD RELATIVA */}
           <div
-            onClick={() => handleMetricClick("Humedad Relativa", hum, "%", "Saturación de agua en la atmósfera.", "Niveles altos aumentan la sensación de frío.", "Humedad")}
-            className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+            onClick={() => handleMetricClick("Humedad Relativa", hum, "%", "Saturación de vapor de agua en la atmósfera.", "Niveles altos aumentan la sensación de frío.", "Humedad")}
+            className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
           >
             <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
               <span>Humedad</span>
               <Droplets className="w-4 h-4 text-blue-400" />
             </div>
             <div className="text-2xl font-black text-white font-mono">{hum}%</div>
-            <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden mt-1">
+            <div className="h-1 bg-slate-800 rounded-full overflow-hidden mt-1">
               <div className="h-full bg-blue-400 rounded-full" style={{ width: `${hum}%` }} />
             </div>
           </div>
 
           {/* VIENTO & ROSA DE VIENTOS */}
           <div
-            onClick={() => handleMetricClick("Viento & Dirección", wind, "km/h", `Velocidad del viento medida a 10m de altura con ángulo ${windDir}°.`, "Condición adecuada para actividades al aire libre.", "Viento")}
-            className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+            onClick={() => handleMetricClick("Viento & Dirección", wind, "km/h", `Velocidad del viento medida a 10m con ángulo ${windDir}°.`, "Condición adecuada para actividades al aire libre.", "Viento")}
+            className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
           >
             <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
               <span>Viento</span>
               <Wind className="w-4 h-4 text-sky-400" />
             </div>
-            <div className="text-2xl font-black text-white font-mono flex items-center gap-1.5">
+            <div className="text-2xl font-black text-white font-mono flex items-center gap-1">
               <span>{wind}</span>
               <span className="text-xs font-sans text-slate-400 font-normal">km/h</span>
-              <Compass className="w-4 h-4 text-sky-300 ml-auto" style={{ transform: `rotate(${windDir}deg)` }} />
+              <Compass className="w-3.5 h-3.5 text-sky-300 ml-auto" style={{ transform: `rotate(${windDir}deg)` }} />
             </div>
             <div className="text-[10px] text-slate-400">Ángulo: <strong className="text-sky-300 font-mono">{windDir}°</strong></div>
           </div>
@@ -104,42 +108,42 @@ export default function BreezyMetricsGrid({ modo, climaData, onSelectMetric, onO
           {/* ÍNDICE UV */}
           <div
             onClick={() => handleMetricClick("Índice UV Solar", uv, "", "Nivel de radiación ultravioleta en superficie.", uv >= 6 ? "Usar protector solar FPS 50+ y lentes con filtro UV." : "Radiación moderada.", "Radiación")}
-            className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+            className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
           >
             <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
               <span>Índice UV</span>
               <Sun className="w-4 h-4 text-amber-400" />
             </div>
-            <div className="text-2xl font-black text-white font-mono">{uv} <span className="text-xs font-sans text-amber-300">{uv >= 8 ? 'Extremo' : (uv >= 6 ? 'Alto' : 'Normal')}</span></div>
-            <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden mt-1">
+            <div className="text-2xl font-black text-white font-mono">{uv} <span className="text-xs font-sans text-amber-300 font-bold">{uv >= 8 ? 'Extremo' : (uv >= 6 ? 'Alto' : 'Normal')}</span></div>
+            <div className="h-1 bg-slate-800 rounded-full overflow-hidden mt-1">
               <div className="h-full bg-gradient-to-r from-emerald-400 via-amber-400 to-rose-500 rounded-full" style={{ width: `${(uv / 12) * 100}%` }} />
             </div>
           </div>
 
           {/* PRESIÓN ATMOSFÉRICA */}
           <div
-            onClick={() => handleMetricClick("Presión Atmosférica", press, "hPa", "Presión barométrica a nivel de estación.", "Presiones estables indican tiempo despejado.", "Presión")}
-            className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+            onClick={() => handleMetricClick("Presión Atmosférica", press, "hPa", "Presión barométrica a nivel de estación.", "Presiones estables indican estabilidad atmosférica.", "Presión")}
+            className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
           >
             <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
               <span>Presión</span>
               <Gauge className="w-4 h-4 text-purple-400" />
             </div>
             <div className="text-2xl font-black text-white font-mono">{press} <span className="text-xs font-sans text-slate-400">hPa</span></div>
-            <div className="text-[10px] text-slate-400">Normal: <strong>1013 hPa</strong></div>
+            <div className="text-[10px] text-slate-400">Barómetro estándar</div>
           </div>
 
           {/* CALIDAD DEL AIRE AQI */}
           <div
             onClick={() => onOpenAqi && onOpenAqi({ mp25, mp10: sinca.mp10 || null, aqi, norma: sinca.categoria || 'Bueno' })}
-            className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+            className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
           >
             <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
               <span>AQI Aire</span>
               <Activity className="w-4 h-4 text-emerald-400" />
             </div>
             <div className="text-2xl font-black text-emerald-300 font-mono">{aqi}</div>
-            <div className="text-[10px] text-slate-400">MP2.5: <strong className="text-emerald-400">{mp25} µg</strong></div>
+            <div className="text-[10px] text-slate-400">MP2.5: <strong className="text-emerald-400 font-mono">{mp25} µg</strong></div>
           </div>
 
         </div>
@@ -158,12 +162,12 @@ export default function BreezyMetricsGrid({ modo, climaData, onSelectMetric, onO
   const lluvia = modo_agricola?.lluvia_caida_hoy_mm ?? 0.0;
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
       
       {/* EVAPOTRANSPIRACIÓN ETo */}
       <div
         onClick={() => handleMetricClick("Evapotranspiración ETo (FAO-56)", eto, "mm/día", "Consumo hídrico teórico Penman-Monteith (FAO-56).", "Ajustar lámina de reposición de riego según Kc de cultivo.", "Agronomía")}
-        className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+        className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
       >
         <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
           <span>Evapotranspiración ETo</span>
@@ -175,15 +179,15 @@ export default function BreezyMetricsGrid({ modo, climaData, onSelectMetric, onO
 
       {/* SALUD VEGETAL NDVI */}
       <div
-        onClick={() => handleMetricClick("Índice Vigor Vegetal NDVI (Sentinel-2 10m)", ndvi, "", "Densidad fotosintética del follaje observada por Sentinel-2.", "Valores > 0.6 representan biomasa verde densa sin estrés.", "Satélite GEE")}
-        className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+        onClick={() => handleMetricClick("Índice Vigor Vegetal NDVI (Sentinel-2 10m)", ndvi, "", "Densidad fotosintética del follaje observada por Sentinel-2 a 10m de resolución.", "Valores > 0.6 representan biomasa verde densa sin estrés.", "Satélite GEE")}
+        className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
       >
         <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
           <span>NDVI Vigor (10m)</span>
           <Cpu className="w-4 h-4 text-teal-400" />
         </div>
         <div className="text-2xl font-black text-teal-300 font-mono">{ndvi}</div>
-        <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden mt-1">
+        <div className="h-1 bg-slate-800 rounded-full overflow-hidden mt-1">
           <div className="h-full bg-teal-400 rounded-full" style={{ width: `${ndvi * 100}%` }} />
         </div>
       </div>
@@ -191,7 +195,7 @@ export default function BreezyMetricsGrid({ modo, climaData, onSelectMetric, onO
       {/* CLOROFILA / NITRÓGENO NDRE */}
       <div
         onClick={() => handleMetricClick("Clorofila/Nitrógeno NDRE (Red-Edge 10m)", ndre, "", "Contenido de nitrógeno foliar medido en la banda Red-Edge de Sentinel-2.", "Permite dosificar fertirriego nítrico localizado.", "Satélite GEE")}
-        className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+        className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
       >
         <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
           <span>NDRE Nitrógeno</span>
@@ -204,7 +208,7 @@ export default function BreezyMetricsGrid({ modo, climaData, onSelectMetric, onO
       {/* ESTRÉS HÍDRICO NDWI */}
       <div
         onClick={() => handleMetricClick("Estrés Hídrico Foliar NDWI", ndwi, "", "Contenido de agua en el tejido celular foliar.", "Valores < 0.1 indican necesidad de riego inmediato.", "Satélite GEE")}
-        className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+        className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
       >
         <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
           <span>NDWI Humedad Foliar</span>
@@ -217,7 +221,7 @@ export default function BreezyMetricsGrid({ modo, climaData, onSelectMetric, onO
       {/* DÉFICIT PRESIÓN VAPOR VPD */}
       <div
         onClick={() => handleMetricClick("Déficit Presión Vapor VPD", vpd, "kPa", "Diferencia de presión de vapor de agua entre el interior estomático y el aire.", "VPD entre 0.8 y 1.2 kPa es el rango fotosintético óptimo.", "Fisiología Vegetal")}
-        className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+        className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
       >
         <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
           <span>Déficit Vapor VPD</span>
@@ -230,7 +234,7 @@ export default function BreezyMetricsGrid({ modo, climaData, onSelectMetric, onO
       {/* TEMPERATURA SUELO 10CM */}
       <div
         onClick={() => handleMetricClick("Temperatura Suelo 10cm", tSuelo, "°C", "Temperatura en la zona radicular activa.", "T° suelo > 12°C favorece absorción de nutrientes.", "Suelo")}
-        className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+        className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
       >
         <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
           <span>T° Suelo 10cm</span>
@@ -243,7 +247,7 @@ export default function BreezyMetricsGrid({ modo, climaData, onSelectMetric, onO
       {/* HORAS FRÍO */}
       <div
         onClick={() => handleMetricClick("Horas Frío (T < 7.2°C)", horasFrio, "hrs", "Acumulación de horas de temperatura por debajo de 7.2°C en 24h.", "Requerido para romper dormancia en frutales caducos.", "Fruticultura")}
-        className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+        className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
       >
         <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
           <span>Horas Frío (24h)</span>
@@ -256,7 +260,7 @@ export default function BreezyMetricsGrid({ modo, climaData, onSelectMetric, onO
       {/* LLUVIA ACUMULADA */}
       <div
         onClick={() => handleMetricClick("Precipitación Hoy", lluvia, "mm", "Precipitación acumulada en las últimas 24h.", "Monitorear drenaje en suelos pesados.", "Lluvia")}
-        className="apple-card p-4 space-y-2 cursor-pointer transition hover:scale-105"
+        className="apple-card p-4 space-y-1.5 cursor-pointer transition hover:scale-105 bg-slate-900/50"
       >
         <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
           <span>Lluvia Caída Hoy</span>

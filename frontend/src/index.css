@@ -2,52 +2,58 @@
 
 :root {
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Space Grotesk', monospace;
+  --font-mono: 'Space Grotesk', ui-monospace, SFMono-Regular, monospace;
 }
 
-/* DEFAULTS OSCUROS (APPLE NIGHT SKY) */
+/* PALETA OSCURA MODERNA (DEEP SPACE GLASS) */
 [data-theme="dark"],
 :root:not([data-theme="light"]) {
-  --sky-base-1: #070a12;
-  --sky-base-2: #0f172a;
-  --sky-base-3: #1e1b4b;
+  --bg-app: #030712;
+  --sky-base-1: #030712;
+  --sky-base-2: #0b1329;
+  --sky-base-3: #111827;
 
-  --card-bg: rgba(15, 23, 42, 0.45);
-  --card-hover: rgba(30, 41, 59, 0.65);
-  --card-border: rgba(255, 255, 255, 0.16);
-  --card-border-active: rgba(56, 189, 248, 0.5);
-  --card-inset: rgba(255, 255, 255, 0.25);
+  --card-bg: rgba(17, 24, 39, 0.55);
+  --card-hover: rgba(31, 41, 55, 0.75);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-border-active: rgba(56, 189, 248, 0.6);
+  --card-inset: rgba(255, 255, 255, 0.08);
 
-  --text-main: #ffffff;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
-  --temp-gradient: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.45) 100%);
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --text-dim: #6b7280;
 
-  --pill-bg: rgba(255, 255, 255, 0.1);
-  --pill-border: rgba(255, 255, 255, 0.18);
-  --pill-text: #f8fafc;
+  --pill-bg: rgba(255, 255, 255, 0.07);
+  --pill-border: rgba(255, 255, 255, 0.12);
+  --pill-text: #f3f4f6;
+  --pill-hover: rgba(255, 255, 255, 0.16);
+
+  --hero-temp-color: #ffffff;
 }
 
-/* DEFAULTS CLAROS (APPLE DAYLIGHT SKY) */
+/* PALETA CLARA MODERNA (CLEAN DAYLIGHT GLASS) */
 [data-theme="light"] {
-  --sky-base-1: #38bdf8;
-  --sky-base-2: #0284c7;
-  --sky-base-3: #0369a1;
+  --bg-app: #f0f4f8;
+  --sky-base-1: #e0f2fe;
+  --sky-base-2: #bae6fd;
+  --sky-base-3: #7dd3fc;
 
-  --card-bg: rgba(255, 255, 255, 0.68);
-  --card-hover: rgba(255, 255, 255, 0.88);
-  --card-border: rgba(255, 255, 255, 0.6);
-  --card-border-active: rgba(2, 132, 199, 0.7);
-  --card-inset: rgba(255, 255, 255, 0.9);
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --card-hover: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(255, 255, 255, 0.8);
+  --card-border-active: rgba(2, 132, 199, 0.8);
+  --card-inset: rgba(255, 255, 255, 0.95);
 
   --text-main: #0f172a;
-  --text-muted: #334155;
-  --text-dim: #475569;
-  --temp-gradient: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.75) 100%);
+  --text-muted: #475569;
+  --text-dim: #64748b;
 
-  --pill-bg: rgba(255, 255, 255, 0.45);
-  --pill-border: rgba(255, 255, 255, 0.7);
+  --pill-bg: rgba(255, 255, 255, 0.6);
+  --pill-border: rgba(255, 255, 255, 0.85);
   --pill-text: #0f172a;
+  --pill-hover: rgba(255, 255, 255, 0.9);
+
+  --hero-temp-color: #0f172a;
 }
 
 * {
@@ -58,12 +64,15 @@
 
 body {
   font-family: var(--font-sans);
+  background-color: var(--bg-app);
   color: var(--text-main);
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* LIENZO DE CIELO DINÁMICO APPLE WEATHER */
+/* LIENZO DE CIELO Y PARTICULAS DINÁMICAS */
 .weather-sky-canvas {
   position: fixed;
   inset: 0;
@@ -76,37 +85,37 @@ body {
 }
 
 .sky-day-sunny {
-  background: radial-gradient(circle at 50% -20%, #7dd3fc 0%, #38bdf8 40%, #0284c7 100%);
+  background: radial-gradient(circle at 50% 0%, #38bdf8 0%, #0284c7 50%, #0369a1 100%);
 }
 .sky-warm-sunny {
-  background: radial-gradient(circle at 50% -20%, #fde047 0%, #f59e0b 45%, #ea580c 100%);
+  background: radial-gradient(circle at 50% 0%, #fbbf24 0%, #f59e0b 40%, #c2410c 100%);
 }
 .sky-rainy {
-  background: radial-gradient(circle at 50% -20%, #475569 0%, #1e293b 50%, #0f172a 100%);
+  background: radial-gradient(circle at 50% 0%, #334155 0%, #1e293b 50%, #0f172a 100%);
 }
 .sky-frost-cold {
-  background: radial-gradient(circle at 50% -20%, #a5f3fc 0%, #06b6d4 45%, #1e3a8a 100%);
+  background: radial-gradient(circle at 50% 0%, #7dd3fc 0%, #0284c7 40%, #1e3a8a 100%);
 }
 .sky-night-clear {
-  background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, #0f172a 50%, #070a12 100%);
+  background: radial-gradient(circle at 50% -10%, #1e1b4b 0%, #0f172a 55%, #030712 100%);
 }
 
 .sky-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.55;
-  animation: float-orb 18s infinite alternate ease-in-out;
+  filter: blur(100px);
+  opacity: 0.45;
+  animation: float-orb 22s infinite alternate ease-in-out;
 }
 
 .orb-primary {
-  width: 70vw;
-  height: 70vw;
-  max-width: 700px;
-  max-height: 700px;
-  top: -10vh;
-  left: 15vw;
-  background: rgba(255, 255, 255, 0.25);
+  width: 65vw;
+  height: 65vw;
+  max-width: 600px;
+  max-height: 600px;
+  top: -15vh;
+  left: 20vw;
+  background: rgba(56, 189, 248, 0.25);
 }
 
 .orb-secondary {
@@ -114,10 +123,10 @@ body {
   height: 50vw;
   max-width: 500px;
   max-height: 500px;
-  bottom: 10vh;
+  bottom: 5vh;
   right: 5vw;
-  background: rgba(56, 189, 248, 0.3);
-  animation-duration: 24s;
+  background: rgba(16, 185, 129, 0.2);
+  animation-duration: 28s;
   animation-direction: alternate-reverse;
 }
 
@@ -126,28 +135,28 @@ body {
   height: 40vw;
   max-width: 400px;
   max-height: 400px;
-  top: 35vh;
-  left: -10vw;
-  background: rgba(16, 185, 129, 0.2);
-  animation-duration: 20s;
+  top: 30vh;
+  left: -5vw;
+  background: rgba(139, 92, 246, 0.15);
+  animation-duration: 25s;
 }
 
 @keyframes float-orb {
   0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(5%, 8%) scale(1.08); }
-  100% { transform: translate(-3%, -5%) scale(0.95); }
+  50% { transform: translate(4%, 6%) scale(1.06); }
+  100% { transform: translate(-3%, -4%) scale(0.96); }
 }
 
-/* TARJETAS FLOTANTES DE VIDRIO ESTILO APPLE iOS 18 CON INTERACCIÓN EMIL KOWALSKI */
+/* TARJETAS GLASSMORPHISM MODERNAS ESTILO APPLE iOS 18 & LINEAR */
 .apple-card,
 .apple-ios-card {
   background: var(--card-bg);
-  backdrop-filter: blur(48px) saturate(210%);
-  -webkit-backdrop-filter: blur(48px) saturate(210%);
+  backdrop-filter: blur(40px) saturate(190%);
+  -webkit-backdrop-filter: blur(40px) saturate(190%);
   border: 1px solid var(--card-border);
-  border-radius: 32px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), inset 0 1.5px 0 0 var(--card-inset);
-  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease, background 0.3s ease;
+  border-radius: 28px;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.2), inset 0 1px 0 0 var(--card-inset);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
   color: var(--text-main);
   will-change: transform;
 }
@@ -156,51 +165,36 @@ body {
 .apple-ios-card:hover {
   background: var(--card-hover);
   border-color: var(--card-border-active);
-  box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.35), inset 0 1.5px 0 0 var(--card-inset);
-  transform: translateY(-3px) scale(1.012);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3), inset 0 1px 0 0 var(--card-inset);
+  transform: translateY(-2px);
 }
 
-/* EMIL KOWALSKI TACTILE HAPTIC ACTIVE PRESS FEEDBACK */
 .apple-card:active,
 .apple-ios-card:active,
 button:active {
-  transform: scale(0.972) translateY(1px) !important;
-  opacity: 0.94;
-  transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.1s ease !important;
-}
-
-.apple-temp-hero {
-  font-family: var(--font-sans);
-  font-weight: 900;
-  background: var(--temp-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.25));
+  transform: scale(0.98) !important;
+  transition: transform 0.08s ease !important;
 }
 
 .apple-pill {
   background: var(--pill-bg);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--pill-border);
   border-radius: 9999px;
-  padding: 7px 16px;
+  padding: 6px 14px;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--pill-text);
-  letter-spacing: 0.025em;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease;
-  will-change: transform;
+  letter-spacing: 0.015em;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
 }
 
 .apple-pill:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: scale(1.03);
-}
-
-.apple-pill:active {
-  transform: scale(0.95) !important;
+  background: var(--pill-hover);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.02);
 }
 
 .live-pulse-dot {
@@ -229,11 +223,10 @@ button:active {
   100% { transform: scale(2.2); opacity: 0; }
 }
 
-/* ANIMACIONES EMIL KOWALSKI PARA MODALES Y DRAWERS */
 @keyframes apple-modal-entry {
   0% {
     opacity: 0;
-    transform: scale(0.95) translateY(12px);
+    transform: scale(0.96) translateY(10px);
   }
   100% {
     opacity: 1;
@@ -242,7 +235,7 @@ button:active {
 }
 
 .animate-apple-entry {
-  animation: apple-modal-entry 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: apple-modal-entry 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .no-scrollbar::-webkit-scrollbar {

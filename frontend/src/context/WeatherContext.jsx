@@ -108,18 +108,23 @@ export function WeatherProvider({ children }) {
   }, [theme, resolvedTheme]);
 
   useEffect(() => {
-    if (navigator.geolocation && !localStorage.getItem('mp_coords')) {
+    // Solicitar automáticamente la ubicación GPS real del usuario al abrir la app
+    if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
         (pos) => {
-          const newC = { lat: pos.coords.latitude, lon: pos.coords.longitude };
-          setCoords(newC);
-          try { localStorage.setItem('mp_coords', JSON.stringify(newC)); } catch {}
+          const liveCoords = {
+            lat: pos.coords.latitude,
+            lon: pos.coords.longitude
+          };
+          setCoords(liveCoords);
+          try {
+            localStorage.setItem('mp_coords', JSON.stringify(liveCoords));
+          } catch {}
         },
         (err) => {
-          console.log("Geolocalización predeterminada (Quilacahuín):", err);
-          setGpsFallbackOpen(true);
+          console.warn("Aviso GPS del navegador:", err.message);
         },
-        { timeout: 8000, enableHighAccuracy: true }
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
       );
     }
   }, []);
