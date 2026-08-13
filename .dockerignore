@@ -12,7 +12,6 @@ llave-google.json
 llave-google.json.json
 credentials.json
 service_account*.json
-cache_servidor.json
 *.tmp
 *.log
 *.exe

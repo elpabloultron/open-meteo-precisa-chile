@@ -518,9 +518,6 @@ async def ejecutar_sincronizacion_completa():
     telemetria_global = CACHE_MEMORIA.get("estaciones_telemetria", {}).copy()
 
     async with httpx.AsyncClient(headers=HEADERS, follow_redirects=True) as client:
-        # Lanzar generación de bucle WebP GOES-19 asíncronamente
-        asyncio.create_task(procesar_video_goes19())
-        
         results = await asyncio.gather(
             sincronizar_dmc_telemetria(client),
             sincronizar_agromet_inia(client),
@@ -530,6 +527,7 @@ async def ejecutar_sincronizacion_completa():
             sincronizar_pronostico_oficial_dmc(client),
             sincronizar_alertas_senapred(client),
             sincronizar_puntos_gee(),
+            procesar_video_goes19(),
             return_exceptions=True
         )
 

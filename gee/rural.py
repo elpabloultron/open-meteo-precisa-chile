@@ -1,4 +1,5 @@
 import math
+from datetime import datetime, timedelta, timezone
 
 import ee
 
@@ -12,12 +13,14 @@ def extraer_metricas_agricolas(lat: float, lon: float) -> dict:
         
     try:
         point = ee.Geometry.Point([lon, lat])
+        hoy = datetime.now(timezone.utc).date()
+        inicio_s2 = hoy - timedelta(days=90)
         
         # 1. Sentinel-2: NDVI, NDWI, NDRE (Clorofila/Nitrógeno), SAVI, NDMI, NDSI (Nieve)
         s2 = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
             .filterBounds(point) \
-            .filterDate('2025-10-01', '2026-04-01') \
-            .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 30))
+            .filterDate(inicio_s2.isoformat(), hoy.isoformat()) \
+            .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 35))
             
         def calc_bands(img):
             ndvi = img.normalizedDifference(['B8', 'B4']).rename('NDVI')

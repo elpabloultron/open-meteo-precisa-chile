@@ -61,13 +61,18 @@ def construir_transparency_metadata(last_up_ts: int, boletin_dmc: dict = None, e
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Inicializa dependencias; la sincronización productiva la realiza Cloud Run Job."""
+    """Inicializa dependencias y asegura datos frescos en memoria."""
     cargar_cache_desde_disco()
     await asyncio.to_thread(GEECore.initialize)
 
     task = None
     if settings.enable_in_process_sync:
         task = asyncio.create_task(iniciar_loop_background(3600))
+    else:
+        # Si no hay worker externo (Cloud Run serverless), refrescar automáticamente si la caché es antigua (>30 min)
+        ahora = int(time.time())
+        if ahora - CACHE_MEMORIA.get("last_updated", 0) > 1800:
+            asyncio.create_task(ejecutar_sincronizacion_completa())
 
     yield
 
@@ -101,6 +106,10 @@ app.add_middleware(
 async def refresh_cache_before_api(request: Request, call_next):
     if request.url.path.startswith("/api/"):
         await asyncio.to_thread(refrescar_cache_si_corresponde, settings.cache_refresh_seconds)
+        # Auto-recuperación si la caché está obsoleta (>1 hora) y no se está sincronizando
+        ahora_ts = int(time.time())
+        if CACHE_MEMORIA.get("status") != "syncing" and (ahora_ts - CACHE_MEMORIA.get("last_updated", 0) > 3600):
+            asyncio.create_task(ejecutar_sincronizacion_completa())
     return await call_next(request)
 
 HEADERS = {

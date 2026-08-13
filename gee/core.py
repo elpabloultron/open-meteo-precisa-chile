@@ -35,9 +35,14 @@ class GEECore:
             logger.info("[GEE] ADC no disponible; se intentará una ruta de credencial configurada explícitamente.")
 
         # 2. Intentar claves locales
+        project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         key_paths = [
             os.getenv("GOOGLE_APPLICATION_CREDENTIALS", ""),
             os.getenv("GEE_KEY_PATH", ""),
+            os.path.join(project_dir, "llave-google.json.json"),
+            os.path.join(project_dir, "llave-google.json"),
+            os.path.join(project_dir, "service_account.json"),
+            os.path.join(project_dir, "credentials.json"),
         ]
         key_path = next((p for p in key_paths if p and os.path.exists(p)), None)
         
@@ -47,12 +52,13 @@ class GEECore:
                     key_path,
                     scopes=['https://www.googleapis.com/auth/earthengine']
                 )
-                ee.Initialize(credentials=creds)
+                project_id = os.getenv("GCP_PROJECT_ID") or os.getenv("GOOGLE_CLOUD_PROJECT") or "gen-lang-client-0695066948"
+                ee.Initialize(credentials=creds, project=project_id)
                 cls._initialized = True
                 logger.info(f"🎉 [GEE] Autenticado mediante clave local en {os.path.basename(key_path)}")
                 return True
             except Exception as e:
-                logger.error(f"⚠️ [GEE] Error inicializando con llave local: {e}")
+                logger.error(f"⚠️ [GEE] Error inicializando con llave local ({os.path.basename(key_path)}): {e}")
 
         logger.warning("[GEE] No se encontraron credenciales válidas. Operando en modo fallback.")
         return False

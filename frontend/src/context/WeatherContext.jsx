@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from 'react';
 export const WeatherContext = createContext();
 
 const API_BASE = import.meta.env.VITE_API_URL || '';
-const BACKEND_FALLBACK = 'https://meteoprecisa-app-617865207703.southamerica-west1.run.app';
+const BACKEND_FALLBACK = 'https://meteoprecisa-app-480337785992.southamerica-west1.run.app';
 
 const FALLBACK_CLIMA_DATA = {
   estacion: {
