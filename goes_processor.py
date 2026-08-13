@@ -95,6 +95,13 @@ async def procesar_video_goes19(max_frames: int = 144) -> dict:
                         logger.info("⏳ Compilando animación WebP en hilos de fondo...")
                         await asyncio.to_thread(guardar_webp, images)
 
+                        # Respaldar en Supabase Storage (100% Gratuito y CDN de alta velocidad)
+                        try:
+                            from supabase_store import subir_archivo_supabase
+                            await asyncio.to_thread(subir_archivo_supabase, WEBP_OUTPUT_PATH, "goes19_loop.webp", "image/webp")
+                        except Exception as supa_err:
+                            logger.warning(f"Aviso subiendo GOES-19 a Supabase Storage: {supa_err}")
+
                         # Si GCS está configurado, persistir también en Cloud Storage
                         from app_config import settings
                         if settings.cache_backend == "gcs" and settings.cache_storage_bucket:
@@ -119,6 +126,7 @@ async def procesar_video_goes19(max_frames: int = 144) -> dict:
                             "last_updated_ts": now_ts,
                             "updated_at_label": f"Actualizada a las {time_label} hrs",
                             "video_url": "/static/goes19_loop.webp",
+                            "supabase_cdn_url": "https://qrqhonyympzsmaucbfel.supabase.co/storage/v1/object/public/meteoprecisa/goes19_loop.webp",
                             "total_frames": len(images),
                             "fps": 20,
                             "raw_source_url": url_base,
@@ -138,6 +146,7 @@ async def procesar_video_goes19(max_frames: int = 144) -> dict:
         "last_updated_ts": now_ts,
         "updated_at_label": f"Actualizada a las {time_label} hrs",
         "video_url": "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ssa/GEOCOLOR/1800x1080.jpg",
+        "supabase_cdn_url": "https://qrqhonyympzsmaucbfel.supabase.co/storage/v1/object/public/meteoprecisa/goes19_loop.webp",
         "total_frames": 1,
         "fps": 1,
         "raw_source_url": url_base,
@@ -156,6 +165,7 @@ def obtener_satellite_latest_loop() -> dict:
             "last_updated_ts": now_ts,
             "updated_at_label": f"Actualizada a las {time_label} hrs",
             "video_url": "/static/goes19_loop.webp",
+            "supabase_cdn_url": "https://qrqhonyympzsmaucbfel.supabase.co/storage/v1/object/public/meteoprecisa/goes19_loop.webp",
             "total_frames": 144,
             "fps": 20,
             "raw_source_url": "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ssa/GEOCOLOR/",

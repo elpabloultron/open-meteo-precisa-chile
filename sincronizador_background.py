@@ -585,6 +585,12 @@ async def ejecutar_sincronizacion_completa():
     except Exception as db_err:
         print(f"⚠️ Aviso guardando histórico en SQLite: {db_err}")
 
+    try:
+        from supabase_store import subir_cache_json_supabase
+        subir_cache_json_supabase(CACHE_MEMORIA)
+    except Exception as supa_err:
+        print(f"⚠️ Aviso subiendo caché a Supabase Storage: {supa_err}")
+
     print(f"🎉 [BACKGROUND TASK] Sincronización completada exitosamente ({len(catalogo_final)} estaciones físicas unificadas en Chile).\n")
 
 

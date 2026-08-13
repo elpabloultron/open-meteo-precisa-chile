@@ -19,3 +19,9 @@ services:
         value: "*"
       - key: PYTHON_VERSION
         value: "3.11.9"
+      - key: SUPABASE_URL
+        value: "https://qrqhonyympzsmaucbfel.supabase.co"
+      - key: SUPABASE_BUCKET
+        value: "meteoprecisa"
+      - key: SUPABASE_KEY
+        sync: false
