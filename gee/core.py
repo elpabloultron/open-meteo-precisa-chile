@@ -34,7 +34,25 @@ class GEECore:
         except Exception as adc_err:
             logger.info("[GEE] ADC no disponible; se intentará una ruta de credencial configurada explícitamente.")
 
-        # 2. Intentar claves locales
+        # 2. Intentar clave desde variable de entorno (para Render / Vercel / Cloud)
+        raw_json_str = os.getenv("GEE_SERVICE_ACCOUNT_JSON") or os.getenv("GCP_SA_KEY") or os.getenv("GOOGLE_CREDENTIALS_JSON")
+        if raw_json_str:
+            try:
+                import json
+                info = json.loads(raw_json_str)
+                creds = service_account.Credentials.from_service_account_info(
+                    info,
+                    scopes=['https://www.googleapis.com/auth/earthengine']
+                )
+                project_id = info.get("project_id") or os.getenv("GCP_PROJECT_ID") or "gen-lang-client-0695066948"
+                ee.Initialize(credentials=creds, project=project_id)
+                cls._initialized = True
+                logger.info(f"🎉 [GEE] Autenticado mediante variable de entorno GEE_SERVICE_ACCOUNT_JSON (Proyecto: {project_id})")
+                return True
+            except Exception as env_err:
+                logger.error(f"⚠️ [GEE] Error inicializando desde variable de entorno: {env_err}")
+
+        # 3. Intentar claves locales en archivo
         project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         key_paths = [
             os.getenv("GOOGLE_APPLICATION_CREDENTIALS", ""),
