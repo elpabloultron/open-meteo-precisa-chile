@@ -195,7 +195,9 @@ async def sincronizar_agromet_inia(client: httpx.AsyncClient) -> tuple[dict, lis
             data = resp.json()
             raw_list = data.values() if isinstance(data, dict) else data
             for item in raw_list:
-                est_id = f"agromet_{item.get('id')}"
+                source_tag = (item.get("source") or "inia").strip().lower()
+                raw_id = item.get('id')
+                est_id = f"agromet_{source_tag}_{raw_id}"
                 lat = clean_num(item.get("latitud"))
                 lon = clean_num(item.get("longitud"))
                 nombre = (item.get("nombre") or "").replace("Estacin", "Estación").replace("Quilacahuin", "Quilacahuín")

@@ -1,14 +1,14 @@
 import React from 'react';
-import { MapPin, ShieldCheck, ArrowUp, ArrowDown, Sun, CloudSun, CloudRain, Snowflake, CloudLightning, Cloud, FileText, Radio, ExternalLink } from 'lucide-react';
+import { MapPin, ShieldCheck, ArrowUp, ArrowDown, Sun, CloudSun, CloudRain, Snowflake, CloudLightning, Cloud, FileText, Radio, Navigation, Activity } from 'lucide-react';
 import { formatLocalTime } from '../utils/timeUtils';
 
-function getWeatherVectorIcon(code, temp) {
-  if (code === 0) return <Sun className="w-20 h-20 text-amber-400 drop-shadow-[0_8px_25px_rgba(251,191,36,0.35)] animate-pulse" />;
-  if (code >= 1 && code <= 3) return <CloudSun className="w-20 h-20 text-sky-300 drop-shadow-[0_8px_25px_rgba(56,189,248,0.35)]" />;
-  if (code >= 51 && code <= 67) return <CloudRain className="w-20 h-20 text-blue-400 drop-shadow-[0_8px_25px_rgba(96,165,250,0.35)]" />;
-  if (code >= 71 && code <= 77) return <Snowflake className="w-20 h-20 text-cyan-300 drop-shadow-[0_8px_25px_rgba(103,232,249,0.35)]" />;
-  if (code >= 95) return <CloudLightning className="w-20 h-20 text-purple-400 drop-shadow-[0_8px_25px_rgba(192,132,252,0.35)]" />;
-  return <Cloud className="w-20 h-20 text-slate-400 drop-shadow-[0_8px_25px_rgba(148,163,184,0.35)]" />;
+function getWeatherVectorIcon(code) {
+  if (code === 0) return <Sun className="w-16 h-16 sm:w-20 sm:h-20 text-amber-400 drop-shadow-[0_8px_25px_rgba(251,191,36,0.35)] animate-pulse" />;
+  if (code >= 1 && code <= 3) return <CloudSun className="w-16 h-16 sm:w-20 sm:h-20 text-sky-300 drop-shadow-[0_8px_25px_rgba(56,189,248,0.35)]" />;
+  if (code >= 51 && code <= 67) return <CloudRain className="w-16 h-16 sm:w-20 sm:h-20 text-blue-400 drop-shadow-[0_8px_25px_rgba(96,165,250,0.35)]" />;
+  if (code >= 71 && code <= 77) return <Snowflake className="w-16 h-16 sm:w-20 sm:h-20 text-cyan-300 drop-shadow-[0_8px_25px_rgba(103,232,249,0.35)]" />;
+  if (code >= 95) return <CloudLightning className="w-16 h-16 sm:w-20 sm:h-20 text-purple-400 drop-shadow-[0_8px_25px_rgba(192,132,252,0.35)]" />;
+  return <Cloud className="w-16 h-16 sm:w-20 sm:h-20 text-slate-400 drop-shadow-[0_8px_25px_rgba(148,163,184,0.35)]" />;
 }
 
 export default function BreezyHeroBlock({ climaData, onOpenEstacionesCercanas, onSelectMetric, onOpenAgroReport }) {
@@ -32,11 +32,11 @@ export default function BreezyHeroBlock({ climaData, onOpenEstacionesCercanas, o
         title: `Estación Física: ${estacion?.nombre}`,
         value: `${temp}°C`,
         unit: "Telemetría Directa en Terreno",
-        description: `Esta medición proviene directamente de los sensores físicos oficiales de la red ${estacion?.red_oficial || 'DMC / Agromet INIA'} (Estación ID: ${estacion?.id}). Coordenadas: ${estacion?.coordenadas?.latitud}, ${estacion?.coordenadas?.longitud}. Ubicada a ${metadatos?.distancia_km || 0} km de tu posición.`,
+        description: `Esta medición proviene directamente de los sensores físicos oficiales de la red ${estacion?.red_oficial || 'Agromet INIA / DMC'} (Estación ID: ${estacion?.id}). Coordenadas: ${estacion?.coordenadas?.latitud}, ${estacion?.coordenadas?.longitud}. Distancia: ${metadatos?.distancia_km || 0} km de tu ubicación GPS.`,
         advice: "Datos auditados bajo los estándares de la Organización Meteorológica Mundial (OMM WMO-No. 8).",
         category: "Telemetría Física Oficial",
         stationId: estacion?.id,
-        rawSourceUrl: estacion?.raw_source_url || "https://climatologia.meteochile.gob.cl",
+        rawSourceUrl: estacion?.raw_source_url || "https://agrometeorologia.cl",
         isLiveData: true
       });
     }
@@ -45,44 +45,57 @@ export default function BreezyHeroBlock({ climaData, onOpenEstacionesCercanas, o
   return (
     <div className="apple-card p-6 sm:p-8 relative overflow-hidden space-y-6 shadow-2xl border border-white/15 bg-slate-900/60">
       
-      {/* BARRA SUPERIOR DE UBICACIÓN & METADATOS DE AUDITORÍA */}
-      <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
-        <button
-          onClick={onOpenEstacionesCercanas}
-          className="apple-pill flex items-center gap-2 text-sky-300 font-bold hover:scale-105 transition cursor-pointer"
-        >
-          <MapPin className="w-4 h-4 text-sky-400" />
-          <span>{estacion?.nombre}</span>
-          <span className="text-[10px] text-slate-400 font-normal">({metadatos?.distancia_km || 0} km de ti)</span>
-        </button>
+      {/* 1. DISTINCIÓN CLARA: TU UBICACIÓN GPS vs ESTACIÓN FÍSICA */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs border-b border-white/10 pb-4">
+        
+        {/* TU UBICACIÓN GPS */}
+        <div className="flex items-center gap-2 text-white">
+          <div className="p-1.5 bg-sky-500/20 text-sky-400 rounded-xl border border-sky-500/30">
+            <Navigation className="w-4 h-4" />
+          </div>
+          <div>
+            <div className="font-bold text-sm text-white flex items-center gap-1.5">
+              <span>{estacion?.sector || 'Tu Ubicación'}</span>
+              <span className="text-[10px] text-sky-400 font-normal px-2 py-0.5 bg-sky-500/10 rounded-full border border-sky-500/20">
+                GPS Exacto
+              </span>
+            </div>
+            <p className="text-[11px] text-slate-400">
+              Coordenadas: {estacion?.coordenadas?.latitud?.toFixed(4)}, {estacion?.coordenadas?.longitud?.toFixed(4)}
+            </p>
+          </div>
+        </div>
 
-        <div className="flex items-center gap-2">
+        {/* ESTACIÓN DE REFERENCIA Y BOTÓN DE INFORME */}
+        <div className="flex flex-wrap items-center gap-2">
           {onOpenAgroReport && (
             <button
               onClick={onOpenAgroReport}
               className="apple-pill flex items-center gap-1.5 text-emerald-300 bg-emerald-500/15 border-emerald-500/30 font-bold hover:scale-105 transition cursor-pointer shadow-sm"
             >
               <FileText className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Ficha Técnica de Predio (PDF)</span>
+              <span>Ver Boletín Agrícola Completo (PDF)</span>
             </button>
           )}
 
           <button
-            onClick={handleLineageClick}
-            className="apple-pill flex items-center gap-1.5 text-emerald-300 font-bold hover:scale-105 transition cursor-pointer"
+            onClick={onOpenEstacionesCercanas}
+            className="apple-pill flex items-center gap-1.5 text-slate-300 hover:text-white font-semibold cursor-pointer"
           >
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Sensor Físico Oficial #{estacion?.id}</span>
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Estación: {estacion?.nombre}</span>
+            <span className="text-[10px] text-emerald-400 font-mono">({metadatos?.distancia_km || 0} km)</span>
           </button>
         </div>
+
       </div>
 
-      {/* BLOQUE HÉROE PRINCIPAL: TEMPERATURA Y ESTADO */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-2">
+      {/* 2. BLOQUE HÉROE PRINCIPAL: TEMPERATURA Y ESTADO */}
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-1">
         
-        {/* ICONO Y TEMPERATURA MASIVA MINIMALISTA */}
+        {/* ICONO Y TEMPERATURA MASIVA */}
         <div className="flex items-center gap-6">
-          {getWeatherVectorIcon(0, temp)}
+          {getWeatherVectorIcon(0)}
           <div>
             <div className="text-7xl sm:text-8xl md:text-9xl font-black tracking-tighter text-white font-mono leading-none">
               {temp}°
@@ -95,7 +108,7 @@ export default function BreezyHeroBlock({ climaData, onOpenEstacionesCercanas, o
           </div>
         </div>
 
-        {/* SLIM MIN/MAX Y SECTOR CON TIMESTAMP EN VIVO */}
+        {/* MIN/MAX Y TIMESTAMP EN VIVO */}
         <div className="flex flex-col items-end gap-2 text-right">
           <div className="apple-pill flex items-center gap-4 px-5 py-2 text-xs font-bold shadow-lg">
             <span className="flex items-center gap-1 text-cyan-300">
@@ -111,7 +124,7 @@ export default function BreezyHeroBlock({ climaData, onOpenEstacionesCercanas, o
 
           <div className="text-xs text-slate-400 font-medium flex items-center gap-1.5">
             <Radio className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
-            <span className="text-slate-300 font-semibold">{estacion?.red_oficial || 'Red Oficial DMC / INIA'}</span>
+            <span className="text-slate-300 font-semibold">{estacion?.red_oficial || 'Red Agromet INIA'}</span>
             <span className="opacity-40">•</span>
             <span>{localTimeLabel}</span>
           </div>

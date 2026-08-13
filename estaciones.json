@@ -1350,4743 +1350,4645 @@
     "lon": -60.41222
   },
   {
-    "id": "ceaza_pandeazucar",
-    "code_red": "pandeazucar",
-    "nombre": "Estación Pan de Azúcar",
-    "sector": "Coquimbo",
-    "red": "Red CEAZA",
-    "tipo_api": "ceaza",
-    "lat": -29.9833,
-    "lon": -71.2333
-  },
-  {
-    "id": "ceaza_vicuna",
-    "code_red": "vicuna",
-    "nombre": "Estación Vicuña",
-    "sector": "Valle del Elqui",
-    "red": "Red CEAZA",
-    "tipo_api": "ceaza",
-    "lat": -30.0333,
-    "lon": -70.7167
-  },
-  {
-    "id": "ceaza_ovalle",
-    "code_red": "ovalle",
-    "nombre": "Estación Ovalle Limarí",
-    "sector": "Ovalle",
-    "red": "Red CEAZA",
-    "tipo_api": "ceaza",
-    "lat": -30.6011,
-    "lon": -71.2003
-  },
-  {
-    "id": "redmeteo_osorno_centro",
-    "code_red": "osorno_urbano",
-    "nombre": "Estación Osorno Urbano",
-    "sector": "Osorno Centro",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": -40.5739,
-    "lon": -73.1336
-  },
-  {
-    "id": "redmeteo_frutillar",
-    "code_red": "frutillar",
-    "nombre": "Estación Frutillar Urbano",
-    "sector": "Frutillar",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": -41.1167,
-    "lon": -73.05
-  },
-  {
-    "id": "redmeteo_pucón",
-    "code_red": "pucon",
-    "nombre": "Estación Pucón Urbano",
-    "sector": "Pucón",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": -39.2817,
-    "lon": -71.9722
-  },
-  {
-    "id": "agromet_78",
+    "id": "agromet_inia_78",
     "code_red": "78",
-    "nombre": "Estación INIA Visviri",
+    "nombre": "Estación INIA Visviri, General Lagos",
     "sector": "General Lagos, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -17.594605,
-    "lon": -69.477417
+    "lon": -69.477417,
+    "elevacion_m": 4122.0
   },
   {
-    "id": "agromet_134",
+    "id": "agromet_inia_134",
     "code_red": "134",
-    "nombre": "Estación INIA Putre",
+    "nombre": "Estación INIA Putre, Putre",
     "sector": "Putre, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.196949,
-    "lon": -69.55374
+    "lon": -69.55374,
+    "elevacion_m": 3577.0
   },
   {
-    "id": "agromet_120",
+    "id": "agromet_ext_120",
     "code_red": "120",
-    "nombre": "Estación DMC Putre DMC",
+    "nombre": "Estación DMC Putre DMC, Putre",
     "sector": "Putre, Arica y Parinacota",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -18.2,
-    "lon": -69.5625
+    "lon": -69.5625,
+    "elevacion_m": 3532.0
   },
   {
-    "id": "agromet_43",
+    "id": "agromet_inia_43",
     "code_red": "43",
-    "nombre": "Estación INIA Socoroma",
+    "nombre": "Estación INIA Socoroma, Putre",
     "sector": "Putre, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.263889,
-    "lon": -69.607675
+    "lon": -69.607675,
+    "elevacion_m": 3077.0
   },
   {
-    "id": "agromet_80",
+    "id": "agromet_inia_80",
     "code_red": "80",
-    "nombre": "Estación INIA Lago Chungará",
+    "nombre": "Estación INIA Lago Chungará, Putre",
     "sector": "Putre, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.280792,
-    "lon": -69.137992
+    "lon": -69.137992,
+    "elevacion_m": 4570.0
   },
   {
-    "id": "agromet_225",
+    "id": "agromet_ext_225",
     "code_red": "225",
-    "nombre": "Estación DMC Aeropuerto Chacalluta",
+    "nombre": "Estación DMC Aeropuerto Chacalluta, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -18.35555,
-    "lon": -70.34028
+    "lon": -70.34028,
+    "elevacion_m": 50.0
   },
   {
-    "id": "agromet_69",
+    "id": "agromet_ext_69",
     "code_red": "69",
-    "nombre": "Estación ANPROS Concordia Medio",
+    "nombre": "Estación ANPROS Concordia Medio, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (ANPROS)",
     "tipo_api": "agromet",
     "lat": -18.360768,
-    "lon": -70.293211
+    "lon": -70.293211,
+    "elevacion_m": 115.0
   },
   {
-    "id": "agromet_302",
+    "id": "agromet_inia_302",
     "code_red": "302",
-    "nombre": "Estación INIA Pampa Concordia",
+    "nombre": "Estación INIA Pampa Concordia, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.362922,
-    "lon": -70.302033
+    "lon": -70.302033,
+    "elevacion_m": 65.0
   },
   {
-    "id": "agromet_152",
+    "id": "agromet_inia_152",
     "code_red": "152",
-    "nombre": "Estación INIA Chapiquiña",
+    "nombre": "Estación INIA Chapiquiña, Putre",
     "sector": "Putre, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.389472,
-    "lon": -69.539417
+    "lon": -69.539417,
+    "elevacion_m": 3300.0
   },
   {
-    "id": "agromet_75",
+    "id": "agromet_inia_75",
     "code_red": "75",
-    "nombre": "Estación INIA Lluta Alto",
+    "nombre": "Estación INIA Lluta Alto, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.393556,
-    "lon": -69.963339
+    "lon": -69.963339,
+    "elevacion_m": 895.0
   },
   {
-    "id": "agromet_34",
+    "id": "agromet_inia_34",
     "code_red": "34",
-    "nombre": "Estación INIA Lluta Bajo",
+    "nombre": "Estación INIA Lluta Bajo, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.409467,
-    "lon": -70.233833
+    "lon": -70.233833,
+    "elevacion_m": 222.0
   },
   {
-    "id": "agromet_38",
+    "id": "agromet_inia_38",
     "code_red": "38",
-    "nombre": "Estación INIA Lluta Medio",
+    "nombre": "Estación INIA Lluta Medio, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.452168,
-    "lon": -70.067102
+    "lon": -70.067102,
+    "elevacion_m": 532.0
   },
   {
-    "id": "agromet_156",
+    "id": "agromet_inia_156",
     "code_red": "156",
-    "nombre": "Estación INIA Belén",
+    "nombre": "Estación INIA Belén, Putre",
     "sector": "Putre, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.468208,
-    "lon": -69.523279
+    "lon": -69.523279,
+    "elevacion_m": 3208.0
   },
   {
-    "id": "agromet_121",
+    "id": "agromet_ext_121",
     "code_red": "121",
-    "nombre": "Estación DMC Defensa Civil",
+    "nombre": "Estación DMC Defensa Civil, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -18.49111,
-    "lon": -70.30139
+    "lon": -70.30139,
+    "elevacion_m": 71.0
   },
   {
-    "id": "agromet_117",
+    "id": "agromet_ext_117",
     "code_red": "117",
-    "nombre": "Estación DMC Cerro Sombrero AR",
+    "nombre": "Estación DMC Cerro Sombrero AR, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -18.5125,
-    "lon": -70.26556
+    "lon": -70.26556,
+    "elevacion_m": 122.0
   },
   {
-    "id": "agromet_72",
+    "id": "agromet_ext_72",
     "code_red": "72",
-    "nombre": "Estación ANPROS La Violeta Open",
+    "nombre": "Estación ANPROS La Violeta Open, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (ANPROS)",
     "tipo_api": "agromet",
     "lat": -18.513323,
-    "lon": -70.218336
+    "lon": -70.218336,
+    "elevacion_m": 199.0
   },
   {
-    "id": "agromet_39",
+    "id": "agromet_inia_39",
     "code_red": "39",
-    "nombre": "Estación INIA Azapa Medio",
+    "nombre": "Estación INIA Azapa Medio, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.547728,
-    "lon": -70.124646
+    "lon": -70.124646,
+    "elevacion_m": 393.0
   },
   {
-    "id": "agromet_63",
+    "id": "agromet_inia_63",
     "code_red": "63",
-    "nombre": "Estación INIA Cerro Blanco",
+    "nombre": "Estación INIA Cerro Blanco, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.57507,
-    "lon": -70.069739
+    "lon": -70.069739,
+    "elevacion_m": 525.0
   },
   {
-    "id": "agromet_81",
+    "id": "agromet_inia_81",
     "code_red": "81",
-    "nombre": "Estación INIA Azapa Alto",
+    "nombre": "Estación INIA Azapa Alto, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.577454,
-    "lon": -69.9472636
+    "lon": -69.9472636,
+    "elevacion_m": 838.0
   },
   {
-    "id": "agromet_149",
+    "id": "agromet_inia_149",
     "code_red": "149",
-    "nombre": "Estación INIA Ticnamar",
+    "nombre": "Estación INIA Ticnamar, Putre",
     "sector": "Putre, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.58007,
-    "lon": -69.495965
+    "lon": -69.495965,
+    "elevacion_m": 3220.0
   },
   {
-    "id": "agromet_150",
+    "id": "agromet_inia_150",
     "code_red": "150",
-    "nombre": "Estación INIA Caleta Vitor",
+    "nombre": "Estación INIA Caleta Vitor, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.781479,
-    "lon": -70.283902
+    "lon": -70.283902,
+    "elevacion_m": 88.0
   },
   {
-    "id": "agromet_79",
+    "id": "agromet_inia_79",
     "code_red": "79",
-    "nombre": "Estación INIA Salar de Surire",
+    "nombre": "Estación INIA Salar de Surire, Putre",
     "sector": "Putre, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.794647,
-    "lon": -69.084443
+    "lon": -69.084443,
+    "elevacion_m": 4269.0
   },
   {
-    "id": "agromet_137",
+    "id": "agromet_inia_137",
     "code_red": "137",
-    "nombre": "Estación INIA Chaca",
+    "nombre": "Estación INIA Chaca, Arica",
     "sector": "Arica, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.820388,
-    "lon": -70.140868
+    "lon": -70.140868,
+    "elevacion_m": 328.0
   },
   {
-    "id": "agromet_76",
+    "id": "agromet_inia_76",
     "code_red": "76",
-    "nombre": "Estación INIA Codpa",
+    "nombre": "Estación INIA Codpa, Camarones",
     "sector": "Camarones, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -18.832508,
-    "lon": -69.745559
+    "lon": -69.745559,
+    "elevacion_m": 1870.0
   },
   {
-    "id": "agromet_77",
+    "id": "agromet_inia_77",
     "code_red": "77",
-    "nombre": "Estación INIA Camarones",
+    "nombre": "Estación INIA Camarones, Camarones",
     "sector": "Camarones, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -19.011167,
-    "lon": -69.857194
+    "lon": -69.857194,
+    "elevacion_m": 730.0
   },
   {
-    "id": "agromet_204",
+    "id": "agromet_inia_204",
     "code_red": "204",
-    "nombre": "Estación INIA Cuya",
+    "nombre": "Estación INIA Cuya, Camarones",
     "sector": "Camarones, Arica y Parinacota",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -19.161922,
-    "lon": -70.180968
+    "lon": -70.180968,
+    "elevacion_m": 97.0
   },
   {
-    "id": "agromet_1012",
+    "id": "agromet_ext_1012",
     "code_red": "1012",
-    "nombre": "Estación DMC Colchane",
+    "nombre": "Estación DMC Colchane, Colchane",
     "sector": "Colchane, Tarapacá",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -19.27694,
-    "lon": -68.63972
+    "lon": -68.63972,
+    "elevacion_m": 3700.0
   },
   {
-    "id": "agromet_60",
+    "id": "agromet_ext_60",
     "code_red": "60",
-    "nombre": "Estación UPLA-CEAZA Salar de Huasco",
+    "nombre": "Estación UPLA-CEAZA Salar de Huasco, Pica",
     "sector": "Pica, Tarapacá",
     "red": "Red Agromet (UPLA-CEAZA)",
     "tipo_api": "agromet",
     "lat": -20.25704,
-    "lon": -68.87269
+    "lon": -68.87269,
+    "elevacion_m": 3804.0
   },
   {
-    "id": "agromet_123",
+    "id": "agromet_ext_123",
     "code_red": "123",
-    "nombre": "Estación DMC Universidad Arturo Prat",
+    "nombre": "Estación DMC Universidad Arturo Prat, Iquique",
     "sector": "Iquique, Tarapacá",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -20.27083,
-    "lon": -70.13083
+    "lon": -70.13083,
+    "elevacion_m": 30.0
   },
   {
-    "id": "agromet_202",
+    "id": "agromet_inia_202",
     "code_red": "202",
-    "nombre": "Estación INIA Pica",
+    "nombre": "Estación INIA Pica, Pica",
     "sector": "Pica, Tarapacá",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -20.501476,
-    "lon": -69.342572
+    "lon": -69.342572,
+    "elevacion_m": 1325.0
   },
   {
-    "id": "agromet_99",
+    "id": "agromet_ext_99",
     "code_red": "99",
-    "nombre": "Estación DMC Aeropuerto Diego Aracena",
+    "nombre": "Estación DMC Aeropuerto Diego Aracena, Iquique",
     "sector": "Iquique, Tarapacá",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -20.53972,
-    "lon": -70.17861
+    "lon": -70.17861,
+    "elevacion_m": 52.0
   },
   {
-    "id": "agromet_62",
+    "id": "agromet_inia_62",
     "code_red": "62",
-    "nombre": "Estación INIA Ollagüe",
+    "nombre": "Estación INIA Ollagüe, Ollagüe",
     "sector": "Ollagüe, Antofagasta",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -21.223937,
-    "lon": -68.255607
+    "lon": -68.255607,
+    "elevacion_m": 3706.0
   },
   {
-    "id": "agromet_124",
+    "id": "agromet_ext_124",
     "code_red": "124",
-    "nombre": "Estación DMC Ollagüe DMC",
+    "nombre": "Estación DMC Ollagüe DMC, Ollagüe",
     "sector": "Ollagüe, Antofagasta",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -21.22417,
-    "lon": -68.25583
+    "lon": -68.25583,
+    "elevacion_m": 3708.0
   },
   {
-    "id": "agromet_56",
+    "id": "agromet_inia_56",
     "code_red": "56",
-    "nombre": "Estación INIA Caspana",
+    "nombre": "Estación INIA Caspana, Calama",
     "sector": "Calama, Antofagasta",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -22.334515,
-    "lon": -68.213597
+    "lon": -68.213597,
+    "elevacion_m": 3245.0
   },
   {
-    "id": "agromet_1017",
+    "id": "agromet_ext_1017",
     "code_red": "1017",
-    "nombre": "Estación MMA-DMC Chorrillos MMA",
+    "nombre": "Estación MMA-DMC Chorrillos MMA, Calama",
     "sector": "Calama, Antofagasta",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -22.45,
-    "lon": -68.91028
+    "lon": -68.91028,
+    "elevacion_m": 2298.0
   },
   {
-    "id": "agromet_61",
+    "id": "agromet_inia_61",
     "code_red": "61",
-    "nombre": "Estación INIA Calama Rural",
+    "nombre": "Estación INIA Calama Rural, Calama",
     "sector": "Calama, Antofagasta",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -22.471688,
-    "lon": -68.94979
+    "lon": -68.94979,
+    "elevacion_m": 2244.0
   },
   {
-    "id": "agromet_125",
+    "id": "agromet_ext_125",
     "code_red": "125",
-    "nombre": "Estación DMC Aeródromo El Loa",
+    "nombre": "Estación DMC Aeródromo El Loa, Calama",
     "sector": "Calama, Antofagasta",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -22.49528,
-    "lon": -68.90444
+    "lon": -68.90444,
+    "elevacion_m": 2293.0
   },
   {
-    "id": "agromet_59",
+    "id": "agromet_inia_59",
     "code_red": "59",
-    "nombre": "Estación INIA San Pedro de Atacama",
+    "nombre": "Estación INIA San Pedro de Atacama, San Pedro de Atacama",
     "sector": "San Pedro de Atacama, Antofagasta",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -22.9322,
-    "lon": -68.213458
+    "lon": -68.213458,
+    "elevacion_m": 2416.0
   },
   {
-    "id": "agromet_203",
+    "id": "agromet_ext_203",
     "code_red": "203",
-    "nombre": "Estación DMC Llano de Chajnantor",
+    "nombre": "Estación DMC Llano de Chajnantor, San Pedro de Atacama",
     "sector": "San Pedro de Atacama, Antofagasta",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -23.00583,
-    "lon": -67.75917
+    "lon": -67.75917,
+    "elevacion_m": 5000.0
   },
   {
-    "id": "agromet_177",
+    "id": "agromet_ext_177",
     "code_red": "177",
-    "nombre": "Estación DMC Mejillones",
+    "nombre": "Estación DMC Mejillones, Mejillones",
     "sector": "Mejillones, Antofagasta",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -23.10917,
-    "lon": -70.44333
+    "lon": -70.44333,
+    "elevacion_m": 31.0
   },
   {
-    "id": "agromet_127",
+    "id": "agromet_ext_127",
     "code_red": "127",
-    "nombre": "Estación DMC Toconao",
+    "nombre": "Estación DMC Toconao, San Pedro de Atacama",
     "sector": "San Pedro de Atacama, Antofagasta",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -23.18611,
-    "lon": -68.00556
+    "lon": -68.00556,
+    "elevacion_m": 2495.0
   },
   {
-    "id": "agromet_58",
+    "id": "agromet_inia_58",
     "code_red": "58",
-    "nombre": "Estación INIA Toconao",
+    "nombre": "Estación INIA Toconao, San Pedro de Atacama",
     "sector": "San Pedro de Atacama, Antofagasta",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -23.195058,
-    "lon": -68.007675
+    "lon": -68.007675,
+    "elevacion_m": 2478.0
   },
   {
-    "id": "agromet_216",
+    "id": "agromet_inia_216",
     "code_red": "216",
-    "nombre": "Estación INIA Camar",
+    "nombre": "Estación INIA Camar, San Pedro de Atacama",
     "sector": "San Pedro de Atacama, Antofagasta",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -23.407102,
-    "lon": -67.963735
+    "lon": -67.963735,
+    "elevacion_m": 2694.0
   },
   {
-    "id": "agromet_218",
+    "id": "agromet_inia_218",
     "code_red": "218",
-    "nombre": "Estación INIA Altos la Portada",
+    "nombre": "Estación INIA Altos la Portada, Antofagasta",
     "sector": "Antofagasta, Antofagasta",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -23.5040977,
-    "lon": -70.4046663
+    "lon": -70.4046663,
+    "elevacion_m": 105.0
   },
   {
-    "id": "agromet_57",
+    "id": "agromet_inia_57",
     "code_red": "57",
-    "nombre": "Estación INIA Socaire",
+    "nombre": "Estación INIA Socaire, San Pedro de Atacama",
     "sector": "San Pedro de Atacama, Antofagasta",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -23.590586,
-    "lon": -67.890063
+    "lon": -67.890063,
+    "elevacion_m": 3357.0
   },
   {
-    "id": "agromet_126",
+    "id": "agromet_ext_126",
     "code_red": "126",
-    "nombre": "Estación DMC Universidad Católica del Norte",
+    "nombre": "Estación DMC Universidad Católica del Norte, Antofagasta",
     "sector": "Antofagasta, Antofagasta",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -23.68083,
-    "lon": -70.41111
+    "lon": -70.41111,
+    "elevacion_m": 31.0
   },
   {
-    "id": "agromet_128",
+    "id": "agromet_ext_202",
+    "code_red": "202",
+    "nombre": "Estación DMC Cerro Paranal, Antofagasta",
+    "sector": "Antofagasta, Antofagasta",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -24.6275,
+    "lon": -70.40472,
+    "elevacion_m": 2648.0
+  },
+  {
+    "id": "agromet_ext_128",
     "code_red": "128",
-    "nombre": "Estación DMC Taltal",
+    "nombre": "Estación DMC Taltal, Taltal",
     "sector": "Taltal, Antofagasta",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -25.41111,
-    "lon": -70.48417
+    "lon": -70.48417,
+    "elevacion_m": 37.0
   },
   {
-    "id": "agromet_223",
+    "id": "agromet_inia_225",
+    "code_red": "225",
+    "nombre": "Estación INIA La Cachina, Taltal",
+    "sector": "Taltal, Antofagasta",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -25.433987,
+    "lon": -70.453243,
+    "elevacion_m": 213.0
+  },
+  {
+    "id": "agromet_inia_223",
     "code_red": "223",
-    "nombre": "Estación INIA Falda Verde",
+    "nombre": "Estación INIA Falda Verde, Chañaral",
     "sector": "Chañaral, Atacama",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -26.299806,
-    "lon": -70.624111
+    "lon": -70.624111,
+    "elevacion_m": 127.0
   },
   {
-    "id": "agromet_1007",
+    "id": "agromet_ext_1007",
     "code_red": "1007",
-    "nombre": "Estación DMC Aeródromo Ricardo García Posada",
+    "nombre": "Estación DMC Aeródromo Ricardo García Posada, Diego de Almagro",
     "sector": "Diego de Almagro, Atacama",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -26.31305,
-    "lon": -69.75139
+    "lon": -69.75139,
+    "elevacion_m": 1610.0
   },
   {
-    "id": "agromet_195",
+    "id": "agromet_ext_195",
     "code_red": "195",
-    "nombre": "Estación DGA-CEAZA Rapa Nui",
+    "nombre": "Estación DGA-CEAZA Rapa Nui, Isla de Pascua",
     "sector": "Isla de Pascua, Valparaíso",
     "red": "Red Agromet (DGA-CEAZA)",
     "tipo_api": "agromet",
     "lat": -27.11944,
-    "lon": -109.35472
+    "lon": -109.35472,
+    "elevacion_m": 0
   },
   {
-    "id": "agromet_116",
+    "id": "agromet_ext_116",
     "code_red": "116",
-    "nombre": "Estación DMC Aeropuerto Mataveri",
+    "nombre": "Estación DMC Aeropuerto Mataveri, Isla de Pascua",
     "sector": "Isla de Pascua, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -27.16056,
-    "lon": -109.42722
+    "lon": -109.42722,
+    "elevacion_m": 48.0
   },
   {
-    "id": "agromet_227",
+    "id": "agromet_ext_227",
     "code_red": "227",
-    "nombre": "Estación DMC Aeródromo Caldera",
+    "nombre": "Estación DMC Aeródromo Caldera, Caldera",
     "sector": "Caldera, Atacama",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -27.25444,
-    "lon": -70.78111
+    "lon": -70.78111,
+    "elevacion_m": 197.0
   },
   {
-    "id": "agromet_969",
+    "id": "agromet_ext_969",
     "code_red": "969",
-    "nombre": "Estación APECO-FDF María Isabel",
+    "nombre": "Estación APECO-FDF María Isabel, Tierra Amarilla",
     "sector": "Tierra Amarilla, Atacama",
     "red": "Red Agromet (APECO-FDF)",
     "tipo_api": "agromet",
     "lat": -27.335098,
-    "lon": -70.78038
+    "lon": -70.78038,
+    "elevacion_m": 146.0
   },
   {
-    "id": "agromet_965",
+    "id": "agromet_ext_965",
     "code_red": "965",
-    "nombre": "Estación APECO-FDF Mayorquina",
+    "nombre": "Estación APECO-FDF Mayorquina, Copiapó",
     "sector": "Copiapó, Atacama",
     "red": "Red Agromet (APECO-FDF)",
     "tipo_api": "agromet",
     "lat": -27.337763,
-    "lon": -70.567184
+    "lon": -70.567184,
+    "elevacion_m": 233.0
   },
   {
-    "id": "agromet_224",
+    "id": "agromet_inia_224",
     "code_red": "224",
-    "nombre": "Estación INIA La Copa",
+    "nombre": "Estación INIA La Copa, Copiapó",
     "sector": "Copiapó, Atacama",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -27.345439,
-    "lon": -70.622009
+    "lon": -70.622009,
+    "elevacion_m": 188.0
   },
   {
-    "id": "agromet_129",
+    "id": "agromet_ext_129",
     "code_red": "129",
-    "nombre": "Estación DMC Universidad de Atacama",
+    "nombre": "Estación DMC Universidad de Atacama, Copiapó",
     "sector": "Copiapó, Atacama",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -27.35889,
-    "lon": -70.35333
+    "lon": -70.35333,
+    "elevacion_m": 362.0
   },
   {
-    "id": "agromet_968",
+    "id": "agromet_ext_968",
     "code_red": "968",
-    "nombre": "Estación APECO-FDF Amalfi",
+    "nombre": "Estación APECO-FDF Amalfi, Copiapó",
     "sector": "Copiapó, Atacama",
     "red": "Red Agromet (APECO-FDF)",
     "tipo_api": "agromet",
     "lat": -27.411203,
-    "lon": -70.30263
+    "lon": -70.30263,
+    "elevacion_m": 421.0
   },
   {
-    "id": "agromet_966",
+    "id": "agromet_ext_966",
     "code_red": "966",
-    "nombre": "Estación APECO-FDF Copayapu",
+    "nombre": "Estación APECO-FDF Copayapu, Tierra Amarilla",
     "sector": "Tierra Amarilla, Atacama",
     "red": "Red Agromet (APECO-FDF)",
     "tipo_api": "agromet",
     "lat": -27.456638,
-    "lon": -70.26414
+    "lon": -70.26414,
+    "elevacion_m": 502.0
   },
   {
-    "id": "agromet_970",
+    "id": "agromet_ext_970",
     "code_red": "970",
-    "nombre": "Estación APECO-FDF Nantoco",
+    "nombre": "Estación APECO-FDF Nantoco, Tierra Amarilla",
     "sector": "Tierra Amarilla, Atacama",
     "red": "Red Agromet (APECO-FDF)",
     "tipo_api": "agromet",
     "lat": -27.55176,
-    "lon": -70.26957
+    "lon": -70.26957,
+    "elevacion_m": 649.0
   },
   {
-    "id": "agromet_967",
+    "id": "agromet_ext_967",
     "code_red": "967",
-    "nombre": "Estación APECO-FDF Las Canteras",
+    "nombre": "Estación APECO-FDF Las Canteras, Tierra Amarilla",
     "sector": "Tierra Amarilla, Atacama",
     "red": "Red Agromet (APECO-FDF)",
     "tipo_api": "agromet",
     "lat": -27.742834,
-    "lon": -70.18213
+    "lon": -70.18213,
+    "elevacion_m": 872.0
   },
   {
-    "id": "agromet_964",
+    "id": "agromet_ext_964",
     "code_red": "964",
-    "nombre": "Estación APECO-FDF Casa Rosada",
+    "nombre": "Estación APECO-FDF Casa Rosada, Tierra Amarilla",
     "sector": "Tierra Amarilla, Atacama",
     "red": "Red Agromet (APECO-FDF)",
     "tipo_api": "agromet",
     "lat": -27.84914,
-    "lon": -70.0875
+    "lon": -70.0875,
+    "elevacion_m": 1292.0
   },
   {
-    "id": "agromet_97",
+    "id": "agromet_inia_97",
     "code_red": "97",
-    "nombre": "Estación INIA Amolana",
+    "nombre": "Estación INIA Amolana, Tierra Amarilla",
     "sector": "Tierra Amarilla, Atacama",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -27.955861,
-    "lon": -70.005999
+    "lon": -70.005999,
+    "elevacion_m": 1090.0
   },
   {
-    "id": "agromet_971",
+    "id": "agromet_ext_971",
     "code_red": "971",
-    "nombre": "Estación APECO-FDF Altar de la Virgen",
+    "nombre": "Estación APECO-FDF Altar de la Virgen, Tierra Amarilla",
     "sector": "Tierra Amarilla, Atacama",
     "red": "Red Agromet (APECO-FDF)",
     "tipo_api": "agromet",
     "lat": -27.99994,
-    "lon": -69.98
+    "lon": -69.98,
+    "elevacion_m": 1385.0
   },
   {
-    "id": "agromet_130",
+    "id": "agromet_ext_130",
     "code_red": "130",
-    "nombre": "Estación DMC Freirina Nicolasa",
+    "nombre": "Estación DMC Freirina Nicolasa, Freirina",
     "sector": "Freirina, Atacama",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -28.51694,
-    "lon": -71.01
+    "lon": -71.01,
+    "elevacion_m": 156.0
   },
   {
-    "id": "agromet_65",
+    "id": "agromet_inia_65",
     "code_red": "65",
-    "nombre": "Estación INIA Centro Experimental Huasco",
+    "nombre": "Estación INIA Centro Experimental Huasco, Vallenar",
     "sector": "Vallenar, Atacama",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -28.58113,
-    "lon": -70.79829
+    "lon": -70.79829,
+    "elevacion_m": 470.0
   },
   {
-    "id": "agromet_27",
+    "id": "agromet_ext_27",
     "code_red": "27",
-    "nombre": "Estación CEAZA Cachiyuyo",
+    "nombre": "Estación CEAZA Cachiyuyo, Vallenar",
     "sector": "Vallenar, Atacama",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -29.0572,
-    "lon": -70.90517
+    "lon": -70.90517,
+    "elevacion_m": 950.0
   },
   {
-    "id": "agromet_6",
+    "id": "agromet_ext_6",
     "code_red": "6",
-    "nombre": "Estación CEAZA Punta de Choros",
+    "nombre": "Estación CEAZA Punta de Choros, La Higuera",
     "sector": "La Higuera, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -29.24724,
-    "lon": -71.46797
+    "lon": -71.46797,
+    "elevacion_m": 7.0
   },
   {
-    "id": "agromet_954",
+    "id": "agromet_ext_954",
     "code_red": "954",
-    "nombre": "Estación DMC Cerro La Silla",
+    "nombre": "Estación DMC Cerro La Silla, La Higuera",
     "sector": "La Higuera, Coquimbo",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -29.25833,
-    "lon": -70.73444
+    "lon": -70.73444,
+    "elevacion_m": 2377.0
   },
   {
-    "id": "agromet_31",
+    "id": "agromet_ext_31",
     "code_red": "31",
-    "nombre": "Estación CEAZA Punta Colorada",
+    "nombre": "Estación CEAZA Punta Colorada, La Higuera",
     "sector": "La Higuera, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -29.35411,
-    "lon": -71.03286
+    "lon": -71.03286,
+    "elevacion_m": 379.0
   },
   {
-    "id": "agromet_10",
+    "id": "agromet_ext_10",
     "code_red": "10",
-    "nombre": "Estación CEAZA El Romeral",
+    "nombre": "Estación CEAZA El Romeral, La Serena",
     "sector": "La Serena, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -29.75406,
-    "lon": -71.25744
+    "lon": -71.25744,
+    "elevacion_m": 162.0
   },
   {
-    "id": "agromet_36",
+    "id": "agromet_ext_36",
     "code_red": "36",
-    "nombre": "Estación CEAZA Universidad de La Serena",
+    "nombre": "Estación CEAZA Universidad de La Serena, La Serena",
     "sector": "La Serena, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -29.91502,
-    "lon": -71.24221
+    "lon": -71.24221,
+    "elevacion_m": 90.0
   },
   {
-    "id": "agromet_100",
+    "id": "agromet_ext_100",
     "code_red": "100",
-    "nombre": "Estación DMC Aeródromo La Florida",
+    "nombre": "Estación DMC Aeródromo La Florida, La Serena",
     "sector": "La Serena, Coquimbo",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -29.9175,
-    "lon": -71.20111
+    "lon": -71.20111,
+    "elevacion_m": 142.0
   },
   {
-    "id": "agromet_15",
+    "id": "agromet_ext_62",
+    "code_red": "62",
+    "nombre": "Estación CEAZA Cerro Grande, La Serena",
+    "sector": "La Serena, Coquimbo",
+    "red": "Red Agromet (CEAZA)",
+    "tipo_api": "agromet",
+    "lat": -29.93848,
+    "lon": -71.22351,
+    "elevacion_m": 513.0
+  },
+  {
+    "id": "agromet_ext_15",
     "code_red": "15",
-    "nombre": "Estación CEAZA UCN Guayacan",
+    "nombre": "Estación CEAZA UCN Guayacan, Coquimbo",
     "sector": "Coquimbo, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -29.96663,
-    "lon": -71.35284
+    "lon": -71.35284,
+    "elevacion_m": 1.0
   },
   {
-    "id": "agromet_14",
+    "id": "agromet_ext_14",
     "code_red": "14",
-    "nombre": "Estación CEAZA Gabriela Mistral",
+    "nombre": "Estación CEAZA Gabriela Mistral, La Serena",
     "sector": "La Serena, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -29.97852,
-    "lon": -71.08039
+    "lon": -71.08039,
+    "elevacion_m": 198.0
   },
   {
-    "id": "agromet_11",
+    "id": "agromet_ext_11",
     "code_red": "11",
-    "nombre": "Estación CEAZA El Panul",
+    "nombre": "Estación CEAZA El Panul, Coquimbo",
     "sector": "Coquimbo, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -29.99874,
-    "lon": -71.39852
+    "lon": -71.39852,
+    "elevacion_m": 122.0
   },
   {
-    "id": "agromet_102",
+    "id": "agromet_ext_102",
     "code_red": "102",
-    "nombre": "Estación DMC Parque Los Pimientos",
+    "nombre": "Estación DMC Parque Los Pimientos, Vicuña",
     "sector": "Vicuña, Coquimbo",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -30.03361,
-    "lon": -70.69722
+    "lon": -70.69722,
+    "elevacion_m": 642.0
   },
   {
-    "id": "agromet_13",
+    "id": "agromet_ext_13",
     "code_red": "13",
-    "nombre": "Estación CEAZA Vicuña",
+    "nombre": "Estación CEAZA Vicuña, Vicuña",
     "sector": "Vicuña, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.03832,
-    "lon": -70.69655
+    "lon": -70.69655,
+    "elevacion_m": 634.0
   },
   {
-    "id": "agromet_12",
+    "id": "agromet_ext_12",
     "code_red": "12",
-    "nombre": "Estación CEAZA Pan de Azúcar",
+    "nombre": "Estación CEAZA Pan de Azúcar, Coquimbo",
     "sector": "Coquimbo, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.07465,
-    "lon": -71.23895
+    "lon": -71.23895,
+    "elevacion_m": 135.0
   },
   {
-    "id": "agromet_8",
+    "id": "agromet_ext_8",
     "code_red": "8",
-    "nombre": "Estación CEAZA Pisco Elqui",
+    "nombre": "Estación CEAZA Pisco Elqui, Paiguano",
     "sector": "Paiguano, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.12903,
-    "lon": -70.49471
+    "lon": -70.49471,
+    "elevacion_m": 1240.0
   },
   {
-    "id": "agromet_32",
+    "id": "agromet_ext_32",
     "code_red": "32",
-    "nombre": "Estación CEAZA El Tapado",
+    "nombre": "Estación CEAZA El Tapado, Vicuña",
     "sector": "Vicuña, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.1583,
-    "lon": -69.90818
+    "lon": -69.90818,
+    "elevacion_m": 4306.0
   },
   {
-    "id": "agromet_131",
+    "id": "agromet_ext_131",
     "code_red": "131",
-    "nombre": "Estación DMC El Tololo",
+    "nombre": "Estación DMC El Tololo, Vicuña",
     "sector": "Vicuña, Coquimbo",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -30.16833,
-    "lon": -70.80361
+    "lon": -70.80361,
+    "elevacion_m": 2154.0
   },
   {
-    "id": "agromet_26",
+    "id": "agromet_ext_26",
     "code_red": "26",
-    "nombre": "Estación CEAZA La Laguna - Elqui",
+    "nombre": "Estación CEAZA La Laguna - Elqui, Vicuña",
     "sector": "Vicuña, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.20311,
-    "lon": -70.03722
+    "lon": -70.03722,
+    "elevacion_m": 3209.0
   },
   {
-    "id": "agromet_35",
+    "id": "agromet_ext_35",
     "code_red": "35",
-    "nombre": "Estación CEAZA Collowara",
+    "nombre": "Estación CEAZA Collowara, Andacollo",
     "sector": "Andacollo, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.24875,
-    "lon": -71.06526
+    "lon": -71.06526,
+    "elevacion_m": 1281.0
   },
   {
-    "id": "agromet_7",
+    "id": "agromet_ext_7",
     "code_red": "7",
-    "nombre": "Estación CEAZA Las Cardas",
+    "nombre": "Estación CEAZA Las Cardas, Coquimbo",
     "sector": "Coquimbo, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.25145,
-    "lon": -71.2569
+    "lon": -71.2569,
+    "elevacion_m": 282.0
   },
   {
-    "id": "agromet_20",
+    "id": "agromet_ext_20",
     "code_red": "20",
-    "nombre": "Estación CEAZA Lavaderos",
+    "nombre": "Estación CEAZA Lavaderos, Río Hurtado",
     "sector": "Río Hurtado, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.3093,
-    "lon": -70.62565
+    "lon": -70.62565,
+    "elevacion_m": 1462.0
   },
   {
-    "id": "agromet_28",
+    "id": "agromet_ext_63",
+    "code_red": "63",
+    "nombre": "Estación CEAZA Estero Derecho, Paiguano",
+    "sector": "Paiguano, Coquimbo",
+    "red": "Red Agromet (CEAZA)",
+    "tipo_api": "agromet",
+    "lat": -30.38407,
+    "lon": -70.41286,
+    "elevacion_m": 3020.0
+  },
+  {
+    "id": "agromet_ext_28",
     "code_red": "28",
-    "nombre": "Estación CEAZA Pichasca",
+    "nombre": "Estación CEAZA Pichasca, Río Hurtado",
     "sector": "Río Hurtado, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.41323,
-    "lon": -70.90277
+    "lon": -70.90277,
+    "elevacion_m": 670.0
   },
   {
-    "id": "agromet_16",
+    "id": "agromet_ext_16",
     "code_red": "16",
-    "nombre": "Estación CEAZA Quebrada Seca",
+    "nombre": "Estación CEAZA Quebrada Seca, Ovalle",
     "sector": "Ovalle, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.49613,
-    "lon": -71.49051
+    "lon": -71.49051,
+    "elevacion_m": 183.0
   },
   {
-    "id": "agromet_101",
+    "id": "agromet_ext_38",
+    "code_red": "38",
+    "nombre": "Estación CEAZA Laguna Hurtado, Río Hurtado",
+    "sector": "Río Hurtado, Coquimbo",
+    "red": "Red Agromet (CEAZA)",
+    "tipo_api": "agromet",
+    "lat": -30.50903,
+    "lon": -70.44594,
+    "elevacion_m": 2500.0
+  },
+  {
+    "id": "agromet_ext_61",
+    "code_red": "61",
+    "nombre": "Estación CEAZA Guandacol, Río Hurtado",
+    "sector": "Río Hurtado, Coquimbo",
+    "red": "Red Agromet (CEAZA)",
+    "tipo_api": "agromet",
+    "lat": -30.54363,
+    "lon": -70.3329,
+    "elevacion_m": 2983.0
+  },
+  {
+    "id": "agromet_ext_101",
     "code_red": "101",
-    "nombre": "Estación DMC Escuela Agrícola",
+    "nombre": "Estación DMC Escuela Agrícola, Ovalle",
     "sector": "Ovalle, Coquimbo",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -30.58,
-    "lon": -71.18667
+    "lon": -71.18667,
+    "elevacion_m": 314.0
   },
   {
-    "id": "agromet_18",
+    "id": "agromet_ext_18",
     "code_red": "18",
-    "nombre": "Estación CEAZA Talhuén",
+    "nombre": "Estación CEAZA Talhuén, Ovalle",
     "sector": "Ovalle, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.59203,
-    "lon": -71.24797
+    "lon": -71.24797,
+    "elevacion_m": 292.0
   },
   {
-    "id": "agromet_64",
+    "id": "agromet_inia_64",
     "code_red": "64",
-    "nombre": "Estación INIA Algarrobo Bajo",
+    "nombre": "Estación INIA Algarrobo Bajo, Ovalle",
     "sector": "Ovalle, Coquimbo",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -30.6331,
-    "lon": -71.45141
+    "lon": -71.45141,
+    "elevacion_m": 80.0
   },
   {
-    "id": "agromet_42",
+    "id": "agromet_ext_43",
+    "code_red": "43",
+    "nombre": "Estación IEB-CEAZA Fray Jorge Bosque, Ovalle",
+    "sector": "Ovalle, Coquimbo",
+    "red": "Red Agromet (IEB-CEAZA)",
+    "tipo_api": "agromet",
+    "lat": -30.64975,
+    "lon": -71.68576,
+    "elevacion_m": 541.0
+  },
+  {
+    "id": "agromet_ext_42",
     "code_red": "42",
-    "nombre": "Estación IEB-CEAZA Fray Jorge Quebrada",
+    "nombre": "Estación IEB-CEAZA Fray Jorge Quebrada, Ovalle",
     "sector": "Ovalle, Coquimbo",
     "red": "Red Agromet (IEB-CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.65819,
-    "lon": -71.66399
+    "lon": -71.66399,
+    "elevacion_m": 230.0
   },
   {
-    "id": "agromet_103",
+    "id": "agromet_ext_103",
     "code_red": "103",
-    "nombre": "Estación DMC Monte Patria - Centro Cultural",
+    "nombre": "Estación DMC Monte Patria - Centro Cultural, Monte Patria",
     "sector": "Monte Patria, Coquimbo",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -30.69833,
-    "lon": -70.95778
+    "lon": -70.95778,
+    "elevacion_m": 406.0
   },
   {
-    "id": "agromet_74",
+    "id": "agromet_inia_74",
     "code_red": "74",
-    "nombre": "Estación INIA Campo Lindo (ex Camarico)",
+    "nombre": "Estación INIA Campo Lindo (ex Camarico), Ovalle",
     "sector": "Ovalle, Coquimbo",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -30.69899,
-    "lon": -71.3217
+    "lon": -71.3217,
+    "elevacion_m": 290.0
   },
   {
-    "id": "agromet_319",
+    "id": "agromet_inia_319",
     "code_red": "319",
-    "nombre": "Estación INIA Los Acacios",
+    "nombre": "Estación INIA Los Acacios, Ovalle",
     "sector": "Ovalle, Coquimbo",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -30.700483,
-    "lon": -71.286422
+    "lon": -71.286422,
+    "elevacion_m": 254.0
   },
   {
-    "id": "agromet_1",
+    "id": "agromet_ext_1",
     "code_red": "1",
-    "nombre": "Estación CEAZA Rapel",
+    "nombre": "Estación CEAZA Rapel, Monte Patria",
     "sector": "Monte Patria, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.7228,
-    "lon": -70.77249
+    "lon": -70.77249,
+    "elevacion_m": 862.0
   },
   {
-    "id": "agromet_23",
+    "id": "agromet_ext_23",
     "code_red": "23",
-    "nombre": "Estación CEAZA Los Molles - Bocatoma",
+    "nombre": "Estación CEAZA Los Molles - Bocatoma, Monte Patria",
     "sector": "Monte Patria, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -30.746,
-    "lon": -70.41923
+    "lon": -70.41923,
+    "elevacion_m": 2543.0
   },
   {
-    "id": "agromet_66",
+    "id": "agromet_inia_66",
     "code_red": "66",
-    "nombre": "Estación INIA El Palqui",
+    "nombre": "Estación INIA El Palqui, Monte Patria",
     "sector": "Monte Patria, Coquimbo",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -30.774544,
-    "lon": -70.926831
+    "lon": -70.926831,
+    "elevacion_m": 504.0
   },
   {
-    "id": "agromet_323",
+    "id": "agromet_inia_323",
     "code_red": "323",
-    "nombre": "Estación INIA Las Naranjas",
+    "nombre": "Estación INIA Las Naranjas, Punitaqui",
     "sector": "Punitaqui, Coquimbo",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -30.843472,
-    "lon": -71.347139
+    "lon": -71.347139,
+    "elevacion_m": 407.0
   },
   {
-    "id": "agromet_229",
+    "id": "agromet_inia_229",
     "code_red": "229",
-    "nombre": "Estación INIA Chaguaral",
+    "nombre": "Estación INIA Chaguaral, Monte Patria",
     "sector": "Monte Patria, Coquimbo",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -30.857084,
-    "lon": -70.730689
+    "lon": -70.730689,
+    "elevacion_m": 1194.0
   },
   {
-    "id": "agromet_305",
+    "id": "agromet_inia_305",
     "code_red": "305",
-    "nombre": "Estación INIA La Polvareda",
+    "nombre": "Estación INIA La Polvareda, Punitaqui",
     "sector": "Punitaqui, Coquimbo",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -30.882719,
-    "lon": -71.239736
+    "lon": -71.239736,
+    "elevacion_m": 265.0
   },
   {
-    "id": "agromet_304",
+    "id": "agromet_inia_304",
     "code_red": "304",
-    "nombre": "Estación INIA Ajial de Quiles",
+    "nombre": "Estación INIA Ajial de Quiles, Punitaqui",
     "sector": "Punitaqui, Coquimbo",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -30.920303,
-    "lon": -71.3841
+    "lon": -71.3841,
+    "elevacion_m": 464.0
   },
   {
-    "id": "agromet_173",
+    "id": "agromet_ext_64",
+    "code_red": "64",
+    "nombre": "Estación CEAZA El Polvo, Monte Patria",
+    "sector": "Monte Patria, Coquimbo",
+    "red": "Red Agromet (CEAZA)",
+    "tipo_api": "agromet",
+    "lat": -31.18314,
+    "lon": -70.5848,
+    "elevacion_m": 2561.0
+  },
+  {
+    "id": "agromet_ext_173",
     "code_red": "173",
-    "nombre": "Estación DMC Liceo Samuel Román Rojas",
+    "nombre": "Estación DMC Liceo Samuel Román Rojas, Combarbalá",
     "sector": "Combarbalá, Coquimbo",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -31.18806,
-    "lon": -70.99889
+    "lon": -70.99889,
+    "elevacion_m": 936.0
   },
   {
-    "id": "agromet_29",
+    "id": "agromet_ext_29",
     "code_red": "29",
-    "nombre": "Estación CEAZA Combarbalá Sur",
+    "nombre": "Estación CEAZA Combarbalá Sur, Combarbalá",
     "sector": "Combarbalá, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -31.20022,
-    "lon": -71.00015
+    "lon": -71.00015,
+    "elevacion_m": 1136.0
   },
   {
-    "id": "agromet_37",
+    "id": "agromet_ext_37",
     "code_red": "37",
-    "nombre": "Estación CEAZA Tascadero",
+    "nombre": "Estación CEAZA Tascadero, Monte Patria",
     "sector": "Monte Patria, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -31.26295,
-    "lon": -70.53999
+    "lon": -70.53999,
+    "elevacion_m": 3427.0
   },
   {
-    "id": "agromet_172",
+    "id": "agromet_ext_172",
     "code_red": "172",
-    "nombre": "Estación DMC Liceo Padre José Herde",
+    "nombre": "Estación DMC Liceo Padre José Herde, Canela",
     "sector": "Canela, Coquimbo",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -31.39,
-    "lon": -71.41278
+    "lon": -71.41278,
+    "elevacion_m": 343.0
   },
   {
-    "id": "agromet_24",
+    "id": "agromet_ext_24",
     "code_red": "24",
-    "nombre": "Estación CEAZA Canela",
+    "nombre": "Estación CEAZA Canela, Canela",
     "sector": "Canela, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -31.39089,
-    "lon": -71.41298
+    "lon": -71.41298,
+    "elevacion_m": 350.0
   },
   {
-    "id": "agromet_19",
+    "id": "agromet_ext_19",
     "code_red": "19",
-    "nombre": "Estación CEAZA Huintil",
+    "nombre": "Estación CEAZA Huintil, Illapel",
     "sector": "Illapel, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -31.57331,
-    "lon": -70.99815
+    "lon": -70.99815,
+    "elevacion_m": 590.0
   },
   {
-    "id": "agromet_220",
+    "id": "agromet_inia_220",
     "code_red": "220",
-    "nombre": "Estación INIA Huentelauquén",
+    "nombre": "Estación INIA Huentelauquén, Canela",
     "sector": "Canela, Coquimbo",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -31.5885,
-    "lon": -71.509833
+    "lon": -71.509833,
+    "elevacion_m": 22.0
   },
   {
-    "id": "agromet_33",
+    "id": "agromet_ext_33",
     "code_red": "33",
-    "nombre": "Estación CEAZA Mincha Sur",
+    "nombre": "Estación CEAZA Mincha Sur, Canela",
     "sector": "Canela, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -31.59425,
-    "lon": -71.42159
+    "lon": -71.42159,
+    "elevacion_m": 50.0
   },
   {
-    "id": "agromet_174",
+    "id": "agromet_ext_174",
     "code_red": "174",
-    "nombre": "Estación DMC Vivero CONAF",
+    "nombre": "Estación DMC Vivero CONAF, Illapel",
     "sector": "Illapel, Coquimbo",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -31.6325,
-    "lon": -71.15194
+    "lon": -71.15194,
+    "elevacion_m": 333.0
   },
   {
-    "id": "agromet_5",
+    "id": "agromet_ext_5",
     "code_red": "5",
-    "nombre": "Estación CEAZA Illapel",
+    "nombre": "Estación CEAZA Illapel, Illapel",
     "sector": "Illapel, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -31.64814,
-    "lon": -71.19695
+    "lon": -71.19695,
+    "elevacion_m": 275.0
   },
   {
-    "id": "agromet_1009",
+    "id": "agromet_ext_1009",
     "code_red": "1009",
-    "nombre": "Estación DMC Pisco Capel",
+    "nombre": "Estación DMC Pisco Capel, Salamanca",
     "sector": "Salamanca, Coquimbo",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -31.78722,
-    "lon": -70.95944
+    "lon": -70.95944,
+    "elevacion_m": 516.0
   },
   {
-    "id": "agromet_25",
+    "id": "agromet_ext_25",
     "code_red": "25",
-    "nombre": "Estación CEAZA Chillepín",
+    "nombre": "Estación CEAZA Chillepín, Salamanca",
     "sector": "Salamanca, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -31.88563,
-    "lon": -70.71395
+    "lon": -70.71395,
+    "elevacion_m": 887.0
   },
   {
-    "id": "agromet_194",
+    "id": "agromet_ext_194",
     "code_red": "194",
-    "nombre": "Estación CEAZA Tilama",
+    "nombre": "Estación CEAZA Tilama, Los Vilos",
     "sector": "Los Vilos, Coquimbo",
     "red": "Red Agromet (CEAZA)",
     "tipo_api": "agromet",
     "lat": -32.08163,
-    "lon": -71.16277
+    "lon": -71.16277,
+    "elevacion_m": 499.0
   },
   {
-    "id": "agromet_221",
+    "id": "agromet_inia_221",
     "code_red": "221",
-    "nombre": "Estación INIA Quilimarí",
+    "nombre": "Estación INIA Quilimarí, Los Vilos",
     "sector": "Los Vilos, Coquimbo",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -32.119098,
-    "lon": -71.460005
+    "lon": -71.460005,
+    "elevacion_m": 27.0
   },
   {
-    "id": "agromet_105",
+    "id": "agromet_ext_105",
     "code_red": "105",
-    "nombre": "Estación DMC Liceo Agrícola Chincolco",
+    "nombre": "Estación DMC Liceo Agrícola Chincolco, Petorca",
     "sector": "Petorca, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -32.2225,
-    "lon": -70.83167
+    "lon": -70.83167,
+    "elevacion_m": 665.0
   },
   {
-    "id": "agromet_133",
+    "id": "agromet_ext_133",
     "code_red": "133",
-    "nombre": "Estación DMC Catapilco",
+    "nombre": "Estación DMC Catapilco, Zapallar",
     "sector": "Zapallar, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -32.56139,
-    "lon": -71.29778
+    "lon": -71.29778,
+    "elevacion_m": 81.0
   },
   {
-    "id": "agromet_1018",
+    "id": "agromet_ext_1018",
     "code_red": "1018",
-    "nombre": "Estación DMC El Tártaro",
+    "nombre": "Estación DMC El Tártaro, Putaendo",
     "sector": "Putaendo, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -32.57083,
-    "lon": -70.70417
+    "lon": -70.70417,
+    "elevacion_m": 933.0
   },
   {
-    "id": "agromet_165",
+    "id": "agromet_inia_165",
     "code_red": "165",
-    "nombre": "Estación INIA El Maqui",
+    "nombre": "Estación INIA El Maqui, Puchuncaví",
     "sector": "Puchuncaví, Valparaíso",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -32.754967,
-    "lon": -71.343432
+    "lon": -71.343432,
+    "elevacion_m": 179.0
   },
   {
-    "id": "agromet_192",
+    "id": "agromet_ext_192",
     "code_red": "192",
-    "nombre": "Estación DMC Escuela Agrícola",
+    "nombre": "Estación DMC Escuela Agrícola, San Felipe",
     "sector": "San Felipe, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -32.75528,
-    "lon": -70.70694
+    "lon": -70.70694,
+    "elevacion_m": 662.0
   },
   {
-    "id": "agromet_972",
+    "id": "agromet_ext_972",
     "code_red": "972",
-    "nombre": "Estación DMC Catemu",
+    "nombre": "Estación DMC Catemu, Catemu",
     "sector": "Catemu, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -32.75889,
-    "lon": -70.94278
+    "lon": -70.94278,
+    "elevacion_m": 443.0
   },
   {
-    "id": "agromet_1016",
+    "id": "agromet_ext_1016",
     "code_red": "1016",
-    "nombre": "Estación DMC Panquehue",
+    "nombre": "Estación DMC Panquehue, Panquehue",
     "sector": "Panquehue, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -32.76917,
-    "lon": -70.835
+    "lon": -70.835,
+    "elevacion_m": 519.0
   },
   {
-    "id": "agromet_106",
+    "id": "agromet_ext_106",
     "code_red": "106",
-    "nombre": "Estación DMC Quintero - Climatológica",
+    "nombre": "Estación DMC Quintero - Climatológica, Quintero",
     "sector": "Quintero, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -32.78417,
-    "lon": -71.52278
+    "lon": -71.52278,
+    "elevacion_m": 5.0
   },
   {
-    "id": "agromet_1028",
+    "id": "agromet_ext_1028",
     "code_red": "1028",
-    "nombre": "Estación DMC Liceo San Esteban",
+    "nombre": "Estación DMC Liceo San Esteban, San Esteban",
     "sector": "San Esteban, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -32.80111,
-    "lon": -70.57805
+    "lon": -70.57805,
+    "elevacion_m": 835.0
   },
   {
-    "id": "agromet_51",
+    "id": "agromet_inia_51",
     "code_red": "51",
-    "nombre": "Estación INIA La Cruz",
+    "nombre": "Estación INIA La Cruz, La Cruz",
     "sector": "La Cruz, Valparaíso",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -32.822,
-    "lon": -71.2304
+    "lon": -71.2304,
+    "elevacion_m": 181.0
   },
   {
-    "id": "agromet_132",
+    "id": "agromet_ext_132",
     "code_red": "132",
-    "nombre": "Estación DMC Los Libertadores",
+    "nombre": "Estación DMC Los Libertadores, Los Andes",
     "sector": "Los Andes, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -32.84556,
-    "lon": -70.11917
+    "lon": -70.11917,
+    "elevacion_m": 2955.0
   },
   {
-    "id": "agromet_104",
+    "id": "agromet_ext_104",
     "code_red": "104",
-    "nombre": "Estación DMC Las Peñas",
+    "nombre": "Estación DMC Las Peñas, Llaillay",
     "sector": "Llaillay, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -32.88139,
-    "lon": -70.91306
+    "lon": -70.91306,
+    "elevacion_m": 436.0
   },
   {
-    "id": "agromet_1029",
+    "id": "agromet_ext_1029",
     "code_red": "1029",
-    "nombre": "Estación DMC Liceo Agrícola Quillota",
+    "nombre": "Estación DMC Liceo Agrícola Quillota, Quillota",
     "sector": "Quillota, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -32.90722,
-    "lon": -71.27139
+    "lon": -71.27139,
+    "elevacion_m": 123.0
   },
   {
-    "id": "agromet_175",
+    "id": "agromet_ext_175",
     "code_red": "175",
-    "nombre": "Estación MMA-DMC Aeródromo Torquemada",
+    "nombre": "Estación MMA-DMC Aeródromo Torquemada, Concón",
     "sector": "Concón, Valparaíso",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -32.94944,
-    "lon": -71.47611
+    "lon": -71.47611,
+    "elevacion_m": 141.0
   },
   {
-    "id": "agromet_135",
+    "id": "agromet_ext_135",
     "code_red": "135",
-    "nombre": "Estación DMC Aeródromo Rodelillo",
+    "nombre": "Estación DMC Aeródromo Rodelillo, Viña del Mar",
     "sector": "Viña del Mar, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.03667,
-    "lon": -71.53417
+    "lon": -71.53417,
+    "elevacion_m": 330.0
   },
   {
-    "id": "agromet_973",
+    "id": "agromet_ext_134",
+    "code_red": "134",
+    "nombre": "Estación DMC Jardín Botánico, Viña del Mar",
+    "sector": "Viña del Mar, Valparaíso",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -33.045,
+    "lon": -71.50194,
+    "elevacion_m": 50.0
+  },
+  {
+    "id": "agromet_ext_973",
     "code_red": "973",
-    "nombre": "Estación MMA-DMC La Dormida",
+    "nombre": "Estación MMA-DMC La Dormida, Tiltil",
     "sector": "Tiltil, Metropolitana",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -33.04944,
-    "lon": -71.00139
+    "lon": -71.00139,
+    "elevacion_m": 1450.0
   },
   {
-    "id": "agromet_980",
+    "id": "agromet_ext_980",
     "code_red": "980",
-    "nombre": "Estación DMC Aeródromo Peldehue",
+    "nombre": "Estación DMC Aeródromo Peldehue, Colina",
     "sector": "Colina, Metropolitana",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.11389,
-    "lon": -70.68583
+    "lon": -70.68583,
+    "elevacion_m": 683.0
   },
   {
-    "id": "agromet_978",
+    "id": "agromet_ext_978",
     "code_red": "978",
-    "nombre": "Estación DMC Polpaico",
+    "nombre": "Estación DMC Polpaico, Tiltil",
     "sector": "Tiltil, Metropolitana",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.12389,
-    "lon": -70.82805
+    "lon": -70.82805,
+    "elevacion_m": 547.0
   },
   {
-    "id": "agromet_179",
+    "id": "agromet_ext_179",
     "code_red": "179",
-    "nombre": "Estación DMC Regimiento de Colina",
+    "nombre": "Estación DMC Regimiento de Colina, Colina",
     "sector": "Colina, Metropolitana",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.16222,
-    "lon": -70.64306
+    "lon": -70.64306,
+    "elevacion_m": 726.0
   },
   {
-    "id": "agromet_213",
+    "id": "agromet_inia_213",
     "code_red": "213",
-    "nombre": "Estación INIA Colliguay",
+    "nombre": "Estación INIA Colliguay, Quilpué",
     "sector": "Quilpué, Valparaíso",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -33.1686089,
-    "lon": -71.1557171
+    "lon": -71.1557171,
+    "elevacion_m": 580.0
   },
   {
-    "id": "agromet_313",
+    "id": "agromet_inia_313",
     "code_red": "313",
-    "nombre": "Estación INIA Chacabuco",
+    "nombre": "Estación INIA Chacabuco, Colina",
     "sector": "Colina, Metropolitana",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -33.2488,
-    "lon": -70.72322
+    "lon": -70.72322,
+    "elevacion_m": 700.0
   },
   {
-    "id": "agromet_311",
+    "id": "agromet_ext_149",
+    "code_red": "149",
+    "nombre": "Estación MMA-DMC Lo Pinto, Colina",
+    "sector": "Colina, Metropolitana",
+    "red": "Red Agromet (MMA-DMC)",
+    "tipo_api": "agromet",
+    "lat": -33.26806,
+    "lon": -70.73222,
+    "elevacion_m": 512.0
+  },
+  {
+    "id": "agromet_inia_311",
     "code_red": "311",
-    "nombre": "Estación INIA El Oasis",
+    "nombre": "Estación INIA El Oasis, Lampa",
     "sector": "Lampa, Metropolitana",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -33.286187,
-    "lon": -70.837279
+    "lon": -70.837279,
+    "elevacion_m": 485.0
   },
   {
-    "id": "agromet_314",
+    "id": "agromet_inia_314",
     "code_red": "314",
-    "nombre": "Estación INIA Chorrillos",
+    "nombre": "Estación INIA Chorrillos, Lampa",
     "sector": "Lampa, Metropolitana",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -33.34368,
-    "lon": -70.8185
+    "lon": -70.8185,
+    "elevacion_m": 485.0
   },
   {
-    "id": "agromet_108",
+    "id": "agromet_ext_108",
     "code_red": "108",
-    "nombre": "Estación DMC El Colorado",
+    "nombre": "Estación DMC El Colorado, Lo Barnechea",
     "sector": "Lo Barnechea, Metropolitana",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.35,
-    "lon": -70.29361
+    "lon": -70.29361,
+    "elevacion_m": 2750.0
   },
   {
-    "id": "agromet_138",
+    "id": "agromet_ext_138",
     "code_red": "138",
-    "nombre": "Estación DMC Pudahuel ",
+    "nombre": "Estación DMC Pudahuel, Pudahuel",
     "sector": "Pudahuel, Metropolitana",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.39194,
-    "lon": -70.79444
+    "lon": -70.79444,
+    "elevacion_m": 482.0
   },
   {
-    "id": "agromet_318",
+    "id": "agromet_ext_150",
+    "code_red": "150",
+    "nombre": "Estación DMC Aeródromo Curacaví, Curacaví",
+    "sector": "Curacaví, Metropolitana",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -33.41111,
+    "lon": -71.16778,
+    "elevacion_m": 208.0
+  },
+  {
+    "id": "agromet_inia_318",
     "code_red": "318",
-    "nombre": "Estación INIA La Aurora",
+    "nombre": "Estación INIA La Aurora, Curacaví",
     "sector": "Curacaví, Metropolitana",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -33.429661,
-    "lon": -71.029152
+    "lon": -71.029152,
+    "elevacion_m": 205.0
   },
   {
-    "id": "agromet_145",
+    "id": "agromet_ext_145",
     "code_red": "145",
-    "nombre": "Estación MMA-DMC San Pablo-DASA",
+    "nombre": "Estación MMA-DMC San Pablo-DASA, Pudahuel",
     "sector": "Pudahuel, Metropolitana",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -33.44222,
-    "lon": -70.74667
+    "lon": -70.74667,
+    "elevacion_m": 490.0
   },
   {
-    "id": "agromet_136",
+    "id": "agromet_ext_137",
+    "code_red": "137",
+    "nombre": "Estación DMC Quinta Normal, Quinta Normal",
+    "sector": "Quinta Normal, Metropolitana",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -33.445,
+    "lon": -70.68278,
+    "elevacion_m": 534.0
+  },
+  {
+    "id": "agromet_ext_136",
     "code_red": "136",
-    "nombre": "Estación DMC Aeródromo Eulogio Sánchez",
+    "nombre": "Estación DMC Aeródromo Eulogio Sánchez, La Reina",
     "sector": "La Reina, Metropolitana",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.45528,
-    "lon": -70.54861
+    "lon": -70.54861,
+    "elevacion_m": 650.0
   },
   {
-    "id": "agromet_142",
+    "id": "agromet_ext_142",
     "code_red": "142",
-    "nombre": "Estación MMA-DMC Cerro San Francisco",
+    "nombre": "Estación MMA-DMC Cerro San Francisco, Lo Prado",
     "sector": "Lo Prado, Metropolitana",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -33.45806,
-    "lon": -70.94861
+    "lon": -70.94861,
+    "elevacion_m": 1068.0
   },
   {
-    "id": "agromet_162",
+    "id": "agromet_inia_162",
     "code_red": "162",
-    "nombre": "Estación INIA Rinconada - U de Chile",
+    "nombre": "Estación INIA Rinconada - U de Chile, Maipú",
     "sector": "Maipú, Metropolitana",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -33.497093,
-    "lon": -70.845436
+    "lon": -70.845436,
+    "elevacion_m": 462.0
   },
   {
-    "id": "agromet_320",
+    "id": "agromet_inia_320",
     "code_red": "320",
-    "nombre": "Estación INIA El Parrón",
+    "nombre": "Estación INIA El Parrón, María Pinto",
     "sector": "María Pinto, Metropolitana",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -33.508555,
-    "lon": -71.084029
+    "lon": -71.084029,
+    "elevacion_m": 166.0
   },
   {
-    "id": "agromet_141",
+    "id": "agromet_ext_141",
     "code_red": "141",
-    "nombre": "Estación DMC Chorombo Hacienda",
+    "nombre": "Estación DMC Chorombo Hacienda, María Pinto",
     "sector": "María Pinto, Metropolitana",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.52944,
-    "lon": -71.22917
+    "lon": -71.22917,
+    "elevacion_m": 145.0
   },
   {
-    "id": "agromet_167",
+    "id": "agromet_ext_167",
     "code_red": "167",
-    "nombre": "Estación DMC Lo Zarate",
+    "nombre": "Estación DMC Lo Zarate, Cartagena",
     "sector": "Cartagena, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.53056,
-    "lon": -71.50611
+    "lon": -71.50611,
+    "elevacion_m": 103.0
   },
   {
-    "id": "agromet_315",
+    "id": "agromet_inia_315",
     "code_red": "315",
-    "nombre": "Estación INIA El Villorrio",
+    "nombre": "Estación INIA El Villorrio, Padre Hurtado",
     "sector": "Padre Hurtado, Metropolitana",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -33.562443,
-    "lon": -70.875305
+    "lon": -70.875305,
+    "elevacion_m": 406.0
   },
   {
-    "id": "agromet_4",
+    "id": "agromet_inia_4",
     "code_red": "4",
-    "nombre": "Estación INIA La Platina",
+    "nombre": "Estación INIA La Platina, La Pintana",
     "sector": "La Pintana, Metropolitana",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -33.56987082,
-    "lon": -70.62797303
+    "lon": -70.62797303,
+    "elevacion_m": 630.0
   },
   {
-    "id": "agromet_143",
+    "id": "agromet_ext_143",
     "code_red": "143",
-    "nombre": "Estación MMA-DMC Guayacán",
+    "nombre": "Estación MMA-DMC Guayacán, San José de Maipo",
     "sector": "San José de Maipo, Metropolitana",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -33.61528,
-    "lon": -70.35056
+    "lon": -70.35056,
+    "elevacion_m": 928.0
   },
   {
-    "id": "agromet_140",
+    "id": "agromet_ext_140",
     "code_red": "140",
-    "nombre": "Estación DMC Juan Fernández",
+    "nombre": "Estación DMC Juan Fernández, Juan Fernández",
     "sector": "Juan Fernández, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.63583,
-    "lon": -78.83306
+    "lon": -78.83306,
+    "elevacion_m": 40.0
   },
   {
-    "id": "agromet_139",
+    "id": "agromet_ext_139",
     "code_red": "139",
-    "nombre": "Estación DMC Aeródromo Santo Domingo",
+    "nombre": "Estación DMC Aeródromo Santo Domingo, Santo Domingo",
     "sector": "Santo Domingo, Valparaíso",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.655,
-    "lon": -71.61417
+    "lon": -71.61417,
+    "elevacion_m": 75.0
   },
   {
-    "id": "agromet_316",
+    "id": "agromet_inia_316",
     "code_red": "316",
-    "nombre": "Estación INIA Santa Amelia",
+    "nombre": "Estación INIA Santa Amelia, Talagante",
     "sector": "Talagante, Metropolitana",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -33.668744,
-    "lon": -70.912195
+    "lon": -70.912195,
+    "elevacion_m": 360.0
   },
   {
-    "id": "agromet_118",
+    "id": "agromet_ext_118",
     "code_red": "118",
-    "nombre": "Estación DMC Talagante",
+    "nombre": "Estación DMC Talagante, Talagante",
     "sector": "Talagante, Metropolitana",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.67028,
-    "lon": -70.84944
+    "lon": -70.84944,
+    "elevacion_m": 390.0
   },
   {
-    "id": "agromet_144",
+    "id": "agromet_ext_144",
     "code_red": "144",
-    "nombre": "Estación MMA-DMC El Paico",
+    "nombre": "Estación MMA-DMC El Paico, Talagante",
     "sector": "Talagante, Metropolitana",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -33.70639,
-    "lon": -71.00806
+    "lon": -71.00806,
+    "elevacion_m": 275.0
   },
   {
-    "id": "agromet_107",
+    "id": "agromet_inia_6",
+    "code_red": "6",
+    "nombre": "Estación INIA Los Tilos, Buin",
+    "sector": "Buin, Metropolitana",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -33.70726005,
+    "lon": -70.70165517,
+    "elevacion_m": 530.0
+  },
+  {
+    "id": "agromet_ext_107",
     "code_red": "107",
-    "nombre": "Estación DMC Río Clarillo",
+    "nombre": "Estación DMC Río Clarillo, Pirque",
     "sector": "Pirque, Metropolitana",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.72833,
-    "lon": -70.49667
+    "lon": -70.49667,
+    "elevacion_m": 876.0
   },
   {
-    "id": "agromet_109",
+    "id": "agromet_inia_100",
+    "code_red": "100",
+    "nombre": "Estación INIA San Antonio de Naltahua, Isla de Maipo",
+    "sector": "Isla de Maipo, Metropolitana",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -33.732181,
+    "lon": -71.039443,
+    "elevacion_m": 249.0
+  },
+  {
+    "id": "agromet_inia_167",
+    "code_red": "167",
+    "nombre": "Estación INIA Cuncumén, San Antonio",
+    "sector": "San Antonio, Valparaíso",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -33.736215,
+    "lon": -71.421579,
+    "elevacion_m": 215.0
+  },
+  {
+    "id": "agromet_ext_109",
     "code_red": "109",
-    "nombre": "Estación DMC El Milagro",
+    "nombre": "Estación DMC El Milagro, Buin",
     "sector": "Buin, Metropolitana",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -33.75444,
-    "lon": -70.76444
+    "lon": -70.76444,
+    "elevacion_m": 460.0
   },
   {
-    "id": "agromet_321",
+    "id": "agromet_inia_321",
     "code_red": "321",
-    "nombre": "Estación INIA Valdivia de Paine",
+    "nombre": "Estación INIA Valdivia de Paine, Buin",
     "sector": "Buin, Metropolitana",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -33.7986592,
-    "lon": -70.8413394
+    "lon": -70.8413394,
+    "elevacion_m": 360.0
   },
   {
-    "id": "agromet_307",
+    "id": "agromet_inia_101",
+    "code_red": "101",
+    "nombre": "Estación INIA San Pedro de Melipilla, San Pedro",
+    "sector": "San Pedro, Metropolitana",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -33.897935,
+    "lon": -71.452881,
+    "elevacion_m": 145.0
+  },
+  {
+    "id": "agromet_inia_307",
     "code_red": "307",
-    "nombre": "Estación INIA Licanchen",
+    "nombre": "Estación INIA Licanchen, Navidad",
     "sector": "Navidad, O'Higgins",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -33.9297485,
-    "lon": -71.8010025
+    "lon": -71.8010025,
+    "elevacion_m": 24.0
   },
   {
-    "id": "agromet_210",
+    "id": "agromet_inia_210",
     "code_red": "210",
-    "nombre": "Estación INIA El Asiento",
+    "nombre": "Estación INIA El Asiento, Alhué",
     "sector": "Alhué, Metropolitana",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -34.029282,
-    "lon": -70.995098
+    "lon": -70.995098,
+    "elevacion_m": 351.0
   },
   {
-    "id": "agromet_55",
+    "id": "agromet_inia_55",
     "code_red": "55",
-    "nombre": "Estación INIA Hidango",
+    "nombre": "Estación INIA Hidango, Litueche",
     "sector": "Litueche, O'Higgins",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -34.112466,
-    "lon": -71.797339
+    "lon": -71.797339,
+    "elevacion_m": 296.0
   },
   {
-    "id": "agromet_153",
+    "id": "agromet_ext_153",
     "code_red": "153",
-    "nombre": "Estación DMC Aeródromo La Independencia",
+    "nombre": "Estación DMC Aeródromo La Independencia, Rancagua",
     "sector": "Rancagua, O'Higgins",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -34.17222,
-    "lon": -70.77611
+    "lon": -70.77611,
+    "elevacion_m": 482.0
   },
   {
-    "id": "agromet_154",
+    "id": "agromet_ext_78",
+    "code_red": "78",
+    "nombre": "Estación MMA-DMC Portezuelo-Codelco, Machalí",
+    "sector": "Machalí, O'Higgins",
+    "red": "Red Agromet (MMA-DMC)",
+    "tipo_api": "agromet",
+    "lat": -34.19833,
+    "lon": -70.57917,
+    "elevacion_m": 1185.0
+  },
+  {
+    "id": "agromet_ext_154",
     "code_red": "154",
-    "nombre": "Estación DMC Quimávida",
+    "nombre": "Estación DMC Quimávida, Coltauco",
     "sector": "Coltauco, O'Higgins",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -34.215,
-    "lon": -70.99694
+    "lon": -70.99694,
+    "elevacion_m": 316.0
   },
   {
-    "id": "agromet_303",
+    "id": "agromet_inia_303",
     "code_red": "303",
-    "nombre": "Estación INIA Rayentué",
+    "nombre": "Estación INIA Rayentué, Rengo",
     "sector": "Rengo, O'Higgins",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -34.321704,
-    "lon": -70.833901
+    "lon": -70.833901,
+    "elevacion_m": 376.0
   },
   {
-    "id": "agromet_332",
+    "id": "agromet_inia_332",
     "code_red": "332",
-    "nombre": "Estación VDCH Altair",
+    "nombre": "Estación VDCH Altair, Requinoa",
     "sector": "Requinoa, O'Higgins",
     "red": "Red Agromet (VDCH)",
     "tipo_api": "agromet",
     "lat": -34.353423,
-    "lon": -70.715616
+    "lon": -70.715616,
+    "elevacion_m": 480.0
   },
   {
-    "id": "agromet_163",
+    "id": "agromet_inia_163",
     "code_red": "163",
-    "nombre": "Estación INIA El Arenal",
+    "nombre": "Estación INIA El Arenal, Quinta de Tilcoco",
     "sector": "Quinta de Tilcoco, O'Higgins",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -34.35575,
-    "lon": -70.991278
+    "lon": -70.991278,
+    "elevacion_m": 266.0
   },
   {
-    "id": "agromet_217",
+    "id": "agromet_inia_217",
     "code_red": "217",
-    "nombre": "Estación INIA Puente Negro",
+    "nombre": "Estación INIA Puente Negro, Pichilemu",
     "sector": "Pichilemu, O'Higgins",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -34.386351,
-    "lon": -71.98571
+    "lon": -71.98571,
+    "elevacion_m": 10.0
   },
   {
-    "id": "agromet_334",
+    "id": "agromet_inia_334",
     "code_red": "334",
-    "nombre": "Estación VDCH Calleuque",
+    "nombre": "Estación VDCH Calleuque, Peralillo",
     "sector": "Peralillo, O'Higgins",
     "red": "Red Agromet (VDCH)",
     "tipo_api": "agromet",
     "lat": -34.3903,
-    "lon": -71.444431
+    "lon": -71.444431,
+    "elevacion_m": 140.0
   },
   {
-    "id": "agromet_110",
+    "id": "agromet_ext_110",
     "code_red": "110",
-    "nombre": "Estación DMC Aeródromo Pichilemu",
+    "nombre": "Estación DMC Aeródromo Pichilemu, Pichilemu",
     "sector": "Pichilemu, O'Higgins",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -34.39417,
-    "lon": -72.01861
+    "lon": -72.01861,
+    "elevacion_m": 25.0
   },
   {
-    "id": "agromet_228",
+    "id": "agromet_inia_228",
     "code_red": "228",
-    "nombre": "Estación INIA Liceo Jean Buchanan",
+    "nombre": "Estación INIA Liceo Jean Buchanan, Peumo",
     "sector": "Peumo, O'Higgins",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -34.3972892,
-    "lon": -71.1646719
+    "lon": -71.1646719,
+    "elevacion_m": 185.0
   },
   {
-    "id": "agromet_52",
+    "id": "agromet_inia_52",
     "code_red": "52",
-    "nombre": "Estación INIA El Tambo",
+    "nombre": "Estación INIA El Tambo, San Vicente",
     "sector": "San Vicente, O'Higgins",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -34.470992321899,
-    "lon": -70.986951436879
+    "lon": -70.986951436879,
+    "elevacion_m": 250.0
   },
   {
-    "id": "agromet_329",
+    "id": "agromet_inia_329",
     "code_red": "329",
-    "nombre": "Estación VDCH Los Lingues",
+    "nombre": "Estación VDCH Los Lingues, San Fernando",
     "sector": "San Fernando, O'Higgins",
     "red": "Red Agromet (VDCH)",
     "tipo_api": "agromet",
     "lat": -34.502129,
-    "lon": -70.894723
+    "lon": -70.894723,
+    "elevacion_m": 317.0
   },
   {
-    "id": "agromet_155",
+    "id": "agromet_ext_155",
     "code_red": "155",
-    "nombre": "Estación DMC Nilahue - La Quebrada",
+    "nombre": "Estación DMC Nilahue - La Quebrada, Pumanque",
     "sector": "Pumanque, O'Higgins",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -34.66083,
-    "lon": -71.73528
+    "lon": -71.73528,
+    "elevacion_m": 81.0
   },
   {
-    "id": "agromet_317",
+    "id": "agromet_inia_317",
     "code_red": "317",
-    "nombre": "Estación INIA Peor es Nada",
+    "nombre": "Estación INIA Peor es Nada, Chimbarongo",
     "sector": "Chimbarongo, O'Higgins",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -34.783248,
-    "lon": -71.043411
+    "lon": -71.043411,
+    "elevacion_m": 283.0
   },
   {
-    "id": "agromet_983",
+    "id": "agromet_ext_152",
+    "code_red": "152",
+    "nombre": "Estación DMC Aeródromo General Freire, Curicó",
+    "sector": "Curicó, Maule",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -34.96639,
+    "lon": -71.21667,
+    "elevacion_m": 230.0
+  },
+  {
+    "id": "agromet_ext_983",
     "code_red": "983",
-    "nombre": "Estación ARAUCO Hualañé",
+    "nombre": "Estación ARAUCO Hualañé, Hualañé",
     "sector": "Hualañé, Maule",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -34.983367,
-    "lon": -71.781691
+    "lon": -71.781691,
+    "elevacion_m": 68.0
   },
   {
-    "id": "agromet_963",
+    "id": "agromet_ext_963",
     "code_red": "963",
-    "nombre": "Estación AGRICHILE Los Niches",
+    "nombre": "Estación AGRICHILE Los Niches, Curicó",
     "sector": "Curicó, Maule",
     "red": "Red Agromet (AGRICHILE)",
     "tipo_api": "agromet",
     "lat": -35.05202,
-    "lon": -71.148239
+    "lon": -71.148239,
+    "elevacion_m": 273.0
   },
   {
-    "id": "agromet_215",
+    "id": "agromet_inia_215",
     "code_red": "215",
-    "nombre": "Estación INIA San Jorge Los Niches",
+    "nombre": "Estación INIA San Jorge Los Niches, Curicó",
     "sector": "Curicó, Maule",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -35.0918,
-    "lon": -71.120579
+    "lon": -71.120579,
+    "elevacion_m": 310.0
   },
   {
-    "id": "agromet_1000",
+    "id": "agromet_ext_1000",
     "code_red": "1000",
-    "nombre": "Estación EAM-FDF Escuela Agrícola de Molina",
+    "nombre": "Estación EAM-FDF Escuela Agrícola de Molina, Molina",
     "sector": "Molina, Maule",
     "red": "Red Agromet (EAM-FDF)",
     "tipo_api": "agromet",
     "lat": -35.098057,
-    "lon": -71.275
+    "lon": -71.275,
+    "elevacion_m": 243.0
   },
   {
-    "id": "agromet_1004",
+    "id": "agromet_ext_1004",
     "code_red": "1004",
-    "nombre": "Estación ARAUCO Curepto",
+    "nombre": "Estación ARAUCO Curepto, Curepto",
     "sector": "Curepto, Maule",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -35.100907,
-    "lon": -72.007541
+    "lon": -72.007541,
+    "elevacion_m": 74.0
   },
   {
-    "id": "agromet_214",
+    "id": "agromet_inia_214",
     "code_red": "214",
-    "nombre": "Estación INIA Deuca",
+    "nombre": "Estación INIA Deuca, Curepto",
     "sector": "Curepto, Maule",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -35.127819,
-    "lon": -71.955951
+    "lon": -71.955951,
+    "elevacion_m": 48.0
   },
   {
-    "id": "agromet_331",
+    "id": "agromet_inia_331",
     "code_red": "331",
-    "nombre": "Estación VDCH La Reserva",
+    "nombre": "Estación VDCH La Reserva, Río Claro",
     "sector": "Río Claro, Maule",
     "red": "Red Agromet (VDCH)",
     "tipo_api": "agromet",
     "lat": -35.157928,
-    "lon": -71.290304
+    "lon": -71.290304,
+    "elevacion_m": 265.0
   },
   {
-    "id": "agromet_986",
+    "id": "agromet_ext_986",
     "code_red": "986",
-    "nombre": "Estación ARAUCO Palhuen",
+    "nombre": "Estación ARAUCO Palhuen, Curepto",
     "sector": "Curepto, Maule",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -35.200259,
-    "lon": -71.993045
+    "lon": -71.993045,
+    "elevacion_m": 255.0
   },
   {
-    "id": "agromet_1003",
+    "id": "agromet_ext_1003",
     "code_red": "1003",
-    "nombre": "Estación ARAUCO Carrizal",
+    "nombre": "Estación ARAUCO Carrizal, Constitución",
     "sector": "Constitución, Maule",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -35.237651,
-    "lon": -72.262868
+    "lon": -72.262868,
+    "elevacion_m": 167.0
   },
   {
-    "id": "agromet_958",
+    "id": "agromet_ext_958",
     "code_red": "958",
-    "nombre": "Estación AGRICHILE Camarico",
+    "nombre": "Estación AGRICHILE Camarico, Río Claro",
     "sector": "Río Claro, Maule",
     "red": "Red Agromet (AGRICHILE)",
     "tipo_api": "agromet",
     "lat": -35.256908,
-    "lon": -71.340973
+    "lon": -71.340973,
+    "elevacion_m": 223.0
   },
   {
-    "id": "agromet_959",
+    "id": "agromet_ext_959",
     "code_red": "959",
-    "nombre": "Estación AGRICHILE San Sebastián",
+    "nombre": "Estación AGRICHILE San Sebastián, Río Claro",
     "sector": "Río Claro, Maule",
     "red": "Red Agromet (AGRICHILE)",
     "tipo_api": "agromet",
     "lat": -35.264213,
-    "lon": -71.548013
+    "lon": -71.548013,
+    "elevacion_m": 144.0
   },
   {
-    "id": "agromet_993",
+    "id": "agromet_ext_993",
     "code_red": "993",
-    "nombre": "Estación ARAUCO Vivero Quivolgo",
+    "nombre": "Estación ARAUCO Vivero Quivolgo, Constitución",
     "sector": "Constitución, Maule",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -35.306042,
-    "lon": -72.384781
+    "lon": -72.384781,
+    "elevacion_m": 13.0
   },
   {
-    "id": "agromet_992",
+    "id": "agromet_ext_156",
+    "code_red": "156",
+    "nombre": "Estación DMC Panguilemo, Talca",
+    "sector": "Talca, Maule",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -35.37778,
+    "lon": -71.60111,
+    "elevacion_m": 119.0
+  },
+  {
+    "id": "agromet_ext_992",
     "code_red": "992",
-    "nombre": "Estación ARAUCO El Auquil",
+    "nombre": "Estación ARAUCO El Auquil, Pelarco",
     "sector": "Pelarco, Maule",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -35.391303,
-    "lon": -71.29552
+    "lon": -71.29552,
+    "elevacion_m": 262.0
   },
   {
-    "id": "agromet_982",
+    "id": "agromet_ext_982",
     "code_red": "982",
-    "nombre": "Estación ARAUCO Talca",
+    "nombre": "Estación ARAUCO Talca, Talca",
     "sector": "Talca, Maule",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -35.414716,
-    "lon": -71.611857
+    "lon": -71.611857,
+    "elevacion_m": 115.0
   },
   {
-    "id": "agromet_333",
+    "id": "agromet_inia_333",
     "code_red": "333",
-    "nombre": "Estación VDCH Pencahue",
+    "nombre": "Estación VDCH Pencahue, Pencahue",
     "sector": "Pencahue, Maule",
     "red": "Red Agromet (VDCH)",
     "tipo_api": "agromet",
     "lat": -35.44522,
-    "lon": -71.83436
+    "lon": -71.83436,
+    "elevacion_m": 59.0
   },
   {
-    "id": "agromet_981",
+    "id": "agromet_ext_981",
     "code_red": "981",
-    "nombre": "Estación ARAUCO Santa Estela",
+    "nombre": "Estación ARAUCO Santa Estela, Constitución",
     "sector": "Constitución, Maule",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -35.486856,
-    "lon": -72.232686
+    "lon": -72.232686,
+    "elevacion_m": 239.0
   },
   {
-    "id": "agromet_991",
+    "id": "agromet_inia_135",
+    "code_red": "135",
+    "nombre": "Estación INIA San Clemente, San Clemente",
+    "sector": "San Clemente, Maule",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -35.530653,
+    "lon": -71.479505,
+    "elevacion_m": 221.0
+  },
+  {
+    "id": "agromet_ext_991",
     "code_red": "991",
-    "nombre": "Estación ARAUCO Cuyuname",
+    "nombre": "Estación ARAUCO Cuyuname, Empedrado",
     "sector": "Empedrado, Maule",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -35.68494,
-    "lon": -72.159667
+    "lon": -72.159667,
+    "elevacion_m": 263.0
   },
   {
-    "id": "agromet_977",
+    "id": "agromet_ext_977",
     "code_red": "977",
-    "nombre": "Estación FDF Villa Alegre",
+    "nombre": "Estación FDF Villa Alegre, Villa Alegre",
     "sector": "Villa Alegre, Maule",
     "red": "Red Agromet (FDF)",
     "tipo_api": "agromet",
     "lat": -35.69611,
-    "lon": -71.68222
+    "lon": -71.68222,
+    "elevacion_m": 127.0
   },
   {
-    "id": "agromet_22",
+    "id": "agromet_inia_22",
     "code_red": "22",
-    "nombre": "Estación INIA Chanco",
+    "nombre": "Estación INIA Chanco, Chanco",
     "sector": "Chanco, Maule",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -35.706583,
-    "lon": -72.511194
+    "lon": -72.511194,
+    "elevacion_m": 60.0
   },
   {
-    "id": "agromet_212",
+    "id": "agromet_inia_11",
+    "code_red": "11",
+    "nombre": "Estación INIA Sauzal, Cauquenes",
+    "sector": "Cauquenes, Maule",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -35.71487926,
+    "lon": -72.11130833,
+    "elevacion_m": 162.0
+  },
+  {
+    "id": "agromet_inia_136",
+    "code_red": "136",
+    "nombre": "Estación INIA Santa Amada, Linares",
+    "sector": "Linares, Maule",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -35.764696,
+    "lon": -71.574996,
+    "elevacion_m": 150.0
+  },
+  {
+    "id": "agromet_inia_227",
+    "code_red": "227",
+    "nombre": "Estación INIA Miraflores, Longaví",
+    "sector": "Longaví, Maule",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -35.818051,
+    "lon": -71.775019,
+    "elevacion_m": 124.0
+  },
+  {
+    "id": "agromet_inia_212",
     "code_red": "212",
-    "nombre": "Estación INIA Lomas",
+    "nombre": "Estación INIA Lomas, Pelluhue",
     "sector": "Pelluhue, Maule",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -35.8354491,
-    "lon": -72.587489
+    "lon": -72.587489,
+    "elevacion_m": 172.0
   },
   {
-    "id": "agromet_974",
+    "id": "agromet_ext_974",
     "code_red": "974",
-    "nombre": "Estación MMA-DMC Escuela de Artillería",
+    "nombre": "Estación MMA-DMC Escuela de Artillería, Linares",
     "sector": "Linares, Maule",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -35.83694,
-    "lon": -71.59278
+    "lon": -71.59278,
+    "elevacion_m": 160.0
   },
   {
-    "id": "agromet_327",
+    "id": "agromet_inia_327",
     "code_red": "327",
-    "nombre": "Estación VDCH Villa Seca",
+    "nombre": "Estación VDCH Villa Seca, Retiro",
     "sector": "Retiro, Maule",
     "red": "Red Agromet (VDCH)",
     "tipo_api": "agromet",
     "lat": -35.890453,
-    "lon": -71.85712
+    "lon": -71.85712,
+    "elevacion_m": 121.0
   },
   {
-    "id": "agromet_46",
+    "id": "agromet_inia_46",
     "code_red": "46",
-    "nombre": "Estación INIA Cauquenes",
+    "nombre": "Estación INIA Cauquenes, Cauquenes",
     "sector": "Cauquenes, Maule",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -35.95597397,
-    "lon": -72.2899376
+    "lon": -72.2899376,
+    "elevacion_m": 162.0
   },
   {
-    "id": "agromet_161",
+    "id": "agromet_inia_7",
+    "code_red": "7",
+    "nombre": "Estación INIA Santa Sofía, Cauquenes",
+    "sector": "Cauquenes, Maule",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -35.97764359,
+    "lon": -72.35986381,
+    "elevacion_m": 151.0
+  },
+  {
+    "id": "agromet_inia_12",
+    "code_red": "12",
+    "nombre": "Estación INIA Coronel de Maule, Cauquenes",
+    "sector": "Cauquenes, Maule",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -36.05909279,
+    "lon": -72.47768878,
+    "elevacion_m": 172.0
+  },
+  {
+    "id": "agromet_inia_14",
+    "code_red": "14",
+    "nombre": "Estación INIA Los Despachos, Cauquenes",
+    "sector": "Cauquenes, Maule",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -36.06211462,
+    "lon": -72.37143919,
+    "elevacion_m": 167.0
+  },
+  {
+    "id": "agromet_ext_161",
     "code_red": "161",
-    "nombre": "Estación MMA-DMC Copihue",
+    "nombre": "Estación MMA-DMC Copihue, Retiro",
     "sector": "Retiro, Maule",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -36.07556,
-    "lon": -71.75806
+    "lon": -71.75806,
+    "elevacion_m": 162.0
   },
   {
-    "id": "agromet_960",
+    "id": "agromet_ext_960",
     "code_red": "960",
-    "nombre": "Estación AGRICHILE Parral",
+    "nombre": "Estación AGRICHILE Parral, Parral",
     "sector": "Parral, Maule",
     "red": "Red Agromet (AGRICHILE)",
     "tipo_api": "agromet",
     "lat": -36.197588,
-    "lon": -71.814217
+    "lon": -71.814217,
+    "elevacion_m": 180.0
   },
   {
-    "id": "agromet_989",
+    "id": "agromet_ext_989",
     "code_red": "989",
-    "nombre": "Estación ARAUCO Zorzal Blanco",
+    "nombre": "Estación ARAUCO Zorzal Blanco, Quirihue",
     "sector": "Quirihue, Ñuble",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -36.220606,
-    "lon": -72.548486
+    "lon": -72.548486,
+    "elevacion_m": 266.0
   },
   {
-    "id": "agromet_961",
+    "id": "agromet_inia_154",
+    "code_red": "154",
+    "nombre": "Estación INIA Monte Flor-Tucapel, Parral",
+    "sector": "Parral, Maule",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -36.244802,
+    "lon": -71.934291,
+    "elevacion_m": 548.0
+  },
+  {
+    "id": "agromet_ext_961",
     "code_red": "961",
-    "nombre": "Estación AGRICHILE San Gregorio",
+    "nombre": "Estación AGRICHILE San Gregorio, Ñiquén",
     "sector": "Ñiquén, Ñuble",
     "red": "Red Agromet (AGRICHILE)",
     "tipo_api": "agromet",
     "lat": -36.283505,
-    "lon": -71.840564
+    "lon": -71.840564,
+    "elevacion_m": 180.0
   },
   {
-    "id": "agromet_47",
+    "id": "agromet_inia_47",
     "code_red": "47",
-    "nombre": "Estación INIA Ninhue",
+    "nombre": "Estación INIA Ninhue, Chillán",
     "sector": "Chillán, Ñuble",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -36.398105,
-    "lon": -72.395203
+    "lon": -72.395203,
+    "elevacion_m": 91.0
   },
   {
-    "id": "agromet_211",
+    "id": "agromet_inia_139",
+    "code_red": "139",
+    "nombre": "Estación INIA Centro Experimental Arroz, San Carlos",
+    "sector": "San Carlos, Ñuble",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -36.409298,
+    "lon": -72.006731,
+    "elevacion_m": 162.0
+  },
+  {
+    "id": "agromet_inia_211",
     "code_red": "211",
-    "nombre": "Estación INIA Puralihue",
+    "nombre": "Estación INIA Puralihue, Treguaco",
     "sector": "Treguaco, Ñuble",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -36.431036,
-    "lon": -72.647783
+    "lon": -72.647783,
+    "elevacion_m": 36.0
   },
   {
-    "id": "agromet_1020",
+    "id": "agromet_ext_1020",
     "code_red": "1020",
-    "nombre": "Estación ARAUCO Bandurrias",
+    "nombre": "Estación ARAUCO Bandurrias, San Fabián",
     "sector": "San Fabián, Ñuble",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -36.445723,
-    "lon": -71.674046
+    "lon": -71.674046,
+    "elevacion_m": 139.0
   },
   {
-    "id": "agromet_1008",
+    "id": "agromet_ext_1008",
     "code_red": "1008",
-    "nombre": "Estación DMC Liceo San Nicolás",
+    "nombre": "Estación DMC Liceo San Nicolás, San Nicolás",
     "sector": "San Nicolás, Ñuble",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -36.50556,
-    "lon": -72.21944
+    "lon": -72.21944,
+    "elevacion_m": 118.0
   },
   {
-    "id": "agromet_994",
+    "id": "agromet_ext_994",
     "code_red": "994",
-    "nombre": "Estación ARAUCO Totoral",
+    "nombre": "Estación ARAUCO Totoral, Coelemu",
     "sector": "Coelemu, Ñuble",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -36.525887,
-    "lon": -72.638553
+    "lon": -72.638553,
+    "elevacion_m": 47.0
   },
   {
-    "id": "agromet_17",
+    "id": "agromet_inia_23",
+    "code_red": "23",
+    "nombre": "Estación INIA Portezuelo, Portezuelo",
+    "sector": "Portezuelo, Ñuble",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -36.53203766,
+    "lon": -72.36826801,
+    "elevacion_m": 109.0
+  },
+  {
+    "id": "agromet_inia_17",
     "code_red": "17",
-    "nombre": "Estación INIA Santa Rosa",
+    "nombre": "Estación INIA Santa Rosa, Chillán",
     "sector": "Chillán, Ñuble",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -36.535195,
-    "lon": -71.916434
+    "lon": -71.916434,
+    "elevacion_m": 194.0
   },
   {
-    "id": "agromet_157",
+    "id": "agromet_ext_65",
+    "code_red": "65",
+    "nombre": "Estación UCONCE-CEAZA Dichato, Tomé",
+    "sector": "Tomé, Biobío",
+    "red": "Red Agromet (UCONCE-CEAZA)",
+    "tipo_api": "agromet",
+    "lat": -36.54483,
+    "lon": -72.93268,
+    "elevacion_m": 0
+  },
+  {
+    "id": "agromet_ext_157",
     "code_red": "157",
-    "nombre": "Estación DMC Aeródromo Gral. Bernardo O'Higgins",
+    "nombre": "Estación DMC Aeródromo Gral. Bernardo O'Higgins, Chillán",
     "sector": "Chillán, Ñuble",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -36.58722,
-    "lon": -72.04
+    "lon": -72.04,
+    "elevacion_m": 151.0
   },
   {
-    "id": "agromet_988",
+    "id": "agromet_ext_988",
     "code_red": "988",
-    "nombre": "Estación ARAUCO Conuco",
+    "nombre": "Estación ARAUCO Conuco, Tomé",
     "sector": "Tomé, Biobío",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -36.632154,
-    "lon": -72.782132
+    "lon": -72.782132,
+    "elevacion_m": 208.0
   },
   {
-    "id": "agromet_310",
+    "id": "agromet_inia_24",
+    "code_red": "24",
+    "nombre": "Estación INIA Nueva Aldea, Ránquil",
+    "sector": "Ránquil, Ñuble",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -36.6489,
+    "lon": -72.51349,
+    "elevacion_m": 82.0
+  },
+  {
+    "id": "agromet_inia_10",
+    "code_red": "10",
+    "nombre": "Estación INIA Punta Parra, Tomé",
+    "sector": "Tomé, Biobío",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -36.67239402,
+    "lon": -72.96468405,
+    "elevacion_m": 190.0
+  },
+  {
+    "id": "agromet_inia_310",
     "code_red": "310",
-    "nombre": "Estación INIA Santa Lucía",
+    "nombre": "Estación INIA Santa Lucía, Florida",
     "sector": "Florida, Biobío",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -36.69746,
-    "lon": -72.704216
+    "lon": -72.704216,
+    "elevacion_m": 268.0
   },
   {
-    "id": "agromet_1011",
+    "id": "agromet_ext_1011",
     "code_red": "1011",
-    "nombre": "Estación MMA-DMC Cerro Cayumanque",
+    "nombre": "Estación MMA-DMC Cerro Cayumanque, Quillón",
     "sector": "Quillón, Ñuble",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -36.70694,
-    "lon": -72.52778
+    "lon": -72.52778,
+    "elevacion_m": 800.0
   },
   {
-    "id": "agromet_330",
+    "id": "agromet_inia_330",
     "code_red": "330",
-    "nombre": "Estación VDCH Larqui",
+    "nombre": "Estación VDCH Larqui, Bulnes",
     "sector": "Bulnes, Ñuble",
     "red": "Red Agromet (VDCH)",
     "tipo_api": "agromet",
     "lat": -36.719225,
-    "lon": -72.357628
+    "lon": -72.357628,
+    "elevacion_m": 69.0
   },
   {
-    "id": "agromet_1001",
+    "id": "agromet_ext_1001",
     "code_red": "1001",
-    "nombre": "Estación ARAUCO El Kayser",
+    "nombre": "Estación ARAUCO El Kayser, Coihueco",
     "sector": "Coihueco, Ñuble",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -36.730083,
-    "lon": -71.750486
+    "lon": -71.750486,
+    "elevacion_m": 482.0
   },
   {
-    "id": "agromet_997",
+    "id": "agromet_ext_997",
     "code_red": "997",
-    "nombre": "Estación ARAUCO Coyanco",
+    "nombre": "Estación ARAUCO Coyanco, Quillón",
     "sector": "Quillón, Ñuble",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -36.74882,
-    "lon": -72.588716
+    "lon": -72.588716,
+    "elevacion_m": 90.0
   },
   {
-    "id": "agromet_111",
+    "id": "agromet_ext_111",
     "code_red": "111",
-    "nombre": "Estación DMC Carriel Sur",
+    "nombre": "Estación DMC Carriel Sur, Concepción",
     "sector": "Concepción, Biobío",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -36.77833,
-    "lon": -73.0625
+    "lon": -73.0625,
+    "elevacion_m": 17.0
   },
   {
-    "id": "agromet_160",
+    "id": "agromet_ext_160",
     "code_red": "160",
-    "nombre": "Estación MMA-DMC Chillán Mayulermo",
+    "nombre": "Estación MMA-DMC Chillán Mayulermo, San Ignacio",
     "sector": "San Ignacio, Ñuble",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -36.82806,
-    "lon": -71.86694
+    "lon": -71.86694,
+    "elevacion_m": 396.0
   },
   {
-    "id": "agromet_996",
+    "id": "agromet_ext_996",
     "code_red": "996",
-    "nombre": "Estación ARAUCO Cangrejillo",
+    "nombre": "Estación ARAUCO Cangrejillo, Florida",
     "sector": "Florida, Biobío",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -36.877961,
-    "lon": -72.803711
+    "lon": -72.803711,
+    "elevacion_m": 175.0
   },
   {
-    "id": "agromet_158",
+    "id": "agromet_ext_158",
     "code_red": "158",
-    "nombre": "Estación DMC Termas de Chillán",
+    "nombre": "Estación DMC Termas de Chillán, Pinto",
     "sector": "Pinto, Ñuble",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -36.90361,
-    "lon": -71.41
+    "lon": -71.41,
+    "elevacion_m": 1708.0
   },
   {
-    "id": "agromet_73",
+    "id": "agromet_inia_15",
+    "code_red": "15",
+    "nombre": "Estación INIA Chiguayante, Chiguayante",
+    "sector": "Chiguayante, Biobío",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -36.91349,
+    "lon": -73.035458,
+    "elevacion_m": 23.0
+  },
+  {
+    "id": "agromet_inia_73",
     "code_red": "73",
-    "nombre": "Estación INIA Navidad",
+    "nombre": "Estación INIA Navidad, El Carmen",
     "sector": "El Carmen, Ñuble",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -36.916365,
-    "lon": -71.834824
+    "lon": -71.834824,
+    "elevacion_m": 314.0
   },
   {
-    "id": "agromet_1019",
+    "id": "agromet_ext_1019",
     "code_red": "1019",
-    "nombre": "Estación ARAUCO Remolinos",
+    "nombre": "Estación ARAUCO Remolinos, Pemuco",
     "sector": "Pemuco, Ñuble",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -36.943523,
-    "lon": -72.328589
+    "lon": -72.328589,
+    "elevacion_m": 39.0
   },
   {
-    "id": "agromet_49",
+    "id": "agromet_inia_49",
     "code_red": "49",
-    "nombre": "Estación INIA Yungay",
+    "nombre": "Estación INIA Yungay, Yungay",
     "sector": "Yungay, Ñuble",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -37.141385,
-    "lon": -72.011761
+    "lon": -72.011761,
+    "elevacion_m": 265.0
   },
   {
-    "id": "agromet_999",
+    "id": "agromet_ext_999",
     "code_red": "999",
-    "nombre": "Estación ARAUCO Siberia",
+    "nombre": "Estación ARAUCO Siberia, Yungay",
     "sector": "Yungay, Ñuble",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -37.174782,
-    "lon": -72.064874
+    "lon": -72.064874,
+    "elevacion_m": 241.0
   },
   {
-    "id": "agromet_998",
+    "id": "agromet_ext_998",
     "code_red": "998",
-    "nombre": "Estación ARAUCO Santa Juana",
+    "nombre": "Estación ARAUCO Santa Juana, Santa Juana",
     "sector": "Santa Juana, Biobío",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -37.175533,
-    "lon": -72.963727
+    "lon": -72.963727,
+    "elevacion_m": 54.0
   },
   {
-    "id": "agromet_1006",
+    "id": "agromet_ext_1006",
     "code_red": "1006",
-    "nombre": "Estación ARAUCO Tanahullin",
+    "nombre": "Estación ARAUCO Tanahullin, Santa Juana",
     "sector": "Santa Juana, Biobío",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -37.224953,
-    "lon": -72.816584
+    "lon": -72.816584,
+    "elevacion_m": 222.0
   },
   {
-    "id": "agromet_312",
+    "id": "agromet_inia_312",
     "code_red": "312",
-    "nombre": "Estación INIA La Colonia",
+    "nombre": "Estación INIA La Colonia, Laja",
     "sector": "Laja, Biobío",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -37.288681,
-    "lon": -72.59151
+    "lon": -72.59151,
+    "elevacion_m": 120.0
   },
   {
-    "id": "agromet_308",
+    "id": "agromet_inia_308",
     "code_red": "308",
-    "nombre": "Estación INIA Las Puentes",
+    "nombre": "Estación INIA Las Puentes, Arauco",
     "sector": "Arauco, Biobío",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -37.305126,
-    "lon": -73.436712
+    "lon": -73.436712,
+    "elevacion_m": 120.0
   },
   {
-    "id": "agromet_990",
+    "id": "agromet_ext_229",
+    "code_red": "229",
+    "nombre": "Estación DMC Aeródromo María Dolores, Los Ángeles",
+    "sector": "Los Ángeles, Biobío",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -37.39694,
+    "lon": -72.42389,
+    "elevacion_m": 118.0
+  },
+  {
+    "id": "agromet_ext_990",
     "code_red": "990",
-    "nombre": "Estación ARAUCO La Colcha",
+    "nombre": "Estación ARAUCO La Colcha, Curanilahue",
     "sector": "Curanilahue, Biobío",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -37.424383,
-    "lon": -73.352436
+    "lon": -73.352436,
+    "elevacion_m": 158.0
   },
   {
-    "id": "agromet_1015",
+    "id": "agromet_ext_1015",
     "code_red": "1015",
-    "nombre": "Estación MMA-DMC La Colcha MMA",
+    "nombre": "Estación MMA-DMC La Colcha MMA, Curanilahue",
     "sector": "Curanilahue, Biobío",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -37.425,
-    "lon": -73.3525
+    "lon": -73.3525,
+    "elevacion_m": 144.0
   },
   {
-    "id": "agromet_21",
+    "id": "agromet_inia_21",
     "code_red": "21",
-    "nombre": "Estación INIA Human",
+    "nombre": "Estación INIA Human, Los Ángeles",
     "sector": "Los Ángeles, Biobío",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -37.43355687,
-    "lon": -72.24397526
+    "lon": -72.24397526,
+    "elevacion_m": 195.0
   },
   {
-    "id": "agromet_325",
+    "id": "agromet_ext_162",
+    "code_red": "162",
+    "nombre": "Estación DMC Liceo Agrícola El Huertón, Los Ángeles",
+    "sector": "Los Ángeles, Biobío",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -37.45694,
+    "lon": -72.275,
+    "elevacion_m": 173.0
+  },
+  {
+    "id": "agromet_inia_325",
     "code_red": "325",
-    "nombre": "Estación INIA La Hijuela",
+    "nombre": "Estación INIA La Hijuela, Nacimiento",
     "sector": "Nacimiento, Biobío",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -37.519751,
-    "lon": -72.695735
+    "lon": -72.695735,
+    "elevacion_m": 94.0
   },
   {
-    "id": "agromet_1014",
+    "id": "agromet_ext_1014",
     "code_red": "1014",
-    "nombre": "Estación ARAUCO Los Alamos",
+    "nombre": "Estación ARAUCO Los Alamos, Los Álamos",
     "sector": "Los Álamos, Biobío",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -37.6280675,
-    "lon": -73.4617517
+    "lon": -73.4617517,
+    "elevacion_m": 53.0
   },
   {
-    "id": "agromet_84",
+    "id": "agromet_inia_84",
     "code_red": "84",
-    "nombre": "Estación INIA Lebu",
+    "nombre": "Estación INIA Lebu, Lebu",
     "sector": "Lebu, Biobío",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -37.682541,
-    "lon": -73.522167
+    "lon": -73.522167,
+    "elevacion_m": 194.0
   },
   {
-    "id": "agromet_180",
+    "id": "agromet_ext_180",
     "code_red": "180",
-    "nombre": "Estación DMC Húsares",
+    "nombre": "Estación DMC Húsares, Angol",
     "sector": "Angol, La Araucanía",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -37.74583,
-    "lon": -72.69167
+    "lon": -72.69167,
+    "elevacion_m": 69.0
   },
   {
-    "id": "agromet_328",
+    "id": "agromet_inia_328",
     "code_red": "328",
-    "nombre": "Estación VDCH Chumulco",
+    "nombre": "Estación VDCH Chumulco, Mulchén",
     "sector": "Mulchén, Biobío",
     "red": "Red Agromet (VDCH)",
     "tipo_api": "agromet",
     "lat": -37.753808,
-    "lon": -72.299674
+    "lon": -72.299674,
+    "elevacion_m": 196.0
   },
   {
-    "id": "agromet_237",
+    "id": "agromet_inia_36",
+    "code_red": "36",
+    "nombre": "Estación INIA GTT Peleco, Cañete",
+    "sector": "Cañete, Biobío",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -37.7538486,
+    "lon": -73.445092,
+    "elevacion_m": 125.0
+  },
+  {
+    "id": "agromet_inia_144",
+    "code_red": "144",
+    "nombre": "Estación INIA Manzanares, Renaico",
+    "sector": "Renaico, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -37.7725,
+    "lon": -72.546111,
+    "elevacion_m": 88.0
+  },
+  {
+    "id": "agromet_inia_237",
     "code_red": "237",
-    "nombre": "Estación INIA El Vergel",
+    "nombre": "Estación INIA El Vergel, Angol",
     "sector": "Angol, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -37.8278098,
-    "lon": -72.6596649
+    "lon": -72.6596649,
+    "elevacion_m": 81.0
   },
   {
-    "id": "agromet_1005",
+    "id": "agromet_ext_1005",
     "code_red": "1005",
-    "nombre": "Estación ARAUCO Santa Amelia",
+    "nombre": "Estación ARAUCO Santa Amelia, Collipulli",
     "sector": "Collipulli, La Araucanía",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -37.978802,
-    "lon": -72.417784
+    "lon": -72.417784,
+    "elevacion_m": 273.0
   },
   {
-    "id": "agromet_322",
+    "id": "agromet_inia_322",
     "code_red": "322",
-    "nombre": "Estación INIA Contulmo Urbano",
+    "nombre": "Estación INIA Contulmo Urbano, Contulmo",
     "sector": "Contulmo, Biobío",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -38.018318,
-    "lon": -73.230247
+    "lon": -73.230247,
+    "elevacion_m": 46.0
   },
   {
-    "id": "agromet_209",
+    "id": "agromet_inia_157",
+    "code_red": "157",
+    "nombre": "Estación INIA La Isla, Purén",
+    "sector": "Purén, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -38.03,
+    "lon": -72.982,
+    "elevacion_m": 76.0
+  },
+  {
+    "id": "agromet_inia_145",
+    "code_red": "145",
+    "nombre": "Estación INIA Surco y Semilla, Collipulli",
+    "sector": "Collipulli, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -38.0325,
+    "lon": -72.285278,
+    "elevacion_m": 379.0
+  },
+  {
+    "id": "agromet_inia_209",
     "code_red": "209",
-    "nombre": "Estación INIA San Rafael",
+    "nombre": "Estación INIA San Rafael, Los Sauces",
     "sector": "Los Sauces, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -38.070667,
-    "lon": -72.724176
+    "lon": -72.724176,
+    "elevacion_m": 173.0
   },
   {
-    "id": "agromet_206",
+    "id": "agromet_inia_206",
     "code_red": "206",
-    "nombre": "Estación INIA Gaby Ranquilco",
+    "nombre": "Estación INIA Gaby Ranquilco, Lumaco",
     "sector": "Lumaco, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -38.116919,
-    "lon": -72.883497
+    "lon": -72.883497,
+    "elevacion_m": 76.0
   },
   {
-    "id": "agromet_238",
+    "id": "agromet_inia_238",
     "code_red": "238",
-    "nombre": "Estación INIA Pailahueque",
+    "nombre": "Estación INIA Pailahueque, Ercilla",
     "sector": "Ercilla, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -38.145552,
-    "lon": -72.298333
+    "lon": -72.298333,
+    "elevacion_m": 379.0
   },
   {
-    "id": "agromet_146",
+    "id": "agromet_inia_146",
     "code_red": "146",
-    "nombre": "Estación INIA Las Palmas",
+    "nombre": "Estación INIA Las Palmas, Victoria",
     "sector": "Victoria, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -38.227778,
-    "lon": -72.273333
+    "lon": -72.273333,
+    "elevacion_m": 388.0
   },
   {
-    "id": "agromet_181",
+    "id": "agromet_ext_181",
     "code_red": "181",
-    "nombre": "Estación DMC Regimiento Victoria",
+    "nombre": "Estación DMC Regimiento Victoria, Victoria",
     "sector": "Victoria, La Araucanía",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -38.22889,
-    "lon": -72.34333
+    "lon": -72.34333,
+    "elevacion_m": 336.0
   },
   {
-    "id": "agromet_955",
+    "id": "agromet_inia_161",
+    "code_red": "161",
+    "nombre": "Estación INIA Ponotro, Tirúa",
+    "sector": "Tirúa, Biobío",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -38.27529,
+    "lon": -73.498489,
+    "elevacion_m": 143.0
+  },
+  {
+    "id": "agromet_inia_33",
+    "code_red": "33",
+    "nombre": "Estación INIA La Providencia, Traiguén",
+    "sector": "Traiguén, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -38.289444,
+    "lon": -72.611389,
+    "elevacion_m": 254.0
+  },
+  {
+    "id": "agromet_ext_955",
     "code_red": "955",
-    "nombre": "Estación DMC Aeródromo Lequecahue",
+    "nombre": "Estación DMC Aeródromo Lequecahue, Tirúa",
     "sector": "Tirúa, Biobío",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -38.35944,
-    "lon": -73.48833
+    "lon": -73.48833,
+    "elevacion_m": 153.0
   },
   {
-    "id": "agromet_975",
+    "id": "agromet_ext_975",
     "code_red": "975",
-    "nombre": "Estación DMC Aeródromo Isla Mocha",
+    "nombre": "Estación DMC Aeródromo Isla Mocha, Lebu",
     "sector": "Lebu, Biobío",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -38.38389,
-    "lon": -73.86917
+    "lon": -73.86917,
+    "elevacion_m": 16.0
   },
   {
-    "id": "agromet_48",
+    "id": "agromet_inia_48",
     "code_red": "48",
-    "nombre": "Estación INIA San Luis",
+    "nombre": "Estación INIA San Luis, Curacautín",
     "sector": "Curacautín, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -38.409987,
-    "lon": -71.915218
+    "lon": -71.915218,
+    "elevacion_m": 549.0
   },
   {
-    "id": "agromet_235",
+    "id": "agromet_inia_235",
     "code_red": "235",
-    "nombre": "Estación INIA San Sebastián",
+    "nombre": "Estación INIA San Sebastián, Perquenco",
     "sector": "Perquenco, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -38.435064,
-    "lon": -72.399024
+    "lon": -72.399024,
+    "elevacion_m": 299.0
   },
   {
-    "id": "agromet_164",
+    "id": "agromet_ext_164",
     "code_red": "164",
-    "nombre": "Estación DMC Lonquimay",
+    "nombre": "Estación DMC Lonquimay, Lonquimay",
     "sector": "Lonquimay, La Araucanía",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -38.455,
-    "lon": -71.36194
+    "lon": -71.36194,
+    "elevacion_m": 912.0
   },
   {
-    "id": "agromet_147",
+    "id": "agromet_inia_147",
     "code_red": "147",
-    "nombre": "Estación INIA Caballería",
+    "nombre": "Estación INIA Caballería, Galvarino",
     "sector": "Galvarino, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -38.455941,
-    "lon": -72.740668
+    "lon": -72.740668,
+    "elevacion_m": 167.0
   },
   {
-    "id": "agromet_239",
+    "id": "agromet_inia_143",
+    "code_red": "143",
+    "nombre": "Estación INIA Santa Inés, Lautaro",
+    "sector": "Lautaro, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -38.504722,
+    "lon": -72.343611,
+    "elevacion_m": 263.0
+  },
+  {
+    "id": "agromet_inia_239",
     "code_red": "239",
-    "nombre": "Estación INIA Collimallin",
+    "nombre": "Estación INIA Collimallin, Temuco",
     "sector": "Temuco, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -38.606698,
-    "lon": -72.701057
+    "lon": -72.701057,
+    "elevacion_m": 60.0
   },
   {
-    "id": "agromet_166",
+    "id": "agromet_inia_28",
+    "code_red": "28",
+    "nombre": "Estación INIA Quiripio, Carahue",
+    "sector": "Carahue, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -38.639722,
+    "lon": -73.244167,
+    "elevacion_m": 322.0
+  },
+  {
+    "id": "agromet_ext_166",
     "code_red": "166",
-    "nombre": "Estación MMA-DMC Rucamanque - UFRO",
+    "nombre": "Estación MMA-DMC Rucamanque - UFRO, Temuco",
     "sector": "Temuco, La Araucanía",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -38.66083,
-    "lon": -72.60556
+    "lon": -72.60556,
+    "elevacion_m": 344.0
   },
   {
-    "id": "agromet_148",
+    "id": "agromet_inia_138",
+    "code_red": "138",
+    "nombre": "Estación INIA Perales, Cholchol",
+    "sector": "Cholchol, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -38.663889,
+    "lon": -72.808889,
+    "elevacion_m": 55.0
+  },
+  {
+    "id": "agromet_inia_8",
+    "code_red": "8",
+    "nombre": "Estación INIA Carillanca, Vilcún",
+    "sector": "Vilcún, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -38.688787,
+    "lon": -72.4189357,
+    "elevacion_m": 200.0
+  },
+  {
+    "id": "agromet_inia_18",
+    "code_red": "18",
+    "nombre": "Estación INIA Tranapuente, Carahue",
+    "sector": "Carahue, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -38.690206,
+    "lon": -73.352888,
+    "elevacion_m": 64.0
+  },
+  {
+    "id": "agromet_inia_148",
     "code_red": "148",
-    "nombre": "Estación INIA Marimenuco",
+    "nombre": "Estación INIA Marimenuco, Lonquimay",
     "sector": "Lonquimay, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -38.731667,
-    "lon": -71.140833
+    "lon": -71.140833,
+    "elevacion_m": 1084.0
   },
   {
-    "id": "agromet_41",
+    "id": "agromet_inia_41",
     "code_red": "41",
-    "nombre": "Estación INIA Santa Adela",
+    "nombre": "Estación INIA Santa Adela, Nueva Imperial",
     "sector": "Nueva Imperial, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -38.7560589,
-    "lon": -72.8929552
+    "lon": -72.8929552,
+    "elevacion_m": 47.0
   },
   {
-    "id": "agromet_236",
+    "id": "agromet_ext_163",
+    "code_red": "163",
+    "nombre": "Estación DMC Aeródromo Maquehue, Padre las Casas",
+    "sector": "Padre las Casas, La Araucanía",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -38.76778,
+    "lon": -72.63194,
+    "elevacion_m": 86.0
+  },
+  {
+    "id": "agromet_ext_74",
+    "code_red": "74",
+    "nombre": "Estación ANPROS Temuco, Temuco",
+    "sector": "Temuco, La Araucanía",
+    "red": "Red Agromet (ANPROS)",
+    "tipo_api": "agromet",
+    "lat": -38.821389,
+    "lon": -72.432778,
+    "elevacion_m": 157.0
+  },
+  {
+    "id": "agromet_inia_236",
     "code_red": "236",
-    "nombre": "Estación INIA Taplon",
+    "nombre": "Estación INIA Taplon, Padre las Casas",
     "sector": "Padre las Casas, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -38.83295,
-    "lon": -72.506385
+    "lon": -72.506385,
+    "elevacion_m": 130.0
   },
   {
-    "id": "agromet_233",
+    "id": "agromet_inia_141",
+    "code_red": "141",
+    "nombre": "Estación INIA El Membrillo, Melipeuco",
+    "sector": "Melipeuco, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -38.834167,
+    "lon": -71.6825,
+    "elevacion_m": 527.0
+  },
+  {
+    "id": "agromet_ext_79",
+    "code_red": "79",
+    "nombre": "Estación MMA-DMC Maquehue - UFRO, Freire",
+    "sector": "Freire, La Araucanía",
+    "red": "Red Agromet (MMA-DMC)",
+    "tipo_api": "agromet",
+    "lat": -38.83778,
+    "lon": -72.69444,
+    "elevacion_m": 74.0
+  },
+  {
+    "id": "agromet_inia_29",
+    "code_red": "29",
+    "nombre": "Estación INIA Dominguez, Saavedra",
+    "sector": "Saavedra, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -38.903321,
+    "lon": -73.225275,
+    "elevacion_m": 93.0
+  },
+  {
+    "id": "agromet_inia_164",
+    "code_red": "164",
+    "nombre": "Estación INIA El Quincho, Cunco",
+    "sector": "Cunco, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -38.913175,
+    "lon": -72.183514,
+    "elevacion_m": 293.0
+  },
+  {
+    "id": "agromet_ext_165",
+    "code_red": "165",
+    "nombre": "Estación DMC Aeropuerto Araucanía, Freire",
+    "sector": "Freire, La Araucanía",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -38.93444,
+    "lon": -72.65333,
+    "elevacion_m": 96.0
+  },
+  {
+    "id": "agromet_inia_31",
+    "code_red": "31",
+    "nombre": "Estación INIA Llollinco, Teodoro Schmidt",
+    "sector": "Teodoro Schmidt, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -38.976944,
+    "lon": -72.997778,
+    "elevacion_m": 24.0
+  },
+  {
+    "id": "agromet_inia_233",
     "code_red": "233",
-    "nombre": "Estación INIA Radal",
+    "nombre": "Estación INIA Radal, Freire",
     "sector": "Freire, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -38.98547,
-    "lon": -72.381617
+    "lon": -72.381617,
+    "elevacion_m": 168.0
   },
   {
-    "id": "agromet_962",
+    "id": "agromet_ext_962",
     "code_red": "962",
-    "nombre": "Estación AGRICHILE Caracas",
+    "nombre": "Estación AGRICHILE Caracas, Cunco",
     "sector": "Cunco, La Araucanía",
     "red": "Red Agromet (AGRICHILE)",
     "tipo_api": "agromet",
     "lat": -39.011256,
-    "lon": -72.321039
+    "lon": -72.321039,
+    "elevacion_m": 208.0
   },
   {
-    "id": "agromet_168",
+    "id": "agromet_inia_168",
     "code_red": "168",
-    "nombre": "Estación INIA Faja Maisan",
+    "nombre": "Estación INIA Faja Maisan, Pitrufquén",
     "sector": "Pitrufquén, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -39.071148,
-    "lon": -72.92198
+    "lon": -72.92198,
+    "elevacion_m": 56.0
   },
   {
-    "id": "agromet_40",
+    "id": "agromet_inia_203",
+    "code_red": "203",
+    "nombre": "Estación INIA Los Arrayanes, Toltén",
+    "sector": "Toltén, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -39.1041699,
+    "lon": -73.1618209,
+    "elevacion_m": 18.0
+  },
+  {
+    "id": "agromet_inia_40",
     "code_red": "40",
-    "nombre": "Estación INIA Cuarta Faja",
+    "nombre": "Estación INIA Cuarta Faja, Gorbea",
     "sector": "Gorbea, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -39.115556,
-    "lon": -72.605278
+    "lon": -72.605278,
+    "elevacion_m": 115.0
   },
   {
-    "id": "agromet_205",
+    "id": "agromet_ext_75",
+    "code_red": "75",
+    "nombre": "Estación DMC Villarrica, Villarrica",
+    "sector": "Villarrica, La Araucanía",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -39.19,
+    "lon": -72.11222,
+    "elevacion_m": 393.0
+  },
+  {
+    "id": "agromet_inia_205",
     "code_red": "205",
-    "nombre": "Estación INIA San Enrique",
+    "nombre": "Estación INIA San Enrique, Pucón",
     "sector": "Pucón, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -39.261711,
-    "lon": -71.868097
+    "lon": -71.868097,
+    "elevacion_m": 279.0
   },
   {
-    "id": "agromet_979",
+    "id": "agromet_inia_140",
+    "code_red": "140",
+    "nombre": "Estación INIA Huiscapi, Villarrica",
+    "sector": "Villarrica, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -39.263333,
+    "lon": -72.398889,
+    "elevacion_m": 266.0
+  },
+  {
+    "id": "agromet_ext_979",
     "code_red": "979",
-    "nombre": "Estación DMC Aeródromo Pucón",
+    "nombre": "Estación DMC Aeródromo Pucón, Pucón",
     "sector": "Pucón, La Araucanía",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -39.29111,
-    "lon": -71.91694
+    "lon": -71.91694,
+    "elevacion_m": 264.0
   },
   {
-    "id": "agromet_208",
+    "id": "agromet_inia_142",
+    "code_red": "142",
+    "nombre": "Estación INIA Puala, Curarrehue",
+    "sector": "Curarrehue, La Araucanía",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -39.381944,
+    "lon": -71.5725,
+    "elevacion_m": 393.0
+  },
+  {
+    "id": "agromet_inia_208",
     "code_red": "208",
-    "nombre": "Estación INIA La Paz",
+    "nombre": "Estación INIA La Paz, Loncoche",
     "sector": "Loncoche, La Araucanía",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -39.428135,
-    "lon": -72.718521
+    "lon": -72.718521,
+    "elevacion_m": 86.0
   },
   {
-    "id": "agromet_995",
+    "id": "agromet_ext_995",
     "code_red": "995",
-    "nombre": "Estación ARAUCO Llongo",
+    "nombre": "Estación ARAUCO Llongo, Mariquina",
     "sector": "Mariquina, Los Ríos",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -39.551265,
-    "lon": -72.90805
+    "lon": -72.90805,
+    "elevacion_m": 38.0
   },
   {
-    "id": "agromet_82",
+    "id": "agromet_ext_82",
     "code_red": "82",
-    "nombre": "Estación DMC Panguipulli",
+    "nombre": "Estación DMC Panguipulli, Panguipulli",
     "sector": "Panguipulli, Los Ríos",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -39.63444,
-    "lon": -72.34389
+    "lon": -72.34389,
+    "elevacion_m": 229.0
   },
   {
-    "id": "agromet_987",
+    "id": "agromet_ext_80",
+    "code_red": "80",
+    "nombre": "Estación DMC Aeropuerto Pichoy, Mariquina",
+    "sector": "Mariquina, Los Ríos",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -39.65056,
+    "lon": -73.08083,
+    "elevacion_m": 21.0
+  },
+  {
+    "id": "agromet_inia_102",
+    "code_red": "102",
+    "nombre": "Estación INIA Santa Carla, Los Lagos",
+    "sector": "Los Lagos, Los Ríos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -39.679571,
+    "lon": -72.611389,
+    "elevacion_m": 264.0
+  },
+  {
+    "id": "agromet_inia_99",
+    "code_red": "99",
+    "nombre": "Estación INIA Las Lomas, Máfil",
+    "sector": "Máfil, Los Ríos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -39.700929,
+    "lon": -73.014793,
+    "elevacion_m": 22.0
+  },
+  {
+    "id": "agromet_ext_987",
     "code_red": "987",
-    "nombre": "Estación ARAUCO Parque Oncol",
+    "nombre": "Estación ARAUCO Parque Oncol, Valdivia",
     "sector": "Valdivia, Los Ríos",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -39.702653,
-    "lon": -73.326053
+    "lon": -73.326053,
+    "elevacion_m": 255.0
   },
   {
-    "id": "agromet_151",
+    "id": "agromet_inia_151",
     "code_red": "151",
-    "nombre": "Estación UACh Austral",
+    "nombre": "Estación UACh Austral, Valdivia",
     "sector": "Valdivia, Los Ríos",
     "red": "Red Agromet (UACh)",
     "tipo_api": "agromet",
     "lat": -39.787428,
-    "lon": -73.234546
+    "lon": -73.234546,
+    "elevacion_m": 15.0
   },
   {
-    "id": "agromet_985",
+    "id": "agromet_ext_81",
+    "code_red": "81",
+    "nombre": "Estación DMC Isla Teja - UACh, Valdivia",
+    "sector": "Valdivia, Los Ríos",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -39.79944,
+    "lon": -73.25833,
+    "elevacion_m": 15.0
+  },
+  {
+    "id": "agromet_ext_985",
     "code_red": "985",
-    "nombre": "Estación ARAUCO Pancul",
+    "nombre": "Estación ARAUCO Pancul, Los Lagos",
     "sector": "Los Lagos, Los Ríos",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -39.848681,
-    "lon": -72.819804
+    "lon": -72.819804,
+    "elevacion_m": 34.0
   },
   {
-    "id": "agromet_112",
+    "id": "agromet_ext_112",
     "code_red": "112",
-    "nombre": "Estación DMC Corral - ESSAL",
+    "nombre": "Estación DMC Corral - ESSAL, Corral",
     "sector": "Corral, Los Ríos",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -39.88806,
-    "lon": -73.43333
+    "lon": -73.43333,
+    "elevacion_m": 13.0
   },
   {
-    "id": "agromet_1027",
+    "id": "agromet_ext_1027",
     "code_red": "1027",
-    "nombre": "Estación COLUN El Copihue",
+    "nombre": "Estación COLUN El Copihue, Paillaco",
     "sector": "Paillaco, Los Ríos",
     "red": "Red Agromet (COLUN)",
     "tipo_api": "agromet",
     "lat": -40.041222,
-    "lon": -72.746767
+    "lon": -72.746767,
+    "elevacion_m": 170.0
   },
   {
-    "id": "agromet_1010",
+    "id": "agromet_ext_1010",
     "code_red": "1010",
-    "nombre": "Estación DMC Fundo el Maitén",
+    "nombre": "Estación DMC Fundo el Maitén, Paillaco",
     "sector": "Paillaco, Los Ríos",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -40.08361,
-    "lon": -72.65889
+    "lon": -72.65889,
+    "elevacion_m": 194.0
   },
   {
-    "id": "agromet_1026",
+    "id": "agromet_ext_1026",
     "code_red": "1026",
-    "nombre": "Estación COLUN La Estrella",
+    "nombre": "Estación COLUN La Estrella, Futrono",
     "sector": "Futrono, Los Ríos",
     "red": "Red Agromet (COLUN)",
     "tipo_api": "agromet",
     "lat": -40.103339,
-    "lon": -72.419044
+    "lon": -72.419044,
+    "elevacion_m": 192.0
   },
   {
-    "id": "agromet_984",
+    "id": "agromet_inia_72",
+    "code_red": "72",
+    "nombre": "Estación INIA Lago Verde, Paillaco",
+    "sector": "Paillaco, Los Ríos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -40.165081,
+    "lon": -72.633843,
+    "elevacion_m": 248.0
+  },
+  {
+    "id": "agromet_inia_132",
+    "code_red": "132",
+    "nombre": "Estación INIA Palermo, La Unión",
+    "sector": "La Unión, Los Ríos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -40.259225,
+    "lon": -73.106543,
+    "elevacion_m": 78.0
+  },
+  {
+    "id": "agromet_ext_984",
     "code_red": "984",
-    "nombre": "Estación ARAUCO La Unión",
+    "nombre": "Estación ARAUCO La Unión, La Unión",
     "sector": "La Unión, Los Ríos",
     "red": "Red Agromet (ARAUCO)",
     "tipo_api": "agromet",
     "lat": -40.309847,
-    "lon": -73.026404
+    "lon": -73.026404,
+    "elevacion_m": 76.0
   },
   {
-    "id": "agromet_976",
+    "id": "agromet_ext_976",
     "code_red": "976",
-    "nombre": "Estación MMA-DMC Liceo Agrotec",
+    "nombre": "Estación MMA-DMC Liceo Agrotec, La Unión",
     "sector": "La Unión, Los Ríos",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -40.31,
-    "lon": -73.00389
+    "lon": -73.00389,
+    "elevacion_m": 60.0
   },
   {
-    "id": "agromet_1023",
+    "id": "agromet_ext_1023",
     "code_red": "1023",
-    "nombre": "Estación COLUN Ignao",
+    "nombre": "Estación COLUN Ignao, Río Bueno",
     "sector": "Río Bueno, Los Ríos",
     "red": "Red Agromet (COLUN)",
     "tipo_api": "agromet",
     "lat": -40.339544,
-    "lon": -72.576714
+    "lon": -72.576714,
+    "elevacion_m": 235.0
   },
   {
-    "id": "agromet_1025",
+    "id": "agromet_ext_1025",
     "code_red": "1025",
-    "nombre": "Estación COLUN Piruco",
+    "nombre": "Estación COLUN Piruco, Río Bueno",
     "sector": "Río Bueno, Los Ríos",
     "red": "Red Agromet (COLUN)",
     "tipo_api": "agromet",
     "lat": -40.34154,
-    "lon": -72.925813
+    "lon": -72.925813,
+    "elevacion_m": 76.0
   },
   {
-    "id": "agromet_71",
+    "id": "agromet_inia_133",
+    "code_red": "133",
+    "nombre": "Estación INIA Quilacahuin, San Pablo",
+    "sector": "San Pablo, Los Lagos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -40.347946,
+    "lon": -73.307493,
+    "elevacion_m": 17.0
+  },
+  {
+    "id": "agromet_inia_71",
     "code_red": "71",
-    "nombre": "Estación INIA El Cardal",
+    "nombre": "Estación INIA El Cardal, Río Bueno",
     "sector": "Río Bueno, Los Ríos",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -40.386737,
-    "lon": -72.919058
+    "lon": -72.919058,
+    "elevacion_m": 80.0
   },
   {
-    "id": "agromet_1024",
+    "id": "agromet_ext_1024",
     "code_red": "1024",
-    "nombre": "Estación COLUN Crucero",
+    "nombre": "Estación COLUN Crucero, Río Bueno",
     "sector": "Río Bueno, Los Ríos",
     "red": "Red Agromet (COLUN)",
     "tipo_api": "agromet",
     "lat": -40.44107,
-    "lon": -72.834118
+    "lon": -72.834118,
+    "elevacion_m": 96.0
   },
   {
-    "id": "agromet_83",
+    "id": "agromet_inia_19",
+    "code_red": "19",
+    "nombre": "Estación INIA Remehue, Osorno",
+    "sector": "Osorno, Los Lagos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -40.522204,
+    "lon": -73.063655,
+    "elevacion_m": 73.0
+  },
+  {
+    "id": "agromet_ext_83",
     "code_red": "83",
-    "nombre": "Estación DMC Bahía Mansa",
+    "nombre": "Estación DMC Bahía Mansa, San Juan de la Costa",
     "sector": "San Juan de la Costa, Los Lagos",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -40.58667,
-    "lon": -73.73528
+    "lon": -73.73528,
+    "elevacion_m": 102.0
   },
   {
-    "id": "agromet_201",
+    "id": "agromet_ext_76",
+    "code_red": "76",
+    "nombre": "Estación DMC Adolfo Matthei, Osorno",
+    "sector": "Osorno, Los Lagos",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -40.59056,
+    "lon": -73.11222,
+    "elevacion_m": 53.0
+  },
+  {
+    "id": "agromet_inia_155",
+    "code_red": "155",
+    "nombre": "Estación INIA Rucatayo, Río Bueno",
+    "sector": "Río Bueno, Los Ríos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -40.598896,
+    "lon": -72.586541,
+    "elevacion_m": 278.0
+  },
+  {
+    "id": "agromet_ext_201",
     "code_red": "201",
-    "nombre": "Estación DMC Aeropuerto de Cañal Bajo",
+    "nombre": "Estación DMC Aeropuerto de Cañal Bajo, Osorno",
     "sector": "Osorno, Los Lagos",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -40.61444,
-    "lon": -73.0575
+    "lon": -73.0575,
+    "elevacion_m": 61.0
   },
   {
-    "id": "agromet_45",
+    "id": "agromet_inia_201",
+    "code_red": "201",
+    "nombre": "Estación INIA Huacamapu, San Juan de la Costa",
+    "sector": "San Juan de la Costa, Los Lagos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -40.659175,
+    "lon": -73.491723,
+    "elevacion_m": 144.0
+  },
+  {
+    "id": "agromet_inia_104",
+    "code_red": "104",
+    "nombre": "Estación INIA Desagüe Rupanco, Puyehue",
+    "sector": "Puyehue, Los Lagos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -40.752634,
+    "lon": -72.663894,
+    "elevacion_m": 272.0
+  },
+  {
+    "id": "agromet_inia_45",
     "code_red": "45",
-    "nombre": "Estación INIA La Pampa",
+    "nombre": "Estación INIA La Pampa, Purranque",
     "sector": "Purranque, Los Lagos",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -40.860639,
-    "lon": -73.156917
+    "lon": -73.156917,
+    "elevacion_m": 96.0
   },
   {
-    "id": "agromet_326",
+    "id": "agromet_inia_326",
     "code_red": "326",
-    "nombre": "Estación INIA Chiriuco",
+    "nombre": "Estación INIA Chiriuco, Puerto Octay",
     "sector": "Puerto Octay, Los Lagos",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -40.881924,
-    "lon": -72.839258
+    "lon": -72.839258,
+    "elevacion_m": 178.0
   },
   {
-    "id": "agromet_70",
+    "id": "agromet_inia_70",
     "code_red": "70",
-    "nombre": "Estación INIA Octay",
+    "nombre": "Estación INIA Octay, Puerto Octay",
     "sector": "Puerto Octay, Los Lagos",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -40.957156,
-    "lon": -72.885495
+    "lon": -72.885495,
+    "elevacion_m": 178.0
   },
   {
-    "id": "agromet_50",
+    "id": "agromet_inia_50",
     "code_red": "50",
-    "nombre": "Estación INIA Quilanto",
+    "nombre": "Estación INIA Quilanto, Frutillar",
     "sector": "Frutillar, Los Lagos",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -41.026123,
-    "lon": -73.007003
+    "lon": -73.007003,
+    "elevacion_m": 161.0
   },
   {
-    "id": "agromet_68",
+    "id": "agromet_inia_68",
     "code_red": "68",
-    "nombre": "Estación INIA Polizones",
+    "nombre": "Estación INIA Polizones, Fresia",
     "sector": "Fresia, Los Lagos",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -41.115147,
-    "lon": -73.376628
+    "lon": -73.376628,
+    "elevacion_m": 137.0
   },
   {
-    "id": "agromet_1022",
+    "id": "agromet_inia_69",
+    "code_red": "69",
+    "nombre": "Estación INIA Colegual, Llanquihue",
+    "sector": "Llanquihue, Los Lagos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -41.221843,
+    "lon": -73.259856,
+    "elevacion_m": 177.0
+  },
+  {
+    "id": "agromet_inia_105",
+    "code_red": "105",
+    "nombre": "Estación INIA Ensenada, Puerto Varas",
+    "sector": "Puerto Varas, Los Lagos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -41.233469,
+    "lon": -72.516119,
+    "elevacion_m": 76.0
+  },
+  {
+    "id": "agromet_ext_1022",
     "code_red": "1022",
-    "nombre": "Estación ULMOS Casona Los Ulmos",
+    "nombre": "Estación ULMOS Casona Los Ulmos, Puerto Varas",
     "sector": "Puerto Varas, Los Lagos",
     "red": "Red Agromet (ULMOS)",
     "tipo_api": "agromet",
     "lat": -41.27557,
-    "lon": -72.56363
+    "lon": -72.56363,
+    "elevacion_m": 246.0
   },
   {
-    "id": "agromet_1021",
+    "id": "agromet_ext_1021",
     "code_red": "1021",
-    "nombre": "Estación ULMOS Pampa Los Ulmos ",
+    "nombre": "Estación ULMOS Pampa Los Ulmos, Puerto Varas",
     "sector": "Puerto Varas, Los Lagos",
     "red": "Red Agromet (ULMOS)",
     "tipo_api": "agromet",
     "lat": -41.29153,
-    "lon": -72.57928
+    "lon": -72.57928,
+    "elevacion_m": 511.0
   },
   {
-    "id": "agromet_114",
+    "id": "agromet_ext_114",
     "code_red": "114",
-    "nombre": "Estación DMC Puerto Varas - ESSAL",
+    "nombre": "Estación DMC Puerto Varas - ESSAL, Puerto Varas",
     "sector": "Puerto Varas, Los Lagos",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -41.32444,
-    "lon": -72.97667
+    "lon": -72.97667,
+    "elevacion_m": 70.0
   },
   {
-    "id": "agromet_113",
+    "id": "agromet_ext_113",
     "code_red": "113",
-    "nombre": "Estación DMC Aeropuerto El Tepual ",
+    "nombre": "Estación DMC Aeropuerto El Tepual, Puerto Montt",
     "sector": "Puerto Montt, Los Lagos",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -41.435,
-    "lon": -73.09778
+    "lon": -73.09778,
+    "elevacion_m": 85.0
   },
   {
-    "id": "agromet_85",
+    "id": "agromet_ext_85",
     "code_red": "85",
-    "nombre": "Estación DMC Escuela Mirasol",
+    "nombre": "Estación DMC Escuela Mirasol, Puerto Montt",
     "sector": "Puerto Montt, Los Lagos",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -41.47944,
-    "lon": -72.96889
+    "lon": -72.96889,
+    "elevacion_m": 100.0
   },
   {
-    "id": "agromet_324",
+    "id": "agromet_inia_26",
+    "code_red": "26",
+    "nombre": "Estación INIA Los Canelos, Los Muermos",
+    "sector": "Los Muermos, Los Lagos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -41.481326,
+    "lon": -73.474378,
+    "elevacion_m": 105.0
+  },
+  {
+    "id": "agromet_inia_324",
     "code_red": "324",
-    "nombre": "Estación INIA Putenio",
+    "nombre": "Estación INIA Putenio, Calbuco",
     "sector": "Calbuco, Los Lagos",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -41.670875,
-    "lon": -73.133367
+    "lon": -73.133367,
+    "elevacion_m": 70.0
   },
   {
-    "id": "agromet_207",
+    "id": "agromet_inia_207",
     "code_red": "207",
-    "nombre": "Estación INIA Carelmapu",
+    "nombre": "Estación INIA Carelmapu, Maullín",
     "sector": "Maullín, Los Lagos",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -41.709733,
-    "lon": -73.6722625
+    "lon": -73.6722625,
+    "elevacion_m": 29.0
   },
   {
-    "id": "agromet_309",
+    "id": "agromet_ext_84",
+    "code_red": "84",
+    "nombre": "Estación DMC Liceo Agrícola de Ancud, Ancud",
+    "sector": "Ancud, Los Lagos",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -41.86611,
+    "lon": -73.81639,
+    "elevacion_m": 31.0
+  },
+  {
+    "id": "agromet_inia_25",
+    "code_red": "25",
+    "nombre": "Estación INIA Butalcura, Dalcahue",
+    "sector": "Dalcahue, Los Lagos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -42.261762,
+    "lon": -73.650812,
+    "elevacion_m": 148.0
+  },
+  {
+    "id": "agromet_inia_309",
     "code_red": "309",
-    "nombre": "Estación INIA Tenaún",
+    "nombre": "Estación INIA Tenaún, Dalcahue",
     "sector": "Dalcahue, Los Lagos",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -42.312857,
-    "lon": -73.399934
+    "lon": -73.399934,
+    "elevacion_m": 130.0
   },
   {
-    "id": "agromet_230",
+    "id": "agromet_inia_20",
+    "code_red": "20",
+    "nombre": "Estación INIA Huyar Alto, Curaco de Vélez",
+    "sector": "Curaco de Vélez, Los Lagos",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -42.403919,
+    "lon": -73.568192,
+    "elevacion_m": 155.0
+  },
+  {
+    "id": "agromet_inia_230",
     "code_red": "230",
-    "nombre": "Estación INIA Pid-Pid",
+    "nombre": "Estación INIA Pid-Pid, Castro",
     "sector": "Castro, Los Lagos",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -42.411747,
-    "lon": -73.783913
+    "lon": -73.783913,
+    "elevacion_m": 81.0
   },
   {
-    "id": "agromet_231",
+    "id": "agromet_inia_231",
     "code_red": "231",
-    "nombre": "Estación INIA Quilquico",
+    "nombre": "Estación INIA Quilquico, Castro",
     "sector": "Castro, Los Lagos",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -42.491512,
-    "lon": -73.708817
+    "lon": -73.708817,
+    "elevacion_m": 109.0
   },
   {
-    "id": "agromet_232",
+    "id": "agromet_inia_232",
     "code_red": "232",
-    "nombre": "Estación INIA Isla Chelin",
+    "nombre": "Estación INIA Isla Chelin, Castro",
     "sector": "Castro, Los Lagos",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -42.589153,
-    "lon": -73.532906
+    "lon": -73.532906,
+    "elevacion_m": 33.0
   },
   {
-    "id": "agromet_67",
+    "id": "agromet_inia_67",
     "code_red": "67",
-    "nombre": "Estación INIA Tara",
+    "nombre": "Estación INIA Tara, Chonchi",
     "sector": "Chonchi, Los Lagos",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -42.703731,
-    "lon": -73.788517
+    "lon": -73.788517,
+    "elevacion_m": 145.0
   },
   {
-    "id": "agromet_86",
+    "id": "agromet_ext_86",
     "code_red": "86",
-    "nombre": "Estación DMC Nueva Chaitén",
+    "nombre": "Estación DMC Nueva Chaitén, Chaitén",
     "sector": "Chaitén, Los Lagos",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -42.785,
-    "lon": -72.83472
+    "lon": -72.83472,
+    "elevacion_m": 10.0
   },
   {
-    "id": "agromet_193",
+    "id": "agromet_ext_193",
     "code_red": "193",
-    "nombre": "Estación DMC Aeródromo de Quellón",
+    "nombre": "Estación DMC Aeródromo de Quellón, Quellón",
     "sector": "Quellón, Los Lagos",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -43.13417,
-    "lon": -73.63194
+    "lon": -73.63194,
+    "elevacion_m": 13.0
   },
   {
-    "id": "agromet_200",
+    "id": "agromet_ext_200",
     "code_red": "200",
-    "nombre": "Estación DMC Aeródromo de Futaleufú",
+    "nombre": "Estación DMC Aeródromo de Futaleufú, Futaleufú",
     "sector": "Futaleufú, Los Lagos",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -43.18889,
-    "lon": -71.85222
+    "lon": -71.85222,
+    "elevacion_m": 347.0
   },
   {
-    "id": "agromet_198",
+    "id": "agromet_ext_198",
     "code_red": "198",
-    "nombre": "Estación DMC Aeródromo Melinka",
+    "nombre": "Estación DMC Aeródromo Melinka, Guaitecas",
     "sector": "Guaitecas, Aysén",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -43.89667,
-    "lon": -73.74028
+    "lon": -73.74028,
+    "elevacion_m": 11.0
   },
   {
-    "id": "agromet_87",
+    "id": "agromet_inia_166",
+    "code_red": "166",
+    "nombre": "Estación INIA La Junta, Cisnes",
+    "sector": "Cisnes, Aysén",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -43.916933,
+    "lon": -72.387343,
+    "elevacion_m": 40.0
+  },
+  {
+    "id": "agromet_ext_87",
     "code_red": "87",
-    "nombre": "Estación DMC Puyuhuapi",
+    "nombre": "Estación DMC Puyuhuapi, Cisnes",
     "sector": "Cisnes, Aysén",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -44.32333,
-    "lon": -72.55528
+    "lon": -72.55528,
+    "elevacion_m": 11.0
   },
   {
-    "id": "agromet_234",
+    "id": "agromet_inia_234",
     "code_red": "234",
-    "nombre": "Estación INIA Arroyo el Gato",
+    "nombre": "Estación INIA Arroyo el Gato, Coyhaique",
     "sector": "Coyhaique, Aysén",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -45.162902,
-    "lon": -71.943627
+    "lon": -71.943627,
+    "elevacion_m": 504.0
   },
   {
-    "id": "agromet_301",
+    "id": "agromet_inia_301",
     "code_red": "301",
-    "nombre": "Estación INIA Ñirehuao",
+    "nombre": "Estación INIA Ñirehuao, Coyhaique",
     "sector": "Coyhaique, Aysén",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -45.249744,
-    "lon": -71.69425
+    "lon": -71.69425,
+    "elevacion_m": 510.0
   },
   {
-    "id": "agromet_88",
+    "id": "agromet_ext_88",
     "code_red": "88",
-    "nombre": "Estación DMC Aeródromo Puerto Aysén",
+    "nombre": "Estación DMC Aeródromo Puerto Aysén, Aisén",
     "sector": "Aisén, Aysén",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -45.39944,
-    "lon": -72.67722
+    "lon": -72.67722,
+    "elevacion_m": 11.0
   },
   {
-    "id": "agromet_197",
+    "id": "agromet_ext_197",
     "code_red": "197",
-    "nombre": "Estación MMA-DMC Mirador Marchant",
+    "nombre": "Estación MMA-DMC Mirador Marchant, Coyhaique",
     "sector": "Coyhaique, Aysén",
     "red": "Red Agromet (MMA-DMC)",
     "tipo_api": "agromet",
     "lat": -45.52528,
-    "lon": -72.09806
+    "lon": -72.09806,
+    "elevacion_m": 438.0
   },
   {
-    "id": "agromet_98",
+    "id": "agromet_inia_98",
     "code_red": "98",
-    "nombre": "Estación INIA El Claro",
+    "nombre": "Estación INIA El Claro, Coyhaique",
     "sector": "Coyhaique, Aysén",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -45.5812,
-    "lon": -72.092267
+    "lon": -72.092267,
+    "elevacion_m": 319.0
   },
   {
-    "id": "agromet_89",
+    "id": "agromet_ext_89",
     "code_red": "89",
-    "nombre": "Estación DMC Aeródromo Teniente Vidal",
+    "nombre": "Estación DMC Aeródromo Teniente Vidal, Coyhaique",
     "sector": "Coyhaique, Aysén",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -45.59389,
-    "lon": -72.10861
+    "lon": -72.10861,
+    "elevacion_m": 310.0
   },
   {
-    "id": "agromet_222",
+    "id": "agromet_inia_16",
+    "code_red": "16",
+    "nombre": "Estación INIA Tamelaike, Coyhaique",
+    "sector": "Coyhaique, Aysén",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -45.759114,
+    "lon": -72.061843,
+    "elevacion_m": 470.0
+  },
+  {
+    "id": "agromet_ext_222",
     "code_red": "222",
-    "nombre": "Estación DMC Aeródromo Balmaceda",
+    "nombre": "Estación DMC Aeródromo Balmaceda, Coyhaique",
     "sector": "Coyhaique, Aysén",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -45.91833,
-    "lon": -71.67778
+    "lon": -71.67778,
+    "elevacion_m": 517.0
   },
   {
-    "id": "agromet_44",
+    "id": "agromet_inia_44",
     "code_red": "44",
-    "nombre": "Estación INIA Vista Hermosa",
+    "nombre": "Estación INIA Vista Hermosa, Coyhaique",
     "sector": "Coyhaique, Aysén",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -45.936818,
-    "lon": -71.835342
+    "lon": -71.835342,
+    "elevacion_m": 740.0
   },
   {
-    "id": "agromet_226",
+    "id": "agromet_inia_226",
     "code_red": "226",
-    "nombre": "Estación INIA Bajada Ibañez",
+    "nombre": "Estación INIA Bajada Ibañez, Río Ibáñez",
     "sector": "Río Ibáñez, Aysén",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -46.180619,
-    "lon": -72.043261
+    "lon": -72.043261,
+    "elevacion_m": 523.0
   },
   {
-    "id": "agromet_306",
+    "id": "agromet_inia_306",
     "code_red": "306",
-    "nombre": "Estación INIA Puerto Ibáñez",
+    "nombre": "Estación INIA Puerto Ibáñez, Río Ibáñez",
     "sector": "Río Ibáñez, Aysén",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -46.278309,
-    "lon": -71.941433
+    "lon": -71.941433,
+    "elevacion_m": 225.0
   },
   {
-    "id": "agromet_90",
+    "id": "agromet_inia_13",
+    "code_red": "13",
+    "nombre": "Estación INIA Chile Chico, Chile Chico",
+    "sector": "Chile Chico, Aysén",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -46.5432423,
+    "lon": -71.69929765,
+    "elevacion_m": 213.0
+  },
+  {
+    "id": "agromet_inia_32",
+    "code_red": "32",
+    "nombre": "Estación INIA Cochrane, Cochrane",
+    "sector": "Cochrane, Aysén",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -47.24173333,
+    "lon": -72.58220278,
+    "elevacion_m": 246.0
+  },
+  {
+    "id": "agromet_ext_66",
+    "code_red": "66",
+    "nombre": "Estación UCONCE-CEAZA Tortel, Tortel",
+    "sector": "Tortel, Aysén",
+    "red": "Red Agromet (UCONCE-CEAZA)",
+    "tipo_api": "agromet",
+    "lat": -47.80361,
+    "lon": -73.54117,
+    "elevacion_m": 0
+  },
+  {
+    "id": "agromet_ext_90",
     "code_red": "90",
-    "nombre": "Estación DMC Subcomisaría de Villa O'Higgins",
+    "nombre": "Estación DMC Subcomisaría de Villa O'Higgins, O’Higgins",
     "sector": "O’Higgins, Aysén",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -48.47139,
-    "lon": -72.56028
+    "lon": -72.56028,
+    "elevacion_m": 280.0
   },
   {
-    "id": "agromet_159",
+    "id": "agromet_inia_159",
     "code_red": "159",
-    "nombre": "Estación INIA Cerro Castillo",
+    "nombre": "Estación INIA Cerro Castillo, Torres del Paine",
     "sector": "Torres del Paine, Magallanes",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -51.176975,
-    "lon": -72.435811
+    "lon": -72.435811,
+    "elevacion_m": 115.0
   },
   {
-    "id": "agromet_956",
+    "id": "agromet_ext_956",
     "code_red": "956",
-    "nombre": "Estación DMC Río Serrano",
+    "nombre": "Estación DMC Río Serrano, Torres del Paine",
     "sector": "Torres del Paine, Magallanes",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -51.21667,
-    "lon": -72.97028
+    "lon": -72.97028,
+    "elevacion_m": 22.0
   },
   {
-    "id": "agromet_339",
+    "id": "agromet_inia_339",
     "code_red": "339",
-    "nombre": "Estación GORE Complejo Torres del Paine",
+    "nombre": "Estación GORE Complejo Torres del Paine, Torres del Paine",
     "sector": "Torres del Paine, Magallanes",
     "red": "Red Agromet (GORE)",
     "tipo_api": "agromet",
     "lat": -51.386105,
-    "lon": -72.78492
+    "lon": -72.78492,
+    "elevacion_m": 51.0
   },
   {
-    "id": "agromet_91",
+    "id": "agromet_ext_91",
     "code_red": "91",
-    "nombre": "Estación DMC Aeródromo Teniente Gallardo",
+    "nombre": "Estación DMC Aeródromo Teniente Gallardo, Natales",
     "sector": "Natales, Magallanes",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -51.66722,
-    "lon": -72.52889
+    "lon": -72.52889,
+    "elevacion_m": 69.0
   },
   {
-    "id": "agromet_338",
+    "id": "agromet_inia_35",
+    "code_red": "35",
+    "nombre": "Estación INIA Puerto Natales, Natales",
+    "sector": "Natales, Magallanes",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -51.698367,
+    "lon": -72.483082,
+    "elevacion_m": 80.0
+  },
+  {
+    "id": "agromet_inia_338",
     "code_red": "338",
-    "nombre": "Estación GORE Estancia Berta",
+    "nombre": "Estación GORE Estancia Berta, Natales",
     "sector": "Natales, Magallanes",
     "red": "Red Agromet (GORE)",
     "tipo_api": "agromet",
     "lat": -52.007645,
-    "lon": -72.037323
+    "lon": -72.037323,
+    "elevacion_m": 168.0
   },
   {
-    "id": "agromet_336",
+    "id": "agromet_inia_336",
     "code_red": "336",
-    "nombre": "Estación GORE Estancia Laguna Blanca",
+    "nombre": "Estación GORE Estancia Laguna Blanca, Laguna Blanca",
     "sector": "Laguna Blanca, Magallanes",
     "red": "Red Agromet (GORE)",
     "tipo_api": "agromet",
     "lat": -52.26881,
-    "lon": -71.189728
+    "lon": -71.189728,
+    "elevacion_m": 201.0
   },
   {
-    "id": "agromet_94",
+    "id": "agromet_ext_94",
     "code_red": "94",
-    "nombre": "Estación DMC Villa Tehuelche",
+    "nombre": "Estación DMC Villa Tehuelche, Laguna Blanca",
     "sector": "Laguna Blanca, Magallanes",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -52.42889,
-    "lon": -71.41611
+    "lon": -71.41611,
+    "elevacion_m": 176.0
   },
   {
-    "id": "agromet_219",
+    "id": "agromet_inia_219",
     "code_red": "219",
-    "nombre": "Estación INIA Estancia 5 de Enero",
+    "nombre": "Estación INIA Estancia 5 de Enero, San Gregorio",
     "sector": "San Gregorio, Magallanes",
     "red": "Red Agromet (INIA)",
     "tipo_api": "agromet",
     "lat": -52.432478,
-    "lon": -70.360583
+    "lon": -70.360583,
+    "elevacion_m": 113.0
   },
   {
-    "id": "agromet_335",
+    "id": "agromet_inia_335",
     "code_red": "335",
-    "nombre": "Estación GORE Estancia El Ovejero",
+    "nombre": "Estación GORE Estancia El Ovejero, Laguna Blanca",
     "sector": "Laguna Blanca, Magallanes",
     "red": "Red Agromet (GORE)",
     "tipo_api": "agromet",
     "lat": -52.495389,
-    "lon": -71.392194
+    "lon": -71.392194,
+    "elevacion_m": 131.0
   },
   {
-    "id": "agromet_337",
+    "id": "agromet_inia_337",
     "code_red": "337",
-    "nombre": "Estación GORE Estancia Skyring",
+    "nombre": "Estación GORE Estancia Skyring, Río Verde",
     "sector": "Río Verde, Magallanes",
     "red": "Red Agromet (GORE)",
     "tipo_api": "agromet",
     "lat": -52.527622,
-    "lon": -71.936264
+    "lon": -71.936264,
+    "elevacion_m": 56.0
   },
   {
-    "id": "agromet_176",
+    "id": "agromet_inia_37",
+    "code_red": "37",
+    "nombre": "Estación INIA Kampenaike, Laguna Blanca",
+    "sector": "Laguna Blanca, Magallanes",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -52.61204835,
+    "lon": -70.9432231,
+    "elevacion_m": 6.0
+  },
+  {
+    "id": "agromet_ext_176",
     "code_red": "176",
-    "nombre": "Estación DMC Cerro Sombrero MA",
+    "nombre": "Estación DMC Cerro Sombrero MA, Primavera",
     "sector": "Primavera, Magallanes",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -52.77639,
-    "lon": -69.29472
+    "lon": -69.29472,
+    "elevacion_m": 64.0
   },
   {
-    "id": "agromet_342",
+    "id": "agromet_inia_83",
+    "code_red": "83",
+    "nombre": "Estación INIA Tierra del Fuego, Primavera",
+    "sector": "Primavera, Magallanes",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -52.805431,
+    "lon": -69.273691,
+    "elevacion_m": 58.0
+  },
+  {
+    "id": "agromet_inia_342",
     "code_red": "342",
-    "nombre": "Estación GORE Rita",
+    "nombre": "Estación GORE Rita, Primavera",
     "sector": "Primavera, Magallanes",
     "red": "Red Agromet (GORE)",
     "tipo_api": "agromet",
     "lat": -52.833639,
-    "lon": -69.715389
+    "lon": -69.715389,
+    "elevacion_m": 46.0
   },
   {
-    "id": "agromet_341",
+    "id": "agromet_ext_223",
+    "code_red": "223",
+    "nombre": "Estación DMC Aeropuerto Carlos Ibañez, Punta Arenas",
+    "sector": "Punta Arenas, Magallanes",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -53.00167,
+    "lon": -70.83861,
+    "elevacion_m": 36.0
+  },
+  {
+    "id": "agromet_inia_341",
     "code_red": "341",
-    "nombre": "Estación GORE Rosita",
+    "nombre": "Estación GORE Rosita, Porvenir",
     "sector": "Porvenir, Magallanes",
     "red": "Red Agromet (GORE)",
     "tipo_api": "agromet",
     "lat": -53.023944,
-    "lon": -68.807222
+    "lon": -68.807222,
+    "elevacion_m": 85.0
   },
   {
-    "id": "agromet_92",
+    "id": "agromet_inia_103",
+    "code_red": "103",
+    "nombre": "Estación INIA Isla Riesco, Río Verde",
+    "sector": "Río Verde, Magallanes",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -53.030495,
+    "lon": -71.933637,
+    "elevacion_m": 68.0
+  },
+  {
+    "id": "agromet_inia_82",
+    "code_red": "82",
+    "nombre": "Estación INIA Punta Arenas Rural, Punta Arenas",
+    "sector": "Punta Arenas, Magallanes",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -53.068313,
+    "lon": -70.873761,
+    "elevacion_m": 50.0
+  },
+  {
+    "id": "agromet_ext_92",
     "code_red": "92",
-    "nombre": "Estación DMC Instituto de la Patagonia",
+    "nombre": "Estación DMC Instituto de la Patagonia, Punta Arenas",
     "sector": "Punta Arenas, Magallanes",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -53.13,
-    "lon": -70.8875
+    "lon": -70.8875,
+    "elevacion_m": 11.0
   },
   {
-    "id": "agromet_93",
+    "id": "agromet_ext_93",
     "code_red": "93",
-    "nombre": "Estación DMC Unidad Aeropolicial",
+    "nombre": "Estación DMC Unidad Aeropolicial, Punta Arenas",
     "sector": "Punta Arenas, Magallanes",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -53.15278,
-    "lon": -70.92639
+    "lon": -70.92639,
+    "elevacion_m": 53.0
   },
   {
-    "id": "agromet_96",
+    "id": "agromet_ext_96",
     "code_red": "96",
-    "nombre": "Estación DMC Escuela Alberto Hurtado",
+    "nombre": "Estación DMC Escuela Alberto Hurtado, Punta Arenas",
     "sector": "Punta Arenas, Magallanes",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -53.16694,
-    "lon": -70.94528
+    "lon": -70.94528,
+    "elevacion_m": 60.0
   },
   {
-    "id": "agromet_95",
+    "id": "agromet_ext_95",
     "code_red": "95",
-    "nombre": "Estación DMC Aeródromo Fuentes Martínez",
+    "nombre": "Estación DMC Aeródromo Fuentes Martínez, Porvenir",
     "sector": "Porvenir, Magallanes",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -53.25361,
-    "lon": -70.32611
+    "lon": -70.32611,
+    "elevacion_m": 25.0
   },
   {
-    "id": "agromet_340",
+    "id": "agromet_inia_222",
+    "code_red": "222",
+    "nombre": "Estación INIA Estancia Zenia, Porvenir",
+    "sector": "Porvenir, Magallanes",
+    "red": "Red Agromet (INIA)",
+    "tipo_api": "agromet",
+    "lat": -53.319496,
+    "lon": -69.698147,
+    "elevacion_m": 151.0
+  },
+  {
+    "id": "agromet_inia_340",
     "code_red": "340",
-    "nombre": "Estación GORE Fueguina",
+    "nombre": "Estación GORE Fueguina, Porvenir",
     "sector": "Porvenir, Magallanes",
     "red": "Red Agromet (GORE)",
     "tipo_api": "agromet",
     "lat": -53.326917,
-    "lon": -70.283222
+    "lon": -70.283222,
+    "elevacion_m": 91.0
   },
   {
-    "id": "agromet_345",
+    "id": "agromet_inia_345",
     "code_red": "345",
-    "nombre": "Estación GORE Tres Hermanos",
+    "nombre": "Estación GORE Tres Hermanos, Porvenir",
     "sector": "Porvenir, Magallanes",
     "red": "Red Agromet (GORE)",
     "tipo_api": "agromet",
     "lat": -53.508569,
-    "lon": -69.175883
+    "lon": -69.175883,
+    "elevacion_m": 199.0
   },
   {
-    "id": "agromet_343",
+    "id": "agromet_inia_343",
     "code_red": "343",
-    "nombre": "Estación GORE Río Grande",
+    "nombre": "Estación GORE Río Grande, Timaukel",
     "sector": "Timaukel, Magallanes",
     "red": "Red Agromet (GORE)",
     "tipo_api": "agromet",
     "lat": -53.893217,
-    "lon": -68.896183
+    "lon": -68.896183,
+    "elevacion_m": 114.0
   },
   {
-    "id": "agromet_115",
+    "id": "agromet_ext_115",
     "code_red": "115",
-    "nombre": "Estación DMC Pampa Guanaco",
+    "nombre": "Estación DMC Pampa Guanaco, Timaukel",
     "sector": "Timaukel, Magallanes",
     "red": "Red Agromet (DMC)",
     "tipo_api": "agromet",
     "lat": -54.05083,
-    "lon": -68.80389
-  },
-  {
-    "id": "redmeteo_rmcl0114",
-    "code_red": "RMCL0114",
-    "nombre": "Estación RedMeteo Arica - Capitanía de Puerto (SERVIMET)",
-    "sector": "Arica - Capitanía de Puerto (SERVIMET), Arica y Parinacota",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0116",
-    "code_red": "RMCL0116",
-    "nombre": "Estación RedMeteo Iquique - Capitanía de Puerto (SERVIMET)",
-    "sector": "Iquique - Capitanía de Puerto (SERVIMET), Tarapacá",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0071",
-    "code_red": "RMCL0071",
-    "nombre": "Estación RedMeteo Iquique - Lic. Bicentenario Minero - UCH",
-    "sector": "Iquique - Lic. Bicentenario Minero - UCH, Tarapacá",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0073",
-    "code_red": "RMCL0073",
-    "nombre": "Estación RedMeteo Alto Hospicio - Las Parcelas",
-    "sector": "Alto Hospicio - Las Parcelas, Tarapacá",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0173",
-    "code_red": "RMCL0173",
-    "nombre": "Estación RedMeteo Calama - TRX Telecom",
-    "sector": "Calama - TRX Telecom, Antofagasta",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0172",
-    "code_red": "RMCL0172",
-    "nombre": "Estación RedMeteo Calama - Hauka Huali Oriente",
-    "sector": "Calama - Hauka Huali Oriente, Antofagasta",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0119",
-    "code_red": "RMCL0119",
-    "nombre": "Estación RedMeteo Mejillones - Capitanía de Puerto (SERVIMET)",
-    "sector": "Mejillones - Capitanía de Puerto (SERVIMET), Antofagasta",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0120",
-    "code_red": "RMCL0120",
-    "nombre": "Estación RedMeteo Taltal - Capitanía de Puerto (SERVIMET)",
-    "sector": "Taltal - Capitanía de Puerto (SERVIMET), Antofagasta",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0121",
-    "code_red": "RMCL0121",
-    "nombre": "Estación RedMeteo Chañaral - Capitanía de Puerto (SERVIMET)",
-    "sector": "Chañaral - Capitanía de Puerto (SERVIMET), Atacama",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0122",
-    "code_red": "RMCL0122",
-    "nombre": "Estación RedMeteo Caldera - Capitanía de Puerto (SERVIMET)",
-    "sector": "Caldera - Capitanía de Puerto (SERVIMET), Atacama",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0165",
-    "code_red": "RMCL0165",
-    "nombre": "Estación RedMeteo Copiapó",
-    "sector": "Copiapó, Atacama",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0123",
-    "code_red": "RMCL0123",
-    "nombre": "Estación RedMeteo Huasco - Capitanía de Puerto (SERVIMET)",
-    "sector": "Huasco - Capitanía de Puerto (SERVIMET), Atacama",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0125",
-    "code_red": "RMCL0125",
-    "nombre": "Estación RedMeteo Coquimbo - Faro Punta Tortuga (SERVIMET)",
-    "sector": "Coquimbo - Faro Punta Tortuga (SERVIMET), Coquimbo",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0062",
-    "code_red": "RMCL0062",
-    "nombre": "Estación RedMeteo La Serena - Peñuelas",
-    "sector": "La Serena - Peñuelas, Coquimbo",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0183",
-    "code_red": "RMCL0183",
-    "nombre": "Estación RedMeteo Combarbalá - Quilitapia",
-    "sector": "Combarbalá - Quilitapia, Coquimbo",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0127",
-    "code_red": "RMCL0127",
-    "nombre": "Estación RedMeteo Los Vilos - Capitanía de Puerto (SERVIMET)",
-    "sector": "Los Vilos - Capitanía de Puerto (SERVIMET), Coquimbo",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0124",
-    "code_red": "RMCL0124",
-    "nombre": "Estación RedMeteo Hanga Roa - Capitanía de Puerto (SERVIMET)",
-    "sector": "Hanga Roa - Capitanía de Puerto (SERVIMET), Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0056",
-    "code_red": "RMCL0056",
-    "nombre": "Estación RedMeteo Pullally",
-    "sector": "Pullally, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0010",
-    "code_red": "RMCL0010",
-    "nombre": "Estación RedMeteo Papudo",
-    "sector": "Papudo, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0170",
-    "code_red": "RMCL0170",
-    "nombre": "Estación RedMeteo Zapallar - Catapilco",
-    "sector": "Zapallar - Catapilco, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0018",
-    "code_red": "RMCL0018",
-    "nombre": "Estación RedMeteo El Melón",
-    "sector": "El Melón, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0128",
-    "code_red": "RMCL0128",
-    "nombre": "Estación RedMeteo Quintero - Capitanía de Puerto (SERVIMET)",
-    "sector": "Quintero - Capitanía de Puerto (SERVIMET), Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0040",
-    "code_red": "RMCL0040",
-    "nombre": "Estación RedMeteo Quintero",
-    "sector": "Quintero, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0031",
-    "code_red": "RMCL0031",
-    "nombre": "Estación RedMeteo La Calera - Colegio Fundadores",
-    "sector": "La Calera - Colegio Fundadores, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0030",
-    "code_red": "RMCL0030",
-    "nombre": "Estación RedMeteo Hijuelas - Centro",
-    "sector": "Hijuelas - Centro, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0045",
-    "code_red": "RMCL0045",
-    "nombre": "Estación RedMeteo Los Andes",
-    "sector": "Los Andes, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0182",
-    "code_red": "RMCL0182",
-    "nombre": "Estación RedMeteo Los Andes - Brisas de Los Andes",
-    "sector": "Los Andes - Brisas de Los Andes, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0084",
-    "code_red": "RMCL0084",
-    "nombre": "Estación RedMeteo Concon - Las Pretas",
-    "sector": "Concon - Las Pretas, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0037",
-    "code_red": "RMCL0037",
-    "nombre": "Estación RedMeteo Concón Rural - Los Eucaliptus",
-    "sector": "Concón Rural - Los Eucaliptus, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0132",
-    "code_red": "RMCL0132",
-    "nombre": "Estación RedMeteo Viña del Mar - FACIMAR, Universidad de Valparaíso (SERVIMET)",
-    "sector": "Viña del Mar - FACIMAR, Universidad de Valparaíso (SERVIMET), Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0079",
-    "code_red": "RMCL0079",
-    "nombre": "Estación RedMeteo Reñaca - Los Almendros",
-    "sector": "Reñaca - Los Almendros, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0020",
-    "code_red": "RMCL0020",
-    "nombre": "Estación RedMeteo Reñaca",
-    "sector": "Reñaca, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0104",
-    "code_red": "RMCL0104",
-    "nombre": "Estación RedMeteo Viña del Mar - Colegio Capellán Pascal",
-    "sector": "Viña del Mar - Colegio Capellán Pascal, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0039",
-    "code_red": "RMCL0039",
-    "nombre": "Estación RedMeteo Viña del Mar - Santa Julia",
-    "sector": "Viña del Mar - Santa Julia, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0054",
-    "code_red": "RMCL0054",
-    "nombre": "Estación RedMeteo Limache",
-    "sector": "Limache, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0131",
-    "code_red": "RMCL0131",
-    "nombre": "Estación RedMeteo Viña del Mar - Club de Yates Recreo (IFOP)",
-    "sector": "Viña del Mar - Club de Yates Recreo (IFOP), Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0162",
-    "code_red": "RMCL0162",
-    "nombre": "Estación RedMeteo Viña del Mar - Villa Dulce Ampliación",
-    "sector": "Viña del Mar - Villa Dulce Ampliación, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0111",
-    "code_red": "RMCL0111",
-    "nombre": "Estación RedMeteo Viña del Mar - Quinta Vergara",
-    "sector": "Viña del Mar - Quinta Vergara, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0130",
-    "code_red": "RMCL0130",
-    "nombre": "Estación RedMeteo Valparaíso - SOCIBER (IFOP)",
-    "sector": "Valparaíso - SOCIBER (IFOP), Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0129",
-    "code_red": "RMCL0129",
-    "nombre": "Estación RedMeteo Valparaíso - Capitanía de Puerto (SERVIMET)",
-    "sector": "Valparaíso - Capitanía de Puerto (SERVIMET), Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0082",
-    "code_red": "RMCL0082",
-    "nombre": "Estación RedMeteo Valparaíso - Cerro Concepción",
-    "sector": "Valparaíso - Cerro Concepción, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0105",
-    "code_red": "RMCL0105",
-    "nombre": "Estación RedMeteo Valparaíso - Geografía PUCV",
-    "sector": "Valparaíso - Geografía PUCV, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0007",
-    "code_red": "RMCL0007",
-    "nombre": "Estación RedMeteo Quilpué - El Belloto",
-    "sector": "Quilpué - El Belloto, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0086",
-    "code_red": "RMCL0086",
-    "nombre": "Estación RedMeteo Viña del Mar - Jardín Botánico",
-    "sector": "Viña del Mar - Jardín Botánico, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0022",
-    "code_red": "RMCL0022",
-    "nombre": "Estación RedMeteo Villa Alemana - Pob Guillermo Marconi",
-    "sector": "Villa Alemana - Pob Guillermo Marconi, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0028",
-    "code_red": "RMCL0028",
-    "nombre": "Estación RedMeteo Villa Alemana - Peña Blanca",
-    "sector": "Villa Alemana - Peña Blanca, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0167",
-    "code_red": "RMCL0167",
-    "nombre": "Estación RedMeteo Placilla de Peñuelas - Salto de Agua",
-    "sector": "Placilla de Peñuelas - Salto de Agua, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0021",
-    "code_red": "RMCL0021",
-    "nombre": "Estación RedMeteo Placilla de Peñuelas",
-    "sector": "Placilla de Peñuelas, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0050",
-    "code_red": "RMCL0050",
-    "nombre": "Estación RedMeteo Casablanca - La Playa",
-    "sector": "Casablanca - La Playa, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0032",
-    "code_red": "RMCL0032",
-    "nombre": "Estación RedMeteo Casablanca - Centro",
-    "sector": "Casablanca - Centro, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0088",
-    "code_red": "RMCL0088",
-    "nombre": "Estación RedMeteo Quilaicillo",
-    "sector": "Quilaicillo, Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0133",
-    "code_red": "RMCL0133",
-    "nombre": "Estación RedMeteo San Antonio - Faro Punta Panul (SERVIMET)",
-    "sector": "San Antonio - Faro Punta Panul (SERVIMET), Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0126",
-    "code_red": "RMCL0126",
-    "nombre": "Estación RedMeteo Juan Fernández - Capitanía de Puerto (SERVIMET)",
-    "sector": "Juan Fernández - Capitanía de Puerto (SERVIMET), Valparaíso",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0029",
-    "code_red": "RMCL0029",
-    "nombre": "Estación RedMeteo Tiltil",
-    "sector": "Tiltil, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0034",
-    "code_red": "RMCL0034",
-    "nombre": "Estación RedMeteo Lo Barnechea - San Enrique",
-    "sector": "Lo Barnechea - San Enrique, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0026",
-    "code_red": "RMCL0026",
-    "nombre": "Estación RedMeteo Vitacura RGVB",
-    "sector": "Vitacura RGVB, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0101",
-    "code_red": "RMCL0101",
-    "nombre": "Estación RedMeteo Independencia - UCH",
-    "sector": "Independencia - UCH, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0090",
-    "code_red": "RMCL0090",
-    "nombre": "Estación RedMeteo Providencia - UCH",
-    "sector": "Providencia - UCH, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0093",
-    "code_red": "RMCL0093",
-    "nombre": "Estación RedMeteo Pudahuel Norte - UCH",
-    "sector": "Pudahuel Norte - UCH, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0097",
-    "code_red": "RMCL0097",
-    "nombre": "Estación RedMeteo Villa Portales - UCH",
-    "sector": "Villa Portales - UCH, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0091",
-    "code_red": "RMCL0091",
-    "nombre": "Estación RedMeteo Ñuñoa",
-    "sector": "Ñuñoa, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0109",
-    "code_red": "RMCL0109",
-    "nombre": "Estación RedMeteo Pudahuel Sur",
-    "sector": "Pudahuel Sur, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0107",
-    "code_red": "RMCL0107",
-    "nombre": "Estación RedMeteo Ñuñoa José Domingo Cañas",
-    "sector": "Ñuñoa José Domingo Cañas, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0092",
-    "code_red": "RMCL0092",
-    "nombre": "Estación RedMeteo San Joaquin - UCH",
-    "sector": "San Joaquin - UCH, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0102",
-    "code_red": "RMCL0102",
-    "nombre": "Estación RedMeteo Macul - UCH",
-    "sector": "Macul - UCH, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0089",
-    "code_red": "RMCL0089",
-    "nombre": "Estación RedMeteo Pedro Aguirre Cerda - UCH",
-    "sector": "Pedro Aguirre Cerda - UCH, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0099",
-    "code_red": "RMCL0099",
-    "nombre": "Estación RedMeteo Maipú - UCH",
-    "sector": "Maipú - UCH, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0005",
-    "code_red": "RMCL0005",
-    "nombre": "Estación RedMeteo San Miguel",
-    "sector": "San Miguel, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0059",
-    "code_red": "RMCL0059",
-    "nombre": "Estación RedMeteo Lo Espejo - UCH",
-    "sector": "Lo Espejo - UCH, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0174",
-    "code_red": "RMCL0174",
-    "nombre": "Estación RedMeteo La Cisterna Norte",
-    "sector": "La Cisterna Norte, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0095",
-    "code_red": "RMCL0095",
-    "nombre": "Estación RedMeteo Las Nalcas - UCH",
-    "sector": "Las Nalcas - UCH, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0178",
-    "code_red": "RMCL0178",
-    "nombre": "Estación RedMeteo La Cisterna Sur",
-    "sector": "La Cisterna Sur, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0100",
-    "code_red": "RMCL0100",
-    "nombre": "Estación RedMeteo Puente Alto - UCH",
-    "sector": "Puente Alto - UCH, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0181",
-    "code_red": "RMCL0181",
-    "nombre": "Estación RedMeteo San Bernardo - Madrid Osorio",
-    "sector": "San Bernardo - Madrid Osorio, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0098",
-    "code_red": "RMCL0098",
-    "nombre": "Estación RedMeteo La Ladera - San Bernardo - UCH",
-    "sector": "La Ladera - San Bernardo - UCH, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0011",
-    "code_red": "RMCL0011",
-    "nombre": "Estación RedMeteo Pirque - El Huingan",
-    "sector": "Pirque - El Huingan, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0012",
-    "code_red": "RMCL0012",
-    "nombre": "Estación RedMeteo Buin Oriente",
-    "sector": "Buin Oriente, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0025",
-    "code_red": "RMCL0025",
-    "nombre": "Estación RedMeteo Melipilla - Mandinga",
-    "sector": "Melipilla - Mandinga, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0013",
-    "code_red": "RMCL0013",
-    "nombre": "Estación RedMeteo Paine Oriente",
-    "sector": "Paine Oriente, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0058",
-    "code_red": "RMCL0058",
-    "nombre": "Estación RedMeteo Paine - Las Colonias",
-    "sector": "Paine - Las Colonias, Metropolitana de Santiago",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0134",
-    "code_red": "RMCL0134",
-    "nombre": "Estación RedMeteo Pichilemu - Capitanía de Puerto (SERVIMET)",
-    "sector": "Pichilemu - Capitanía de Puerto (SERVIMET), O'Higgins",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0184",
-    "code_red": "RMCL0184",
-    "nombre": "Estación RedMeteo Curicó",
-    "sector": "Curicó, Maule",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0135",
-    "code_red": "RMCL0135",
-    "nombre": "Estación RedMeteo Constitución - Capitanía de Puerto (SERVIMET)",
-    "sector": "Constitución - Capitanía de Puerto (SERVIMET), Maule",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0138",
-    "code_red": "RMCL0138",
-    "nombre": "Estación RedMeteo Talcahuano - Faro Isla Quiriquina (SERVIMET)",
-    "sector": "Talcahuano - Faro Isla Quiriquina (SERVIMET), Biobío",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0137",
-    "code_red": "RMCL0137",
-    "nombre": "Estación RedMeteo Talcahuano - Capitanía de Puerto (SERVIMET)",
-    "sector": "Talcahuano - Capitanía de Puerto (SERVIMET), Biobío",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0136",
-    "code_red": "RMCL0136",
-    "nombre": "Estación RedMeteo Lirquén - Capitanía de Puerto (SERVIMET)",
-    "sector": "Lirquén - Capitanía de Puerto (SERVIMET), Biobío",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0139",
-    "code_red": "RMCL0139",
-    "nombre": "Estación RedMeteo Hualpén - Faro Punta Hualpén (SERVIMET)",
-    "sector": "Hualpén - Faro Punta Hualpén (SERVIMET), Biobío",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0051",
-    "code_red": "RMCL0051",
-    "nombre": "Estación RedMeteo San Pedro de la Paz",
-    "sector": "San Pedro de la Paz, Biobío",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0052",
-    "code_red": "RMCL0052",
-    "nombre": "Estación RedMeteo Florida - San Antonio de Cuda",
-    "sector": "Florida - San Antonio de Cuda, Biobío",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0140",
-    "code_red": "RMCL0140",
-    "nombre": "Estación RedMeteo Coronel - Capitanía de Puerto (SERVIMET)",
-    "sector": "Coronel - Capitanía de Puerto (SERVIMET), Biobío",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0141",
-    "code_red": "RMCL0141",
-    "nombre": "Estación RedMeteo Lota - Capitanía de Puerto (SERVIMET)",
-    "sector": "Lota - Capitanía de Puerto (SERVIMET), Biobío",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0006",
-    "code_red": "RMCL0006",
-    "nombre": "Estación RedMeteo Los Ángeles - Centro",
-    "sector": "Los Ángeles - Centro, Biobío",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0004",
-    "code_red": "RMCL0004",
-    "nombre": "Estación RedMeteo San Antonio de Duqueco",
-    "sector": "San Antonio de Duqueco, Biobío",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0142",
-    "code_red": "RMCL0142",
-    "nombre": "Estación RedMeteo Lebu - Capitanía de Puerto (SERVIMET)",
-    "sector": "Lebu - Capitanía de Puerto (SERVIMET), Biobío",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0009",
-    "code_red": "RMCL0009",
-    "nombre": "Estación RedMeteo Lonquimay - Loma Atravesada",
-    "sector": "Lonquimay - Loma Atravesada, Araucanía",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0169",
-    "code_red": "RMCL0169",
-    "nombre": "Estación RedMeteo Curacautín - Cañón del Blanco",
-    "sector": "Curacautín - Cañón del Blanco, Araucanía",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0143",
-    "code_red": "RMCL0143",
-    "nombre": "Estación RedMeteo Saavedra - Capitanía de Puerto Carahue (SERVIMET)",
-    "sector": "Saavedra - Capitanía de Puerto Carahue (SERVIMET), Araucanía",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0033",
-    "code_red": "RMCL0033",
-    "nombre": "Estación RedMeteo Melipeuco - Río Truful-Truful",
-    "sector": "Melipeuco - Río Truful-Truful, Araucanía",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0008",
-    "code_red": "RMCL0008",
-    "nombre": "Estación RedMeteo Pitrufquén - Colegio Madres Dominicas",
-    "sector": "Pitrufquén - Colegio Madres Dominicas, Araucanía",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0168",
-    "code_red": "RMCL0168",
-    "nombre": "Estación RedMeteo Loncoche",
-    "sector": "Loncoche, Araucanía",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0060",
-    "code_red": "RMCL0060",
-    "nombre": "Estación RedMeteo Valdivia - Las Minas",
-    "sector": "Valdivia - Las Minas, Los Ríos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0180",
-    "code_red": "RMCL0180",
-    "nombre": "Estación RedMeteo Valdivia - Chabelita Bajo",
-    "sector": "Valdivia - Chabelita Bajo, Los Ríos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0057",
-    "code_red": "RMCL0057",
-    "nombre": "Estación RedMeteo Valdivia",
-    "sector": "Valdivia, Los Ríos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0144",
-    "code_red": "RMCL0144",
-    "nombre": "Estación RedMeteo Corral - Capitanía de Puerto (SERVIMET)",
-    "sector": "Corral - Capitanía de Puerto (SERVIMET), Los Ríos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0035",
-    "code_red": "RMCL0035",
-    "nombre": "Estación RedMeteo Mulpulmo Osorno",
-    "sector": "Mulpulmo Osorno, Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0036",
-    "code_red": "RMCL0036",
-    "nombre": "Estación RedMeteo Loncotoro, Llanquihue",
-    "sector": "Loncotoro, Llanquihue, Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0053",
-    "code_red": "RMCL0053",
-    "nombre": "Estación RedMeteo Puerto Varas - Reserva Santa Clara",
-    "sector": "Puerto Varas - Reserva Santa Clara, Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0145",
-    "code_red": "RMCL0145",
-    "nombre": "Estación RedMeteo Puerto Montt - Centro Meteorológico (SERVIMET)",
-    "sector": "Puerto Montt - Centro Meteorológico (SERVIMET), Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0163",
-    "code_red": "RMCL0163",
-    "nombre": "Estación RedMeteo Seno de Reloncaví (SERVIMET)",
-    "sector": "Seno de Reloncaví (SERVIMET), Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0147",
-    "code_red": "RMCL0147",
-    "nombre": "Estación RedMeteo Maullín - Capitanía de Puerto (SERVIMET)",
-    "sector": "Maullín - Capitanía de Puerto (SERVIMET), Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0148",
-    "code_red": "RMCL0148",
-    "nombre": "Estación RedMeteo Chacao - Alcaldía de Mar (SERVIMET)",
-    "sector": "Chacao - Alcaldía de Mar (SERVIMET), Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0149",
-    "code_red": "RMCL0149",
-    "nombre": "Estación RedMeteo Ancud - Capitanía de Puerto (SERVIMET)",
-    "sector": "Ancud - Capitanía de Puerto (SERVIMET), Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0164",
-    "code_red": "RMCL0164",
-    "nombre": "Estación RedMeteo Isla Tabón - Alcaldía de Mar (SERVIMET)",
-    "sector": "Isla Tabón - Alcaldía de Mar (SERVIMET), Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0048",
-    "code_red": "RMCL0048",
-    "nombre": "Estación RedMeteo Chepu",
-    "sector": "Chepu, Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0150",
-    "code_red": "RMCL0150",
-    "nombre": "Estación RedMeteo Quemchi - Capitanía de Puerto (SERVIMET)",
-    "sector": "Quemchi - Capitanía de Puerto (SERVIMET), Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0044",
-    "code_red": "RMCL0044",
-    "nombre": "Estación RedMeteo Dalcahue - Centro",
-    "sector": "Dalcahue - Centro, Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0047",
-    "code_red": "RMCL0047",
-    "nombre": "Estación RedMeteo Castro - Gamboa",
-    "sector": "Castro - Gamboa, Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0151",
-    "code_red": "RMCL0151",
-    "nombre": "Estación RedMeteo Chonchi - Capitanía de Puerto (SERVIMET)",
-    "sector": "Chonchi - Capitanía de Puerto (SERVIMET), Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0049",
-    "code_red": "RMCL0049",
-    "nombre": "Estación RedMeteo Cucao",
-    "sector": "Cucao, Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0152",
-    "code_red": "RMCL0152",
-    "nombre": "Estación RedMeteo Chaitén - Capitanía de Puerto (SERVIMET)",
-    "sector": "Chaitén - Capitanía de Puerto (SERVIMET), Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0153",
-    "code_red": "RMCL0153",
-    "nombre": "Estación RedMeteo Quellón - Capitanía de Puerto (SERVIMET)",
-    "sector": "Quellón - Capitanía de Puerto (SERVIMET), Los Lagos",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0154",
-    "code_red": "RMCL0154",
-    "nombre": "Estación RedMeteo Melinka - Capitanía de Puerto (SERVIMET)",
-    "sector": "Melinka - Capitanía de Puerto (SERVIMET), Aysén",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0155",
-    "code_red": "RMCL0155",
-    "nombre": "Estación RedMeteo Puerto Aguirre - Capitanía de Puerto (SERVIMET)",
-    "sector": "Puerto Aguirre - Capitanía de Puerto (SERVIMET), Aysén",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0156",
-    "code_red": "RMCL0156",
-    "nombre": "Estación RedMeteo Puerto Chacabuco - Capitanía de Puerto (SERVIMET)",
-    "sector": "Puerto Chacabuco - Capitanía de Puerto (SERVIMET), Aysén",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0166",
-    "code_red": "RMCL0166",
-    "nombre": "Estación RedMeteo Coyhaique Alto - Sector Las Águilas",
-    "sector": "Coyhaique Alto - Sector Las Águilas, Aysén",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0027",
-    "code_red": "RMCL0027",
-    "nombre": "Estación RedMeteo Coyhaique - Los Flamencos",
-    "sector": "Coyhaique - Los Flamencos, Aysén",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0161",
-    "code_red": "RMCL0161",
-    "nombre": "Estación RedMeteo Puerto Edén - Capitanía de Puerto (SERVIMET)",
-    "sector": "Puerto Edén - Capitanía de Puerto (SERVIMET), Magallanes y de la Antártica Chilena",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0177",
-    "code_red": "RMCL0177",
-    "nombre": "Estación RedMeteo Puerto Natales - Capitanía de Puerto (SERVIMET)",
-    "sector": "Puerto Natales - Capitanía de Puerto (SERVIMET), Magallanes y de la Antártica Chilena",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0179",
-    "code_red": "RMCL0179",
-    "nombre": "Estación RedMeteo Faro Bahía Félix",
-    "sector": "Faro Bahía Félix, Magallanes y de la Antártica Chilena",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0157",
-    "code_red": "RMCL0157",
-    "nombre": "Estación RedMeteo Punta Arenas - ASMAR Magallanes (SERVIMET)",
-    "sector": "Punta Arenas - ASMAR Magallanes (SERVIMET), Magallanes y de la Antártica Chilena",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0023",
-    "code_red": "RMCL0023",
-    "nombre": "Estación RedMeteo Punta Arenas - Alto Bulnes",
-    "sector": "Punta Arenas - Alto Bulnes, Magallanes y de la Antártica Chilena",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0110",
-    "code_red": "RMCL0110",
-    "nombre": "Estación RedMeteo Punta Arenas - Punta Carrera",
-    "sector": "Punta Arenas - Punta Carrera, Magallanes y de la Antártica Chilena",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0159",
-    "code_red": "RMCL0159",
-    "nombre": "Estación RedMeteo Timbales - Alcaldía de Mar (SERVIMET)",
-    "sector": "Timbales - Alcaldía de Mar (SERVIMET), Magallanes y de la Antártica Chilena",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0158",
-    "code_red": "RMCL0158",
-    "nombre": "Estación RedMeteo Puerto Navarino - Alcaldía de Mar (SERVIMET)",
-    "sector": "Puerto Navarino - Alcaldía de Mar (SERVIMET), Magallanes y de la Antártica Chilena",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0112",
-    "code_red": "RMCL0112",
-    "nombre": "Estación RedMeteo Puerto Williams - Yelcho",
-    "sector": "Puerto Williams - Yelcho, Magallanes y de la Antártica Chilena",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
-  },
-  {
-    "id": "redmeteo_rmcl0160",
-    "code_red": "RMCL0160",
-    "nombre": "Estación RedMeteo Puerto Corriente - Alcaldía de Mar (SERVIMET)",
-    "sector": "Puerto Corriente - Alcaldía de Mar (SERVIMET), Magallanes y de la Antártica Chilena",
-    "red": "RedMeteo Chile",
-    "tipo_api": "redmeteo",
-    "lat": 0.0,
-    "lon": 0.0
+    "lon": -68.80389,
+    "elevacion_m": 150.0
+  },
+  {
+    "id": "agromet_ext_97",
+    "code_red": "97",
+    "nombre": "Estación DMC Aeropuerto Guardiamarina Zañartu, Cabo de Hornos",
+    "sector": "Cabo de Hornos, Magallanes",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -54.93167,
+    "lon": -67.61556,
+    "elevacion_m": 15.0
+  },
+  {
+    "id": "agromet_ext_98",
+    "code_red": "98",
+    "nombre": "Estación DMC Base Eduardo Frei Montalva, Antártica",
+    "sector": "Antártica, Magallanes",
+    "red": "Red Agromet (DMC)",
+    "tipo_api": "agromet",
+    "lat": -62.19306,
+    "lon": -58.9825,
+    "elevacion_m": 45.0
   }
 ]
