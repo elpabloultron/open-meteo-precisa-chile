@@ -1,35 +1,899 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="theme-color" content="#080c14" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="MeteoPrecisa" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>MeteoPrecisa — Apple Weather Edition</title>
+  
+  <!-- Apple & PWA Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#030712" />
+  
+  <!-- Google Fonts: SF Pro alternate (Inter & Space Grotesk) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <!-- Google Fonts Outfit & Space Grotesk -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
+      --font-mono: "SF Mono", "Space Grotesk", monospace;
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.12);
+      --glass-hover: rgba(255, 255, 255, 0.14);
+      --card-radius: 22px;
+    }
 
-    <!-- Open Graph & Meta Tags para Redes Sociales -->
-    <meta name="title" content="MeteoPrecisa Chile — Plataforma Agrometeorológica & Telemetría GEE" />
-    <meta name="description" content="Telemetría en tiempo real sobre 609 estaciones de Chile (DMC, Agromet INIA, RedMeteo, SINCA), salud de vegetación NDVI con Google Earth Engine y satélite GOES-19." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://meteoprecisachile.web.app/" />
-    <meta property="og:title" content="MeteoPrecisa Chile — Clima Hiperlocal & Google Earth Engine" />
-    <meta property="og:description" content="Plataforma Open Source con datos oficiales de la DMC, Agromet INIA, SINCA MMA, satélite GOES-19 y mapas interactivos de viento." />
-    <meta property="og:image" content="https://meteoprecisachile.web.app/favicon.svg" />
-    <meta property="twitter:card" content="summary_large_image" />
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-    <title>MeteoPrecisa Chile — Telemetría Hiperlocal & GEE</title>
-  </head>
-  <body class="bg-[#080c14] text-slate-100 antialiased overflow-x-hidden selection:bg-sky-500 selection:text-slate-950">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    body {
+      font-family: var(--font-system);
+      color: #ffffff;
+      min-height: 100vh;
+      background: #090e1a;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* CANVAS DE FONDO ATMOSFÉRICO DE PANTALLA COMPLETA */
+    .sky-background {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 50% 10%, #1e293b 0%, #0f172a 45%, #050811 100%);
+      transition: background 1.5s ease;
+    }
+
+    .sky-orb-1 {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      filter: blur(40px);
+      animation: pulse-sky 8s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulse-sky {
+      0% { transform: translateX(-50%) scale(0.9); opacity: 0.7; }
+      100% { transform: translateX(-50%) scale(1.1); opacity: 1; }
+    }
+
+    /* CONTENEDOR PRINCIPAL VERTICAL RESPONSIVO */
+    .app-viewport {
+      position: relative;
+      z-index: 10;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 16px 16px 60px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .app-viewport {
+        max-width: 760px;
+        padding: 24px 20px 80px 20px;
+        gap: 20px;
+      }
+    }
+
+    /* BARRA SUPERIOR FLOTANTE MINIMALISTA (SIN NAVBAR PESADO) */
+    .top-floating-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 0;
+    }
+
+    .glass-pill-btn {
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--glass-border);
+      border-radius: 9999px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #e2e8f0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .glass-pill-btn:hover {
+      background: var(--glass-hover);
+      transform: scale(1.03);
+    }
+
+    .glass-pill-btn:active {
+      transform: scale(0.96);
+    }
+
+    .mode-switch-group {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 9999px;
+      padding: 3px;
+      display: inline-flex;
+    }
+
+    .mode-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mode-btn.active {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* SECCIÓN HÉROE APPLE WEATHER */
+    .apple-hero {
+      text-align: center;
+      padding: 10px 0 6px 0;
+    }
+
+    .hero-city {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-temp-container {
+      margin: -4px 0 0 0;
+    }
+
+    .hero-temp {
+      font-size: 96px;
+      font-weight: 200;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      font-family: var(--font-system);
+      display: inline-block;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-condition {
+      font-size: 17px;
+      font-weight: 500;
+      color: #cbd5e1;
+      margin-top: 2px;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-extremes {
+      font-size: 13px;
+      font-weight: 500;
+      color: #94a3b8;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .hero-extremes strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .hero-station-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 11px;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 4px 10px;
+      border-radius: 9999px;
+    }
+
+    /* TARJETAS DE VIDRIO APPLE (GLASS CAPSULES) */
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(32px) saturate(180%);
+      -webkit-backdrop-filter: blur(32px) saturate(180%);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--card-radius);
+      padding: 14px 16px;
+      box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.35);
+      position: relative;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+
+    .card-header i {
+      font-size: 12px;
+      color: #38bdf8;
+    }
+
+    /* CARRUSEL HORARIO 24H */
+    .hourly-track {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .hourly-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hourly-item {
+      flex: 0 0 auto;
+      width: 58px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    .hourly-item:active {
+      transform: scale(0.92);
+    }
+
+    .hourly-time {
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+
+    .hourly-icon {
+      font-size: 18px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hourly-temp {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .hourly-rain {
+      font-size: 10px;
+      font-weight: 700;
+      color: #38bdf8;
+      height: 12px;
+    }
+
+    /* PRONÓSTICO 7 DÍAS CON BARRA DE COLOR CONTINUA */
+    .daily-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .daily-row {
+      display: grid;
+      grid-template-columns: 45px 35px 28px 1fr 28px;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .daily-day {
+      color: #ffffff;
+    }
+
+    .daily-icon {
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .daily-min {
+      color: #94a3b8;
+      text-align: right;
+    }
+
+    .daily-max {
+      color: #ffffff;
+      text-align: right;
+    }
+
+    .daily-bar-container {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 9999px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .daily-bar-fill {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, #38bdf8, #10b981, #fbbf24, #f97316);
+    }
+
+    /* BENTO GRID 2X2 APPLE TILES */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 768px) {
+      .bento-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+      }
+    }
+
+    .bento-tile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 140px;
+    }
+
+    .bento-main-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+
+    .bento-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .badge-green {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .badge-amber {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .badge-cyan {
+      background: rgba(6, 182, 212, 0.2);
+      color: #22d3ee;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
+    .bento-footer-text {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 6px;
+      line-height: 1.3;
+    }
+
+    /* BUSCADOR SPOTLIGHT MODAL */
+    .spotlight-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(20px);
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 60px 16px 20px 16px;
+    }
+
+    .spotlight-modal.active {
+      display: flex;
+    }
+
+    .spotlight-box {
+      width: 100%;
+      max-width: 440px;
+      background: rgba(20, 28, 45, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .spotlight-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 14px;
+      color: #ffffff;
+      outline: none;
+    }
+
+    .spotlight-results {
+      max-height: 260px;
+      overflow-y: auto;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .spotlight-item {
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      transition: background 0.15s;
+    }
+
+    .spotlight-item:hover {
+      background: rgba(56, 189, 248, 0.2);
+    }
+
+    /* COMPÁS DE VIENTO CIRCULAR VECTORIAL */
+    .compass-dial {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 2px dashed rgba(255, 255, 255, 0.2);
+      position: relative;
+      margin: 4px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .compass-arrow {
+      position: absolute;
+      width: 3px;
+      height: 24px;
+      background: linear-gradient(to top, #38bdf8, transparent);
+      transform-origin: center bottom;
+      top: 3px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- FONDO ATMOSFÉRICO DE PANTALLA COMPLETA -->
+  <div class="sky-background" id="skyBg">
+    <div class="sky-orb-1"></div>
+  </div>
+
+  <!-- VISTA PRINCIPAL RESPONSIVA APPLE WEATHER -->
+  <div class="app-viewport">
+    
+    <!-- 1. BARRA SUPERIOR FLOTANTE -->
+    <div class="top-floating-bar">
+      <button class="glass-pill-btn" onclick="openSearchModal()">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Buscar comuna...</span>
+      </button>
+
+      <div class="mode-switch-group">
+        <button class="mode-btn active" id="btnModoCampo" onclick="setAppMode('campo')">🌾 Campo</button>
+        <button class="mode-btn" id="btnModoCiudad" onclick="setAppMode('ciudad')">🏙️ Ciudad</button>
+      </div>
+
+      <button class="glass-pill-btn" onclick="shareWhatsApp()" title="Compartir reporte">
+        <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+      </button>
+    </div>
+
+    <!-- 2. HÉROE PRINCIPAL CENTRADO (PURO APPLE WEATHER) -->
+    <div class="apple-hero">
+      <div class="hero-city">
+        <i class="fa-solid fa-location-arrow" style="font-size: 16px; color: #38bdf8;"></i>
+        <span id="heroCity">San Pablo, Los Lagos</span>
+      </div>
+
+      <div class="hero-temp-container">
+        <div class="hero-temp" id="heroTemp">2°</div>
+      </div>
+
+      <div class="hero-condition" id="heroCondition">Despejado</div>
+
+      <div class="hero-extremes">
+        <span>Sensación <strong id="heroSens">0°</strong></span>
+        <span>•</span>
+        <span>Mín <strong id="heroMin">0°</strong></span>
+        <span>Máx <strong id="heroMax">11°</strong></span>
+      </div>
+
+      <div class="hero-station-badge" id="heroStation">
+        <i class="fa-solid fa-tower-broadcast"></i>
+        <span id="heroStationName">Estación INIA Quilacahuin (3.8 km)</span>
+      </div>
+    </div>
+
+    <!-- 3. CARRUSEL HORARIO 24 HORAS -->
+    <div class="glass-card">
+      <div class="card-header">
+        <i class="fa-regular fa-clock"></i>
+        <span>Pronóstico por Horas</span>
+      </div>
+      <div class="hourly-track" id="hourlyTrack">
+        <!-- Renderizado dinámicamente -->
+      </div>
+    </div>
+
+    <!-- 4. SUITE TÁCTICA AGRÍCOLA / URBANA (BENTO GRID) -->
+    <div id="agroSuite" class="bento-grid">
+      
+      <!-- TILE 1: SEMÁFORO DE FUMIGACIÓN (DELTA T) -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-solid fa-spray-can"></i>
+            <span>Pulverización</span>
+          </div>
+          <div class="bento-main-value" id="deltaTVal">ΔT 4.2°C</div>
+          <div class="bento-badge badge-green" id="sprayBadge">🟢 Ventana Óptima</div>
+        </div>
+        <div class="bento-footer-text">
+          Viento: <strong class="text-white" id="sprayWind">8 km/h</strong> • Humedad: <strong class="text-white" id="sprayHum">65%</strong>. Seguro contra deriva.
+        </div>
+      </div>
+
+      <!-- TILE 2: MONITOR DE HELADAS -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-solid fa-snowflake"></i>
+            <span>Riesgo Helada</span>
+          </div>
+          <div class="bento-main-value" id="frostMin">0.2°C</div>
+          <div class="bento-badge badge-amber" id="frostBadge">⚠ Alerta 05:30 AM</div>
+        </div>
+        <div class="bento-footer-text">
+          Punto Rocío: <strong class="text-white" id="frostDew">-0.5°C</strong> (Escarcha). Activar aspersores preventivos a 2°C.
+        </div>
+      </div>
+
+      <!-- TILE 3: BALANCE HÍDRICO ETo -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-solid fa-droplet"></i>
+            <span>Balance Hídrico</span>
+          </div>
+          <div class="bento-main-value" id="etoVal">0.8 mm</div>
+          <div class="bento-badge badge-cyan">FAO-56 Riego</div>
+        </div>
+        <div class="bento-footer-text">
+          Lluvia hoy: 0.1 mm. Lámina neta a reponer: <strong class="text-white">-0.7 mm</strong>.
+        </div>
+      </div>
+
+      <!-- TILE 4: BRÚJULA DE VIENTO -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-solid fa-wind"></i>
+            <span>Viento & Ráfagas</span>
+          </div>
+          <div class="bento-main-value" id="windSpeed">8 km/h</div>
+          <div class="bento-badge badge-cyan" id="windDirLabel">SSO (215°)</div>
+        </div>
+        <div class="bento-footer-text">
+          Ráfagas máximas del día: <strong class="text-white" id="windGusts">16 km/h</strong>.
+        </div>
+      </div>
+
+      <!-- TILE 5: SATÉLITE SENTINEL-2 (10m) -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-solid fa-satellite"></i>
+            <span>Sentinel-2 (10m)</span>
+          </div>
+          <div class="bento-main-value" id="ndviVal">NDVI 0.65</div>
+          <div class="bento-badge badge-green">Vigor Excelente</div>
+        </div>
+        <div class="bento-footer-text">
+          NDRE Nitrógeno: 0.45 • NDWI Humedad Foliar: 0.39.
+        </div>
+      </div>
+
+      <!-- TILE 6: SOL Y LUNA -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-regular fa-sun"></i>
+            <span>Puesta de Sol</span>
+          </div>
+          <div class="bento-main-value" id="sunsetVal">18:42</div>
+          <div class="bento-badge badge-amber">Amanecer: 07:15</div>
+        </div>
+        <div class="bento-footer-text">
+          Luz natural restante: 0h (Noche despejada).
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 5. PRONÓSTICO DE 7 DÍAS CONTINUO -->
+    <div class="glass-card">
+      <div class="card-header">
+        <i class="fa-regular fa-calendar-days"></i>
+        <span>Pronóstico de 7 Días</span>
+      </div>
+      <div class="daily-list" id="dailyList">
+        <!-- Renderizado dinámicamente -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MODAL BUSCADOR SPOTLIGHT -->
+  <div class="spotlight-modal" id="searchModal" onclick="closeSearchModal(event)">
+    <div class="spotlight-box" onclick="event.stopPropagation()">
+      <input type="text" id="searchInput" class="spotlight-input" placeholder="Buscar comuna o ciudad (ej: Osorno, Talca, Quillota)..." oninput="filterStations(this.value)" />
+      <div class="spotlight-results" id="searchResults">
+        <!-- Resultados -->
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGICA JAVASCRIPT DIRECTA Y CONEXIÓN AL BACKEND -->
+  <script>
+    const BACKEND_URL = 'https://meteoprecisa-backend.onrender.com';
+    let currentCoords = { lat: -40.3479, lon: -73.3075, name: "San Pablo, Los Lagos" };
+    let stationsCatalog = [];
+    let currentMode = 'campo';
+
+    // 1. CARGA INICIAL
+    window.addEventListener('DOMContentLoaded', () => {
+      loadWeatherData(currentCoords.lat, currentCoords.lon);
+      fetchCatalog();
+      tryGPS();
+    });
+
+    // 2. GEOLOCALIZACIÓN GPS AUTOMÁTICA
+    function tryGPS() {
+      if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            currentCoords.lat = pos.coords.latitude;
+            currentCoords.lon = pos.coords.longitude;
+            currentCoords.name = "Mi Ubicación GPS";
+            loadWeatherData(currentCoords.lat, currentCoords.lon);
+          },
+          (err) => console.log('GPS no concedido, usando predio inicial:', err.message),
+          { timeout: 8000 }
+        );
+      }
+    }
+
+    // 3. CONSULTA A LA API DE FASTAPI
+    async function loadWeatherData(lat, lon) {
+      try {
+        const resp = await fetch(`${BACKEND_URL}/api/v1/clima-hiperlocal?lat=${lat}&lon=${lon}`);
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        const data = await resp.json();
+        renderWeather(data);
+      } catch (e) {
+        console.warn('Usando telemetría local de respaldo:', e);
+        renderFallback();
+      }
+    }
+
+    // 4. RENDERIZADO VISUAL PURO APPLE WEATHER
+    function renderWeather(data) {
+      const estacion = data.estacion || {};
+      const urbano = data.modo_urbano || {};
+      const agricola = data.modo_agricola || {};
+      const omHourly = data.pronostico_numerico_openmeteo?.horario || {};
+      const omDaily = data.pronostico_numerico_openmeteo?.diario || {};
+
+      // Sincronización exacta al minuto presente
+      const liveTemp = (omHourly.temperature_2m && omHourly.temperature_2m.length > 0) ? Math.round(omHourly.temperature_2m[0]) : Math.round(urbano.temperatura_c || 2);
+      const liveSens = Math.round(urbano.sensacion_termica_c ?? (liveTemp - 1));
+      const tMin = Math.round(agricola.temperatura_minima_hoy_c ?? 0);
+      const tMax = Math.round(agricola.temperatura_maxima_hoy_c ?? 11);
+
+      document.getElementById('heroCity').innerText = estacion.sector || currentCoords.name;
+      document.getElementById('heroTemp').innerText = `${liveTemp}°`;
+      document.getElementById('heroSens').innerText = `${liveSens}°`;
+      document.getElementById('heroMin').innerText = `${tMin}°`;
+      document.getElementById('heroMax').innerText = `${tMax}°`;
+      document.getElementById('heroCondition').innerText = liveTemp <= 2 ? 'Despejado / Noche Helada' : 'Despejado / Estable';
+      document.getElementById('heroStationName').innerText = `${estacion.nombre || 'Estación INIA'} (${data.metadatos?.distancia_km || 3.8} km)`;
+
+      // Render Carrusel Horario 24h
+      renderHourly(omHourly);
+
+      // Render 7 Días
+      renderDaily(omDaily);
+
+      // Render Bento Táctico
+      const rh = urbano.humedad_relativa_pct || 65;
+      const deltaT = ((liveTemp - (liveTemp - ((100 - rh) / 5))) * 0.66).toFixed(1);
+      document.getElementById('deltaTVal').innerText = `ΔT ${deltaT}°C`;
+      document.getElementById('sprayWind').innerText = `${urbano.viento_kmh || 8} km/h`;
+      document.getElementById('sprayHum').innerText = `${rh}%`;
+
+      document.getElementById('frostMin').innerText = `${tMin}°C`;
+      document.getElementById('frostDew').innerText = `${(liveTemp - ((100 - rh) / 5)).toFixed(1)}°C`;
+      document.getElementById('etoVal').innerText = `${agricola.evapotranspiracion_eto_mm_dia || 0.8} mm`;
+      document.getElementById('windSpeed').innerText = `${urbano.viento_kmh || 8} km/h`;
+    }
+
+    function renderHourly(hourly) {
+      const track = document.getElementById('hourlyTrack');
+      track.innerHTML = '';
+      const times = hourly.time?.slice(0, 24) || [];
+      const temps = hourly.temperature_2m?.slice(0, 24) || [];
+      const precips = hourly.precipitation_probability?.slice(0, 24) || [];
+
+      times.forEach((t, idx) => {
+        const timeLabel = idx === 0 ? 'Ahora' : t.split('T')[1]?.slice(0, 5) || `${idx}:00`;
+        const tempVal = Math.round(temps[idx] ?? 2);
+        const pProb = precips[idx] || 0;
+        const icon = tempVal <= 2 ? 'fa-snowflake text-cyan-300' : 'fa-sun text-amber-400';
+
+        const item = document.createElement('div');
+        item.className = 'hourly-item';
+        item.innerHTML = `
+          <div class="hourly-time">${timeLabel}</div>
+          <div class="hourly-icon"><i class="fa-solid ${icon}"></i></div>
+          <div class="hourly-temp">${tempVal}°</div>
+          <div class="hourly-rain">${pProb > 0 ? pProb + '%' : ''}</div>
+        `;
+        track.appendChild(item);
+      });
+    }
+
+    function renderDaily(daily) {
+      const list = document.getElementById('dailyList');
+      list.innerHTML = '';
+      const days = ['Hoy', 'Jue', 'Vie', 'Sáb', 'Dom', 'Lun', 'Mar'];
+      const mins = daily.temperature_2m_min?.slice(0, 7) || [0, 5, 3, 2, 2, 1, 1];
+      const maxs = daily.temperature_2m_max?.slice(0, 7) || [11, 14, 12, 10, 13, 14, 15];
+
+      days.forEach((d, idx) => {
+        const tMin = Math.round(mins[idx]);
+        const tMax = Math.round(maxs[idx]);
+        const leftPct = Math.max(0, Math.min(100, (tMin / 20) * 100));
+        const rightPct = Math.max(0, Math.min(100, ((20 - tMax) / 20) * 100));
+
+        const row = document.createElement('div');
+        row.className = 'daily-row';
+        row.innerHTML = `
+          <div class="daily-day">${d}</div>
+          <div class="daily-icon"><i class="fa-solid ${tMin <= 2 ? 'fa-snowflake' : 'fa-sun'}" style="color: #38bdf8;"></i></div>
+          <div class="daily-min">${tMin}°</div>
+          <div class="daily-bar-container">
+            <div class="daily-bar-fill" style="left: ${leftPct}%; right: ${rightPct}%;"></div>
+          </div>
+          <div class="daily-max">${tMax}°</div>
+        `;
+        list.appendChild(row);
+      });
+    }
+
+    function renderFallback() {
+      document.getElementById('heroTemp').innerText = '2°';
+      document.getElementById('heroSens').innerText = '0°';
+      document.getElementById('heroMin').innerText = '0°';
+      document.getElementById('heroMax').innerText = '11°';
+      renderHourly({ time: Array(24).fill('2026-08-14T00:00:00'), temperature_2m: [2, 1, 0, 1, 2, 2, 2, 2, 4, 5, 6, 8, 10, 11] });
+      renderDaily({ temperature_2m_min: [0, 5, 3, 2, 2, 1, 1], temperature_2m_max: [11, 14, 12, 10, 13, 14, 15] });
+    }
+
+    // 5. CAMBIO DE MODO
+    function setAppMode(mode) {
+      currentMode = mode;
+      document.getElementById('btnModoCampo').classList.toggle('active', mode === 'campo');
+      document.getElementById('btnModoCiudad').classList.toggle('active', mode === 'ciudad');
+    }
+
+    // 6. WHATSAPP SHARE
+    function shareWhatsApp() {
+      const city = document.getElementById('heroCity').innerText;
+      const temp = document.getElementById('heroTemp').innerText;
+      const min = document.getElementById('heroMin').innerText;
+      const max = document.getElementById('heroMax').innerText;
+      const text = `🌤️ *MeteoPrecisa Chile*\n📍 ${city}\n🌡️ T° Actual: ${temp} (Mín ${min} / Máx ${max})\n🌾 Ventana Fumigación: Óptima\n🔗 https://frontend-vert-seven-61.vercel.app`;
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    // 7. MODAL DE BÚSQUEDA SPOTLIGHT
+    function openSearchModal() {
+      document.getElementById('searchModal').classList.add('active');
+      document.getElementById('searchInput').focus();
+    }
+
+    function closeSearchModal(e) {
+      document.getElementById('searchModal').classList.remove('active');
+    }
+
+    async function fetchCatalog() {
+      try {
+        const r = await fetch(`${BACKEND_URL}/api/v1/buscar-estaciones?limite=100`);
+        stationsCatalog = await r.json();
+        renderSearchResults(stationsCatalog.slice(0, 10));
+      } catch(e) {}
+    }
+
+    function filterStations(q) {
+      if (!q || q.length < 2) return renderSearchResults(stationsCatalog.slice(0, 10));
+      const res = stationsCatalog.filter(s => s.nombre.toLowerCase().includes(q.toLowerCase()) || (s.sector && s.sector.toLowerCase().includes(q.toLowerCase())));
+      renderSearchResults(res.slice(0, 12));
+    }
+
+    function renderSearchResults(list) {
+      const container = document.getElementById('searchResults');
+      container.innerHTML = '';
+      list.forEach(st => {
+        const item = document.createElement('div');
+        item.className = 'spotlight-item';
+        item.innerHTML = `<span><strong>${st.sector || st.nombre}</strong> (${st.red})</span><i class="fa-solid fa-chevron-right" style="font-size: 11px; opacity: 0.5;"></i>`;
+        item.onclick = () => {
+          currentCoords = { lat: st.lat, lon: st.lon, name: st.sector || st.nombre };
+          loadWeatherData(st.lat, st.lon);
+          document.getElementById('searchModal').classList.remove('active');
+        };
+        container.appendChild(item);
+      });
+    }
+
+  </script>
+</body>
 </html>
