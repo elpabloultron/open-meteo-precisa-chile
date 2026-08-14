@@ -9,8 +9,15 @@ llave-google.json
 credentials.json
 *.json.json
 service_account*.json
+service-account*.json
+*.pem
+*.key
+*.pfx
+*.crt
 .env
+.env.*
 .env.local
+secrets/
 
 base_datos.sqlite
 base_datos.sqlite-journal
