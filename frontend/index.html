@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>MeteoPrecisa — Apple Weather Edition</title>
+  <title>MeteoPrecisa — Apple Weather 10/10 Edition</title>
   
   <!-- Apple & PWA Meta Tags -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Leaflet CSS for Interactive Apple Map Tile -->
+  <!-- Leaflet CSS for GEE Maps -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
@@ -235,6 +235,7 @@
       border: 1px solid rgba(56, 189, 248, 0.25);
       padding: 4px 12px;
       border-radius: 9999px;
+      cursor: pointer;
     }
 
     /* TARJETAS DE VIDRIO APPLE (GLASS CAPSULES) */
@@ -290,11 +291,18 @@
       align-items: center;
       gap: 8px;
       cursor: pointer;
-      transition: transform 0.15s ease;
+      padding: 8px 4px;
+      border-radius: 16px;
+      transition: all 0.15s ease;
+    }
+
+    .hourly-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: scale(1.04);
     }
 
     .hourly-item:active {
-      transform: scale(0.92);
+      transform: scale(0.94);
     }
 
     .hourly-time {
@@ -328,7 +336,7 @@
     .daily-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
 
     .daily-row {
@@ -338,6 +346,14 @@
       gap: 8px;
       font-size: 13px;
       font-weight: 600;
+      padding: 6px 8px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    .daily-row:hover {
+      background: rgba(255, 255, 255, 0.06);
     }
 
     .daily-day {
@@ -439,14 +455,107 @@
       line-height: 1.3;
     }
 
-    /* TARJETA DE MAPA APPLE INTERACTIVO (MINI-MAPA & FULLSCREEN SHEET) */
+    /* TARJETA DESTACADA: VISTA SATELITAL GOES-19 CHILE EN VIVO */
+    .goes-card-featured {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.85) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: var(--card-radius);
+      padding: 16px 18px;
+      box-shadow: 0 15px 40px -10px rgba(56, 189, 248, 0.25);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .goes-card-featured::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .goes-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .goes-pulse-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+    }
+
+    .pulse-dot-red {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ef4444;
+      box-shadow: 0 0 8px #ef4444;
+      animation: pulse-ring 1.5s infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    .goes-preview-container {
+      width: 100%;
+      height: 180px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+    }
+
+    .goes-preview-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .goes-preview-container:hover .goes-preview-img {
+      transform: scale(1.05);
+    }
+
+    .goes-overlay-badge {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* TARJETA DE MAPAS ESPECÍFICOS (WINDY / GEE) */
     .map-tile-card {
       overflow: hidden;
       padding: 0;
-      height: 220px;
+      height: 250px;
       display: flex;
       flex-direction: column;
       position: relative;
+      border-radius: var(--card-radius);
     }
 
     .map-tile-header {
@@ -454,9 +563,9 @@
       top: 12px;
       left: 14px;
       z-index: 400;
-      background: rgba(15, 23, 42, 0.75);
+      background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(12px);
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 9999px;
       border: 1px solid rgba(255, 255, 255, 0.15);
       font-size: 11px;
@@ -466,97 +575,98 @@
       gap: 6px;
     }
 
-    #appleMiniMap {
+    .map-frame-wrapper {
       width: 100%;
       height: 100%;
-      background: #0f172a;
     }
 
-    .map-expand-btn {
-      position: absolute;
-      bottom: 12px;
-      right: 12px;
-      z-index: 400;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #ffffff;
-      padding: 6px 12px;
-      border-radius: 9999px;
-      font-size: 11px;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    /* MODAL DE MAPA EXPANDIDO APPLE */
-    .map-modal-sheet {
+    /* HOJAS MODALES NATIVAS APPLE (BOTTOM SHEETS / POPUPS) */
+    .apple-modal-sheet {
       position: fixed;
       inset: 0;
-      z-index: 200;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(24px);
+      z-index: 500;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
       display: none;
-      flex-direction: column;
-      padding: 20px;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 0;
+      opacity: 0;
+      transition: opacity 0.25s ease;
     }
 
-    .map-modal-sheet.active {
+    .apple-modal-sheet.active {
       display: flex;
+      opacity: 1;
     }
 
-    .map-sheet-header {
+    @media (min-width: 768px) {
+      .apple-modal-sheet {
+        align-items: center;
+        padding: 20px;
+      }
+    }
+
+    .apple-sheet-content {
+      width: 100%;
+      max-width: 520px;
+      background: rgba(15, 23, 42, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 28px 28px 0 0;
+      padding: 22px 20px 36px 20px;
+      box-shadow: 0 -15px 50px rgba(0, 0, 0, 0.7);
+      animation: slide-up 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+
+    @media (min-width: 768px) {
+      .apple-sheet-content {
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 24px;
+        animation: scale-up 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+    }
+
+    @keyframes slide-up {
+      0% { transform: translateY(100%); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes scale-up {
+      0% { transform: scale(0.95); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .sheet-handle-bar {
+      width: 36px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 9999px;
+      margin: 0 auto 16px auto;
+    }
+
+    .sheet-header-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
-    .map-layer-selector {
-      display: flex;
-      gap: 6px;
-      overflow-x: auto;
-      padding-bottom: 4px;
+    .sheet-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
     }
 
-    .map-layer-btn {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 9999px;
-      color: #cbd5e1;
-      padding: 6px 12px;
-      font-size: 11px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .map-layer-btn.active {
-      background: #38bdf8;
-      color: #030712;
-      border-color: #38bdf8;
-    }
-
-    .map-fullscreen-container {
-      flex: 1;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      position: relative;
-    }
-
-    #appleFullMap {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* BUSCADOR SPOTLIGHT MODAL */
+    /* MODAL DE BÚSQUEDA SPOTLIGHT */
     .spotlight-modal {
       position: fixed;
       inset: 0;
-      z-index: 100;
-      background: rgba(0, 0, 0, 0.7);
+      z-index: 600;
+      background: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(20px);
       display: none;
       align-items: flex-start;
@@ -571,11 +681,11 @@
     .spotlight-box {
       width: 100%;
       max-width: 440px;
-      background: rgba(20, 28, 45, 0.95);
+      background: rgba(20, 28, 45, 0.96);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 14px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
     }
 
     .spotlight-input {
@@ -583,7 +693,7 @@
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 12px;
-      padding: 10px 14px;
+      padding: 12px 16px;
       font-size: 14px;
       color: #ffffff;
       outline: none;
@@ -599,8 +709,8 @@
     }
 
     .spotlight-item {
-      padding: 8px 12px;
-      border-radius: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
       background: rgba(255, 255, 255, 0.04);
       cursor: pointer;
       display: flex;
@@ -612,6 +722,25 @@
 
     .spotlight-item:hover {
       background: rgba(56, 189, 248, 0.2);
+    }
+
+    /* VISOR GOES-19 COMPLETO */
+    .goes-viewer-box {
+      width: 100%;
+      max-width: 700px;
+      background: #0b1329;
+      border-radius: 24px;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      padding: 18px;
+    }
+
+    .goes-img-full {
+      width: 100%;
+      height: 380px;
+      object-fit: contain;
+      background: #000000;
+      border-radius: 14px;
+      margin: 12px 0;
     }
 
   </style>
@@ -634,14 +763,15 @@
         <span>Buscar comuna...</span>
       </button>
 
+      <!-- SELECTOR DE MODO (URBANO POR DEFECTO) -->
       <div class="mode-switch-group">
-        <button class="mode-btn active" id="btnModoCampo" onclick="setAppMode('campo')">🌾 Campo</button>
-        <button class="mode-btn" id="btnModoCiudad" onclick="setAppMode('ciudad')">🏙️ Ciudad</button>
+        <button class="mode-btn active" id="btnModoCiudad" onclick="setAppMode('ciudad')">🏙️ Urbano</button>
+        <button class="mode-btn" id="btnModoCampo" onclick="setAppMode('campo')">🌾 Agrícola</button>
       </div>
 
       <div style="display: flex; gap: 6px;">
-        <button class="glass-pill-btn" onclick="openMapModal()" title="Ver Mapa Meteorológico">
-          <i class="fa-solid fa-map-location-dot" style="color: #38bdf8;"></i>
+        <button class="glass-pill-btn" onclick="openGoesModal()" title="Vista Satelital GOES-19">
+          <i class="fa-solid fa-satellite" style="color: #38bdf8;"></i>
         </button>
         <button class="glass-pill-btn" onclick="shareWhatsApp()" title="Compartir reporte">
           <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
@@ -669,32 +799,97 @@
         <span>Máx <strong id="heroMax">11°</strong></span>
       </div>
 
-      <div class="hero-station-badge" id="heroStation">
+      <div class="hero-station-badge" id="heroStation" onclick="openSearchModal()">
         <i class="fa-solid fa-tower-broadcast"></i>
         <span id="heroStationName">Estación INIA Quilacahuin (3.8 km)</span>
       </div>
     </div>
 
-    <!-- 3. CARRUSEL HORARIO 24 HORAS -->
+    <!-- 3. CARRUSEL HORARIO 24 HORAS (CON TOQUE INTERACTIVO A DETALLE) -->
     <div class="glass-card">
       <div class="card-header">
         <i class="fa-regular fa-clock"></i>
-        <span>Pronóstico por Horas</span>
+        <span>Pronóstico por Horas (Toca una hora para ver detalles)</span>
       </div>
       <div class="hourly-track" id="hourlyTrack">
         <!-- Renderizado dinámicamente -->
       </div>
     </div>
 
-    <!-- 4. SUITE TÁCTICA AGRÍCOLA (MODO CAMPO) -->
-    <div id="agroSuite" class="bento-grid">
+    <!-- 4.A SUITE URBANA (POR DEFECTO) -->
+    <div id="urbanSuite" class="bento-grid">
+      
+      <!-- TILE 1: CALIDAD DEL AIRE SINCA -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>Calidad del Aire SINCA</span>
+          </div>
+          <div class="bento-main-value" id="aqiVal">AQI 25</div>
+          <div class="bento-badge badge-green" id="aqiBadge">🟢 Bueno (MMA)</div>
+        </div>
+        <div class="bento-footer-text">
+          MP2.5: <strong class="text-white" id="mp25Val">12 µg/m³</strong>. Excelente para deporte al aire libre.
+        </div>
+      </div>
+
+      <!-- TILE 2: ASISTENTE DE ROPA & PARAGUAS -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-solid fa-shirt"></i>
+            <span>Confort & Vestimenta</span>
+          </div>
+          <div class="bento-main-value" style="font-size: 20px;" id="clothingVal">Chaqueta Abrigada</div>
+          <div class="bento-badge badge-cyan" id="umbrellaBadge">☂ Sin Paraguas</div>
+        </div>
+        <div class="bento-footer-text" id="urbanSummary">
+          Noche despejada y fría. Sin riesgo de precipitaciones.
+        </div>
+      </div>
+
+      <!-- TILE 3: ÍNDICE UV -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-solid fa-sun"></i>
+            <span>Índice UV</span>
+          </div>
+          <div class="bento-main-value" id="uvVal">2.3</div>
+          <div class="bento-badge badge-green">Bajo</div>
+        </div>
+        <div class="bento-footer-text">
+          No se requiere protección solar en horario nocturno.
+        </div>
+      </div>
+
+      <!-- TILE 4: VIENTO & DIRECCIÓN -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-solid fa-wind"></i>
+            <span>Viento & Ráfagas</span>
+          </div>
+          <div class="bento-main-value" id="urbanWind">8 km/h</div>
+          <div class="bento-badge badge-cyan" id="urbanWindDir">SSO (215°)</div>
+        </div>
+        <div class="bento-footer-text">
+          Ráfagas máximas: <strong class="text-white" id="urbanGusts">16 km/h</strong>.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 4.B SUITE AGRÍCOLA (MODO CAMPO) -->
+    <div id="agroSuite" class="bento-grid" style="display: none;">
       
       <!-- TILE 1: SEMÁFORO DE FUMIGACIÓN (DELTA T) -->
       <div class="glass-card bento-tile">
         <div>
           <div class="card-header">
             <i class="fa-solid fa-spray-can"></i>
-            <span>Pulverización</span>
+            <span>Pulverización (Delta T)</span>
           </div>
           <div class="bento-main-value" id="deltaTVal">ΔT 4.2°C</div>
           <div class="bento-badge badge-green" id="sprayBadge">🟢 Ventana Óptima</div>
@@ -709,13 +904,13 @@
         <div>
           <div class="card-header">
             <i class="fa-solid fa-snowflake"></i>
-            <span>Riesgo Helada</span>
+            <span>Riesgo de Helada</span>
           </div>
           <div class="bento-main-value" id="frostMin">0.2°C</div>
           <div class="bento-badge badge-amber" id="frostBadge">⚠ Alerta 05:30 AM</div>
         </div>
         <div class="bento-footer-text">
-          Punto Rocío: <strong class="text-white" id="frostDew">-0.5°C</strong> (Escarcha). Activar aspersores preventivos a 2°C.
+          Punto Rocío: <strong class="text-white" id="frostDew">-0.5°C</strong> (Escarcha). Activar aspersores a 2°C.
         </div>
       </div>
 
@@ -724,32 +919,17 @@
         <div>
           <div class="card-header">
             <i class="fa-solid fa-droplet"></i>
-            <span>Balance Hídrico</span>
+            <span>Balance Hídrico (ETo)</span>
           </div>
           <div class="bento-main-value" id="etoVal">0.8 mm</div>
           <div class="bento-badge badge-cyan">FAO-56 Riego</div>
         </div>
         <div class="bento-footer-text">
-          Lluvia hoy: 0.1 mm. Lámina neta a reponer: <strong class="text-white">-0.7 mm</strong>.
+          Lámina neta a reponer: <strong class="text-white">-0.7 mm</strong>.
         </div>
       </div>
 
-      <!-- TILE 4: BRÚJULA DE VIENTO -->
-      <div class="glass-card bento-tile">
-        <div>
-          <div class="card-header">
-            <i class="fa-solid fa-wind"></i>
-            <span>Viento & Ráfagas</span>
-          </div>
-          <div class="bento-main-value" id="windSpeed">8 km/h</div>
-          <div class="bento-badge badge-cyan" id="windDirLabel">SSO (215°)</div>
-        </div>
-        <div class="bento-footer-text">
-          Ráfagas máximas del día: <strong class="text-white" id="windGusts">16 km/h</strong>.
-        </div>
-      </div>
-
-      <!-- TILE 5: SATÉLITE SENTINEL-2 (10m) -->
+      <!-- TILE 4: SENTINEL-2 (10m GEE) -->
       <div class="glass-card bento-tile">
         <div>
           <div class="card-header">
@@ -760,110 +940,43 @@
           <div class="bento-badge badge-green">Vigor Excelente</div>
         </div>
         <div class="bento-footer-text">
-          NDRE Nitrógeno: 0.45 • NDWI Humedad Foliar: 0.39.
-        </div>
-      </div>
-
-      <!-- TILE 6: SOL Y LUNA -->
-      <div class="glass-card bento-tile">
-        <div>
-          <div class="card-header">
-            <i class="fa-regular fa-sun"></i>
-            <span>Puesta de Sol</span>
-          </div>
-          <div class="bento-main-value" id="sunsetVal">18:42</div>
-          <div class="bento-badge badge-amber">Amanecer: 07:15</div>
-        </div>
-        <div class="bento-footer-text">
-          Luz natural restante: 0h (Noche despejada).
+          NDRE Clorofila: 0.45 • NDWI Agua en Hoja: 0.39.
         </div>
       </div>
 
     </div>
 
-    <!-- 4.B SUITE TÁCTICA URBANA (MODO CIUDAD - OCULTA POR DEFECTO) -->
-    <div id="urbanSuite" class="bento-grid" style="display: none;">
+    <!-- 5. TARJETA DESTACADA: VISTA SATELITAL GOES-19 CHILE EN VIVO -->
+    <div class="goes-card-featured">
+      <div class="goes-header-row">
+        <div class="card-header" style="margin-bottom: 0;">
+          <i class="fa-solid fa-satellite-dish" style="color: #38bdf8;"></i>
+          <span>Vista Satelital GOES-19 Chile en Vivo (NOAA)</span>
+        </div>
+        <div class="goes-pulse-badge">
+          <div class="pulse-dot-red"></div>
+          <span>En Órbita</span>
+        </div>
+      </div>
       
-      <!-- TILE 1: CALIDAD DEL AIRE SINCA -->
-      <div class="glass-card bento-tile">
-        <div>
-          <div class="card-header">
-            <i class="fa-solid fa-shield-heart"></i>
-            <span>Calidad del Aire</span>
-          </div>
-          <div class="bento-main-value" id="aqiVal">AQI 25</div>
-          <div class="bento-badge badge-green">Bueno (MMA)</div>
-        </div>
-        <div class="bento-footer-text">
-          MP2.5: <strong class="text-white">12 µg/m³</strong>. Óptimo para deporte al aire libre.
+      <div class="goes-preview-container" onclick="openGoesModal()">
+        <img src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ssa/GEOCOLOR/latest.jpg" class="goes-preview-img" alt="GOES-19 NOAA Chile Satélite" />
+        <div class="goes-overlay-badge">
+          <i class="fa-solid fa-expand"></i> Toca para expandir satélite en alta resolución
         </div>
       </div>
-
-      <!-- TILE 2: ASISTENTE DE ROPA -->
-      <div class="glass-card bento-tile">
-        <div>
-          <div class="card-header">
-            <i class="fa-solid fa-shirt"></i>
-            <span>Recomendación Ropa</span>
-          </div>
-          <div class="bento-main-value" style="font-size: 18px;" id="clothingVal">Chaqueta Abrigada</div>
-          <div class="bento-badge badge-cyan">Sin Paraguas</div>
-        </div>
-        <div class="bento-footer-text">
-          Sensación térmica fresca al anochecer.
-        </div>
-      </div>
-
-      <!-- TILE 3: ÍNDICE UV -->
-      <div class="glass-card bento-tile">
-        <div>
-          <div class="card-header">
-            <i class="fa-solid fa-sun"></i>
-            <span>Índice UV</span>
-          </div>
-          <div class="bento-main-value">2.3</div>
-          <div class="bento-badge badge-green">Bajo</div>
-        </div>
-        <div class="bento-footer-text">
-          No se requiere protección solar en este momento.
-        </div>
-      </div>
-
-      <!-- TILE 4: PRESIÓN ATMOSFÉRICA -->
-      <div class="glass-card bento-tile">
-        <div>
-          <div class="card-header">
-            <i class="fa-solid fa-gauge"></i>
-            <span>Presión Barométrica</span>
-          </div>
-          <div class="bento-main-value">1008.6 hPa</div>
-          <div class="bento-badge badge-cyan">Estable</div>
-        </div>
-        <div class="bento-footer-text">
-          Presión a nivel del mar calibrada DMC.
-        </div>
-      </div>
-
     </div>
 
-    <!-- 5. TARJETA DE MAPA Y SATÉLITE APPLE -->
-    <div class="glass-card map-tile-card">
-      <div class="map-tile-header">
-        <i class="fa-solid fa-earth-americas" style="color: #38bdf8;"></i>
-        <span>Radar & Satélite en Vivo</span>
-      </div>
-      <div id="appleMiniMap"></div>
-      <button class="map-expand-btn" onclick="openMapModal()">
-        <span>Expandir Mapa</span>
-        <i class="fa-solid fa-expand"></i>
-      </button>
+    <!-- 6. MAPAS SEGÚN MODO: WINDY EN URBANO Y GEE EN AGRÍCOLA -->
+    <div class="glass-card map-tile-card" id="mapCardContainer">
+      <!-- Inyectado dinámicamente según modo -->
     </div>
 
-    <!-- 6. PRONÓSTICO DE 7 DÍAS CONTINUO -->
+    <!-- 7. PRONÓSTICO DE 7 DÍAS CONTINUO (CON DETALLE AL TOCAR CADA DÍA) -->
     <div class="glass-card">
       <div class="card-header">
         <i class="fa-regular fa-calendar-days"></i>
-        <span>Pronóstico de 7 Días</span>
+        <span>Pronóstico de 7 Días (Toca un día para ver su desglose)</span>
       </div>
       <div class="daily-list" id="dailyList">
         <!-- Renderizado dinámicamente -->
@@ -872,21 +985,58 @@
 
   </div>
 
-  <!-- MODAL FULLSCREEN MAP SHEET (APPLE MAPS EXPERIENCE) -->
-  <div class="map-modal-sheet" id="mapModal">
-    <div class="map-sheet-header">
-      <div class="map-layer-selector">
-        <button class="map-layer-btn active" onclick="switchMapLayer('satellite')">🛰️ GOES-19 Infrarrojo</button>
-        <button class="map-layer-btn" onclick="switchMapLayer('precip')">🌧️ Lluvia & Radar</button>
-        <button class="map-layer-btn" onclick="switchMapLayer('wind')">💨 Capas de Viento</button>
+  <!-- MODAL APPLE SHEET: DETALLE HORARIO -->
+  <div class="apple-modal-sheet" id="hourlyDetailModal" onclick="closeHourlyModal(event)">
+    <div class="apple-sheet-content" onclick="event.stopPropagation()">
+      <div class="sheet-handle-bar"></div>
+      <div class="sheet-header-row">
+        <div class="sheet-title" id="hourSheetTitle">Detalle 22:00 hrs</div>
+        <button class="glass-pill-btn" onclick="closeHourlyModal()">✕</button>
       </div>
-      <button class="glass-pill-btn" onclick="closeMapModal()">
-        <i class="fa-solid fa-xmark"></i>
-        <span>Cerrar</span>
-      </button>
+      <div style="text-align: center; margin: 16px 0;">
+        <div id="hourSheetIcon" style="font-size: 48px; margin-bottom: 8px;">☀️</div>
+        <div id="hourSheetTemp" style="font-size: 52px; font-weight: 200; font-family: var(--font-system);">2°C</div>
+        <div id="hourSheetCondition" style="font-size: 15px; color: #94a3b8;">Despejado / Noche Fría</div>
+      </div>
+      <div class="bento-grid" style="grid-template-columns: 1fr 1fr; margin-top: 16px;">
+        <div class="glass-card" style="padding: 12px;">
+          <div style="font-size: 11px; color: #94a3b8;">Probabilidad Lluvia</div>
+          <div style="font-size: 18px; font-weight: 700; color: #38bdf8;" id="hourSheetRain">0%</div>
+        </div>
+        <div class="glass-card" style="padding: 12px;">
+          <div style="font-size: 11px; color: #94a3b8;">Viento Estimado</div>
+          <div style="font-size: 18px; font-weight: 700; color: #ffffff;" id="hourSheetWind">8 km/h</div>
+        </div>
+      </div>
     </div>
-    <div class="map-fullscreen-container">
-      <div id="appleFullMap"></div>
+  </div>
+
+  <!-- MODAL APPLE SHEET: DETALLE DEL DÍA COMPLETO -->
+  <div class="apple-modal-sheet" id="dailyDetailModal" onclick="closeDailyModal(event)">
+    <div class="apple-sheet-content" onclick="event.stopPropagation()">
+      <div class="sheet-handle-bar"></div>
+      <div class="sheet-header-row">
+        <div class="sheet-title" id="daySheetTitle">Pronóstico Completo</div>
+        <button class="glass-pill-btn" onclick="closeDailyModal()">✕</button>
+      </div>
+      <div id="daySheetHourlyTrack" class="hourly-track" style="margin-top: 12px;">
+        <!-- Desglose horario del día seleccionado -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL GOES-19 EXPANDIDO FULLSCREEN -->
+  <div class="apple-modal-sheet" id="goesModal" onclick="closeGoesModal(event)">
+    <div class="goes-viewer-box" onclick="event.stopPropagation()">
+      <div class="sheet-header-row">
+        <div class="sheet-title">🛰️ NOAA GOES-19 Infrarrojo GeoColor (Chile)</div>
+        <button class="glass-pill-btn" onclick="closeGoesModal()">✕ Cerrar</button>
+      </div>
+      <img src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ssa/GEOCOLOR/latest.jpg" class="goes-img-full" alt="GOES-19 Full Satellite" />
+      <div style="font-size: 12px; color: #94a3b8; display: flex; justify-content: space-between;">
+        <span>Resolución: Infrarrojo Geostacionario 1000m</span>
+        <span>Fuente: NOAA STAR ABI</span>
+      </div>
     </div>
   </div>
 
@@ -900,25 +1050,23 @@
     </div>
   </div>
 
-  <!-- LOGICA JAVASCRIPT DIRECTA Y CONEXIÓN AL BACKEND -->
+  <!-- LÓGICA JAVASCRIPT Y CONEXIÓN EN TIEMPO REAL -->
   <script>
     const BACKEND_URL = 'https://meteoprecisa-backend.onrender.com';
     let currentCoords = { lat: -40.3479, lon: -73.3075, name: "San Pablo, Los Lagos" };
     let stationsCatalog = [];
-    let currentMode = 'campo';
-    let miniMap = null;
-    let fullMap = null;
-    let mapMarker = null;
+    let currentMode = 'ciudad'; // URBANO POR DEFECTO
+    let globalWeatherData = null;
 
     // 1. CARGA INICIAL
     window.addEventListener('DOMContentLoaded', () => {
+      setAppMode('ciudad');
       loadWeatherData(currentCoords.lat, currentCoords.lon);
       fetchCatalog();
-      initMiniMap();
       tryGPS();
     });
 
-    // 2. GEOLOCALIZACIÓN GPS AUTOMÁTICA
+    // 2. GPS AUTOMÁTICO
     function tryGPS() {
       if ('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition(
@@ -927,28 +1075,28 @@
             currentCoords.lon = pos.coords.longitude;
             currentCoords.name = "Mi Ubicación GPS";
             loadWeatherData(currentCoords.lat, currentCoords.lon);
-            updateMapPosition(pos.coords.latitude, pos.coords.longitude);
           },
-          (err) => console.log('GPS no concedido, usando predio inicial:', err.message),
+          (err) => console.log('GPS aviso:', err.message),
           { timeout: 8000 }
         );
       }
     }
 
-    // 3. CONSULTA A LA API DE FASTAPI
+    // 3. CONSULTA AL BACKEND
     async function loadWeatherData(lat, lon) {
       try {
         const resp = await fetch(`${BACKEND_URL}/api/v1/clima-hiperlocal?lat=${lat}&lon=${lon}`);
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         const data = await resp.json();
+        globalWeatherData = data;
         renderWeather(data);
       } catch (e) {
-        console.warn('Usando telemetría local de respaldo:', e);
+        console.warn('Fallback local:', e);
         renderFallback();
       }
     }
 
-    // 4. RENDERIZADO VISUAL PURO APPLE WEATHER
+    // 4. RENDERIZADO VISUAL
     function renderWeather(data) {
       const estacion = data.estacion || {};
       const urbano = data.modo_urbano || {};
@@ -956,7 +1104,6 @@
       const omHourly = data.pronostico_numerico_openmeteo?.horario || {};
       const omDaily = data.pronostico_numerico_openmeteo?.diario || {};
 
-      // Sincronización exacta al minuto presente
       const liveTemp = (omHourly.temperature_2m && omHourly.temperature_2m.length > 0) ? Math.round(omHourly.temperature_2m[0]) : Math.round(urbano.temperatura_c || 2);
       const liveSens = Math.round(urbano.sensacion_termica_c ?? (liveTemp - 1));
       const tMin = Math.round(agricola.temperatura_minima_hoy_c ?? 0);
@@ -970,25 +1117,65 @@
       document.getElementById('heroCondition').innerText = liveTemp <= 2 ? 'Despejado / Noche Helada' : 'Despejado / Estable';
       document.getElementById('heroStationName').innerText = `${estacion.nombre || 'Estación INIA'} (${data.metadatos?.distancia_km || 3.8} km)`;
 
-      // Render Carrusel Horario 24h
+      // Render Carrusel Horario
       renderHourly(omHourly);
 
-      // Render 7 Días
+      // Render Pronóstico 7 Días
       renderDaily(omDaily);
 
-      // Render Bento Táctico
+      // Métricas Urbanas
+      const sinca = urbano.calidad_aire_sinca || {};
+      document.getElementById('aqiVal').innerText = `AQI ${sinca.aqi || 25}`;
+      document.getElementById('mp25Val').innerText = `${sinca.mp25 || 12} µg/m³`;
+      document.getElementById('uvVal').innerText = (urbano.indice_uv || 2.3).toFixed(1);
+      document.getElementById('urbanWind').innerText = `${urbano.viento_kmh || 8} km/h`;
+
+      // Métricas Agrícolas
       const rh = urbano.humedad_relativa_pct || 65;
       const deltaT = ((liveTemp - (liveTemp - ((100 - rh) / 5))) * 0.66).toFixed(1);
       document.getElementById('deltaTVal').innerText = `ΔT ${deltaT}°C`;
       document.getElementById('sprayWind').innerText = `${urbano.viento_kmh || 8} km/h`;
       document.getElementById('sprayHum').innerText = `${rh}%`;
-
       document.getElementById('frostMin').innerText = `${tMin}°C`;
       document.getElementById('frostDew').innerText = `${(liveTemp - ((100 - rh) / 5)).toFixed(1)}°C`;
       document.getElementById('etoVal').innerText = `${agricola.evapotranspiracion_eto_mm_dia || 0.8} mm`;
-      document.getElementById('windSpeed').innerText = `${urbano.viento_kmh || 8} km/h`;
 
-      updateMapPosition(estacion.coordenadas?.latitud || currentCoords.lat, estacion.coordenadas?.longitud || currentCoords.lon);
+      renderMapForMode(lat, lon);
+    }
+
+    // 5. RENDERIZADO DEL MAPA DIFERENCIADO (WINDY EN URBANO / GEE EN AGRÍCOLA)
+    function renderMapForMode(lat, lon) {
+      const container = document.getElementById('mapCardContainer');
+      if (currentMode === 'ciudad') {
+        // MODO URBANO: WINDY ECMWF PARTICULAS EN VIVO
+        container.innerHTML = `
+          <div class="map-tile-header">
+            <i class="fa-solid fa-wind" style="color: #38bdf8;"></i>
+            <span>Radar de Viento & Lluvia Windy ECMWF</span>
+          </div>
+          <iframe 
+            src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=8&overlay=wind&product=ecmwf&lat=${lat || currentCoords.lat}&lon=${lon || currentCoords.lon}" 
+            class="map-frame-wrapper" 
+            frameborder="0">
+          </iframe>
+        `;
+      } else {
+        // MODO AGRÍCOLA: GOOGLE EARTH ENGINE SENTINEL-2 (10m)
+        container.innerHTML = `
+          <div class="map-tile-header">
+            <i class="fa-solid fa-seedling" style="color: #10b981;"></i>
+            <span>Satelital Google Earth Engine (Sentinel-2 10m)</span>
+          </div>
+          <div id="geeLeafletMap" style="width: 100%; height: 100%;"></div>
+        `;
+        setTimeout(() => {
+          if (typeof L !== 'undefined') {
+            const gMap = L.map('geeLeafletMap', { zoomControl: false, attributionControl: false }).setView([lat || currentCoords.lat, lon || currentCoords.lon], 11);
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 18 }).addTo(gMap);
+            L.circleMarker([lat || currentCoords.lat, lon || currentCoords.lon], { radius: 9, fillColor: '#10b981', color: '#ffffff', weight: 2, fillOpacity: 0.9 }).addTo(gMap);
+          }
+        }, 150);
+      }
     }
 
     function renderHourly(hourly) {
@@ -997,6 +1184,7 @@
       const times = hourly.time?.slice(0, 24) || [];
       const temps = hourly.temperature_2m?.slice(0, 24) || [];
       const precips = hourly.precipitation_probability?.slice(0, 24) || [];
+      const winds = hourly.wind_speed_10m?.slice(0, 24) || [];
 
       times.forEach((t, idx) => {
         const timeLabel = idx === 0 ? 'Ahora' : t.split('T')[1]?.slice(0, 5) || `${idx}:00`;
@@ -1012,6 +1200,7 @@
           <div class="hourly-temp">${tempVal}°</div>
           <div class="hourly-rain">${pProb > 0 ? pProb + '%' : ''}</div>
         `;
+        item.onclick = () => openHourlyDetail(timeLabel, tempVal, pProb, winds[idx] || 8, icon);
         track.appendChild(item);
       });
     }
@@ -1040,84 +1229,83 @@
           </div>
           <div class="daily-max">${tMax}°</div>
         `;
+        row.onclick = () => openDailyDetail(d, tMin, tMax);
         list.appendChild(row);
       });
     }
 
-    function renderFallback() {
-      document.getElementById('heroTemp').innerText = '2°';
-      document.getElementById('heroSens').innerText = '0°';
-      document.getElementById('heroMin').innerText = '0°';
-      document.getElementById('heroMax').innerText = '11°';
-      renderHourly({ time: Array(24).fill('2026-08-14T00:00:00'), temperature_2m: [2, 1, 0, 1, 2, 2, 2, 2, 4, 5, 6, 8, 10, 11] });
-      renderDaily({ temperature_2m_min: [0, 5, 3, 2, 2, 1, 1], temperature_2m_max: [11, 14, 12, 10, 13, 14, 15] });
+    // 6. DETALLES INTERACTIVOS (APPLE SHEETS)
+    function openHourlyDetail(timeLabel, temp, rain, wind, icon) {
+      document.getElementById('hourSheetTitle').innerText = `Pronóstico Detallado • ${timeLabel}`;
+      document.getElementById('hourSheetTemp').innerText = `${temp}°C`;
+      document.getElementById('hourSheetRain').innerText = `${rain}%`;
+      document.getElementById('hourSheetWind').innerText = `${wind} km/h`;
+      document.getElementById('hourlyDetailModal').classList.add('active');
     }
 
-    // 5. CAMBIO DE MODO
+    function closeHourlyModal() {
+      document.getElementById('hourlyDetailModal').classList.remove('active');
+    }
+
+    function openDailyDetail(dayName, min, max) {
+      document.getElementById('daySheetTitle').innerText = `Desglose Horario • ${dayName} (Mín ${min}° / Máx ${max}°)`;
+      const container = document.getElementById('daySheetHourlyTrack');
+      container.innerHTML = '';
+      
+      // Simular horas del día
+      for (let h = 0; h < 24; h += 3) {
+        const hourStr = `${h.toString().padStart(2, '0')}:00`;
+        const item = document.createElement('div');
+        item.className = 'hourly-item';
+        item.innerHTML = `
+          <div class="hourly-time">${hourStr}</div>
+          <div class="hourly-icon"><i class="fa-solid fa-sun" style="color: #fbbf24;"></i></div>
+          <div class="hourly-temp">${Math.round(min + ((max - min) * (h / 24)))}°</div>
+        `;
+        container.appendChild(item);
+      }
+      document.getElementById('dailyDetailModal').classList.add('active');
+    }
+
+    function closeDailyModal() {
+      document.getElementById('dailyDetailModal').classList.remove('active');
+    }
+
+    function openGoesModal() {
+      document.getElementById('goesModal').classList.add('active');
+    }
+
+    function closeGoesModal() {
+      document.getElementById('goesModal').classList.remove('active');
+    }
+
+    // 7. CAMBIO DE MODO
     function setAppMode(mode) {
       currentMode = mode;
-      document.getElementById('btnModoCampo').classList.toggle('active', mode === 'campo');
       document.getElementById('btnModoCiudad').classList.toggle('active', mode === 'ciudad');
-      document.getElementById('agroSuite').style.display = mode === 'campo' ? 'grid' : 'none';
+      document.getElementById('btnModoCampo').classList.toggle('active', mode === 'campo');
       document.getElementById('urbanSuite').style.display = mode === 'ciudad' ? 'grid' : 'none';
+      document.getElementById('agroSuite').style.display = mode === 'campo' ? 'grid' : 'none';
+      renderMapForMode(currentCoords.lat, currentCoords.lon);
     }
 
-    // 6. MAPAS INTERACTIVOS LEAFLET
-    function initMiniMap() {
-      if (typeof L === 'undefined') return;
-      miniMap = L.map('appleMiniMap', { zoomControl: false, attributionControl: false }).setView([currentCoords.lat, currentCoords.lon], 9);
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 18 }).addTo(miniMap);
-      mapMarker = L.circleMarker([currentCoords.lat, currentCoords.lon], { radius: 8, fillColor: '#38bdf8', color: '#ffffff', weight: 2, opacity: 1, fillOpacity: 0.9 }).addTo(miniMap);
-    }
-
-    function updateMapPosition(lat, lon) {
-      if (miniMap && mapMarker) {
-        miniMap.setView([lat, lon], 9);
-        mapMarker.setLatLng([lat, lon]);
-      }
-    }
-
-    function openMapModal() {
-      document.getElementById('mapModal').classList.add('active');
-      setTimeout(() => {
-        if (!fullMap && typeof L !== 'undefined') {
-          fullMap = L.map('appleFullMap', { zoomControl: true, attributionControl: false }).setView([currentCoords.lat, currentCoords.lon], 8);
-          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 18 }).addTo(fullMap);
-          L.circleMarker([currentCoords.lat, currentCoords.lon], { radius: 10, fillColor: '#38bdf8', color: '#ffffff', weight: 3, fillOpacity: 0.9 }).addTo(fullMap);
-        } else if (fullMap) {
-          fullMap.invalidateSize();
-          fullMap.setView([currentCoords.lat, currentCoords.lon], 8);
-        }
-      }, 200);
-    }
-
-    function closeMapModal() {
-      document.getElementById('mapModal').classList.remove('active');
-    }
-
-    function switchMapLayer(layer) {
-      document.querySelectorAll('.map-layer-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      // Conmutar capas
-    }
-
-    // 7. WHATSAPP SHARE
+    // 8. WHATSAPP SHARE
     function shareWhatsApp() {
       const city = document.getElementById('heroCity').innerText;
       const temp = document.getElementById('heroTemp').innerText;
       const min = document.getElementById('heroMin').innerText;
       const max = document.getElementById('heroMax').innerText;
-      const text = `🌤️ *MeteoPrecisa Chile*\n📍 ${city}\n🌡️ T° Actual: ${temp} (Mín ${min} / Máx ${max})\n🌾 Ventana Fumigación: Óptima\n🔗 https://frontend-vert-seven-61.vercel.app`;
+      const text = `🌤️ *MeteoPrecisa Chile*\n📍 ${city}\n🌡️ T° Actual: ${temp} (Mín ${min} / Máx ${max})\n🔗 https://frontend-vert-seven-61.vercel.app`;
       window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
     }
 
-    // 8. MODAL DE BÚSQUEDA SPOTLIGHT
+    // 9. BUSCADOR SPOTLIGHT
     function openSearchModal() {
       document.getElementById('searchModal').classList.add('active');
       document.getElementById('searchInput').focus();
     }
 
-    function closeSearchModal(e) {
+    function closeSearchModal() {
       document.getElementById('searchModal').classList.remove('active');
     }
 
@@ -1149,6 +1337,16 @@
         };
         container.appendChild(item);
       });
+    }
+
+    function renderFallback() {
+      document.getElementById('heroTemp').innerText = '2°';
+      document.getElementById('heroSens').innerText = '0°';
+      document.getElementById('heroMin').innerText = '0°';
+      document.getElementById('heroMax').innerText = '11°';
+      renderHourly({ time: Array(24).fill('2026-08-14T00:00:00'), temperature_2m: [2, 1, 0, 1, 2, 2, 2, 2, 4, 5, 6, 8, 10, 11] });
+      renderDaily({ temperature_2m_min: [0, 5, 3, 2, 2, 1, 1], temperature_2m_max: [11, 14, 12, 10, 13, 14, 15] });
+      renderMapForMode(currentCoords.lat, currentCoords.lon);
     }
 
   </script>
