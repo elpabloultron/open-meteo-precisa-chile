@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { CloudSun, Search, Building2, Sprout, Sun, Moon, Laptop, LocateFixed } from 'lucide-react';
+import { CloudSun, Search, Building2, Sprout, Sun, Moon, Laptop, LocateFixed, Layers, MapPin } from 'lucide-react';
 import { WeatherContext } from '../context/WeatherContext';
 
-export default function Navbar({ modo, setModo, onSelectStation, apiBase }) {
+export default function Navbar({ modo, setModo, onSelectStation, apiBase, onOpenMapDrawer }) {
   const { theme, setTheme, setCoords } = useContext(WeatherContext);
   const [query, setQuery] = useState('');
   const [resultados, setResultados] = useState([]);
@@ -59,40 +59,52 @@ export default function Navbar({ modo, setModo, onSelectStation, apiBase }) {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-slate-950/60 border-b border-white/10 backdrop-blur-2xl px-4 py-3 shadow-xl transition-colors duration-500">
+    <header className="sticky top-0 z-40 bg-slate-950/70 border-b border-white/10 backdrop-blur-3xl px-4 py-3 shadow-2xl transition-all duration-300">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
         
-        {/* TITULAR Y MARCA */}
+        {/* TITULAR Y MARCA APPLE HIG */}
         <div className="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 text-white shadow-lg shadow-sky-500/25 ring-1 ring-white/20">
-              <CloudSun className="w-6 h-6" />
+              <CloudSun className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-lg font-black tracking-tight text-white">
+                <h1 className="text-base sm:text-lg font-extrabold tracking-tight text-white">
                   Meteo<span className="text-sky-400">Precisa</span>
                 </h1>
                 <span className="inline-flex items-center gap-1.5 px-2 py-0.5 text-[10px] font-bold bg-emerald-500/15 text-emerald-400 rounded-full border border-emerald-500/30">
                   <span className="live-pulse-dot" />
-                  <span>619 Estaciones</span>
+                  <span>Chile Oficial</span>
                 </span>
               </div>
-              <p className="text-[11px] text-slate-400 font-medium">Telemetría Oficial en Vivo de Chile</p>
+              <p className="text-[11px] text-slate-400 font-medium">Telemetría Física DMC • INIA • GEE</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            {/* BOTÓN GPS RÁPIDO */}
+          <div className="flex items-center gap-1.5">
+            {/* BOTÓN DRAWER DE MAPAS */}
+            {onOpenMapDrawer && (
+              <button
+                onClick={onOpenMapDrawer}
+                title="Abrir Visor de Mapas y Satélites"
+                className="apple-pill bg-sky-500/15 text-sky-300 border-sky-500/30 hover:bg-sky-500/25"
+              >
+                <Layers className="w-3.5 h-3.5 text-sky-400" />
+                <span className="hidden sm:inline">Mapas & Satélites</span>
+              </button>
+            )}
+
+            {/* BOTÓN GPS */}
             <button
               onClick={handleTriggerGps}
               title="Detectar mi ubicación GPS actual"
-              className={`apple-pill flex items-center gap-1.5 text-xs font-bold transition ${
+              className={`apple-pill ${
                 gpsLocating ? 'bg-sky-500/30 text-sky-300 border-sky-400 animate-pulse' : 'text-slate-300'
               }`}
             >
               <LocateFixed className={`w-3.5 h-3.5 ${gpsLocating ? 'animate-spin text-sky-400' : 'text-sky-400'}`} />
-              <span className="hidden sm:inline">{gpsLocating ? 'Buscando GPS...' : 'Mi GPS'}</span>
+              <span className="hidden sm:inline">{gpsLocating ? 'GPS...' : 'GPS'}</span>
             </button>
 
             {/* SELECTOR TEMA */}
@@ -109,7 +121,7 @@ export default function Navbar({ modo, setModo, onSelectStation, apiBase }) {
         </div>
 
         {/* BUSCADOR AUTOCOMPLETADO */}
-        <div className="relative w-full md:w-96">
+        <div className="relative w-full md:w-80 lg:w-96">
           <div className="relative">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input
@@ -117,13 +129,13 @@ export default function Navbar({ modo, setModo, onSelectStation, apiBase }) {
               placeholder="Buscar comuna, ciudad o estación..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-white/10 bg-slate-900/60 backdrop-blur-lg rounded-2xl text-xs text-white placeholder-slate-400 focus:ring-2 focus:ring-sky-500/50 focus:border-sky-500 outline-none transition duration-200 shadow-inner"
+              className="w-full pl-10 pr-4 py-2 border border-white/10 bg-slate-900/60 backdrop-blur-xl rounded-2xl text-xs text-white placeholder-slate-400 focus:ring-2 focus:ring-sky-500/50 focus:border-sky-500 outline-none transition duration-200 shadow-inner"
             />
           </div>
 
           {/* DESPLEGABLE RESULTADOS */}
           {resultados.length > 0 && (
-            <div className="absolute top-full left-0 right-0 mt-2 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl max-h-64 overflow-y-auto z-50 divide-y divide-slate-800 animate-apple-entry">
+            <div className="absolute top-full left-0 right-0 mt-2 bg-slate-900/95 backdrop-blur-2xl border border-slate-700/80 rounded-2xl shadow-2xl max-h-64 overflow-y-auto z-50 divide-y divide-slate-800 animate-apple-entry">
               {resultados.map((est) => (
                 <button
                   key={est.id}
@@ -135,8 +147,11 @@ export default function Navbar({ modo, setModo, onSelectStation, apiBase }) {
                   className="w-full text-left px-4 py-3 hover:bg-slate-800/80 transition flex items-center justify-between text-xs cursor-pointer"
                 >
                   <div>
-                    <div className="font-bold text-white">{est.nombre}</div>
-                    <div className="text-slate-400 text-[11px]">{est.sector}</div>
+                    <div className="font-bold text-white flex items-center gap-1.5">
+                      <MapPin className="w-3 h-3 text-sky-400" />
+                      <span>{est.nombre}</span>
+                    </div>
+                    <div className="text-slate-400 text-[11px] pl-4">{est.sector}</div>
                   </div>
                   <span className="px-2 py-0.5 bg-slate-950 text-sky-400 rounded-full text-[10px] font-semibold border border-slate-800">
                     {est.red}
@@ -147,31 +162,27 @@ export default function Navbar({ modo, setModo, onSelectStation, apiBase }) {
           )}
         </div>
 
-        {/* SELECTOR DE MODOS (URBANO / AGRÍCOLA) */}
-        <div className="flex items-center p-1 bg-slate-900/60 backdrop-blur-md border border-white/10 rounded-2xl w-full md:w-auto justify-center shadow-inner">
+        {/* SELECTOR DE MODOS APPLE HIG (URBANO / AGRÍCOLA) */}
+        <div className="apple-segmented-control w-full md:w-auto">
           <button
             type="button"
             onClick={() => setModo('urbano')}
-            className={`flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-1.5 rounded-xl text-xs font-bold transition duration-200 cursor-pointer ${
-              modo === 'urbano'
-                ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/30'
-                : 'text-slate-400 hover:text-white'
+            className={`apple-segmented-button flex-1 md:flex-none flex items-center justify-center gap-1.5 ${
+              modo === 'urbano' ? 'active' : ''
             }`}
           >
-            <Building2 className="w-3.5 h-3.5" />
+            <Building2 className="w-3.5 h-3.5 text-sky-400" />
             <span>Modo Ciudad</span>
           </button>
 
           <button
             type="button"
             onClick={() => setModo('agricola')}
-            className={`flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-1.5 rounded-xl text-xs font-bold transition duration-200 cursor-pointer ${
-              modo === 'agricola'
-                ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/30'
-                : 'text-slate-400 hover:text-white'
+            className={`apple-segmented-button flex-1 md:flex-none flex items-center justify-center gap-1.5 ${
+              modo === 'agricola' ? 'active' : ''
             }`}
           >
-            <Sprout className="w-3.5 h-3.5" />
+            <Sprout className="w-3.5 h-3.5 text-emerald-400" />
             <span>Modo Campo</span>
           </button>
         </div>

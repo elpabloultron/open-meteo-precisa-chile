@@ -1,135 +1,141 @@
 import React from 'react';
-import { MapPin, ShieldCheck, ArrowUp, ArrowDown, Sun, CloudSun, CloudRain, Snowflake, CloudLightning, Cloud, FileText, Radio, Navigation, Activity } from 'lucide-react';
+import { MapPin, ShieldCheck, ArrowUp, ArrowDown, Sun, CloudSun, CloudRain, Snowflake, CloudLightning, Cloud, FileText, Radio, Navigation, Activity, Sparkles, Clock, RefreshCw, Share2 } from 'lucide-react';
 import { formatLocalTime } from '../utils/timeUtils';
 
-function getWeatherVectorIcon(code) {
-  if (code === 0) return <Sun className="w-16 h-16 sm:w-20 sm:h-20 text-amber-400 drop-shadow-[0_8px_25px_rgba(251,191,36,0.35)] animate-pulse" />;
-  if (code >= 1 && code <= 3) return <CloudSun className="w-16 h-16 sm:w-20 sm:h-20 text-sky-300 drop-shadow-[0_8px_25px_rgba(56,189,248,0.35)]" />;
-  if (code >= 51 && code <= 67) return <CloudRain className="w-16 h-16 sm:w-20 sm:h-20 text-blue-400 drop-shadow-[0_8px_25px_rgba(96,165,250,0.35)]" />;
-  if (code >= 71 && code <= 77) return <Snowflake className="w-16 h-16 sm:w-20 sm:h-20 text-cyan-300 drop-shadow-[0_8px_25px_rgba(103,232,249,0.35)]" />;
-  if (code >= 95) return <CloudLightning className="w-16 h-16 sm:w-20 sm:h-20 text-purple-400 drop-shadow-[0_8px_25px_rgba(192,132,252,0.35)]" />;
-  return <Cloud className="w-16 h-16 sm:w-20 sm:h-20 text-slate-400 drop-shadow-[0_8px_25px_rgba(148,163,184,0.35)]" />;
+function getWeatherVectorIcon(code, temp) {
+  if (temp <= 2) return <Snowflake className="w-12 h-12 text-cyan-300 drop-shadow-[0_8px_25px_rgba(103,232,249,0.5)] animate-pulse" />;
+  if (code === 0) return <Sun className="w-12 h-12 text-amber-400 drop-shadow-[0_8px_25px_rgba(251,191,36,0.5)] animate-pulse" />;
+  if (code >= 1 && code <= 3) return <CloudSun className="w-12 h-12 text-sky-300 drop-shadow-[0_8px_25px_rgba(56,189,248,0.5)]" />;
+  if (code >= 51 && code <= 67) return <CloudRain className="w-12 h-12 text-blue-400 drop-shadow-[0_8px_25px_rgba(96,165,250,0.5)]" />;
+  if (code >= 71 && code <= 77) return <Snowflake className="w-12 h-12 text-cyan-300 drop-shadow-[0_8px_25px_rgba(103,232,249,0.5)]" />;
+  if (code >= 95) return <CloudLightning className="w-12 h-12 text-purple-400 drop-shadow-[0_8px_25px_rgba(192,132,252,0.5)]" />;
+  return <Cloud className="w-12 h-12 text-slate-300 drop-shadow-[0_8px_25px_rgba(148,163,184,0.5)]" />;
 }
 
-export default function BreezyHeroBlock({ climaData, onOpenEstacionesCercanas, onSelectMetric, onOpenAgroReport }) {
+export default function BreezyHeroBlock({
+  climaData,
+  onOpenEstacionesCercanas,
+  onSelectMetric,
+  onOpenAgroReport,
+  onOpenMapDrawer,
+  previewHourData,
+  onResetPreview
+}) {
   if (!climaData || !climaData.estacion) return null;
 
   const { estacion, modo_urbano, modo_agricola, metadatos } = climaData;
 
-  const temp = modo_urbano?.temperatura_c ?? 15;
-  const sensacion = modo_urbano?.sensacion_termica_c ?? temp;
+  const isPreview = Boolean(previewHourData);
+  const temp = isPreview ? previewHourData.temp : (modo_urbano?.temperatura_c ?? 15);
+  const sensacion = isPreview ? previewHourData.temp : (modo_urbano?.sensacion_termica_c ?? temp);
   const tMin = modo_agricola?.temperatura_minima_hoy_c ?? 8;
   const tMax = modo_agricola?.temperatura_maxima_hoy_c ?? 20;
+  const weatherCode = isPreview ? previewHourData.code : 0;
 
-  const isoTimestamp = metadatos?.servidor_timestamp
-    ? new Date(metadatos.servidor_timestamp * 1000).toISOString()
-    : null;
-  const { localTimeLabel } = formatLocalTime(isoTimestamp);
+  const handleShareReport = () => {
+    const wind = modo_urbano?.viento_kmh ?? 10;
+    const rh = modo_urbano?.humedad_relativa_pct ?? 65;
+    const dewPoint = (temp - ((100 - rh) / 5)).toFixed(1);
+    const eto = modo_agricola?.evapotranspiracion_eto_mm_dia ?? 3.5;
+    
+    const text = `🌤️ *MeteoPrecisa Chile — Reporte Operativo*\n` +
+      `📍 *Ubicación:* ${estacion?.sector || 'Predio'} (${estacion?.nombre})\n` +
+      `🌡️ *Temperatura:* ${Math.round(temp)}°C (Mín: ${Math.round(tMin)}° / Máx: ${Math.round(tMax)}°)\n` +
+      `💨 *Viento:* ${wind} km/h • *Humedad:* ${rh}%\n` +
+      `💧 *Demanda ETo:* ${eto} mm/día • *Punto de Rocío:* ${dewPoint}°C\n` +
+      `🔗 Telemetría en vivo: https://frontend-vert-seven-61.vercel.app`;
 
-  const handleLineageClick = () => {
-    if (onSelectMetric) {
-      onSelectMetric({
-        title: `Estación Física: ${estacion?.nombre}`,
-        value: `${temp}°C`,
-        unit: "Telemetría Directa en Terreno",
-        description: `Esta medición proviene directamente de los sensores físicos oficiales de la red ${estacion?.red_oficial || 'Agromet INIA / DMC'} (Estación ID: ${estacion?.id}). Coordenadas: ${estacion?.coordenadas?.latitud}, ${estacion?.coordenadas?.longitud}. Distancia: ${metadatos?.distancia_km || 0} km de tu ubicación GPS.`,
-        advice: "Datos auditados bajo los estándares de la Organización Meteorológica Mundial (OMM WMO-No. 8).",
-        category: "Telemetría Física Oficial",
-        stationId: estacion?.id,
-        rawSourceUrl: estacion?.raw_source_url || "https://agrometeorologia.cl",
-        isLiveData: true
-      });
+    if (navigator.share) {
+      navigator.share({ title: 'MeteoPrecisa Chile', text }).catch(() => {});
+    } else {
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
     }
   };
 
   return (
-    <div className="apple-card p-6 sm:p-8 relative overflow-hidden space-y-6 shadow-2xl border border-white/15 bg-slate-900/60">
+    <div className="text-center py-6 sm:py-10 space-y-3 relative">
       
-      {/* 1. DISTINCIÓN CLARA: TU UBICACIÓN GPS vs ESTACIÓN FÍSICA */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs border-b border-white/10 pb-4">
+      {/* 1. COMUNA / SECTOR PRINCIPAL */}
+      <div className="space-y-1">
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight drop-shadow-md flex items-center justify-center gap-2">
+          <span>{estacion?.sector || 'Tu Ubicación'}</span>
+          <span className="text-[10px] sm:text-xs font-semibold px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-400/30">
+            GPS Exacto
+          </span>
+        </h2>
         
-        {/* TU UBICACIÓN GPS */}
-        <div className="flex items-center gap-2 text-white">
-          <div className="p-1.5 bg-sky-500/20 text-sky-400 rounded-xl border border-sky-500/30">
-            <Navigation className="w-4 h-4" />
-          </div>
-          <div>
-            <div className="font-bold text-sm text-white flex items-center gap-1.5">
-              <span>{estacion?.sector || 'Tu Ubicación'}</span>
-              <span className="text-[10px] text-sky-400 font-normal px-2 py-0.5 bg-sky-500/10 rounded-full border border-sky-500/20">
-                GPS Exacto
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-400">
-              Coordenadas: {estacion?.coordenadas?.latitud?.toFixed(4)}, {estacion?.coordenadas?.longitud?.toFixed(4)}
-            </p>
-          </div>
-        </div>
-
-        {/* ESTACIÓN DE REFERENCIA Y BOTÓN DE INFORME */}
-        <div className="flex flex-wrap items-center gap-2">
-          {onOpenAgroReport && (
-            <button
-              onClick={onOpenAgroReport}
-              className="apple-pill flex items-center gap-1.5 text-emerald-300 bg-emerald-500/15 border-emerald-500/30 font-bold hover:scale-105 transition cursor-pointer shadow-sm"
-            >
-              <FileText className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Ver Boletín Agrícola Completo (PDF)</span>
-            </button>
-          )}
-
-          <button
-            onClick={onOpenEstacionesCercanas}
-            className="apple-pill flex items-center gap-1.5 text-slate-300 hover:text-white font-semibold cursor-pointer"
-          >
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Estación: {estacion?.nombre}</span>
-            <span className="text-[10px] text-emerald-400 font-mono">({metadatos?.distancia_km || 0} km)</span>
-          </button>
-        </div>
-
+        <p className="text-xs text-slate-300/80 font-medium">
+          Estación Física: <strong className="text-white">{estacion?.nombre}</strong> ({metadatos?.distancia_km || 0} km)
+        </p>
       </div>
 
-      {/* 2. BLOQUE HÉROE PRINCIPAL: TEMPERATURA Y ESTADO */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-1">
-        
-        {/* ICONO Y TEMPERATURA MASIVA */}
-        <div className="flex items-center gap-6">
-          {getWeatherVectorIcon(0)}
-          <div>
-            <div className="text-7xl sm:text-8xl md:text-9xl font-black tracking-tighter text-white font-mono leading-none">
-              {temp}°
-            </div>
-            <div className="text-sm sm:text-base font-bold text-slate-200 mt-2 flex items-center gap-2">
-              <span>{modo_urbano?.inversion_termica?.estado || 'Despejado / Normal'}</span>
-              <span className="opacity-40">•</span>
-              <span>Sensación <strong className="font-mono text-amber-300">{sensacion}°C</strong></span>
-            </div>
-          </div>
+      {/* 2. TEMPERATURA MASIVA ESTILO APPLE WEATHER (SF PRO NUMERICAL) */}
+      <div className="flex items-center justify-center my-2">
+        <div className="relative inline-flex items-start">
+          <span className="text-8xl sm:text-9xl font-extralight tracking-tighter text-white font-mono leading-none drop-shadow-xl">
+            {Math.round(temp)}
+          </span>
+          <span className="text-4xl sm:text-6xl font-thin text-slate-300 ml-1 mt-1">
+            °
+          </span>
+        </div>
+      </div>
+
+      {/* 3. ESTADO DEL CIELO Y CONDICIÓN */}
+      <div className="space-y-1">
+        <div className="text-base sm:text-xl font-medium text-slate-100 drop-shadow-sm flex items-center justify-center gap-2">
+          {getWeatherVectorIcon(weatherCode, temp)}
+          <span>{isPreview ? `Proyección para las ${previewHourData.timeLabel}` : (modo_urbano?.inversion_termica?.estado || 'Despejado')}</span>
         </div>
 
-        {/* MIN/MAX Y TIMESTAMP EN VIVO */}
-        <div className="flex flex-col items-end gap-2 text-right">
-          <div className="apple-pill flex items-center gap-4 px-5 py-2 text-xs font-bold shadow-lg">
-            <span className="flex items-center gap-1 text-cyan-300">
-              <ArrowDown className="w-3.5 h-3.5 text-cyan-400" />
-              Mín: <strong className="font-mono text-white">{tMin}°</strong>
-            </span>
-            <span className="opacity-30">|</span>
-            <span className="flex items-center gap-1 text-amber-300">
-              <ArrowUp className="w-3.5 h-3.5 text-amber-400" />
-              Máx: <strong className="font-mono text-white">{tMax}°</strong>
-            </span>
-          </div>
-
-          <div className="text-xs text-slate-400 font-medium flex items-center gap-1.5">
-            <Radio className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
-            <span className="text-slate-300 font-semibold">{estacion?.red_oficial || 'Red Agromet INIA'}</span>
-            <span className="opacity-40">•</span>
-            <span>{localTimeLabel}</span>
-          </div>
+        {/* 4. SENSACIÓN TÉRMICA & EXTREMOS DEL DÍA */}
+        <div className="text-xs sm:text-sm font-medium text-slate-300 flex items-center justify-center gap-3">
+          <span>Sensación <strong className="text-amber-300 font-bold font-mono">{Math.round(sensacion)}°</strong></span>
+          <span className="opacity-40">•</span>
+          <span>Mín: <strong className="text-cyan-300 font-mono">{Math.round(tMin)}°</strong></span>
+          <span className="opacity-40">•</span>
+          <span>Máx: <strong className="text-amber-300 font-mono">{Math.round(tMax)}°</strong></span>
         </div>
+      </div>
 
+      {/* 5. PÍLDORAS DE ACCIÓN OPERATIVA */}
+      <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+        {isPreview && (
+          <button
+            onClick={onResetPreview}
+            className="apple-pill text-xs text-sky-300 bg-sky-500/25 border-sky-400/50 font-bold hover:scale-105 transition cursor-pointer"
+          >
+            <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+            <span>Volver a Tiempo Real</span>
+          </button>
+        )}
+
+        <button
+          onClick={handleShareReport}
+          title="Compartir reporte operativo por WhatsApp"
+          className="apple-pill text-xs text-emerald-300 bg-emerald-500/20 border-emerald-500/40 font-bold hover:scale-105 transition cursor-pointer shadow-sm"
+        >
+          <Share2 className="w-3.5 h-3.5 text-emerald-400" />
+          <span>Compartir WhatsApp</span>
+        </button>
+
+        {onOpenAgroReport && (
+          <button
+            onClick={onOpenAgroReport}
+            className="apple-pill text-xs text-slate-200 bg-white/10 border-white/20 font-bold hover:scale-105 transition cursor-pointer shadow-sm"
+          >
+            <FileText className="w-3.5 h-3.5 text-sky-400" />
+            <span>Boletín Oficial (PDF)</span>
+          </button>
+        )}
+
+        <button
+          onClick={onOpenEstacionesCercanas}
+          className="apple-pill text-xs text-slate-300 hover:text-white font-semibold cursor-pointer"
+        >
+          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+          <span>Cambiar Estación</span>
+        </button>
       </div>
 
     </div>

@@ -1,27 +1,19 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { WeatherContext } from './context/WeatherContext';
 import Navbar from './components/Navbar';
-import WeatherHeader from './components/WeatherHeader';
-import HourlyCarousel from './components/HourlyCarousel';
-import UrbanPanel from './components/UrbanPanel';
-import AgroPanel from './components/AgroPanel';
-import MapSection from './components/MapSection';
-import DailyForecastCards from './components/DailyForecastCards';
-import ForecastChart from './components/ForecastChart';
-import ComparisonTable from './components/ComparisonTable';
+import WeatherSkyCanvas from './components/WeatherSkyCanvas';
+import BreezyView from './components/BreezyView';
+import MapDrawer from './components/MapDrawer';
+import CommandPaletteModal from './components/CommandPaletteModal';
+import AgroReportModal from './components/AgroReportModal';
+import GeeMapModal from './components/GeeMapModal';
 import SatelliteModal from './components/SatelliteModal';
-import BottomNav from './components/BottomNav';
 import DetailDrawer from './components/DetailDrawer';
 import AqiDrawer from './components/AqiDrawer';
 import HourlyForecastDrawer from './components/HourlyForecastDrawer';
 import EstacionesCercanasModal from './components/EstacionesCercanasModal';
 import LocationFallbackModal from './components/LocationFallbackModal';
-import AlertsBanner from './components/AlertsBanner';
-import WeatherSkyCanvas from './components/WeatherSkyCanvas';
-import BreezySunMoonWidget from './components/BreezySunMoonWidget';
-import GeeMapModal from './components/GeeMapModal';
-import BreezyView from './components/BreezyView';
-import AgroReportModal from './components/AgroReportModal';
+import BottomNav from './components/BottomNav';
 
 export default function App() {
   const {
@@ -35,12 +27,13 @@ export default function App() {
     API_BASE
   } = useContext(WeatherContext);
 
+  const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
+  const [mapDrawerOpen, setMapDrawerOpen] = useState(false);
   const [sateliteModalOpen, setSateliteModalOpen] = useState(false);
   const [geeMapModalOpen, setGeeMapModalOpen] = useState(false);
   const [agroReportModalOpen, setAgroReportModalOpen] = useState(false);
   const [cercanasModalOpen, setCercanasModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('inicio');
-
 
   // Estado para el DetailDrawer de métricas y auditoría
   const [selectedMetric, setSelectedMetric] = useState(null);
@@ -57,14 +50,33 @@ export default function App() {
   const mapRef = useRef(null);
   const forecastRef = useRef(null);
 
+  // ATAJOS DE TECLADO GLOBALES ESTILO APPLE / LINEAR (Cmd+K, M, B)
+  useEffect(() => {
+    const handleGlobalKeyDown = (e) => {
+      const isInput = ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName);
+      
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setCommandPaletteOpen(prev => !prev);
+      } else if (!isInput && (e.key === 'm' || e.key === 'M')) {
+        e.preventDefault();
+        setMapDrawerOpen(prev => !prev);
+      } else if (!isInput && (e.key === 'b' || e.key === 'B')) {
+        e.preventDefault();
+        setAgroReportModalOpen(prev => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, []);
+
   const handleTabChange = (tabId) => {
     setActiveTab(tabId);
     if (tabId === 'inicio') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (tabId === 'mapa') {
-      if (mapRef.current) {
-        mapRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
+      setMapDrawerOpen(true);
     } else if (tabId === 'satelite') {
       setSateliteModalOpen(true);
     } else if (tabId === 'pronostico') {
@@ -96,22 +108,23 @@ export default function App() {
 
       <div className="relative z-10 min-h-screen text-slate-100 flex flex-col font-sans selection:bg-sky-500 selection:text-slate-950">
       
-      {/* NAVBAR NAVEGACIÓN PRINCIPAL */}
+      {/* NAVBAR NAVEGACIÓN PRINCIPAL APPLE HIG */}
       <Navbar
         modo={modo}
         setModo={setModo}
         onSelectStation={handleSelectStation}
         apiBase={API_BASE}
+        onOpenMapDrawer={() => setMapDrawerOpen(true)}
       />
 
       {/* CONTENIDO PRINCIPAL COMPLETO CON SAFE AREA FOOTER PADDING */}
       <main className="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 space-y-6 pb-24 md:pb-8">
         
         {loading ? (
-          <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-12 text-center space-y-4 my-12 shadow-2xl backdrop-blur-xl">
-            <div className="w-12 h-12 border-4 border-sky-500 border-t-transparent rounded-full animate-spin mx-auto" />
-            <div className="text-base font-bold text-white">Sincronizando telemetría en vivo para Chile...</div>
-            <p className="text-xs text-slate-400">Consultando 609 estaciones físicas DMC, Agromet INIA, RedMeteo y Google Earth Engine</p>
+          <div className="apple-card p-12 text-center space-y-4 my-12 shadow-2xl backdrop-blur-2xl max-w-lg mx-auto">
+            <div className="w-10 h-10 border-3 border-sky-400 border-t-transparent rounded-full animate-spin mx-auto" />
+            <div className="text-base font-extrabold text-white">Sincronizando telemetría en vivo para Chile...</div>
+            <p className="text-xs text-slate-400">Consultando 557 estaciones físicas DMC, Agromet INIA y Google Earth Engine</p>
           </div>
         ) : (
           <BreezyView
@@ -124,6 +137,7 @@ export default function App() {
             onOpenSateliteModal={() => setSateliteModalOpen(true)}
             onOpenGeeMapModal={() => setGeeMapModalOpen(true)}
             onOpenAgroReport={() => setAgroReportModalOpen(true)}
+            onOpenMapDrawer={() => setMapDrawerOpen(true)}
             handleSelectStation={handleSelectStation}
             mapRef={mapRef}
             forecastRef={forecastRef}
@@ -134,9 +148,30 @@ export default function App() {
       </main>
 
       {/* PIE DE PÁGINA */}
-      <footer className="border-t border-slate-800/80 py-6 text-center text-xs text-slate-500 bg-slate-950 pb-20 md:pb-6">
-        <p>MeteoPrecisa Chile v10.2 • Plataforma de Telemetría Hiperlocal & Google Earth Engine</p>
+      <footer className="border-t border-white/10 py-6 text-center text-xs text-slate-500 bg-slate-950/80 backdrop-blur-xl pb-20 md:pb-6">
+        <p>MeteoPrecisa Chile • Motor Agroclimático de Precisión WMO-No. 8 & Google Earth Engine • <span className="text-slate-400">Presiona <strong>Cmd+K</strong> para buscar</span></p>
       </footer>
+
+      {/* PALETA DE COMANDOS SPOTLIGHT APPLE HIG */}
+      <CommandPaletteModal
+        isOpen={commandPaletteOpen}
+        onClose={() => setCommandPaletteOpen(false)}
+        onSelectStation={handleSelectStation}
+        modo={modo}
+        setModo={setModo}
+        onOpenMapDrawer={() => setMapDrawerOpen(true)}
+        onOpenAgroReport={() => setAgroReportModalOpen(true)}
+        apiBase={API_BASE}
+      />
+
+      {/* DRAWER LATERAL FLOTANTE DE MAPAS & SATÉLITES APPLE HIG */}
+      <MapDrawer
+        isOpen={mapDrawerOpen}
+        onClose={() => setMapDrawerOpen(false)}
+        lat={climaData?.estacion?.coordenadas?.latitud || coords.lat}
+        lon={climaData?.estacion?.coordenadas?.longitud || coords.lon}
+        apiBase={API_BASE}
+      />
 
       {/* MODAL FICHA TÉCNICA AGROCLIMÁTICA IMPRIMIBLE/PDF */}
       <AgroReportModal
@@ -157,57 +192,52 @@ export default function App() {
       {/* REPRODUCTOR SATELITAL BUCLE WEBP GOES-19 */}
       <SatelliteModal
         isOpen={sateliteModalOpen}
-        onClose={() => {
-          setSateliteModalOpen(false);
-          setActiveTab('inicio');
-        }}
-        apiBase={API_BASE}
+        onClose={() => setSateliteModalOpen(false)}
       />
 
-      {/* MODAL 5 ESTACIONES MÁS CERCANAS */}
-      <EstacionesCercanasModal
-        isOpen={cercanasModalOpen}
-        onClose={() => setCercanasModalOpen(false)}
-        onSelectStation={handleSelectStation}
-        apiBase={API_BASE}
-        estacionActual={climaData?.estacion}
-      />
-
-      {/* DRAWER DESPLEGABLE DE MÉTRICAS Y AUDITORÍA DE FUENTE */}
+      {/* DRAWER DETALLES DE MÉTRICA */}
       <DetailDrawer
         isOpen={drawerOpen}
         onClose={() => setDrawerOpen(false)}
-        detailData={selectedMetric}
+        metric={selectedMetric}
       />
 
-      {/* DRAWER DESPLEGABLE CALIDAD DEL AIRE */}
+      {/* DRAWER AUDITORÍA CALIDAD DEL AIRE SINCA */}
       <AqiDrawer
         isOpen={aqiDrawerOpen}
         onClose={() => setAqiDrawerOpen(false)}
-        data={selectedAqiData}
+        aqiData={selectedAqiData}
       />
 
-      {/* DRAWER DESPLEGABLE PRONÓSTICO HORARIO */}
+      {/* DRAWER PRONÓSTICO HORARIO DÍA SELECCIONADO */}
       <HourlyForecastDrawer
         isOpen={hourlyDrawerOpen}
         onClose={() => setHourlyDrawerOpen(false)}
         dayData={selectedDayHourly}
       />
 
-      {/* FALLBACK DE UBICACIÓN */}
+      {/* MODAL ESTACIONES CERCANAS */}
+      <EstacionesCercanasModal
+        isOpen={cercanasModalOpen}
+        onClose={() => setCercanasModalOpen(false)}
+        lat={coords.lat}
+        lon={coords.lon}
+        onSelectStation={handleSelectStation}
+        apiBase={API_BASE}
+      />
+
+      {/* MODAL FALLBACK GPS */}
       <LocationFallbackModal
         isOpen={gpsFallbackOpen}
         onClose={() => setGpsFallbackOpen(false)}
-        onSelect={(lat, lon) => setCoords({ lat, lon })}
+        onSelectStation={handleSelectStation}
+        apiBase={API_BASE}
       />
 
-      {/* NAVEGACIÓN INFERIOR TÁCTIL (BOTTOM NAV BAR MÓVIL) */}
-      <BottomNav
-        activeTab={activeTab}
-        setActiveTab={handleTabChange}
-      />
+      {/* NAVEGACIÓN INFERIOR MÓVIL TIPO DOCK */}
+      <BottomNav activeTab={activeTab} onTabChange={handleTabChange} />
 
-    </div>
+      </div>
     </div>
   );
 }

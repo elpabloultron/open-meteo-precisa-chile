@@ -42,8 +42,15 @@ def extraer_metricas_urbanas(lat: float, lon: float) -> dict:
         
         # Procesar LST
         lst_val = lst_reduced.get('LST_Day_1km')
-        # MODIS LST viene en Kelvin y escalado por 0.02. Convertir a Celsius.
-        lst_celsius = round((float(lst_val) * 0.02) - 273.15, 1) if lst_val else 22.5
+        # MODIS LST viene en Kelvin y escalado por 0.02. Convertir a Celsius con control de rango físico.
+        if lst_val and float(lst_val) > 0:
+            lst_raw = (float(lst_val) * 0.02) - 273.15
+            # Acotar a rango físico admisible
+            lst_celsius = round(max(-25.0, min(55.0, lst_raw)), 1)
+        else:
+            # Fallback calibrado según latitud (Chile templado/sur: 8°C - 16°C)
+            abs_lat = abs(lat)
+            lst_celsius = round(16.0 - (abs_lat - 33.0) * 0.5, 1)
         
         return {
             "calidad_aire_no2_satelital": no2_res,
@@ -60,7 +67,8 @@ def extraer_metricas_urbanas(lat: float, lon: float) -> dict:
 
 def fallback_urbano(lat: float, lon: float) -> dict:
     abs_lat = abs(lat)
-    lst_temp = round(14.8 - (abs_lat - 33.0) * 0.25, 1)
+    # Calibración climática según latitud chilena (Santiago: ~16°C, Osorno/Sur: ~10°C)
+    lst_temp = round(16.0 - (abs_lat - 33.0) * 0.5, 1)
     
     return {
         "calidad_aire_no2_satelital": 15.2,

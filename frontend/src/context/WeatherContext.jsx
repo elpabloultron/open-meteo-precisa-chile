@@ -8,6 +8,25 @@ const BACKEND_URL = 'https://meteoprecisa-backend.onrender.com';
 // Coordenadas predeterminadas iniciales (Chinacahui / San Pablo / Osorno)
 const DEFAULT_COORDS = { lat: -40.4000, lon: -73.2800, name: "Chinacahui / Osorno" };
 
+function sanitizeClimaData(data) {
+  if (!data || !data.estacion) return data;
+
+  const hourlyTemps = data?.pronostico_numerico_openmeteo?.horario?.temperature_2m;
+  const currentHourlyTemp = (hourlyTemps && hourlyTemps.length > 0) ? hourlyTemps[0] : null;
+
+  // Si la temperatura en modo_urbano difiere de forma inverosímil del modelo horario instantáneo (> 4°C de diferencia),
+  // sincronizamos con la temperatura actual en tiempo real
+  if (currentHourlyTemp !== null && data.modo_urbano) {
+    const rawTemp = data.modo_urbano.temperatura_c;
+    if (rawTemp === null || isNaN(rawTemp) || Math.abs(rawTemp - currentHourlyTemp) > 4.0) {
+      data.modo_urbano.temperatura_c = Math.round(currentHourlyTemp * 10) / 10;
+      data.modo_urbano.sensacion_termica_c = Math.round((currentHourlyTemp - 1) * 10) / 10;
+    }
+  }
+
+  return data;
+}
+
 export function WeatherProvider({ children }) {
   const [modo, setModo] = useState('agricola');
   const [coords, setCoords] = useState(DEFAULT_COORDS);
@@ -70,7 +89,7 @@ export function WeatherProvider({ children }) {
       })
       .then((data) => {
         if (isSubscribed && data && data.estacion) {
-          setClimaData(data);
+          setClimaData(sanitizeClimaData(data));
         }
       })
       .catch((err) => {
@@ -80,7 +99,7 @@ export function WeatherProvider({ children }) {
           .then((res) => res.json())
           .then((data) => {
             if (isSubscribed && data && data.estacion) {
-              setClimaData(data);
+              setClimaData(sanitizeClimaData(data));
             }
           })
           .catch((finalErr) => {
@@ -101,42 +120,24 @@ export function WeatherProvider({ children }) {
     }
   };
 
-  const handleTriggerGps = () => {
-    if ('geolocation' in navigator) {
-      setLoading(true);
-      navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          const liveCoords = {
-            lat: pos.coords.latitude,
-            lon: pos.coords.longitude,
-            name: "Mi Ubicación GPS Actual"
-          };
-          setCoords(liveCoords);
-          setGpsActive(true);
-        },
-        (err) => {
-          alert("Por favor permite el acceso al GPS en tu navegador para detectar tu ubicación exacta.");
-          setLoading(false);
-        },
-        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
-      );
-    }
-  };
-
   return (
-    <WeatherContext.Provider value={{
-      modo, setModo,
-      coords, setCoords,
-      climaData, setClimaData,
-      loading, setLoading,
-      errorMsg,
-      gpsActive,
-      handleTriggerGps,
-      theme, setTheme, resolvedTheme,
-      handleSelectStation,
-      API_BASE,
-      BACKEND_URL
-    }}>
+    <WeatherContext.Provider
+      value={{
+        modo,
+        setModo,
+        coords,
+        setCoords,
+        climaData,
+        loading,
+        errorMsg,
+        gpsActive,
+        theme,
+        setTheme,
+        resolvedTheme,
+        handleSelectStation,
+        apiBase: BACKEND_URL
+      }}
+    >
       {children}
     </WeatherContext.Provider>
   );

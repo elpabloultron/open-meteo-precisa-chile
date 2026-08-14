@@ -122,6 +122,92 @@ export default function AgroReportModal({ isOpen, onClose, climaData }) {
             </div>
           </div>
 
+          {/* CURVA DE PRONÓSTICO 24 HORAS (TÉRMICA, HUMEDAD Y ETO) */}
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/90 p-4 space-y-3 print:bg-slate-50 print:border-slate-200">
+            <div className="flex items-center justify-between">
+              <span className="font-bold text-xs text-cyan-400 print:text-cyan-800 flex items-center gap-1.5">
+                <Sun className="w-4 h-4" />
+                <span>Curva de Pronóstico Agroclimático 24 Horas</span>
+              </span>
+              <span className="text-[10px] text-slate-400 font-mono">Resolución Horaria ECMWF</span>
+            </div>
+
+            {/* CURVA VISUAL HORARIA */}
+            {climaData?.pronostico_numerico_openmeteo?.horario?.time ? (
+              <div className="overflow-x-auto pb-2 scrollbar-thin">
+                <div className="min-w-[620px] flex items-end gap-1.5 pt-6 pb-2 px-1 h-36">
+                  {climaData.pronostico_numerico_openmeteo.horario.time.slice(0, 24).map((t, idx) => {
+                    const temp = climaData.pronostico_numerico_openmeteo.horario.temperature_2m?.[idx] ?? 10;
+                    const hr = climaData.pronostico_numerico_openmeteo.horario.relative_humidity_2m?.[idx] ?? 50;
+                    const rain = climaData.pronostico_numerico_openmeteo.horario.precipitation?.[idx] ?? 0;
+                    const hourLabel = t.includes('T') ? t.split('T')[1].slice(0, 5) : `${idx}:00`;
+                    const barHeightPct = Math.min(100, Math.max(15, (temp + 5) * 3));
+
+                    return (
+                      <div key={idx} className="flex-1 flex flex-col items-center justify-end h-full group relative">
+                        {/* Tooltip on hover */}
+                        <div className="text-[10px] font-mono text-cyan-300 font-bold mb-1">
+                          {Math.round(temp)}°
+                        </div>
+                        <div 
+                          style={{ height: `${barHeightPct}%` }}
+                          className={`w-full rounded-t-md transition-all duration-300 ${
+                            temp <= 2 ? 'bg-gradient-to-t from-blue-600 to-cyan-300' :
+                            temp <= 10 ? 'bg-gradient-to-t from-emerald-600 to-teal-300' :
+                            'bg-gradient-to-t from-amber-600 to-orange-400'
+                          }`}
+                        />
+                        <div className="text-[9px] text-slate-400 mt-1.5 font-mono">
+                          {hourLabel}
+                        </div>
+                        {rain > 0 && (
+                          <div className="text-[8px] text-sky-400 font-bold">
+                            {rain}mm
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="flex items-center justify-between text-[10px] text-slate-400 px-2 pt-1 border-t border-slate-800/60">
+                  <span>🔵 Azul: Riesgo de Helada (≤ 2°C)</span>
+                  <span>🟢 Verde: Rango Óptimo Fotosintético (3°C - 18°C)</span>
+                  <span>🟠 Naranja: Temperatura Alta (&gt; 18°C)</span>
+                </div>
+              </div>
+            ) : (
+              <div className="text-xs text-slate-400 text-center py-4">
+                Curva horaria calculándose en segundo plano...
+              </div>
+            )}
+          </div>
+
+          {/* DETALLE COMPLETO DEL BOLETÍN METEOROLÓGICO OFICIAL DMC */}
+          {pronostico_oficial_dmc && Object.keys(pronostico_oficial_dmc).length > 0 && (
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 space-y-2.5 print:bg-slate-50 print:border-slate-200">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+                <span className="font-bold text-xs text-amber-400 print:text-amber-800 flex items-center gap-1.5">
+                  <FileText className="w-4 h-4" />
+                  <span>Boletín Agrometeorológico Oficial DMC (Detalle Completo)</span>
+                </span>
+                <span className="text-[10px] text-slate-400 font-mono">Meteochile.gob.cl</span>
+              </div>
+              <p className="text-xs text-slate-300 print:text-slate-800 leading-relaxed">
+                {pronostico_oficial_dmc.resumen_nacional || pronostico_oficial_dmc.descripcion || "Boletín meteorológico oficial activo para la macrozona sinovial y agrícola de Chile."}
+              </p>
+              {pronostico_oficial_dmc.zonas && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] pt-1">
+                  {Object.entries(pronostico_oficial_dmc.zonas).map(([zona, desc], i) => (
+                    <div key={i} className="p-2 rounded-lg bg-slate-950/60 border border-slate-800 text-slate-300">
+                      <span className="font-bold text-amber-300 capitalize">{zona}: </span>
+                      <span>{String(desc)}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
           {/* TABLA DE AUDITORÍA ESPECTRAL SATELITAL GOOGLE EARTH ENGINE (SENTINEL-2 10M) */}
           <div className="rounded-2xl border border-slate-800 overflow-hidden print:border-slate-200">
             <div className="bg-slate-900/80 px-4 py-2.5 border-b border-slate-800 font-bold text-xs text-emerald-400 flex items-center justify-between print:bg-slate-100 print:text-black">

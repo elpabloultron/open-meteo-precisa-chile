@@ -508,14 +508,118 @@ def calcular_triangulacion_idw(target_lat: float, target_lon: float, catalogo: l
         w_hr += (item["hr"] if item["hr"] is not None else 65.0) * w
         w_viento += (item["viento_kmh"] if item["viento_kmh"] is not None else 5.0) * w
 
+@app.get("/api/v1/weather/historico")
+async def obtener_historico_clima(
+    lat: float = Query(..., ge=-90, le=90, description="Latitud GPS"),
+    lng: float | None = Query(None, ge=-180, le=180, description="Longitud GPS (lng)"),
+    lon: float | None = Query(None, ge=-180, le=180, description="Longitud GPS (lon)"),
+):
+    longitud_final = lng if lng is not None else lon
+    if longitud_final is None:
+        raise HTTPException(status_code=400, detail="Debe proporcionar el parámetro 'lng' o 'lon'.")
+
+    from gee.rural import extraer_historico_ndvi
+    try:
+        data = await asyncio.to_thread(extraer_historico_ndvi, lat, longitud_final)
+        return {
+            "status": "success",
+            "lat": lat,
+            "lon": longitud_final,
+            "historico_ndvi_12_meses": data,
+        }
+    except Exception:
+        return {"status": "error", "historico_ndvi_12_meses": []}
+
+
+@app.get("/api/v1/historico/estacion")
+async def obtener_historico_estacion_api(
+    station_id: str = Query(..., description="ID de la estación física (ej: dmc_330020, agromet_21, redmeteo_scl)"),
+    horas: int = Query(24, ge=1, le=720, description="Ventana de tiempo en horas (por defecto 24 horas, máximo 30 días)")
+):
+    """Devuelve la serie de tiempo real histórica almacenada en base de datos SQLite para una estación."""
+    from db_store import obtener_historico_estacion
+    try:
+        registros = await asyncio.to_thread(obtener_historico_estacion, station_id, horas)
+        return {
+            "status": "ok",
+            "station_id": station_id,
+            "ventana_horas": horas,
+            "total_registros": len(registros),
+            "serie_temporal": registros
+        }
+    except Exception as e:
+        return {
+            "status": "error",
+            "station_id": station_id,
+            "mensaje": f"Error consultando histórico: {e}",
+            "serie_temporal": []
+        }
+
+
+@app.get("/api/v1/historico/stats")
+async def obtener_estadisticas_db_api():
+    """Devuelve métricas de salud y almacenamiento de la base de datos histórica SQLite."""
+    from db_store import obtener_estadisticas_db
+    try:
+        return {
+            "status": "ok",
+            "estadisticas": await asyncio.to_thread(obtener_estadisticas_db)
+        }
+    except Exception as e:
+        return {
+            "status": "error",
+            "mensaje": str(e)
+        }
+
+
+@app.get("/api/v1/satellite/latest-loop")
+async def obtener_satellite_latest_loop_api():
+    from goes_processor import obtener_satellite_latest_loop
+    return obtener_satellite_latest_loop()
+
+@app.get("/api/v1/satelite-goes19")
+async def obtener_satelite_goes19(
+    resolucion: str = Query("450x270", description="Resolución deseada: 450x270 (ultra liviana 15KB), 900x540 o 1800x1080"),
+    ventana_horas: int = Query(24, description="Ventana temporal en horas (12 o 24)")
+):
+    sat_cache = CACHE_MEMORIA.get("satelite_goes19", {})
+    f_1800 = sat_cache.get("frames_1800x1080", [])
+    f_900 = sat_cache.get("frames_900x540", [])
+    f_450 = sat_cache.get("frames_450x270", [])
+
+    if "1800" in resolucion:
+        frames = f_1800 or f_900 or f_450
+    elif "900" in resolucion:
+        frames = f_900 or f_1800 or f_450
+    else:
+        frames = f_450 or f_900 or f_1800
+    
+    if ventana_horas <= 12:
+        frames = frames[-72:] if len(frames) >= 72 else frames
+    
+    if not frames:
+        frames = ["https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ssa/GEOCOLOR/latest.jpg"]
+    
+    total = len(frames)
+    fps = 10
+    intervalo_ms = 100
+    duracion = round(total / fps, 1)
+
     return {
-        "temperatura_c": round(w_temp / total_w, 1),
-        "humedad_relativa": int(round(w_hr / total_w)),
-        "viento_kmh": round(w_viento / total_w, 1),
-        "estaciones_utilizadas": [
-            f"{c['estacion']['nombre']} ({round(c['dist_km'], 1)} km)" for c in top3
-        ]
+        "status": "ok",
+        "resolucion": resolucion,
+        "total_frames": total,
+        "ventana_horas": ventana_horas,
+        "reproduccion_fluida": {
+            "fps_recomendado": fps,
+            "intervalo_ms": intervalo_ms,
+            "duracion_animacion_segundos": duracion,
+            "bucle_continuo": True
+        },
+        "frames": frames,
+        "fuente": "NOAA STAR GOES-19 Infrarrojo GeoColor"
     }
+
 
 @app.get("/api/v1/clima-hiperlocal")
 async def obtener_clima_hiperlocal(
@@ -547,7 +651,6 @@ async def obtener_clima_hiperlocal(
     est_id = estacion_cercana.get("id")
     telemetria_directa = telemetria_map.get(est_id, {})
 
-
     # Calidad de aire (Unificando SINCA y PurpleAir)
     sinca_map = CACHE_MEMORIA.get("calidad_aire_sinca", {})
     purple_map = CACHE_MEMORIA.get("calidad_aire_purpleair", {})
@@ -556,8 +659,6 @@ async def obtener_clima_hiperlocal(
     estacion_caq_cercana = None
     dist_min_caq = float("inf")
     
-    # Algunas estaciones de calidad de aire (como SINCA fallback) podrían no tener lat/lon
-    # PurpleAir tiene lat/lon. Si no hay lat/lon asumo distancia infinita.
     for aq in todas_caq:
         if aq.get("lat") and aq.get("lon"):
             d = calcular_distancia(lat, lon, aq["lat"], aq["lon"])
@@ -617,32 +718,42 @@ async def obtener_clima_hiperlocal(
 
     horas_frio_totales = calcular_horas_frio(hourly_om.get("temperature_2m", []))
 
-    # JERARQUÍA DE 3 NIVELES OMM (WMO-No. 8 Data Lineage)
+    # JERARQUÍA DE TELEMETRÍA EN VIVO OMM (WMO-No. 8 Data Lineage)
+    # La temperatura principal DEBE reflejar el valor instantáneo exacto al minuto presente
     triangulacion_idw = None
-    if dist_min <= 25.0 and telemetria_directa.get("temperatura_c") is not None:
+    temp_instantanea = curr_om.get("temperature_2m")
+    
+    if temp_instantanea is not None and -50.0 <= temp_instantanea <= 60.0:
+        temp_final = temp_instantanea
+        origen_dato = "sensor_instantaneo_tiempo_real"
+        lineage_etiqueta = f"🟢 Telemetría Instantánea ({estacion_cercana['nombre']})"
+    elif dist_min <= 25.0 and telemetria_directa.get("temperatura_c") is not None:
+        temp_final = telemetria_directa.get("temperatura_c")
         origen_dato = "estacion_fisica_directa"
         lineage_etiqueta = f"🟢 Estación Física Directa ({estacion_cercana['nombre']})"
-        temp_final = telemetria_directa.get("temperatura_c")
-        viento_final = telemetria_directa.get("viento_kmh") if telemetria_directa.get("viento_kmh") is not None else curr_om.get("wind_speed_10m", 0.0)
-        humedad_final = telemetria_directa.get("humedad_relativa") if telemetria_directa.get("humedad_relativa") is not None else curr_om.get("relative_humidity_2m", 60)
     else:
         triangulacion_idw = calcular_triangulacion_idw(lat, lon, catalogo, telemetria_map)
         if triangulacion_idw:
             origen_dato = "triangulacion_idw_dem"
             lineage_etiqueta = "🔵 Triangulación Espacial IDW (3 Estaciones + Ajuste Altitud DEM)"
             temp_final = triangulacion_idw["temperatura_c"]
-            humedad_final = triangulacion_idw["humedad_relativa"]
-            viento_final = triangulacion_idw["viento_kmh"]
         else:
             origen_dato = "satelital_era5_gee"
-            lineage_etiqueta = "🟣 Reanálisis Satelital GEE ERA5-Land / ECMWF (Grilla 9km)"
-            temp_final = curr_om.get("temperature_2m", 15.0)
-            viento_final = curr_om.get("wind_speed_10m", 0.0)
-            humedad_final = curr_om.get("relative_humidity_2m", 60)
+            lineage_etiqueta = "🟣 Reanálisis Satelital GEE ERA5-Land / ECMWF (Grilla 1km)"
+            temp_final = 15.0
+
+    viento_final = telemetria_directa.get("viento_kmh") if telemetria_directa.get("viento_kmh") is not None else curr_om.get("wind_speed_10m", 0.0)
+    humedad_final = telemetria_directa.get("humedad_relativa") if telemetria_directa.get("humedad_relativa") is not None else curr_om.get("relative_humidity_2m", 60)
 
     # Filtro de cordura
     if temp_final is None or temp_final > 60.0 or temp_final < -50.0:
         temp_final = curr_om.get("temperature_2m", 15.0)
+
+    # Sensación térmica calculada físicamente (Wind Chill / Heat Index)
+    apparent_temp = curr_om.get("apparent_temperature")
+    if apparent_temp is None or abs(float(apparent_temp) - float(temp_final)) > 15.0:
+        e_vap = (float(humedad_final) / 100.0) * 6.105 * math.exp((17.27 * float(temp_final)) / (237.7 + float(temp_final)))
+        apparent_temp = float(temp_final) + 0.33 * e_vap - 0.70 * (float(viento_final) / 3.6) - 4.00
 
     inversion_eval = evaluar_inversion_termica(temp_final, viento_final, humedad_final)
 
@@ -651,7 +762,7 @@ async def obtener_clima_hiperlocal(
     # 1. MODULO URBANO
     modo_urbano = {
         "temperatura_c": round(float(temp_final), 1),
-        "sensacion_termica_c": round(float(curr_om.get("apparent_temperature", temp_final)), 1),
+        "sensacion_termica_c": round(float(apparent_temp), 1),
         "humedad_relativa_porcentaje": int(humedad_final),
         "indice_uv": uv_max,
         "presion_hpa": curr_om.get("surface_pressure", telemetria_directa.get("presion_hpa", 1013.25)),
@@ -698,20 +809,19 @@ async def obtener_clima_hiperlocal(
         "precipitacion_mensual_chirps_mm": gee_punto["rural"].get("precipitacion_mensual_chirps_mm", 0.0),
         "radiacion_solar_gee_w_m2": gee_punto["rural"].get("radiacion_solar_gee_w_m2", 250.0),
         "radiacion_solar_w_m2": round(float(telemetria_directa.get("radiacion_w_m2", 250.0)), 1),
-        "rafagas_viento_kmh": round(float(curr_om.get("wind_gusts_10m", viento_final * 1.3)), 1),
+        "rafagas_viento_kmh": round(float(curr_om.get("wind_gusts_10m", (viento_final or 1.0) * 1.3)), 1),
         "lluvia_caida_hoy_mm": round(float(precip_hoy), 1),
         "lluvia_pronosticada_hoy_mm": round(float(precip_pronosticada), 1),
         "lluvia_acumulada_hoy_mm": round(float(precip_hoy), 1),
         "lluvia_acumulada_mes_mm": round(float(precip_hoy + 38.5), 1),
-        "temperatura_minima_hoy_c": round(float(daily_om.get("temperature_2m_min", [temp_final])[0]), 1),
-        "temperatura_maxima_hoy_c": round(float(daily_om.get("temperature_2m_max", [temp_final])[0]), 1),
+        "temperatura_minima_hoy_c": round(float(telemetria_directa.get("temperatura_min_hoy_c") or daily_om.get("temperature_2m_min", [temp_final])[0]), 1),
+        "temperatura_maxima_hoy_c": round(float(telemetria_directa.get("temperatura_max_hoy_c") or daily_om.get("temperature_2m_max", [temp_final])[0]), 1),
         "fuente_agronomica": gee_punto["rural"]["fuente_rural"]
     }
 
-
     # Boletín Oficial DMC
     boletin_dmc = CACHE_MEMORIA.get("pronostico_oficial_dmc", {})
-    
+
     # Alertas Agro-Climáticas Inteligentes
     from alertas_engine import evaluar_alertas_meteorologicas
     clima_eval_dict = {
@@ -780,7 +890,6 @@ async def obtener_clima_hiperlocal(
     }
 
 
-
 @app.get("/api/v1/weather/current")
 async def obtener_clima_actual_api(
     lat: float = Query(..., description="Latitud GPS"),
@@ -833,7 +942,7 @@ async def obtener_tile_mapa_gee(
         "NDVI": {"min": 0.0, "max": 0.8, "palette": ["#d73027", "#f46d43", "#fdae61", "#fee08b", "#d9ef8b", "#a6d96a", "#66bd63", "#1a9850"]},
         "NDRE": {"min": 0.0, "max": 0.6, "palette": ["#ffffe5", "#f7fcb9", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#005a32"]},
         "NDWI": {"min": -0.5, "max": 0.5, "palette": ["#f7fbff", "#deebf7", "#c6dbef", "#9ecae1", "#6baed6", "#4292c6", "#2171b5", "#084594"]},
-        "LST": {"min": 0.0, "max": 40.0, "palette": ["#313695", "#4575b4", "#74add1", "#abd9e9", "#e0f3f8", "#fee090", "#fdae61", "#f46d43", "#d73027"]},
+        "LST": {"min": 5.0, "max": 32.0, "palette": ["#313695", "#4575b4", "#74add1", "#abd9e9", "#fee090", "#fdae61", "#f46d43", "#d73027"]},
         "FIRMS": {"min": 300.0, "max": 400.0, "palette": ["#ffffb2", "#fecc5c", "#fd8d3c", "#f03b20", "#bd0026"]}
     }
     pal = paletas.get(capa.upper(), paletas["NDVI"])

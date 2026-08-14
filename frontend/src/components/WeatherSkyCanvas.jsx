@@ -5,6 +5,7 @@ export default function WeatherSkyCanvas({ climaData, resolvedTheme }) {
 
   const temp = climaData?.modo_urbano?.temperatura_c ?? 15;
   const precip = climaData?.modo_agricola?.lluvia_caida_hoy_mm ?? 0;
+  const windKmh = climaData?.modo_urbano?.viento_kmh ?? 10;
   const isNight = resolvedTheme === 'dark';
 
   // Determinar atmósfera
@@ -46,16 +47,17 @@ export default function WeatherSkyCanvas({ climaData, resolvedTheme }) {
 
     window.addEventListener('resize', handleResize);
 
-    // Inicializar partículas atmosféricas
-    const count = particleType === 'rain' ? 80 : particleType === 'snow' ? 50 : 40;
+    const windSlant = Math.min(6, (windKmh / 15) * 2.5);
+    const count = particleType === 'rain' ? 85 : particleType === 'snow' ? 55 : 45;
+    
     const particles = Array.from({ length: count }, () => {
       if (particleType === 'rain') {
         return {
-          x: Math.random() * width,
+          x: Math.random() * (width + 100) - 50,
           y: Math.random() * height,
-          length: Math.random() * 20 + 10,
-          speed: Math.random() * 8 + 12,
-          opacity: Math.random() * 0.4 + 0.2
+          length: Math.random() * 20 + 12,
+          speed: Math.random() * 8 + 14,
+          opacity: Math.random() * 0.4 + 0.25
         };
       } else if (particleType === 'snow') {
         return {
@@ -63,7 +65,7 @@ export default function WeatherSkyCanvas({ climaData, resolvedTheme }) {
           y: Math.random() * height,
           radius: Math.random() * 2.5 + 1,
           speed: Math.random() * 1.5 + 0.6,
-          sway: Math.random() * 1.5,
+          sway: Math.random() * 2,
           opacity: Math.random() * 0.6 + 0.3
         };
       } else if (particleType === 'stars') {
@@ -75,7 +77,6 @@ export default function WeatherSkyCanvas({ climaData, resolvedTheme }) {
           opacity: Math.random() * 0.8 + 0.2
         };
       } else {
-        // Sun-motes / polen atmosférico cálido
         return {
           x: Math.random() * width,
           y: Math.random() * height,
@@ -96,17 +97,17 @@ export default function WeatherSkyCanvas({ climaData, resolvedTheme }) {
       particles.forEach((p) => {
         if (particleType === 'rain') {
           ctx.strokeStyle = `rgba(186, 230, 253, ${p.opacity})`;
-          ctx.lineWidth = 1.2;
+          ctx.lineWidth = 1.3;
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
-          ctx.lineTo(p.x - 2, p.y + p.length);
+          ctx.lineTo(p.x - windSlant, p.y + p.length);
           ctx.stroke();
 
           p.y += p.speed;
-          p.x -= 1;
+          p.x -= windSlant * 0.6;
           if (p.y > height) {
             p.y = -20;
-            p.x = Math.random() * width;
+            p.x = Math.random() * (width + 100) - 50;
           }
         } else if (particleType === 'snow') {
           ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
@@ -150,7 +151,7 @@ export default function WeatherSkyCanvas({ climaData, resolvedTheme }) {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [particleType]);
+  }, [particleType, windKmh]);
 
   return (
     <div className={`weather-sky-canvas sky-${skyType}`}>

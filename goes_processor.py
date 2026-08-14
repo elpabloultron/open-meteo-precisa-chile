@@ -101,22 +101,6 @@ async def procesar_video_goes19(max_frames: int = 144) -> dict:
                             await asyncio.to_thread(subir_archivo_supabase, WEBP_OUTPUT_PATH, "goes19_loop.webp", "image/webp")
                         except Exception as supa_err:
                             logger.warning(f"Aviso subiendo GOES-19 a Supabase Storage: {supa_err}")
-
-                        # Si GCS está configurado, persistir también en Cloud Storage
-                        from app_config import settings
-                        if settings.cache_backend == "gcs" and settings.cache_storage_bucket:
-                            try:
-                                from google.cloud import storage
-                                def subir_gcs():
-                                    client_gcs = storage.Client()
-                                    bucket = client_gcs.bucket(settings.cache_storage_bucket)
-                                    blob = bucket.blob("static/goes19_loop.webp")
-                                    with open(WEBP_OUTPUT_PATH, "rb") as f:
-                                        blob.upload_from_file(f, content_type="image/webp")
-                                await asyncio.to_thread(subir_gcs)
-                                logger.info(f"☁️ GOES-19 WebP respaldado en GCS: gs://{settings.cache_storage_bucket}/static/goes19_loop.webp")
-                            except Exception as gcs_err:
-                                logger.warning(f"Aviso subiendo GOES-19 a GCS: {gcs_err}")
                         
                         now_ts = int(time.time())
                         time_label = time.strftime("%H:%M")
