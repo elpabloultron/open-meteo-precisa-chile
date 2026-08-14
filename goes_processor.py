@@ -36,23 +36,23 @@ async def _descargar_y_procesar_frame(client, url, semaphore):
             if resp.status_code == 200:
                 def procesar_img(img_bytes):
                     img = Image.open(io.BytesIO(img_bytes))
-                    # Usar resize explícito en lugar de thumbnail para garantizar que 
-                    # todos los frames tengan exactamente 480x288 y no falle el codificador WebP
-                    img = img.resize((480, 288), Image.Resampling.LANCZOS)
+                    # Usar resize explícito a 1200x720 Full HD para máxima nitidez cinematográfica sin saltos
+                    img = img.resize((1200, 720), Image.Resampling.LANCZOS)
                     return img
                 return await asyncio.to_thread(procesar_img, resp.content)
         except Exception as e:
             logger.warning(f"Error en frame {url}: {e}")
     return None
 
-async def procesar_video_goes19(max_frames: int = 144) -> dict:
+async def procesar_video_goes19(horas_ventana: int = 24) -> dict:
     """
-    Descarga los últimos fotogramas de la NOAA para Chile (GOES-19 SSA),
-    los compila concurrentemente en un WebP ultra liviano y lo guarda en static/goes19_loop.webp.
+    Descarga los fotogramas oficiales 1800x1080 de las ÚLTIMAS 24 HORAS de la NOAA para Chile (GOES-19 SSA),
+    los compila en un bucle WebP HD cinematográfico, sobrescribe el anterior en static/goes19_loop.webp 
+    y lo sincroniza de inmediato con Supabase Storage CDN.
     """
     global GOES_CACHE_METADATA
     url_base = "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ssa/GEOCOLOR/"
-    logger.info("🛰️ [GOES-19 Processor] Descargando e indexando fotogramas de la NOAA...")
+    logger.info(f"🛰️ [GOES-19 Processor] Indexando fotogramas 1800x1080 para las últimas {horas_ventana} horas...")
 
     try:
         os.makedirs(STATIC_DIR, exist_ok=True)
@@ -63,18 +63,21 @@ async def procesar_video_goes19(max_frames: int = 144) -> dict:
                 archivos = set()
                 for a in soup.find_all('a', href=True):
                     href = a['href']
-                    if href.endswith('.jpg') and not href.startswith('latest') and 'thumbnail' not in href:
+                    if href.endswith('-1800x1080.jpg') and href.startswith('202'):
                         archivos.add(href)
 
                 archivos_ordenados = sorted(list(archivos))
-                # Filtrar fotogramas 900x540 o 450x270 recientes
-                frames_urls = [f"{url_base}{f}" for f in archivos_ordenados if ("900x540" in f or "450x270" in f) and f.startswith("202")][-max_frames:]
+                # 24 horas = 144 fotogramas (1 cada 10 min). Muestreamos cada 2 (1 cada 20 min = 72 fotogramas)
+                total_frames_24h = horas_ventana * 6
+                frames_24h = archivos_ordenados[-total_frames_24h:] if len(archivos_ordenados) >= total_frames_24h else archivos_ordenados
+                frames_urls = [f"{url_base}{f}" for f in frames_24h[::2]]
+
                 if not frames_urls:
-                    frames_urls = [f"{url_base}{f}" for f in archivos_ordenados if f.startswith("202")][-max_frames:]
+                    frames_urls = [f"{url_base}{f}" for f in sorted(list(archivos)) if f.startswith("202")][-72:]
 
                 if frames_urls:
-                    logger.info(f"📥 Descargando {len(frames_urls)} fotogramas concurrentemente para animación WebP...")
-                    semaphore = asyncio.Semaphore(10)
+                    logger.info(f"📥 Descargando {len(frames_urls)} fotogramas 1800x1080 (últimas 24h) concurrentemente...")
+                    semaphore = asyncio.Semaphore(15)
                     tasks = [_descargar_y_procesar_frame(client, url, semaphore) for url in frames_urls]
                     
                     results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -82,20 +85,22 @@ async def procesar_video_goes19(max_frames: int = 144) -> dict:
 
                     if images:
                         def guardar_webp(imgs):
+                            # Sobrescribe el archivo anterior eliminando cualquier estado residual
                             imgs[0].save(
                                 WEBP_OUTPUT_PATH,
                                 format="WEBP",
                                 save_all=True,
                                 append_images=imgs[1:],
-                                duration=50,  # 20 fps
+                                duration=65,  # ~15.4 fps cinematográfico fluido
                                 loop=0,
-                                quality=80
+                                quality=85,
+                                method=3
                             )
                         
-                        logger.info("⏳ Compilando animación WebP en hilos de fondo...")
+                        logger.info("⏳ Compilando bucle WebP de 24 horas en hilos de fondo...")
                         await asyncio.to_thread(guardar_webp, images)
 
-                        # Respaldar en Supabase Storage (100% Gratuito y CDN de alta velocidad)
+                        # Respaldar y sobrescribir en Supabase Storage CDN
                         try:
                             from supabase_store import subir_archivo_supabase
                             await asyncio.to_thread(subir_archivo_supabase, WEBP_OUTPUT_PATH, "goes19_loop.webp", "image/webp")
@@ -108,15 +113,16 @@ async def procesar_video_goes19(max_frames: int = 144) -> dict:
                         GOES_CACHE_METADATA = {
                             "status": "ok",
                             "last_updated_ts": now_ts,
-                            "updated_at_label": f"Actualizada a las {time_label} hrs",
+                            "updated_at_label": f"Actualizada a las {time_label} hrs (Últimas 24h)",
                             "video_url": "/static/goes19_loop.webp",
                             "supabase_cdn_url": "https://qrqhonyympzsmaucbfel.supabase.co/storage/v1/object/public/meteoprecisa/goes19_loop.webp",
                             "total_frames": len(images),
-                            "fps": 20,
+                            "ventana_horas": horas_ventana,
+                            "fps": 15,
                             "raw_source_url": url_base,
                             "is_live_data": True
                         }
-                        logger.info(f"✅ Animación WebP GOES-19 generada exitosamente ({len(images)} fotogramas)")
+                        logger.info(f"✅ Bucle WebP GOES-19 24h generado y sincronizado ({len(images)} fotogramas)")
                         return GOES_CACHE_METADATA
 
     except Exception as e:

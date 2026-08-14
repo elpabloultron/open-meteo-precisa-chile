@@ -958,3 +958,52 @@ async def obtener_tile_mapa_gee(
             "colores": pal["palette"]
         }
     }
+
+
+@app.get("/api/v1/satelite-goes19/frames")
+async def obtener_frames_goes19(cantidad: int = Query(20, ge=6, le=36)):
+    """Devuelve la lista ordenada de fotogramas Full HD (1800x1080) recientes de NOAA GOES-19 para reproducción animada continua a 60 FPS."""
+    from bs4 import BeautifulSoup
+    url_base = "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ssa/GEOCOLOR/"
+    latest_hd = f"{url_base}1800x1080.jpg"
+    try:
+        async with httpx.AsyncClient(timeout=8.0) as client:
+            resp = await client.get(url_base)
+            if resp.status_code == 200:
+                soup = BeautifulSoup(resp.text, "html.parser")
+                archivos_1800 = []
+                archivos_900 = []
+                for a in soup.find_all('a', href=True):
+                    href = a['href']
+                    if href.endswith('-1800x1080.jpg') and href.startswith('202'):
+                        archivos_1800.append(href)
+                    elif href.endswith('-900x540.jpg') and href.startswith('202'):
+                        archivos_900.append(href)
+                archivos_1800.sort()
+                archivos_900.sort()
+                
+                ultimos_1800 = archivos_1800[-cantidad:] if len(archivos_1800) >= cantidad else archivos_1800
+                frames_1800_urls = [f"{url_base}{f}" for f in ultimos_1800]
+                
+                ultimos_900 = archivos_900[-cantidad:] if len(archivos_900) >= cantidad else archivos_900
+                frames_900_urls = [f"{url_base}{f}" for f in ultimos_900]
+
+                return {
+                    "status": "ok",
+                    "latest_hd": latest_hd,
+                    "total_frames": len(frames_1800_urls),
+                    "frames": frames_1800_urls if frames_1800_urls else frames_900_urls,
+                    "frames_hd": frames_1800_urls,
+                    "frames_sd": frames_900_urls
+                }
+    except Exception as e:
+        pass
+    
+    return {
+        "status": "fallback",
+        "latest_hd": latest_hd,
+        "total_frames": 1,
+        "frames": [latest_hd],
+        "frames_hd": [latest_hd],
+        "frames_sd": [latest_hd]
+    }
