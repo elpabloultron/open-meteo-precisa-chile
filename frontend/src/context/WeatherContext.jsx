@@ -18,9 +18,9 @@ function sanitizeClimaData(data) {
   // sincronizamos con la temperatura actual en tiempo real
   if (currentHourlyTemp !== null && data.modo_urbano) {
     const rawTemp = data.modo_urbano.temperatura_c;
-    if (rawTemp === null || isNaN(rawTemp) || Math.abs(rawTemp - currentHourlyTemp) > 4.0) {
+    if (rawTemp === null || isNaN(rawTemp) || Math.abs(rawTemp - currentHourlyTemp) > 2.0) {
       data.modo_urbano.temperatura_c = Math.round(currentHourlyTemp * 10) / 10;
-      data.modo_urbano.sensacion_termica_c = Math.round((currentHourlyTemp - 1) * 10) / 10;
+      data.modo_urbano.sensacion_termica_c = Math.round((currentHourlyTemp - 1.2) * 10) / 10;
     }
   }
 
