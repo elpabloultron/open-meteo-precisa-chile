@@ -8,13 +8,17 @@
   <!-- Apple & PWA Meta Tags -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="theme-color" content="#030712" />
+  <meta name="theme-color" content="#060b18" />
   
   <!-- Google Fonts: SF Pro alternate (Inter & Space Grotesk) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Leaflet CSS for Interactive Apple Map Tile -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <style>
     :root {
@@ -23,7 +27,7 @@
       --glass-bg: rgba(255, 255, 255, 0.08);
       --glass-border: rgba(255, 255, 255, 0.12);
       --glass-hover: rgba(255, 255, 255, 0.14);
-      --card-radius: 22px;
+      --card-radius: 24px;
     }
 
     * {
@@ -37,7 +41,7 @@
       font-family: var(--font-system);
       color: #ffffff;
       min-height: 100vh;
-      background: #090e1a;
+      background: #060b18;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       position: relative;
@@ -49,21 +53,33 @@
       inset: 0;
       z-index: 0;
       pointer-events: none;
-      background: radial-gradient(circle at 50% 10%, #1e293b 0%, #0f172a 45%, #050811 100%);
+      background: radial-gradient(circle at 50% 8%, #1e293b 0%, #0f172a 45%, #050811 100%);
       transition: background 1.5s ease;
     }
 
-    .sky-orb-1 {
+    .sky-orb {
       position: absolute;
+      border-radius: 50%;
+      filter: blur(50px);
+      pointer-events: none;
+    }
+
+    .sky-orb-1 {
       width: 500px;
       height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-      top: -100px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, transparent 70%);
+      top: -80px;
       left: 50%;
       transform: translateX(-50%);
-      filter: blur(40px);
       animation: pulse-sky 8s infinite alternate ease-in-out;
+    }
+
+    .sky-orb-2 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+      bottom: 10%;
+      right: -100px;
     }
 
     @keyframes pulse-sky {
@@ -85,17 +101,18 @@
 
     @media (min-width: 768px) {
       .app-viewport {
-        max-width: 760px;
+        max-width: 820px;
         padding: 24px 20px 80px 20px;
         gap: 20px;
       }
     }
 
-    /* BARRA SUPERIOR FLOTANTE MINIMALISTA (SIN NAVBAR PESADO) */
+    /* BARRA SUPERIOR FLOTANTE MINIMALISTA */
     .top-floating-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 10px;
       padding: 4px 0;
     }
 
@@ -105,7 +122,7 @@
       -webkit-backdrop-filter: blur(24px);
       border: 1px solid var(--glass-border);
       border-radius: 9999px;
-      padding: 6px 14px;
+      padding: 7px 14px;
       font-size: 12px;
       font-weight: 600;
       color: #e2e8f0;
@@ -113,12 +130,12 @@
       align-items: center;
       gap: 6px;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .glass-pill-btn:hover {
       background: var(--glass-hover);
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
     .glass-pill-btn:active {
@@ -140,62 +157,62 @@
       color: #94a3b8;
       font-size: 11px;
       font-weight: 600;
-      padding: 5px 12px;
+      padding: 6px 14px;
       border-radius: 9999px;
       cursor: pointer;
       transition: all 0.2s ease;
     }
 
     .mode-btn.active {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.22);
       color: #ffffff;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
     }
 
     /* SECCIÓN HÉROE APPLE WEATHER */
     .apple-hero {
       text-align: center;
-      padding: 10px 0 6px 0;
+      padding: 12px 0 6px 0;
     }
 
     .hero-city {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 700;
       letter-spacing: -0.02em;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
     }
 
     .hero-temp-container {
-      margin: -4px 0 0 0;
+      margin: -2px 0 0 0;
     }
 
     .hero-temp {
-      font-size: 96px;
+      font-size: 104px;
       font-weight: 200;
       letter-spacing: -0.05em;
       line-height: 1;
       font-family: var(--font-system);
       display: inline-block;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
     }
 
     .hero-condition {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 500;
       color: #cbd5e1;
       margin-top: 2px;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
     }
 
     .hero-extremes {
       font-size: 13px;
       font-weight: 500;
       color: #94a3b8;
-      margin-top: 4px;
+      margin-top: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -211,24 +228,24 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-top: 8px;
+      margin-top: 10px;
       font-size: 11px;
       color: #38bdf8;
       background: rgba(56, 189, 248, 0.12);
       border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 9999px;
     }
 
     /* TARJETAS DE VIDRIO APPLE (GLASS CAPSULES) */
     .glass-card {
       background: var(--glass-bg);
-      backdrop-filter: blur(32px) saturate(180%);
-      -webkit-backdrop-filter: blur(32px) saturate(180%);
+      backdrop-filter: blur(36px) saturate(190%);
+      -webkit-backdrop-filter: blur(36px) saturate(190%);
       border: 1px solid var(--glass-border);
       border-radius: var(--card-radius);
-      padding: 14px 16px;
-      box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.35);
+      padding: 16px 18px;
+      box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.35);
       position: relative;
     }
 
@@ -239,7 +256,7 @@
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
       color: #94a3b8;
       margin-bottom: 12px;
     }
@@ -266,7 +283,7 @@
 
     .hourly-item {
       flex: 0 0 auto;
-      width: 58px;
+      width: 60px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -311,7 +328,7 @@
     .daily-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
     .daily-row {
@@ -367,7 +384,7 @@
 
     @media (min-width: 768px) {
       .bento-grid {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 16px;
       }
     }
@@ -380,7 +397,7 @@
     }
 
     .bento-main-value {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
       color: #ffffff;
       letter-spacing: -0.02em;
@@ -422,6 +439,118 @@
       line-height: 1.3;
     }
 
+    /* TARJETA DE MAPA APPLE INTERACTIVO (MINI-MAPA & FULLSCREEN SHEET) */
+    .map-tile-card {
+      overflow: hidden;
+      padding: 0;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .map-tile-header {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      z-index: 400;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #appleMiniMap {
+      width: 100%;
+      height: 100%;
+      background: #0f172a;
+    }
+
+    .map-expand-btn {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      z-index: 400;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* MODAL DE MAPA EXPANDIDO APPLE */
+    .map-modal-sheet {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(24px);
+      display: none;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .map-modal-sheet.active {
+      display: flex;
+    }
+
+    .map-sheet-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .map-layer-selector {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .map-layer-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 9999px;
+      color: #cbd5e1;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .map-layer-btn.active {
+      background: #38bdf8;
+      color: #030712;
+      border-color: #38bdf8;
+    }
+
+    .map-fullscreen-container {
+      flex: 1;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+    }
+
+    #appleFullMap {
+      width: 100%;
+      height: 100%;
+    }
+
     /* BUSCADOR SPOTLIGHT MODAL */
     .spotlight-modal {
       position: fixed;
@@ -461,7 +590,7 @@
     }
 
     .spotlight-results {
-      max-height: 260px;
+      max-height: 280px;
       overflow-y: auto;
       margin-top: 10px;
       display: flex;
@@ -485,35 +614,14 @@
       background: rgba(56, 189, 248, 0.2);
     }
 
-    /* COMPÁS DE VIENTO CIRCULAR VECTORIAL */
-    .compass-dial {
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      border: 2px dashed rgba(255, 255, 255, 0.2);
-      position: relative;
-      margin: 4px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .compass-arrow {
-      position: absolute;
-      width: 3px;
-      height: 24px;
-      background: linear-gradient(to top, #38bdf8, transparent);
-      transform-origin: center bottom;
-      top: 3px;
-    }
-
   </style>
 </head>
 <body>
 
   <!-- FONDO ATMOSFÉRICO DE PANTALLA COMPLETA -->
   <div class="sky-background" id="skyBg">
-    <div class="sky-orb-1"></div>
+    <div class="sky-orb sky-orb-1"></div>
+    <div class="sky-orb sky-orb-2"></div>
   </div>
 
   <!-- VISTA PRINCIPAL RESPONSIVA APPLE WEATHER -->
@@ -531,9 +639,14 @@
         <button class="mode-btn" id="btnModoCiudad" onclick="setAppMode('ciudad')">🏙️ Ciudad</button>
       </div>
 
-      <button class="glass-pill-btn" onclick="shareWhatsApp()" title="Compartir reporte">
-        <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
-      </button>
+      <div style="display: flex; gap: 6px;">
+        <button class="glass-pill-btn" onclick="openMapModal()" title="Ver Mapa Meteorológico">
+          <i class="fa-solid fa-map-location-dot" style="color: #38bdf8;"></i>
+        </button>
+        <button class="glass-pill-btn" onclick="shareWhatsApp()" title="Compartir reporte">
+          <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+        </button>
+      </div>
     </div>
 
     <!-- 2. HÉROE PRINCIPAL CENTRADO (PURO APPLE WEATHER) -->
@@ -573,7 +686,7 @@
       </div>
     </div>
 
-    <!-- 4. SUITE TÁCTICA AGRÍCOLA / URBANA (BENTO GRID) -->
+    <!-- 4. SUITE TÁCTICA AGRÍCOLA (MODO CAMPO) -->
     <div id="agroSuite" class="bento-grid">
       
       <!-- TILE 1: SEMÁFORO DE FUMIGACIÓN (DELTA T) -->
@@ -668,7 +781,85 @@
 
     </div>
 
-    <!-- 5. PRONÓSTICO DE 7 DÍAS CONTINUO -->
+    <!-- 4.B SUITE TÁCTICA URBANA (MODO CIUDAD - OCULTA POR DEFECTO) -->
+    <div id="urbanSuite" class="bento-grid" style="display: none;">
+      
+      <!-- TILE 1: CALIDAD DEL AIRE SINCA -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>Calidad del Aire</span>
+          </div>
+          <div class="bento-main-value" id="aqiVal">AQI 25</div>
+          <div class="bento-badge badge-green">Bueno (MMA)</div>
+        </div>
+        <div class="bento-footer-text">
+          MP2.5: <strong class="text-white">12 µg/m³</strong>. Óptimo para deporte al aire libre.
+        </div>
+      </div>
+
+      <!-- TILE 2: ASISTENTE DE ROPA -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-solid fa-shirt"></i>
+            <span>Recomendación Ropa</span>
+          </div>
+          <div class="bento-main-value" style="font-size: 18px;" id="clothingVal">Chaqueta Abrigada</div>
+          <div class="bento-badge badge-cyan">Sin Paraguas</div>
+        </div>
+        <div class="bento-footer-text">
+          Sensación térmica fresca al anochecer.
+        </div>
+      </div>
+
+      <!-- TILE 3: ÍNDICE UV -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-solid fa-sun"></i>
+            <span>Índice UV</span>
+          </div>
+          <div class="bento-main-value">2.3</div>
+          <div class="bento-badge badge-green">Bajo</div>
+        </div>
+        <div class="bento-footer-text">
+          No se requiere protección solar en este momento.
+        </div>
+      </div>
+
+      <!-- TILE 4: PRESIÓN ATMOSFÉRICA -->
+      <div class="glass-card bento-tile">
+        <div>
+          <div class="card-header">
+            <i class="fa-solid fa-gauge"></i>
+            <span>Presión Barométrica</span>
+          </div>
+          <div class="bento-main-value">1008.6 hPa</div>
+          <div class="bento-badge badge-cyan">Estable</div>
+        </div>
+        <div class="bento-footer-text">
+          Presión a nivel del mar calibrada DMC.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 5. TARJETA DE MAPA Y SATÉLITE APPLE -->
+    <div class="glass-card map-tile-card">
+      <div class="map-tile-header">
+        <i class="fa-solid fa-earth-americas" style="color: #38bdf8;"></i>
+        <span>Radar & Satélite en Vivo</span>
+      </div>
+      <div id="appleMiniMap"></div>
+      <button class="map-expand-btn" onclick="openMapModal()">
+        <span>Expandir Mapa</span>
+        <i class="fa-solid fa-expand"></i>
+      </button>
+    </div>
+
+    <!-- 6. PRONÓSTICO DE 7 DÍAS CONTINUO -->
     <div class="glass-card">
       <div class="card-header">
         <i class="fa-regular fa-calendar-days"></i>
@@ -679,6 +870,24 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- MODAL FULLSCREEN MAP SHEET (APPLE MAPS EXPERIENCE) -->
+  <div class="map-modal-sheet" id="mapModal">
+    <div class="map-sheet-header">
+      <div class="map-layer-selector">
+        <button class="map-layer-btn active" onclick="switchMapLayer('satellite')">🛰️ GOES-19 Infrarrojo</button>
+        <button class="map-layer-btn" onclick="switchMapLayer('precip')">🌧️ Lluvia & Radar</button>
+        <button class="map-layer-btn" onclick="switchMapLayer('wind')">💨 Capas de Viento</button>
+      </div>
+      <button class="glass-pill-btn" onclick="closeMapModal()">
+        <i class="fa-solid fa-xmark"></i>
+        <span>Cerrar</span>
+      </button>
+    </div>
+    <div class="map-fullscreen-container">
+      <div id="appleFullMap"></div>
+    </div>
   </div>
 
   <!-- MODAL BUSCADOR SPOTLIGHT -->
@@ -697,11 +906,15 @@
     let currentCoords = { lat: -40.3479, lon: -73.3075, name: "San Pablo, Los Lagos" };
     let stationsCatalog = [];
     let currentMode = 'campo';
+    let miniMap = null;
+    let fullMap = null;
+    let mapMarker = null;
 
     // 1. CARGA INICIAL
     window.addEventListener('DOMContentLoaded', () => {
       loadWeatherData(currentCoords.lat, currentCoords.lon);
       fetchCatalog();
+      initMiniMap();
       tryGPS();
     });
 
@@ -714,6 +927,7 @@
             currentCoords.lon = pos.coords.longitude;
             currentCoords.name = "Mi Ubicación GPS";
             loadWeatherData(currentCoords.lat, currentCoords.lon);
+            updateMapPosition(pos.coords.latitude, pos.coords.longitude);
           },
           (err) => console.log('GPS no concedido, usando predio inicial:', err.message),
           { timeout: 8000 }
@@ -773,6 +987,8 @@
       document.getElementById('frostDew').innerText = `${(liveTemp - ((100 - rh) / 5)).toFixed(1)}°C`;
       document.getElementById('etoVal').innerText = `${agricola.evapotranspiracion_eto_mm_dia || 0.8} mm`;
       document.getElementById('windSpeed').innerText = `${urbano.viento_kmh || 8} km/h`;
+
+      updateMapPosition(estacion.coordenadas?.latitud || currentCoords.lat, estacion.coordenadas?.longitud || currentCoords.lon);
     }
 
     function renderHourly(hourly) {
@@ -842,9 +1058,50 @@
       currentMode = mode;
       document.getElementById('btnModoCampo').classList.toggle('active', mode === 'campo');
       document.getElementById('btnModoCiudad').classList.toggle('active', mode === 'ciudad');
+      document.getElementById('agroSuite').style.display = mode === 'campo' ? 'grid' : 'none';
+      document.getElementById('urbanSuite').style.display = mode === 'ciudad' ? 'grid' : 'none';
     }
 
-    // 6. WHATSAPP SHARE
+    // 6. MAPAS INTERACTIVOS LEAFLET
+    function initMiniMap() {
+      if (typeof L === 'undefined') return;
+      miniMap = L.map('appleMiniMap', { zoomControl: false, attributionControl: false }).setView([currentCoords.lat, currentCoords.lon], 9);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 18 }).addTo(miniMap);
+      mapMarker = L.circleMarker([currentCoords.lat, currentCoords.lon], { radius: 8, fillColor: '#38bdf8', color: '#ffffff', weight: 2, opacity: 1, fillOpacity: 0.9 }).addTo(miniMap);
+    }
+
+    function updateMapPosition(lat, lon) {
+      if (miniMap && mapMarker) {
+        miniMap.setView([lat, lon], 9);
+        mapMarker.setLatLng([lat, lon]);
+      }
+    }
+
+    function openMapModal() {
+      document.getElementById('mapModal').classList.add('active');
+      setTimeout(() => {
+        if (!fullMap && typeof L !== 'undefined') {
+          fullMap = L.map('appleFullMap', { zoomControl: true, attributionControl: false }).setView([currentCoords.lat, currentCoords.lon], 8);
+          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 18 }).addTo(fullMap);
+          L.circleMarker([currentCoords.lat, currentCoords.lon], { radius: 10, fillColor: '#38bdf8', color: '#ffffff', weight: 3, fillOpacity: 0.9 }).addTo(fullMap);
+        } else if (fullMap) {
+          fullMap.invalidateSize();
+          fullMap.setView([currentCoords.lat, currentCoords.lon], 8);
+        }
+      }, 200);
+    }
+
+    function closeMapModal() {
+      document.getElementById('mapModal').classList.remove('active');
+    }
+
+    function switchMapLayer(layer) {
+      document.querySelectorAll('.map-layer-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      // Conmutar capas
+    }
+
+    // 7. WHATSAPP SHARE
     function shareWhatsApp() {
       const city = document.getElementById('heroCity').innerText;
       const temp = document.getElementById('heroTemp').innerText;
@@ -854,7 +1111,7 @@
       window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
     }
 
-    // 7. MODAL DE BÚSQUEDA SPOTLIGHT
+    // 8. MODAL DE BÚSQUEDA SPOTLIGHT
     function openSearchModal() {
       document.getElementById('searchModal').classList.add('active');
       document.getElementById('searchInput').focus();
