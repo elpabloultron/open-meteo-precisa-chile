@@ -4,6 +4,7 @@ import imaplib
 import os
 import sys
 from email.header import decode_header
+
 from dotenv import load_dotenv
 
 # Cargar variables desde .env
