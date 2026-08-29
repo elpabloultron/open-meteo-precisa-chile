@@ -12,10 +12,9 @@ from pathlib import Path
 from typing import Any
 
 import httpx
+from dotenv import load_dotenv
 
 logger = logging.getLogger("meteoprecisa.supabase")
-
-from dotenv import load_dotenv
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 load_dotenv(PROJECT_ROOT / ".env")
@@ -32,9 +31,7 @@ def get_supabase_config() -> tuple[str, str, str]:
 
 
 def subir_archivo_supabase(
-    file_path: Path | str,
-    destination_name: str,
-    content_type: str = "image/webp"
+    file_path: Path | str, destination_name: str, content_type: str = "image/webp"
 ) -> str | None:
     """Sube un archivo local (ej: goes19_loop.webp) al bucket público de Supabase y devuelve su URL CDN."""
     path = Path(file_path)
@@ -49,12 +46,7 @@ def subir_archivo_supabase(
         with open(path, "rb") as f:
             file_bytes = f.read()
 
-        headers = {
-            "apikey": key,
-            "Authorization": f"Bearer {key}",
-            "Content-Type": content_type,
-            "x-upsert": "true"
-        }
+        headers = {"apikey": key, "Authorization": f"Bearer {key}", "Content-Type": content_type, "x-upsert": "true"}
 
         with httpx.Client(timeout=45.0) as client:
             resp = client.post(upload_url, headers=headers, content=file_bytes)
@@ -81,7 +73,7 @@ def subir_cache_json_supabase(cache_data: dict[str, Any], destination_name: str 
             "apikey": key,
             "Authorization": f"Bearer {key}",
             "Content-Type": "application/json",
-            "x-upsert": "true"
+            "x-upsert": "true",
         }
 
         with httpx.Client(timeout=30.0) as client:

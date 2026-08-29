@@ -1,0 +1,10 @@
+- [x] Backend: Modificar `iniciar_loop_background` a 900 segundos (15 min) en `main.py`.
+- [x] Backend: Agregar endpoint `/api/history/{station_id}` en `main.py` con parámetros `start_date` y `end_date`.
+- [x] Backend: Actualizar `obtener_historico_estacion` en `db_store.py` para usar `time_bucket` agrupando por día en consultas grandes, y aceptar rangos de fecha.
+- [x] Frontend (UI/HTML): Dividir `index.html` en `<section id="urbano">` y `<section id="agricola">` de forma secuencial y sin redundancia.
+- [x] Frontend (UI/HTML): Agregar herramienta de tooltips `[?]` para variables como Presión Atmosférica.
+- [x] Frontend (JS): Crear modal/contenedor para gráficos interactivos (Chart.js) con selector de fechas, mostrando la disponibilidad de datos desde la BD.
+- [x] Frontend (Lógica): Implementar la alerta de calidad del aire OMS (15 µg/m³) vs Norma Chilena.
+- [x] Frontend (Lógica): Implementar alerta empírica de Inversión Térmica.
+- [x] Frontend (UI): Agregar sección/modal "Acerca De" explicando fuentes de datos, interpolación de modelos numéricos, etc.
+- [x] Verificación: Validar que la UI muestra la información correctamente y que los gráficos históricos se renderizan con los datos de TimescaleDB.

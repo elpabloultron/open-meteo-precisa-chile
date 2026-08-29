@@ -1,0 +1,41 @@
+{
+  "mcpServers": {
+    "timescaledb": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://postgres:meteoprecisa2026@localhost:5432/meteoprecisa"
+      ],
+      "env": {
+        "POSTGRES_HOST": "localhost",
+        "POSTGRES_PORT": "5432",
+        "POSTGRES_DB": "meteoprecisa",
+        "POSTGRES_USER": "postgres"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/pablo/Escritorio/open meteo precisa"
+      ]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ]
+    },
+    "git": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-git",
+        "/home/pablo/Escritorio/open meteo precisa"
+      ]
+    }
+  }
+}

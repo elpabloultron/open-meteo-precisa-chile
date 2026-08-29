@@ -6,7 +6,8 @@ Para ejecutar:
 """
 
 import random
-from locust import HttpUser, task, between
+
+from locust import HttpUser, between, task
 
 COORDINADAS_CHILE = [
     (-33.4489, -70.6693),  # Santiago

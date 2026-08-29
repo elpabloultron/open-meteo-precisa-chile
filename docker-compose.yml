@@ -1,0 +1,40 @@
+# Docker Compose para MeteoPrecisa
+
+services:
+  # Backend y Frontend Unificado
+  api:
+    build: .
+    container_name: meteoprecisa_api
+    ports:
+      - "8000:8000"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-meteoprecisa}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-meteoprecisa2026}
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      PURPLEAIR_API_KEY: ${PURPLEAIR_API_KEY}
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    restart: unless-stopped
+    command: ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000} --reload"]
+
+  # Base de Datos Open Source: PostgreSQL + TimescaleDB + PostGIS
+  db:
+    image: timescale/timescaledb-ha:pg15-latest
+    container_name: meteoprecisa_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-meteoprecisa2026}
+      POSTGRES_DB: ${POSTGRES_DB:-meteoprecisa}
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    command: ["postgres", "-c", "shared_preload_libraries=timescaledb"]
+
+volumes:
+  pgdata:

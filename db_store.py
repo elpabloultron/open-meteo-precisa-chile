@@ -1,246 +1,287 @@
-"""Motor de persistencia en base de datos relacional SQLite para el histórico de telemetría y calidad del aire.
+"""Motor de persistencia en base de datos relacional PostgreSQL (TimescaleDB) para el histórico de telemetría y calidad del aire.
 
 Garantiza:
-1. Almacenamiento histórico continuo sin sobrecargar la memoria RAM ni cache_servidor.json.
-2. Modo WAL (Write-Ahead Logging) para consultas concurrentes ultrarrápidas sin bloqueos.
-3. Consultas optimizadas por índices para gráficos y análisis de tendencias.
+1. Almacenamiento histórico continuo.
+2. Particionado nativo de series de tiempo gracias a TimescaleDB.
+3. Consultas optimizadas para grandes volúmenes.
 """
 
 from __future__ import annotations
 
 import logging
 import os
-import sqlite3
 import time
 from datetime import datetime, timezone
-from pathlib import Path
+
+try:
+    import psycopg2
+    from psycopg2.extras import execute_values
+except ImportError:
+    psycopg2 = None
+    execute_values = None
 from typing import Any
 
 logger = logging.getLogger("meteoprecisa.db")
 
-PROJECT_ROOT = Path(__file__).resolve().parent
-DB_PATH = PROJECT_ROOT / "historico_telemetria.db"
+
+def get_db_connection():
+    if psycopg2 is None:
+        raise RuntimeError(
+            "El controlador 'psycopg2' no está instalado. Configure PostgreSQL o use el backend de caché JSON."
+        )
+    return psycopg2.connect(
+        dbname=os.getenv("POSTGRES_DB", "meteoprecisa"),
+        user=os.getenv("POSTGRES_USER", "postgres"),
+        password=os.getenv("POSTGRES_PASSWORD", "meteoprecisa2026"),
+        host=os.getenv("POSTGRES_HOST", "localhost"),
+        port=os.getenv("POSTGRES_PORT", "5432"),
+    )
 
 
-def get_db_connection(db_path: Path | str | None = None) -> sqlite3.Connection:
-    path = db_path or DB_PATH
-    conn = sqlite3.connect(str(path), timeout=10.0)
-    conn.row_factory = sqlite3.Row
-    conn.execute("PRAGMA journal_mode=WAL;")
-    conn.execute("PRAGMA synchronous=NORMAL;")
-    return conn
-
-
-def init_db(db_path: Path | str | None = None) -> None:
-    """Crea las tablas e índices si no existen."""
-    conn = get_db_connection(db_path)
+def init_db(db_path: Any = None) -> None:
+    """Crea las tablas, las convierte en hypertables de TimescaleDB y crea índices."""
     try:
-        with conn:
-            conn.execute("""
+        conn = get_db_connection()
+        conn.autocommit = True
+        with conn.cursor() as cur:
+            # Habilitar extensión TimescaleDB si no está
+            cur.execute("CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;")
+
+            cur.execute("""
                 CREATE TABLE IF NOT EXISTS telemetria_historico (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                     station_id TEXT NOT NULL,
                     nombre TEXT,
-                    timestamp INTEGER NOT NULL,
-                    fecha_hora_utc TEXT NOT NULL,
-                    temperatura_c REAL,
+                    timestamp_utc TIMESTAMP WITH TIME ZONE NOT NULL,
+                    temperatura_c DOUBLE PRECISION,
                     humedad_relativa INTEGER,
-                    viento_kmh REAL,
+                    viento_kmh DOUBLE PRECISION,
                     direccion_viento_grados INTEGER,
-                    punto_rocio_c REAL,
-                    presion_hpa REAL,
-                    lluvia_mm REAL,
-                    radiacion_w_m2 REAL,
+                    punto_rocio_c DOUBLE PRECISION,
+                    presion_hpa DOUBLE PRECISION,
+                    lluvia_mm DOUBLE PRECISION,
+                    radiacion_w_m2 DOUBLE PRECISION,
                     fuente TEXT,
-                    UNIQUE(station_id, timestamp)
+                    UNIQUE(station_id, timestamp_utc)
                 );
             """)
 
-            conn.execute("""
+            cur.execute("""
                 CREATE TABLE IF NOT EXISTS calidad_aire_historico (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                     station_id TEXT NOT NULL,
                     nombre TEXT,
-                    timestamp INTEGER NOT NULL,
-                    fecha_hora_utc TEXT NOT NULL,
-                    pm25 REAL,
-                    pm10 REAL,
+                    timestamp_utc TIMESTAMP WITH TIME ZONE NOT NULL,
+                    pm25 DOUBLE PRECISION,
+                    pm10 DOUBLE PRECISION,
                     comuna TEXT,
                     region TEXT,
                     fuente TEXT,
-                    UNIQUE(station_id, timestamp)
+                    UNIQUE(station_id, timestamp_utc)
                 );
             """)
 
-            conn.execute("CREATE INDEX IF NOT EXISTS idx_tele_st_time ON telemetria_historico(station_id, timestamp);")
-            conn.execute("CREATE INDEX IF NOT EXISTS idx_tele_time ON telemetria_historico(timestamp);")
-            conn.execute("CREATE INDEX IF NOT EXISTS idx_caq_st_time ON calidad_aire_historico(station_id, timestamp);")
-    finally:
+            # Convertir a hypertables si no lo son
+            cur.execute("""
+                SELECT create_hypertable('telemetria_historico', 'timestamp_utc', if_not_exists => TRUE);
+            """)
+            cur.execute("""
+                SELECT create_hypertable('calidad_aire_historico', 'timestamp_utc', if_not_exists => TRUE);
+            """)
+
+            cur.execute(
+                "CREATE INDEX IF NOT EXISTS idx_tele_st_time ON telemetria_historico(station_id, timestamp_utc DESC);"
+            )
+            cur.execute(
+                "CREATE INDEX IF NOT EXISTS idx_caq_st_time ON calidad_aire_historico(station_id, timestamp_utc DESC);"
+            )
         conn.close()
+    except Exception as e:
+        logger.error(f"Error inicializando TimescaleDB: {e}")
 
 
 def guardar_instantanea_historica(
     telemetria_map: dict[str, dict[str, Any]],
     sinca_map: dict[str, dict[str, Any]] | None = None,
     purple_map: dict[str, dict[str, Any]] | None = None,
-    db_path: Path | str | None = None
+    db_path: Any = None,
 ) -> int:
-    """Inserta los datos de la última foto horaria en la base de datos histórica."""
+    """Inserta los datos de la última foto horaria en la base de datos PostgreSQL."""
     if not telemetria_map and not sinca_map and not purple_map:
         return 0
 
-    init_db(db_path)
-    conn = get_db_connection(db_path)
-    now_ts = int(time.time())
-    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ")
+    init_db()
     insertados_tele = 0
     insertados_caq = 0
 
     try:
-        with conn:
-            # 1. Telemetría de estaciones meteorológicas físicas (DMC, Agromet INIA, RedMeteo)
+        conn = get_db_connection()
+        with conn.cursor() as cur:
+            # 1. Telemetría de estaciones físicas
             rows_tele = []
             for st_id, data in telemetria_map.items():
                 if not isinstance(data, dict):
                     continue
-                ts = int(data.get("timestamp_actualizacion") or data.get("timestamp") or now_ts)
-                
-                # Identificar la red/fuente
+
+                ts_int = int(data.get("timestamp_actualizacion") or data.get("timestamp") or time.time())
+                ts_dt = datetime.fromtimestamp(ts_int, timezone.utc)
+
+                fuente = "Estación Física"
                 if "dmc" in st_id.lower():
                     fuente = "DMC Oficial"
                 elif "agromet" in st_id.lower():
                     fuente = "Agromet INIA"
                 elif "redmeteo" in st_id.lower():
                     fuente = "RedMeteo Chile"
-                else:
-                    fuente = "Estación Física"
 
                 lluvia = data.get("lluvia_mm") or data.get("lluvia_acumulada_hoy_mm")
 
-                rows_tele.append((
-                    st_id,
-                    data.get("nombre"),
-                    ts,
-                    now_iso,
-                    data.get("temperatura_c"),
-                    data.get("humedad_relativa"),
-                    data.get("viento_kmh"),
-                    data.get("direccion_viento_grados"),
-                    data.get("punto_rocio_c"),
-                    data.get("presion_hpa"),
-                    lluvia,
-                    data.get("radiacion_w_m2"),
-                    fuente
-                ))
+                rows_tele.append(
+                    (
+                        st_id,
+                        data.get("nombre"),
+                        ts_dt,
+                        data.get("temperatura_c"),
+                        data.get("humedad_relativa"),
+                        data.get("viento_kmh"),
+                        data.get("direccion_viento_grados"),
+                        data.get("punto_rocio_c"),
+                        data.get("presion_hpa"),
+                        lluvia,
+                        data.get("radiacion_w_m2"),
+                        fuente,
+                    )
+                )
 
             if rows_tele:
-                cursor = conn.executemany("""
-                    INSERT OR IGNORE INTO telemetria_historico (
-                        station_id, nombre, timestamp, fecha_hora_utc, temperatura_c,
+                execute_values(
+                    cur,
+                    """
+                    INSERT INTO telemetria_historico (
+                        station_id, nombre, timestamp_utc, temperatura_c,
                         humedad_relativa, viento_kmh, direccion_viento_grados, punto_rocio_c,
                         presion_hpa, lluvia_mm, radiacion_w_m2, fuente
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
-                """, rows_tele)
-                insertados_tele = cursor.rowcount
+                    ) VALUES %s ON CONFLICT (station_id, timestamp_utc) DO NOTHING;
+                """,
+                    rows_tele,
+                )
+                insertados_tele = cur.rowcount
 
-            # 2. Calidad del Aire (SINCA MMA y PurpleAir)
+            # 2. Calidad del Aire
             rows_caq = []
-            if sinca_map:
-                for st_id, data in sinca_map.items():
-                    if isinstance(data, dict):
-                        ts = int(data.get("timestamp") or now_ts)
-                        rows_caq.append((
-                            st_id,
-                            data.get("estacion_nombre"),
-                            ts,
-                            now_iso,
-                            data.get("pm25"),
-                            data.get("pm10"),
-                            data.get("comuna"),
-                            data.get("region"),
-                            "SINCA MMA"
-                        ))
-            
-            if purple_map:
-                for st_id, data in purple_map.items():
-                    if isinstance(data, dict):
-                        ts = int(data.get("timestamp") or now_ts)
-                        rows_caq.append((
-                            st_id,
-                            data.get("estacion_nombre"),
-                            ts,
-                            now_iso,
-                            data.get("pm25"),
-                            data.get("pm10"),
-                            data.get("comuna"),
-                            data.get("region"),
-                            "PurpleAir"
-                        ))
+
+            def _procesar_caq(mapa, fuente_nombre):
+                if mapa:
+                    for s_id, d in mapa.items():
+                        if isinstance(d, dict):
+                            ts_int = int(d.get("timestamp") or time.time())
+                            ts_dt = datetime.fromtimestamp(ts_int, timezone.utc)
+                            rows_caq.append(
+                                (
+                                    s_id,
+                                    d.get("estacion_nombre"),
+                                    ts_dt,
+                                    d.get("pm25"),
+                                    d.get("pm10"),
+                                    d.get("comuna"),
+                                    d.get("region"),
+                                    fuente_nombre,
+                                )
+                            )
+
+            _procesar_caq(sinca_map, "SINCA MMA")
+            _procesar_caq(purple_map, "PurpleAir")
 
             if rows_caq:
-                cursor_caq = conn.executemany("""
-                    INSERT OR IGNORE INTO calidad_aire_historico (
-                        station_id, nombre, timestamp, fecha_hora_utc, pm25, pm10,
+                execute_values(
+                    cur,
+                    """
+                    INSERT INTO calidad_aire_historico (
+                        station_id, nombre, timestamp_utc, pm25, pm10,
                         comuna, region, fuente
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
-                """, rows_caq)
-                insertados_caq = cursor_caq.rowcount
+                    ) VALUES %s ON CONFLICT (station_id, timestamp_utc) DO NOTHING;
+                """,
+                    rows_caq,
+                )
+                insertados_caq = cur.rowcount
 
-        logger.info(f"📊 [DB Histórica] Guardados {insertados_tele} registros de telemetría y {insertados_caq} de calidad del aire.")
+        conn.commit()
+        conn.close()
+        logger.info(
+            f"📊 [TimescaleDB] Guardados {insertados_tele} registros de telemetría y {insertados_caq} de calidad del aire."
+        )
         return insertados_tele + insertados_caq
     except Exception as e:
-        logger.error(f"⚠️ Error guardando instantánea en base de datos SQLite: {e}")
+        logger.error(f"⚠️ Error guardando en PostgreSQL: {e}")
         return 0
-    finally:
-        conn.close()
 
 
-def obtener_historico_estacion(
-    station_id: str,
-    horas: int = 24,
-    db_path: Path | str | None = None
-) -> list[dict[str, Any]]:
-    """Devuelve los registros históricos de una estación en las últimas N horas."""
-    init_db(db_path)
-    conn = get_db_connection(db_path)
-    limite_ts = int(time.time()) - (horas * 3600)
+def obtener_historico_estacion(station_id: str, dias: int = 1, db_path: Any = None) -> list[dict[str, Any]]:
+    """Devuelve los registros históricos de una estación, agrupados si es un periodo largo."""
+    init_db()
     try:
-        cursor = conn.execute("""
-            SELECT station_id, nombre, timestamp, fecha_hora_utc, temperatura_c,
-                   humedad_relativa, viento_kmh, direccion_viento_grados, punto_rocio_c,
-                   presion_hpa, lluvia_mm, radiacion_w_m2, fuente
-            FROM telemetria_historico
-            WHERE station_id = ? AND timestamp >= ?
-            ORDER BY timestamp ASC;
-        """, (station_id, limite_ts))
-        return [dict(row) for row in cursor.fetchall()]
-    finally:
+        conn = get_db_connection()
+        with conn.cursor() as cur:
+            if dias <= 7:
+                # Datos crudos para periodos cortos
+                cur.execute(
+                    """
+                    SELECT station_id, MAX(nombre) as nombre, EXTRACT(EPOCH FROM timestamp_utc) as timestamp,
+                           to_char(timestamp_utc, 'YYYY-MM-DD"T"HH24:MI:SS"Z"') as fecha_hora_utc,
+                           temperatura_c, humedad_relativa, viento_kmh, direccion_viento_grados,
+                           punto_rocio_c, presion_hpa, lluvia_mm, radiacion_w_m2, fuente
+                    FROM telemetria_historico
+                    WHERE station_id = %s AND timestamp_utc >= NOW() - INTERVAL '%s days'
+                    ORDER BY timestamp_utc ASC;
+                """,
+                    (station_id, dias),
+                )
+            else:
+                # Agrupar por día para periodos largos (TimescaleDB)
+                cur.execute(
+                    """
+                    SELECT station_id, MAX(nombre) as nombre, EXTRACT(EPOCH FROM time_bucket('1 day', timestamp_utc)) as timestamp,
+                           to_char(time_bucket('1 day', timestamp_utc), 'YYYY-MM-DD') as fecha_hora_utc,
+                           AVG(temperatura_c) as temperatura_c, AVG(humedad_relativa) as humedad_relativa,
+                           AVG(viento_kmh) as viento_kmh, AVG(direccion_viento_grados) as direccion_viento_grados,
+                           AVG(punto_rocio_c) as punto_rocio_c, AVG(presion_hpa) as presion_hpa,
+                           SUM(lluvia_mm) as lluvia_mm, AVG(radiacion_w_m2) as radiacion_w_m2, MAX(fuente) as fuente
+                    FROM telemetria_historico
+                    WHERE station_id = %s AND timestamp_utc >= NOW() - INTERVAL '%s days'
+                    GROUP BY station_id, time_bucket('1 day', timestamp_utc)
+                    ORDER BY time_bucket('1 day', timestamp_utc) ASC;
+                """,
+                    (station_id, dias),
+                )
+
+            columns = [desc[0] for desc in cur.description]
+            results = [dict(zip(columns, row)) for row in cur.fetchall()]
         conn.close()
+        return results
+    except Exception as e:
+        logger.error(f"Error consultando Postgres: {e}")
+        return []
 
 
-def obtener_estadisticas_db(db_path: Path | str | None = None) -> dict[str, Any]:
-    """Obtiene el conteo total de registros, tamaño del archivo y rango de fechas."""
-    init_db(db_path)
-    path = db_path or DB_PATH
-    conn = get_db_connection(path)
+def obtener_estadisticas_db(db_path: Any = None) -> dict[str, Any]:
+    """Obtiene conteos y métricas de TimescaleDB."""
+    init_db()
     try:
-        c_tele = conn.execute("SELECT COUNT(*), MIN(timestamp), MAX(timestamp) FROM telemetria_historico;").fetchone()
-        c_caq = conn.execute("SELECT COUNT(*) FROM calidad_aire_historico;").fetchone()
-        
-        tamano_mb = round(os.path.getsize(path) / (1024 * 1024), 2) if os.path.exists(path) else 0.0
+        conn = get_db_connection()
+        with conn.cursor() as cur:
+            cur.execute("SELECT COUNT(*), MIN(timestamp_utc), MAX(timestamp_utc) FROM telemetria_historico;")
+            c_tele = cur.fetchone()
+            cur.execute("SELECT COUNT(*) FROM calidad_aire_historico;")
+            c_caq = cur.fetchone()
 
-        min_ts = c_tele[1] if c_tele and c_tele[1] else None
-        max_ts = c_tele[2] if c_tele and c_tele[2] else None
-
+        conn.close()
         return {
             "estado": "activo",
-            "motor": "SQLite (WAL Mode)",
-            "archivo_db": str(os.path.basename(str(path))),
-            "tamano_mb": tamano_mb,
+            "motor": "PostgreSQL + TimescaleDB",
+            "archivo_db": "meteoprecisa (PG)",
+            "tamano_mb": 0.0,  # Se podría usar pg_database_size
             "total_registros_telemetria": c_tele[0] if c_tele else 0,
             "total_registros_calidad_aire": c_caq[0] if c_caq else 0,
-            "primer_registro_utc": datetime.fromtimestamp(min_ts, timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ") if min_ts else None,
-            "ultimo_registro_utc": datetime.fromtimestamp(max_ts, timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ") if max_ts else None
+            "primer_registro_utc": str(c_tele[1]) if c_tele and c_tele[1] else None,
+            "ultimo_registro_utc": str(c_tele[2]) if c_tele and c_tele[2] else None,
         }
-    finally:
-        conn.close()
+    except Exception as e:
+        return {"estado": "error", "error": str(e)}

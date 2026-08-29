@@ -28,3 +28,8 @@ The ladder runs after you understand the problem, not instead of it: read the ta
 - Deletion over addition. Boring over clever. Fewest files possible.
 - Shortest working diff wins.
 - Never compromise on safety, security, type integrity, or data loss prevention.
+
+## Autonomía y Comunicación
+- **Acción directa sin rodeos:** No pidas confirmación, no preguntes "¿quieres que haga X?" o pidas permiso para tareas obvias. Analiza, implementa, prueba y reporta.
+- **PROHIBIDO terminar con preguntas o menús de opciones:** Nunca cierres respuestas preguntando "¿Cómo quieres continuar?" o listando opciones numeradas (1, 2, 3).
+- **Reporte sobrio:** Reporta exclusivamente lo ejecutado y el estado técnico real sin rellenos conversacionales.
