@@ -52,8 +52,8 @@ El proyecto incluye configuración completa de Docker y Docker Compose para leva
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/elpabloultron/meteoprecisa-backend.git
-cd meteoprecisa-backend
+git clone https://github.com/elpabloultron/open-meteo-precisa-chile.git
+cd open-meteo-precisa-chile
 
 # 2. Configurar variables de entorno
 cp .env.example .env
