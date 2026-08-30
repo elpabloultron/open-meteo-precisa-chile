@@ -55,12 +55,25 @@ El proyecto incluye configuración completa de Docker y Docker Compose para leva
 git clone https://github.com/elpabloultron/open-meteo-precisa-chile.git
 cd open-meteo-precisa-chile
 
-# 2. Configurar variables de entorno
+# 2. Configurar variables de entorno (Cada usuario debe configurar sus propias llaves)
 cp .env.example .env
 
 # 3. Levantar con Docker Compose
 docker compose up --build -d
 ```
+
+### 🔐 Configuración de Variables de Entorno (`.env`)
+
+MeteoPrecisa no incluye credenciales embebidas por seguridad. Cada usuario o desarrollador debe definir sus propias llaves en el archivo `.env`:
+
+| Variable | Requerido / Opcional | Descripción |
+| :--- | :--- | :--- |
+| `PURPLEAIR_API_KEY` | Opcional | Clave de API de PurpleAir para sensores ciudadanos de calidad de aire (PM2.5). |
+| `TOKEN_DMC` / `USUARIO_DMC` | Opcional | Credenciales oficiales de la Dirección Meteorológica de Chile. |
+| `GCP_PROJECT_ID` / `GEE_KEY_PATH` | Opcional | Proyecto de Google Cloud y cuenta de servicio para Google Earth Engine (Sentinel-2, ERA5). |
+| `EMAIL_USER` / `EMAIL_PASS` | Opcional | Credenciales IMAP para el lector de correos automatizado (`scripts/leer_correo.py`). |
+
+> **Nota:** Si no se proporcionan API keys opcionales, el motor opera con las redes públicas abiertas (Agromet INIA, SINCA MMA, RedMeteo y NOAA GOES-19) mediante fallbacks automáticos sin fallar.
 
 La aplicación estará disponible de inmediato en:
 - **Web App / PWA:** `http://localhost:8000/`
