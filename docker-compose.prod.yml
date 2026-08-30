@@ -1,3 +1,4 @@
+version: "3.8"
 # Docker Compose de Producción para Oracle Cloud - MeteoPrecisa
 services:
   api:
