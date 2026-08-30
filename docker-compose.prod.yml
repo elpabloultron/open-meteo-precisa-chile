@@ -6,9 +6,9 @@ services:
     ports:
       - "80:8000"
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-meteoprecisa}
-      POSTGRES_USER: ${POSTGRES_USER:-postgres}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-meteoprecisa2026}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_HOST: db
       POSTGRES_PORT: 5432
       PURPLEAIR_API_KEY: ${PURPLEAIR_API_KEY}
@@ -22,9 +22,9 @@ services:
     image: timescale/timescaledb-ha:pg15-latest
     container_name: meteoprecisa_db_prod
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-postgres}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-meteoprecisa2026}
-      POSTGRES_DB: ${POSTGRES_DB:-meteoprecisa}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - pgdata_prod:/var/lib/postgresql/data
     restart: always
