@@ -1069,6 +1069,44 @@ body {
     animation: userPulse 2s infinite;
 }
 
+/* Floating Switcher between Map and Dashboard */
+.floating-panel-toggle {
+    position: fixed;
+    top: 85px;
+    right: 20px;
+    z-index: 1500;
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(16px);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.floating-panel-toggle:hover {
+    background: linear-gradient(135deg, #0369a1, #075985);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+}
+
+.btn-map-toggle {
+    background: rgba(56, 189, 248, 0.15);
+    border-color: rgba(56, 189, 248, 0.4);
+    color: var(--accent-cyan);
+}
+
+.btn-map-toggle:hover {
+    background: rgba(56, 189, 248, 0.25);
+}
+
 /* RESPONSIVE */
 @media (max-width: 640px) {
     .weather-panel {

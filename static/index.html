@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     
     <!-- Estilos CSS3 Nativos -->
-    <link rel="stylesheet" href="style.css?v=10.5">
+    <link rel="stylesheet" href="style.css?v=10.6">
 </head>
 <body>
     <!-- Mapa de Fondo Hiperlocal -->
@@ -48,6 +48,9 @@
         <ul id="search-results" class="search-results hidden"></ul>
     </nav>
 
+    <!-- Botón Flotante para Reabrir Panel cuando se explora el Mapa -->
+    <button id="btn-toggle-panel" class="floating-panel-toggle hidden">📋 Ver Panel de Clima</button>
+
     <!-- Panel de Clima Principal -->
     <main class="weather-panel glass-panel hidden" id="weather-dashboard">
         
@@ -62,6 +65,7 @@
             </div>
             
             <div class="header-actions">
+                <button id="btn-toggle-map" class="btn-action btn-map-toggle" title="Explorar Mapa Interactivo">🗺️ Explorar Mapa</button>
                 <button id="btn-satelite" class="btn-action btn-sat" title="Ver animación satelital GOES-19">🛰️ Satélite 24h</button>
                 <button id="btn-historial" class="btn-action" title="Ver gráficos históricos">📊 Histórico</button>
                 <button id="btn-trazabilidad" class="btn-action btn-trace" title="Ver trazabilidad de sensores">🔬 Trazabilidad</button>
@@ -491,6 +495,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
     
     <!-- Lógica de Aplicación -->
-    <script src="app.js?v=10.5"></script>
+    <script src="app.js?v=10.6"></script>
 </body>
 </html>

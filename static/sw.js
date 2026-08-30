@@ -1,5 +1,5 @@
 // Service Worker con estrategia Network-First (Siempre busca la versión más reciente en el servidor)
-const CACHE_NAME = 'meteo-precisa-v10.5';
+const CACHE_NAME = 'meteo-precisa-v10.6';
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();

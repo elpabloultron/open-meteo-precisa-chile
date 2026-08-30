@@ -47,7 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalHistorico = document.getElementById('modal-historico');
     const modalAcerca = document.getElementById('modal-acerca');
 
-    // Botones de Modales
+    // Botones de Modales y Modo Mapa
+    const btnToggleMap = document.getElementById('btn-toggle-map');
+    const btnTogglePanel = document.getElementById('btn-toggle-panel');
+
+    btnToggleMap?.addEventListener('click', () => {
+        weatherDashboard?.classList.add('hidden');
+        btnTogglePanel?.classList.remove('hidden');
+        setTimeout(() => map.invalidateSize(), 150);
+    });
+
+    btnTogglePanel?.addEventListener('click', () => {
+        weatherDashboard?.classList.remove('hidden');
+        btnTogglePanel?.classList.add('hidden');
+    });
+
     document.getElementById('btn-satelite')?.addEventListener('click', () => modalSatelite?.classList.remove('hidden'));
     document.getElementById('close-satelite')?.addEventListener('click', () => modalSatelite?.classList.add('hidden'));
 
@@ -179,6 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.cargarEstacionDesdeMapa = (lat, lon, nombre, id) => {
         map.closePopup();
+        weatherDashboard?.classList.remove('hidden');
+        btnTogglePanel?.classList.add('hidden');
         consultarClima(lat, lon, nombre, id, true);
     };
 
