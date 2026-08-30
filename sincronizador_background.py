@@ -5,7 +5,6 @@ import os
 import re
 import sys
 import time
-from datetime import datetime, timedelta
 
 import httpx
 
@@ -342,7 +341,7 @@ async def sincronizar_calidad_aire_sinca() -> tuple[dict, list]:
     print("🏭 [Sync Background] Consultando Calidad del Aire SINCA (MMA) vía API JSON...")
     sinca_map = {}
     sinca_cat = []
-    
+
     url = "https://sinca.mma.gob.cl/index.php/json/listadomapa2k19/"
     try:
         async with httpx.AsyncClient(verify=False, timeout=20.0) as client:
@@ -354,15 +353,15 @@ async def sincronizar_calidad_aire_sinca() -> tuple[dict, list]:
                     est_id = f"sinca_{st_code.replace('/', '_').lower()}"
                     station_name = st.get("nombre", "Desconocido")
                     city = st.get("comuna", "Chile")
-                    
+
                     lat_str = st.get("latitud")
                     lon_str = st.get("longitud")
                     lat = clean_num(lat_str)
                     lon = clean_num(lon_str)
-                    
+
                     pm25_val = None
                     pm10_val = None
-                    
+
                     # Parsear sensores
                     for sensor in st.get("realtime", []):
                         if sensor.get("code") in ["PM25", "PM10"]:
@@ -378,12 +377,12 @@ async def sincronizar_calidad_aire_sinca() -> tuple[dict, list]:
                                             break
                                         except ValueError:
                                             pass
-                            
+
                             if sensor["code"] == "PM25":
                                 pm25_val = telemetry_validator.validar_pm25(val)
                             elif sensor["code"] == "PM10":
                                 pm10_val = telemetry_validator.validar_pm10(val)
-                                
+
                     if pm25_val is None and pm10_val is None:
                         continue # Saltamos estaciones que no reportan datos de aire recientes
 
@@ -398,7 +397,7 @@ async def sincronizar_calidad_aire_sinca() -> tuple[dict, list]:
                         "lon": lon,
                         "timestamp": int(time.time()),
                     }
-                    
+
                     if lat and lon:
                         sinca_cat.append({
                             "id": est_id,
@@ -469,7 +468,7 @@ async def sincronizar_purpleair(client: httpx.AsyncClient) -> tuple[dict, list]:
                     "lon": lon,
                     "timestamp": int(time.time()),
                 }
-                
+
                 purple_cat.append({
                     "id": est_id,
                     "code_red": str(sensor.get("sensor_index")),
@@ -480,7 +479,7 @@ async def sincronizar_purpleair(client: httpx.AsyncClient) -> tuple[dict, list]:
                     "lat": lat,
                     "lon": lon,
                 })
-                
+
             print(f"   ✅ PurpleAir procesado ({len(purple_cat)} sensores en vivo)")
     except Exception as e:
         print(f"   ⚠️ Error sincronizando PurpleAir: {e}")
@@ -638,7 +637,7 @@ async def ejecutar_sincronizacion_completa():
                 print(f"   ✅ DGA procesado ({len(estaciones_dga)} estaciones vigentes)")
             except Exception as e:
                 print(f"   ⚠️ Error procesando DGA: {e}")
-            
+
             CACHE_MEMORIA["estaciones_telemetria"] = telemetria_global
             CACHE_MEMORIA["catalogo_estaciones"] = catalogo_final
             CACHE_MEMORIA["last_updated"] = int(time.time())

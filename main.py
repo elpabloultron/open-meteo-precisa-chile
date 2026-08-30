@@ -514,7 +514,7 @@ async def obtener_estacion(estacion_id: str):
     from sincronizador_background import CACHE_MEMORIA
     telemetria_global = CACHE_MEMORIA.get("estaciones_telemetria", {})
     est = telemetria_global.get(estacion_id)
-    
+
     # También intentar buscar en las calidades de aire directamente si no está en telemetría global
     if not est:
         sinca = CACHE_MEMORIA.get("calidad_aire_sinca", {})
@@ -523,7 +523,7 @@ async def obtener_estacion(estacion_id: str):
             est = sinca[estacion_id]
         elif estacion_id in purple:
             est = purple[estacion_id]
-            
+
     if not est:
         return {"error": "Estación no encontrada o sin datos recientes"}
     return est
@@ -531,20 +531,21 @@ async def obtener_estacion(estacion_id: str):
 @app.get("/api/v1/estaciones")
 async def obtener_todas_las_estaciones():
     """
-    Retorna el catálogo consolidado de todas las estaciones en memoria 
+    Retorna el catálogo consolidado de todas las estaciones en memoria
     con su timestamp de actualización para el mapa interactivo.
     """
     try:
-        from sincronizador_background import CACHE_MEMORIA
         import time
-        
+
+        from sincronizador_background import CACHE_MEMORIA
+
         catalogo = CACHE_MEMORIA.get("catalogo_estaciones", [])
         if not catalogo:
             from sincronizador_background import cargar_catalogo_maestro
             catalogo = cargar_catalogo_maestro()
-            
+
         timestamp = CACHE_MEMORIA.get("last_updated", int(time.time()))
-        
+
         return [
             {
                 "id": e.get("id"),
@@ -754,7 +755,7 @@ async def obtener_clima_hiperlocal(
     # Telemetría en vivo desde caché
     telemetria_map = CACHE_MEMORIA.get("estaciones_telemetria", {})
     est_id = estacion_cercana.get("id")
-    
+
     # Extraer telemetría DGA
     telemetria_dga = None
     if estacion_dga_cercana:
