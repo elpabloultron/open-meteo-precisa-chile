@@ -1,0 +1,34 @@
+# Docker Compose de Producción para Oracle Cloud - MeteoPrecisa
+services:
+  api:
+    build: .
+    container_name: meteoprecisa_api_prod
+    ports:
+      - "80:8000"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-meteoprecisa}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-meteoprecisa2026}
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      PURPLEAIR_API_KEY: ${PURPLEAIR_API_KEY}
+    depends_on:
+      - db
+    restart: always
+    # En producción NO montamos volumen de código y NO usamos --reload
+    command: ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port 8000"]
+
+  db:
+    image: timescale/timescaledb-ha:pg15-latest
+    container_name: meteoprecisa_db_prod
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-meteoprecisa2026}
+      POSTGRES_DB: ${POSTGRES_DB:-meteoprecisa}
+    volumes:
+      - pgdata_prod:/var/lib/postgresql/data
+    restart: always
+    command: ["postgres", "-c", "shared_preload_libraries=timescaledb"]
+
+volumes:
+  pgdata_prod:
