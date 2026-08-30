@@ -338,83 +338,100 @@ async def sincronizar_redmeteo(client: httpx.AsyncClient) -> tuple[dict, list[di
     return telemetria_map, estaciones_catalogo
 
 
-async def sincronizar_calidad_aire_sinca() -> dict:
-    print("🏭 [Sync Background] Consultando Calidad del Aire SINCA (MMA) vía atmchile...")
+async def sincronizar_calidad_aire_sinca() -> tuple[dict, list]:
+    print("🏭 [Sync Background] Consultando Calidad del Aire SINCA (MMA) vía API JSON...")
     sinca_map = {}
+    sinca_cat = []
+    
+    url = "https://sinca.mma.gob.cl/index.php/json/listadomapa2k19/"
     try:
-        from atmchile import ChileAirQuality
-
-        caq = ChileAirQuality()
-        now = datetime.now()
-        yesterday = now - timedelta(days=1)
-
-        key_stations = [
-            "RM/D11",
-            "RM/D14",
-            "RM/D18",
-            "RM/D13",
-            "RM/D15",
-            "RM/D12",
-            "IX/901",
-            "IX/902",
-            "X/1001",
-            "X/1002",
-            "VIII/801",
-            "VIII/802",
-            "V/501",
-            "V/502",
-            "VI/601",
-            "VII/701",
-            "XIV/1401",
-            "XI/1101",
-        ]
-
-        df = await asyncio.wait_for(
-            asyncio.to_thread(
-                caq.get_data, stations=key_stations, parameters=["PM25", "PM10"], start=yesterday, end=now, curate=True
-            ),
-            timeout=20.0,
-        )
-
-        if not df.empty:
-            df_clean = df.dropna(subset=["PM25", "PM10"], how="all")
-            if not df_clean.empty:
-                grouped = df_clean.groupby("station_name").last()
-                for station_name, row in grouped.iterrows():
-                    st_code = str(row.get("station_code", "sinca"))
+        async with httpx.AsyncClient(verify=False, timeout=20.0) as client:
+            resp = await client.get(url)
+            if resp.status_code == 200:
+                data = resp.json()
+                for st in data:
+                    st_code = str(st.get("key", ""))
                     est_id = f"sinca_{st_code.replace('/', '_').lower()}"
-
-                    pm25_val = telemetry_validator.validar_pm25(row.get("PM25"))
-                    pm10_val = telemetry_validator.validar_pm10(row.get("PM10"))
+                    station_name = st.get("nombre", "Desconocido")
+                    city = st.get("comuna", "Chile")
+                    
+                    lat_str = st.get("latitud")
+                    lon_str = st.get("longitud")
+                    lat = clean_num(lat_str)
+                    lon = clean_num(lon_str)
+                    
+                    pm25_val = None
+                    pm10_val = None
+                    
+                    # Parsear sensores
+                    for sensor in st.get("realtime", []):
+                        if sensor.get("code") in ["PM25", "PM10"]:
+                            val = None
+                            rows = sensor.get("info", {}).get("rows", [])
+                            # Ir de atrás hacia adelante para buscar el último valor válido
+                            for row in reversed(rows):
+                                if "c" in row and len(row["c"]) >= 2:
+                                    v = row["c"][1].get("v")
+                                    if v is not None and v != "":
+                                        try:
+                                            val = float(v)
+                                            break
+                                        except ValueError:
+                                            pass
+                            
+                            if sensor["code"] == "PM25":
+                                pm25_val = telemetry_validator.validar_pm25(val)
+                            elif sensor["code"] == "PM10":
+                                pm10_val = telemetry_validator.validar_pm10(val)
+                                
+                    if pm25_val is None and pm10_val is None:
+                        continue # Saltamos estaciones que no reportan datos de aire recientes
 
                     sinca_map[est_id] = {
                         "id": est_id,
                         "estacion_nombre": f"Estación SINCA {station_name}",
-                        "comuna": str(row.get("city", "Chile")),
-                        "region": str(row.get("region", "Chile")),
+                        "comuna": str(city),
+                        "region": str(st.get("region", "Chile")),
                         "pm25": pm25_val,
                         "pm10": pm10_val,
+                        "lat": lat,
+                        "lon": lon,
                         "timestamp": int(time.time()),
                     }
-                print(f"   ✅ SINCA MMA procesado ({len(sinca_map)} estaciones de calidad del aire)")
-    except Exception as e:
-        print(f"   ⚠️ Aviso consultando SINCA via atmchile: {e}")
+                    
+                    if lat and lon:
+                        sinca_cat.append({
+                            "id": est_id,
+                            "code_red": st_code,
+                            "nombre": f"Estación SINCA {station_name}",
+                            "sector": str(city),
+                            "red": "SINCA (MMA)",
+                            "tipo_api": "sinca",
+                            "lat": lat,
+                            "lon": lon,
+                        })
 
-    # No inyectar estaciones simuladas si atmchile falla. Se devuelve vacío.
+                print(f"   ✅ SINCA MMA procesado ({len(sinca_cat)} estaciones a nivel nacional)")
+    except Exception as e:
+        print(f"   ⚠️ Aviso consultando SINCA directo: {e}")
+
     if not sinca_map:
         print("   ℹ️ No se obtuvieron datos de SINCA MMA en este ciclo.")
-    return sinca_map
+    return sinca_map, sinca_cat
 
 
-async def sincronizar_purpleair(client: httpx.AsyncClient) -> dict:
+
+
+async def sincronizar_purpleair(client: httpx.AsyncClient) -> tuple[dict, list]:
     print("🟣 [Sync Background] Consultando PurpleAir (Calidad del Aire Hiperlocal)...")
     purple_map = {}
+    purple_cat = []
     url = "https://api.purpleair.com/v1/sensors?fields=name,latitude,longitude,pm2.5_cf_1,pm10.0_cf_1,humidity,temperature,pressure&nwlng=-76&nwlat=-17&selng=-66&selat=-56"
     # Usar variable de entorno para proteger la API Key en el repositorio público
     api_key = os.getenv("PURPLEAIR_API_KEY")
     if not api_key:
         print("   ⚠️ No se encontró PURPLEAIR_API_KEY en las variables de entorno.")
-        return purple_map
+        return purple_map, purple_cat
     try:
         resp = await client.get(url, headers={"X-API-Key": api_key}, timeout=15.0)
         if resp.status_code == 200:
@@ -452,10 +469,22 @@ async def sincronizar_purpleair(client: httpx.AsyncClient) -> dict:
                     "lon": lon,
                     "timestamp": int(time.time()),
                 }
-            print(f"   ✅ PurpleAir procesado ({len(purple_map)} sensores en vivo)")
+                
+                purple_cat.append({
+                    "id": est_id,
+                    "code_red": str(sensor.get("sensor_index")),
+                    "nombre": f"Estación PurpleAir {sensor.get('name', 'Sensor')}",
+                    "sector": "PurpleAir",
+                    "red": "PurpleAir",
+                    "tipo_api": "purpleair",
+                    "lat": lat,
+                    "lon": lon,
+                })
+                
+            print(f"   ✅ PurpleAir procesado ({len(purple_cat)} sensores en vivo)")
     except Exception as e:
         print(f"   ⚠️ Error sincronizando PurpleAir: {e}")
-    return purple_map
+    return purple_map, purple_cat
 
 
 async def sincronizar_pronostico_oficial_dmc(client: httpx.AsyncClient) -> dict:
@@ -560,15 +589,15 @@ async def ejecutar_sincronizacion_completa():
                 dmc_tele, dmc_cat = get_res(0, ({}, []))
                 agromet_tele, agromet_cat = get_res(1, ({}, []))
                 redmeteo_tele, redmeteo_cat = get_res(2, ({}, []))
-                sinca_data = get_res(3, {})
-                purpleair_data = get_res(4, {})
+                sinca_tele, sinca_cat = get_res(3, ({}, []))
+                purpleair_tele, purpleair_cat = get_res(4, ({}, []))
                 dmc_boletin = get_res(5, {})
                 senapred_data = get_res(6, [])
 
-            if isinstance(sinca_data, dict):
-                CACHE_MEMORIA["calidad_aire_sinca"] = sinca_data
-            if isinstance(purpleair_data, dict):
-                CACHE_MEMORIA["calidad_aire_purpleair"] = purpleair_data
+            if isinstance(sinca_tele, dict):
+                CACHE_MEMORIA["calidad_aire_sinca"] = sinca_tele
+            if isinstance(purpleair_tele, dict):
+                CACHE_MEMORIA["calidad_aire_purpleair"] = purpleair_tele
             if isinstance(dmc_boletin, dict):
                 CACHE_MEMORIA["pronostico_oficial_dmc"] = dmc_boletin
             if isinstance(senapred_data, list):
@@ -583,7 +612,7 @@ async def ejecutar_sincronizacion_completa():
                 telemetria_global.update(redmeteo_tele)
 
             # Unificar catálogo
-            for cat_list in [dmc_cat, agromet_cat, redmeteo_cat]:
+            for cat_list in [dmc_cat, agromet_cat, redmeteo_cat, sinca_cat, purpleair_cat]:
                 if isinstance(cat_list, list):
                     for item in cat_list:
                         if item["id"] not in ids_registrados:

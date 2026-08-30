@@ -166,8 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <span class="popup-dist-tag" style="color:var(--text-muted); font-size:0.7rem;">${latenciaTxt}</span><br>
                                 ${distTxt ? `<span class="popup-dist-tag">📏 ${distTxt}</span>` : ''}
                             </div>
-                            <button class="btn-select-station" onclick="window.cargarEstacionDesdeMapa(${st.lat}, ${st.lon}, '${st.nombre.replace(/'/g, "\\'")}', '${st.id}')">
-                                ⚡ Cargar Datos en Dashboard
+                            <button class="btn-select-station" onclick="window.abrirModalEstacion('${st.id}')"\\'")}', '${st.id}')">
+                                📊 Ver Todos los Sensores
                             </button>
                         </div>
                     `;
@@ -713,4 +713,99 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Consulta inicial en Santiago Centro
     consultarClima(-33.45, -70.66, 'Santiago (Estación Central)');
+});
+
+window.abrirModalEstacion = async function(estId) {
+    const modal = document.getElementById('station-modal');
+    if (!modal) return;
+    
+    // UI Loading state
+    document.getElementById('modal-station-name').textContent = "Cargando...";
+    document.getElementById('modal-station-network').textContent = "---";
+    document.getElementById('modal-station-location').textContent = "Consultando sensores...";
+    document.getElementById('modal-sensors-grid').innerHTML = '<div style="text-align:center; padding: 20px;">Obteniendo telemetría en tiempo real...</div>';
+    document.getElementById('modal-last-update').textContent = "";
+    
+    modal.showModal();
+
+    try {
+        const resp = await fetch(`/api/v1/estacion/${estId}`);
+        if (!resp.ok) throw new Error("Error en red");
+        const data = await resp.json();
+        
+        if (data.error) {
+            document.getElementById('modal-sensors-grid').innerHTML = `<div style="color:#ef4444;">${data.error}</div>`;
+            return;
+        }
+
+        const nombre = data.estacion_nombre || data.nombre || data.id;
+        let red = data.institucion || "Desconocida";
+        if (data.id.startsWith("sinca")) red = "SINCA (MMA)";
+        if (data.id.startsWith("purpleair")) red = "PurpleAir";
+        if (data.id.startsWith("dmc")) red = "DMC Oficial";
+        if (data.id.startsWith("agromet")) red = "Agromet INIA";
+        if (data.id.startsWith("redmeteo")) red = "RedMeteo";
+
+        document.getElementById('modal-station-name').textContent = nombre;
+        document.getElementById('modal-station-network').textContent = red;
+        document.getElementById('modal-station-location').textContent = data.comuna || data.sector || "Chile";
+        
+        // Populate sensors
+        let html = '';
+        const addSensor = (icon, label, value, unit) => {
+            if (value !== undefined && value !== null) {
+                const num = typeof value === 'number' ? value.toFixed(1) : value;
+                html += `
+                <div class="sensor-card">
+                    <div class="sensor-icon">${icon}</div>
+                    <div class="sensor-label">${label}</div>
+                    <div class="sensor-value">${num} ${unit}</div>
+                </div>`;
+            }
+        };
+
+        addSensor('🌡️', 'Temperatura', data.temperatura_c, '°C');
+        addSensor('💧', 'Humedad', data.humedad_relativa !== undefined ? data.humedad_relativa : data.humedad_relativa_pct, '%');
+        addSensor('📉', 'Presión', data.presion_hpa, 'hPa');
+        addSensor('💦', 'Punto Rocío', data.punto_rocio_c, '°C');
+        addSensor('🌧️', 'Agua Caída', data.lluvia_mm !== undefined ? data.lluvia_mm : data.lluvia_acumulada_hoy_mm, 'mm');
+        addSensor('💨', 'Viento', data.viento_kmh !== undefined ? data.viento_kmh : data.velocidad_viento_kmh, 'km/h');
+        addSensor('☀️', 'Rad. Solar', data.radiacion_w_m2 !== undefined ? data.radiacion_w_m2 : data.radiacion_solar_wm2, 'W/m²');
+        addSensor('😷', 'PM 2.5', data.pm25, 'µg/m³');
+        addSensor('🏭', 'PM 10', data.pm10, 'µg/m³');
+
+        if (html === '') {
+            html = '<div style="color:var(--text-secondary); grid-column: 1/-1; text-align:center;">No hay sensores reportando datos válidos en este momento.</div>';
+        }
+
+        document.getElementById('modal-sensors-grid').innerHTML = html;
+        
+        if (data.timestamp) {
+            const date = new Date(data.timestamp * 1000);
+            document.getElementById('modal-last-update').textContent = `Actualizado: ${date.toLocaleString()}`;
+        }
+
+    } catch (e) {
+        document.getElementById('modal-sensors-grid').innerHTML = `<div style="color:#ef4444;">Fallo de conexión al servidor</div>`;
+    }
+};
+
+// Bind close button
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById('station-modal');
+    const closeBtn = document.getElementById('modal-close-btn');
+    if (modal && closeBtn) {
+        closeBtn.addEventListener('click', () => modal.close());
+        modal.addEventListener('click', (e) => {
+            const dialogDimensions = modal.getBoundingClientRect();
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                modal.close();
+            }
+        });
+    }
 });

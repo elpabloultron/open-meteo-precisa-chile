@@ -509,6 +509,25 @@ async def obtener_satelite_goes19(
     }
 
 
+@app.get("/api/v1/estacion/{estacion_id}")
+async def obtener_estacion(estacion_id: str):
+    from sincronizador_background import CACHE_MEMORIA
+    telemetria_global = CACHE_MEMORIA.get("estaciones_telemetria", {})
+    est = telemetria_global.get(estacion_id)
+    
+    # También intentar buscar en las calidades de aire directamente si no está en telemetría global
+    if not est:
+        sinca = CACHE_MEMORIA.get("calidad_aire_sinca", {})
+        purple = CACHE_MEMORIA.get("calidad_aire_purpleair", {})
+        if estacion_id in sinca:
+            est = sinca[estacion_id]
+        elif estacion_id in purple:
+            est = purple[estacion_id]
+            
+    if not est:
+        return {"error": "Estación no encontrada o sin datos recientes"}
+    return est
+
 @app.get("/api/v1/estaciones")
 async def obtener_todas_las_estaciones():
     """
@@ -516,9 +535,14 @@ async def obtener_todas_las_estaciones():
     con su timestamp de actualización para el mapa interactivo.
     """
     try:
-        from sincronizador_background import cargar_catalogo_maestro, CACHE_MEMORIA
+        from sincronizador_background import CACHE_MEMORIA
         import time
-        catalogo = cargar_catalogo_maestro()
+        
+        catalogo = CACHE_MEMORIA.get("catalogo_estaciones", [])
+        if not catalogo:
+            from sincronizador_background import cargar_catalogo_maestro
+            catalogo = cargar_catalogo_maestro()
+            
         timestamp = CACHE_MEMORIA.get("last_updated", int(time.time()))
         
         return [

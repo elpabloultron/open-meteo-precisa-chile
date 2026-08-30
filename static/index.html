@@ -499,5 +499,23 @@
     
     <!-- Lógica de Aplicación -->
     <script src="app.js?v=10.7"></script>
+    <!-- Modal de Estación -->
+    <dialog id="station-modal" class="station-modal">
+        <div class="modal-header">
+            <h2 id="modal-station-name">Nombre de Estación</h2>
+            <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+        </div>
+        <div class="modal-subheader">
+            <span id="modal-station-network" class="badge">Red</span>
+            <span id="modal-station-location">Ubicación</span>
+        </div>
+        <div id="modal-sensors-grid" class="modal-sensors-grid">
+            <!-- Sensores se inyectan dinámicamente aquí -->
+        </div>
+        <div class="modal-footer">
+            <small id="modal-last-update">Actualizado: -</small>
+        </div>
+    </dialog>
+
 </body>
 </html>
