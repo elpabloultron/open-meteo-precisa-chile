@@ -722,7 +722,29 @@ async def obtener_clima_hiperlocal(
 
         catalogo = cargar_catalogo_maestro()
 
-    estacion_cercana, dist_min = buscar_estacion_mas_cercana(lat, lon, catalogo)
+
+    # Restauramos la búsqueda normal usando el KDTree global para estaciones regulares
+    catalogo_normal = [c for c in catalogo if c.get("red") != "DGA"]
+    estacion_cercana, dist_min = buscar_estacion_mas_cercana(lat, lon, catalogo_normal)
+
+    # Búsqueda manual simple O(N) para DGA (evita ensuciar el caché KDTree global)
+    import math
+    def haversine(lat1, lon1, lat2, lon2):
+        R = 6371
+        dLat = math.radians(lat2 - lat1)
+        dLon = math.radians(lon2 - lon1)
+        a = math.sin(dLat/2) * math.sin(dLat/2) + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dLon/2) * math.sin(dLon/2)
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
+        return R * c
+
+    estacion_dga_cercana = None
+    dist_dga = float('inf')
+    for c in catalogo:
+        if c.get("red") == "DGA":
+            d = haversine(lat, lon, c["lat"], c["lon"])
+            if d < dist_dga:
+                dist_dga = d
+                estacion_dga_cercana = c
 
     if not estacion_cercana:
         raise HTTPException(status_code=404, detail="No se encontró ninguna estación meteorológica cercana.")
@@ -732,6 +754,16 @@ async def obtener_clima_hiperlocal(
     # Telemetría en vivo desde caché
     telemetria_map = CACHE_MEMORIA.get("estaciones_telemetria", {})
     est_id = estacion_cercana.get("id")
+    
+    # Extraer telemetría DGA
+    telemetria_dga = None
+    if estacion_dga_cercana:
+        telemetria_dga = telemetria_map.get(estacion_dga_cercana.get("id"))
+        if not telemetria_dga:
+            telemetria_dga = {"DEBUG": f"Found station {estacion_dga_cercana['id']} but not in telemetria_map"}
+    else:
+        telemetria_dga = {"DEBUG": "estacion_dga_cercana was None!"}
+
     telemetria_directa = telemetria_map.get(est_id, {})
 
     # Calidad de aire (Unificando SINCA y PurpleAir)
@@ -1205,6 +1237,7 @@ async def obtener_clima_hiperlocal(
         "pronostico_oficial_dmc": boletin_dmc,
         "pronostico_numerico_openmeteo": {"diario_7dias": daily_om, "horario": hourly_om},
         "alerta_oficial_senapred": alerta_destacada,
+        "estacion_dga_cercana": telemetria_dga,
         "transparency_metadata": construir_transparency_metadata(last_up_ts, boletin_dmc, estacion_cercana),
         "metadatos": {
             "distancia_km": round(dist_min, 2),

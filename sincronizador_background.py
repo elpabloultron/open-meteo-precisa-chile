@@ -622,6 +622,23 @@ async def ejecutar_sincronizacion_completa():
             for idx, fm in enumerate(catalogo_final):
                 fm["indice"] = idx
 
+            # MÓDULO DGA (Dirección General de Aguas)
+            try:
+                print("💧 [Sync Background] Consultando Red Hidrométrica DGA (ArcGIS)...")
+                from dga_scraper import obtener_estaciones_dga
+                estaciones_dga, telemetria_dga = await asyncio.to_thread(obtener_estaciones_dga)
+                for est in estaciones_dga:
+                    catalogo_final.append(est)
+
+                from dga_telemetria import extraer_telemetria_bnaconsultas
+                telemetria_hidratada = await asyncio.to_thread(extraer_telemetria_bnaconsultas, estaciones_dga)
+                for st_id, data in telemetria_hidratada.items():
+                    telemetria_global[st_id] = data
+
+                print(f"   ✅ DGA procesado ({len(estaciones_dga)} estaciones vigentes)")
+            except Exception as e:
+                print(f"   ⚠️ Error procesando DGA: {e}")
+            
             CACHE_MEMORIA["estaciones_telemetria"] = telemetria_global
             CACHE_MEMORIA["catalogo_estaciones"] = catalogo_final
             CACHE_MEMORIA["last_updated"] = int(time.time())

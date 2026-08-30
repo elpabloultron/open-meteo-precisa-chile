@@ -100,6 +100,20 @@ document.addEventListener('DOMContentLoaded', () => {
     let mapStationMarkers = [];
     let userPosition = { lat: -33.45, lon: -70.66, label: 'Ubicación Inicial' };
 
+    const climaLayer = L.markerClusterGroup({ disableClusteringAtZoom: 12, maxClusterRadius: 40 });
+    const aireLayer = L.markerClusterGroup({ disableClusteringAtZoom: 12, maxClusterRadius: 40 });
+    const dgaLayer = L.markerClusterGroup({ disableClusteringAtZoom: 12, maxClusterRadius: 40 });
+
+    L.control.layers(null, {
+        "☁️ Meteorología & Agricultura": climaLayer,
+        "😷 Calidad del Aire": aireLayer,
+        "💧 Hidrología (DGA)": dgaLayer
+    }, { collapsed: false }).addTo(map);
+
+    map.addLayer(climaLayer);
+    map.addLayer(aireLayer);
+    // Nota: dgaLayer no se agrega por defecto para no colapsar la vista inicial si son 4000
+
     function calcularDistanciaKm(lat1, lon1, lat2, lon2) {
         const R = 6371;
         const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -120,40 +134,51 @@ document.addEventListener('DOMContentLoaded', () => {
             const badge = document.getElementById('total-stations-badge');
             if (badge) badge.textContent = `${estaciones.length} est.`;
 
+            climaLayer.clearLayers();
+            aireLayer.clearLayers();
+            dgaLayer.clearLayers();
+
             estaciones.forEach(st => {
                 const redLower = (st.red || '').toLowerCase();
-                let color = '#3b82f6';
-                let badgeClass = 'popup-badge-dmc';
+                let marker;
 
-                if (redLower.includes('agromet') || redLower.includes('inia')) {
-                    color = '#10b981';
-                    badgeClass = 'popup-badge-agromet';
-                } else if (redLower.includes('redmeteo')) {
-                    color = '#a855f7';
-                    badgeClass = 'popup-badge-redmeteo';
-                } else if (redLower.includes('sinca') || redLower.includes('aire')) {
-                    color = '#ef4444';
-                    badgeClass = 'popup-badge-sinca';
-                } else if (redLower.includes('purple')) {
-                    color = '#f59e0b';
-                    badgeClass = 'popup-badge-redmeteo';
+                if (redLower.includes('dga')) {
+                    // DGA Station styling (mitad blanco, mitad tipo)
+                    const tipoLower = (st.tipo_dga || '').toLowerCase();
+                    let cssClass = 'dga-default';
+                    if (tipoLower.includes('fluvio')) cssClass = 'dga-fluviometrica';
+                    else if (tipoLower.includes('nivo')) cssClass = 'dga-nivometrica';
+                    else if (tipoLower.includes('piezo')) cssClass = 'dga-piezometrica';
+                    else if (tipoLower.includes('lago') || tipoLower.includes('embalse')) cssClass = 'dga-lago';
+                    else if (tipoLower.includes('meteo')) cssClass = 'dga-meteorologica';
+
+                    const dgaIcon = L.divIcon({
+                        className: `dga-marker-icon ${cssClass}`,
+                        iconSize: [14, 14]
+                    });
+                    marker = L.marker([st.lat, st.lon], { icon: dgaIcon });
+                } else {
+                    // Círculos normales para Meteo/Aire
+                    let color = '#3b82f6';
+                    if (redLower.includes('agromet') || redLower.includes('inia')) color = '#10b981';
+                    else if (redLower.includes('redmeteo')) color = '#a855f7';
+                    else if (redLower.includes('sinca') || redLower.includes('aire')) color = '#ef4444';
+                    else if (redLower.includes('purple')) color = '#f59e0b';
+
+                    const circleIcon = L.divIcon({
+                        className: '',
+                        html: `<div style="background:${color}; width:12px; height:12px; border-radius:50%; border:1.5px solid white; box-shadow:0 0 4px rgba(0,0,0,0.4);"></div>`,
+                        iconSize: [14, 14]
+                    });
+                    marker = L.marker([st.lat, st.lon], { icon: circleIcon });
                 }
 
-                const circle = L.circleMarker([st.lat, st.lon], {
-                    radius: 6,
-                    fillColor: color,
-                    color: '#ffffff',
-                    weight: 1.5,
-                    opacity: 0.9,
-                    fillOpacity: 0.85
-                }).addTo(map);
-
-                circle.on('click', () => {
+                marker.on('click', () => {
                     const distTxt = userPosition ? `${calcularDistanciaKm(userPosition.lat, userPosition.lon, st.lat, st.lon)} km desde tu ubicación` : '';
-                    
                     const nowSeconds = Math.floor(Date.now() / 1000);
                     const elapsedMinutes = st.timestamp_actualizacion ? Math.max(0, Math.floor((nowSeconds - st.timestamp_actualizacion) / 60)) : '?';
                     const latenciaTxt = `⏱️ Actualizado hace ${elapsedMinutes} min`;
+                    const badgeClass = redLower.includes('sinca') ? 'popup-badge-sinca' : 'popup-badge-dmc';
 
                     const popupContent = `
                         <div class="station-popup-content">
@@ -165,16 +190,23 @@ document.addEventListener('DOMContentLoaded', () => {
                                 📍 Sector: <b>${st.sector || st.comuna || st.region || 'Chile'}</b><br>
                                 <span class="popup-dist-tag" style="color:var(--text-muted); font-size:0.7rem;">${latenciaTxt}</span><br>
                                 ${distTxt ? `<span class="popup-dist-tag">📏 ${distTxt}</span>` : ''}
+                                ${st.tipo_dga ? `<br><span class="popup-dist-tag">💧 DGA: ${st.tipo_dga}</span>` : ''}
                             </div>
-                            <button class="btn-select-station" onclick="window.abrirModalEstacion('${st.id}')"\\'")}', '${st.id}')">
+                            <button class="btn-select-station" onclick="window.abrirModalEstacion('${st.id}')">
                                 📊 Ver Todos los Sensores
                             </button>
                         </div>
                     `;
-                    circle.bindPopup(popupContent, { maxWidth: 260 }).openPopup();
+                    marker.bindPopup(popupContent, { maxWidth: 260 }).openPopup();
                 });
 
-                mapStationMarkers.push(circle);
+                if (redLower.includes('dga')) {
+                    dgaLayer.addLayer(marker);
+                } else if (redLower.includes('sinca') || redLower.includes('purple') || redLower.includes('aire')) {
+                    aireLayer.addLayer(marker);
+                } else {
+                    climaLayer.addLayer(marker);
+                }
             });
         } catch (e) {
             console.log('Aviso cargando estaciones en mapa:', e);
@@ -511,6 +543,38 @@ document.addEventListener('DOMContentLoaded', () => {
             coastalCard.classList.add('hidden');
         }
 
+        // G2. Módulo DGA Cercano
+        const dgaCard = document.getElementById('closest-dga-stations');
+        if (dgaCard) {
+            if (data.estacion_dga_cercana) {
+                const dga = data.estacion_dga_cercana;
+                let dgaHtml = `<div style="font-size: 0.9rem; margin-bottom: 8px;"><b>${dga.nombre || 'Desconocido'}</b> <span class="popup-badge-dmc">${dga.tipo_dga || 'Estación'}</span></div>`;
+                
+                const valCaudal = dga.caudal_m3s !== undefined ? `${dga.caudal_m3s} m³/s` : null;
+                const valNivel = dga.nivel_agua_m !== undefined ? `${dga.nivel_agua_m} m` : null;
+                const valFreat = dga.nivel_freatico_m !== undefined ? `${dga.nivel_freatico_m} m` : null;
+                const valNieve = dga.nieve_acumulada_cm !== undefined ? `${dga.nieve_acumulada_cm} cm` : null;
+                const valVol = dga.volumen_hm3 !== undefined ? `${dga.volumen_hm3} Hm³` : null;
+                
+                let foundAny = false;
+                if (valCaudal) { dgaHtml += `<div style="color:#cbd5e1; font-size: 0.85rem; padding: 2px 0;">🌊 Caudal: <b style="color: white;">${valCaudal}</b></div>`; foundAny = true; }
+                if (valNivel) { dgaHtml += `<div style="color:#cbd5e1; font-size: 0.85rem; padding: 2px 0;">📏 Nivel: <b style="color: white;">${valNivel}</b></div>`; foundAny = true; }
+                if (valVol) { dgaHtml += `<div style="color:#cbd5e1; font-size: 0.85rem; padding: 2px 0;">💧 Volumen: <b style="color: white;">${valVol}</b></div>`; foundAny = true; }
+                if (valFreat) { dgaHtml += `<div style="color:#cbd5e1; font-size: 0.85rem; padding: 2px 0;">🕳️ Nivel Freático: <b style="color: white;">${valFreat}</b></div>`; foundAny = true; }
+                if (valNieve) { dgaHtml += `<div style="color:#cbd5e1; font-size: 0.85rem; padding: 2px 0;">❄️ Nieve Acumulada: <b style="color: white;">${valNieve}</b></div>`; foundAny = true; }
+                
+                if (!foundAny) {
+                    dgaHtml += `<div class="empty-state">No reporta caudal ni nivel en este momento.</div>`;
+                }
+                
+                dgaHtml += `<button style="margin-top:10px; width:100%; font-size: 0.8rem; padding:5px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; border-radius: 6px; cursor: pointer;" onclick="window.abrirModalEstacion('${dga.id}')">📊 Ver Telemetría Completa</button>`;
+                
+                dgaCard.innerHTML = dgaHtml;
+            } else {
+                dgaCard.innerHTML = `<div class="empty-state">No hay estaciones DGA reportando cerca.</div>`;
+            }
+        }
+
         // H. Pronóstico Horario 12h y Diario 7 Días
         const openmeteo = data.pronostico_numerico_openmeteo || {};
         const diario = openmeteo.diario_7dias || {};
@@ -773,6 +837,13 @@ window.abrirModalEstacion = async function(estId) {
         addSensor('☀️', 'Rad. Solar', data.radiacion_w_m2 !== undefined ? data.radiacion_w_m2 : data.radiacion_solar_wm2, 'W/m²');
         addSensor('😷', 'PM 2.5', data.pm25, 'µg/m³');
         addSensor('🏭', 'PM 10', data.pm10, 'µg/m³');
+
+        // DGA Sensors
+        addSensor('🌊', 'Caudal Río', data.caudal_m3s, 'm³/s');
+        addSensor('📏', 'Nivel Río', data.nivel_agua_m, 'm');
+        addSensor('💧', 'Vol. Embalse', data.volumen_hm3, 'Hm³');
+        addSensor('🕳️', 'Nivel Freático', data.nivel_freatico_m, 'm');
+        addSensor('❄️', 'Nieve', data.nieve_acumulada_cm, 'cm');
 
         if (html === '') {
             html = '<div style="color:var(--text-secondary); grid-column: 1/-1; text-align:center;">No hay sensores reportando datos válidos en este momento.</div>';
