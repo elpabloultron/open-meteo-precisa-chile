@@ -482,6 +482,26 @@ document.addEventListener('DOMContentLoaded', () => {
         setTxt(document.getElementById('vpd-val'), modoAgro.deficit_presion_vapor_vpd_kpa !== undefined ? `${modoAgro.deficit_presion_vapor_vpd_kpa} kPa` : '--');
         setTxt(document.getElementById('solar-rad'), modoAgro.radiacion_solar_w_m2 ? `${Math.round(modoAgro.radiacion_solar_w_m2)} W/m²` : '--');
 
+        // Cálculo simple de fase lunar
+        const getLunarPhase = () => {
+            const lp = 2551442.876902;
+            const now = new Date();
+            const newMoon = new Date(1970, 0, 7, 20, 35, 0);
+            const phase = ((now.getTime() - newMoon.getTime()) / 1000) % lp;
+            const fraction = phase / lp;
+            if (fraction < 0.05) return { text: 'Luna Nueva', icon: '🌑' };
+            if (fraction < 0.22) return { text: 'Creciente', icon: '🌒' };
+            if (fraction < 0.28) return { text: 'Cuarto Creciente', icon: '🌓' };
+            if (fraction < 0.45) return { text: 'Gibosa Creciente', icon: '🌔' };
+            if (fraction < 0.55) return { text: 'Luna Llena', icon: '🌕' };
+            if (fraction < 0.72) return { text: 'Gibosa Menguante', icon: '🌖' };
+            if (fraction < 0.78) return { text: 'Cuarto Menguante', icon: '🌗' };
+            if (fraction < 0.95) return { text: 'Menguante', icon: '🌘' };
+            return { text: 'Luna Nueva', icon: '🌑' };
+        };
+        const moon = getLunarPhase();
+        setTxt(document.getElementById('lunar-phase'), moon.text);
+        setTxt(document.getElementById('moon-icon'), moon.icon);
         // F. Teledetección y Suelo GEE (Sentinel-2, SMAP, Topografía)
         const geeAgro = (data.modulo_agricola && data.modulo_agricola.desde_el_espacio_gee) || modoAgro.satelite_suelo_ndvi || {};
         

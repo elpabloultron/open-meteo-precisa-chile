@@ -371,8 +371,9 @@ body {
 }
 
 .feels-like-text {
-    font-size: 0.82rem;
-    color: var(--text-muted);
+    font-size: 1.2rem;
+    color: var(--accent-orange);
+    font-weight: 500;
 }
 
 .hero-sun-moon {
@@ -1129,7 +1130,7 @@ body {
     .hero-degrees { font-size: 2.8rem; }
     
     .metrics-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     }
     
     .header-actions {
