@@ -47,21 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalHistorico = document.getElementById('modal-historico');
     const modalAcerca = document.getElementById('modal-acerca');
 
-    // Botones de Modales y Modo Mapa
-    const btnToggleMap = document.getElementById('btn-toggle-map');
-    const btnTogglePanel = document.getElementById('btn-toggle-panel');
-
-    btnToggleMap?.addEventListener('click', () => {
-        weatherDashboard?.classList.add('hidden');
-        btnTogglePanel?.classList.remove('hidden');
-        setTimeout(() => map.invalidateSize(), 150);
-    });
-
-    btnTogglePanel?.addEventListener('click', () => {
-        weatherDashboard?.classList.remove('hidden');
-        btnTogglePanel?.classList.add('hidden');
-    });
-
     document.getElementById('btn-satelite')?.addEventListener('click', () => modalSatelite?.classList.remove('hidden'));
     document.getElementById('close-satelite')?.addEventListener('click', () => modalSatelite?.classList.add('hidden'));
 
@@ -165,6 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 circle.on('click', () => {
                     const distTxt = userPosition ? `${calcularDistanciaKm(userPosition.lat, userPosition.lon, st.lat, st.lon)} km desde tu ubicación` : '';
+                    
+                    const nowSeconds = Math.floor(Date.now() / 1000);
+                    const elapsedMinutes = st.timestamp_actualizacion ? Math.max(0, Math.floor((nowSeconds - st.timestamp_actualizacion) / 60)) : '?';
+                    const latenciaTxt = `⏱️ Actualizado hace ${elapsedMinutes} min`;
+
                     const popupContent = `
                         <div class="station-popup-content">
                             <div class="popup-station-header">
@@ -173,10 +163,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <div style="font-size:0.75rem; color:#cbd5e1; line-height:1.4;">
                                 📍 Sector: <b>${st.sector || st.comuna || st.region || 'Chile'}</b><br>
+                                <span class="popup-dist-tag" style="color:var(--text-muted); font-size:0.7rem;">${latenciaTxt}</span><br>
                                 ${distTxt ? `<span class="popup-dist-tag">📏 ${distTxt}</span>` : ''}
                             </div>
                             <button class="btn-select-station" onclick="window.cargarEstacionDesdeMapa(${st.lat}, ${st.lon}, '${st.nombre.replace(/'/g, "\\'")}', '${st.id}')">
-                                ⚡ Ver Clima de esta Estación
+                                ⚡ Cargar Datos en Dashboard
                             </button>
                         </div>
                     `;
@@ -193,9 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.cargarEstacionDesdeMapa = (lat, lon, nombre, id) => {
         map.closePopup();
-        weatherDashboard?.classList.remove('hidden');
-        btnTogglePanel?.classList.add('hidden');
         consultarClima(lat, lon, nombre, id, true);
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Subir arriba para ver los datos cargados
     };
 
     // 6. Buscador Autocompletado
@@ -299,7 +289,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }).addTo(map);
         }
 
-        map.panTo([lat, lon]);
+        if (userPosition && userPosition.lat && (userPosition.lat !== lat || userPosition.lon !== lon)) {
+            const bounds = L.latLngBounds(
+                [userPosition.lat, userPosition.lon],
+                [lat, lon]
+            );
+            map.fitBounds(bounds, { padding: [50, 50], maxZoom: 14 });
+        } else {
+            map.flyTo([lat, lon], 12);
+        }
 
         try {
             const res = await fetch(`/api/v1/clima-hiperlocal?lat=${lat}&lon=${lon}`);
@@ -335,6 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function actualizarDashboard(data, nombreLugar, stationId) {
         if (!weatherDashboard) return;
         weatherDashboard.classList.remove('hidden');
+        setTimeout(() => { if (map) map.invalidateSize(); }, 300);
 
         const meta = data.metadatos || {};
         const est = data.estacion || {};

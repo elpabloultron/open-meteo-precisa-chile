@@ -1,5 +1,16 @@
 # Historial de Versiones (Changelog) - Open Meteo Precisa Chile
 
+## [10.4.0] - 2026-08-29
+### Añadido
+- **Módulo de Exploración Espacial Dedicado:** El mapa interactivo Leaflet ahora se aloja en un módulo visible (`#modulo-mapa`) integrado de manera nativa en el flujo del dashboard, abandonando el comportamiento previo de mapa en fondo de pantalla.
+- **Endpoint Optimizado `/api/v1/estaciones`:** Nuevo endpoint en `main.py` diseñado para exportar el catálogo maestro persistido en RAM junto a sus timestamps de actualización de manera concurrente.
+- **Auto-Encuadre Geográfico Inteligente:** Lógica `fitBounds` implementada en el frontend. Si se provee la ubicación del usuario, al consultar una estación el mapa calcula automáticamente el zoom adecuado para enmarcar ambos puntos geográficos en pantalla.
+- **Latencia de Telemetría Transparente:** Los popups de cada marcador calculan en el cliente (`Date.now()` vs `timestamp_actualizacion`) la latencia del dato y muestran "⏱️ Actualizado hace X min" antes de consultar la estación completa.
+
+### Corregido
+- **Bug de Renderizado Incompleto (Invalidate Size):** Resuelto el clásico fallo donde Leaflet dejaba de pintar texturas por creer que medía 0x0 pixeles. Inyección de `map.invalidateSize()` solucionó los paneles grises a los bordes.
+
+
 ## [10.3.0] - 2026-08-29
 ### Añadido
 - **Mapa Interactivo Multired Completo:** Visualización en Leaflet de más de 700 estaciones en vivo con codificación de color por red (DMC: Azul, Agromet INIA: Verde, RedMeteo: Violeta, SINCA: Rojo).

@@ -19,25 +19,9 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     
     <!-- Estilos CSS3 Nativos -->
-    <link rel="stylesheet" href="style.css?v=10.6">
+    <link rel="stylesheet" href="style.css?v=10.7">
 </head>
 <body>
-    <!-- Mapa de Fondo Hiperlocal -->
-    <div id="map"></div>
-
-    <!-- Leyenda de Redes de Estaciones -->
-    <div class="map-legend-box glass-panel" id="map-legend">
-        <div class="map-legend-title">
-            <span>📡 Redes en Vivo</span>
-            <span id="total-stations-badge" style="color:var(--accent-cyan); font-weight:700;">--</span>
-        </div>
-        <div class="legend-item"><span class="legend-dot dot-dmc"></span><span>DMC Oficial</span></div>
-        <div class="legend-item"><span class="legend-dot dot-agromet"></span><span>Agromet INIA</span></div>
-        <div class="legend-item"><span class="legend-dot dot-redmeteo"></span><span>RedMeteo</span></div>
-        <div class="legend-item"><span class="legend-dot dot-sinca"></span><span>Calidad Aire MMA</span></div>
-        <div class="legend-item"><span class="legend-dot dot-user"></span><span>Tu Ubicación</span></div>
-    </div>
-
     <!-- Buscador Superior -->
     <nav class="search-nav glass-panel">
         <div class="search-container">
@@ -47,9 +31,6 @@
         </div>
         <ul id="search-results" class="search-results hidden"></ul>
     </nav>
-
-    <!-- Botón Flotante para Reabrir Panel cuando se explora el Mapa -->
-    <button id="btn-toggle-panel" class="floating-panel-toggle hidden">📋 Ver Panel de Clima</button>
 
     <!-- Panel de Clima Principal -->
     <main class="weather-panel glass-panel hidden" id="weather-dashboard">
@@ -65,7 +46,6 @@
             </div>
             
             <div class="header-actions">
-                <button id="btn-toggle-map" class="btn-action btn-map-toggle" title="Explorar Mapa Interactivo">🗺️ Explorar Mapa</button>
                 <button id="btn-satelite" class="btn-action btn-sat" title="Ver animación satelital GOES-19">🛰️ Satélite 24h</button>
                 <button id="btn-historial" class="btn-action" title="Ver gráficos históricos">📊 Histórico</button>
                 <button id="btn-trazabilidad" class="btn-action btn-trace" title="Ver trazabilidad de sensores">🔬 Trazabilidad</button>
@@ -89,6 +69,29 @@
                 <p id="spray-desc">Calculando condiciones de deriva y viento...</p>
             </div>
         </div>
+
+        <!-- MÓDULO DE MAPA INTERACTIVO -->
+        <section id="modulo-mapa" class="dashboard-section map-module-card">
+            <div class="section-badge-bar">
+                <span class="badge badge-urbano" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan);">🗺️ Explorador Espacial Multired</span>
+                <span id="total-stations-badge" class="sync-pill" style="background:transparent; border:none;">-- est.</span>
+            </div>
+            
+            <div class="map-container-inner">
+                <div id="map"></div>
+                <!-- Leyenda de Redes de Estaciones -->
+                <div class="map-legend-box" id="map-legend">
+                    <div class="map-legend-title">
+                        <span>📡 Redes en Vivo</span>
+                    </div>
+                    <div class="legend-item"><span class="legend-dot dot-dmc"></span><span>DMC Oficial</span></div>
+                    <div class="legend-item"><span class="legend-dot dot-agromet"></span><span>Agromet INIA</span></div>
+                    <div class="legend-item"><span class="legend-dot dot-redmeteo"></span><span>RedMeteo</span></div>
+                    <div class="legend-item"><span class="legend-dot dot-sinca"></span><span>Calidad Aire MMA</span></div>
+                    <div class="legend-item"><span class="legend-dot dot-user"></span><span>Tu Ubicación</span></div>
+                </div>
+            </div>
+        </section>
 
         <!-- 1. MÓDULO URBANO -->
         <section id="modulo-urbano" class="dashboard-section">
@@ -495,6 +498,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
     
     <!-- Lógica de Aplicación -->
-    <script src="app.js?v=10.6"></script>
+    <script src="app.js?v=10.7"></script>
 </body>
 </html>

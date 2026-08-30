@@ -94,7 +94,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="MeteoPrecisa Chile - Engine Unificado Multired",
     description="Backend Oficial Open Source: Google Earth Engine (NDVI, Humedad de Suelo), Capas Viento Windy, Modo Urbano, Modo Agrícola, Calidad del Aire Dual (SINCA+AQI), GOES-19, DMC y Open-Meteo",
-    version="10.3.0",
+    version="10.4.0",
     lifespan=lifespan,
 )
 
@@ -405,7 +405,7 @@ def status():
     return {
         "status": "online",
         "servicio": "MeteoPrecisa Chile - Engine Multired Unificado",
-        "version": "10.3.0",
+        "version": "10.4.0",
         "stac_engine_activo": True,
         "cache_backend": settings.cache_backend,
         "cache_status": CACHE_MEMORIA.get("status", "uninitialized"),
@@ -507,6 +507,34 @@ async def obtener_satelite_goes19(
         "frames": frames,
         "fuente": "NOAA STAR GOES-19 Infrarrojo GeoColor",
     }
+
+
+@app.get("/api/v1/estaciones")
+async def obtener_todas_las_estaciones():
+    """
+    Retorna el catálogo consolidado de todas las estaciones en memoria 
+    con su timestamp de actualización para el mapa interactivo.
+    """
+    try:
+        from sincronizador_background import cargar_catalogo_maestro, CACHE_MEMORIA
+        import time
+        catalogo = cargar_catalogo_maestro()
+        timestamp = CACHE_MEMORIA.get("last_updated", int(time.time()))
+        
+        return [
+            {
+                "id": e.get("id"),
+                "nombre": e.get("nombre"),
+                "sector": e.get("sector", e.get("comuna", e.get("region", "Chile"))),
+                "red": e.get("red", "Oficial"),
+                "lat": e.get("lat"),
+                "lon": e.get("lon"),
+                "timestamp_actualizacion": timestamp
+            }
+            for e in catalogo
+        ]
+    except Exception:
+        return []
 
 
 @app.get("/api/v1/buscar-estaciones")
