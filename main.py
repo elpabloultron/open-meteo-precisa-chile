@@ -405,7 +405,7 @@ def status():
     return {
         "status": "online",
         "servicio": "MeteoPrecisa Chile - Engine Multired Unificado",
-        "version": "10.2.0",
+        "version": "10.3.0",
         "stac_engine_activo": True,
         "cache_backend": settings.cache_backend,
         "cache_status": CACHE_MEMORIA.get("status", "uninitialized"),
