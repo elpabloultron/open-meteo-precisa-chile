@@ -369,8 +369,11 @@ async def sincronizar_calidad_aire_sinca() -> dict:
             "XI/1101",
         ]
 
-        df = await asyncio.to_thread(
-            caq.get_data, stations=key_stations, parameters=["PM25", "PM10"], start=yesterday, end=now, curate=True
+        df = await asyncio.wait_for(
+            asyncio.to_thread(
+                caq.get_data, stations=key_stations, parameters=["PM25", "PM10"], start=yesterday, end=now, curate=True
+            ),
+            timeout=20.0,
         )
 
         if not df.empty:
@@ -533,86 +536,98 @@ async def ejecutar_sincronizacion_completa():
 
         telemetria_global = CACHE_MEMORIA.get("estaciones_telemetria", {}).copy()
 
-        async with httpx.AsyncClient(headers=HEADERS, follow_redirects=True) as client:
-            results = await asyncio.gather(
-                sincronizar_dmc_telemetria(client),
-                sincronizar_agromet_inia(client),
-                sincronizar_redmeteo(client),
-                sincronizar_calidad_aire_sinca(),
-                sincronizar_purpleair(client),
-                sincronizar_pronostico_oficial_dmc(client),
-                sincronizar_alertas_senapred(client),
-                procesar_video_goes19(),
-                return_exceptions=True,
-            )
-
-            def get_res(idx, default):
-                res = results[idx]
-                return default if isinstance(res, Exception) else res
-
-            dmc_tele, dmc_cat = get_res(0, ({}, []))
-            agromet_tele, agromet_cat = get_res(1, ({}, []))
-            redmeteo_tele, redmeteo_cat = get_res(2, ({}, []))
-            sinca_data = get_res(3, {})
-            purpleair_data = get_res(4, {})
-            dmc_boletin = get_res(5, {})
-            senapred_data = get_res(6, [])
-
-        if isinstance(sinca_data, dict):
-            CACHE_MEMORIA["calidad_aire_sinca"] = sinca_data
-        if isinstance(purpleair_data, dict):
-            CACHE_MEMORIA["calidad_aire_purpleair"] = purpleair_data
-        if isinstance(dmc_boletin, dict):
-            CACHE_MEMORIA["pronostico_oficial_dmc"] = dmc_boletin
-        if isinstance(senapred_data, list):
-            CACHE_MEMORIA["alertas_senapred"] = senapred_data
-
-        # Unificar telemetría
-        if isinstance(dmc_tele, dict):
-            telemetria_global.update(dmc_tele)
-        if isinstance(agromet_tele, dict):
-            telemetria_global.update(agromet_tele)
-        if isinstance(redmeteo_tele, dict):
-            telemetria_global.update(redmeteo_tele)
-
-        # Unificar catálogo
-        for cat_list in [dmc_cat, agromet_cat, redmeteo_cat]:
-            if isinstance(cat_list, list):
-                for item in cat_list:
-                    if item["id"] not in ids_registrados:
-                        catalogo_final.append(item)
-                        ids_registrados.add(item["id"])
-
-        CACHE_MEMORIA["estaciones_telemetria"] = telemetria_global
-        CACHE_MEMORIA["catalogo_estaciones"] = catalogo_final
-        CACHE_MEMORIA["last_updated"] = int(time.time())
-        CACHE_MEMORIA["status"] = "ok"
-
-        await asyncio.to_thread(guardar_cache_en_disco)
-        if os.getenv("POSTGRES_HOST") or os.getenv("POSTGRES_DB"):
-            try:
-                from db_store import guardar_instantanea_historica
-
-                await asyncio.to_thread(
-                    guardar_instantanea_historica,
-                    telemetria_global,
-                    CACHE_MEMORIA.get("calidad_aire_sinca"),
-                    CACHE_MEMORIA.get("calidad_aire_purpleair"),
+        try:
+            async with httpx.AsyncClient(headers=HEADERS, follow_redirects=True, timeout=15.0) as client:
+                results = await asyncio.wait_for(
+                    asyncio.gather(
+                        sincronizar_dmc_telemetria(client),
+                        sincronizar_agromet_inia(client),
+                        sincronizar_redmeteo(client),
+                        sincronizar_calidad_aire_sinca(),
+                        sincronizar_purpleair(client),
+                        sincronizar_pronostico_oficial_dmc(client),
+                        sincronizar_alertas_senapred(client),
+                        procesar_video_goes19(),
+                        return_exceptions=True,
+                    ),
+                    timeout=45.0,
                 )
-            except Exception as db_err:
-                print(f"⚠️ Aviso guardando histórico en PostgreSQL: {db_err}")
 
-        if os.getenv("SUPABASE_URL") and os.getenv("SUPABASE_KEY"):
-            try:
-                from supabase_store import subir_cache_json_supabase
+                def get_res(idx, default):
+                    res = results[idx]
+                    return default if isinstance(res, Exception) else res
 
-                await asyncio.to_thread(subir_cache_json_supabase, CACHE_MEMORIA)
-            except Exception as supa_err:
-                print(f"⚠️ Aviso subiendo caché a Supabase Storage: {supa_err}")
+                dmc_tele, dmc_cat = get_res(0, ({}, []))
+                agromet_tele, agromet_cat = get_res(1, ({}, []))
+                redmeteo_tele, redmeteo_cat = get_res(2, ({}, []))
+                sinca_data = get_res(3, {})
+                purpleair_data = get_res(4, {})
+                dmc_boletin = get_res(5, {})
+                senapred_data = get_res(6, [])
 
-        print(
-            f"🎉 [BACKGROUND TASK] Sincronización completada exitosamente ({len(catalogo_final)} estaciones físicas unificadas en Chile).\n"
-        )
+            if isinstance(sinca_data, dict):
+                CACHE_MEMORIA["calidad_aire_sinca"] = sinca_data
+            if isinstance(purpleair_data, dict):
+                CACHE_MEMORIA["calidad_aire_purpleair"] = purpleair_data
+            if isinstance(dmc_boletin, dict):
+                CACHE_MEMORIA["pronostico_oficial_dmc"] = dmc_boletin
+            if isinstance(senapred_data, list):
+                CACHE_MEMORIA["alertas_senapred"] = senapred_data
+
+            # Unificar telemetría
+            if isinstance(dmc_tele, dict):
+                telemetria_global.update(dmc_tele)
+            if isinstance(agromet_tele, dict):
+                telemetria_global.update(agromet_tele)
+            if isinstance(redmeteo_tele, dict):
+                telemetria_global.update(redmeteo_tele)
+
+            # Unificar catálogo
+            for cat_list in [dmc_cat, agromet_cat, redmeteo_cat]:
+                if isinstance(cat_list, list):
+                    for item in cat_list:
+                        if item["id"] not in ids_registrados:
+                            catalogo_final.append(item)
+                            ids_registrados.add(item["id"])
+
+            for idx, fm in enumerate(catalogo_final):
+                fm["indice"] = idx
+
+            CACHE_MEMORIA["estaciones_telemetria"] = telemetria_global
+            CACHE_MEMORIA["catalogo_estaciones"] = catalogo_final
+            CACHE_MEMORIA["last_updated"] = int(time.time())
+            CACHE_MEMORIA["status"] = "ok"
+
+            await asyncio.to_thread(guardar_cache_en_disco)
+            if os.getenv("POSTGRES_HOST") or os.getenv("POSTGRES_DB"):
+                try:
+                    from db_store import guardar_instantanea_historica
+
+                    await asyncio.to_thread(
+                        guardar_instantanea_historica,
+                        telemetria_global,
+                        CACHE_MEMORIA.get("calidad_aire_sinca"),
+                        CACHE_MEMORIA.get("calidad_aire_purpleair"),
+                    )
+                except Exception as db_err:
+                    print(f"⚠️ Aviso guardando histórico en PostgreSQL: {db_err}")
+
+            if os.getenv("SUPABASE_URL") and os.getenv("SUPABASE_KEY"):
+                try:
+                    from supabase_store import subir_cache_json_supabase
+
+                    await asyncio.to_thread(subir_cache_json_supabase, CACHE_MEMORIA)
+                except Exception as supa_err:
+                    print(f"⚠️ Aviso subiendo caché a Supabase Storage: {supa_err}")
+
+            print(
+                f"🎉 [BACKGROUND TASK] Sincronización completada exitosamente ({len(catalogo_final)} estaciones físicas unificadas en Chile).\n"
+            )
+        except Exception as sync_e:
+            print(f"⚠️ Aviso en ciclo de sincronización: {sync_e}")
+            CACHE_MEMORIA["status"] = "ok"
+            CACHE_MEMORIA["last_updated"] = int(time.time())
+            await asyncio.to_thread(guardar_cache_en_disco)
 
 
 async def iniciar_loop_background(intervalo_segundos=3600):

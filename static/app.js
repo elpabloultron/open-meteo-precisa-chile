@@ -95,42 +95,92 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('offline', actualizarEstadoRed);
     actualizarEstadoRed();
 
-    // 5. Cargar Capa de Sensores de Calidad de Aire en el Mapa
-    async function cargarSensoresAire() {
+    // 5. Cargar Capa Completa de Estaciones Multired en el Mapa
+    let userMarker = null;
+    let distanceLine = null;
+    let mapStationMarkers = [];
+    let userPosition = { lat: -33.45, lon: -70.66, label: 'Ubicación Inicial' };
+
+    function calcularDistanciaKm(lat1, lon1, lat2, lon2) {
+        const R = 6371;
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+        const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                  Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                  Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return (R * c).toFixed(1);
+    }
+
+    async function cargarEstacionesEnMapa() {
         try {
-            const res = await fetch('/api/v1/sensores-calidad-aire');
-            const data = await res.json();
-            if (data.sensores) {
-                data.sensores.forEach(s => {
-                    let color = '#ef4444';
-                    if (s.pm25 <= 12) color = '#10b981';
-                    else if (s.pm25 <= 35) color = '#facc15';
-                    else if (s.pm25 <= 55) color = '#f59e0b';
-                    
-                    const circle = L.circleMarker([s.lat, s.lon], {
-                        radius: 5,
-                        fillColor: color,
-                        color: '#fff',
-                        weight: 1,
-                        opacity: 1,
-                        fillOpacity: 0.85
-                    }).addTo(map);
-                    
-                    circle.bindPopup(`
-                        <div style="font-family:'Plus Jakarta Sans',sans-serif; color:#000; font-size:12px;">
-                            <strong>${s.nombre}</strong><br>
-                            PM2.5: <b>${s.pm25} µg/m³</b><br>
-                            Red: ${s.red || 'Ambiental'}
+            const res = await fetch('/api/v1/estaciones');
+            if (!res.ok) return;
+            const estaciones = await res.json();
+            
+            const badge = document.getElementById('total-stations-badge');
+            if (badge) badge.textContent = `${estaciones.length} est.`;
+
+            estaciones.forEach(st => {
+                const redLower = (st.red || '').toLowerCase();
+                let color = '#3b82f6';
+                let badgeClass = 'popup-badge-dmc';
+
+                if (redLower.includes('agromet') || redLower.includes('inia')) {
+                    color = '#10b981';
+                    badgeClass = 'popup-badge-agromet';
+                } else if (redLower.includes('redmeteo')) {
+                    color = '#a855f7';
+                    badgeClass = 'popup-badge-redmeteo';
+                } else if (redLower.includes('sinca') || redLower.includes('aire')) {
+                    color = '#ef4444';
+                    badgeClass = 'popup-badge-sinca';
+                } else if (redLower.includes('purple')) {
+                    color = '#f59e0b';
+                    badgeClass = 'popup-badge-redmeteo';
+                }
+
+                const circle = L.circleMarker([st.lat, st.lon], {
+                    radius: 6,
+                    fillColor: color,
+                    color: '#ffffff',
+                    weight: 1.5,
+                    opacity: 0.9,
+                    fillOpacity: 0.85
+                }).addTo(map);
+
+                circle.on('click', () => {
+                    const distTxt = userPosition ? `${calcularDistanciaKm(userPosition.lat, userPosition.lon, st.lat, st.lon)} km desde tu ubicación` : '';
+                    const popupContent = `
+                        <div class="station-popup-content">
+                            <div class="popup-station-header">
+                                <span class="popup-station-title">${st.nombre}</span>
+                                <span class="popup-station-badge ${badgeClass}">${st.red || 'Oficial'}</span>
+                            </div>
+                            <div style="font-size:0.75rem; color:#cbd5e1; line-height:1.4;">
+                                📍 Sector: <b>${st.sector || st.comuna || st.region || 'Chile'}</b><br>
+                                ${distTxt ? `<span class="popup-dist-tag">📏 ${distTxt}</span>` : ''}
+                            </div>
+                            <button class="btn-select-station" onclick="window.cargarEstacionDesdeMapa(${st.lat}, ${st.lon}, '${st.nombre.replace(/'/g, "\\'")}', '${st.id}')">
+                                ⚡ Ver Clima de esta Estación
+                            </button>
                         </div>
-                    `);
-                    mapAirSensors.push(circle);
+                    `;
+                    circle.bindPopup(popupContent, { maxWidth: 260 }).openPopup();
                 });
-            }
+
+                mapStationMarkers.push(circle);
+            });
         } catch (e) {
-            console.log('Aviso mapa sensores:', e);
+            console.log('Aviso cargando estaciones en mapa:', e);
         }
     }
-    cargarSensoresAire();
+    cargarEstacionesEnMapa();
+
+    window.cargarEstacionDesdeMapa = (lat, lon, nombre, id) => {
+        map.closePopup();
+        consultarClima(lat, lon, nombre, id, true);
+    };
 
     // 6. Buscador Autocompletado
     let searchTimeout = null;
@@ -178,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (loader) loader.classList.remove('hidden');
         navigator.geolocation.getCurrentPosition(
             (pos) => {
-                consultarClima(pos.coords.latitude, pos.coords.longitude, 'Mi Ubicación Actual');
+                consultarClima(pos.coords.latitude, pos.coords.longitude, 'Mi Ubicación Actual', null, false);
             },
             (err) => {
                 if (loader) loader.classList.add('hidden');
@@ -190,21 +240,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Clic directo en el mapa
     map.on('click', (e) => {
-        consultarClima(e.latlng.lat, e.latlng.lng, `Punto GPS (${e.latlng.lat.toFixed(3)}, ${e.latlng.lng.toFixed(3)})`);
+        consultarClima(e.latlng.lat, e.latlng.lng, `Punto GPS (${e.latlng.lat.toFixed(3)}, ${e.latlng.lng.toFixed(3)})`, null, false);
     });
 
     // 8. Consulta Principal de Clima Hiperlocal
-    async function consultarClima(lat, lon, nombreLugar = 'Ubicación Seleccionada', stationId = null) {
+    async function consultarClima(lat, lon, nombreLugar = 'Ubicación Seleccionada', stationId = null, esEstacionDirecta = false) {
         currentLat = lat;
         currentLon = lon;
         if (loader) loader.classList.remove('hidden');
         
-        // Mover marcador en mapa
-        if (marker) {
-            marker.setLatLng([lat, lon]);
-        } else {
-            marker = L.marker([lat, lon]).addTo(map);
+        // Si no es selección de estación remota, actualizar la posición del usuario
+        if (!esEstacionDirecta) {
+            userPosition = { lat, lon, label: nombreLugar };
+            if (userMarker) {
+                userMarker.setLatLng([lat, lon]);
+            } else {
+                userMarker = L.circleMarker([lat, lon], {
+                    radius: 9,
+                    fillColor: '#38bdf8',
+                    color: '#ffffff',
+                    weight: 3,
+                    opacity: 1,
+                    fillOpacity: 1,
+                    className: 'user-pulse-marker'
+                }).addTo(map);
+                userMarker.bindTooltip('📍 Tu Ubicación', { permanent: false, direction: 'top' });
+            }
         }
+
+        // Trazar línea de distancia entre usuario y estación si es diferente
+        if (distanceLine) {
+            map.removeLayer(distanceLine);
+            distanceLine = null;
+        }
+
+        if (esEstacionDirecta && userPosition && (userPosition.lat !== lat || userPosition.lon !== lon)) {
+            distanceLine = L.polyline([[userPosition.lat, userPosition.lon], [lat, lon]], {
+                color: '#38bdf8',
+                weight: 2,
+                dashArray: '5, 8',
+                opacity: 0.8
+            }).addTo(map);
+        }
+
         map.panTo([lat, lon]);
 
         try {
