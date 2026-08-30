@@ -109,7 +109,7 @@
                     <span id="main-temp" class="hero-degrees">--°</span>
                     <div class="temp-details">
                         <span id="weather-condition" class="condition-tag">--</span>
-                        <span class="feels-like-text">Sensación: <strong id="feels-like">--</strong>°C</span>
+                        <span class="feels-like-text">T. Real: <strong id="real-temp">--</strong>°C</span>
                     </div>
                 </div>
                 <div class="hero-sun-moon">
@@ -252,7 +252,7 @@
                         <strong id="solar-rad" class="metric-val">--</strong>
                     </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card" id="moon-card" style="cursor: pointer;" title="Haz clic para ver recomendaciones agrícolas">
                     <span class="metric-icon" id="moon-icon">🌕</span>
                     <div class="metric-info">
                         <span class="metric-label">Fase Lunar <span class="tooltip" title="Ciclo lunar actual, clave para podas, siembras y movimiento de savia.">[?]</span></span>
@@ -539,6 +539,21 @@
         </div>
         <div class="modal-footer">
             <small id="modal-last-update">Actualizado: -</small>
+        </div>
+    </dialog>
+
+    <!-- Modal de Fase Lunar -->
+    <dialog id="moon-modal" class="station-modal">
+        <div class="modal-header">
+            <h2 id="moon-modal-title">Fase Lunar</h2>
+            <button id="close-moon-modal" class="modal-close-btn">&times;</button>
+        </div>
+        <div class="modal-body" style="line-height: 1.5; font-size: 0.95rem; color: var(--text-primary);">
+            <p id="moon-modal-desc"></p>
+            <div style="margin-top: 15px; background: rgba(139, 195, 74, 0.1); padding: 12px; border-radius: 8px; border: 1px solid rgba(139, 195, 74, 0.3);">
+                <strong style="color: #8BC34A; display: flex; align-items: center; gap: 6px;"><span style="font-size: 1.2rem;">🌱</span> Guía Agrícola:</strong>
+                <p id="moon-modal-agro" style="margin-top: 8px; margin-bottom: 0;"></p>
+            </div>
         </div>
     </dialog>
 

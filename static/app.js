@@ -416,8 +416,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // D. Módulo Urbano
-        setTxt(document.getElementById('main-temp'), modoUrbano.temperatura_c !== undefined ? `${Math.round(modoUrbano.temperatura_c)}°` : '--°');
-        setTxt(document.getElementById('feels-like'), modoUrbano.sensacion_termica_c !== undefined ? modoUrbano.sensacion_termica_c : '--');
+        setTxt(document.getElementById('main-temp'), modoUrbano.sensacion_termica_c !== undefined ? `${Math.round(modoUrbano.sensacion_termica_c)}°` : '--°');
+        setTxt(document.getElementById('real-temp'), modoUrbano.temperatura_c !== undefined ? modoUrbano.temperatura_c : '--');
         setTxt(document.getElementById('sun-rise'), modoUrbano.salida_sol || '--:--');
         setTxt(document.getElementById('sun-set'), modoUrbano.puesta_sol || '--:--');
 
@@ -489,19 +489,73 @@ document.addEventListener('DOMContentLoaded', () => {
             const newMoon = new Date(1970, 0, 7, 20, 35, 0);
             const phase = ((now.getTime() - newMoon.getTime()) / 1000) % lp;
             const fraction = phase / lp;
-            if (fraction < 0.05) return { text: 'Luna Nueva', icon: '🌑' };
-            if (fraction < 0.22) return { text: 'Creciente', icon: '🌒' };
-            if (fraction < 0.28) return { text: 'Cuarto Creciente', icon: '🌓' };
-            if (fraction < 0.45) return { text: 'Gibosa Creciente', icon: '🌔' };
-            if (fraction < 0.55) return { text: 'Luna Llena', icon: '🌕' };
-            if (fraction < 0.72) return { text: 'Gibosa Menguante', icon: '🌖' };
-            if (fraction < 0.78) return { text: 'Cuarto Menguante', icon: '🌗' };
-            if (fraction < 0.95) return { text: 'Menguante', icon: '🌘' };
-            return { text: 'Luna Nueva', icon: '🌑' };
+            
+            if (fraction < 0.05) return { 
+                text: 'Luna Nueva', icon: '🌑', 
+                desc: 'La luna está entre la Tierra y el Sol, no visible en el cielo.',
+                agro: 'La savia se moviliza hacia las raíces. Ideal para control de malezas, poda de limpieza y mantenimiento. No se recomienda sembrar.'
+            };
+            if (fraction < 0.22) return { 
+                text: 'Creciente', icon: '🌒',
+                desc: 'La luna comienza a iluminarse paulatinamente visible como un fino arco.',
+                agro: 'La savia comienza a ascender. Buen momento para sembrar hortalizas de hoja (lechuga, espinaca) y plantas que crecen en altura.'
+            };
+            if (fraction < 0.28) return { 
+                text: 'Cuarto Creciente', icon: '🌓',
+                desc: 'Vemos exactamente la mitad de la luna iluminada.',
+                agro: 'La savia asciende con fuerza. Excelente para sembrar plantas que crecen sobre el suelo y dan frutos (tomate, pimiento, leguminosas).'
+            };
+            if (fraction < 0.45) return { 
+                text: 'Gibosa Creciente', icon: '🌔',
+                desc: 'La luna está casi totalmente iluminada antes de llegar a llena.',
+                agro: 'Últimos días para siembras de plantas de fruto. Evitar podas intensas ya que la planta puede perder mucha savia.'
+            };
+            if (fraction < 0.55) return { 
+                text: 'Luna Llena', icon: '🌕',
+                desc: 'La luna está completamente iluminada y brillante.',
+                agro: 'La savia está concentrada en el follaje. Aumento de plagas. Ideal para cosechar frutos y hojas (tienen más agua), pero pésimo momento para podar.'
+            };
+            if (fraction < 0.72) return { 
+                text: 'Gibosa Menguante', icon: '🌖',
+                desc: 'La iluminación comienza a disminuir lentamente.',
+                agro: 'La savia empieza a descender. Buen momento para preparar la tierra y aplicar fertilizantes foliares o regar.'
+            };
+            if (fraction < 0.78) return { 
+                text: 'Cuarto Menguante', icon: '🌗',
+                desc: 'Vemos la otra mitad de la luna iluminada.',
+                agro: 'La savia desciende a las raíces. Momento perfecto para sembrar hortalizas de raíz (zanahoria, papa, rábano) y realizar podas vigorosas.'
+            };
+            if (fraction < 0.95) return { 
+                text: 'Menguante', icon: '🌘',
+                desc: 'La luna está por desaparecer nuevamente en el cielo.',
+                agro: 'Época de reposo. Ideal para cosechar tubérculos, injertar y aplicar abonos radiculares.'
+            };
+            return { text: 'Luna Nueva', icon: '🌑', desc: '', agro: '' };
         };
         const moon = getLunarPhase();
         setTxt(document.getElementById('lunar-phase'), moon.text);
         setTxt(document.getElementById('moon-icon'), moon.icon);
+
+        const moonCard = document.getElementById('moon-card');
+        const moonModal = document.getElementById('moon-modal');
+        if (moonCard && moonModal) {
+            moonCard.addEventListener('click', () => {
+                document.getElementById('moon-modal-title').innerText = moon.text + " " + moon.icon;
+                document.getElementById('moon-modal-desc').innerText = moon.desc;
+                document.getElementById('moon-modal-agro').innerText = moon.agro;
+                moonModal.showModal();
+            });
+            document.getElementById('close-moon-modal').addEventListener('click', () => {
+                moonModal.close();
+            });
+            // Cerrar al clickear fuera
+            moonModal.addEventListener('click', (e) => {
+                const rect = moonModal.getBoundingClientRect();
+                if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+                    moonModal.close();
+                }
+            });
+        }
         // F. Teledetección y Suelo GEE (Sentinel-2, SMAP, Topografía)
         const geeAgro = (data.modulo_agricola && data.modulo_agricola.desde_el_espacio_gee) || modoAgro.satelite_suelo_ndvi || {};
         
