@@ -552,6 +552,10 @@ async def obtener_estacion(estacion_id: str):
     if est:
         resultado.update(est)
 
+    if estacion_id.startswith("dga") and resultado.get("tipo_dga") == "Fluviométrica" and not resultado.get("caudal_m3s"):
+        from dga_telemetria import enriquecer_telemetria_dga_fluviometrica
+        resultado = await enriquecer_telemetria_dga_fluviometrica(resultado)
+
     return resultado
 
 @app.get("/api/v1/estaciones")
@@ -773,6 +777,9 @@ async def obtener_clima_hiperlocal(
         dga_raw = telemetria_map.get(dga_id)
         telemetria_dga = dga_raw.copy() if dga_raw else estacion_dga_cercana.copy()
         telemetria_dga["distancia_km"] = round(dist_dga, 1)
+        if telemetria_dga.get("tipo_dga") == "Fluviométrica" and not telemetria_dga.get("caudal_m3s"):
+            from dga_telemetria import enriquecer_telemetria_dga_fluviometrica
+            telemetria_dga = await enriquecer_telemetria_dga_fluviometrica(telemetria_dga)
 
     telemetria_directa = telemetria_map.get(est_id, {})
 

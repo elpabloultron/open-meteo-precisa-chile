@@ -669,14 +669,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const distTxt = dga.distancia_km !== undefined ? ` • <span style="color: #38bdf8;">📏 a ${dga.distancia_km} km</span>` : '';
                 let dgaHtml = `<div style="font-size: 0.9rem; margin-bottom: 8px;"><b>${dga.nombre || 'Desconocido'}</b> <span class="popup-badge-dmc">${dga.tipo_dga || 'Estación'}</span>${distTxt}</div>`;
                 
-                const valCaudal = dga.caudal_m3s !== undefined ? `${dga.caudal_m3s} m³/s` : null;
-                const valNivel = dga.nivel_agua_m !== undefined ? `${dga.nivel_agua_m} m` : null;
-                const valFreat = dga.nivel_freatico_m !== undefined ? `${dga.nivel_freatico_m} m` : null;
-                const valNieve = dga.nieve_acumulada_cm !== undefined ? `${dga.nieve_acumulada_cm} cm` : null;
-                const valVol = dga.volumen_hm3 !== undefined ? `${dga.volumen_hm3} Hm³` : null;
+                const valCaudal = dga.caudal_m3s !== undefined && dga.caudal_m3s !== null ? `${dga.caudal_m3s} m³/s${dga.tendencia_caudal ? ` (${dga.tendencia_caudal})` : ''}` : null;
+                const valNivel = dga.nivel_agua_m !== undefined && dga.nivel_agua_m !== null ? `${dga.nivel_agua_m} m` : null;
+                const valFreat = dga.nivel_freatico_m !== undefined && dga.nivel_freatico_m !== null ? `${dga.nivel_freatico_m} m` : null;
+                const valNieve = dga.nieve_acumulada_cm !== undefined && dga.nieve_acumulada_cm !== null ? `${dga.nieve_acumulada_cm} cm` : null;
+                const valVol = dga.volumen_hm3 !== undefined && dga.volumen_hm3 !== null ? `${dga.volumen_hm3} Hm³${dga.porcentaje_llenado_pct !== undefined ? ` (${dga.porcentaje_llenado_pct}%)` : ''}` : null;
                 
                 let foundAny = false;
                 if (valCaudal) { dgaHtml += `<div style="color:#cbd5e1; font-size: 0.85rem; padding: 2px 0;">🌊 Caudal: <b style="color: white;">${valCaudal}</b></div>`; foundAny = true; }
+                if (dga.alerta_crecida) { dgaHtml += `<div style="color:#ef4444; font-size: 0.85rem; padding: 2px 0;">⚠️ Umbral Alerta: <b style="color: #f87171;">${dga.alerta_crecida} m³/s</b></div>`; foundAny = true; }
                 if (valNivel) { dgaHtml += `<div style="color:#cbd5e1; font-size: 0.85rem; padding: 2px 0;">📏 Nivel: <b style="color: white;">${valNivel}</b></div>`; foundAny = true; }
                 if (valVol) { dgaHtml += `<div style="color:#cbd5e1; font-size: 0.85rem; padding: 2px 0;">💧 Volumen: <b style="color: white;">${valVol}</b></div>`; foundAny = true; }
                 if (valFreat) { dgaHtml += `<div style="color:#cbd5e1; font-size: 0.85rem; padding: 2px 0;">🕳️ Nivel Freático: <b style="color: white;">${valFreat}</b></div>`; foundAny = true; }
@@ -967,9 +968,18 @@ window.abrirModalEstacion = async function(estId) {
 
         // DGA Sensors
         if (data.tipo_dga) addSensor('💧', 'Tipo Estación DGA', data.tipo_dga, '');
-        addSensor('🌊', 'Caudal Río', data.caudal_m3s, 'm³/s');
+        if (data.caudal_m3s !== undefined && data.caudal_m3s !== null) {
+            const extra = data.tendencia_caudal ? ` (${data.tendencia_caudal})` : '';
+            addSensor('🌊', 'Caudal Río', `${data.caudal_m3s}${extra}`, 'm³/s');
+        }
+        if (data.alerta_crecida !== undefined && data.alerta_crecida !== null) {
+            addSensor('⚠️', 'Umbral Alerta DGA', data.alerta_crecida, 'm³/s');
+        }
         addSensor('📏', 'Nivel Río', data.nivel_agua_m, 'm');
         addSensor('💧', 'Vol. Embalse', data.volumen_hm3, 'Hm³');
+        if (data.porcentaje_llenado_pct !== undefined && data.porcentaje_llenado_pct !== null) {
+            addSensor('📊', 'Llenado Embalse', data.porcentaje_llenado_pct, '%');
+        }
         addSensor('🕳️', 'Nivel Freático', data.nivel_freatico_m, 'm');
         addSensor('❄️', 'Nieve', data.nieve_acumulada_cm, 'cm');
 

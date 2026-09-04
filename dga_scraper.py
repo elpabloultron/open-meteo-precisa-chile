@@ -16,7 +16,7 @@ def obtener_estaciones_dga():
         while has_more:
             params = {
                 "where": f"VIGENCIA = 'Vigentes' AND OBJECTID BETWEEN {last_oid + 1} AND {last_oid + 1500}",
-                "outFields": "OBJECTID,ID_IDE,NOM_ESTACION,TIPO_ESTACION,LATITUD,LONGITUD",
+                "outFields": "OBJECTID,ID_IDE,COD_BNA,NOM_ESTACION,TIPO_ESTACION,LATITUD,LONGITUD",
                 "orderByFields": "OBJECTID ASC",
                 "f": "json",
                 "returnGeometry": "false",
@@ -51,6 +51,9 @@ def obtener_estaciones_dga():
 
                 nombre = attr.get("NOM_ESTACION", "Estación DGA")
                 tipo_crudo = attr.get("TIPO_ESTACION", "")
+                cod_bna = attr.get("COD_BNA")
+                cod_bna_str = str(cod_bna).strip() if cod_bna else None
+                cod_bna_base = cod_bna_str.split("-")[0].strip() if cod_bna_str else None
 
                 if "Fluviom" in tipo_crudo:
                     tipo = "Fluviométrica"
@@ -67,6 +70,8 @@ def obtener_estaciones_dga():
 
                 est_data = {
                     "id": st_id,
+                    "cod_bna": cod_bna_str,
+                    "cod_bna_base": cod_bna_base,
                     "red": "DGA",
                     "nombre": nombre,
                     "lat": lat,
