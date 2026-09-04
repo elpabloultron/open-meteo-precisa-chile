@@ -540,9 +540,19 @@ async def obtener_estacion(estacion_id: str):
         elif estacion_id in purple:
             est = purple[estacion_id]
 
-    if not est:
+    catalogo = CACHE_MEMORIA.get("catalogo_estaciones", [])
+    meta = next((c for c in catalogo if c.get("id") == estacion_id), None)
+
+    if not est and not meta:
         return {"error": "Estación no encontrada o sin datos recientes"}
-    return est
+
+    resultado = {}
+    if meta:
+        resultado.update(meta)
+    if est:
+        resultado.update(est)
+
+    return resultado
 
 @app.get("/api/v1/estaciones")
 async def obtener_todas_las_estaciones():
@@ -570,6 +580,7 @@ async def obtener_todas_las_estaciones():
                 "red": e.get("red", "Oficial"),
                 "lat": e.get("lat"),
                 "lon": e.get("lon"),
+                "tipo_dga": e.get("tipo_dga"),
                 "timestamp_actualizacion": timestamp
             }
             for e in catalogo
@@ -756,7 +767,12 @@ async def obtener_clima_hiperlocal(
     est_id = estacion_cercana.get("id")
 
     # Extraer telemetría DGA
-    telemetria_dga = telemetria_map.get(estacion_dga_cercana.get("id")) if estacion_dga_cercana else None
+    telemetria_dga = None
+    if estacion_dga_cercana:
+        dga_id = estacion_dga_cercana.get("id")
+        dga_raw = telemetria_map.get(dga_id)
+        telemetria_dga = dga_raw.copy() if dga_raw else estacion_dga_cercana.copy()
+        telemetria_dga["distancia_km"] = round(dist_dga, 1)
 
     telemetria_directa = telemetria_map.get(est_id, {})
 

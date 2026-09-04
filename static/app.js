@@ -666,7 +666,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (dgaCard) {
             if (data.estacion_dga_cercana) {
                 const dga = data.estacion_dga_cercana;
-                let dgaHtml = `<div style="font-size: 0.9rem; margin-bottom: 8px;"><b>${dga.nombre || 'Desconocido'}</b> <span class="popup-badge-dmc">${dga.tipo_dga || 'Estación'}</span></div>`;
+                const distTxt = dga.distancia_km !== undefined ? ` • <span style="color: #38bdf8;">📏 a ${dga.distancia_km} km</span>` : '';
+                let dgaHtml = `<div style="font-size: 0.9rem; margin-bottom: 8px;"><b>${dga.nombre || 'Desconocido'}</b> <span class="popup-badge-dmc">${dga.tipo_dga || 'Estación'}</span>${distTxt}</div>`;
                 
                 const valCaudal = dga.caudal_m3s !== undefined ? `${dga.caudal_m3s} m³/s` : null;
                 const valNivel = dga.nivel_agua_m !== undefined ? `${dga.nivel_agua_m} m` : null;
@@ -921,16 +922,17 @@ window.abrirModalEstacion = async function(estId) {
         }
 
         const nombre = data.estacion_nombre || data.nombre || data.id;
-        let red = data.institucion || "Desconocida";
+        let red = data.red || data.institucion || "Desconocida";
         if (data.id.startsWith("sinca")) red = "SINCA (MMA)";
         if (data.id.startsWith("purpleair")) red = "PurpleAir";
         if (data.id.startsWith("dmc")) red = "DMC Oficial";
         if (data.id.startsWith("agromet")) red = "Agromet INIA";
         if (data.id.startsWith("redmeteo")) red = "RedMeteo";
+        if (data.id.startsWith("dga")) red = "DGA (Dirección General de Aguas)";
 
         document.getElementById('modal-station-name').textContent = nombre;
         document.getElementById('modal-station-network').textContent = red;
-        document.getElementById('modal-station-location').textContent = data.comuna || data.sector || "Chile";
+        document.getElementById('modal-station-location').textContent = data.comuna || data.sector || data.region || "Chile";
         
         // Populate sensors
         let html = '';
@@ -947,21 +949,34 @@ window.abrirModalEstacion = async function(estId) {
         };
 
         addSensor('🌡️', 'Temperatura', data.temperatura_c, '°C');
+        addSensor('❄️', 'T. Mínima Hoy', data.temperatura_min_hoy_c, '°C');
+        addSensor('🔥', 'T. Máxima Hoy', data.temperatura_max_hoy_c, '°C');
         addSensor('💧', 'Humedad', data.humedad_relativa !== undefined ? data.humedad_relativa : data.humedad_relativa_pct, '%');
         addSensor('📉', 'Presión', data.presion_hpa, 'hPa');
         addSensor('💦', 'Punto Rocío', data.punto_rocio_c, '°C');
         addSensor('🌧️', 'Agua Caída', data.lluvia_mm !== undefined ? data.lluvia_mm : data.lluvia_acumulada_hoy_mm, 'mm');
         addSensor('💨', 'Viento', data.viento_kmh !== undefined ? data.viento_kmh : data.velocidad_viento_kmh, 'km/h');
+        if (data.direccion_viento_grados !== undefined && data.direccion_viento_grados !== null) {
+            const arr = ['N', 'NE', 'E', 'SE', 'S', 'SO', 'O', 'NO'];
+            const card = arr[Math.round(data.direccion_viento_grados / 45) % 8];
+            addSensor('🧭', 'Dirección Viento', `${Math.round(data.direccion_viento_grados)}° (${card})`, '');
+        }
         addSensor('☀️', 'Rad. Solar', data.radiacion_w_m2 !== undefined ? data.radiacion_w_m2 : data.radiacion_solar_wm2, 'W/m²');
         addSensor('😷', 'PM 2.5', data.pm25, 'µg/m³');
         addSensor('🏭', 'PM 10', data.pm10, 'µg/m³');
 
         // DGA Sensors
+        if (data.tipo_dga) addSensor('💧', 'Tipo Estación DGA', data.tipo_dga, '');
         addSensor('🌊', 'Caudal Río', data.caudal_m3s, 'm³/s');
         addSensor('📏', 'Nivel Río', data.nivel_agua_m, 'm');
         addSensor('💧', 'Vol. Embalse', data.volumen_hm3, 'Hm³');
         addSensor('🕳️', 'Nivel Freático', data.nivel_freatico_m, 'm');
         addSensor('❄️', 'Nieve', data.nieve_acumulada_cm, 'cm');
+
+        // Ubicación GPS
+        if (data.lat !== undefined && data.lat !== null && data.lon !== undefined && data.lon !== null) {
+            addSensor('📍', 'Coordenadas GPS', `${Number(data.lat).toFixed(4)}, ${Number(data.lon).toFixed(4)}`, '');
+        }
 
         if (html === '') {
             html = '<div style="color:var(--text-secondary); grid-column: 1/-1; text-align:center;">No hay sensores reportando datos válidos en este momento.</div>';
@@ -969,8 +984,9 @@ window.abrirModalEstacion = async function(estId) {
 
         document.getElementById('modal-sensors-grid').innerHTML = html;
         
-        if (data.timestamp) {
-            const date = new Date(data.timestamp * 1000);
+        const ts = data.timestamp_actualizacion || data.timestamp;
+        if (ts) {
+            const date = new Date(ts * 1000);
             document.getElementById('modal-last-update').textContent = `Actualizado: ${date.toLocaleString()}`;
         }
 
