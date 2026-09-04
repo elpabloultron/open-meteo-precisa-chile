@@ -1,3 +1,4 @@
+import asyncio
 import logging
 import time
 
@@ -102,4 +103,86 @@ def extraer_telemetria_dga_en_vivo(estaciones: list[dict]) -> dict[str, dict]:
 
 # Alias retrocompatible
 extraer_telemetria_bnaconsultas = extraer_telemetria_dga_en_vivo
+
+
+async def enriquecer_telemetria_dga_fluviometrica_lote(
+    estaciones_dga: list[dict],
+    telemetria_global: dict[str, dict],
+    concurrencia: int = 4,
+    max_estaciones: int = 100,
+) -> int:
+    """
+    Enriquece en segundo plano (worker de sincronización) las estaciones fluviométricas
+    (ríos, esteros y canales) con el último caudal y tendencia disponible.
+    Guarda los datos en telemetria_global para persistencia en base de datos (TimescaleDB / caché).
+    """
+    fluviometricas = [
+        e
+        for e in estaciones_dga
+        if e.get("tipo_dga") == "Fluviométrica"
+        and (e.get("cod_bna_base") or e.get("cod_bna"))
+        and not telemetria_global.get(e["id"], {}).get("caudal_m3s")
+    ]
+
+    # Priorizar cauces activos identificados por nombre de río/estero/canal
+    cauces_prioritarios = [
+        e
+        for e in fluviometricas
+        if any(
+            k in e.get("nombre", "").lower()
+            for k in [
+                "rio",
+                "estero",
+                "canal",
+                "champa",
+                "trebal",
+                "maipo",
+                "mapocho",
+                "aconcagua",
+                "maule",
+                "biobio",
+                "tolten",
+                "trancura",
+            ]
+        )
+    ]
+    resto = [e for e in fluviometricas if e not in cauces_prioritarios]
+    objetivos = (cauces_prioritarios + resto)[:max_estaciones]
+
+    if not objetivos:
+        return 0
+
+    sem = asyncio.Semaphore(concurrencia)
+    enriquecidas = 0
+
+    async with httpx.AsyncClient(timeout=2.5) as client:
+
+        async def _consultar(st):
+            nonlocal enriquecidas
+            cod = st.get("cod_bna_base") or st.get("cod_bna")
+            st_id = st["id"]
+            async with sem:
+                try:
+                    r = await client.post("https://caudalrio.cl/api/consultar", json={"query": cod})
+                    if r.status_code == 200:
+                        data = r.json()
+                        if data.get("success") and data.get("data"):
+                            st_data = data["data"]
+                            med = st_data.get("mediciones", {})
+                            c_num = med.get("caudal_num")
+                            if c_num is not None and float(c_num) > 0:
+                                entry = telemetria_global.setdefault(st_id, st.copy())
+                                entry["caudal_m3s"] = round(float(c_num), 2)
+                                if med.get("tendencia"):
+                                    entry["tendencia_caudal"] = med["tendencia"]
+                                if st_data.get("resumen"):
+                                    entry["resumen_hidrologico"] = st_data["resumen"]
+                                entry["timestamp_actualizacion"] = int(time.time())
+                                enriquecidas += 1
+                except Exception:
+                    pass
+
+        await asyncio.gather(*(_consultar(s) for s in objetivos))
+
+    return enriquecidas
 

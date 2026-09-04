@@ -645,13 +645,23 @@ async def ejecutar_sincronizacion_completa():
                 for est in estaciones_dga:
                     catalogo_final.append(est)
 
-                from dga_telemetria import extraer_telemetria_dga_en_vivo
+                from dga_telemetria import (
+                    enriquecer_telemetria_dga_fluviometrica_lote,
+                    extraer_telemetria_dga_en_vivo,
+                )
                 telemetria_hidratada = await asyncio.to_thread(extraer_telemetria_dga_en_vivo, estaciones_dga)
                 for st_id, data in telemetria_hidratada.items():
                     telemetria_global[st_id] = data
 
-                con_caudal = sum(1 for d in telemetria_hidratada.values() if d.get("caudal_m3s") is not None or d.get("volumen_hm3") is not None)
-                print(f"   ✅ DGA procesado ({len(estaciones_dga)} estaciones vigentes, {con_caudal} con telemetría viva)")
+                # Enriquecer cauces fluviométricos en segundo plano para almacenar en base local
+                await enriquecer_telemetria_dga_fluviometrica_lote(estaciones_dga, telemetria_global)
+
+                con_caudal = sum(
+                    1
+                    for d in telemetria_global.values()
+                    if d.get("caudal_m3s") is not None or d.get("volumen_hm3") is not None
+                )
+                print(f"   ✅ DGA procesado ({len(estaciones_dga)} estaciones vigentes, {con_caudal} con telemetría/caudal almacenado en base)")
             except Exception as e:
                 print(f"   ⚠️ Error procesando DGA: {e}")
 
