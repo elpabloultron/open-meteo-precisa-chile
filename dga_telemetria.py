@@ -119,7 +119,10 @@ async def enriquecer_telemetria_dga_fluviometrica_lote(
     fluviometricas = [
         e
         for e in estaciones_dga
-        if e.get("tipo_dga") == "Fluviométrica"
+        if (
+            e.get("tipo_dga") in ("Fluviométrica", "Sedimentometricas", "Sedimentométrica")
+            or any(w in e.get("nombre", "").lower() for w in ["rio", "estero", "canal", "trebal", "champa"])
+        )
         and (e.get("cod_bna_base") or e.get("cod_bna"))
         and not telemetria_global.get(e["id"], {}).get("caudal_m3s")
     ]
