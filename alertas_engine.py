@@ -12,13 +12,13 @@ def evaluar_alertas_meteorologicas(clima_data: dict) -> list:
     modo_urbano = clima_data.get("modo_urbano", {})
     metadatos = clima_data.get("metadatos", {})
 
-    temp_actual = metadatos.get("temperatura_c", 15.0)
-    temp_min = modo_agricola.get("temperatura_minima_hoy_c", temp_actual)
-    punto_rocio = modo_agricola.get("punto_rocio_c", 5.0)
-    viento_kmh = metadatos.get("viento_kmh", 0.0)
-    rafaga_kmh = modo_agricola.get("rafagas_max_kmh", viento_kmh)
-    indice_uv = modo_urbano.get("indice_uv", 0)
-    vpd = modo_agricola.get("deficit_presion_vapor_vpd_kpa", 1.0)
+    temp_actual = metadatos.get("temperatura_c") if metadatos.get("temperatura_c") is not None else 15.0
+    temp_min = modo_agricola.get("temperatura_minima_hoy_c") if modo_agricola.get("temperatura_minima_hoy_c") is not None else temp_actual
+    punto_rocio = modo_agricola.get("punto_rocio_c") if modo_agricola.get("punto_rocio_c") is not None else 5.0
+    viento_kmh = metadatos.get("viento_kmh") if metadatos.get("viento_kmh") is not None else 0.0
+    rafaga_kmh = modo_agricola.get("rafagas_max_kmh") if modo_agricola.get("rafagas_max_kmh") is not None else viento_kmh
+    indice_uv = modo_urbano.get("indice_uv") if modo_urbano.get("indice_uv") is not None else 0
+    vpd = modo_agricola.get("deficit_presion_vapor_vpd_kpa") if modo_agricola.get("deficit_presion_vapor_vpd_kpa") is not None else 1.0
 
     # --- ❄️ HELADAS RADIATIVAS (AGRÍCOLA) ---
     if temp_min <= 0.0 or (temp_actual <= 2.0 and punto_rocio <= 0.0):
@@ -70,6 +70,18 @@ def evaluar_alertas_meteorologicas(clima_data: dict) -> list:
                 "titulo": "🏜️ Alto Déficit Presión Vapor (VPD > 2.0 kPa)",
                 "mensaje": f"Aire extremadamente seco con VPD de {vpd} kPa.",
                 "recomendacion": "El cultivo ha cerrado estomas para evitar deshidratación. Aplicar riego de refresco por aspersión.",
+                "icono": "Droplets",
+            }
+        )
+    elif vpd < 0.3:
+        alertas.append(
+            {
+                "id": "vpd_saturado",
+                "nivel": "advertencia",
+                "tipo": "agricola",
+                "titulo": "🍄 Riesgo Fitopatológico (VPD < 0.3 kPa)",
+                "mensaje": f"Humedad relativa saturada prolongada con VPD de {vpd} kPa.",
+                "recomendacion": "Condiciones críticas para proliferación de hongos (Botrytis, Oídio). Ventilar invernaderos y suspender riegos foliares.",
                 "icono": "Droplets",
             }
         )

@@ -194,13 +194,13 @@ def calcular_distancia(lat1: float, lon1: float, lat2: float, lon2: float) -> fl
 
 _SPATIAL_TREE = None
 _SPATIAL_CATALOGO = []
+_SPATIAL_CATALOGO_SIG = None
 
-
-_SPATIAL_CATALOGO_ID = None
 
 def obtener_arbol_espacial(catalogo: list):
-    global _SPATIAL_TREE, _SPATIAL_CATALOGO, _SPATIAL_CATALOGO_ID
-    if _SPATIAL_TREE is not None and _SPATIAL_CATALOGO_ID == id(catalogo):
+    global _SPATIAL_TREE, _SPATIAL_CATALOGO, _SPATIAL_CATALOGO_SIG
+    sig = (len(catalogo), catalogo[0].get("id") if catalogo else None, catalogo[-1].get("id") if catalogo else None)
+    if _SPATIAL_TREE is not None and _SPATIAL_CATALOGO_SIG == sig:
         return _SPATIAL_TREE, _SPATIAL_CATALOGO
 
     try:
@@ -213,7 +213,7 @@ def obtener_arbol_espacial(catalogo: list):
         coords = np.array([[est["lat"], est["lon"]] for est in validos])
         _SPATIAL_TREE = KDTree(coords)
         _SPATIAL_CATALOGO = validos
-        _SPATIAL_CATALOGO_ID = id(catalogo)
+        _SPATIAL_CATALOGO_SIG = sig
         return _SPATIAL_TREE, _SPATIAL_CATALOGO
     except Exception:
         return None, []
@@ -250,6 +250,50 @@ def buscar_estacion_mas_cercana(lat: float, lon: float, catalogo: list) -> tuple
                     min_d = d
                     best_est = est
         return best_est, min_d
+
+
+_SPATIAL_DGA_TREE = None
+_SPATIAL_DGA_CAT = []
+_SPATIAL_DGA_SIG = None
+
+
+def buscar_dga_mas_cercana(lat: float, lon: float, catalogo: list) -> tuple[dict | None, float]:
+    """Búsqueda espacial sub-milisegundo para estaciones hidrométricas DGA usando KDTree."""
+    global _SPATIAL_DGA_TREE, _SPATIAL_DGA_CAT, _SPATIAL_DGA_SIG
+    dga_list = [c for c in catalogo if c.get("red") == "DGA"]
+    if not dga_list:
+        return None, float("inf")
+    sig = (len(dga_list), dga_list[0].get("id"), dga_list[-1].get("id"))
+    if _SPATIAL_DGA_TREE is None or _SPATIAL_DGA_SIG != sig:
+        import numpy as np
+        from scipy.spatial import KDTree
+
+        validos = [est for est in dga_list if est.get("lat") is not None and est.get("lon") is not None]
+        if validos:
+            _SPATIAL_DGA_TREE = KDTree(np.array([[est["lat"], est["lon"]] for est in validos]))
+            _SPATIAL_DGA_CAT = validos
+            _SPATIAL_DGA_SIG = sig
+        else:
+            return None, float("inf")
+
+    if _SPATIAL_DGA_TREE is not None and len(_SPATIAL_DGA_CAT) > 0:
+        import numpy as np
+
+        k = min(5, len(_SPATIAL_DGA_CAT))
+        _, idxs = _SPATIAL_DGA_TREE.query([lat, lon], k=k)
+        if isinstance(idxs, (int, np.integer)):
+            idxs = [idxs]
+        best_est = None
+        min_d = float("inf")
+        for idx in idxs:
+            if idx < len(_SPATIAL_DGA_CAT):
+                est = _SPATIAL_DGA_CAT[idx]
+                d = calcular_distancia(lat, lon, est["lat"], est["lon"])
+                if d < min_d:
+                    min_d = d
+                    best_est = est
+        return best_est, min_d
+    return None, float("inf")
 
 
 def calcular_punto_rocio(temp_c: float, hr: float) -> float:
@@ -724,28 +768,10 @@ async def obtener_clima_hiperlocal(
         catalogo = cargar_catalogo_maestro()
 
 
-    # Restauramos la búsqueda normal usando el KDTree global para estaciones regulares
+    # Búsqueda sub-milisegundo usando KDTree con caché de firma
     catalogo_normal = [c for c in catalogo if c.get("red") != "DGA"]
     estacion_cercana, dist_min = buscar_estacion_mas_cercana(lat, lon, catalogo_normal)
-
-    # Búsqueda manual simple O(N) para DGA (evita ensuciar el caché KDTree global)
-    import math
-    def haversine(lat1, lon1, lat2, lon2):
-        R = 6371
-        dLat = math.radians(lat2 - lat1)
-        dLon = math.radians(lon2 - lon1)
-        a = math.sin(dLat/2) * math.sin(dLat/2) + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dLon/2) * math.sin(dLon/2)
-        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
-        return R * c
-
-    estacion_dga_cercana = None
-    dist_dga = float('inf')
-    for c in catalogo:
-        if c.get("red") == "DGA":
-            d = haversine(lat, lon, c["lat"], c["lon"])
-            if d < dist_dga:
-                dist_dga = d
-                estacion_dga_cercana = c
+    estacion_dga_cercana, dist_dga = buscar_dga_mas_cercana(lat, lon, catalogo)
 
     if not estacion_cercana:
         raise HTTPException(status_code=404, detail="No se encontró ninguna estación meteorológica cercana.")
@@ -757,13 +783,7 @@ async def obtener_clima_hiperlocal(
     est_id = estacion_cercana.get("id")
 
     # Extraer telemetría DGA
-    telemetria_dga = None
-    if estacion_dga_cercana:
-        telemetria_dga = telemetria_map.get(estacion_dga_cercana.get("id"))
-        if not telemetria_dga:
-            telemetria_dga = {"DEBUG": f"Found station {estacion_dga_cercana['id']} but not in telemetria_map"}
-    else:
-        telemetria_dga = {"DEBUG": "estacion_dga_cercana was None!"}
+    telemetria_dga = telemetria_map.get(estacion_dga_cercana.get("id")) if estacion_dga_cercana else None
 
     telemetria_directa = telemetria_map.get(est_id, {})
 
@@ -797,7 +817,7 @@ async def obtener_clima_hiperlocal(
         calidad_aire_eval["pm10_raw"] = sinca_info.get("pm10")
 
     # Open-Meteo para pronóstico numérico con Conexión Persistente y Caché en Memoria (15 minutos)
-    key_om = (round(lat, 2), round(lon, 2))
+    key_om = f"{round(lat, 2)},{round(lon, 2)}"
     cache_om_store = CACHE_MEMORIA.get("open_meteo_cache", {})
     ahora_ts = time.time()
 

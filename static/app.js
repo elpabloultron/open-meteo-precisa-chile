@@ -46,6 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTrazabilidad = document.getElementById('modal-trazabilidad');
     const modalHistorico = document.getElementById('modal-historico');
     const modalAcerca = document.getElementById('modal-acerca');
+    const moonModal = document.getElementById('moon-modal');
+    const moonCard = document.getElementById('moon-card');
+    const closeMoonBtn = document.getElementById('close-moon-modal');
 
     document.getElementById('btn-satelite')?.addEventListener('click', () => modalSatelite?.classList.remove('hidden'));
     document.getElementById('close-satelite')?.addEventListener('click', () => modalSatelite?.classList.add('hidden'));
@@ -61,6 +64,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('btn-acerca-de')?.addEventListener('click', () => modalAcerca?.classList.remove('hidden'));
     document.getElementById('close-acerca')?.addEventListener('click', () => modalAcerca?.classList.add('hidden'));
+
+    // Modal Lunar: Apertura, Cierre, Accesibilidad por Teclado y Clic Afuera (Unificado)
+    let currentMoonData = null;
+    const abrirModalLunar = () => {
+        if (!moonModal || !currentMoonData) return;
+        const titleEl = document.getElementById('moon-modal-title');
+        const descEl = document.getElementById('moon-modal-desc');
+        const agroEl = document.getElementById('moon-modal-agro');
+        if (titleEl) titleEl.textContent = `${currentMoonData.text} ${currentMoonData.icon}`;
+        if (descEl) descEl.textContent = currentMoonData.desc;
+        if (agroEl) agroEl.textContent = currentMoonData.agro;
+        moonModal.showModal();
+    };
+
+    if (moonCard && moonModal) {
+        moonCard.addEventListener('click', abrirModalLunar);
+        moonCard.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                abrirModalLunar();
+            }
+        });
+        closeMoonBtn?.addEventListener('click', () => moonModal.close());
+        moonModal.addEventListener('click', (e) => {
+            const rect = moonModal.getBoundingClientRect();
+            if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+                moonModal.close();
+            }
+        });
+    }
+
+    // Cierre de modales overlay al hacer clic en el backdrop
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                overlay.classList.add('hidden');
+            }
+        });
+    });
+
+    // Cierre global con tecla Escape
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.modal-overlay:not(.hidden)').forEach(m => m.classList.add('hidden'));
+            const sm = document.getElementById('station-modal');
+            if (sm?.open) sm.close();
+            if (moonModal?.open) moonModal.close();
+        }
+    });
 
     // Botón Recargar Satélite
     document.getElementById('btn-sat-reload')?.addEventListener('click', () => {
@@ -104,11 +156,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const aireLayer = L.markerClusterGroup({ disableClusteringAtZoom: 12, maxClusterRadius: 40 });
     const dgaLayer = L.markerClusterGroup({ disableClusteringAtZoom: 12, maxClusterRadius: 40 });
 
+    const isMobileViewport = window.innerWidth < 640;
     L.control.layers(null, {
         "☁️ Meteorología & Agricultura": climaLayer,
         "😷 Calidad del Aire": aireLayer,
         "💧 Hidrología (DGA)": dgaLayer
-    }, { collapsed: false }).addTo(map);
+    }, { collapsed: isMobileViewport }).addTo(map);
 
     map.addLayer(climaLayer);
     map.addLayer(aireLayer);
@@ -415,9 +468,20 @@ document.addEventListener('DOMContentLoaded', () => {
             sprayBanner.classList.remove('hidden');
         }
 
-        // D. Módulo Urbano
-        setTxt(document.getElementById('main-temp'), modoUrbano.sensacion_termica_c !== undefined ? `${Math.round(modoUrbano.sensacion_termica_c)}°` : '--°');
-        setTxt(document.getElementById('real-temp'), modoUrbano.temperatura_c !== undefined ? modoUrbano.temperatura_c : '--');
+        // D. Módulo Urbano: Sensación Térmica (principal) vs Temperatura Real (sensor físico)
+        const stVal = (modoUrbano.sensacion_termica_c !== undefined && modoUrbano.sensacion_termica_c !== null)
+            ? modoUrbano.sensacion_termica_c
+            : modoUrbano.temperatura_c;
+        const tempRealVal = (modoUrbano.temperatura_c !== undefined && modoUrbano.temperatura_c !== null)
+            ? modoUrbano.temperatura_c
+            : '--';
+
+        const mainTempEl = document.getElementById('main-temp');
+        setTxt(mainTempEl, stVal !== undefined && stVal !== null ? `${Math.round(stVal)}°` : '--°');
+        if (mainTempEl && stVal !== undefined && stVal !== null) {
+            mainTempEl.setAttribute('aria-label', `Sensación térmica ${Math.round(stVal)} grados Celsius`);
+        }
+        setTxt(document.getElementById('real-temp'), tempRealVal);
         setTxt(document.getElementById('sun-rise'), modoUrbano.salida_sol || '--:--');
         setTxt(document.getElementById('sun-set'), modoUrbano.puesta_sol || '--:--');
 
@@ -533,29 +597,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return { text: 'Luna Nueva', icon: '🌑', desc: '', agro: '' };
         };
         const moon = getLunarPhase();
+        currentMoonData = moon;
         setTxt(document.getElementById('lunar-phase'), moon.text);
         setTxt(document.getElementById('moon-icon'), moon.icon);
-
-        const moonCard = document.getElementById('moon-card');
-        const moonModal = document.getElementById('moon-modal');
-        if (moonCard && moonModal) {
-            moonCard.addEventListener('click', () => {
-                document.getElementById('moon-modal-title').innerText = moon.text + " " + moon.icon;
-                document.getElementById('moon-modal-desc').innerText = moon.desc;
-                document.getElementById('moon-modal-agro').innerText = moon.agro;
-                moonModal.showModal();
-            });
-            document.getElementById('close-moon-modal').addEventListener('click', () => {
-                moonModal.close();
-            });
-            // Cerrar al clickear fuera
-            moonModal.addEventListener('click', (e) => {
-                const rect = moonModal.getBoundingClientRect();
-                if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
-                    moonModal.close();
-                }
-            });
-        }
         // F. Teledetección y Suelo GEE (Sentinel-2, SMAP, Topografía)
         const geeAgro = (data.modulo_agricola && data.modulo_agricola.desde_el_espacio_gee) || modoAgro.satelite_suelo_ndvi || {};
         

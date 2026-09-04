@@ -4,6 +4,7 @@ import logging
 import os
 import time
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 import httpx
 from PIL import Image
@@ -31,6 +32,7 @@ GOES_CACHE_METADATA = {
 
 def _parsear_timestamp_noaa(filename: str) -> tuple[str, str, str]:
     """Extrae timestamps UTC y hora local de Chile a partir del nombre de archivo NOAA."""
+    tz_chile = ZoneInfo("America/Santiago")
     try:
         prefix = filename.split("_")[0]
         year = int(prefix[:4])
@@ -38,12 +40,11 @@ def _parsear_timestamp_noaa(filename: str) -> tuple[str, str, str]:
         hour = int(prefix[7:9])
         minute = int(prefix[9:11])
         dt_utc = datetime(year, 1, 1, tzinfo=timezone.utc) + timedelta(days=day_of_year - 1, hours=hour, minutes=minute)
-        # Chile Continental (UTC-4)
-        dt_cl = dt_utc - timedelta(hours=4)
+        dt_cl = dt_utc.astimezone(tz_chile)
         return dt_utc.isoformat(), dt_cl.strftime("%H:%M hrs"), dt_cl.strftime("%d/%m/%Y")
     except Exception:
         now_utc = datetime.now(timezone.utc)
-        now_cl = now_utc - timedelta(hours=4)
+        now_cl = now_utc.astimezone(tz_chile)
         return now_utc.isoformat(), now_cl.strftime("%H:%M hrs"), now_cl.strftime("%d/%m/%Y")
 
 
@@ -125,9 +126,10 @@ async def procesar_video_goes19(horas_ventana: int = 6) -> dict:
                     if images:
 
                         def guardar_webp(imgs):
+                            tmp_path = f"{WEBP_OUTPUT_PATH}.tmp"
                             try:
                                 imgs[0].save(
-                                    WEBP_OUTPUT_PATH,
+                                    tmp_path,
                                     format="WEBP",
                                     save_all=True,
                                     append_images=imgs[1:],
@@ -136,9 +138,15 @@ async def procesar_video_goes19(horas_ventana: int = 6) -> dict:
                                     quality=78,
                                     method=1,
                                 )
+                                os.replace(tmp_path, WEBP_OUTPUT_PATH)
                             finally:
                                 for i in imgs:
                                     i.close()
+                                if os.path.exists(tmp_path):
+                                    try:
+                                        os.remove(tmp_path)
+                                    except OSError:
+                                        pass
 
                         logger.info("⏳ Compilando bucle WebP HD de 6 horas...")
                         await asyncio.to_thread(guardar_webp, images)

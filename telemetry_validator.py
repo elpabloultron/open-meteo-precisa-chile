@@ -104,7 +104,7 @@ def sanitizar_numero(v: Any) -> float | None:
     if isinstance(v, (int, float)):
         if math.isnan(v) or math.isinf(v):
             return None
-        if v in (9999.0, -9999.0, 999.0, 99.0, -99.0, 9900.0):
+        if v in (9999.0, -9999.0, 999.0, 9900.0):
             return None
         return float(v)
 
@@ -117,7 +117,7 @@ def sanitizar_numero(v: Any) -> float | None:
         return None
     try:
         val = float(m.group())
-        if val in (9999.0, -9999.0, 999.0, 99.0, -99.0, 9900.0):
+        if val in (9999.0, -9999.0, 999.0, 9900.0):
             return None
         if val >= 9000.0 or val <= -9000.0:
             return None
@@ -128,14 +128,17 @@ def sanitizar_numero(v: Any) -> float | None:
 
 def validar_paquete_telemetria(data: dict[str, Any]) -> dict[str, Any]:
     """Aplica el conjunto de validaciones WMO-No. 8 a un registro completo de telemetría."""
-    t = validar_temperatura(data.get("temperatura_c") or data.get("temperatura"))
-    hr = validar_humedad_relativa(data.get("humedad_relativa") or data.get("humedad"))
-    td = validar_punto_rocio(data.get("punto_rocio_c") or data.get("punto_rocio"), t_actual=t)
-    v_kmh = validar_viento_kmh(data.get("viento_kmh") or data.get("velocidad_viento"))
-    v_dir = validar_direccion_viento(data.get("direccion_viento_grados") or data.get("direccion_viento"))
-    p_hpa = validar_presion_hpa(data.get("presion_hpa") or data.get("presion_absoluta"))
-    rain = validar_lluvia_mm(data.get("lluvia_mm") or data.get("lluvia_acumulada_hoy_mm") or data.get("lluviadiaria"))
-    rad = validar_radiacion_solar(data.get("radiacion_w_m2") or data.get("radiacion_solar"))
+    def _first_not_none(*vals):
+        return next((v for v in vals if v is not None), None)
+
+    t = validar_temperatura(_first_not_none(data.get("temperatura_c"), data.get("temperatura")))
+    hr = validar_humedad_relativa(_first_not_none(data.get("humedad_relativa"), data.get("humedad")))
+    td = validar_punto_rocio(_first_not_none(data.get("punto_rocio_c"), data.get("punto_rocio")), t_actual=t)
+    v_kmh = validar_viento_kmh(_first_not_none(data.get("viento_kmh"), data.get("velocidad_viento")))
+    v_dir = validar_direccion_viento(_first_not_none(data.get("direccion_viento_grados"), data.get("direccion_viento")))
+    p_hpa = validar_presion_hpa(_first_not_none(data.get("presion_hpa"), data.get("presion_absoluta")))
+    rain = validar_lluvia_mm(_first_not_none(data.get("lluvia_mm"), data.get("lluvia_acumulada_hoy_mm"), data.get("lluviadiaria")))
+    rad = validar_radiacion_solar(_first_not_none(data.get("radiacion_w_m2"), data.get("radiacion_solar")))
 
     return {
         "temperatura_c": t,

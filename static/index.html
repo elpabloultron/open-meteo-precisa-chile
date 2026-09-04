@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MeteoPrecisa — Estación Meteorológica y Satelital Hiperlocal</title>
     
     <!-- PWA Manifest & Icons -->
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     
     <!-- Estilos CSS3 Nativos -->
-    <link rel="stylesheet" href="style.css?v=10.8">
+    <link rel="stylesheet" href="style.css?v=10.9">
 </head>
 <body>
     <!-- Buscador Superior -->
@@ -106,10 +106,13 @@
             
             <div class="hero-temp-card">
                 <div class="temp-primary">
-                    <span id="main-temp" class="hero-degrees">--°</span>
+                    <div class="temp-main-display">
+                        <span class="temp-type-tag">Sensación Térmica</span>
+                        <span id="main-temp" class="hero-degrees" aria-label="Sensación térmica">--°</span>
+                    </div>
                     <div class="temp-details">
                         <span id="weather-condition" class="condition-tag">--</span>
-                        <span class="feels-like-text">T. Real: <strong id="real-temp">--</strong>°C</span>
+                        <span class="real-temp-text">T. Real: <strong id="real-temp">--</strong>°C</span>
                     </div>
                 </div>
                 <div class="hero-sun-moon">
@@ -252,7 +255,7 @@
                         <strong id="solar-rad" class="metric-val">--</strong>
                     </div>
                 </div>
-                <div class="metric-card" id="moon-card" style="cursor: pointer;" title="Haz clic para ver recomendaciones agrícolas">
+                <div class="metric-card" id="moon-card" role="button" tabindex="0" aria-haspopup="dialog" style="cursor: pointer;" title="Haz clic para ver recomendaciones agrícolas y ciclo lunar">
                     <span class="metric-icon" id="moon-icon">🌕</span>
                     <div class="metric-info">
                         <span class="metric-label">Fase Lunar <span class="tooltip" title="Ciclo lunar actual, clave para podas, siembras y movimiento de savia.">[?]</span></span>
@@ -421,7 +424,7 @@
     <!-- MODAL 1: VISOR SATELITAL GOES-19 EN VIVO -->
     <div id="modal-satelite" class="modal-overlay hidden">
         <div class="modal-content glass-panel modal-sat-content">
-            <button id="close-satelite" class="close-modal">✖</button>
+            <button id="close-satelite" class="close-modal" aria-label="Cerrar visor satelital">✖</button>
             <div class="modal-sat-header">
                 <h2>🛰️ Satélite GOES-19 Band 13 (Loop 24h)</h2>
                 <span class="sat-badge">NOAA NESDIS • Infrarrojo Limpio</span>
@@ -442,7 +445,7 @@
     <!-- MODAL 2: TRAZABILIDAD METROLÓGICA DE SENSORES -->
     <div id="modal-trazabilidad" class="modal-overlay hidden">
         <div class="modal-content glass-panel modal-trace-content">
-            <button id="close-trazabilidad" class="close-modal">✖</button>
+            <button id="close-trazabilidad" class="close-modal" aria-label="Cerrar trazabilidad metrológica">✖</button>
             <h2>🔬 Trazabilidad Metrológica OMM</h2>
             <p class="trace-intro">Transparencia metrológica total: cada variable indica el sensor físico exacto que la midió o el algoritmo espacial aplicado.</p>
             
@@ -468,7 +471,7 @@
     <!-- MODAL 3: HISTÓRICO DE DATOS (TIMESCALEDB) -->
     <div id="modal-historico" class="modal-overlay hidden">
         <div class="modal-content glass-panel">
-            <button id="close-historico" class="close-modal">✖</button>
+            <button id="close-historico" class="close-modal" aria-label="Cerrar gráficos históricos">✖</button>
             <h2>📊 Histórico de Datos</h2>
             <p id="historico-rango-disponible" style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 10px;">Disponibilidad: Calculando...</p>
             
@@ -492,7 +495,7 @@
     <!-- MODAL 4: ACERCA DE METEOPRECISA -->
     <div id="modal-acerca" class="modal-overlay hidden">
         <div class="modal-content glass-panel">
-            <button id="close-acerca" class="close-modal">✖</button>
+            <button id="close-acerca" class="close-modal" aria-label="Cerrar fuentes de datos">✖</button>
             <h2>ℹ️ Arquitectura de Datos MeteoPrecisa</h2>
             <div class="acerca-body">
                 <p><strong>1. Red de Telemetría Terrestre:</strong> Integra estaciones de la Dirección Meteorológica de Chile (DMC), Agromet INIA, RedMeteo.cl y la red oficial SINCA del Ministerio del Medio Ambiente.</p>
@@ -510,7 +513,7 @@
             <span id="system-status">Motor Activo</span>
             <span id="network-status-badge" class="net-pill online">🟢 En Línea</span>
         </div>
-        <span class="version-info">MeteoPrecisa v10.5 • Redes: <b id="total-estaciones">--</b></span>
+        <span class="version-info">MeteoPrecisa v10.9 • Redes: <b id="total-estaciones">--</b></span>
     </footer>
 
     <!-- Leaflet JS -->
@@ -523,12 +526,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
     
     <!-- Lógica de Aplicación -->
-    <script src="app.js?v=10.8"></script>
+    <script src="app.js?v=10.9"></script>
     <!-- Modal de Estación -->
-    <dialog id="station-modal" class="station-modal">
+    <dialog id="station-modal" class="station-modal" aria-labelledby="modal-station-name">
         <div class="modal-header">
             <h2 id="modal-station-name">Nombre de Estación</h2>
-            <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+            <button id="modal-close-btn" class="modal-close-btn" aria-label="Cerrar telemetría de estación">&times;</button>
         </div>
         <div class="modal-subheader">
             <span id="modal-station-network" class="badge">Red</span>
@@ -543,10 +546,10 @@
     </dialog>
 
     <!-- Modal de Fase Lunar -->
-    <dialog id="moon-modal" class="station-modal">
+    <dialog id="moon-modal" class="station-modal" aria-labelledby="moon-modal-title">
         <div class="modal-header">
             <h2 id="moon-modal-title">Fase Lunar</h2>
-            <button id="close-moon-modal" class="modal-close-btn">&times;</button>
+            <button id="close-moon-modal" class="modal-close-btn" aria-label="Cerrar información lunar">&times;</button>
         </div>
         <div class="modal-body" style="line-height: 1.5; font-size: 0.95rem; color: var(--text-primary);">
             <p id="moon-modal-desc"></p>

@@ -47,9 +47,12 @@ _SYNC_LOCK = asyncio.Lock()
 
 
 def clean_num(v):
-    if not v or "null" in str(v).lower() or "---" in str(v) or "sin datos" in str(v).lower():
+    if v is None:
         return None
-    m = re.search(r"[-+]?\d*\.\d+|\d+", str(v).replace(",", "."))
+    s = str(v).strip().lower()
+    if not s or "null" in s or "---" in s or "sin datos" in s:
+        return None
+    m = re.search(r"[-+]?\d*\.\d+|\d+", s.replace(",", "."))
     if not m:
         return None
     val = float(m.group())
@@ -59,13 +62,16 @@ def clean_num(v):
 
 
 def clean_agromet_num(v, val_type="temp"):
-    if not v or "null" in str(v).lower() or "---" in str(v) or "sin datos" in str(v).lower():
+    if v is None:
         return None
-    m = re.search(r"[-+]?\d*\.\d+|\d+", str(v).replace(",", "."))
+    s = str(v).strip().lower()
+    if not s or "null" in s or "---" in s or "sin datos" in s:
+        return None
+    m = re.search(r"[-+]?\d*\.\d+|\d+", s.replace(",", "."))
     if not m:
         return None
     val = float(m.group())
-    if val in (9999.0, -9999.0, 999.0, 99.0, -99.0):
+    if val in (9999.0, -9999.0, 999.0):
         return None
     # INIA codifica mediciones usando prefijos o desplazamientos centinela (9900, 990, 99)
     if val >= 9900.0 and val < 10000.0:
@@ -564,6 +570,17 @@ async def ejecutar_sincronizacion_completa():
 
         telemetria_global = CACHE_MEMORIA.get("estaciones_telemetria", {}).copy()
 
+        # Desacoplar procesamiento de GOES-19 para que latencia de NOAA no bloquee la telemetría
+        async def _actualizar_goes_bg():
+            try:
+                g_res = await procesar_video_goes19()
+                if isinstance(g_res, dict) and g_res:
+                    CACHE_MEMORIA["satelite_goes19"] = g_res
+            except Exception as g_err:
+                print(f"⚠️ Aviso en tarea desacoplada GOES-19: {g_err}")
+
+        asyncio.create_task(_actualizar_goes_bg())
+
         try:
             async with httpx.AsyncClient(headers=HEADERS, follow_redirects=True, timeout=15.0) as client:
                 results = await asyncio.wait_for(
@@ -575,10 +592,9 @@ async def ejecutar_sincronizacion_completa():
                         sincronizar_purpleair(client),
                         sincronizar_pronostico_oficial_dmc(client),
                         sincronizar_alertas_senapred(client),
-                        procesar_video_goes19(),
                         return_exceptions=True,
                     ),
-                    timeout=45.0,
+                    timeout=30.0,
                 )
 
                 def get_res(idx, default):

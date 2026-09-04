@@ -25,6 +25,12 @@
     --text-muted: #94a3b8;
     --text-dim: #64748b;
 
+    /* Variables de Componentes y Modales */
+    --bg-card: #0f172a;
+    --bg-secondary: #1e293b;
+    --border-color: rgba(255, 255, 255, 0.12);
+    --text-primary: #f8fafc;
+
     --radius-sm: 8px;
     --radius-md: 14px;
     --radius-lg: 20px;
@@ -122,8 +128,10 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: white;
     border-radius: 50%;
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -349,6 +357,20 @@ body {
     gap: 16px;
 }
 
+.temp-main-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.temp-type-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent-orange);
+    margin-bottom: 2px;
+}
+
 .hero-degrees {
     font-family: var(--font-mono);
     font-size: 3.4rem;
@@ -370,10 +392,15 @@ body {
     color: var(--accent-cyan);
 }
 
-.feels-like-text {
-    font-size: 1.2rem;
-    color: var(--accent-orange);
+.feels-like-text, .real-temp-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
     font-weight: 500;
+}
+
+.feels-like-text strong, .real-temp-text strong {
+    color: #fff;
+    font-family: var(--font-mono);
 }
 
 .hero-sun-moon {
@@ -422,9 +449,9 @@ body {
     font-size: 0.72rem;
     color: var(--text-muted);
     font-weight: 500;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    line-height: 1.25;
+    white-space: normal;
+    word-break: break-word;
 }
 
 .metric-val {
@@ -927,6 +954,8 @@ body {
     color: var(--accent-cyan);
     font-weight: bold;
     font-size: 0.75rem;
+    display: inline-block;
+    padding: 0 2px;
 }
 
 /* MAPA INTERACTIVO MULTIRED Y POPUPS */
@@ -1119,33 +1148,184 @@ body {
     background: rgba(56, 189, 248, 0.25);
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE (< 640px) */
 @media (max-width: 640px) {
+    .search-nav {
+        top: 10px;
+        width: 95%;
+    }
+
     .weather-panel {
         width: 96%;
-        margin-top: 80px;
-        padding: 16px;
+        margin-top: 68px;
+        margin-bottom: 60px;
+        padding: 16px 14px;
     }
     
-    .hero-degrees { font-size: 2.8rem; }
+    .location-badge-group h2 {
+        font-size: 1.25rem;
+    }
+
+    .hero-degrees { font-size: 2.7rem; }
     
+    .hero-temp-card {
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
     .metrics-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 8px;
     }
     
     .header-actions {
         width: 100%;
         justify-content: flex-start;
+        gap: 6px;
     }
     
-    .btn-action { font-size: 0.75rem; padding: 6px 10px; }
+    .btn-action {
+        font-size: 0.75rem;
+        padding: 7px 11px;
+        min-height: 36px;
+    }
 
     .map-legend-box {
-        bottom: 12px;
-        left: 12px;
-        padding: 8px 12px;
-        font-size: 0.72rem;
-        max-width: 170px;
+        bottom: 8px;
+        left: 8px;
+        padding: 6px 10px;
+        font-size: 0.7rem;
+        max-width: 155px;
+        gap: 4px;
+    }
+
+    .legend-item { gap: 6px; }
+
+    .map-container-inner {
+        height: 380px;
+    }
+
+    .modal-content {
+        padding: 18px 14px;
+        width: 95%;
+    }
+
+    .modal-sensors-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 8px;
+    }
+
+    .station-modal {
+        width: 95%;
+        padding: 18px 14px;
+    }
+}
+
+/* PANTALLAS MÓVILES PEQUEÑAS (< 380px: iPhone SE, Galaxy Fold/S8, etc.) */
+@media (max-width: 380px) {
+    .search-nav {
+        top: 8px;
+        width: 96%;
+    }
+
+    #search-input {
+        font-size: 0.9rem;
+        padding: 8px 4px;
+    }
+
+    .weather-panel {
+        margin-top: 64px;
+        margin-bottom: 55px;
+        padding: 12px 10px;
+        border-radius: var(--radius-lg);
+    }
+
+    .location-badge-group h2 {
+        font-size: 1.15rem;
+    }
+
+    .hero-temp-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .hero-degrees {
+        font-size: 2.4rem;
+    }
+
+    .hero-sun-moon {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        font-size: 0.8rem;
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .metric-card {
+        padding: 8px 6px;
+        gap: 6px;
+    }
+
+    .metric-icon {
+        font-size: 1.1rem;
+    }
+
+    .metric-label {
+        font-size: 0.68rem;
+    }
+
+    .metric-val {
+        font-size: 0.85rem;
+    }
+
+    .forecast-row {
+        padding: 6px 8px;
+        font-size: 0.78rem;
+    }
+
+    .forecast-day {
+        width: 75px;
+        font-size: 0.75rem;
+    }
+
+    .topo-badges-row {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .topo-badge {
+        width: 100%;
+    }
+
+    .system-footer {
+        padding: 6px 10px;
+        padding-bottom: max(6px, env(safe-area-inset-bottom, 6px));
+        font-size: 0.7rem;
+    }
+
+    .system-footer .version-info {
+        display: none;
+    }
+
+    .modal-sensors-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .sensor-card {
+        padding: 8px 6px;
+    }
+
+    .sensor-value {
+        font-size: 0.95rem;
     }
 }
 
