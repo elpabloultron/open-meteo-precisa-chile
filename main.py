@@ -94,7 +94,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="MeteoPrecisa Chile - Engine Unificado Multired",
     description="Backend Oficial Open Source: Google Earth Engine (NDVI, Humedad de Suelo), Capas Viento Windy, Modo Urbano, Modo Agrícola, Calidad del Aire Dual (SINCA+AQI), GOES-19, DMC y Open-Meteo",
-    version="10.4.0",
+    version="10.5.0",
     lifespan=lifespan,
 )
 
@@ -465,7 +465,7 @@ def status():
     return {
         "status": "online",
         "servicio": "MeteoPrecisa Chile - Engine Multired Unificado",
-        "version": "10.4.0",
+        "version": "10.5.0",
         "stac_engine_activo": True,
         "cache_backend": settings.cache_backend,
         "cache_status": CACHE_MEMORIA.get("status", "uninitialized"),
