@@ -4,45 +4,67 @@
 [![Python: 3.11+](https://img.shields.io/badge/Python-3.11%2B-brightgreen.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109%2B-009688.svg)](https://fastapi.tiangolo.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com/)
+[![TimescaleDB](https://img.shields.io/badge/TimescaleDB-PostgreSQL-336791.svg)](https://www.timescale.com/)
+[![Stations: 4312](https://img.shields.io/badge/Estaciones%20F%C3%ADsicas-4.312-blue.svg)](https://github.com/elpabloultron/open-meteo-precisa-chile)
 [![Standards](https://img.shields.io/badge/Metrology-WMO--No.%208-orange.svg)](https://library.wmo.int/)
 
-**Plataforma Open-Source de Inteligencia Agrometeorológica Hiperlocal, Teledetección Satelital y Calidad del Aire para Chile.**
+**Plataforma Open-Source de Inteligencia Hidrometeorológica, Teledetección Satelital y Calidad del Aire para Chile.**
 
-MeteoPrecisa unifica en tiempo real más de 700 estaciones meteorológicas terrestres públicas, ciudadanas y privadas a lo largo del territorio chileno (DMC, Agromet INIA, RedMeteo, SINCA MMA, PurpleAir), cruzándolas con imágenes satelitales GOES-19 NOAA en HD y análisis geoespacial de Google Earth Engine (Sentinel-2, MODIS, ERA5-Land).
+MeteoPrecisa unifica en tiempo real **4.312 estaciones físicas** públicas, ciudadanas y oficiales a lo largo del territorio chileno:
+- **DGA (Dirección General de Aguas):** 3.517 estaciones de la Red Hidrométrica Nacional (Fluviométricas, Embalses, Nivométricas, Meteorológicas y Sedimentométricas), con caudales instantáneos en $\text{m}^3/\text{s}$, tendencias de crecida, cotas y volúmenes de embalses en $\text{Hm}^3$.
+- **DMC (Dirección Meteorológica de Chile):** Red de estaciones meteorológicas aeronáuticas y sinópticas oficiales.
+- **Agromet INIA / RAN:** Red agroclimática nacional con sensores de temperatura, humedad, viento y precipitación.
+- **RedMeteo.cl:** Red ciudadana y privada de estaciones automatizadas en todo el país.
+- **SINCA MMA:** Red oficial de monitoreo de calidad del aire del Ministerio del Medio Ambiente (MP2.5, MP10, CO, $O_3$, $NO_2$).
+- **PurpleAir:** Sensores hiperlocales de material particulado de alta resolución temporal.
 
-Diseñado bajo principios de ingeniería de alta eficiencia (*Ponytail*), entrega respuestas HTTP en **<50ms** mediante indexación espacial KDTree y persistencia atómica híbrida en memoria y SQLite WAL.
+Cruzado con bucles satelitales en alta resolución de **NOAA GOES-19** (Band 13 Clean IR), análisis geoespacial de **Google Earth Engine** (Sentinel-2, MODIS, ERA5-Land) y radar Doppler en vivo.
+
+Diseñado bajo principios de ingeniería de alta eficiencia (*Ponytail*), entrega respuestas HTTP en **<15ms** mediante indexación espacial KDTree y una arquitectura desacoplada de almacenamiento local permanente (TimescaleDB / persistencia atómica).
 
 ---
 
-## 🏗️ Arquitectura del Sistema
+## 🏛️ Principio Arquitectónico: Desacoplamiento Estricto Ingesta vs Servicio
 
 ```mermaid
 graph TD
-    A[Redes Terrestres: DMC / Agromet / RedMeteo / SINCA / PurpleAir] -->|Async Polling| B[sincronizador_background.py]
-    G[NOAA GOES-19 Band 13 Clean IR] -->|Regex Frame Scraper| H[goes_processor.py]
-    B --> C[telemetry_validator.py - Reglas Físicas WMO-No. 8]
-    C --> D[Caché RAM + Snapshot Atómico JSON + SQLite WAL]
-    H --> I[goes19_loop.webp 6h Loop]
-    D --> E[FastAPI Engine - main.py & KDTree Espacial]
-    E --> F[PWA Frontend Vanilla & Mapas Leaflet]
-    I --> F
-    J[Google Earth Engine - Sentinel-2 / ERA5] -->|Async Threadpool| E
-    K[Alertas SENAPRED & Motor Fitosanitario/Heladas] --> E
+    subgraph Ingesta_Asincrona_Background [Worker en Segundo Plano - sincronizador_background.py]
+        A[Red Hidrométrica DGA - ArcGIS & Caudales] -->|Batch Polling| B(Normalizador & Filtro de Centinelas)
+        C[Redes Terrestres: DMC / Agromet / RedMeteo / SINCA] -->|Async Polling| B
+        D[NOAA GOES-19 Band 13 Clean IR] -->|Regex Frame Scraper| E[goes_processor.py]
+        B --> F[telemetry_validator.py - Validación WMO-No. 8]
+    end
+
+    subgraph Almacenamiento_Propio [Base de Datos & Caché Persistente]
+        F --> G[(TimescaleDB - Series Temporales db_store.py)]
+        F --> H[Caché RAM CACHE_MEMORIA + cache_servidor.json]
+    end
+
+    subgraph Servicio_App [FastAPI Engine - main.py]
+        H --> I[KDTree Espacial Sub-milisegundo]
+        G --> J[Históricos y Curvas de Tendencia]
+        I --> K[Endpoints /api/v1/... < 15ms]
+        J --> K
+    end
+
+    subgraph Frontend_PWA [Cliente Web & Móvil]
+        K --> L[PWA Vanilla JS + Leaflet Map & Sensores en Vivo]
+    end
 ```
 
-### 1. Ingesta Asíncrona y Validación Metrológica (WMO-No. 8)
-- **`sincronizador_background.py`**: Loop asíncrono con control atómico `_SYNC_LOCK` que sondea periódicamente redes meteorológicas terrestres.
-- **`telemetry_validator.py`**: Validador estricto de integridad física según la norma WMO-No. 8. Filtra centinelas de hardware (`9900`, `990`, `99`), valida consistencia psicrométrica ($T_d \le T$) y ajusta barometría para estaciones de alta montaña andina (hasta 500 hPa).
+> [!IMPORTANT]
+> **Por qué no consultamos APIs externas durante las peticiones del usuario:**
+> 1. **Prevención de Bloqueos (Anti-Rate-Limiting):** Si cada clic de usuario disparara consultas directas a los servidores de origen (DGA, DMC, etc.), las IPs serían bloqueadas por exceso de tráfico.
+> 2. **Acumulación del Activo de Datos:** Almacenar de forma periódica en nuestra propia base de datos (TimescaleDB) nos permite conservar el historial hidrometeorológico real de Chile de forma soberana e independiente.
+> 3. **Rendimiento Ultrarrápido:** El usuario jamás experimenta la latencia ni las caídas de servicios externos; todas las respuestas se sirven desde memoria y base local en menos de 15 ms.
 
-### 2. Teledetección y Radares Satelitales
-- **`goes_processor.py`**: Descarga y compila en bucles WebP HD de 6 horas el canal infrarrojo limpio (Band 13) del satélite geoestacionario NOAA GOES-19.
-- **`gee_service.py` & `gee_cache_db.py`**: Integración con Google Earth Engine para NDVI, temperatura superficial (LST) e índices hídricos con base de datos SQLite indexada en modo WAL.
-
-### 3. API Servidor y Búsqueda Espacial KDTree
-- **`main.py`**: API REST en FastAPI que utiliza árboles espaciales KDTree (`scipy.spatial.cKDTree`) sobre coordenadas esféricas para resolver la estación más cercana en submilisegundos ($O(\log N)$).
-
-### 4. PWA Frontend Ultraligera
-- **`static/`**: Interfaz unificada en HTML5/CSS3/JavaScript nativo sin sobrecargas de frameworks pesados, con soporte PWA offline vía Service Worker (`sw.js`) con estrategia *Cache-First*.
+### Componentes Clave:
+1. **`sincronizador_background.py`**: Loop asíncrono que sondea periódicamente redes meteorológicas e hidrométricas, enriqueciendo en lotes controlados con `asyncio.Semaphore`.
+2. **`dga_telemetria.py` & `dga_scraper.py`**: Conectores para los servicios ArcGIS REST oficiales del MOP (`DGA/ALERTAS` y `DGA/ESTACION_EMBALSE`) y enriquecimiento fluviométrico de cauces hídricos.
+3. **`telemetry_validator.py`**: Validador estricto según la norma WMO-No. 8. Filtra centinelas de hardware (`9900`, `990`, `99`), valida consistencia psicrométrica ($T_d \le T$) y ajusta barometría andina hasta 500 hPa.
+4. **`db_store.py`**: Conector con TimescaleDB / PostGIS para persistencia de instantáneas históricas multi-sensor.
+5. **`main.py`**: API REST en FastAPI que utiliza árboles espaciales KDTree (`scipy.spatial.cKDTree`) sobre coordenadas esféricas ($O(\log N)$).
+6. **`static/`**: Interfaz PWA en HTML5/CSS3/JavaScript nativo sin frameworks pesados, con soporte offline vía Service Worker (`sw.js`).
 
 ---
 
@@ -107,12 +129,13 @@ uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
 ## 🧪 Calidad y Pruebas Automatizadas
 
-El proyecto cuenta con 41 pruebas unitarias y de integración que validan:
+El proyecto cuenta con 45 pruebas unitarias y de integración que validan:
 - Conformidad con estándares WMO-No. 8.
 - Búsqueda espacial KDTree y triangulación IDW.
 - Latencia de respuesta en endpoints cacheados (<50ms).
 - Persistencia atómica contra cortes de energía (`fsync` + `os.replace`).
 - Modos WAL de SQLite y compresión GZIP.
+- Protección y mitigación de seguridad (CSP, cabeceras HSTS, anti-traversal).
 
 Para ejecutar las pruebas:
 ```bash
@@ -126,11 +149,14 @@ ruff check .
 
 | Método | Endpoint | Descripción |
 | :--- | :--- | :--- |
-| `GET` | `/api/v1/status` | Estado en vivo del motor, telemetría y conteo de estaciones. |
-| `GET` | `/api/v1/clima-hiperlocal?lat={lat}&lon={lon}` | Telemetría en tiempo real con triangulación física y atribución de sensores. |
-| `GET` | `/api/v1/estaciones` | Catálogo completo unificado de estaciones meteorológicas de Chile. |
-| `GET` | `/api/v1/alertas/senapred` | Alertas meteorológicas y de emergencia oficiales activas. |
+| `GET` | `/api/v1/status` | Estado en vivo del motor, telemetría y conteo unificado de estaciones (4.312). |
+| `GET` | `/api/v1/clima-hiperlocal?lat={lat}&lon={lon}` | Telemetría en tiempo real con triangulación física, atribución y estación DGA más cercana. |
+| `GET` | `/api/v1/estaciones` | Catálogo consolidado de 4.312 estaciones con tipo DGA y timestamps de actualización. |
+| `GET` | `/api/v1/estacion/{id}` | Telemetría consolidada y metadatos de una estación física (DMC, Agromet, RedMeteo, SINCA, DGA). |
+| `GET` | `/api/v1/alertas-senapred` | Alertas meteorológicas y de emergencia oficiales activas de SENAPRED. |
 | `GET` | `/api/v1/satellite/latest-loop` | Metadatos y fotogramas del bucle infrarrojo GOES-19. |
+| `GET` | `/api/v1/radar/doppler-tiles` | Capas Doppler de reflectividad de radar RainViewer en tiempo real. |
+| `GET` | `/api/v1/historico/{id}` | Series temporales históricas persistidas en TimescaleDB. |
 
 ---
 

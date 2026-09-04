@@ -1,5 +1,19 @@
 # Historial de Versiones (Changelog) - Open Meteo Precisa Chile
 
+## [10.5.0] - 2026-09-04
+### Añadido
+- **Integración de la Red Hidrométrica Nacional DGA (3.517 Estaciones):** Ingesta masiva oficial de la Dirección General de Aguas (MOP). Catálogo nacional consolidado alcanza **4.312 estaciones físicas** en Chile.
+- **Telemetría Hidrométrica en Vivo:**
+  - Capa ALERTAS DGA (`MapServer/0`): Caudales instantáneos en $\text{m}^3/\text{s}$ (`mod_valor`), índices y umbrales de alerta de crecida (`mod_alerta`, `mod_indale`) y marcas de tiempo satelitales.
+  - Capa EMBALSES DGA (`MapServer/0`): Cota de nivel (`nivel`), volumen acumulado en $\text{Hm}^3$ (`volumen`) y porcentaje de capacidad de embalses clave de Chile (Recoleta, Cogotí, Ralco, Pangue, Colbún, Maule, Laja).
+- **Enriquecimiento Fluviométrico Asíncrono en Segundo Plano (`enriquecer_telemetria_dga_fluviometrica_lote`):** Procesa ríos, esteros y canales en lotes con semáforo de concurrencia (`asyncio.Semaphore(4)`) y timeouts de 2.5s, persistiendo los datos directamente en TimescaleDB y caché.
+- **Sensores Físicos en UI (PWA):** Modal de estación enriquecido con caudal de río, tendencia, nivel de agua, volumen de embalse, umbral de alerta DGA, temperatura mínima/máxima del día y dirección del viento con rosa náutica.
+- **Distancia y Tipología DGA en Dashboard:** La tarjeta de estaciones DGA cercanas calcula y muestra la distancia lineal exacta (`📏 a X km`) y su tipología (Fluviométrica, Embalse, Nivométrica, Sedimentométrica).
+
+### Cambiado
+- **Garantía de Desacoplamiento Estricto Ingesta vs Servicio:** Se eliminaron llamadas salientes bajo demanda en endpoints de usuario (`main.py`). La API responde en **< 15 ms** exclusivamente desde base de datos y memoria local. Esto previene rate-limits, bloqueos de IP de proveedores y garantiza la acumulación de datos históricos soberanos en TimescaleDB.
+- **Suite de Calidad:** 45 pruebas unitarias automatizadas aprobadas y linter `ruff` 100% limpio.
+
 ## [10.4.0] - 2026-08-29
 ### Añadido
 - **Módulo de Exploración Espacial Dedicado:** El mapa interactivo Leaflet ahora se aloja en un módulo visible (`#modulo-mapa`) integrado de manera nativa en el flujo del dashboard, abandonando el comportamiento previo de mapa en fondo de pantalla.
