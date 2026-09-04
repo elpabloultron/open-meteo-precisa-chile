@@ -20,19 +20,32 @@ def evaluar_alertas_meteorologicas(clima_data: dict) -> list:
     indice_uv = modo_urbano.get("indice_uv") if modo_urbano.get("indice_uv") is not None else 0
     vpd = modo_agricola.get("deficit_presion_vapor_vpd_kpa") if modo_agricola.get("deficit_presion_vapor_vpd_kpa") is not None else 1.0
 
-    # --- ❄️ HELADAS RADIATIVAS (AGRÍCOLA) ---
+    # --- ❄️ HELADAS RADIATIVAS / ADVECTIVAS (AGRÍCOLA) ---
     if temp_min <= 0.0 or (temp_actual <= 2.0 and punto_rocio <= 0.0):
-        alertas.append(
-            {
-                "id": "helada_critica",
-                "nivel": "critico",
-                "tipo": "agricola",
-                "titulo": "❄️ Alerta Crítica de Helada Radiativa",
-                "mensaje": f"Temperatura prevista de {temp_min}°C con punto de rocío a {punto_rocio}°C.",
-                "recomendacion": "Activar inmediatamente hélices antiheladas o microaspersión de riego sobre el follaje antes de las 04:00 AM.",
-                "icono": "Snowflake",
-            }
-        )
+        if viento_kmh >= 10.0:
+            alertas.append(
+                {
+                    "id": "helada_advectiva",
+                    "nivel": "critico",
+                    "tipo": "agricola",
+                    "titulo": "❄️ Alerta Crítica de Helada Advectiva (Viento Polar)",
+                    "mensaje": f"Temperatura de {temp_min}°C con viento de {viento_kmh} km/h y rocío a {punto_rocio}°C.",
+                    "recomendacion": "Helada por viento polar. NO usar hélices antiheladas (inútiles sin inversión térmica). Proteger con cubiertas o calefacción activa.",
+                    "icono": "Snowflake",
+                }
+            )
+        else:
+            alertas.append(
+                {
+                    "id": "helada_critica",
+                    "nivel": "critico",
+                    "tipo": "agricola",
+                    "titulo": "❄️ Alerta Crítica de Helada Radiativa",
+                    "mensaje": f"Temperatura prevista de {temp_min}°C con punto de rocío a {punto_rocio}°C.",
+                    "recomendacion": "Activar inmediatamente hélices antiheladas o microaspersión de riego sobre el follaje antes de las 04:00 AM.",
+                    "icono": "Snowflake",
+                }
+            )
     elif temp_min <= 3.0:
         alertas.append(
             {
@@ -73,14 +86,14 @@ def evaluar_alertas_meteorologicas(clima_data: dict) -> list:
                 "icono": "Droplets",
             }
         )
-    elif vpd < 0.3:
+    elif vpd < 0.3 and temp_actual >= 12.0:
         alertas.append(
             {
                 "id": "vpd_saturado",
                 "nivel": "advertencia",
                 "tipo": "agricola",
-                "titulo": "🍄 Riesgo Fitopatológico (VPD < 0.3 kPa)",
-                "mensaje": f"Humedad relativa saturada prolongada con VPD de {vpd} kPa.",
+                "titulo": "🍄 Riesgo Fitopatológico (VPD < 0.3 kPa y T ≥ 12°C)",
+                "mensaje": f"Humedad saturada y temperatura favorable ({temp_actual}°C) con VPD de {vpd} kPa.",
                 "recomendacion": "Condiciones críticas para proliferación de hongos (Botrytis, Oídio). Ventilar invernaderos y suspender riegos foliares.",
                 "icono": "Droplets",
             }

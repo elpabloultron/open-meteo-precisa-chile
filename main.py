@@ -127,6 +127,18 @@ async def refresh_cache_before_api(request: Request, call_next):
     response.headers["X-Content-Type-Options"] = "nosniff"
     response.headers["X-Frame-Options"] = "DENY"
     response.headers["X-XSS-Protection"] = "1; mode=block"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    response.headers["Permissions-Policy"] = "geolocation=(self), microphone=(), camera=()"
+    response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+    response.headers["Content-Security-Policy"] = (
+        "default-src 'self'; "
+        "script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; "
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; "
+        "font-src 'self' https://fonts.gstatic.com; "
+        "img-src 'self' data: blob: https:; "
+        "connect-src 'self' https:; "
+        "worker-src 'self' blob:;"
+    )
 
     # Control de caché
     path = request.url.path
@@ -309,10 +321,14 @@ def calcular_punto_rocio(temp_c: float, hr: float) -> float:
 
 
 def calcular_vpd(temp_c: float, hr: float) -> float:
-    """Calcula el Déficit de Presión de Vapor (VPD) en kPa (FAO/Tetens)."""
+    """Calcula el Déficit de Presión de Vapor (VPD) en kPa (FAO/WMO Tetens distinguiendo agua/hielo)."""
     try:
         hr = max(0.0, min(100.0, float(hr)))
-        es = 0.61078 * math.exp((17.27 * temp_c) / (temp_c + 237.3))
+        if temp_c >= 0.0:
+            es = 0.61078 * math.exp((17.27 * temp_c) / (temp_c + 237.3))
+        else:
+            # Tetens sobre hielo (WMO / Murray 1967) evita sobrestimar VPD hasta un 21%
+            es = 0.61078 * math.exp((21.875 * temp_c) / (temp_c + 265.5))
         ea = es * (hr / 100.0)
         vpd = es - ea
         return round(max(0.0, vpd), 2)
@@ -507,50 +523,6 @@ async def obtener_estadisticas_db_api():
         return {"status": "error", "mensaje": str(e)}
 
 
-@app.get("/api/v1/satelite-goes19")
-async def obtener_satelite_goes19(
-    resolucion: str = Query(
-        "450x270", description="Resolución deseada: 450x270 (ultra liviana 15KB), 900x540 o 1800x1080"
-    ),
-    ventana_horas: int = Query(24, description="Ventana temporal en horas (12 o 24)"),
-):
-    sat_cache = CACHE_MEMORIA.get("satelite_goes19", {})
-    f_1800 = sat_cache.get("frames_1800x1080", [])
-    f_900 = sat_cache.get("frames_900x540", [])
-    f_450 = sat_cache.get("frames_450x270", [])
-
-    if "1800" in resolucion:
-        frames = f_1800 or f_900 or f_450
-    elif "900" in resolucion:
-        frames = f_900 or f_1800 or f_450
-    else:
-        frames = f_450 or f_900 or f_1800
-
-    if ventana_horas <= 12:
-        frames = frames[-72:] if len(frames) >= 72 else frames
-
-    if not frames:
-        frames = ["https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ssa/GEOCOLOR/latest.jpg"]
-
-    total = len(frames)
-    fps = 10
-    intervalo_ms = 100
-    duracion = round(total / fps, 1)
-
-    return {
-        "status": "ok",
-        "resolucion": resolucion,
-        "total_frames": total,
-        "ventana_horas": ventana_horas,
-        "reproduccion_fluida": {
-            "fps_recomendado": fps,
-            "intervalo_ms": intervalo_ms,
-            "duracion_animacion_segundos": duracion,
-            "bucle_continuo": True,
-        },
-        "frames": frames,
-        "fuente": "NOAA STAR GOES-19 Infrarrojo GeoColor",
-    }
 
 
 @app.get("/api/v1/estacion/{estacion_id}")
@@ -664,10 +636,10 @@ async def buscar_estaciones(
     # 2. Búsqueda Geográfica de Ciudades / Comunas en Chile
     lugares_geo = []
     try:
-        url_geo = f"https://geocoding-api.open-meteo.com/v1/search?name={q_clean}&country=CL&language=es&count=6"
-        async with httpx.AsyncClient(headers=HEADERS, timeout=2.0) as client:
-            resp_geo = await client.get(url_geo)
-            if resp_geo.status_code == 200:
+        url_geo = "https://geocoding-api.open-meteo.com/v1/search"
+        params_geo = {"name": q_clean, "country": "CL", "language": "es", "count": 6}
+        resp_geo = await get_http_client().get(url_geo, params=params_geo)
+        if resp_geo.status_code == 200:
                 geo_data = resp_geo.json()
                 for item in geo_data.get("results", []):
                     nombre_ciudad = item.get("name", "")
@@ -758,7 +730,8 @@ def calcular_triangulacion_idw(
 
 @app.get("/api/v1/clima-hiperlocal")
 async def obtener_clima_hiperlocal(
-    lat: float = Query(..., description="Latitud GPS"), lon: float = Query(..., description="Longitud GPS")
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitud GPS"),
+    lon: float = Query(..., ge=-180.0, le=180.0, description="Longitud GPS"),
 ):
     catalogo = CACHE_MEMORIA.get("catalogo_estaciones", [])
 
@@ -829,7 +802,7 @@ async def obtener_clima_hiperlocal(
             f"https://api.open-meteo.com/v1/forecast?"
             f"latitude={lat}&longitude={lon}&"
             f"current=temperature_2m,relative_humidity_2m,apparent_temperature,dew_point_2m,precipitation,"
-            f"weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m,surface_pressure,uv_index&"
+            f"weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m,surface_pressure,pressure_msl,uv_index&"
             f"hourly=temperature_2m,relative_humidity_2m,precipitation,weather_code,wind_speed_10m,direct_normal_irradiance&"
             f"daily=weather_code,temperature_2m_max,temperature_2m_min,et0_fao_evapotranspiration,precipitation_sum,sunrise,sunset,uv_index_max,moonrise,moonset,moon_phase&"
             f"timezone=America%2FSantiago"
@@ -930,7 +903,8 @@ async def obtener_clima_hiperlocal(
     )
 
     # 1. MODULO URBANO
-    presion_val = _safe_float(curr_om.get("surface_pressure") or telemetria_directa.get("presion_hpa"), 1013.25)
+    presion_msl = _safe_float(curr_om.get("pressure_msl"), None)
+    presion_val = presion_msl if presion_msl is not None else _safe_float(curr_om.get("surface_pressure") or telemetria_directa.get("presion_hpa"), 1013.25)
     modo_urbano = {
         "temperatura_c": round(_safe_float(temp_final, 15.0), 1),
         "sensacion_termica_c": round(_safe_float(apparent_temp, temp_final), 1),
@@ -1276,28 +1250,28 @@ async def obtener_clima_hiperlocal(
 
 @app.get("/api/v1/weather/current")
 async def obtener_clima_actual_api(
-    lat: float = Query(..., description="Latitud GPS"),
-    lng: float | None = Query(None, description="Longitud GPS (lng)"),
-    lon: float | None = Query(None, description="Longitud GPS (lon)"),
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitud GPS"),
+    lng: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lng)"),
+    lon: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lon)"),
 ):
     longitud_final = lng if lng is not None else lon
-    if longitud_final is None:
-        raise HTTPException(status_code=400, detail="Debe proporcionar el parámetro 'lng' o 'lon'.")
+    if longitud_final is None or not (-180.0 <= longitud_final <= 180.0):
+        raise HTTPException(status_code=400, detail="Debe proporcionar un parámetro de longitud válido (-180 a 180).")
     return await obtener_clima_hiperlocal(lat=lat, lon=longitud_final)
 
 
 @app.get("/api/v1/historico/curvas")
 async def obtener_curvas_historicas_graficos(
-    lat: float = Query(..., description="Latitud GPS"),
-    lon: float | None = Query(None, description="Longitud GPS (lon)"),
-    lng: float | None = Query(None, description="Longitud GPS (lng)"),
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitud GPS"),
+    lon: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lon)"),
+    lng: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lng)"),
     horas: int = Query(24, ge=6, le=72, description="Ventana de horas para curvas"),
     dias: int = Query(7, ge=1, le=16, description="Días de pronóstico resumen"),
 ):
     """Genera series temporales formateadas de temperatura, rocío, viento, ráfagas, humedad, VPD y lluvia para gráficos."""
     longitud_final = lon if lon is not None else lng
-    if longitud_final is None:
-        raise HTTPException(status_code=400, detail="Debe proporcionar 'lon' o 'lng'.")
+    if longitud_final is None or not (-180.0 <= longitud_final <= 180.0):
+        raise HTTPException(status_code=400, detail="Debe proporcionar un parámetro de longitud válido (-180 a 180).")
     from openmeteo_client import obtener_series_temporales_graficos
 
     return await obtener_series_temporales_graficos(lat, longitud_final, horas=horas, dias=dias)
@@ -1305,14 +1279,14 @@ async def obtener_curvas_historicas_graficos(
 
 @app.get("/api/v1/agro/suelo-satelital")
 async def obtener_suelo_satelital_api(
-    lat: float = Query(..., description="Latitud GPS"),
-    lon: float | None = Query(None, description="Longitud GPS (lon)"),
-    lng: float | None = Query(None, description="Longitud GPS (lng)"),
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitud GPS"),
+    lon: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lon)"),
+    lng: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lng)"),
 ):
     """Devuelve la radiografía satelital agropecuaria: vigor vegetal (NDVI), humedad de suelo multicapa y estrés hídrico."""
     longitud_final = lon if lon is not None else lng
-    if longitud_final is None:
-        raise HTTPException(status_code=400, detail="Debe proporcionar 'lon' o 'lng'.")
+    if longitud_final is None or not (-180.0 <= longitud_final <= 180.0):
+        raise HTTPException(status_code=400, detail="Debe proporcionar un parámetro de longitud válido (-180 a 180).")
     import gee_service
 
     return await gee_service.consultar_datos_satelitales_agro(lat, longitud_final)
@@ -1320,14 +1294,14 @@ async def obtener_suelo_satelital_api(
 
 @app.get("/api/v1/urbano/calidad-aire-satelital")
 async def obtener_calidad_aire_satelital_api(
-    lat: float = Query(..., description="Latitud GPS"),
-    lon: float | None = Query(None, description="Longitud GPS (lon)"),
-    lng: float | None = Query(None, description="Longitud GPS (lng)"),
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitud GPS"),
+    lon: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lon)"),
+    lng: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lng)"),
 ):
     """Devuelve la radiografía satelital urbana: gases Sentinel-5P (NO2, CO, humo) y temperatura de pavimento / isla de calor."""
     longitud_final = lon if lon is not None else lng
-    if longitud_final is None:
-        raise HTTPException(status_code=400, detail="Debe proporcionar 'lon' o 'lng'.")
+    if longitud_final is None or not (-180.0 <= longitud_final <= 180.0):
+        raise HTTPException(status_code=400, detail="Debe proporcionar un parámetro de longitud válido (-180 a 180).")
     import gee_service
 
     return await gee_service.consultar_datos_satelitales_urbano(lat, longitud_final)
@@ -1335,15 +1309,15 @@ async def obtener_calidad_aire_satelital_api(
 
 @app.get("/api/v1/emergencias/focos-calor")
 async def obtener_focos_calor_firms_api(
-    lat: float = Query(..., description="Latitud GPS"),
-    lon: float | None = Query(None, description="Longitud GPS (lon)"),
-    lng: float | None = Query(None, description="Longitud GPS (lng)"),
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitud GPS"),
+    lon: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lon)"),
+    lng: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lng)"),
     radio_km: int = Query(50, ge=10, le=200, description="Radio de búsqueda en km"),
 ):
     """Detecta focos de calor e incendios forestales activos en tiempo real mediante NASA VIIRS / FIRMS."""
     longitud_final = lon if lon is not None else lng
-    if longitud_final is None:
-        raise HTTPException(status_code=400, detail="Debe proporcionar 'lon' o 'lng'.")
+    if longitud_final is None or not (-180.0 <= longitud_final <= 180.0):
+        raise HTTPException(status_code=400, detail="Debe proporcionar un parámetro de longitud válido (-180 a 180).")
     import gee_service
 
     return await gee_service.consultar_focos_calor_firms(lat, longitud_final, radio_km=radio_km)
@@ -1351,14 +1325,14 @@ async def obtener_focos_calor_firms_api(
 
 @app.get("/api/v1/entorno/nieve-cordillera")
 async def obtener_nieve_cordillera_api(
-    lat: float = Query(..., description="Latitud GPS"),
-    lon: float | None = Query(None, description="Longitud GPS (lon)"),
-    lng: float | None = Query(None, description="Longitud GPS (lng)"),
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitud GPS"),
+    lon: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lon)"),
+    lng: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lng)"),
 ):
     """Calcula la cobertura nival (NDSI) y reserva hídrica en la cordillera de los Andes para la cuenca hidrográfica."""
     longitud_final = lon if lon is not None else lng
-    if longitud_final is None:
-        raise HTTPException(status_code=400, detail="Debe proporcionar 'lon' o 'lng'.")
+    if longitud_final is None or not (-180.0 <= longitud_final <= 180.0):
+        raise HTTPException(status_code=400, detail="Debe proporcionar un parámetro de longitud válido (-180 a 180).")
     import gee_service
 
     return await gee_service.consultar_nieve_cordillera(lat, longitud_final)
@@ -1366,14 +1340,14 @@ async def obtener_nieve_cordillera_api(
 
 @app.get("/api/v1/solar/fotovoltaico")
 async def obtener_energia_solar_fotovoltaica_api(
-    lat: float = Query(..., description="Latitud GPS"),
-    lon: float | None = Query(None, description="Longitud GPS (lon)"),
-    lng: float | None = Query(None, description="Longitud GPS (lng)"),
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitud GPS"),
+    lon: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lon)"),
+    lng: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lng)"),
 ):
     """Calcula la generación solar estimada en kWh/m² y el potencial de bombeo de riego fotovoltaico."""
     longitud_final = lon if lon is not None else lng
-    if longitud_final is None:
-        raise HTTPException(status_code=400, detail="Debe proporcionar 'lon' o 'lng'.")
+    if longitud_final is None or not (-180.0 <= longitud_final <= 180.0):
+        raise HTTPException(status_code=400, detail="Debe proporcionar un parámetro de longitud válido (-180 a 180).")
     import gee_service
 
     return await gee_service.consultar_energia_solar_fotovoltaica(lat, longitud_final)
@@ -1381,14 +1355,14 @@ async def obtener_energia_solar_fotovoltaica_api(
 
 @app.get("/api/v1/agro/topografia-laderas")
 async def obtener_topografia_laderas_api(
-    lat: float = Query(..., description="Latitud GPS"),
-    lon: float | None = Query(None, description="Longitud GPS (lon)"),
-    lng: float | None = Query(None, description="Longitud GPS (lng)"),
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitud GPS"),
+    lon: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lon)"),
+    lng: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lng)"),
 ):
     """Analiza la pendiente %, orientación cardinal de ladera (Aspect) y susceptibilidad a heladas por drenaje de aire frío."""
     longitud_final = lon if lon is not None else lng
-    if longitud_final is None:
-        raise HTTPException(status_code=400, detail="Debe proporcionar 'lon' o 'lng'.")
+    if longitud_final is None or not (-180.0 <= longitud_final <= 180.0):
+        raise HTTPException(status_code=400, detail="Debe proporcionar un parámetro de longitud válido (-180 a 180).")
     import gee_service
 
     return await gee_service.consultar_topografia_microclima(lat, longitud_final)
@@ -1396,14 +1370,14 @@ async def obtener_topografia_laderas_api(
 
 @app.get("/api/v1/entorno/costero")
 async def obtener_monitoreo_costero_api(
-    lat: float = Query(..., description="Latitud GPS"),
-    lon: float | None = Query(None, description="Longitud GPS (lon)"),
-    lng: float | None = Query(None, description="Longitud GPS (lng)"),
+    lat: float = Query(..., ge=-90.0, le=90.0, description="Latitud GPS"),
+    lon: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lon)"),
+    lng: float | None = Query(None, ge=-180.0, le=180.0, description="Longitud GPS (lng)"),
 ):
     """Devuelve la temperatura superficial del mar (SST) y brisa marina si la ubicación está a <= 35 km del océano."""
     longitud_final = lon if lon is not None else lng
-    if longitud_final is None:
-        raise HTTPException(status_code=400, detail="Debe proporcionar 'lon' o 'lng'.")
+    if longitud_final is None or not (-180.0 <= longitud_final <= 180.0):
+        raise HTTPException(status_code=400, detail="Debe proporcionar un parámetro de longitud válido (-180 a 180).")
     import gee_service
 
     return gee_service.consultar_modulo_costero_si_aplica(lat, longitud_final)
@@ -1424,8 +1398,13 @@ async def estado_cache_satelital():
 
 
 @app.post("/api/v1/cache/satelital/precalentar")
-async def disparar_precalentamiento_satelital():
+async def disparar_precalentamiento_satelital(
+    x_admin_token: str | None = Header(None, alias="X-Admin-Token"),
+):
     """Dispara el pre-cálculo satelital de los principales valles agrícolas de Chile."""
+    if settings.admin_sync_token:
+        if not x_admin_token or not secrets.compare_digest(x_admin_token, settings.admin_sync_token):
+            raise HTTPException(status_code=401, detail="No autorizado.")
     import gee_service
 
     total = await gee_service.precalentar_valles_agricolas()
@@ -1520,106 +1499,6 @@ async def forzar_sincronizacion_manual(
     return {"status": "ok", "mensaje": "Sincronización en segundo plano iniciada inmediatamente."}
 
 
-@app.get("/api/v1/weather/openmeteo")
-async def obtener_openmeteo_directo(
-    lat: float = Query(..., description="Latitud GPS"),
-    lon: float = Query(..., description="Longitud GPS"),
-    dias: int = Query(7, ge=1, le=16, description="Días de pronóstico"),
-):
-    """Endpoint directo para consultar pronóstico de Open-Meteo como fallback."""
-    from openmeteo_client import obtener_pronostico_openmeteo
-
-    res = await obtener_pronostico_openmeteo(lat, lon, dias)
-    if not res:
-        raise HTTPException(status_code=502, detail="No se pudo obtener datos de Open-Meteo.")
-    return res
-
-
-@app.get("/api/v1/satelite-goes19/frames")
-async def obtener_frames_goes19(cantidad: int = Query(20, ge=6, le=36)):
-    """Devuelve la lista ordenada de fotogramas Full HD (1800x1080) recientes de NOAA GOES-19 para reproducción animada continua a 60 FPS."""
-    from bs4 import BeautifulSoup
-
-    url_base = "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ssa/GEOCOLOR/"
-    latest_hd = f"{url_base}1800x1080.jpg"
-    try:
-        async with httpx.AsyncClient(timeout=8.0) as client:
-            resp = await client.get(url_base)
-            if resp.status_code == 200:
-                soup = BeautifulSoup(resp.text, "html.parser")
-                archivos_1800 = []
-                archivos_900 = []
-                for a in soup.find_all("a", href=True):
-                    href = a["href"]
-                    if href.endswith("-1800x1080.jpg") and href.startswith("202"):
-                        archivos_1800.append(href)
-                    elif href.endswith("-900x540.jpg") and href.startswith("202"):
-                        archivos_900.append(href)
-                archivos_1800.sort()
-                archivos_900.sort()
-
-                ultimos_1800 = archivos_1800[-cantidad:] if len(archivos_1800) >= cantidad else archivos_1800
-                frames_1800_urls = [f"{url_base}{f}" for f in ultimos_1800]
-
-                ultimos_900 = archivos_900[-cantidad:] if len(archivos_900) >= cantidad else archivos_900
-                frames_900_urls = [f"{url_base}{f}" for f in ultimos_900]
-
-                return {
-                    "status": "ok",
-                    "latest_hd": latest_hd,
-                    "total_frames": len(frames_1800_urls),
-                    "frames": frames_1800_urls if frames_1800_urls else frames_900_urls,
-                    "frames_hd": frames_1800_urls,
-                    "frames_sd": frames_900_urls,
-                }
-    except Exception:
-        pass
-
-    return {
-        "status": "fallback",
-        "latest_hd": latest_hd,
-        "total_frames": 1,
-        "frames": [latest_hd],
-        "frames_hd": [latest_hd],
-        "frames_sd": [latest_hd],
-    }
-
-
-@app.get("/api/v1/sensores-calidad-aire")
-async def obtener_sensores_calidad_aire():
-    """Devuelve la lista completa de sensores de calidad de aire en caché."""
-    sinca_map = CACHE_MEMORIA.get("calidad_aire_sinca", {})
-    purple_map = CACHE_MEMORIA.get("calidad_aire_purpleair", {})
-
-    sensores = []
-
-    for s_id, data in sinca_map.items():
-        if data.get("lat") and data.get("lon"):
-            sensores.append(
-                {
-                    "id": s_id,
-                    "fuente": data.get("estacion_nombre", "SINCA"),
-                    "lat": data.get("lat"),
-                    "lon": data.get("lon"),
-                    "pm25": data.get("pm25", 0),
-                    "pm10": data.get("pm10", 0),
-                }
-            )
-
-    for p_id, data in purple_map.items():
-        if data.get("lat") and data.get("lon"):
-            sensores.append(
-                {
-                    "id": p_id,
-                    "fuente": data.get("estacion_nombre", "PurpleAir"),
-                    "lat": data.get("lat"),
-                    "lon": data.get("lon"),
-                    "pm25": data.get("pm25", 0),
-                    "pm10": data.get("pm10", 0),
-                }
-            )
-
-    return {"status": "ok", "total": len(sensores), "sensores": sensores}
 
 
 # ======================================================================

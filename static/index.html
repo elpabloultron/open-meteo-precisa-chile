@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="style.css?v=10.9">
 </head>
 <body>
+    <h1 class="sr-only">MeteoPrecisa Chile — Telemetría Meteorológica Multired e Hiperlocal en Tiempo Real</h1>
+
     <!-- Buscador Superior -->
     <nav class="search-nav glass-panel">
         <div class="search-container">
@@ -398,7 +400,7 @@
 
             <!-- Pronóstico 12 horas con Chart.js -->
             <div id="hourly-chart-container" class="hourly-chart-container">
-                <canvas id="hourly-chart"></canvas>
+                <canvas id="hourly-chart" role="img" aria-label="Gráfico interactivo de pronóstico horario"></canvas>
             </div>
             
             <!-- Pronóstico 7 Días -->
@@ -487,7 +489,7 @@
             </div>
             
             <div class="chart-wrapper">
-                <canvas id="chart-historico"></canvas>
+                <canvas id="chart-historico" role="img" aria-label="Gráfico interactivo de series temporales históricas"></canvas>
             </div>
         </div>
     </div>

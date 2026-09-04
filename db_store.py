@@ -38,7 +38,7 @@ def get_db_connection():
     )
 
 
-def init_db(db_path: Any = None) -> None:
+def init_db() -> None:
     """Crea las tablas, las convierte en hypertables de TimescaleDB y crea índices."""
     try:
         conn = get_db_connection()
@@ -214,9 +214,8 @@ def guardar_instantanea_historica(
         return 0
 
 
-def obtener_historico_estacion(station_id: str, dias: int = 1, db_path: Any = None) -> list[dict[str, Any]]:
+def obtener_historico_estacion(station_id: str, dias: int = 1) -> list[dict[str, Any]]:
     """Devuelve los registros históricos de una estación, agrupados si es un periodo largo."""
-    init_db()
     try:
         conn = get_db_connection()
         with conn.cursor() as cur:
@@ -229,7 +228,7 @@ def obtener_historico_estacion(station_id: str, dias: int = 1, db_path: Any = No
                            temperatura_c, humedad_relativa, viento_kmh, direccion_viento_grados,
                            punto_rocio_c, presion_hpa, lluvia_mm, radiacion_w_m2, fuente
                     FROM telemetria_historico
-                    WHERE station_id = %s AND timestamp_utc >= NOW() - INTERVAL '%s days'
+                    WHERE station_id = %s AND timestamp_utc >= NOW() - (%s * INTERVAL '1 day')
                     ORDER BY timestamp_utc ASC;
                 """,
                     (station_id, dias),
@@ -245,7 +244,7 @@ def obtener_historico_estacion(station_id: str, dias: int = 1, db_path: Any = No
                            AVG(punto_rocio_c) as punto_rocio_c, AVG(presion_hpa) as presion_hpa,
                            SUM(lluvia_mm) as lluvia_mm, AVG(radiacion_w_m2) as radiacion_w_m2, MAX(fuente) as fuente
                     FROM telemetria_historico
-                    WHERE station_id = %s AND timestamp_utc >= NOW() - INTERVAL '%s days'
+                    WHERE station_id = %s AND timestamp_utc >= NOW() - (%s * INTERVAL '1 day')
                     GROUP BY station_id, time_bucket('1 day', timestamp_utc)
                     ORDER BY time_bucket('1 day', timestamp_utc) ASC;
                 """,
@@ -261,9 +260,8 @@ def obtener_historico_estacion(station_id: str, dias: int = 1, db_path: Any = No
         return []
 
 
-def obtener_estadisticas_db(db_path: Any = None) -> dict[str, Any]:
+def obtener_estadisticas_db() -> dict[str, Any]:
     """Obtiene conteos y métricas de TimescaleDB."""
-    init_db()
     try:
         conn = get_db_connection()
         with conn.cursor() as cur:
@@ -277,11 +275,11 @@ def obtener_estadisticas_db(db_path: Any = None) -> dict[str, Any]:
             "estado": "activo",
             "motor": "PostgreSQL + TimescaleDB",
             "archivo_db": "meteoprecisa (PG)",
-            "tamano_mb": 0.0,  # Se podría usar pg_database_size
             "total_registros_telemetria": c_tele[0] if c_tele else 0,
             "total_registros_calidad_aire": c_caq[0] if c_caq else 0,
             "primer_registro_utc": str(c_tele[1]) if c_tele and c_tele[1] else None,
             "ultimo_registro_utc": str(c_tele[2]) if c_tele and c_tele[2] else None,
         }
     except Exception as e:
-        return {"estado": "error", "error": str(e)}
+        logger.error(f"Error obteniendo estadísticas Postgres: {e}")
+        return {"estado": "error", "error": "No disponible"}

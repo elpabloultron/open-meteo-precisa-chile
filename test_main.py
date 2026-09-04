@@ -748,3 +748,93 @@ def test_static_assets_and_pwa_serviceworker(client):
     r_sw = client.get("/static/sw.js")
     assert r_sw.status_code == 200
     assert "addEventListener" in r_sw.text
+
+
+def test_security_headers_and_csp(client):
+    resp = client.get("/api/v1/status")
+    assert resp.status_code == 200
+    assert resp.headers.get("X-Content-Type-Options") == "nosniff"
+    assert resp.headers.get("X-Frame-Options") == "DENY"
+    assert "Strict-Transport-Security" in resp.headers
+    assert "Content-Security-Policy" in resp.headers
+    assert "Referrer-Policy" in resp.headers
+    assert "Permissions-Policy" in resp.headers
+
+
+def test_coordenadas_bounds_validation(client):
+    # Latitud fuera de rango (> 90)
+    resp_bad_lat = client.get("/api/v1/clima-hiperlocal?lat=95.0&lon=-70.0")
+    assert resp_bad_lat.status_code == 422
+
+    # Longitud fuera de rango (< -180)
+    resp_bad_lon = client.get("/api/v1/clima-hiperlocal?lat=-33.0&lon=-190.0")
+    assert resp_bad_lon.status_code == 422
+
+
+def test_alertas_engine_helada_advectiva_y_hongo_gate():
+    from alertas_engine import evaluar_alertas_meteorologicas
+
+    # 1. Helada advectiva con viento >= 10 km/h
+    clima_advectiva = {
+        "estacion": {"nombre": "Punta Arenas"},
+        "modo_agricola": {
+            "temperatura_minima_hoy_c": -2.0,
+            "punto_rocio_c": -4.0,
+            "rafagas_max_kmh": 25.0,
+            "deficit_presion_vapor_vpd_kpa": 0.8,
+        },
+        "modo_urbano": {"indice_uv": 1, "calidad_aire_sinca": {}},
+        "metadatos": {"temperatura_c": -1.0, "viento_kmh": 18.0},
+    }
+    alertas_adv = evaluar_alertas_meteorologicas(clima_advectiva)
+    ids_adv = [a["id"] for a in alertas_adv]
+    assert "helada_advectiva" in ids_adv
+    assert "helada_critica" not in ids_adv
+
+    # 2. Hongo (VPD < 0.3): si T < 12°C no debe dispararse
+    clima_frio_saturado = {
+        "estacion": {"nombre": "Valdivia"},
+        "modo_agricola": {
+            "temperatura_minima_hoy_c": 5.0,
+            "punto_rocio_c": 5.0,
+            "rafagas_max_kmh": 5.0,
+            "deficit_presion_vapor_vpd_kpa": 0.15,
+        },
+        "modo_urbano": {"indice_uv": 1, "calidad_aire_sinca": {}},
+        "metadatos": {"temperatura_c": 6.0, "viento_kmh": 2.0},
+    }
+    alertas_frio = evaluar_alertas_meteorologicas(clima_frio_saturado)
+    ids_frio = [a["id"] for a in alertas_frio]
+    assert "vpd_saturado" not in ids_frio
+
+    # 3. Hongo (VPD < 0.3): si T >= 12°C sí debe dispararse
+    clima_calido_saturado = {
+        "estacion": {"nombre": "Quillota"},
+        "modo_agricola": {
+            "temperatura_minima_hoy_c": 14.0,
+            "punto_rocio_c": 14.0,
+            "rafagas_max_kmh": 4.0,
+            "deficit_presion_vapor_vpd_kpa": 0.2,
+        },
+        "modo_urbano": {"indice_uv": 3, "calidad_aire_sinca": {}},
+        "metadatos": {"temperatura_c": 16.0, "viento_kmh": 3.0},
+    }
+    alertas_calido = evaluar_alertas_meteorologicas(clima_calido_saturado)
+    ids_calido = [a["id"] for a in alertas_calido]
+    assert "vpd_saturado" in ids_calido
+
+
+def test_precalentar_satelital_token_protection(client, monkeypatch):
+    monkeypatch.setattr(main, "settings", replace(main.settings, admin_sync_token="secret-token-123"))
+    # Sin token -> 401
+    r_unauth = client.post("/api/v1/cache/satelital/precalentar")
+    assert r_unauth.status_code == 401
+
+    # Con token incorrecto -> 401
+    r_wrong = client.post("/api/v1/cache/satelital/precalentar", headers={"X-Admin-Token": "bad-token"})
+    assert r_wrong.status_code == 401
+
+    # Con token correcto -> 200
+    r_ok = client.post("/api/v1/cache/satelital/precalentar", headers={"X-Admin-Token": "secret-token-123"})
+    assert r_ok.status_code == 200
+
